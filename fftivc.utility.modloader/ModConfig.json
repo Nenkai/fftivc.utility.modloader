@@ -1,0 +1,44 @@
+{
+  "ModId": "fftivc.utility.modloader",
+  "ModName": "FINAL FANTASY TACTICS - The Ivalice Chronicles Mod Loader",
+  "ModAuthor": "Nenkai",
+  "ModVersion": "1.0.0",
+  "ModDescription": "Mod loader for FINAL FANTASY TACTICS - The Ivalice Chronicles. Right click on this mod and 'Configure' to view options.\nModding Website - nenkai.github.io/ffxvi-modding/",
+  "ModDll": "fftivc.utility.modloader.dll",
+  "ModIcon": "Preview.png",
+  "ModR2RManagedDll32": "x86/fftivc.utility.modloader.dll",
+  "ModR2RManagedDll64": "x64/fftivc.utility.modloader.dll",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "fftivc.utility.modloader.ReleaseMetadata.json",
+  "PluginData": {
+    "GitHubDependencies": {
+      "IdToConfigMap": {
+        "reloaded.sharedlib.hooks": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "Reloaded.SharedLib.Hooks.ReloadedII",
+            "UseReleaseTag": true,
+            "AssetFileName": "reloaded.sharedlib.hooks.zip"
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
+        }
+      }
+    },
+    "GitHubRelease": {
+      "UserName": "Nenkai",
+      "RepositoryName": "fftivc.utility.modloader",
+      "UseReleaseTag": true,
+      "AssetFileName": "Mod.zip"
+    }
+  },
+  "IsUniversalMod": false,
+  "ModDependencies": [ "Reloaded.Memory.SigScan.ReloadedII", "reloaded.sharedlib.hooks" ],
+  "OptionalDependencies": [],
+  "SupportedAppId": [
+    "fft_classic.exe",
+    "fft_enhanced.exe"
+  ],
+  "ProjectUrl": "https://github.com/Nenkai/fftivc.utility.modloader"
+}
