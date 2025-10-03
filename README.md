@@ -4,7 +4,7 @@
 
 ## Usage
 
-Make sure that you have Reloaded-II and download the latest FFTIVC mod loader in [Releases](https://github.com/Nenkai/ff16.utility.modloader/releases) (the .7z file).
+Make sure that you have Reloaded-II and download the latest FFTIVC mod loader in [Releases](https://github.com/Nenkai/fftivc.utility.modloader/releases) (the .7z file).
 
 Add FFTIVC as a registered game within Reloaded-II.
 
