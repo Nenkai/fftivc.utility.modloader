@@ -108,7 +108,7 @@ public class GameModeTransitionHooks : IFFTOHook
             }
         }
 
-        MessageBox.Show($"Failed to locate application config for {exeToLaunch}. \nAre both executables registered in Reloaded-II?", "Reloaded-II FFTIVC Mod Loader", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show($"Failed to locate application config for {exeToLaunch}. \nAre both enhanced & classic executables registered in Reloaded-II?", "Reloaded-II FFTIVC Mod Loader", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return 0;
     }
 }
