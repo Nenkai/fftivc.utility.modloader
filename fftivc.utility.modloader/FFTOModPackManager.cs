@@ -119,8 +119,11 @@ public class FFTOModPackManager : IFFTOModPackManager
                     continue;
                 }
 
-                if (File.Exists(Path.Combine(dir, $"{MODDED_PACK_NAME}.pac")))
-                    File.Delete(Path.Combine(dir, $"{MODDED_PACK_NAME}.pac"));
+                foreach (var pack in Directory.GetFiles(dir, "*.pac"))
+                {
+                    if (Path.GetFileName(pack).StartsWith(MODDED_PACK_NAME, StringComparison.OrdinalIgnoreCase))
+                        File.Delete(pack);
+                }
 
                 var packManager = new FF16PackManager(_loggerFactory);
                 packManager.Open(Path.Combine(dataDir, GameModeToDirectoryName(gameMode)), PackKeyStore.FFT_IVALICE_CODENAME);
@@ -247,7 +250,8 @@ public class FFTOModPackManager : IFFTOModPackManager
         if (spl.Length > 2)
         {
             string locale = spl[^2];
-            packName = $"{MODDED_PACK_NAME}.{locale}";
+            if (locale == "en" || locale == "ja" || locale == "fr" || locale == "de")
+                packName = $"{MODDED_PACK_NAME}.{locale}";
         }
         else
         {
