@@ -6,10 +6,12 @@ using CommunityToolkit.HighPerformance.Buffers;
 
 using Reloaded.Mod.Interfaces;
 
+/*
+using FF16Tools.Files;
 using FF16Tools.Files.Nex.Entities;
 using FF16Tools.Files.Nex;
-using FF16Tools.Files;
 using FF16Tools.Files.Nex.Managers;
+*/
 using FF16Tools.Pack;
 using FF16Tools.Pack.Packing;
 
@@ -17,26 +19,34 @@ using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces;
 using Syroot.BinaryData;
 using System.Diagnostics.CodeAnalysis;
+using System.Buffers.Binary;
+using Reloaded.Hooks.Definitions;
+using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
+using fftivc.utility.modloader.Hooks;
+using FF16Tools.Pack.Crypto;
 
 namespace fftivc.utility.modloader;
 
-public class FF16ModPackManager : IFF16ModPackManager
+public class FFTOModPackManager : IFFTOModPackManager
 {
+    public const string MODDED_PACK_NAME = "modded";
+
     #region Private Fields
     private IModConfig _modConfig;
     private IModLoader _modLoader;
     private Reloaded.Mod.Interfaces.ILogger _reloadedLogger;
     private Config _configuration;
     private ILoggerFactory _loggerFactory;
+    private FFTOResourceManagerHooks _resourcePackHooks;
 
-    private Dictionary<string, ModPack> _modPackFiles = new();
+    private Dictionary<FFTOGameMode, Dictionary<string, ModPack>> _modPackFilesPerGameMode = new();
 
-    private Dictionary<string, IFF16ModFile> _moddedFiles = new();
+    private Dictionary<string, IFFTOModFile> _moddedFiles = [];
 
     // Builders for each pack.
-    private Dictionary<string, FF16PackBuilder> _packBuilders = new();
+    private Dictionary<FFTOGameMode, Dictionary<string, FF16PackBuilder>> _packBuilders = new();
 
-    private NexModComparer _nexModComparer = new();
+    //private NexModComparer _nexModComparer = new();
     #endregion
 
     #region Public Properties
@@ -49,7 +59,7 @@ public class FF16ModPackManager : IFF16ModPackManager
     /// Underlying pack manager.
     /// </summary>
     [MemberNotNullWhen(true, nameof(Initialized))]
-    public FF16PackManager? PackManager { get; private set; }
+    public Dictionary<FFTOGameMode, FF16PackManager>? PackManagers { get; private set; } = [];
 
     /// <summary>
     /// Data directory containing packs.
@@ -71,21 +81,23 @@ public class FF16ModPackManager : IFF16ModPackManager
     /// <inheritdoc//>
     public Version GameVersion { get; private set; }
 
-    public IReadOnlyDictionary<string, IFF16ModFile> ModdedFiles => new ReadOnlyDictionary<string, IFF16ModFile>(_moddedFiles);
+    public IReadOnlyDictionary<string, IFFTOModFile> ModdedFiles => new ReadOnlyDictionary<string, IFFTOModFile>(_moddedFiles);
     #endregion
 
-    public FF16ModPackManager(IModConfig modConfig, IModLoader modLoader, Reloaded.Mod.Interfaces.ILogger logger, Config configuration, Version version)
+    public FFTOModPackManager(IModConfig modConfig, IModLoader modLoader, Reloaded.Mod.Interfaces.ILogger logger, Config configuration, Version version,
+        IReloadedHooks reloadedHooks, IStartupScanner startupScanner)
     {
         _modConfig = modConfig;
         _modLoader = modLoader;
         _reloadedLogger = logger;
         _configuration = configuration;
 
+        _resourcePackHooks = new FFTOResourceManagerHooks(reloadedHooks, startupScanner, modConfig, logger);
+
         _loggerFactory = LoggerFactory.Create(e => e.AddProvider(new R2LoggerToMSLoggerAdapterProvider(logger)));
 
         GameVersion = version;
     }
-
 
     /// <inheritdoc/>
     public bool Initialize(string dataDir, string tempFolder)
@@ -98,14 +110,30 @@ public class FF16ModPackManager : IFF16ModPackManager
 
         try
         {
-            PackManager = new FF16PackManager(_loggerFactory);
-            PackManager.Open(dataDir, "ffto");
+            foreach (var gameMode in new List<FFTOGameMode>() { FFTOGameMode.Enhanced, FFTOGameMode.Classic })
+            {
+                string dir = Path.Combine(dataDir, GameModeToDirectoryName(gameMode));
+                if (!Directory.Exists(dir))
+                {
+                    PrintWarning($"Data directory '{GameModeToDirectoryName(gameMode)}' does not exist. Will skip applying mods for it...");
+                    continue;
+                }
+
+                if (File.Exists(Path.Combine(dir, $"{MODDED_PACK_NAME}.pac")))
+                    File.Delete(Path.Combine(dir, $"{MODDED_PACK_NAME}.pac"));
+
+                var packManager = new FF16PackManager(_loggerFactory);
+                packManager.Open(Path.Combine(dataDir, GameModeToDirectoryName(gameMode)), PackKeyStore.FFT_IVALICE_CODENAME);
+                PackManagers![gameMode] = packManager;
+            }
         }
         catch (Exception ex)
         {
             PrintError($"Unable to open packs: {ex.Message}");
             return false;
         }
+
+        _resourcePackHooks.SetupPackListHooks(dataDir);
 
         DataDirectory = dataDir;
         TempFolder = tempFolder;
@@ -115,35 +143,38 @@ public class FF16ModPackManager : IFF16ModPackManager
     }
 
     /// <inheritdoc/>
-    public byte[] GetFileData(string gamePath, string packSuffix = "")
+    public byte[] GetFileData(FFTOGameMode gameMode, string gamePath, string packSuffix = "")
     {
-        if (PackManager is null)
+        if (PackManagers is null)
             throw new InvalidOperationException("Unable to get file data - pack manager is not initialized.");
 
         if (!string.IsNullOrWhiteSpace(packSuffix))
         {
             if (FF16PackPathUtil.TryGetPackNameForPath(gamePath, out string? packName, out _))
-                return PackManager.GetFileDataBytesFromPack(gamePath, $"{packName}.{packSuffix}");
+                return PackManagers[gameMode].GetFileDataBytesFromPack(gamePath, $"{packName}.{packSuffix}");
             else // whatever, put in 0000
-                return PackManager.GetFileDataBytesFromPack(gamePath, $"0000.{packSuffix}");
+                return PackManagers[gameMode].GetFileDataBytesFromPack(gamePath, $"0000.{packSuffix}");
         }
 
-        return PackManager.GetFileDataBytes(gamePath);
+        return PackManagers[gameMode].GetFileDataBytes(gamePath);
     }
 
     /// <inheritdoc/>
-    public bool FileExists(string gamePath, string packSuffix = "")
+    public bool FileExists(FFTOGameMode gameMode, string gamePath, string packSuffix = "")
     {
-        if (PackManager is null)
+        if (PackManagers is null)
             throw new InvalidOperationException("Unable to get file data - pack manager is not initialized.");
+
+        if (!PackManagers.TryGetValue(gameMode, out FF16PackManager? packManager))
+            return false;
 
         if (!string.IsNullOrWhiteSpace(packSuffix))
         {
             if (FF16PackPathUtil.TryGetPackNameForPath(gamePath, out string? packName, out _))
-                return PackManager.GetFileInfoFromPack(gamePath, $"{packName}.{packSuffix}") != null;
+                return packManager.GetFileInfoFromPack(gamePath, $"{packName}.{packSuffix}") != null;
         }
 
-        return PackManager.GetFileInfo(gamePath) is not null;
+        return packManager.GetFileInfo(gamePath) is not null;
     }
 
     /// <inheritdoc/>
@@ -179,19 +210,50 @@ public class FF16ModPackManager : IFF16ModPackManager
     }
 
     /// <inheritdoc/>
-    public void AddModdedFile(string modId, string baseDir, string localPath)
+    public void AddModdedFile(string modId, string baseDataDir, string localPath)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(modId, nameof(modId));
         ArgumentException.ThrowIfNullOrWhiteSpace(localPath, nameof(localPath));
 
         ThrowIfNotInitialized();
 
-        string relPath = Path.GetRelativePath(baseDir, localPath);
-        string topLevel = GetTopLevelDir(relPath);
-        string possiblePackDir = Path.Combine(baseDir, topLevel);
+        foreach (var gameType in new List<FFTOGameMode>() { FFTOGameMode.Enhanced, FFTOGameMode.Classic, FFTOGameMode.Combined })
+        {
+            string gameTypeDirName = GameModeToDirectoryName(gameType);
+            string baseGameTypeDir = Path.Combine(baseDataDir, gameTypeDirName);
+            if (!Directory.Exists(baseGameTypeDir))
+                continue;
 
-        string? packName = "9000";
+            if (!localPath.StartsWith(baseGameTypeDir))
+                continue;
+
+            string relPath = Path.GetRelativePath(baseGameTypeDir, localPath);
+            if (gameType == FFTOGameMode.Combined)
+            {
+                AddModdedFileForGameType(modId, localPath, FFTOGameMode.Classic, relPath);
+                AddModdedFileForGameType(modId, localPath, FFTOGameMode.Enhanced, relPath);
+            }
+            else
+                AddModdedFileForGameType(modId, localPath, gameType, relPath);
+        }
+    }
+
+    private void AddModdedFileForGameType(string modId, string localPath, FFTOGameMode gameType, string relPath)
+    {
+        // Determine if it's a localized file.
+        string[] spl = Path.GetFileName(relPath).Split('.');
+        string packName = $"{MODDED_PACK_NAME}";
         string gamePath = relPath;
+        if (spl.Length > 2)
+        {
+            string locale = spl[^2];
+            packName = $"{MODDED_PACK_NAME}.{locale}";
+        }
+        else
+        {
+            packName = $"{MODDED_PACK_NAME}";
+            gamePath = relPath;
+        }
 
         string packFilePath = FF16PackPathUtil.NormalizePath(gamePath);
 
@@ -199,19 +261,20 @@ public class FF16ModPackManager : IFF16ModPackManager
         if (packFilePath.Contains(".path"))
             return;
 
-        ModPack modPack = GetOrAddDiffPack(packName);
+        ModPack modPack = GetOrAddDiffPack(gameType, packName);
         if (_configuration.MergeNexFileChanges && IsNexFile(localPath))
         {
-            RecordNexChanges(modId, packName, packFilePath, localPath);
-            return;
+            //RecordNexChanges(modId, 0, packName, packFilePath, localPath);
+            //return;
         }
 
-        Print($"{modId}: Adding file '{gamePath}' ({packName})");
+        Print($"{modId}: Adding file '{gamePath}' ({gameType}) from '{localPath}'");
 
-        if (!modPack.Files.TryGetValue(packFilePath, out FF16ModFile? modFile))
+        if (!modPack.Files.TryGetValue(packFilePath, out FFTOModFile? modFile))
         {
-            modFile = new FF16ModFile()
+            modFile = new FFTOModFile()
             {
+                GameType = gameType,
                 ModIdOwner = modId,
                 LocalPath = localPath,
                 GamePath = packFilePath,
@@ -233,13 +296,15 @@ public class FF16ModPackManager : IFF16ModPackManager
     }
 
     /// </inheritdoc>
-    public bool RemoveModdedFile(string gamePath)
+    public bool RemoveModdedFile(FFTOGameMode gameMode, string gamePath)
     {
         ThrowIfNotInitialized();
 
         gamePath = FF16PackPathUtil.NormalizePath(gamePath);
+        if (!_modPackFilesPerGameMode.TryGetValue(gameMode, out Dictionary<string, ModPack>? modPacks))
+            return false;
 
-        foreach (var modPack in _modPackFiles.Values)
+        foreach (var modPack in modPacks.Values)
         {
             modPack.Files.Remove(gamePath);
         }
@@ -254,21 +319,27 @@ public class FF16ModPackManager : IFF16ModPackManager
     {
         ThrowIfNotInitialized();
 
-        foreach (KeyValuePair<string, ModPack> pack in _modPackFiles)
+        foreach (var gameTypePackList in _modPackFilesPerGameMode)
         {
-            Print($"Adding new pack {pack.Key}...");
-
-            var builder = new FF16PackBuilder(new PackBuildOptions()
+            foreach (KeyValuePair<string, ModPack> pack in gameTypePackList.Value)
             {
-                Name = string.Empty,
-                CodeName = "ffto",
-            });
+                Print($"Adding new pack {pack.Key} ({gameTypePackList.Key})...");
 
-            _packBuilders[pack.Key] = builder;
+                var builder = new FF16PackBuilder(new PackBuildOptions()
+                {
+                    Name = string.Empty,
+                    CodeName = PackKeyStore.FFT_IVALICE_CODENAME,
+                });
 
-            foreach (FF16ModFile file in pack.Value.Files.Values)
-            {
-                builder.AddFile(file.LocalPath, file.GamePath);
+                if (!_packBuilders.ContainsKey(gameTypePackList.Key))
+                    _packBuilders.Add(gameTypePackList.Key, []);
+
+                _packBuilders[gameTypePackList.Key][pack.Key] = builder;
+
+                foreach (FFTOModFile file in pack.Value.Files.Values)
+                {
+                    builder.AddFile(file.LocalPath, file.GamePath);
+                }
             }
         }
 
@@ -278,28 +349,33 @@ public class FF16ModPackManager : IFF16ModPackManager
         Dispose();
 
         // Finally build the packs
-        foreach (KeyValuePair<string, ModPack> pack in _modPackFiles)
+        foreach (var gameTypePackList in _modPackFilesPerGameMode)
         {
-            Print($"Writing '{pack.Value.DiffPackName}' ({pack.Value.Files.Count} files)...");
+            foreach (KeyValuePair<string, ModPack> modPack in gameTypePackList.Value)
+            {
+                Print($"Writing '{modPack.Value.DiffPackName}' ({modPack.Value.Files.Count} files)...");
 
-            FF16PackBuilder builder = _packBuilders[pack.Key];
-            try
-            {
-                builder.WriteToAsync(Path.Combine(DataDirectory, $"{pack.Value.DiffPackName}.pac")).GetAwaiter().GetResult();
-            }
-            catch (IOException ioEx)
-            {
-                PrintError($"Failed to write {pack.Value.DiffPackName} with IOException - is the game already running as another process? Error: {ioEx.Message}");
-                return;
-            }
-            catch (Exception ex)
-            {
-                PrintError($"Failed to write {pack.Value.DiffPackName}: {ex.Message}");
-                return;
+                string gameModeDir = GameModeToDirectoryName(gameTypePackList.Key);
+                var builder = _packBuilders[gameTypePackList.Key][modPack.Key];
+
+                try
+                {
+                    builder.WriteToAsync(Path.Combine(DataDirectory, gameModeDir, $"{modPack.Value.DiffPackName}.pac")).GetAwaiter().GetResult();
+                }
+                catch (IOException ioEx)
+                {
+                    PrintError($"Failed to write {modPack.Value.DiffPackName} with IOException - is the game already running as another process? Error: {ioEx.Message}");
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    PrintError($"Failed to write {modPack.Value.DiffPackName}: {ex.Message}");
+                    return;
+                }
             }
         }
 
-        _reloadedLogger.WriteLine($"[{_modConfig.ModId}] FFTIVC Mod loader initialized with {_modPackFiles.Count} pack(s).", _reloadedLogger.ColorGreen);
+        _reloadedLogger.WriteLine($"[{_modConfig.ModId}] FFTIVC Mod loader initialized with {_modPackFilesPerGameMode.Count} pack(s).", _reloadedLogger.ColorGreen);
 
         if (Directory.Exists(TempFolder))
             Directory.Delete(TempFolder, recursive: true);
@@ -310,19 +386,35 @@ public class FF16ModPackManager : IFF16ModPackManager
     /// </summary>
     /// <param name="packName"></param>
     /// <returns></returns>
-    private ModPack GetOrAddDiffPack(string packName)
+    private ModPack GetOrAddDiffPack(FFTOGameMode gameType, string packName)
     {
-        if (!_modPackFiles.TryGetValue(packName, out ModPack? modPack))
+        if (!_modPackFilesPerGameMode.TryGetValue(gameType, out Dictionary<string, ModPack>? modPackFiles))
+        {
+            modPackFiles = [];
+            _modPackFilesPerGameMode.Add(gameType, modPackFiles);
+        }
+
+        if (!modPackFiles.TryGetValue(packName, out ModPack? modPack))
         {
             string[] spl = packName.Split('.');
+            if (spl.Length > 1 && !modPackFiles.ContainsKey(spl[0]))
+            {
+                // Dealing with a locale pack. Make sure the main one exists first.
+                modPackFiles.Add(spl[0], new ModPack()
+                {
+                    MainPackName = $"{MODDED_PACK_NAME}",
+                    BaseLocalePackName = $"{MODDED_PACK_NAME}",
+                    DiffPackName = $"{MODDED_PACK_NAME}",
+                });
+            }
 
             modPack = new ModPack
             {
-                MainPackName = "9000",
-                BaseLocalePackName = "packName",
+                MainPackName = $"{MODDED_PACK_NAME}",
+                BaseLocalePackName = packName,
                 DiffPackName = packName
             };
-            _modPackFiles.TryAdd(packName, modPack);
+            modPackFiles.TryAdd(packName, modPack);
         }
 
         return modPack;
@@ -336,9 +428,10 @@ public class FF16ModPackManager : IFF16ModPackManager
     /// <param name="nexGamePath"></param>
     /// <param name="modNexFilePath"></param>
     /// <exception cref="FileNotFoundException"></exception>
-    private void RecordNexChanges(string modId, string packName, string nexGamePath, string modNexFilePath)
+    private void RecordNexChanges(string modId, FFTOGameMode gameMode, string packName, string nexGamePath, string modNexFilePath)
     {
-        if (PackManager!.GetFileInfo(nexGamePath, includeDiff: false) is null)
+        /*
+        if (PackManagers![gameMode].GetFileInfo(nexGamePath, includeDiff: false) is null)
         {
             PrintWarning($"Mod '{modId}' edits nex table '{nexGamePath}' which is unrecognized.");
             return;
@@ -348,28 +441,14 @@ public class FF16ModPackManager : IFF16ModPackManager
 
         try
         {
-            if (PackManager.GetFileInfoFromPack(nexGamePath, packName) is not null)
-            {
-                ogNexFileData = PackManager.GetFileDataFromPack(nexGamePath, packName);
-            }
-            else
-            {
-                if (PackManager.GetFileInfo(nexGamePath, includeDiff: false) is null)
-                    throw new FileNotFoundException($"File '{nexGamePath}' not found in any packs.");
-                else
-                {
-                    ogNexFileData = PackManager.GetFileData(nexGamePath, includeDiff: false);
-                    PrintWarning($"{modId} warning - '{nexGamePath}' was not found in pack '{packName}' but it was found elsewhere. " +
-                        $"While this may work, ensure to place '{nexGamePath}' in the correct pack folder (especially if it was found in a localized pack, otherwise it will overwrite user language).");
-                }
-            }
-
+            ogNexFileData = PackManagers[gameMode].GetFileData(nexGamePath);
+            
             NexDataFile ogNexFile = new NexDataFile();
             ogNexFile.Read(ogNexFileData.Span.ToArray());
 
             NexDataFile modNexFile = NexDataFile.FromFile(modNexFilePath);
 
-            _nexModComparer.RecordChanges(modId, "9000.pac", Path.GetFileNameWithoutExtension(nexGamePath), ogNexFile, modNexFile);
+            _nexModComparer.RecordChanges(modId, $"{MODDED_PACK_NAME}.pac", Path.GetFileNameWithoutExtension(nexGamePath), ogNexFile, modNexFile);
         }
         catch (Exception ex)
         {
@@ -379,6 +458,7 @@ public class FF16ModPackManager : IFF16ModPackManager
         {
             ogNexFileData?.Dispose();
         }
+        */
     }
 
     /// <summary>
@@ -495,6 +575,17 @@ public class FF16ModPackManager : IFF16ModPackManager
     }
     */
 
+    private static string GameModeToDirectoryName(FFTOGameMode gameMode)
+    {
+        return gameMode switch
+        {
+            FFTOGameMode.Enhanced => "enhanced",
+            FFTOGameMode.Classic => "classic",
+            FFTOGameMode.Combined => "combined",
+            _ => "Unknown",
+        };
+    }
+
     public void ThrowIfNotInitialized()
     {
         if (!Initialized)
@@ -503,21 +594,8 @@ public class FF16ModPackManager : IFF16ModPackManager
 
     public void Dispose()
     {
-        PackManager?.Dispose();
-    }
-
-    private static string GetTopLevelDir(string filePath)
-    {
-        string temp = Path.GetDirectoryName(filePath);
-        if (temp.Contains('\\'))
-        {
-            temp = temp.Substring(0, temp.IndexOf("\\"));
-        }
-        else if (temp.Contains("//"))
-        {
-            temp = temp.Substring(0, temp.IndexOf("\\"));
-        }
-        return temp;
+        foreach (var packManager in PackManagers!.Values)
+            packManager?.Dispose();
     }
 
     private static bool IsNexFile(string localPath)
@@ -530,7 +608,7 @@ public class FF16ModPackManager : IFF16ModPackManager
             return false;
 
         using var bs = new BinaryStream(fs);
-        return bs.ReadUInt32() == NexDataFile.MAGIC;
+        return bs.ReadUInt32() == BinaryPrimitives.ReadUInt32LittleEndian("NXDF"u8);
     }
 
     private void Print(string message)

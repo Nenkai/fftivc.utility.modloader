@@ -10,7 +10,7 @@ namespace fftivc.utility.modloader.Configuration
     public class Config : Configurable<Config>
     {
         [DisplayName("Merge nex/nxd changes")]
-        [Description("Whether to merge Nex (.nxd) changes made to a specific nex table by multiple tables.\n" +
+        [Description("Whether to merge Nex (.nxd) changes made to a specific nex table by multiple tables. (NOTE: NOT CURRENTLY IMPLEMENTED.)\n" +
             "NOTE: This should always be enabled.")]
         [DefaultValue(true)]
         public bool MergeNexFileChanges { get; set; } = true;
@@ -29,7 +29,7 @@ namespace fftivc.utility.modloader.Configuration
 
         [DisplayName("Remove exception/crash handler")]
         [Description("(Advanced users only) Whether to remove the default exception handler.\n" +
-            "Removes the 'An unexpected error has occurred. Exiting FINAL FANTASY XVI.' message on crash.")]
+            "Removes the 'An unexpected error has occurred.' message on crash.")]
         [DefaultValue(true)]
         public bool RemoveExceptionHandler { get; set; } = true;
     }

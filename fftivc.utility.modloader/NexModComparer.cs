@@ -1,4 +1,5 @@
-﻿using FF16Tools.Files.Nex.Entities;
+﻿/*
+using FF16Tools.Files.Nex.Entities;
 using FF16Tools.Files.Nex;
 using FF16Tools.Files;
 
@@ -236,4 +237,4 @@ public class NexTableChange
         ModId = modId;
     }
 }
-
+*/

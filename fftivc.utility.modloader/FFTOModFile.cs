@@ -8,8 +8,13 @@ using fftivc.utility.modloader.Interfaces;
 
 namespace fftivc.utility.modloader;
 
-public class FF16ModFile : IFF16ModFile
+public class FFTOModFile : IFFTOModFile
 {
+    /// <summary>
+    /// Game type for which this file belongs to.
+    /// </summary>
+    public required FFTOGameMode GameType { get; set; }
+
     /// <summary>
     /// Mod id that owns this modded file.
     /// </summary>

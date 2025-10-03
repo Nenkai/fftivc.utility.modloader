@@ -1,3 +1,3 @@
-# ff16.utility.manager.Interfaces
+# fftivc.utility.manager.Interfaces
 
-Mod pack manager interface for ff16.utility.manager.Interfaces
+Mod pack manager interface for fftivc.utility.manager.Interfaces

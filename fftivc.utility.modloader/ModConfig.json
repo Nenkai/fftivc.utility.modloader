@@ -3,7 +3,7 @@
   "ModName": "FINAL FANTASY TACTICS - The Ivalice Chronicles Mod Loader",
   "ModAuthor": "Nenkai",
   "ModVersion": "1.0.0",
-  "ModDescription": "Mod loader for FINAL FANTASY TACTICS - The Ivalice Chronicles. Right click on this mod and 'Configure' to view options.\nModding Website - nenkai.github.io/ffxvi-modding/",
+  "ModDescription": "Mod loader for FINAL FANTASY TACTICS - The Ivalice Chronicles. Right click on this mod and 'Configure' to view options.",
   "ModDll": "fftivc.utility.modloader.dll",
   "ModIcon": "Preview.png",
   "ModR2RManagedDll32": "x86/fftivc.utility.modloader.dll",

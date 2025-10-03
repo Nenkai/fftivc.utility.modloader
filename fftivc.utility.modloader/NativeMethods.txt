@@ -1,3 +1,4 @@
 GetModuleHandle
 GetProcAddress
 GetUserDefaultLCID
+CreateProcess

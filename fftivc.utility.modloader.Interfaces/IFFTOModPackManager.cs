@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace fftivc.utility.modloader.Interfaces;
 
-namespace fftivc.utility.modloader.Interfaces;
-
-public interface IFF16ModPackManager
+public interface IFFTOModPackManager
 {
     /// <summary>
     /// Whether the mod pack manager is initialized.
@@ -37,7 +31,7 @@ public interface IFF16ModPackManager
     /// <summary>
     /// List of all modded files, which will be applied when the mod loader has loaded all mods.
     /// </summary>
-    public IReadOnlyDictionary<string, IFF16ModFile> ModdedFiles { get; }
+    public IReadOnlyDictionary<string, IFFTOModFile> ModdedFiles { get; }
 
     /// <summary>
     /// Initializes the mod pack manager.
@@ -79,7 +73,7 @@ public interface IFF16ModPackManager
     /// "l" - Movies, lower res<br/>
     /// </param>
     /// <returns>Whether the file was found.</returns>
-    public bool FileExists(string gamePath, string packSuffix = "");
+    public bool FileExists(FFTOGameMode gameMode, string gamePath, string packSuffix = "");
 
     /// <summary>
     /// Gets a game file (from base/vanilla packs).
@@ -105,7 +99,7 @@ public interface IFF16ModPackManager
     /// "l" - Movies, lower res<br/>
     /// </param>
     /// <returns></returns>
-    public byte[] GetFileData(string gamePath, string packSuffix = "");
+    public byte[] GetFileData(FFTOGameMode gameMode, string gamePath, string packSuffix = "");
 
     /// <summary>
     /// Adds a new mod file. The files will be applied when the mod loader has loaded all mods.<br/>
@@ -142,5 +136,5 @@ public interface IFF16ModPackManager
     /// </summary>
     /// <param name="gamePath">Game path.</param>
     /// <returns>Whether the file was found and removed.</returns>
-    public bool RemoveModdedFile(string gamePath);
+    public bool RemoveModdedFile(FFTOGameMode gameMode, string gamePath);
 }

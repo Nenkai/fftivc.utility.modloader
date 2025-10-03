@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace fftivc.utility.modloader.Interfaces;
 
-public enum FF16LocaleType
+public enum FFTOLocaleType
 {
     Japanese = 0,
     English = 1,
