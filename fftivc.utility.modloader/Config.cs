@@ -32,6 +32,12 @@ namespace fftivc.utility.modloader.Configuration
             "Removes the 'An unexpected error has occurred.' message on crash.")]
         [DefaultValue(true)]
         public bool RemoveExceptionHandler { get; set; } = true;
+
+        [Category("Debug")]
+        [DisplayName("Log G2D File Accesses")]
+        [Description("(Advanced users only) Whether to show G2D file accesses in the console.")]
+        [DefaultValue(false)]
+        public bool LogG2DFileAccesses { get; set; } = false;
     }
 
     /// <summary>

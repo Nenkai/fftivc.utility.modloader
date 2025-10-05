@@ -129,7 +129,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modPackManager = new FFTOModPackManager(_modConfig, _modLoader, _logger, _configuration, _gameVersion, _hooks!, _startupScanner!);
         _dataDir = Path.Combine(_appDir, "data");
 
-        if (!_modPackManager.Initialize(_dataDir, _tempDir))
+        FFTOGameMode gameMode = _modLoader.GetAppConfig().AppLocation.Contains("classic") ? FFTOGameMode.Classic : FFTOGameMode.Enhanced;
+        if (!_modPackManager.Initialize(_dataDir, _tempDir, gameMode))
         {
             _logger.WriteLine($"[{_modConfig.ModId}] Pack manager failed to initialize.", _logger.ColorRed);
             return;

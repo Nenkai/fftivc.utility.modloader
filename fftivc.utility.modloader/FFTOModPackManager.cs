@@ -24,6 +24,9 @@ using Reloaded.Hooks.Definitions;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using fftivc.utility.modloader.Hooks;
 using FF16Tools.Pack.Crypto;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using Reloaded.Hooks.Definitions.Structs;
 
 namespace fftivc.utility.modloader;
 
@@ -32,15 +35,19 @@ public class FFTOModPackManager : IFFTOModPackManager
     public const string MODDED_PACK_NAME = "modded";
 
     #region Private Fields
-    private IModConfig _modConfig;
-    private IModLoader _modLoader;
-    private Reloaded.Mod.Interfaces.ILogger _reloadedLogger;
-    private Config _configuration;
-    private ILoggerFactory _loggerFactory;
+    private readonly IModConfig _modConfig;
+    private readonly IModLoader _modLoader;
+    private readonly Reloaded.Mod.Interfaces.ILogger _reloadedLogger;
+    private readonly Config _configuration;
+    private readonly ILoggerFactory _loggerFactory;
+
+    private G2DManager _g2dManager;
     private FFTOResourceManagerHooks _resourcePackHooks;
 
-    private Dictionary<FFTOGameMode, Dictionary<string, ModPack>> _modPackFilesPerGameMode = new();
+    // All modded packs, per game mode.
+    private Dictionary<FFTOGameMode, Dictionary<string, ModPack>> _modPackFilesPerGameMode = [];
 
+    // All modded files.
     private Dictionary<string, IFFTOModFile> _moddedFiles = [];
 
     // Builders for each pack.
@@ -73,13 +80,13 @@ public class FFTOModPackManager : IFFTOModPackManager
     [MemberNotNullWhen(true, nameof(Initialized))]
     public string TempFolder { get; private set; }
 
-    /// <summary>
-    /// Whether the current game is FF16 Demo.
-    /// </summary>
-    public bool IsDemo { get; private set; }
-
     /// <inheritdoc//>
     public Version GameVersion { get; private set; }
+
+    /// <summary>
+    /// Game mode.
+    /// </summary>
+    public FFTOGameMode GameMode { get; set; }
 
     public IReadOnlyDictionary<string, IFFTOModFile> ModdedFiles => new ReadOnlyDictionary<string, IFFTOModFile>(_moddedFiles);
     #endregion
@@ -93,6 +100,7 @@ public class FFTOModPackManager : IFFTOModPackManager
         _configuration = configuration;
 
         _resourcePackHooks = new FFTOResourceManagerHooks(reloadedHooks, startupScanner, modConfig, logger);
+        _g2dManager = new G2DManager(configuration, modConfig, logger, reloadedHooks, startupScanner);
 
         _loggerFactory = LoggerFactory.Create(e => e.AddProvider(new R2LoggerToMSLoggerAdapterProvider(logger)));
 
@@ -100,13 +108,15 @@ public class FFTOModPackManager : IFFTOModPackManager
     }
 
     /// <inheritdoc/>
-    public bool Initialize(string dataDir, string tempFolder)
+    public bool Initialize(string dataDir, string tempFolder, FFTOGameMode initGameMode)
     {
         if (Initialized)
             throw new InvalidOperationException("Mod pack manager is already initialized.");
 
         ArgumentException.ThrowIfNullOrWhiteSpace(dataDir, nameof(dataDir));
         ArgumentException.ThrowIfNullOrWhiteSpace(tempFolder, nameof(tempFolder));
+
+        GameMode = initGameMode;
 
         try
         {
@@ -137,6 +147,7 @@ public class FFTOModPackManager : IFFTOModPackManager
         }
 
         _resourcePackHooks.SetupPackListHooks(dataDir);
+        _g2dManager.Initialize(GameMode);
 
         DataDirectory = dataDir;
         TempFolder = tempFolder;
@@ -243,6 +254,39 @@ public class FFTOModPackManager : IFFTOModPackManager
 
     private void AddModdedFileForGameType(string modId, string localPath, FFTOGameMode gameType, string relPath)
     {
+        // Check if it's a g2d file that we're overriding
+        string normalizedRelPath = FF16PackPathUtil.NormalizePath(relPath);
+        if (normalizedRelPath.StartsWith("system/ffto/g2d"))
+        {
+            string dirName = new FileInfo(localPath).Directory!.Name;
+            string? locale = null;
+            if (dirName.Contains('.'))
+            {
+                string[] dirSplit = dirName.Split('.');
+                if (dirSplit.Length == 2)
+                {
+                    if (dirSplit[1] == "en" || dirSplit[1] == "jp")
+                        locale = dirSplit[1];
+                }
+            }
+
+            string fileName = Path.GetFileNameWithoutExtension(normalizedRelPath);
+            string[] split = fileName.Split('_');
+            if (split.Length != 2 || split[0] != "tex")
+            {
+                PrintWarning($"{modId}: Skipping G2D mapping for '{relPath}' ({gameType}) from '{localPath}' as it does not start with 'tex_'.");
+                return;
+            }
+
+            if (!uint.TryParse(split[1], out uint fileIndex))
+            {
+                PrintWarning($"{modId}: Skipping G2D mapping for '{relPath}' ({gameType}) from '{localPath}' as file index could not be parsed from file name (should be tex_{{fileIndex}}).");
+                return;
+            }
+
+            _g2dManager.AddMapping(gameType, modId, fileIndex, localPath, locale);
+        }
+
         // Determine if it's a localized file.
         string[] spl = Path.GetFileName(relPath).Split('.');
         string packName = $"{MODDED_PACK_NAME}";

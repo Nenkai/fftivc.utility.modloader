@@ -8,11 +8,6 @@ public interface IFFTOModPackManager
     public bool Initialized { get; }
 
     /// <summary>
-    /// Whether the current game is FF16 Demo.
-    /// </summary>
-    public bool IsDemo { get; }
-
-    /// <summary>
     /// Game version. <br/>
     /// NOTE: Minor will always be 0. 1.02 will translate to 1.0.2, 1.99 will translate to 1.0.99.
     /// </summary>
@@ -38,9 +33,9 @@ public interface IFFTOModPackManager
     /// </summary>
     /// <param name="dataDir">Game directory containing pack files.</param>
     /// <param name="tempFolder">Temp folder to use.</param>
-    /// <param name="isDemo">Whether the game is demo.</param>
+    /// <param name="gameMode">Game mode.</param>
     /// <returns></returns>
-    public bool Initialize(string dataDir, string tempFolder);
+    public bool Initialize(string dataDir, string tempFolder, FFTOGameMode gameMode);
 
     /// <summary>
     /// Registers a mod directory and its contents. The files will be applied when the mod loader has loaded all mods.
