@@ -278,7 +278,7 @@ public class FFTOModPackManager : IFFTOModPackManager
                 return;
             }
 
-            if (!uint.TryParse(split[1], out uint fileIndex))
+            if (!int.TryParse(split[1], out int fileIndex))
             {
                 PrintWarning($"{modId}: Skipping G2D mapping for '{relPath}' ({gameType}) from '{localPath}' as file index could not be parsed from file name (should be tex_{{fileIndex}}).");
                 return;
