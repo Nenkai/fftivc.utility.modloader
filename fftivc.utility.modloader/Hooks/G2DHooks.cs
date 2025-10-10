@@ -42,7 +42,7 @@ public class G2DHooks
     private unsafe delegate void UnloadDelegate(CFILE_DAT* @this);
     private static IHook<UnloadDelegate>? UnloadHook;
 
-    public delegate byte[] OnRequestDecodeG2DDelegate(int fileIndex);
+    public delegate byte[]? OnRequestDecodeG2DDelegate(int fileIndex);
     private OnRequestDecodeG2DDelegate _onRequestDecodeCb;
 
     //public delegate G2DEntryInfo? OnRequestG2DFileEntryDelegate(uint fileIndex);

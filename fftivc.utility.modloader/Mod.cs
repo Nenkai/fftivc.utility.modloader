@@ -1,7 +1,11 @@
 ﻿using fftivc.utility.modloader.Configuration;
+using fftivc.utility.modloader.FileLists;
 using fftivc.utility.modloader.Hooks;
 using fftivc.utility.modloader.Interfaces;
+using fftivc.utility.modloader.Overrides;
 using fftivc.utility.modloader.Template;
+
+using Microsoft.Extensions.DependencyInjection;
 
 using Reloaded.Hooks.Definitions;
 using Reloaded.Hooks.Definitions.Structs;
@@ -68,8 +72,6 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
     private Version _gameVersion = new Version(1, 0, 0); // Default to 1.0.0.
     private string _dataDir;
 
-    private HashSet<IFFTOHook> _hookList;
-
     public Mod(ModContext context)
     {
         _modLoader = context.ModLoader;
@@ -95,6 +97,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             return;
         }
 
+        var provider = BuildServiceCollection();
+
         _appLocation = _modLoader.GetAppConfig().AppLocation;
         _appDir = Path.GetDirectoryName(_appLocation)!;
         _tempDir = Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "staging");
@@ -102,19 +106,11 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         CheckSteamAPIDll();
         GetGameVersion();
 
-
-        _hookList = [
-            new GameModeTransitionHooks(_hooks, _startupScanner, _modConfig, _logger),
-        ];
-
-        if (_configuration.DisableAntiDebugger)
-            _hookList.Add(new AntiAntiDebugHooks(_hooks, _startupScanner, _modConfig, _logger));
-
-        if (_configuration.RemoveExceptionHandler)
-            _hookList.Add(new ExceptionHandlerHooks(_hooks, _startupScanner, _modConfig, _logger));
-
-        foreach (var hook in _hookList)
+        IEnumerable<IFFTOCoreHook> coreHooks = provider.GetServices<IFFTOCoreHook>();
+        
+        foreach (var hook in coreHooks)
             hook.Install();
+        
 
         if (IsRunningUnpacked())
         {
@@ -126,11 +122,20 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             return;
         }
 
-        _modPackManager = new FFTOModPackManager(_modConfig, _modLoader, _logger, _configuration, _gameVersion, _hooks!, _startupScanner!);
+        _modPackManager = provider.GetRequiredService<FFTOModPackManager>();
         _dataDir = Path.Combine(_appDir, "data");
 
+        var fileList = provider.GetRequiredService<FFTPackFileList>();
+        if (!fileList.Load(_modLoader.GetDirectoryForModId(_modConfig.ModId)))
+        {
+            _logger.WriteLine($"[{_modConfig.ModId}] Failed to load file list. File mods will not be loaded!", _logger.ColorRed);
+            return;
+        }
+
         FFTOGameMode gameMode = _modLoader.GetAppConfig().AppLocation.Contains("classic") ? FFTOGameMode.Classic : FFTOGameMode.Enhanced;
-        if (!_modPackManager.Initialize(_dataDir, _tempDir, gameMode))
+
+        IEnumerable<IModdedFileOverrideStrategy> overrideStrategies = provider.GetServices<IModdedFileOverrideStrategy>();
+        if (!_modPackManager.Initialize(_dataDir, _tempDir, gameMode, _gameVersion, overrideStrategies))
         {
             _logger.WriteLine($"[{_modConfig.ModId}] Pack manager failed to initialize.", _logger.ColorRed);
             return;
@@ -139,6 +144,43 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modLoader.AddOrReplaceController<IFFTOModPackManager>(_owner, _modPackManager);
         _modLoader.ModLoading += ModLoading;
         _modLoader.OnModLoaderInitialized += OnAllModsLoaded;
+    }
+
+    private IServiceProvider BuildServiceCollection()
+    {
+        ServiceCollection services = new ServiceCollection();
+
+        services
+            // R2 Primitives
+            .AddSingleton(_modConfig)
+            .AddSingleton(_modLoader)
+            .AddSingleton(_hooks!)
+            .AddSingleton(_startupScanner!)
+            .AddSingleton(_configuration)
+            .AddSingleton(_logger)
+
+            // Stuff relevant to us
+            .AddSingleton<FFTOModPackManager>()
+            .AddSingleton<FFTPackFileList>()
+
+
+            // Hooks
+            .AddSingleton<LanguageManagerHooks>()
+            .AddSingleton<IFFTOCoreHook, GameModeTransitionHooks>()
+            .AddSingleton<IFFTOCoreHook, AntiAntiDebugHooks>()
+            .AddSingleton<IFFTOCoreHook, ExceptionHandlerHooks>()
+            .AddSingleton<IFFTOCoreHook>(sp => sp.GetRequiredService<LanguageManagerHooks>())
+
+            .AddSingleton<FFTOResourceManagerHooks>()
+            .AddSingleton<FFTPackHooks>()
+            .AddSingleton<G2DHooks>()
+
+            // File overrides
+            .AddSingleton<IModdedFileOverrideStrategy, FFTPackFileOverrideStrategy>()
+            .AddSingleton<IModdedFileOverrideStrategy, G2DFileOverrideStrategy>();
+
+
+        return services.BuildServiceProvider();
     }
 
     private void CheckSteamAPIDll()
@@ -181,7 +223,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
 
     private void ModLoading(IModV1 mod, IModConfigV1 modConfig)
     {
-        var modDir = Path.Combine(_modLoader.GetDirectoryForModId(modConfig.ModId), @"FFTIVC/data");
+        var modDir = Path.Combine(_modLoader.GetDirectoryForModId(modConfig.ModId), "FFTIVC", "data");
         if (!Directory.Exists(modDir))
             return;
 

@@ -1,45 +1,91 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using fftivc.utility.modloader.Configuration;
+using fftivc.utility.modloader.Hooks;
+using fftivc.utility.modloader.Interfaces;
 
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
-using Reloaded.Mod.Loader.IO.Config;
 
-using fftivc.utility.modloader.Configuration;
-using fftivc.utility.modloader.Hooks;
-using fftivc.utility.modloader.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.AccessControl;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace fftivc.utility.modloader;
+using Vortice.Win32;
 
-public class G2DManager
+namespace fftivc.utility.modloader.Overrides;
+
+/// <summary>
+/// Strategy for overriding g2d.dat file loads.
+/// </summary>
+internal class G2DFileOverrideStrategy : IModdedFileOverrideStrategy
 {
     private readonly ILogger _logger;
     private readonly IModConfig _modConfig;
-    private G2DHooks _g2dHooks;
+    private readonly G2DHooks _g2dHooks;
+    private readonly LanguageManagerHooks _languageManagerHooks;
 
     // I needlessly implemented locale handling because there's two g2d's in classic, one for ja and one for en.
     // Turns out classic doesn't call them at all. Oops. Oh well.
     private FFTOGameMode _currentGameMode;
 
-    private string _currentLocale = string.Empty;
     private Dictionary<FFTOGameMode, Dictionary<string /* locale */, G2DModdedFileRegistry>> GameModeToModdedFiles { get; set; } = [];
 
-    public G2DManager(Config config, IModConfig modConfig, ILogger logger, IReloadedHooks reloadedHooks, IStartupScanner startupScanner)
+    public G2DFileOverrideStrategy(G2DHooks g2dHooks, LanguageManagerHooks languageManagerHooks, Config config, IModConfig modConfig, ILogger logger)
     {
         _modConfig = modConfig;
         _logger = logger;
-
-        _g2dHooks = new G2DHooks(config, reloadedHooks, startupScanner, modConfig, logger);
+        _g2dHooks = g2dHooks;
+        _languageManagerHooks = languageManagerHooks;
     }
 
     public void Initialize(FFTOGameMode gameMode)
     {
         _currentGameMode = gameMode;
         _g2dHooks.Install(OnFetchG2DFile);
+    }
+
+    public bool Matches(string fileName)
+    {
+        return fileName.StartsWith("system/ffto/g2d/");
+    }
+
+    public bool ReplacesFileSystemFile()
+    {
+        return false;
+    }
+
+    public void Apply(FFTOGameMode gameType, string modId, string gamePath, string localPath)
+    {
+        string dirName = new FileInfo(gamePath).Directory!.Name;
+        string? locale = null;
+        if (dirName.Contains('.'))
+        {
+            string[] dirSplit = dirName.Split('.');
+            if (dirSplit.Length == 2)
+            {
+                if (dirSplit[1] == "en" || dirSplit[1] == "jp")
+                    locale = dirSplit[1];
+            }
+        }
+
+        string fileName = Path.GetFileNameWithoutExtension(gamePath);
+        string[] split = fileName.Split('_');
+        if (split.Length != 2 || split[0] != "tex")
+        {
+            _logger.WriteLine($"{modId}: Skipping G2D mapping for '{fileName}' ({gameType}) from '{localPath}' as it does not start with 'tex_'.", Color.Yellow);
+            return;
+        }
+
+        if (!int.TryParse(split[1], out int fileIndex))
+        {
+            _logger.WriteLine($"{modId}: Skipping G2D mapping for '{fileName}' ({gameType}) from '{localPath}' as file index could not be parsed from file name (should be tex_{{fileIndex}}).", Color.Yellow);
+            return;
+        }
+
+        AddRedirectToLocalFile(gameType, modId, fileIndex, localPath, locale);
     }
 
     /// <summary>
@@ -50,7 +96,7 @@ public class G2DManager
     /// <param name="fileIndex">File index target to override.</param>
     /// <param name="localFilePath">Location of the file on disk to override with.</param>
     /// <param name="locale">Locale to override. Can be left empty (for enhanced), otherwise 'ja' or 'en' for classic.</param>
-    public void AddMapping(FFTOGameMode gameMode, string modIdOwner, int fileIndex, string localFilePath, string? locale)
+    private void AddRedirectToLocalFile(FFTOGameMode gameMode, string modIdOwner, int fileIndex, string localFilePath, string? locale)
     {
         ArgumentException.ThrowIfNullOrEmpty(modIdOwner, nameof(modIdOwner));
         ArgumentException.ThrowIfNullOrEmpty(localFilePath, nameof(localFilePath));
@@ -93,26 +139,26 @@ public class G2DManager
     /// <returns></returns>
     public unsafe byte[]? OnFetchG2DFile(int fileIndex)
     {
+        string languagePrefix = _languageManagerHooks.CurrentLocale == FFTOLocaleType.Japanese ? "jp" : "en";
+
         if (GameModeToModdedFiles.TryGetValue(_currentGameMode, out Dictionary<string, G2DModdedFileRegistry>? filesForGameMode) &&
-          filesForGameMode.TryGetValue(_currentLocale, out G2DModdedFileRegistry? localeRegistry) &&
+          filesForGameMode.TryGetValue(languagePrefix, out G2DModdedFileRegistry? localeRegistry) &&
           localeRegistry.ModdedFiles.TryGetValue(fileIndex, out G2DModdedFileEntry? entry))
         {
-            if (!_cachedFileBuffers.TryGetValue((int)fileIndex, out byte[]? cachedBuffer))
+            if (!_cachedFileBuffers.TryGetValue(fileIndex, out byte[]? cachedBuffer))
             {
-                byte[] fileData = File.ReadAllBytes(entry.LocalFilePath);
-                _cachedFileBuffers[(int)fileIndex] = fileData;
+                cachedBuffer = File.ReadAllBytes(entry.LocalFilePath);
+                _cachedFileBuffers[fileIndex] = cachedBuffer;
             }
 
-            if (_cachedFileBuffers.TryGetValue((int)fileIndex, out cachedBuffer))
-            {
-                return cachedBuffer;
-            }
+            return cachedBuffer;
         }
 
         // Not found so return null, let the original function handle it.
         return null;
     }
 
+    /*
     public G2DEntryInfo? GetG2DEntry(int fileIndex)
     {
         if (GameModeToModdedFiles.TryGetValue(_currentGameMode, out Dictionary<string, G2DModdedFileRegistry>? filesForGameMode) &&
@@ -131,7 +177,7 @@ public class G2DManager
 
         return null;
     }
-
+    */
 }
 
 public class G2DModdedFileRegistry

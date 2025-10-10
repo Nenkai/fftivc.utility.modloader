@@ -18,7 +18,10 @@ using Windows.Win32.System.Threading;
 
 namespace fftivc.utility.modloader.Hooks;
 
-public class GameModeTransitionHooks : IFFTOHook
+/// <summary>
+/// Handles transitions between enhanced<->classic such that Reloaded-II is restarted for injection.
+/// </summary>
+public class GameModeTransitionHooks : IFFTOCoreHook
 {
     private ILogger _logger;
     private IModConfig _modConfig;
@@ -72,11 +75,11 @@ public class GameModeTransitionHooks : IFFTOHook
         nint bInheritHandles, PROCESS_CREATION_FLAGS dwCreationFlags,
         void* lpEnvironment, string lpCurrentDirectory, STARTUPINFOW* lpStartupInfo, PROCESS_INFORMATION* lpProcessInformation)
     {
-        string commandLine = Marshal.PtrToStringAnsi((nint)lpCommandLine);
+        string commandLine = Marshal.PtrToStringAnsi((nint)lpCommandLine)!;
 
         int exeExtIndex = commandLine.IndexOf(".exe") + 4;
         string exeToLaunch = commandLine.Substring(0, exeExtIndex);
-        string argumentsOnly = commandLine.Substring(exeExtIndex, commandLine.Length - exeExtIndex);
+        string argumentsOnly = commandLine.Substring(exeExtIndex);
 
         var config = IConfig<LoaderConfig>.FromPathOrDefault(Paths.LoaderConfigPath);
         if (config is null)
@@ -103,12 +106,14 @@ public class GameModeTransitionHooks : IFFTOHook
                     UseShellExecute = false,
                     WorkingDirectory = Path.GetDirectoryName(config.LauncherPath),
                 });
-                process.OutputDataReceived += (s, e) => _logger.WriteLine($"[{_modConfig.ModId}] [Launcher] {e.Data}");
+
+                if (process is not null)
+                    process.OutputDataReceived += (s, e) => _logger.WriteLine($"[{_modConfig.ModId}] [Launcher] {e.Data}");
                 return 1;
             }
         }
 
-        MessageBox.Show($"Failed to locate application config for {exeToLaunch}. \nAre both enhanced & classic executables registered in Reloaded-II?", "Reloaded-II FFTIVC Mod Loader", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show($"Failed to locate application config for {exeToLaunch}.\nAre both enhanced & classic executables registered in Reloaded-II?", "Reloaded-II FFTIVC Mod Loader", MessageBoxButtons.OK, MessageBoxIcon.Error);
         return 0;
     }
 }

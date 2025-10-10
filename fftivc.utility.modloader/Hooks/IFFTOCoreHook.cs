@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace fftivc.utility.modloader.Hooks;
 
-public interface IFFTOHook
+public interface IFFTOCoreHook
 {
     public void Install();
 }

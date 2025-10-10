@@ -28,6 +28,7 @@ public interface IFFTOModPackManager
     /// </summary>
     public IReadOnlyDictionary<string, IFFTOModFile> ModdedFiles { get; }
 
+    /*
     /// <summary>
     /// Initializes the mod pack manager.
     /// </summary>
@@ -36,6 +37,7 @@ public interface IFFTOModPackManager
     /// <param name="gameMode">Game mode.</param>
     /// <returns></returns>
     public bool Initialize(string dataDir, string tempFolder, FFTOGameMode gameMode);
+    */
 
     /// <summary>
     /// Registers a mod directory and its contents. The files will be applied when the mod loader has loaded all mods.

@@ -1,4 +1,6 @@
-﻿using Reloaded.Hooks.Definitions;
+﻿using fftivc.utility.modloader.Configuration;
+
+using Reloaded.Hooks.Definitions;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
@@ -19,18 +21,20 @@ using Windows.Win32.System.Threading;
 
 namespace fftivc.utility.modloader.Hooks;
 
-public class AntiAntiDebugHooks : IFFTOHook
+public class AntiAntiDebugHooks : IFFTOCoreHook
 {
+    private readonly Config _config;
     private ILogger _logger;
     private IModConfig _modConfig;
-    private IStartupScanner? _startupScanner;
-    private IReloadedHooks? _hooks;
+    private IStartupScanner _startupScanner;
+    private IReloadedHooks _hooks;
 
     private delegate void ExceptionDelegate(nint value);
     private static IHook<ExceptionDelegate>? ExceptionHook;
 
-    public AntiAntiDebugHooks(IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
+    public AntiAntiDebugHooks(Config configuration, IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
     {
+        _config = configuration;
         _logger = logger;
         _modConfig = modConfig;
 
@@ -40,6 +44,12 @@ public class AntiAntiDebugHooks : IFFTOHook
 
     public void Install()
     {
+        if (!_config.DisableAntiDebugger)
+        {
+            _logger.WriteLine($"[{_modConfig.ModId}] Not disabling anti-debug as per configuration.", _logger.ColorYellowLight);
+            return;
+        }
+
         _logger.WriteLine($"[{_modConfig.ModId}] Attempting to disable anti-debug..");
 
         var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
@@ -47,13 +57,18 @@ public class AntiAntiDebugHooks : IFFTOHook
         // App entrypoint IsDebuggerPresent check.
         _startupScanner.AddMainModuleScan("FF 15 ?? ?? ?? ?? 85 C0 74 ?? 33 C0 E9", (e) =>
         {
-            nuint currentAddress = (nuint)(processAddress + e.Offset);
-            WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90, 0x90]);          // FF 15 43 49 8C 00 - call    cs:IsDebuggerPresent
-            WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 85 C0             - test    eax, eax
-            WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 74 07             - jz      short loc_7FF63BD62BB0
-            WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 33 C0             - xor     eax, eax
-            WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90]);                // E9 76 01 00 00    - jmp     loc_7FF63BD62D26
-            _logger.WriteLine($"[{_modConfig.ModId}] Entrypoint anti-debug neutralized.", _logger.ColorGreenLight);
+            if (e.Found)
+            {
+                nuint currentAddress = (nuint)(processAddress + e.Offset);
+                WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90, 0x90]);          // FF 15 43 49 8C 00 - call    cs:IsDebuggerPresent
+                WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 85 C0             - test    eax, eax
+                WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 74 07             - jz      short loc_7FF63BD62BB0
+                WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 33 C0             - xor     eax, eax
+                WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90]);                // E9 76 01 00 00    - jmp     loc_7FF63BD62D26
+                _logger.WriteLine($"[{_modConfig.ModId}] Entrypoint anti-debug neutralized.", _logger.ColorGreenLight);
+            }
+            else
+                _logger.WriteLine($"[{_modConfig.ModId}] Unable to neutralize anti-debug - signature 1 not found.", _logger.ColorRed);
         });
 
         // Update loop anti-debug check.
@@ -74,17 +89,22 @@ public class AntiAntiDebugHooks : IFFTOHook
             // return g_AppPlatform->DebuggerDetected == 0;
 
             // nop the check.
-            nuint currentAddress = (nuint)(processAddress + e.Offset);
-            WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90, 0x90]);          // FF 15 13 65 8C 00    - call    cs:IsDebuggerPresent
-            WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 85 C0                - test    eax, eax
-            WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90, 0x90]);          // 0F 85 0D 01 00 00    - jnz     loc_7FF63BD610EA
-            WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90]);    // 48 8B 0D 8C 26 D9 01 - mov     rcx, cs:g_GraphicsSystem
-            WriteBytes(ref currentAddress, [0x90, 0x90, 0x90]);                            // 48 85 C9             - test    rcx, rcx
-            WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 74 0D                - jz      short loc_7FF63BD60FF6
-            WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90]);                // E8 32 8B 07 00       - call    GraphicsSystem__CheckGraphcsCapturer
-            WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 84 C0                - test    al, al
-            WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90, 0x90]);          // 0F 85 F4 00 00 00    - jnz     loc_7FF63BD610EA
-            _logger.WriteLine($"[{_modConfig.ModId}] Update loop anti-Debug neutralized.", _logger.ColorGreenLight);
+            if (e.Found)
+            {
+                nuint currentAddress = (nuint)(processAddress + e.Offset);
+                WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90, 0x90]);          // FF 15 13 65 8C 00    - call    cs:IsDebuggerPresent
+                WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 85 C0                - test    eax, eax
+                WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90, 0x90]);          // 0F 85 0D 01 00 00    - jnz     loc_7FF63BD610EA
+                WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90]);    // 48 8B 0D 8C 26 D9 01 - mov     rcx, cs:g_GraphicsSystem
+                WriteBytes(ref currentAddress, [0x90, 0x90, 0x90]);                            // 48 85 C9             - test    rcx, rcx
+                WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 74 0D                - jz      short loc_7FF63BD60FF6
+                WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90]);                // E8 32 8B 07 00       - call    GraphicsSystem__CheckGraphcsCapturer
+                WriteBytes(ref currentAddress, [0x90, 0x90]);                                  // 84 C0                - test    al, al
+                WriteBytes(ref currentAddress, [0x90, 0x90, 0x90, 0x90, 0x90, 0x90]);          // 0F 85 F4 00 00 00    - jnz     loc_7FF63BD610EA
+                _logger.WriteLine($"[{_modConfig.ModId}] Update loop anti-debug neutralized.", _logger.ColorGreenLight);
+            }
+            else
+                _logger.WriteLine($"[{_modConfig.ModId}] Unable to neutralize anti-debug - signature 2 not found.", _logger.ColorRed);
         });
     }
 

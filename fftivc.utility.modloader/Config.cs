@@ -38,6 +38,12 @@ namespace fftivc.utility.modloader.Configuration
         [Description("(Advanced users only) Whether to show G2D file accesses in the console.")]
         [DefaultValue(false)]
         public bool LogG2DFileAccesses { get; set; } = false;
+
+        [Category("Debug")]
+        [DisplayName("Log FFTPack File Accesses")]
+        [Description("(Advanced users only) Whether to show FFTPack.bin file accesses in the console.")]
+        [DefaultValue(false)]
+        public bool LogFFTPackFileAccesses { get; set; } = false;
     }
 
     /// <summary>

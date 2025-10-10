@@ -1,4 +1,6 @@
-﻿using Reloaded.Hooks.Definitions;
+﻿using fftivc.utility.modloader.Configuration;
+
+using Reloaded.Hooks.Definitions;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 using Reloaded.Mod.Loader.IO;
@@ -18,8 +20,9 @@ using Windows.Win32.System.Threading;
 
 namespace fftivc.utility.modloader.Hooks;
 
-public class ExceptionHandlerHooks : IFFTOHook
+public class ExceptionHandlerHooks : IFFTOCoreHook
 {
+    private Config _configuation;
     private ILogger _logger;
     private IModConfig _modConfig;
     private IStartupScanner? _startupScanner;
@@ -28,8 +31,9 @@ public class ExceptionHandlerHooks : IFFTOHook
     private delegate void ExceptionDelegate(nint value);
     private static IHook<ExceptionDelegate>? ExceptionHook;
 
-    public ExceptionHandlerHooks(IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
+    public ExceptionHandlerHooks(Config configuration, IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
     {
+        _configuation = configuration;
         _logger = logger;
         _modConfig = modConfig;
 
@@ -39,6 +43,12 @@ public class ExceptionHandlerHooks : IFFTOHook
 
     public void Install()
     {
+        if (!_configuation.RemoveExceptionHandler)
+        {
+            _logger.WriteLine($"[{_modConfig.ModId}] Not removing default exception handler as per configuration", _logger.ColorYellowLight);
+            return;
+        }
+
         _logger.WriteLine($"[{_modConfig.ModId}] Installing SetUnhandledExceptionFilter hook to prevent game from installing it..");
 
         var kernel32 = PInvoke.GetModuleHandle("kernel32.dll");

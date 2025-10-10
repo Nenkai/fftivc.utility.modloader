@@ -14,10 +14,10 @@ namespace fftivc.utility.modloader.Hooks;
 
 public class FFTOResourceManagerHooks
 {
-    private ILogger _logger;
-    private IModConfig _modConfig;
-    private IStartupScanner? _startupScanner;
-    private IReloadedHooks? _hooks;
+    private readonly ILogger _logger;
+    private readonly IModConfig _modConfig;
+    private readonly IStartupScanner? _startupScanner;
+    private readonly IReloadedHooks? _hooks;
 
     private unsafe delegate int RegisterPackListDelegate(/* faith::Resource::ResourceManager */ void* @this);
     private static IHook<RegisterPackListDelegate>? RegisterPackListHook;
@@ -39,7 +39,7 @@ public class FFTOResourceManagerHooks
     /// <summary>
     /// Hooks the functions that specify which packs to load, to also load our own.
     /// </summary>
-    public unsafe void SetupPackListHooks(string dataDir)
+    public unsafe void Install(string dataDir)
     {
         _dataDir = dataDir;
 
@@ -49,16 +49,26 @@ public class FFTOResourceManagerHooks
         // FFT: 48 89 5C 24 ?? 48 89 74 24 ?? 48 89 7C 24 ?? 55 48 8B EC 48 81 EC ?? ?? ?? ?? 48 8D 05
         _startupScanner!.AddMainModuleScan("48 89 5C 24 ?? 48 89 74 24 ?? 48 89 7C 24 ?? 55 48 8B EC 48 81 EC ?? ?? ?? ?? 48 8D 05", (e) =>
         {
-            _logger.WriteLine($"[{_modConfig.ModId}] Hooked RegisterPackList @ 0x{processAddress + e.Offset:X}");
-            RegisterPackListHook = _hooks!.CreateHook<RegisterPackListDelegate>(RegisterPackListImpl, processAddress + e.Offset).Activate();
+            if (e.Found)
+            {
+                _logger.WriteLine($"[{_modConfig.ModId}] Hooked RegisterPackList @ 0x{processAddress + e.Offset:X}");
+                RegisterPackListHook = _hooks!.CreateHook<RegisterPackListDelegate>(RegisterPackListImpl, processAddress + e.Offset).Activate();
+            }
+            else
+                _logger.WriteLine($"[{_modConfig.ModId}] Unable to hook RegisterPackList - signature not found.", _logger.ColorRed);
         });
 
         // FFXVI: 48 89 5C 24 ?? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ?? ?? ?? ?? B8 ?? ?? ?? ?? E8 ?? ?? ?? ?? 48 2B E0 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 85 ?? ?? ?? ?? 4C 8B E9
         // FFT: 48 89 5C 24 ?? 55 56 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 44 24 ?? 48 8B F9
         _startupScanner!.AddMainModuleScan("48 89 5C 24 ?? 55 56 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 44 24 ?? 48 8B F9", (e) =>
         {
-            _logger.WriteLine($"[{_modConfig.ModId}] Found RegisterPack @ 0x{processAddress + e.Offset:X}");
-            RegisterPackWrapper = _hooks!.CreateWrapper<RegisterPackDelegate>(processAddress + e.Offset, out nint wrapperAddress);
+            if (e.Found)
+            {
+                _logger.WriteLine($"[{_modConfig.ModId}] Found RegisterPack @ 0x{processAddress + e.Offset:X}");
+                RegisterPackWrapper = _hooks!.CreateWrapper<RegisterPackDelegate>(processAddress + e.Offset, out nint wrapperAddress);
+            }
+            else
+                _logger.WriteLine($"[{_modConfig.ModId}] Unable to hook RegisterPack - signature not found.", _logger.ColorRed);
         });
     }
 
