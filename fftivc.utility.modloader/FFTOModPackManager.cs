@@ -162,36 +162,28 @@ public class FFTOModPackManager : IFFTOModPackManager
     }
 
     /// <inheritdoc/>
-    public byte[] GetFileData(FFTOGameMode gameMode, string gamePath, string packSuffix = "")
+    public byte[] GetFileData(FFTOGameMode gameMode, string gamePath)
     {
+        if (gameMode != FFTOGameMode.Enhanced && gameMode != FFTOGameMode.Classic)
+            throw new InvalidOperationException("Game mode may only be Enhanced, or Classic.");
+
         if (PackManagers is null)
             throw new InvalidOperationException("Unable to get file data - pack manager is not initialized.");
-
-        if (!string.IsNullOrWhiteSpace(packSuffix))
-        {
-            if (FF16PackPathUtil.TryGetPackNameForPath(gamePath, out string? packName, out _))
-                return PackManagers[gameMode].GetFileDataBytesFromPack(gamePath, $"{packName}.{packSuffix}");
-            else // whatever, put in 0000
-                return PackManagers[gameMode].GetFileDataBytesFromPack(gamePath, $"0000.{packSuffix}");
-        }
 
         return PackManagers[gameMode].GetFileDataBytes(gamePath);
     }
 
     /// <inheritdoc/>
-    public bool FileExists(FFTOGameMode gameMode, string gamePath, string packSuffix = "")
+    public bool FileExists(FFTOGameMode gameMode, string gamePath)
     {
+        if (gameMode != FFTOGameMode.Enhanced && gameMode != FFTOGameMode.Classic)
+            throw new InvalidOperationException("Game mode may only be Enhanced, or Classic.");
+
         if (PackManagers is null)
             throw new InvalidOperationException("Unable to get file data - pack manager is not initialized.");
 
         if (!PackManagers.TryGetValue(gameMode, out FF16PackManager? packManager))
             return false;
-
-        if (!string.IsNullOrWhiteSpace(packSuffix))
-        {
-            if (FF16PackPathUtil.TryGetPackNameForPath(gamePath, out string? packName, out _))
-                return packManager.GetFileInfoFromPack(gamePath, $"{packName}.{packSuffix}") != null;
-        }
 
         return packManager.GetFileInfo(gamePath) is not null;
     }
@@ -211,7 +203,7 @@ public class FFTOModPackManager : IFFTOModPackManager
     }
 
     /// <inheritdoc/>
-    public void AddModdedFile(string modId, string gamePath, byte[] data)
+    public void AddModdedFile(string modId, string gamePath, byte[] data, FFTOModdedFileAddOptions? options = default)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(modId, nameof(modId));
         ArgumentException.ThrowIfNullOrWhiteSpace(gamePath, nameof(gamePath));
@@ -229,13 +221,14 @@ public class FFTOModPackManager : IFFTOModPackManager
     }
 
     /// <inheritdoc/>
-    public void AddModdedFile(string modId, string baseDataDir, string localPath)
+    public void AddModdedFile(string modId, string baseDataDir, string localPath, FFTOModdedFileAddOptions? options = default)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(modId, nameof(modId));
         ArgumentException.ThrowIfNullOrWhiteSpace(localPath, nameof(localPath));
 
         ThrowIfNotInitialized();
 
+        bool bypassingOverrideStrategy = options?.BypassOverrideStrategies ?? false;
         foreach (var gameType in new List<FFTOGameMode>() { FFTOGameMode.Enhanced, FFTOGameMode.Classic, FFTOGameMode.Combined })
         {
             string gameTypeDirName = GameModeToDirectoryName(gameType);
@@ -249,28 +242,32 @@ public class FFTOModPackManager : IFFTOModPackManager
             string relPath = Path.GetRelativePath(baseGameTypeDir, localPath);
             if (gameType == FFTOGameMode.Combined)
             {
-                AddModdedFileForGameType(modId, localPath, FFTOGameMode.Classic, relPath);
-                AddModdedFileForGameType(modId, localPath, FFTOGameMode.Enhanced, relPath);
+                AddModdedFileForGameType(modId, localPath, FFTOGameMode.Classic, relPath, bypassingOverrideStrategy);
+                AddModdedFileForGameType(modId, localPath, FFTOGameMode.Enhanced, relPath, bypassingOverrideStrategy);
             }
             else
-                AddModdedFileForGameType(modId, localPath, gameType, relPath);
+                AddModdedFileForGameType(modId, localPath, gameType, relPath, bypassingOverrideStrategy);
         }
     }
 
-    private void AddModdedFileForGameType(string modId, string localPath, FFTOGameMode gameType, string relPath)
+    private void AddModdedFileForGameType(string modId, string localPath, FFTOGameMode gameType, string relPath, bool shouldBypassOverrideStrategy = false)
     {
         string normalizedRelPath = FF16PackPathUtil.NormalizePath(relPath);
 
-        foreach (var overrideStrategy in _overrideStrategies)
+        if (!shouldBypassOverrideStrategy)
         {
-            if (overrideStrategy.Matches(normalizedRelPath))
+            foreach (var overrideStrategy in _overrideStrategies)
             {
-                overrideStrategy.Apply(gameType, modId, normalizedRelPath, localPath);
-                if (!overrideStrategy.ReplacesFileSystemFile())
-                    return;
+                if (overrideStrategy.Matches(normalizedRelPath))
+                {
+                    overrideStrategy.Apply(gameType, modId, normalizedRelPath, localPath);
+                    if (!overrideStrategy.ReplacesFileSystemFile())
+                        return;
+                }
             }
         }
-
+        else
+            Print($"{modId}: Bypassing file override strategy for {relPath} ({gameType}).");
 
         // Determine if it's a localized file.
         string[] spl = Path.GetFileName(relPath).Split('.');

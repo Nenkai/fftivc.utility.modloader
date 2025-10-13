@@ -9,6 +9,11 @@ namespace fftivc.utility.modloader.Interfaces;
 public interface IFFTOModFile
 {
     /// <summary>
+    /// Game type for which this file belongs to.
+    /// </summary>
+    public FFTOGameMode GameMode { get; set; }
+
+    /// <summary>
     /// Mod id that owns this modded file.
     /// </summary>
     public string ModIdOwner { get; }

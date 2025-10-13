@@ -50,83 +50,35 @@ public interface IFFTOModPackManager
     /// Returns whether a game file exists (from base/vanilla packs).
     /// </summary>
     /// <param name="gamePath">Game path, e.g 'nxd/photocameraparam.nxd'</param>
-    /// <param name="packSuffix">Pack suffix, usually language, if applicable. If not provided, the first match will be returned.
-    /// One of:<br/>
-    /// "ar" - Arabic<br/>
-    /// "cs" - Simplified Chinese<br/>
-    /// "ct" - Traditional Chinese<br/>
-    /// "de" - German<br/>
-    /// "en" - English<br/>
-    /// "es" - Spanish<br/>
-    /// "fr" - French<br/>
-    /// "it" - Italian<br/>
-    /// "ja" - Japanese<br/>
-    /// "ko" - Korean<br/>
-    /// "ls" - Latin American Spanish<br/>
-    /// "pb" - Portuguese<br/>
-    /// "pl" - Polish<br/>
-    /// "ru" - Russian<br/>
-    /// "h" - Movies, higher res<br/>
-    /// "l" - Movies, lower res<br/>
-    /// </param>
     /// <returns>Whether the file was found.</returns>
-    public bool FileExists(FFTOGameMode gameMode, string gamePath, string packSuffix = "");
+    public bool FileExists(FFTOGameMode gameMode, string gamePath);
 
     /// <summary>
     /// Gets a game file (from base/vanilla packs).
     /// </summary>
-    /// <param name="gamePath">Game path, e.g 'nxd/photocameraparam.nxd'</param>
-    /// <param name="packSuffix">Pack suffix, usually language, if applicable. If not provided, the first match will be returned.
-    /// One of:<br/>
-    /// "ar" - Arabic<br/>
-    /// "cs" - Simplified Chinese<br/>
-    /// "ct" - Traditional Chinese<br/>
-    /// "de" - German<br/>
-    /// "en" - English<br/>
-    /// "es" - Spanish<br/>
-    /// "fr" - French<br/>
-    /// "it" - Italian<br/>
-    /// "ja" - Japanese<br/>
-    /// "ko" - Korean<br/>
-    /// "ls" - Latin American Spanish<br/>
-    /// "pb" - Portuguese<br/>
-    /// "pl" - Polish<br/>
-    /// "ru" - Russian<br/>
-    /// "h" - Movies, higher res<br/>
-    /// "l" - Movies, lower res<br/>
-    /// </param>
+    /// <param name="gameMode">Game type.</param>
+    /// <param name="gamePath">Game path, e.g 'nxd/ui.en.nxd'</param>
     /// <returns></returns>
-    public byte[] GetFileData(FFTOGameMode gameMode, string gamePath, string packSuffix = "");
+    public byte[] GetFileData(FFTOGameMode gameMode, string gamePath);
 
     /// <summary>
     /// Adds a new mod file. The files will be applied when the mod loader has loaded all mods.<br/>
     /// NOTE: This will copy the file on disk temporarily.
     /// </summary>
     /// <param name="modId">Mod Id.</param>
-    /// <param name="gamePath">File path.
-    /// <br>Examples:</br>
-    /// <code>
-    /// "0007/nxd/gamemap.nxd" -> Pack 0007, path = nxd/gamemap.nxd
-    /// "nxd/en/ui.nxd" -> Pack 0007.en, path = nxd/ui.nxd
-    /// "system/graphics/atmosphere/texture/endof/tsinglemie_atms.tex" -> Pack 0028, path = system/graphics/atmosphere/texture/endof/tsinglemie_atms.tex
-    /// </code></param>
+    /// <param name="gamePath">File path.</param>
     /// <param name="file">File bytes.</param>
-    public void AddModdedFile(string modId, string gamePath, byte[] file);
+    /// <param name="options">Additional options.</param>
+    public void AddModdedFile(string modId, string gamePath, byte[] file, FFTOModdedFileAddOptions? options = default);
 
     /// <summary>
     /// Adds a new mod file. The files will be applied when the mod loader has loaded all mods.
     /// </summary>
     /// <param name="modId">Mod Id.</param>
     /// <param name="baseDir">Mod contents base directory (normally this points to the mod's FFXVI/data).</param>
-    /// <param name="localPath">Local path to the file. If it starts with a pack name (relative to baseDir), it will determine the pack name.
-    /// <br>Examples:</br>
-    /// <code>
-    /// "baseDir/0007/nxd/gamemap.nxd" -> Pack 0007, path = nxd/gamemap.nxd
-    /// "baseDir/nxd/en/ui.nxd" -> Pack 0007.en, path = nxd/ui.nxd
-    /// "baseDir/system/graphics/atmosphere/texture/endof/tsinglemie_atms.tex" -> Pack 0028, path = system/graphics/atmosphere/texture/endof/tsinglemie_atms.tex
-    /// </code>
-    /// </param>
-    public void AddModdedFile(string modId, string baseDir, string localPath);
+    /// <param name="localPath">Local path to the file. If it starts with a pack name (relative to baseDir), it will determine the pack name.</param>
+    /// <param name="options">Additional options.</param>
+    public void AddModdedFile(string modId, string baseDir, string localPath, FFTOModdedFileAddOptions? options = default);
 
     /// <summary>
     /// Removes a modded file.

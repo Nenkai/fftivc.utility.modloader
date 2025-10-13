@@ -8,7 +8,18 @@ namespace fftivc.utility.modloader.Interfaces;
 
 public enum FFTOGameMode
 {
+    /// <summary>
+    /// Classic mode.
+    /// </summary>
     Classic,
+
+    /// <summary>
+    /// Enhanced mode.
+    /// </summary>
     Enhanced,
+
+    /// <summary>
+    /// Both.
+    /// </summary>
     Combined,
 }

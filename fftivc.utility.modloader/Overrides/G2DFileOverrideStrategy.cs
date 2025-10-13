@@ -33,7 +33,7 @@ internal class G2DFileOverrideStrategy : IModdedFileOverrideStrategy
 
     private Dictionary<FFTOGameMode, Dictionary<string /* locale */, G2DModdedFileRegistry>> GameModeToModdedFiles { get; set; } = [];
 
-    public G2DFileOverrideStrategy(G2DHooks g2dHooks, LanguageManagerHooks languageManagerHooks, Config config, IModConfig modConfig, ILogger logger)
+    public G2DFileOverrideStrategy(G2DHooks g2dHooks, LanguageManagerHooks languageManagerHooks, IModConfig modConfig, ILogger logger)
     {
         _modConfig = modConfig;
         _logger = logger;
@@ -60,7 +60,7 @@ internal class G2DFileOverrideStrategy : IModdedFileOverrideStrategy
     public void Apply(FFTOGameMode gameType, string modId, string gamePath, string localPath)
     {
         string dirName = new FileInfo(gamePath).Directory!.Name;
-        string? locale = null;
+        string? locale = "en";
         if (dirName.Contains('.'))
         {
             string[] dirSplit = dirName.Split('.');
@@ -129,7 +129,7 @@ internal class G2DFileOverrideStrategy : IModdedFileOverrideStrategy
         g2dLocaleFile.ModdedFiles[fileIndex] = new G2DModdedFileEntry(modIdOwner, fileIndex, localFilePath);
     }
 
-    private Dictionary<int, byte[]> _cachedFileBuffers = [];
+    private readonly Dictionary<int, byte[]> _cachedFileBuffers = [];
 
     /// <summary>
     /// Fired when the game fetches a G2D (g2d.dat) file for overriding a G2d file with a modded one.

@@ -149,7 +149,6 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
     private IServiceProvider BuildServiceCollection()
     {
         ServiceCollection services = new ServiceCollection();
-
         services
             // R2 Primitives
             .AddSingleton(_modConfig)
@@ -162,7 +161,6 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             // Stuff relevant to us
             .AddSingleton<FFTOModPackManager>()
             .AddSingleton<FFTPackFileList>()
-
 
             // Hooks
             .AddSingleton<LanguageManagerHooks>()
