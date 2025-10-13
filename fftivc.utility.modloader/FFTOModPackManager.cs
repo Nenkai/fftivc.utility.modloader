@@ -1,30 +1,30 @@
 ﻿using System.IO;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Buffers.Binary;
 
 using Microsoft.Extensions.Logging;
 using CommunityToolkit.HighPerformance.Buffers;
 
 using Reloaded.Mod.Interfaces;
+using Reloaded.Hooks.Definitions;
 
-/*
 using FF16Tools.Files;
 using FF16Tools.Files.Nex.Entities;
 using FF16Tools.Files.Nex;
 using FF16Tools.Files.Nex.Managers;
-*/
+
 using FF16Tools.Pack;
 using FF16Tools.Pack.Packing;
+using FF16Tools.Pack.Crypto;
+
+using Syroot.BinaryData;
 
 using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces;
-using Syroot.BinaryData;
-using System.Diagnostics.CodeAnalysis;
-using System.Buffers.Binary;
-using Reloaded.Hooks.Definitions;
-using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using fftivc.utility.modloader.Hooks;
-using FF16Tools.Pack.Crypto;
 using fftivc.utility.modloader.Overrides;
+using System.Security.Cryptography.X509Certificates;
 
 namespace fftivc.utility.modloader;
 
@@ -50,7 +50,7 @@ public class FFTOModPackManager : IFFTOModPackManager
     // Builders for each pack.
     private Dictionary<FFTOGameMode, Dictionary<string, FF16PackBuilder>> _packBuilders = new();
 
-    //private NexModComparer _nexModComparer = new();
+    private NexModComparer _nexModComparer = new();
 
     private List<IModdedFileOverrideStrategy> _overrideStrategies = [];
     #endregion
@@ -250,7 +250,7 @@ public class FFTOModPackManager : IFFTOModPackManager
         }
     }
 
-    private void AddModdedFileForGameType(string modId, string localPath, FFTOGameMode gameType, string relPath, bool shouldBypassOverrideStrategy = false)
+    private void AddModdedFileForGameType(string modId, string localPath, FFTOGameMode gameMode, string relPath, bool shouldBypassOverrideStrategy = false)
     {
         string normalizedRelPath = FF16PackPathUtil.NormalizePath(relPath);
 
@@ -260,14 +260,14 @@ public class FFTOModPackManager : IFFTOModPackManager
             {
                 if (overrideStrategy.Matches(normalizedRelPath))
                 {
-                    overrideStrategy.Apply(gameType, modId, normalizedRelPath, localPath);
+                    overrideStrategy.Apply(gameMode, modId, normalizedRelPath, localPath);
                     if (!overrideStrategy.ReplacesFileSystemFile())
                         return;
                 }
             }
         }
         else
-            Print($"{modId}: Bypassing file override strategy for {relPath} ({gameType}).");
+            Print($"{modId}: Bypassing file override strategy for {relPath} ({gameMode}).");
 
         // Determine if it's a localized file.
         string[] spl = Path.GetFileName(relPath).Split('.');
@@ -291,20 +291,20 @@ public class FFTOModPackManager : IFFTOModPackManager
         if (packFilePath.Contains(".path"))
             return;
 
-        ModPack modPack = GetOrAddDiffPack(gameType, packName);
+        ModPack modPack = GetOrAddDiffPack(gameMode, packName);
         if (_configuration.MergeNexFileChanges && IsNexFile(localPath))
         {
-            //RecordNexChanges(modId, 0, packName, packFilePath, localPath);
-            //return;
+            RecordNexChanges(modId, gameMode, packFilePath, localPath);
+            return;
         }
 
-        Print($"{modId}: Adding file '{gamePath}' ({gameType}) from '{localPath}'");
+        Print($"{modId}: Adding file '{gamePath}' ({gameMode}) from '{localPath}'");
 
         if (!modPack.Files.TryGetValue(packFilePath, out FFTOModFile? modFile))
         {
             modFile = new FFTOModFile()
             {
-                GameType = gameType,
+                GameMode = gameMode,
                 ModIdOwner = modId,
                 LocalPath = localPath,
                 GamePath = packFilePath,
@@ -373,8 +373,8 @@ public class FFTOModPackManager : IFFTOModPackManager
             }
         }
 
-        //if (_configuration.MergeNexFileChanges)
-        //    MergeAndApplyNexChanges();
+        if (_configuration.MergeNexFileChanges)
+            MergeAndApplyNexChanges();
 
         Dispose();
 
@@ -458,9 +458,8 @@ public class FFTOModPackManager : IFFTOModPackManager
     /// <param name="nexGamePath"></param>
     /// <param name="modNexFilePath"></param>
     /// <exception cref="FileNotFoundException"></exception>
-    private void RecordNexChanges(string modId, FFTOGameMode gameMode, string packName, string nexGamePath, string modNexFilePath)
+    private void RecordNexChanges(string modId, FFTOGameMode gameMode, string nexGamePath, string modNexFilePath)
     {
-        /*
         if (PackManagers![gameMode].GetFileInfo(nexGamePath, includeDiff: false) is null)
         {
             PrintWarning($"Mod '{modId}' edits nex table '{nexGamePath}' which is unrecognized.");
@@ -478,7 +477,7 @@ public class FFTOModPackManager : IFFTOModPackManager
 
             NexDataFile modNexFile = NexDataFile.FromFile(modNexFilePath);
 
-            _nexModComparer.RecordChanges(modId, $"{MODDED_PACK_NAME}.pac", Path.GetFileNameWithoutExtension(nexGamePath), ogNexFile, modNexFile);
+            _nexModComparer.RecordChanges(modId, gameMode, Path.GetFileNameWithoutExtension(nexGamePath), ogNexFile, modNexFile);
         }
         catch (Exception ex)
         {
@@ -488,17 +487,21 @@ public class FFTOModPackManager : IFFTOModPackManager
         {
             ogNexFileData?.Dispose();
         }
-        */
     }
 
     /// <summary>
     /// Merges and applies all the nex changes made by mods.
     /// </summary>
-    /*
     private void MergeAndApplyNexChanges()
     {
         foreach (var nexPack in _nexModComparer.GetChanges())
         {
+            if (!PackManagers!.TryGetValue(nexPack.Key, out FF16PackManager? packManagerForGameMode))
+            {
+                PrintWarning($"Not applying changes for {nexPack.Key} as pack was missing.");
+                continue;
+            }
+
             foreach (var nexFile in nexPack.Value)
             {
                 Print($"Processing nex changes for '{nexFile.Key}' ({nexPack.Key})");
@@ -506,13 +509,9 @@ public class FFTOModPackManager : IFFTOModPackManager
                 string nexGamePath = $"nxd/{nexFile.Key}.nxd";
 
                 // Start by building the file from its original data
-                NexTableLayout tableColumnLayout = TableMappingReader.ReadTableLayout(nexFile.Key, new Version(1, 0, 0));
+                NexTableLayout tableColumnLayout = TableMappingReader.ReadTableLayout(nexFile.Key, GameVersion, "ffto");
 
-                // Not my finest work
-                string ogPackName = nexPack.Key.Replace(".diff", string.Empty);
-                using MemoryOwner<byte> ogNexFileData = PackManager!.GetFileInfoFromPack(nexGamePath, ogPackName) is not null ?
-                    PackManager.GetFileDataFromPack(nexGamePath, ogPackName) :
-                    PackManager.GetFileData(nexGamePath, includeDiff: false);
+                using MemoryOwner<byte> ogNexFileData = packManagerForGameMode.GetFileData(nexGamePath, includeDiff: false);
 
                 NexDataFile originalTableFile = new NexDataFile();
                 originalTableFile.Read(ogNexFileData.Span.ToArray());
@@ -593,17 +592,21 @@ public class FFTOModPackManager : IFFTOModPackManager
                     }
                 }
 
-                string stagingNxdPath = Path.Combine(TempFolder, nexPack.Key, nexGamePath);
+                string stagingNxdPath = Path.Combine(TempFolder, nexPack.Key.ToString(), nexGamePath);
                 Directory.CreateDirectory(Path.GetDirectoryName(stagingNxdPath)!);
 
                 using (var fs = new FileStream(stagingNxdPath, FileMode.Create))
                     nexBuilder.Write(fs);
 
-                _packBuilders[nexPack.Key].AddFile(stagingNxdPath, nexGamePath);
+                string[] split = nexFile.Key.Split(".");
+                string locale = string.Empty;
+                if (split.Length >= 2)
+                    locale = $".{split[^1]}";
+
+                _packBuilders[nexPack.Key][MODDED_PACK_NAME + locale].AddFile(stagingNxdPath, nexGamePath);
             }
         }
     }
-    */
 
     private static string GameModeToDirectoryName(FFTOGameMode gameMode)
     {

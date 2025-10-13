@@ -111,7 +111,6 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         foreach (var hook in coreHooks)
             hook.Install();
         
-
         if (IsRunningUnpacked())
         {
             _logger.WriteLine($"[{_modConfig.ModId}] //////////////////////////////////", _logger.ColorYellow);

@@ -13,7 +13,7 @@ public class FFTOModFile : IFFTOModFile
     /// <summary>
     /// Game type for which this file belongs to.
     /// </summary>
-    public required FFTOGameMode GameType { get; set; }
+    public required FFTOGameMode GameMode { get; set; }
 
     /// <summary>
     /// Mod id that owns this modded file.

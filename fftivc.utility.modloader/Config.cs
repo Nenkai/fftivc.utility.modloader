@@ -21,17 +21,18 @@ namespace fftivc.utility.modloader.Configuration
         [DefaultValue(true)]
         public bool DisableAntiDebugger { get; set; } = true;
 
-        //[DisplayName("Log nex cell changes")]
-        //[Description("Whether to log specific row cell changes made to nex tables made by mods.\n" +
-        //    "NOTE: \"Merge Nex / Nxd Changes\" must be enabled.")]
-        //[DefaultValue(false)]
-        //public bool LogNexCellChanges { get; set; } = false;
-
         [DisplayName("Remove exception/crash handler")]
         [Description("(Advanced users only) Whether to remove the default exception handler.\n" +
             "Removes the 'An unexpected error has occurred.' message on crash.")]
         [DefaultValue(true)]
         public bool RemoveExceptionHandler { get; set; } = true;
+
+        [Category("Debug")]
+        [DisplayName("Log nex cell changes")]
+        [Description("Whether to log specific row cell changes made to nex tables made by mods.\n" +
+            "NOTE: \"Merge Nex / Nxd Changes\" must be enabled.")]
+        [DefaultValue(false)]
+        public bool LogNexCellChanges { get; set; } = false;
 
         [Category("Debug")]
         [DisplayName("Log G2D File Accesses")]

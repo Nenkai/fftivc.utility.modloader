@@ -1,5 +1,4 @@
-﻿/*
-using FF16Tools.Files.Nex.Entities;
+﻿using FF16Tools.Files.Nex.Entities;
 using FF16Tools.Files.Nex;
 using FF16Tools.Files;
 
@@ -10,20 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Vortice.Win32;
+using fftivc.utility.modloader.Interfaces;
 
 namespace fftivc.utility.modloader;
 
 public class NexModComparer
 {
     // Keeps tracks of nex changes so we can merge them.
-    // Dictionary<pack name, Dictionary<table name, Dictionary<mod id, changes>>>
-    private Dictionary<string, Dictionary<string, Dictionary<string, NexTableChange>>> _nexChanges = [];
+    // Dictionary<game mode, Dictionary<table name, Dictionary<mod id, changes>>>
+    private Dictionary<FFTOGameMode, Dictionary<string, Dictionary<string, NexTableChange>>> _nexChanges = [];
 
-    public void RecordChanges(string modId, string diffPackName, string tableName, NexDataFile originalNexTable, NexDataFile modNexTable)
+    public void RecordChanges(string modId, FFTOGameMode gameMode, string tableName, NexDataFile originalNexTable, NexDataFile modNexTable)
     {
-        _nexChanges.TryAdd(diffPackName, []);
+        _nexChanges.TryAdd(gameMode, []);
 
-        NexTableLayout tableColumnLayout = TableMappingReader.ReadTableLayout(tableName, new Version(1, 0, 0));
+        NexTableLayout tableColumnLayout = TableMappingReader.ReadTableLayout(tableName, new Version(1, 0, 0), "ffto");
 
         List<NexRowInfo> ogRowInfos = originalNexTable.RowManager!.GetAllRowInfos();
         for (int i = 0; i < ogRowInfos.Count; i++)
@@ -32,9 +32,9 @@ public class NexModComparer
             if (!modNexTable.RowManager!.TryGetRowInfo(out NexRowInfo? modRowInfo, ogRowInfo.Key, ogRowInfo.Key2, ogRowInfo.Key3))
             {
                 // Row was removed by mod file
-                _nexChanges[diffPackName].TryAdd(tableName, []);
-                _nexChanges[diffPackName][tableName].TryAdd(modId, new NexTableChange(modId));
-                _nexChanges[diffPackName][tableName][modId].RemovedRows.Add((ogRowInfo.Key, ogRowInfo.Key2, ogRowInfo.Key3));
+                _nexChanges[gameMode].TryAdd(tableName, []);
+                _nexChanges[gameMode][tableName].TryAdd(modId, new NexTableChange(modId));
+                _nexChanges[gameMode][tableName][modId].RemovedRows.Add((ogRowInfo.Key, ogRowInfo.Key2, ogRowInfo.Key3));
             }
             else
             {
@@ -50,14 +50,14 @@ public class NexModComparer
 
                     if (!IsSameNexCell(tableColumnLayout, col.Value, ogRow[j], newRow[j]))
                     {
-                        _nexChanges[diffPackName].TryAdd(tableName, []);
-                        _nexChanges[diffPackName][tableName].TryAdd(modId, new NexTableChange(modId));
+                        _nexChanges[gameMode].TryAdd(tableName, []);
+                        _nexChanges[gameMode][tableName].TryAdd(modId, new NexTableChange(modId));
 
                         // A row has a cell different from original
                         var rowKey = (ogRowInfo.Key, ogRowInfo.Key2, ogRowInfo.Key3);
-                        _nexChanges[diffPackName][tableName][modId].RowChanges.TryAdd(rowKey, []);
+                        _nexChanges[gameMode][tableName][modId].RowChanges.TryAdd(rowKey, []);
 
-                        _nexChanges[diffPackName][tableName][modId].RowChanges[rowKey].Add((j, newRow[j]));
+                        _nexChanges[gameMode][tableName][modId].RowChanges[rowKey].Add((j, newRow[j]));
                     }
                 }
             }
@@ -71,16 +71,16 @@ public class NexModComparer
             if (!originalNexTable.RowManager.TryGetRowInfo(out _, newRowInfo.Key, newRowInfo.Key2, newRowInfo.Key3))
             {
                 // Row was added by mod file
-                _nexChanges[diffPackName].TryAdd(tableName, []);
-                _nexChanges[diffPackName][tableName].TryAdd(modId, new NexTableChange(modId));
+                _nexChanges[gameMode].TryAdd(tableName, []);
+                _nexChanges[gameMode][tableName].TryAdd(modId, new NexTableChange(modId));
 
                 var newRow = NexUtils.ReadRow(tableColumnLayout, modNexTable.Buffer!, newRowInfo.RowDataOffset);
-                _nexChanges[diffPackName][tableName][modId].InsertedRows.Add((newRowInfo.Key, newRowInfo.Key2, newRowInfo.Key3), newRow);
+                _nexChanges[gameMode][tableName][modId].InsertedRows.Add((newRowInfo.Key, newRowInfo.Key2, newRowInfo.Key3), newRow);
             }
         }
     }
 
-    public Dictionary<string, Dictionary<string, Dictionary<string, NexTableChange>>> GetChanges()
+    public Dictionary<FFTOGameMode, Dictionary<string, Dictionary<string, NexTableChange>>> GetChanges()
         => _nexChanges;
 
     private static bool IsSameNexCell(NexTableLayout layout, NexStructColumn column, object left, object right)
@@ -107,10 +107,10 @@ public class NexModComparer
                 return (long)left == (long)right;
             case NexColumnType.String:
                 return string.Equals((string)left, (string)right);
-            case NexColumnType.Union:
+            case NexColumnType.NexUnionKey32:
                 {
-                    var leftUnion = (NexUnion)left;
-                    var rightUnion = (NexUnion)right;
+                    var leftUnion = (NexUnionKey)left;
+                    var rightUnion = (NexUnionKey)right;
                     return leftUnion.Type == rightUnion.Type && leftUnion.Value == rightUnion.Value;
                 }
             case NexColumnType.ByteArray:
@@ -118,6 +118,21 @@ public class NexModComparer
                     byte[] leftArray = (byte[])left;
                     byte[] rightArray = (byte[])right;
 
+                    if (leftArray.Length != rightArray.Length)
+                        return false;
+
+                    for (int i = 0; i < leftArray.Length; i++)
+                    {
+                        if (leftArray[i] != rightArray[i])
+                            return false;
+                    }
+
+                    return true;
+                }
+            case NexColumnType.ShortArray:
+                {
+                    short[] leftArray = (short[])left;
+                    short[] rightArray = (short[])right;
                     if (leftArray.Length != rightArray.Length)
                         return false;
 
@@ -177,10 +192,10 @@ public class NexModComparer
 
                     return true;
                 }
-            case NexColumnType.UnionArray:
+            case NexColumnType.NexUnionKey32Array:
                 {
-                    NexUnion[] leftArray = (NexUnion[])left;
-                    NexUnion[] rightArray = (NexUnion[])right;
+                    NexUnionKey[] leftArray = (NexUnionKey[])left;
+                    NexUnionKey[] rightArray = (NexUnionKey[])right;
 
                     if (leftArray.Length != rightArray.Length)
                         return false;
@@ -237,4 +252,3 @@ public class NexTableChange
         ModId = modId;
     }
 }
-*/
