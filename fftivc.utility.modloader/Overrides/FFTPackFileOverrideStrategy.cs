@@ -33,8 +33,6 @@ public class FFTPackFileOverrideStrategy : IModdedFileOverrideStrategy
     private readonly LanguageManagerHooks _languageManagerHooks;
     private readonly Config _configuration;
 
-    // I needlessly implemented locale handling because there's two g2d's in classic, one for ja and one for en.
-    // Turns out classic doesn't call them at all. Oops. Oh well.
     private FFTOGameMode _currentGameMode;
 
     private string _currentLocale = string.Empty;
@@ -103,9 +101,16 @@ public class FFTPackFileOverrideStrategy : IModdedFileOverrideStrategy
         if (!_fftFileList.FileNameToKnownIndex.TryGetValue(actualPath, out int fileIndex))
             return; // No point, not overriding a file present in fftpack.
 
-        if (fileIndex == 17 || (fileIndex >= 741 && fileIndex <= 749))
+        if (fileIndex == 17)
         {
-            _logger.WriteLine($"[{_modConfig.ModId}] FFTPack: Mod '{modIdOwner}' attempted to map file '{actualPath}' with index {fileIndex} which is already overriden by the game itself!", _logger.ColorYellowLight);
+            _logger.WriteLine($"[{_modConfig.ModId}] FFTPack: Mod '{modIdOwner}' attempted to map file " +
+                $"'{actualPath}' with index {fileIndex} which is already overriden by the game itself using the /event folder! Mod files from that folder instead.", _logger.ColorYellowLight);
+            return;
+        }
+        else if (fileIndex >= 741 || fileIndex <= 749)
+        {
+            _logger.WriteLine($"[{_modConfig.ModId}] FFTPack: Mod '{modIdOwner}' attempted to map file " +
+                $"'{actualPath}' with index {fileIndex} which is already overriden by the game itself using the /fftpack/tex/menu/ folder! Mod files from that folder instead.", _logger.ColorYellowLight);
             return;
         }
 
@@ -137,11 +142,11 @@ public class FFTPackFileOverrideStrategy : IModdedFileOverrideStrategy
 
         if (fftLocaleFile.ModdedFiles.TryGetValue(fileIndex, out FFTPackModdedFileEntry? existingEntryForIndex))
         {
-            _logger.WriteLine($"[{_modConfig.ModId}] [FFTPack] Conflict: Mod '{modIdOwner}' uses g2d file index '{fileIndex}' for game mode '{gameMode}' ({locale}) " +
+            _logger.WriteLine($"[{_modConfig.ModId}] [FFTPack] Conflict: Mod '{modIdOwner}' uses fftpack file index '{fileIndex}' for game mode '{gameMode}' ({locale}) " +
                 $"which is already used by {existingEntryForIndex.ModIdOwner}'!", _logger.ColorYellow);
         }
         else
-            _logger.WriteLine($"[{_modConfig.ModId}] [FFTPack] {modIdOwner} mapping G2D file {fileIndex} ({locale}) from '{fftPackPath}'.");
+            _logger.WriteLine($"[{_modConfig.ModId}] [FFTPack] {modIdOwner} mapping file {fileIndex} ({locale}) from '{fftPackPath}'.");
 
         fftLocaleFile.ModdedFiles[fileIndex] = new FFTPackModdedFileEntry(modIdOwner, fftPackPath, fileIndex, localFilePath);
     }

@@ -53,9 +53,8 @@ public class LanguageManagerHooks : IFFTOCoreHook
                 SetLocaleHook = _hooks!.CreateHook<SetLocaleDelegate>(SetLocaleImpl, processAddress + e.Offset).Activate();
             }
             else
-                _logger.WriteLine($"[{_modConfig.ModId}] Unable to hook faith::Localize::LanguageManager::SetLocale - signature not found.", _logger.ColorRed);
+                _logger.WriteLine($"[{_modConfig.ModId}] Unable to hook faith::Localize::LanguageManager::SetLocale - signature not found. Will default to english..", _logger.ColorRed);
         });
-        
     }
 
     private unsafe void SetLocaleImpl(nint @this, FFTOLocaleType locale)

@@ -72,6 +72,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
     private Version _gameVersion = new Version(1, 0, 0); // Default to 1.0.0.
     private string _dataDir;
 
+    public static FFTOGameMode GameMode;
+
     public Mod(ModContext context)
     {
         _modLoader = context.ModLoader;
@@ -131,10 +133,10 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             return;
         }
 
-        FFTOGameMode gameMode = _modLoader.GetAppConfig().AppLocation.Contains("classic") ? FFTOGameMode.Classic : FFTOGameMode.Enhanced;
+        GameMode = _modLoader.GetAppConfig().AppLocation.Contains("classic") ? FFTOGameMode.Classic : FFTOGameMode.Enhanced;
 
         IEnumerable<IModdedFileOverrideStrategy> overrideStrategies = provider.GetServices<IModdedFileOverrideStrategy>();
-        if (!_modPackManager.Initialize(_dataDir, _tempDir, gameMode, _gameVersion, overrideStrategies))
+        if (!_modPackManager.Initialize(_dataDir, _tempDir, GameMode, _gameVersion, overrideStrategies))
         {
             _logger.WriteLine($"[{_modConfig.ModId}] Pack manager failed to initialize.", _logger.ColorRed);
             return;
@@ -166,6 +168,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOCoreHook, GameModeTransitionHooks>()
             .AddSingleton<IFFTOCoreHook, AntiAntiDebugHooks>()
             .AddSingleton<IFFTOCoreHook, ExceptionHandlerHooks>()
+            .AddSingleton<IFFTOCoreHook, ResourceManagerHooks>()
             .AddSingleton<IFFTOCoreHook>(sp => sp.GetRequiredService<LanguageManagerHooks>())
 
             .AddSingleton<FFTOResourceManagerHooks>()

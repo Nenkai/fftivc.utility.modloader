@@ -13,6 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 using Vortice.Direct3D12;
 
@@ -78,9 +79,18 @@ public class FFTPackHooks
         {
             // Let the game handle indices that are already hijacked/overriden by it and bypasses bin read.
             case 17:  // event_test_evt.bin (becomes script/enhanced/event or script/classic/event)
-                if (_config.LogFFTPackFileAccesses)
-                    _logger.WriteLine($"[{_modConfig.ModId}] [FFTPack] Accessing file {fileIndex} -> {fileName} (OVERRIDEN to /event, offset: {sectorOffset * 0x800:X}, size: {size:X})", Color.Gray);
-                return FileReadRequestOffsetHook!.OriginalFunction(fileIndex, sectorOffset, size, outputPointer);
+                {
+                    int sectorSizeOfOneEventFile = Mod.GameMode == Interfaces.FFTOGameMode.Enhanced ? 5 : 3;
+                    string folderName = Mod.GameMode == Interfaces.FFTOGameMode.Enhanced ? "enhanced" : "classic";
+                    int eventFileIndex = (int)(sectorOffset / sectorSizeOfOneEventFile);
+                    if (_config.LogFFTPackFileAccesses)
+                    {
+                        _logger.WriteLine($"[{_modConfig.ModId}] [FFTPack] Accessing file {sectorSizeOfOneEventFile} -> {fileName} (OVERRIDEN to /script/{folderName}/event{eventFileIndex:D3}.e, " +
+                            $"offset: {sectorOffset * 0x800:X}, size: {size:X})", Color.Gray);
+                    }
+
+                    return FileReadRequestOffsetHook!.OriginalFunction(fileIndex, sectorOffset, size, outputPointer);
+                }
             case 741: // menu_bk_shop_tim.bin (becomes fftpack/tex/menu/bk_shop.tim)
             case 742: // menu_bk_shop2_tim.bin (becomes fftpack/tex/menu/bk_shop2.tim)
             case 743: // menu_bk_shop3_tim.bin (becomes fftpack/tex/menu/bk_shop2.tim)

@@ -10,7 +10,7 @@ namespace fftivc.utility.modloader.Configuration
     public class Config : Configurable<Config>
     {
         [DisplayName("Merge nex/nxd changes")]
-        [Description("Whether to merge Nex (.nxd) changes made to a specific nex table by multiple tables. (NOTE: NOT CURRENTLY IMPLEMENTED.)\n" +
+        [Description("Whether to merge Nex (.nxd) changes made to a specific nex table by multiple tables.\n" +
             "NOTE: This should always be enabled.")]
         [DefaultValue(true)]
         public bool MergeNexFileChanges { get; set; } = true;
@@ -33,6 +33,12 @@ namespace fftivc.utility.modloader.Configuration
             "NOTE: \"Merge Nex / Nxd Changes\" must be enabled.")]
         [DefaultValue(false)]
         public bool LogNexCellChanges { get; set; } = false;
+
+        [Category("Debug")]
+        [DisplayName("Log general file accesses")]
+        [Description("(Advanced users only) Whether to display general file accesses in the console.")]
+        [DefaultValue(false)]
+        public bool LogGeneralFileAccesses { get; set; } = false;
 
         [Category("Debug")]
         [DisplayName("Log G2D File Accesses")]

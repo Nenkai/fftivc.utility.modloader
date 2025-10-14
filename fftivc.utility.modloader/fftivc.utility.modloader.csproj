@@ -76,13 +76,11 @@
 
 	<!-- Get rid of dstorage dlls produced, we run inside the game so we don't need these -->
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="del $(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes\win-x64\native\dstorage.dll" />
-		<Exec Command="del $(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes\win-x64\native\dstoragecore.dll" />
-		<Exec Command="del $(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes\win-x86\native\dstorage.dll" />
-		<Exec Command="del $(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes\win-x86\native\dstoragecore.dll" />
-		<Exec Command="del $(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes\win-arm64\native\dstorage.dll" />
-		<Exec Command="del $(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes\win-arm64\native\dstoragecore.dll" />
-		<Exec Command="del $(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes\win-arm\native\dstorage.dll" />
-		<Exec Command="del $(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes\win-arm\native\dstoragecore.dll" />
+		<RemoveDir Directories="$(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes" >
+			<Output TaskParameter="RemovedDirectories" ItemName="DeletedList"/>
+		</RemoveDir>
+		<Message Text="Files deleted: @(DeletedList)"/>
+		
+		<RemoveDir Directories="$(RELOADEDIIMODS)\fftivc.utility.modloader\Nex\Layouts\faith" /> <!-- Only care for ffto layouts -->
 	</Target>
 </Project>

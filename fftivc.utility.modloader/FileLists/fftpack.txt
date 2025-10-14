@@ -135,7 +135,7 @@
 117|unit\battle_h81_spr.bin
 118|unit\battle_h82_spr.bin
 119|unit\battle_h83_spr.bin
-120| unit\battle_h85_spr.bin
+120|unit\battle_h85_spr.bin
 121|unit\battle_hasyu_spr.bin
 122|unit\battle_hebi_spr.bin
 123|unit\battle_hime_spr.bin
