@@ -9,23 +9,32 @@ namespace fftivc.utility.modloader.Configuration
 {
     public class Config : Configurable<Config>
     {
-        [DisplayName("Merge nex/nxd changes")]
-        [Description("Whether to merge Nex (.nxd) changes made to a specific nex table by multiple tables.\n" +
-            "NOTE: This should always be enabled.")]
-        [DefaultValue(true)]
-        public bool MergeNexFileChanges { get; set; } = true;
+        [Category("General")]
+        [DisplayName("Disable Custom Cursors")]
+        [Description("Whether to disable the game's custom cursors.")]
+        [DefaultValue(false)]
+        public bool DisableCustomCursors { get; set; } = false;
 
+        [Category("General")]
         [DisplayName("Neutralize anti-debug")]
         [Description("(Advanced users only) Whether to disable anti-debugging.\n" +
             "For more information refer to: nenkai.github.io/ffxvi-modding/resources/other/debugging/")]
         [DefaultValue(true)]
         public bool DisableAntiDebugger { get; set; } = true;
 
+        [Category("General")]
         [DisplayName("Remove exception/crash handler")]
         [Description("(Advanced users only) Whether to remove the default exception handler.\n" +
             "Removes the 'An unexpected error has occurred.' message on crash.")]
         [DefaultValue(true)]
         public bool RemoveExceptionHandler { get; set; } = true;
+
+        [Category("Mod Loading")]
+        [DisplayName("Merge nex/nxd changes")]
+        [Description("Whether to merge Nex (.nxd) changes made to a specific nex table by multiple tables.\n" +
+            "NOTE: This should always be enabled.")]
+        [DefaultValue(true)]
+        public bool MergeNexFileChanges { get; set; } = true;
 
         [Category("Debug")]
         [DisplayName("Log nex cell changes")]

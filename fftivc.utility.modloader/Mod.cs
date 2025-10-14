@@ -169,6 +169,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOCoreHook, AntiAntiDebugHooks>()
             .AddSingleton<IFFTOCoreHook, ExceptionHandlerHooks>()
             .AddSingleton<IFFTOCoreHook, ResourceManagerHooks>()
+            .AddSingleton<IFFTOCoreHook, WindowHooks>()
             .AddSingleton<IFFTOCoreHook>(sp => sp.GetRequiredService<LanguageManagerHooks>())
 
             .AddSingleton<FFTOResourceManagerHooks>()

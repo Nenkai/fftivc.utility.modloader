@@ -18,6 +18,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ReloadedLinkRoots Include="fftivc.utility.modloader" />
     <!-- Add assemblies to be trimmed. You might need to add their dependencies too!  -->
     <!-- <ReloadedLinkAssemblies Include="Reloaded.Memory" /> -->
@@ -70,16 +76,12 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 	<!-- Get rid of dstorage dlls produced, we run inside the game so we don't need these -->
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<RemoveDir Directories="$(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes" >
-			<Output TaskParameter="RemovedDirectories" ItemName="DeletedList"/>
+		<RemoveDir Directories="$(RELOADEDIIMODS)\fftivc.utility.modloader\runtimes">
+			<Output TaskParameter="RemovedDirectories" ItemName="DeletedList" />
 		</RemoveDir>
-		<Message Text="Files deleted: @(DeletedList)"/>
+		<Message Text="Files deleted: @(DeletedList)" />
 		
 		<RemoveDir Directories="$(RELOADEDIIMODS)\fftivc.utility.modloader\Nex\Layouts\faith" /> <!-- Only care for ffto layouts -->
 	</Target>
