@@ -139,7 +139,7 @@ internal class G2DFileOverrideStrategy : IModdedFileOverrideStrategy
     /// <returns></returns>
     public unsafe byte[]? OnFetchG2DFile(int fileIndex)
     {
-        string languagePrefix = _languageManagerHooks.CurrentLocale == FFTOLocaleType.Japanese ? "jp" : "en";
+        string languagePrefix = _languageManagerHooks.CurrentLanguage == FFTOLanguageType.Japanese ? "jp" : "en";
 
         if (GameModeToModdedFiles.TryGetValue(_currentGameMode, out Dictionary<string, G2DModdedFileRegistry>? filesForGameMode) &&
           filesForGameMode.TryGetValue(languagePrefix, out G2DModdedFileRegistry? localeRegistry) &&

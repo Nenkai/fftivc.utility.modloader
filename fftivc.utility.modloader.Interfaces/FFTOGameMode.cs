@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace fftivc.utility.modloader.Interfaces;
 
+/// <summary>
+/// Running game mode for FFTO.
+/// </summary>
 public enum FFTOGameMode
 {
     /// <summary>

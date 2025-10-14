@@ -153,7 +153,7 @@ public class FFTPackFileOverrideStrategy : IModdedFileOverrideStrategy
 
     public unsafe bool OnRequestRead(int fileIndex, int offset, int size, nint outputPointer)
     {
-        string languagePrefix = _languageManagerHooks.CurrentLocale == FFTOLocaleType.Japanese ? "jp" : "en";
+        string languagePrefix = _languageManagerHooks.CurrentLanguage == FFTOLanguageType.Japanese ? "jp" : "en";
 
         if (GameModeToModdedFiles.TryGetValue(_currentGameMode, out Dictionary<string, FFTPackModdedFileRegistry>? filesForGameMode) &&
           filesForGameMode.TryGetValue(languagePrefix, out FFTPackModdedFileRegistry? localeRegistry) &&

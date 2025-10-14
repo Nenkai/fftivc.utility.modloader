@@ -127,7 +127,7 @@ public class G2DHooks
         if (_config.LogG2DFileAccesses)
             _logger.WriteLine($"[{_modConfig.ModId}] [G2D] Accessing file {fileIndex}", Color.Gray);
 
-        byte[] moddedFileBuffer = _onRequestDecodeCb(fileIndex);
+        byte[]? moddedFileBuffer = _onRequestDecodeCb(fileIndex);
         if (moddedFileBuffer is not null)
         {
             fixed (byte* moddedFileBufferPtr = moddedFileBuffer)
@@ -163,7 +163,7 @@ public class G2DHooks
 
     private unsafe void LoadImpl(CFILE_DAT* @this, int fileIndex, int nextFileIndex, int a4)
     {
-        byte[] moddedFileBuffer = _onRequestDecodeCb(fileIndex);
+        byte[]? moddedFileBuffer = _onRequestDecodeCb(fileIndex);
         if (moddedFileBuffer is not null)
         {
             if (!_cachedEntryPointers.TryGetValue(fileIndex, out nint moddedFileDataPointer))
@@ -184,7 +184,7 @@ public class G2DHooks
     // XX: Could be removed if we take the game's memory allocator instead and call its malloc instead.
     private unsafe void UnloadImpl(CFILE_DAT* @this)
     {
-        byte[] moddedFileBuffer = _onRequestDecodeCb(@this->CurrentFileIndex);
+        byte[]? moddedFileBuffer = _onRequestDecodeCb(@this->CurrentFileIndex);
         if (moddedFileBuffer is not null)
         {
             @this->WorkBuffer = 0;

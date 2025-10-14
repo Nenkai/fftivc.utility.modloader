@@ -1,5 +1,8 @@
 ﻿namespace fftivc.utility.modloader.Interfaces;
 
+/// <summary>
+/// FFTO Modding pack manager.
+/// </summary>
 public interface IFFTOModPackManager
 {
     /// <summary>
@@ -49,6 +52,7 @@ public interface IFFTOModPackManager
     /// <summary>
     /// Returns whether a game file exists (from base/vanilla packs).
     /// </summary>
+    /// <param name="gameMode">Game type.</param>
     /// <param name="gamePath">Game path, e.g 'nxd/photocameraparam.nxd'</param>
     /// <returns>Whether the file was found.</returns>
     public bool FileExists(FFTOGameMode gameMode, string gamePath);
@@ -66,23 +70,26 @@ public interface IFFTOModPackManager
     /// NOTE: This will copy the file on disk temporarily.
     /// </summary>
     /// <param name="modId">Mod Id.</param>
+    /// <param name="gameMode">Game type.</param>
     /// <param name="gamePath">File path.</param>
     /// <param name="file">File bytes.</param>
     /// <param name="options">Additional options.</param>
-    public void AddModdedFile(string modId, string gamePath, byte[] file, FFTOModdedFileAddOptions? options = default);
+    public void AddModdedFile(string modId, FFTOGameMode gameMode, string gamePath, byte[] file, FFTOModdedFileAddOptions? options = default);
 
     /// <summary>
     /// Adds a new mod file. The files will be applied when the mod loader has loaded all mods.
     /// </summary>
     /// <param name="modId">Mod Id.</param>
-    /// <param name="baseDir">Mod contents base directory (normally this points to the mod's FFXVI/data).</param>
+    /// <param name="gameMode">Game type.</param>
+    /// <param name="gamePath">Game path, i.e nxd/ui.en.nxd</param>
     /// <param name="localPath">Local path to the file. If it starts with a pack name (relative to baseDir), it will determine the pack name.</param>
     /// <param name="options">Additional options.</param>
-    public void AddModdedFile(string modId, string baseDir, string localPath, FFTOModdedFileAddOptions? options = default);
+    public void AddModdedFile(string modId, FFTOGameMode gameMode, string gamePath, string localPath, FFTOModdedFileAddOptions? options = default);
 
     /// <summary>
     /// Removes a modded file.
     /// </summary>
+    /// <param name="gameMode">Game type.</param>
     /// <param name="gamePath">Game path.</param>
     /// <returns>Whether the file was found and removed.</returns>
     public bool RemoveModdedFile(FFTOGameMode gameMode, string gamePath);

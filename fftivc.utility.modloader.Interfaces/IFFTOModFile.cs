@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace fftivc.utility.modloader.Interfaces;
 
+/// <summary>
+/// Represents a modded file.
+/// </summary>
 public interface IFFTOModFile
 {
     /// <summary>

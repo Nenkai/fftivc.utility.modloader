@@ -4,18 +4,19 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Title>ff16.utility.manager.Interfaces</Title>
+    <Title>fftivc.utility.modloader.Interfaces</Title>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Authors>Nenkai</Authors>
-    <Description>Mod pack manager interface for ff16.utility.manager.Interfaces.</Description>
-    <Copyright>Copyright (c) Nenkai 2024</Copyright>
+    <Description>Mod pack manager interface for fftivc.utility.modloader.</Description>
+    <Copyright>Copyright (c) Nenkai 2025</Copyright>
     <PackageProjectUrl>https://github.com/Nenkai/ff16.utility.modloader/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Nenkai/ff16.utility.modloader/</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <AssemblyVersion>1.0.5</AssemblyVersion>
-    <FileVersion>1.0.5</FileVersion>
-    <Version>1.0.5</Version>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

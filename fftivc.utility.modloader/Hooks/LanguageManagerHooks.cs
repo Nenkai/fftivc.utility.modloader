@@ -24,10 +24,10 @@ public class LanguageManagerHooks : IFFTOCoreHook
     private IStartupScanner? _startupScanner;
     private IReloadedHooks? _hooks;
 
-    private delegate void SetLocaleDelegate(nint @this, FFTOLocaleType locale);
-    private static IHook<SetLocaleDelegate>? SetLocaleHook;
+    private delegate void SetLanguageDelegate(nint @this, FFTOLanguageType locale);
+    private static IHook<SetLanguageDelegate>? SetLanguageHook;
 
-    public FFTOLocaleType CurrentLocale { get; private set; } = FFTOLocaleType.English;
+    public FFTOLanguageType CurrentLanguage { get; private set; } = FFTOLanguageType.English;
 
     public LanguageManagerHooks(IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
     {
@@ -44,23 +44,23 @@ public class LanguageManagerHooks : IFFTOCoreHook
 
         var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
 
-        // Hook faith::Locale::LanguageManager::SetLocale
+        // Hook faith::Locale::LanguageManager::SetLanguage
         _startupScanner!.AddMainModuleScan("48 89 5C 24 ?? 57 48 83 EC ?? 48 8B 05 ?? ?? ?? ?? 48 31 E0 48 89 44 24 ?? 48 89 CF", (e) =>
         {
             if (e.Found)
             {
-                _logger.WriteLine($"[{_modConfig.ModId}] Hooked faith::Localize::LanguageManager::SetLocale @ 0x{processAddress + e.Offset:X}");
-                SetLocaleHook = _hooks!.CreateHook<SetLocaleDelegate>(SetLocaleImpl, processAddress + e.Offset).Activate();
+                _logger.WriteLine($"[{_modConfig.ModId}] Hooked faith::Localize::LanguageManager::SetLanguage @ 0x{processAddress + e.Offset:X}");
+                SetLanguageHook = _hooks!.CreateHook<SetLanguageDelegate>(SetLanguageImpl, processAddress + e.Offset).Activate();
             }
             else
-                _logger.WriteLine($"[{_modConfig.ModId}] Unable to hook faith::Localize::LanguageManager::SetLocale - signature not found. Will default to english..", _logger.ColorRed);
+                _logger.WriteLine($"[{_modConfig.ModId}] Unable to hook faith::Localize::LanguageManager::SetLanguage - signature not found. Will default to english..", _logger.ColorRed);
         });
     }
 
-    private unsafe void SetLocaleImpl(nint @this, FFTOLocaleType locale)
+    private unsafe void SetLanguageImpl(nint @this, FFTOLanguageType locale)
     {
-        _logger.WriteLine($"Game locale has changed to {locale}.");
-        CurrentLocale = locale;
-        SetLocaleHook!.OriginalFunction(@this, locale);
+        _logger.WriteLine($"Game language has changed to {locale}.");
+        CurrentLanguage = locale;
+        SetLanguageHook!.OriginalFunction(@this, locale);
     }
 }
