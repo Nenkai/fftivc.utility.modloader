@@ -27,6 +27,11 @@ public interface IFFTOModPackManager
     public string DataDirectory { get; }
 
     /// <summary>
+    /// Current game mode.
+    /// </summary>
+    public FFTOGameMode GameMode { get; }
+
+    /// <summary>
     /// List of all modded files, which will be applied when the mod loader has loaded all mods.
     /// </summary>
     public IReadOnlyDictionary<string, IFFTOModFile> ModdedFiles { get; }
