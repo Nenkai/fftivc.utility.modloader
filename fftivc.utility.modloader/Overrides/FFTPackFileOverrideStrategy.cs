@@ -107,7 +107,7 @@ public class FFTPackFileOverrideStrategy : IModdedFileOverrideStrategy
                 $"'{actualPath}' with index {fileIndex} which is already overriden by the game itself using the /event folder! Mod files from that folder instead.", _logger.ColorYellowLight);
             return;
         }
-        else if (fileIndex >= 741 || fileIndex <= 749)
+        else if (fileIndex >= 741 && fileIndex <= 749)
         {
             _logger.WriteLine($"[{_modConfig.ModId}] FFTPack: Mod '{modIdOwner}' attempted to map file " +
                 $"'{actualPath}' with index {fileIndex} which is already overriden by the game itself using the /fftpack/tex/menu/ folder! Mod files from that folder instead.", _logger.ColorYellowLight);
