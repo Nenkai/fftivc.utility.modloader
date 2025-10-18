@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 
+/// <summary>
+/// ABILITY_COMMON_DATA
+/// </summary>
 public struct ABILITY_COMMON_DATA // As per mobile symbols
 {
     public ushort JPCost { get; set; }
@@ -13,6 +16,29 @@ public struct ABILITY_COMMON_DATA // As per mobile symbols
     public byte Flags { get; set; }
     // 4 bytes, but we combined it
     public AIBehaviorFlags AIBehaviorFlags { get; set; }
+}
+
+[Flags]
+public enum AbilityFlags : byte
+{
+    Unk_0 = 1 << 0,
+    LearnOnHit = 1 << 1,
+    DisplayAbilityName = 1 << 2,
+    LearnWithJP = 1 << 3,
+}
+
+public enum AbilityType : byte
+{
+    None = 0,
+    Normal = 1,
+    Item = 2,
+    Throwing = 3,
+    Jumping = 4,
+    Aim = 5,
+    Math = 6,
+    Reaction = 7,
+    Support = 8,
+    Movement = 9,
 }
 
 [Flags]

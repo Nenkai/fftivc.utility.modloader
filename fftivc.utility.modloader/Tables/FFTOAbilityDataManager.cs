@@ -50,11 +50,13 @@ public class FFTOAbilityDataManager : IFFTOAbilityDataManager
             _originalTable = new AbilityTable();
             for (int i = 0; i < _abilityCommonDataTablePointer.Count; i++)
             {
+                byte flags = _abilityCommonDataTablePointer.Get(i).Flags;
                 _originalTable.Abilities.Add(new Ability()
                 {
                     Id = i,
                     JPCost = _abilityCommonDataTablePointer.Get(i).JPCost,
-                    Flags = _abilityCommonDataTablePointer.Get(i).Flags,
+                    AbilityType = (AbilityType)(flags & 0b1111),
+                    Flags = (AbilityFlags)((flags >> 4) & 0b1111),
                     AIBehaviorFlags = _abilityCommonDataTablePointer.Get(i).AIBehaviorFlags,
                 });
             }
@@ -101,7 +103,7 @@ public class FFTOAbilityDataManager : IFFTOAbilityDataManager
         ref ABILITY_COMMON_DATA abilityCommonData = ref _abilityCommonDataTablePointer.AsRef(ability.Id);
         abilityCommonData.JPCost = ability.JPCost;
         abilityCommonData.ChanceToLearn = ability.ChanceToLearn;
-        abilityCommonData.Flags = ability.Flags;
+        abilityCommonData.Flags = (byte)( (((byte)ability.Flags & 0b1111) << 4) | ((byte)ability.AbilityType & 0b1111) );
         abilityCommonData.AIBehaviorFlags = ability.AIBehaviorFlags;
     }
 }

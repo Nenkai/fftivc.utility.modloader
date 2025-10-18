@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 
 /// <summary>
-/// Ability table.
+/// Ability table. <see href="https://ffhacktics.com/wiki/Ability_Data"/>
 /// </summary>
 public class AbilityTable
 {
@@ -20,6 +20,9 @@ public class AbilityTable
     public List<Ability> Abilities { get; set; } = [];
 }
 
+/// <summary>
+/// Ability. <see href="https://ffhacktics.com/wiki/Ability_Data"/>
+/// </summary>
 public class Ability
 {
     /// <summary>
@@ -29,7 +32,8 @@ public class Ability
 
     public ushort JPCost { get; set; }
     public byte ChanceToLearn { get; set; }
-    public byte Flags { get; set; }
+    public AbilityFlags Flags { get; set; }
+    public AbilityType AbilityType { get; set; }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public AIBehaviorFlags AIBehaviorFlags { get; set; }
