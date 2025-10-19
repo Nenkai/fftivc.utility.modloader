@@ -12,8 +12,11 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 /// <summary>
 /// Ability table. <see href="https://ffhacktics.com/wiki/Ability_Data"/>
 /// </summary>
-public class AbilityTable
+public class AbilityTable : IVersionableModel
 {
+    /// <inheritdoc/>
+    public uint Version { get; set; } = 1;
+
     /// <summary>
     /// Abilities.
     /// </summary>
@@ -35,6 +38,22 @@ public class Ability
     public AbilityFlags Flags { get; set; }
     public AbilityType AbilityType { get; set; }
 
-    [JsonConverter(typeof(JsonStringEnumConverter))]
     public AIBehaviorFlags AIBehaviorFlags { get; set; }
+
+    /// <summary>
+    /// Clones the ability.
+    /// </summary>
+    /// <returns></returns>
+    public Ability Clone()
+    {
+        return new Ability()
+        {
+            Id = Id,
+            JPCost = JPCost,
+            ChanceToLearn = ChanceToLearn,
+            Flags = Flags,
+            AbilityType = AbilityType,
+            AIBehaviorFlags = AIBehaviorFlags
+        };
+    }
 }

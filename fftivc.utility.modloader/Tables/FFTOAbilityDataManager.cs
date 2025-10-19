@@ -19,14 +19,15 @@ namespace fftivc.utility.modloader.Tables;
 public class FFTOAbilityDataManager : IFFTOAbilityDataManager
 {
     private readonly Config _config;
-    private ILogger _logger;
-    private IModConfig _modConfig;
-    private IStartupScanner _startupScanner;
+    private readonly ILogger _logger;
+    private readonly IModConfig _modConfig;
+    private readonly IStartupScanner _startupScanner;
+    private readonly IModelSerializer<AbilityTable> _abilitySerializer;
 
     private FixedArrayPtr<ABILITY_COMMON_DATA> _abilityCommonDataTablePointer;
-    private IModelSerializer<AbilityTable> _abilityParser;
-    private AbilityTable _originalTable;
-    private Dictionary<int, (string ModId, Ability Ability)> _moddedTable;
+
+    private AbilityTable _originalTable = new();
+    private Dictionary<int, (string ModId, Ability Ability)> _moddedTable = [];
 
     public FFTOAbilityDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger,
         IModelSerializer<AbilityTable> abilityParser)
@@ -36,7 +37,7 @@ public class FFTOAbilityDataManager : IFFTOAbilityDataManager
         _modConfig = modConfig;
 
         _startupScanner = startupScanner;
-        _abilityParser = abilityParser;
+        _abilitySerializer = abilityParser;
     }
 
     public unsafe void Init()
@@ -51,30 +52,31 @@ public class FFTOAbilityDataManager : IFFTOAbilityDataManager
             for (int i = 0; i < _abilityCommonDataTablePointer.Count; i++)
             {
                 byte flags = _abilityCommonDataTablePointer.Get(i).Flags;
-                _originalTable.Abilities.Add(new Ability()
+                var ability = new Ability()
                 {
                     Id = i,
                     JPCost = _abilityCommonDataTablePointer.Get(i).JPCost,
                     AbilityType = (AbilityType)(flags & 0b1111),
                     Flags = (AbilityFlags)((flags >> 4) & 0b1111),
                     AIBehaviorFlags = _abilityCommonDataTablePointer.Get(i).AIBehaviorFlags,
-                });
+                };
+
+                _originalTable.Abilities.Add(ability);
             }
 
-            /*
-            using var text = File.CreateText("ability_table.txt");
-            XmlSerializer ser = new XmlSerializer(typeof(AbilityTable));
-            ser.Serialize(text, list);
-            */
+            /* Serialization tests
+            using var text = File.Create("ability_table.json");
+            _abilitySerializer.Serialize(text, "json", _originalTable);
 
-            //using var text = File.CreateText("ability_table.txt");
-            //File.WriteAllText("test.txt", XmlSerializer.Serialize(list, new JsonSerializerOptions() { WriteIndented = true }));
+            using var text2 = File.Create("ability_table.xml");
+            _abilitySerializer.Serialize(text2, "xml", _originalTable);
+            */
         });
     }
 
     public void RegisterFolder(string modId, string folder)
     {
-        AbilityTable? abilityModel = _abilityParser.ReadModel(Path.Combine(folder, "AbilityData.xml"));
+        AbilityTable? abilityModel = _abilitySerializer.ReadModelFromFile(Path.Combine(folder, "AbilityData.xml"));
         if (abilityModel is null)
             return;
 

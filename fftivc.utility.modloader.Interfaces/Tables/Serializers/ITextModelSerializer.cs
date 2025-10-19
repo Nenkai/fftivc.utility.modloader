@@ -12,10 +12,17 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Serializers;
 public interface ITextModelSerializer : IModelFormatSerializer
 {
     /// <summary>
-    /// Parses the specified text into a model.
+    /// Deserializes the specified text into a model.
     /// </summary>
     /// <typeparam name="T">Model type.</typeparam>
     /// <param name="text">Input text.</param>
     /// <returns></returns>
-    T? Parse<T>(string text) where T : class;
+    T? Deserialize<T>(string text) where T : class;
+
+    /// <summary>
+    /// Serializes the specified model into text.
+    /// </summary>
+    /// <param name="model">Input text.</param>
+    /// <returns></returns>
+    string? Serialize<T>(T? model) where T : class;
 }

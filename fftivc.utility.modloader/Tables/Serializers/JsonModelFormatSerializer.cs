@@ -11,13 +11,43 @@ namespace fftivc.utility.modloader.Tables.Serializers;
 
 public class JsonModelFormatSerializer : ITextModelSerializer
 {
-    public T? Parse<T>(string content) where T : class
+    private JsonSerializerOptions _options;
+
+    public JsonModelFormatSerializer()
     {
-        return JsonSerializer.Deserialize<T>(content);
+        _options = new JsonSerializerOptions() { WriteIndented = true };
+        _options.Converters.Add(new FlagsEnumJsonConverterFactory());
     }
 
-    public T? Parse<T>(Stream stream) where T : class
+    // ITextModelSerializer
+    public T? Deserialize<T>(string content) where T : class
     {
-        return JsonSerializer.Deserialize<T>(stream);
+        return JsonSerializer.Deserialize<T>(content, _options);
+    }
+
+    public string? Serialize<T>(T? model) where T : class
+    {
+        return JsonSerializer.Serialize(model, _options);
+    }
+
+    // IModelFormatSerializer
+    public T? Deserialize<T>(Stream stream) where T : class
+    {
+        return JsonSerializer.Deserialize<T>(stream, _options);
+    }
+
+    public T? Deserialize<T>(ReadOnlySpan<byte> bytes) where T : class
+    {
+        return JsonSerializer.Deserialize<T>(bytes, _options);
+    }
+
+    public T? Deserialize<T>(ReadOnlyMemory<byte> bytes) where T : class
+    {
+        return JsonSerializer.Deserialize<T>(bytes.Span, _options);
+    }
+
+    public void Serialize<T>(Stream stream, T? model) where T : class
+    {
+        JsonSerializer.Serialize(stream, model, _options);
     }
 }
