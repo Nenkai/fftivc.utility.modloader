@@ -96,33 +96,6 @@ public class Item : DiffableModelBase<Item>, IDiffableModel<Item>
             Unused_0x0B = Unused_0x0B,
         };
     }
-
-    public IList<ModelDiff> DiffModel(Item other)
-    {
-        List<ModelDiff> changes = [];
-        foreach (var propItem in PropertyMap)
-        {
-            if (propItem.Value.HasChanged(this, other))
-                changes.Add(propItem.Value.CreateDiff(this, other));
-        }
-
-        return changes;
-    }
-
-    public void ApplyChanges(IEnumerable<ModelDiff> diffs)
-    {
-        foreach (var diff in diffs)
-        {
-            if (PropertyMap.TryGetValue(diff.Name, out DiffablePropertyItem<Item>? prop))
-                prop.Apply(this, diff);
-        }
-    }
-
-    public void ApplyChange(ModelDiff diff)
-    {
-        if (PropertyMap.TryGetValue(diff.Name, out DiffablePropertyItem<Item>? prop))
-            prop.Apply(this, diff);
-    }
 }
 
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
