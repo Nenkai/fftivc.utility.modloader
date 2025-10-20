@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 /// <summary>
 /// ABILITY_COMMON_DATA
 /// </summary>
@@ -77,3 +78,4 @@ public enum AIBehaviorFlags : int
     OnlyHitsAlliesOrSelf = 1 << 30,
     UsableByAI = 1 << 31,
 }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

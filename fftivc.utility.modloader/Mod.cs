@@ -35,7 +35,9 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
 {
     public Type[] GetTypes() => [
         typeof(IFFTOModPackManager),
+        // Tables
         typeof(IFFTOAbilityDataManager),
+        typeof(IFFTOItemDataManager),
     ];
 
     /// <summary>
@@ -172,6 +174,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
     private void RegisterTableManagersAsR2Controllers()
     {
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
     }
 
     private IServiceProvider BuildServiceCollection()
@@ -201,8 +204,12 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
 
             // Table managers
             .AddTransient(typeof(IModelSerializer<>), typeof(ModelSerializer<>))
+            // ...To grab them as IEnumerable
             .AddSingleton<IFFTOTableManager, FFTOAbilityDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOItemDataManager>()
+            // Individually.
             .AddSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
+            .AddSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
 
             .AddSingleton<FFTOResourceManagerHooks>()
             .AddSingleton<FFTPackHooks>()

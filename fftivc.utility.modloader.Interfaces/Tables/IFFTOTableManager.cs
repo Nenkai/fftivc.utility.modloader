@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
+
 namespace fftivc.utility.modloader.Interfaces.Tables;
 
 /// <summary>
@@ -11,6 +13,11 @@ namespace fftivc.utility.modloader.Interfaces.Tables;
 /// </summary>
 public interface IFFTOTableManager
 {
+    /// <summary>
+    /// Gets the list of all changed entries in the table.
+    /// </summary>
+    IReadOnlyDictionary<(int Id, string PropertyName), AuditEntry> ChangedProperties { get; }
+
     /// <summary>
     /// Initializes the table manager.
     /// </summary>
