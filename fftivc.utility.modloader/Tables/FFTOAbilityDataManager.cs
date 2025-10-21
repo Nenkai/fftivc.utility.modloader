@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
@@ -11,9 +7,14 @@ using fftivc.utility.modloader.Interfaces.Tables.Structures;
 
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory;
+using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -28,9 +29,9 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
 
     private Dictionary<string /* mod id */, AbilityTable> _modTables = [];
 
-    public FFTOAbilityDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, 
+    public FFTOAbilityDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
         IModelSerializer<AbilityTable> abilityParser)
-        : base(configuration, logger, modConfig, startupScanner)
+        : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
         _abilitySerializer = abilityParser;
     }
@@ -43,6 +44,7 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
         {
             if (e.Found)
             {
+                Memory.Instance.ChangeProtection((nuint)(processAddress + e.Offset), sizeof(ABILITY_COMMON_DATA) * 512, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
                 _abilityCommonDataTablePointer = new FixedArrayPtr<ABILITY_COMMON_DATA>((ABILITY_COMMON_DATA*)(processAddress + e.Offset), 512);
 
                 _originalTable = new AbilityTable();
@@ -62,18 +64,24 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
                     _moddedTable.Abilities.Add(ability.Clone());
                 }
 
-                // Serialization tests
-                /*
-                using var text = File.Create("ability_table.json");
-                _abilitySerializer.Serialize(text, "json", _originalTable);
-
-                using var text2 = File.Create("ability_table.xml");
-                _abilitySerializer.Serialize(text2, "xml", _originalTable);
-                */
+                //SaveToFolder();
             }
             else
                 _logger.WriteLine($"[{_modConfig.ModId}] Ability table not found!", _logger.ColorRed);
         });
+    }
+
+    private void SaveToFolder()
+    {
+        string dir = Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "TableData");
+        Directory.CreateDirectory(dir);
+
+        // Serialization tests
+        using var text = File.Create(Path.Combine(dir, "AbilityData.json"));
+        _abilitySerializer.Serialize(text, "json", _originalTable);
+
+        using var text2 = File.Create(Path.Combine(dir, "AbilityData.xml"));
+        _abilitySerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)

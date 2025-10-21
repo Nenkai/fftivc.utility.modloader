@@ -14,6 +14,7 @@ using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
 using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
+using Reloaded.Memory.Interfaces;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -29,9 +30,9 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
 
     private readonly Dictionary<string /* mod id */, ItemTable> _modTables = [];
 
-    public FFTOItemDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger,
+    public FFTOItemDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<ItemTable> itemSerializer)
-        : base(configuration, logger, modConfig, startupScanner)
+        : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
         _itemTableSerializer = itemSerializer;
     }
@@ -43,6 +44,7 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
         // Normal item table - 0-255
         _startupScanner.AddMainModuleScan("00 00 00 80 00 00 00 00 00 00 00 00 00 01 01 80 01 01 00 00 64 00 01 00 00 02 03 80 02 01 00 00", e =>
         {
+            Memory.Instance.ChangeProtection((nuint)(processAddress + e.Offset), sizeof(ITEM_COMMON_DATA) * 256, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _itemCommonDataTablePointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)(processAddress + e.Offset), 256);
 
             for (int i = 0; i < _itemCommonDataTablePointer.Count; i++)
@@ -65,17 +67,19 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
                 };
 
                 _originalTable.Items.Add(item);
+                _moddedTable.Items.Add(item.Clone());
             }
         });
 
         // Extended table, 256->260
         _startupScanner.AddMainModuleScan("0D 15 61 82 20 03 00 54 0A 00 01 00 0D 0C 08 82", e =>
         {
-            _itemCommonDataTablePointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)(processAddress + e.Offset), 5); // there's only 5 entries.
+            Memory.Instance.ChangeProtection((nuint)(processAddress + e.Offset), sizeof(ITEM_COMMON_DATA) * 5, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemCommonDataTable2Pointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)(processAddress + e.Offset), 5); // there's only 5 entries.
             
-            for (int i = 0; i < _itemCommonDataTablePointer.Count; i++)
+            for (int i = 0; i < _itemCommonDataTable2Pointer.Count; i++)
             {
-                var itemRef = _itemCommonDataTablePointer.Get(i);
+                var itemRef = _itemCommonDataTable2Pointer.Get(i);
                 var item = new Item()
                 {
                     Id = 256 + i, // extended table starts at 256.
@@ -93,16 +97,24 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
                 };
 
                 _originalTable.Items.Add(item);
+                _moddedTable.Items.Add(item.Clone());
             }
 
-            // Serialization tests
-
-            using var text = File.Create("item_table.json");
-            _itemTableSerializer.Serialize(text, "json", _originalTable);
-
-            using var text2 = File.Create("item_table.xml");
-            _itemTableSerializer.Serialize(text2, "xml", _originalTable);
+            //SaveToFolder();
         });
+    }
+
+    private void SaveToFolder()
+    {
+        string dir = Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "TableData");
+        Directory.CreateDirectory(dir);
+
+        // Serialization tests
+        using var text = File.Create(Path.Combine(dir, "ItemData.json"));
+        _itemTableSerializer.Serialize(text, "json", _originalTable);
+
+        using var text2 = File.Create(Path.Combine(dir, "ItemData.xml"));
+        _itemTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)

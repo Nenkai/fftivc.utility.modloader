@@ -22,16 +22,18 @@ public class FFTOTableManagerBase<TModel> where TModel : IDiffableModel<TModel>
     protected readonly ILogger _logger;
     protected readonly IModConfig _modConfig;
     protected readonly IStartupScanner _startupScanner;
+    protected readonly IModLoader _modLoader;
 
     public Dictionary<(int Id, string PropertyName), AuditEntry> _changedProperties = [];
     public IReadOnlyDictionary<(int Id, string PropertyName), AuditEntry> ChangedProperties => _changedProperties;
 
-    public FFTOTableManagerBase(Config config, ILogger logger, IModConfig modConfig, IStartupScanner startupScanner)
+    public FFTOTableManagerBase(Config config, ILogger logger, IModConfig modConfig, IStartupScanner startupScanner, IModLoader modLoader)
     {
         _config = config;
         _logger = logger;
         _modConfig = modConfig;
         _startupScanner = startupScanner;
+        _modLoader = modLoader;
     }
 
     public void RecordChange(string modId, int id, TModel model, ModelDiff change)

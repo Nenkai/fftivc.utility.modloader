@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 /// <summary>
 /// ABILITY_COMMON_DATA
 /// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct ABILITY_COMMON_DATA // As per mobile symbols
 {
     public ushort JPCost { get; set; }

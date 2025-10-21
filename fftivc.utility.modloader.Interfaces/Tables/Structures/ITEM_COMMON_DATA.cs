@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 /// <summary>
 /// ITEM_COMMON_DATA (guessed name, as per pspItemGetCommonData and get_itemcommon)
 /// </summary>
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct ITEM_COMMON_DATA
 {
     public byte Palette { get; set; }

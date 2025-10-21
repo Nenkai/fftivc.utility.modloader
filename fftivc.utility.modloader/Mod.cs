@@ -24,8 +24,6 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-using Windows.Win32;
-
 namespace fftivc.utility.modloader;
 
 /// <summary>
@@ -38,6 +36,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         // Tables
         typeof(IFFTOAbilityDataManager),
         typeof(IFFTOItemDataManager),
+        typeof(IFFTOJobCommandDataManager)
     ];
 
     /// <summary>
@@ -118,7 +117,6 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             return;
         }
 
-
         _services = BuildServiceCollection();
 
         _appLocation = _modLoader.GetAppConfig().AppLocation;
@@ -175,6 +173,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
     {
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobCommandDataManager>());
     }
 
     private IServiceProvider BuildServiceCollection()
@@ -207,9 +206,11 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             // ...To grab them as IEnumerable
             .AddSingleton<IFFTOTableManager, FFTOAbilityDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOJobCommandDataManager>()
             // Individually.
             .AddSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
             .AddSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
+            .AddSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
 
             .AddSingleton<FFTOResourceManagerHooks>()
             .AddSingleton<FFTPackHooks>()
