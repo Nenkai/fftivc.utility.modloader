@@ -112,12 +112,14 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommand>, IFFTO
 
     public void RegisterFolder(string modId, string folder)
     {
-        JobCommandTable? commandAbilityTable = _jobCommandSerializer.ReadModelFromFile(Path.Combine(folder, "JobCommandData.xml"));
-        if (commandAbilityTable is null)
+        JobCommandTable? jobCommandTable = _jobCommandSerializer.ReadModelFromFile(Path.Combine(folder, "JobCommandData.xml"));
+        if (jobCommandTable is null)
             return;
 
+        _logger.WriteLine($"[{_modConfig.ModId}] JobCommand: Queueing '{modId}' table with {jobCommandTable.JobCommands.Count} job commands");
+
         // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-        _modTables.Add(modId, commandAbilityTable);
+        _modTables.Add(modId, jobCommandTable);
     }
     
     public void ApplyPendingFileChanges()
@@ -140,6 +142,9 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommand>, IFFTO
                 }
             }
         }
+
+        if (_changedProperties.Count > 0)
+            _logger.WriteLine($"[{_modConfig.ModId}] Applyng JobCommand with {_changedProperties.Count} change(s)");
 
         // Merge everything together into the table
         foreach (var changedValue in _changedProperties)

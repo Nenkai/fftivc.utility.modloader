@@ -90,6 +90,8 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
         if (abilityModel is null)
             return;
 
+        _logger.WriteLine($"[{_modConfig.ModId}] AbilityData: Queueing '{modId}' table with {abilityModel.Abilities.Count} abilities");
+
         // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
         _modTables.Add(modId, abilityModel);
     }
@@ -114,6 +116,9 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
                 }
             }
         }
+
+        if (_changedProperties.Count > 0)
+            _logger.WriteLine($"[{_modConfig.ModId}] Applyng AbilityData with {_changedProperties.Count} change(s)");
 
         // Merge everything together into ABILITY_COMMON_DATA
         foreach (var changedValue in _changedProperties)

@@ -123,6 +123,8 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
         if (itemModel is null)
             return;
 
+        _logger.WriteLine($"[{_modConfig.ModId}] ItemData: Queueing '{modId}' with {itemModel.Items.Count} items");
+
         // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
         _modTables.Add(modId, itemModel);
     }
@@ -147,6 +149,9 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
                 }
             }
         }
+
+        if (_changedProperties.Count > 0)
+            _logger.WriteLine($"[{_modConfig.ModId}] Applyng ItemData with {_changedProperties.Count} change(s)");
 
         // Merge everything together into ABILITY_COMMON_DATA
         foreach (var changedValue in _changedProperties)
