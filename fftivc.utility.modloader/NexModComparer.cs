@@ -98,6 +98,7 @@ public class NexModComparer
             case NexColumnType.Int:
                 return (int)left == (int)right;
             case NexColumnType.UInt:
+            case NexColumnType.HexUInt:
                 return (uint)left == (uint)right;
             case NexColumnType.Float:
                 return (float)left == (float)right;
