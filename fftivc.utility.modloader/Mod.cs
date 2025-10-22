@@ -2,7 +2,11 @@
 using fftivc.utility.modloader.FileLists;
 using fftivc.utility.modloader.Hooks;
 using fftivc.utility.modloader.Interfaces;
+using fftivc.utility.modloader.Interfaces.Tables;
+using fftivc.utility.modloader.Interfaces.Tables.Serializers;
 using fftivc.utility.modloader.Overrides;
+using fftivc.utility.modloader.Tables;
+using fftivc.utility.modloader.Tables.Serializers;
 using fftivc.utility.modloader.Template;
 
 using Microsoft.Extensions.DependencyInjection;
@@ -20,8 +24,6 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-using Windows.Win32;
-
 namespace fftivc.utility.modloader;
 
 /// <summary>
@@ -29,7 +31,13 @@ namespace fftivc.utility.modloader;
 /// </summary>
 public partial class Mod : ModBase, IExports // <= Do not Remove.
 {
-    public Type[] GetTypes() => [typeof(IFFTOModPackManager)];
+    public Type[] GetTypes() => [
+        typeof(IFFTOModPackManager),
+        // Tables
+        typeof(IFFTOAbilityDataManager),
+        typeof(IFFTOItemDataManager),
+        typeof(IFFTOJobCommandDataManager)
+    ];
 
     /// <summary>
     /// Provides access to the mod loader API.
@@ -64,7 +72,17 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
 
     private static IStartupScanner? _startupScanner = null!;
 
+    /// <summary>
+    /// Pack manager.
+    /// </summary>
     public FFTOModPackManager _modPackManager;
+
+    /// <summary>
+    /// All table managers.
+    /// </summary>
+    private IEnumerable<IFFTOTableManager> _tableManagers;
+
+    private IServiceProvider _services;
 
     private string _appLocation;
     private string _appDir;
@@ -99,7 +117,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             return;
         }
 
-        var provider = BuildServiceCollection();
+        _services = BuildServiceCollection();
 
         _appLocation = _modLoader.GetAppConfig().AppLocation;
         _appDir = Path.GetDirectoryName(_appLocation)!;
@@ -108,11 +126,14 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         CheckSteamAPIDll();
         GetGameVersion();
 
-        IEnumerable<IFFTOCoreHook> coreHooks = provider.GetServices<IFFTOCoreHook>();
-        
+        IEnumerable<IFFTOCoreHook> coreHooks = _services.GetServices<IFFTOCoreHook>();
         foreach (var hook in coreHooks)
             hook.Install();
-        
+
+        _tableManagers = _services.GetServices<IFFTOTableManager>();
+        foreach (var tableManager in _tableManagers)
+            tableManager.Init();
+
         if (IsRunningUnpacked())
         {
             _logger.WriteLine($"[{_modConfig.ModId}] //////////////////////////////////", _logger.ColorYellow);
@@ -123,10 +144,10 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             return;
         }
 
-        _modPackManager = provider.GetRequiredService<FFTOModPackManager>();
+        _modPackManager = _services.GetRequiredService<FFTOModPackManager>();
         _dataDir = Path.Combine(_appDir, "data");
 
-        var fileList = provider.GetRequiredService<FFTPackFileList>();
+        var fileList = _services.GetRequiredService<FFTPackFileList>();
         if (!fileList.Load(_modLoader.GetDirectoryForModId(_modConfig.ModId)))
         {
             _logger.WriteLine($"[{_modConfig.ModId}] Failed to load file list. File mods will not be loaded!", _logger.ColorRed);
@@ -135,16 +156,24 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
 
         GameMode = _modLoader.GetAppConfig().AppLocation.Contains("classic") ? FFTOGameMode.Classic : FFTOGameMode.Enhanced;
 
-        IEnumerable<IModdedFileOverrideStrategy> overrideStrategies = provider.GetServices<IModdedFileOverrideStrategy>();
+        IEnumerable<IModdedFileOverrideStrategy> overrideStrategies = _services.GetServices<IModdedFileOverrideStrategy>();
         if (!_modPackManager.Initialize(_dataDir, _tempDir, GameMode, _gameVersion, overrideStrategies))
         {
             _logger.WriteLine($"[{_modConfig.ModId}] Pack manager failed to initialize.", _logger.ColorRed);
             return;
         }
 
+        RegisterTableManagersAsR2Controllers();
         _modLoader.AddOrReplaceController<IFFTOModPackManager>(_owner, _modPackManager);
         _modLoader.ModLoading += ModLoading;
         _modLoader.OnModLoaderInitialized += OnAllModsLoaded;
+    }
+
+    private void RegisterTableManagersAsR2Controllers()
+    {
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobCommandDataManager>());
     }
 
     private IServiceProvider BuildServiceCollection()
@@ -171,6 +200,17 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOCoreHook, ResourceManagerHooks>()
             .AddSingleton<IFFTOCoreHook, WindowHooks>()
             .AddSingleton<IFFTOCoreHook>(sp => sp.GetRequiredService<LanguageManagerHooks>())
+
+            // Table managers
+            .AddTransient(typeof(IModelSerializer<>), typeof(ModelSerializer<>))
+            // ...To grab them as IEnumerable
+            .AddSingleton<IFFTOTableManager, FFTOAbilityDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOItemDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOJobCommandDataManager>()
+            // Individually.
+            .AddSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
+            .AddSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
+            .AddSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
 
             .AddSingleton<FFTOResourceManagerHooks>()
             .AddSingleton<FFTPackHooks>()
@@ -224,11 +264,21 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
 
     private void ModLoading(IModV1 mod, IModConfigV1 modConfig)
     {
-        var modDir = Path.Combine(_modLoader.GetDirectoryForModId(modConfig.ModId), "FFTIVC", "data");
-        if (!Directory.Exists(modDir))
-            return;
+        var modDir = Path.Combine(_modLoader.GetDirectoryForModId(modConfig.ModId), "FFTIVC");
+        string modDataDir = Path.Combine(modDir, "data");
+        if (Directory.Exists(modDataDir))
+        {
+            _modPackManager.RegisterModDirectory(modConfig.ModId, modDataDir);
+        }
 
-        _modPackManager.RegisterModDirectory(modConfig.ModId, modDir);
+        string modTablesDir = Path.Combine(modDir, "tables");
+        if (Directory.Exists(modTablesDir))
+        {
+            foreach (var manager in _tableManagers)
+            {
+                manager.RegisterFolder(modConfig.ModId, modTablesDir);
+            }
+        }
     }
 
     private void OnAllModsLoaded()
@@ -251,6 +301,9 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
 
         if (Directory.Exists(_tempDir))
             Directory.Delete(_tempDir, recursive: true);
+
+        foreach (var tableManager in _tableManagers)
+            tableManager.ApplyPendingFileChanges();
     }
 
     private bool IsRunningUnpacked()
