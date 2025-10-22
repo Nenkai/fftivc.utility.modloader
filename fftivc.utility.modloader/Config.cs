@@ -3,6 +3,7 @@
 using Reloaded.Mod.Interfaces.Structs;
 
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Channels;
 
 namespace fftivc.utility.modloader.Configuration
@@ -10,7 +11,7 @@ namespace fftivc.utility.modloader.Configuration
     public class Config : Configurable<Config>
     {
         [Category("General")]
-        [DisplayName("Disable Custom Cursors")]
+        [DisplayName("Disable custom cursors")]
         [Description("Whether to disable the game's custom cursors.")]
         [DefaultValue(false)]
         public bool DisableCustomCursors { get; set; } = false;
@@ -50,6 +51,12 @@ namespace fftivc.utility.modloader.Configuration
         public bool LogGeneralFileAccesses { get; set; } = false;
 
         [Category("Debug")]
+        [DisplayName("General file access log type")]
+        [Description("(Advanced users only) When general file access logging is enabled, whether to log all files, or only files that are not found")]
+        [DefaultValue(FileAccessLogType.AllFiles)]
+        public FileAccessLogType GeneralFileAccessType { get; set; } = FileAccessLogType.AllFiles;
+
+        [Category("Debug")]
         [DisplayName("Log G2D File Accesses")]
         [Description("(Advanced users only) Whether to show G2D file accesses in the console.")]
         [DefaultValue(false)]
@@ -60,6 +67,15 @@ namespace fftivc.utility.modloader.Configuration
         [Description("(Advanced users only) Whether to show FFTPack.bin file accesses in the console.")]
         [DefaultValue(false)]
         public bool LogFFTPackFileAccesses { get; set; } = false;
+    }
+
+    public enum FileAccessLogType
+    {
+        [Display(Name = "Log all files, including not found")]
+        AllFiles,
+
+        [Display(Name = "Files not found only")]
+        NotFoundOnly,
     }
 
     /// <summary>

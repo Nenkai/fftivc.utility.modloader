@@ -303,7 +303,7 @@ public class FFTOModPackManager : IFFTOModPackManager
             return;
         }
 
-        Print($"{modId}: Adding file '{actualGamePath}' ({gameMode}) from '{localPath}'");
+        Print($"{modId}: Adding file '{packFilePath}' ({gameMode}) from '{localPath}'");
 
         if (!modPack.Files.TryGetValue(packFilePath, out FFTOModFile? modFile))
         {

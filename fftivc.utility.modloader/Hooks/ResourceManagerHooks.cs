@@ -77,7 +77,10 @@ public class ResourceManagerHooks : IFFTOCoreHook
                 string? str = Marshal.PtrToStringAnsi((nint)a2->PathPtr);
 
                 if (a2->FileSize != 0)
-                    _logger.WriteLine($"[FFT File Logger] loaded: {str} (0x{a2->FileSize:X} bytes)", Color.Gray);
+                {
+                    if (_configuration.GeneralFileAccessType == FileAccessLogType.AllFiles)
+                        _logger.WriteLine($"[FFT File Logger] loaded: {str} (0x{a2->FileSize:X} bytes)", Color.Gray);
+                }
                 else
                     _logger.WriteLine($"[FFT File Logger] not found/empty: {str}", Color.Gray);
             }
