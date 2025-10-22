@@ -286,6 +286,7 @@ public class JobCommand : DiffableModelBase<JobCommand>, IDiffableModel<JobComma
     {
         return new JobCommand()
         {
+            Id = Id,
             ExtendAbilityIdFlagBits = ExtendAbilityIdFlagBits,
             ExtendReactionSupportMovementIdFlagBits = ExtendReactionSupportMovementIdFlagBits,
             AbilityId1 = AbilityId1,
