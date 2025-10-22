@@ -60,8 +60,8 @@ internal class G2DFileOverrideStrategy : IModdedFileOverrideStrategy
     public void Apply(FFTOGameMode gameType, string modId, string gamePath, string localPath)
     {
         string dirName = new FileInfo(gamePath).Directory!.Name;
-        string? locale = "en";
-        if (dirName.Contains('.'))
+        string? locale = gameType == FFTOGameMode.Classic ? "en" : string.Empty;
+        if (gameType == FFTOGameMode.Classic && dirName.Contains('.'))
         {
             string[] dirSplit = dirName.Split('.');
             if (dirSplit.Length == 2)
@@ -101,7 +101,10 @@ internal class G2DFileOverrideStrategy : IModdedFileOverrideStrategy
         ArgumentException.ThrowIfNullOrEmpty(modIdOwner, nameof(modIdOwner));
         ArgumentException.ThrowIfNullOrEmpty(localFilePath, nameof(localFilePath));
 
-        locale ??= string.Empty;
+        if (gameMode == FFTOGameMode.Classic && locale != "en" && locale != "jp")
+            throw new ArgumentException("G2D file locale must be either en or jp when inserting a file for classic.");
+        else
+            locale = string.Empty;
 
         if (!File.Exists(localFilePath))
         {
@@ -139,7 +142,11 @@ internal class G2DFileOverrideStrategy : IModdedFileOverrideStrategy
     /// <returns></returns>
     public unsafe byte[]? OnFetchG2DFile(int fileIndex)
     {
-        string languagePrefix = _languageManagerHooks.CurrentLanguage == FFTOLanguageType.Japanese ? "jp" : "en";
+        string languagePrefix;
+        if (_currentGameMode == FFTOGameMode.Classic)
+            languagePrefix = _languageManagerHooks.CurrentLanguage == FFTOLanguageType.Japanese ? "jp" : "en";
+        else
+            languagePrefix = string.Empty;
 
         if (GameModeToModdedFiles.TryGetValue(_currentGameMode, out Dictionary<string, G2DModdedFileRegistry>? filesForGameMode) &&
           filesForGameMode.TryGetValue(languagePrefix, out G2DModdedFileRegistry? localeRegistry) &&

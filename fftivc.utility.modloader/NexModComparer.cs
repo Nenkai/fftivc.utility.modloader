@@ -17,7 +17,7 @@ public class NexModComparer
 {
     // Keeps tracks of nex changes so we can merge them.
     // Dictionary<game mode, Dictionary<table name, Dictionary<mod id, changes>>>
-    private Dictionary<FFTOGameMode, Dictionary<string, Dictionary<string, NexTableChange>>> _nexChanges = [];
+    private readonly Dictionary<FFTOGameMode, Dictionary<string, Dictionary<string, NexTableChange>>> _nexChanges = [];
 
     public void RecordChanges(string modId, FFTOGameMode gameMode, string tableName, NexDataFile originalNexTable, NexDataFile modNexTable)
     {
