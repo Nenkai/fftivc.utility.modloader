@@ -67,6 +67,24 @@ namespace fftivc.utility.modloader.Configuration
         [Description("(Advanced users only) Whether to show FFTPack.bin file accesses in the console.")]
         [DefaultValue(false)]
         public bool LogFFTPackFileAccesses { get; set; } = false;
+
+        [Category("Table Logging")]
+        [DisplayName("Log AbilityData table changes")]
+        [Description("(Advanced users only) Whether to show AbilityData table changes in the console.")]
+        [DefaultValue(false)]
+        public bool LogAbilityDataTableChanges { get; set; } = false;
+
+        [Category("Table Logging")]
+        [DisplayName("Log ItemData table changes")]
+        [Description("(Advanced users only) Whether to show ItemData table changes in the console.")]
+        [DefaultValue(false)]
+        public bool LogItemDataTableChanges { get; set; } = false;
+
+        [Category("Table Logging")]
+        [DisplayName("Log JobCommand table changes")]
+        [Description("(Advanced users only) Whether to show JobCommand table changes in the console.")]
+        [DefaultValue(false)]
+        public bool LogJobCommandTableChanges { get; set; } = false;
     }
 
     public enum FileAccessLogType

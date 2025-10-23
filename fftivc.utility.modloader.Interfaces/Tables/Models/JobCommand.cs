@@ -41,241 +41,242 @@ public class JobCommand : DiffableModelBase<JobCommand>, IDiffableModel<JobComma
     /// <summary>
     /// Determines whether to use an extended id when fetching for an ability id. If toggled for a specific ability, id is beyond 256.
     /// </summary>
-    public ExtendAbilityIdFlags ExtendAbilityIdFlagBits { get; set; }
+    public ExtendAbilityIdFlags? ExtendAbilityIdFlagBits { get; set; }
 
     /// <summary>
     /// Determines whether to use an extended id when fetching for an RSM id. If toggled for a specific RSM, id is beyond 256.
     /// </summary>
-    public ExtendReactionSupportMovementIdFlags ExtendReactionSupportMovementIdFlagBits { get; set; }
+    public ExtendReactionSupportMovementIdFlags? ExtendReactionSupportMovementIdFlagBits { get; set; }
 
     // Should or should not be made an array? Flag handling is really weird.
-    public ushort AbilityId1 
+    public ushort? AbilityId1 
     { 
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility1, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility1, value >= 256);
+            
         }
     }
 
-    public ushort AbilityId2
+    public ushort? AbilityId2
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility2, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility2, value >= 256);
         }
     }
-    public ushort AbilityId3
+    public ushort? AbilityId3
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility3, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility3, value >= 256);
         }
     }
-    public ushort AbilityId4
+    public ushort? AbilityId4
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility4, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility4, value >= 256);
         }
     }
-    public ushort AbilityId5
+    public ushort? AbilityId5
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility5, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility5, value >= 256);
         }
     }
-    public ushort AbilityId6
+    public ushort? AbilityId6
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility6, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility6, value >= 256);
         }
     }
-    public ushort AbilityId7
+    public ushort? AbilityId7
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility7, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility7, value >= 256);
         }
     }
 
-    public ushort AbilityId8
+    public ushort? AbilityId8
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility8, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility8, value >= 256);
         }
     }
-    public ushort AbilityId9
+    public ushort? AbilityId9
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility9, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility9, value >= 256);
         }
     }
-    public ushort AbilityId10
+    public ushort? AbilityId10
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility10, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility10, value >= 256);
         }
     }
-    public ushort AbilityId11
+    public ushort? AbilityId11
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility11, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility11, value >= 256);
         }
     }
-    public ushort AbilityId12
+    public ushort? AbilityId12
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility12, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility12, value >= 256);
         }
     }
-    public ushort AbilityId13
+    public ushort? AbilityId13
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility13, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility13, value >= 256);
         }
     }
-    public ushort AbilityId14
+    public ushort? AbilityId14
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility14, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility14, value >= 256);
         }
     }
-    public ushort AbilityId15
+    public ushort? AbilityId15
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility15, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility15, value >= 256);
         }
     }
-    public ushort AbilityId16
+    public ushort? AbilityId16
     {
         get;
         set
         {
-            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits, ExtendAbilityIdFlags.ExtendedAbility16, value >= 256);
             field = value;
+            ExtendAbilityIdFlagBits = SetFlagU16(ExtendAbilityIdFlagBits!.Value, ExtendAbilityIdFlags.ExtendedAbility16, value >= 256);
         }
     }
-    public ushort ReactionSupportMovementId1
+    public ushort? ReactionSupportMovementId1
     {
         get;
         set
         {
-            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits, ExtendReactionSupportMovementIdFlags.ExtendRSMId1, value >= 256);
             field = value;
+            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits!.Value, ExtendReactionSupportMovementIdFlags.ExtendRSMId1, value >= 256);
         }
     }
-    public ushort ReactionSupportMovementId2
+    public ushort? ReactionSupportMovementId2
     {
         get;
         set
         {
-            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits, ExtendReactionSupportMovementIdFlags.ExtendRSMId2, value >= 256);
             field = value;
+            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits!.Value, ExtendReactionSupportMovementIdFlags.ExtendRSMId2, value >= 256);
         }
     }
-    public ushort ReactionSupportMovementId3
+    public ushort? ReactionSupportMovementId3
     {
         get;
         set
         {
-            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits, ExtendReactionSupportMovementIdFlags.ExtendRSMId3, value >= 256);
             field = value;
+            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits!.Value, ExtendReactionSupportMovementIdFlags.ExtendRSMId3, value >= 256);
         }
     }
-    public ushort ReactionSupportMovementId4
+    public ushort? ReactionSupportMovementId4
     {
         get;
         set
         {
-            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits, ExtendReactionSupportMovementIdFlags.ExtendRSMId4, value >= 256);
             field = value;
+            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits!.Value, ExtendReactionSupportMovementIdFlags.ExtendRSMId4, value >= 256);
         }
     }
-    public ushort ReactionSupportMovementId5
+    public ushort? ReactionSupportMovementId5
     {
         get;
         set
         {
-            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits, ExtendReactionSupportMovementIdFlags.ExtendRSMId4, value >= 256);
             field = value;
+            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits!.Value, ExtendReactionSupportMovementIdFlags.ExtendRSMId5, value >= 256);
         }
     }
-    public ushort ReactionSupportMovementId6
+    public ushort? ReactionSupportMovementId6
     {
         get;
         set
         {
-            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits, ExtendReactionSupportMovementIdFlags.ExtendRSMId6, value >= 256);
             field = value;
+            ExtendReactionSupportMovementIdFlagBits = SetFlagU8(ExtendReactionSupportMovementIdFlagBits!.Value, ExtendReactionSupportMovementIdFlags.ExtendRSMId6, value >= 256);
         }
     }
 
     public static Dictionary<string, DiffablePropertyItem<JobCommand>> PropertyMap { get; } = new()
     {
-        [nameof(ExtendAbilityIdFlagBits)]      = new DiffablePropertyItem<JobCommand, ExtendAbilityIdFlags>(nameof(ExtendAbilityIdFlagBits), i => i.ExtendAbilityIdFlagBits, (i, v) => i.ExtendAbilityIdFlagBits = v),
-        [nameof(ExtendReactionSupportMovementIdFlagBits)] = new DiffablePropertyItem<JobCommand, ExtendReactionSupportMovementIdFlags>(nameof(ExtendReactionSupportMovementIdFlagBits), i => i.ExtendReactionSupportMovementIdFlagBits, (i, v) => i.ExtendReactionSupportMovementIdFlagBits = v),
-        [nameof(AbilityId1)]                   = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId1), i => i.AbilityId1, (i, v) => i.AbilityId1 = v),
-        [nameof(AbilityId2)]                   = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId2), i => i.AbilityId2, (i, v) => i.AbilityId2 = v),
-        [nameof(AbilityId3)]                   = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId3), i => i.AbilityId3, (i, v) => i.AbilityId3 = v),
-        [nameof(AbilityId4)]                   = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId4), i => i.AbilityId4, (i, v) => i.AbilityId4 = v),
-        [nameof(AbilityId5)]                   = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId5), i => i.AbilityId5, (i, v) => i.AbilityId5 = v),
-        [nameof(AbilityId6)]                   = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId6), i => i.AbilityId6, (i, v) => i.AbilityId6 = v),
-        [nameof(AbilityId7)]                   = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId7), i => i.AbilityId7, (i, v) => i.AbilityId7 = v),
-        [nameof(AbilityId8)]                   = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId8), i => i.AbilityId8, (i, v) => i.AbilityId8 = v),
-        [nameof(AbilityId9)]                   = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId9), i => i.AbilityId9, (i, v) => i.AbilityId9 = v),
-        [nameof(AbilityId10)]                  = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId10), i => i.AbilityId10, (i, v) => i.AbilityId10 = v),
-        [nameof(AbilityId11)]                  = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId11), i => i.AbilityId11, (i, v) => i.AbilityId11 = v),
-        [nameof(AbilityId12)]                  = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId12), i => i.AbilityId12, (i, v) => i.AbilityId12 = v),
-        [nameof(AbilityId13)]                  = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId13), i => i.AbilityId13, (i, v) => i.AbilityId13 = v),
-        [nameof(AbilityId14)]                  = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId14), i => i.AbilityId14, (i, v) => i.AbilityId14 = v),
-        [nameof(AbilityId15)]                  = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId15), i => i.AbilityId15, (i, v) => i.AbilityId15 = v),
-        [nameof(AbilityId16)]                  = new DiffablePropertyItem<JobCommand, ushort>(nameof(AbilityId16), i => i.AbilityId16, (i, v) => i.AbilityId16 = v),
-        [nameof(ReactionSupportMovementId1)]   = new DiffablePropertyItem<JobCommand, ushort>(nameof(ReactionSupportMovementId1), i => i.ReactionSupportMovementId1, (i, v) => i.ReactionSupportMovementId1 = v),
-        [nameof(ReactionSupportMovementId2)]   = new DiffablePropertyItem<JobCommand, ushort>(nameof(ReactionSupportMovementId2), i => i.ReactionSupportMovementId2, (i, v) => i.ReactionSupportMovementId2 = v),
-        [nameof(ReactionSupportMovementId3)]   = new DiffablePropertyItem<JobCommand, ushort>(nameof(ReactionSupportMovementId3), i => i.ReactionSupportMovementId3, (i, v) => i.ReactionSupportMovementId3 = v),
-        [nameof(ReactionSupportMovementId4)]   = new DiffablePropertyItem<JobCommand, ushort>(nameof(ReactionSupportMovementId4), i => i.ReactionSupportMovementId4, (i, v) => i.ReactionSupportMovementId4 = v),
-        [nameof(ReactionSupportMovementId5)]   = new DiffablePropertyItem<JobCommand, ushort>(nameof(ReactionSupportMovementId5), i => i.ReactionSupportMovementId5, (i, v) => i.ReactionSupportMovementId5 = v),
-        [nameof(ReactionSupportMovementId6)]   = new DiffablePropertyItem<JobCommand, ushort>(nameof(ReactionSupportMovementId6), i => i.ReactionSupportMovementId6, (i, v) => i.ReactionSupportMovementId6 = v),
+        [nameof(ExtendAbilityIdFlagBits)]      = new DiffablePropertyItem<JobCommand, ExtendAbilityIdFlags?>(nameof(ExtendAbilityIdFlagBits), i => i.ExtendAbilityIdFlagBits, (i, v) => i.ExtendAbilityIdFlagBits = v),
+        [nameof(ExtendReactionSupportMovementIdFlagBits)] = new DiffablePropertyItem<JobCommand, ExtendReactionSupportMovementIdFlags?>(nameof(ExtendReactionSupportMovementIdFlagBits), i => i.ExtendReactionSupportMovementIdFlagBits, (i, v) => i.ExtendReactionSupportMovementIdFlagBits = v),
+        [nameof(AbilityId1)]                   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId1), i => i.AbilityId1, (i, v) => i.AbilityId1 = v),
+        [nameof(AbilityId2)]                   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId2), i => i.AbilityId2, (i, v) => i.AbilityId2 = v),
+        [nameof(AbilityId3)]                   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId3), i => i.AbilityId3, (i, v) => i.AbilityId3 = v),
+        [nameof(AbilityId4)]                   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId4), i => i.AbilityId4, (i, v) => i.AbilityId4 = v),
+        [nameof(AbilityId5)]                   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId5), i => i.AbilityId5, (i, v) => i.AbilityId5 = v),
+        [nameof(AbilityId6)]                   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId6), i => i.AbilityId6, (i, v) => i.AbilityId6 = v),
+        [nameof(AbilityId7)]                   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId7), i => i.AbilityId7, (i, v) => i.AbilityId7 = v),
+        [nameof(AbilityId8)]                   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId8), i => i.AbilityId8, (i, v) => i.AbilityId8 = v),
+        [nameof(AbilityId9)]                   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId9), i => i.AbilityId9, (i, v) => i.AbilityId9 = v),
+        [nameof(AbilityId10)]                  = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId10), i => i.AbilityId10, (i, v) => i.AbilityId10 = v),
+        [nameof(AbilityId11)]                  = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId11), i => i.AbilityId11, (i, v) => i.AbilityId11 = v),
+        [nameof(AbilityId12)]                  = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId12), i => i.AbilityId12, (i, v) => i.AbilityId12 = v),
+        [nameof(AbilityId13)]                  = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId13), i => i.AbilityId13, (i, v) => i.AbilityId13 = v),
+        [nameof(AbilityId14)]                  = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId14), i => i.AbilityId14, (i, v) => i.AbilityId14 = v),
+        [nameof(AbilityId15)]                  = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId15), i => i.AbilityId15, (i, v) => i.AbilityId15 = v),
+        [nameof(AbilityId16)]                  = new DiffablePropertyItem<JobCommand, ushort?>(nameof(AbilityId16), i => i.AbilityId16, (i, v) => i.AbilityId16 = v),
+        [nameof(ReactionSupportMovementId1)]   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(ReactionSupportMovementId1), i => i.ReactionSupportMovementId1, (i, v) => i.ReactionSupportMovementId1 = v),
+        [nameof(ReactionSupportMovementId2)]   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(ReactionSupportMovementId2), i => i.ReactionSupportMovementId2, (i, v) => i.ReactionSupportMovementId2 = v),
+        [nameof(ReactionSupportMovementId3)]   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(ReactionSupportMovementId3), i => i.ReactionSupportMovementId3, (i, v) => i.ReactionSupportMovementId3 = v),
+        [nameof(ReactionSupportMovementId4)]   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(ReactionSupportMovementId4), i => i.ReactionSupportMovementId4, (i, v) => i.ReactionSupportMovementId4 = v),
+        [nameof(ReactionSupportMovementId5)]   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(ReactionSupportMovementId5), i => i.ReactionSupportMovementId5, (i, v) => i.ReactionSupportMovementId5 = v),
+        [nameof(ReactionSupportMovementId6)]   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(ReactionSupportMovementId6), i => i.ReactionSupportMovementId6, (i, v) => i.ReactionSupportMovementId6 = v),
     };
 
     /// <summary>

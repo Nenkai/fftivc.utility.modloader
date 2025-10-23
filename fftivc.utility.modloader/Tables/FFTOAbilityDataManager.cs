@@ -42,32 +42,36 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
 
         _startupScanner.AddMainModuleScan("00 00 00 00 82 02 01 81 32 00 5A 41 81 75 00 80", e =>
         {
-            if (e.Found)
+            if (!e.Found)
             {
-                Memory.Instance.ChangeProtection((nuint)(processAddress + e.Offset), sizeof(ABILITY_COMMON_DATA) * 512, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-                _abilityCommonDataTablePointer = new FixedArrayPtr<ABILITY_COMMON_DATA>((ABILITY_COMMON_DATA*)(processAddress + e.Offset), 512);
-
-                _originalTable = new AbilityTable();
-                for (int i = 0; i < _abilityCommonDataTablePointer.Count; i++)
-                {
-                    byte flags = _abilityCommonDataTablePointer.Get(i).Flags;
-                    var ability = new Ability()
-                    {
-                        Id = i,
-                        JPCost = _abilityCommonDataTablePointer.Get(i).JPCost,
-                        AbilityType = (AbilityType)(flags & 0b1111),
-                        Flags = (AbilityFlags)((flags >> 4) & 0b1111),
-                        AIBehaviorFlags = _abilityCommonDataTablePointer.Get(i).AIBehaviorFlags,
-                    };
-
-                    _originalTable.Abilities.Add(ability);
-                    _moddedTable.Abilities.Add(ability.Clone());
-                }
-
-                //SaveToFolder();
+                _logger.WriteLine($"[{_modConfig.ModId}] Could not find AbilityData table!", _logger.ColorRed);
+                return;
             }
-            else
-                _logger.WriteLine($"[{_modConfig.ModId}] Ability table not found!", _logger.ColorRed);
+
+            nuint tableAddress = (nuint)(processAddress + e.Offset);
+            _logger.WriteLine($"[{_modConfig.ModId}] Found AbilityData table @ 0x{tableAddress:X}");
+
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_COMMON_DATA) * 512, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _abilityCommonDataTablePointer = new FixedArrayPtr<ABILITY_COMMON_DATA>((ABILITY_COMMON_DATA*)tableAddress, 512);
+
+            _originalTable = new AbilityTable();
+            for (int i = 0; i < _abilityCommonDataTablePointer.Count; i++)
+            {
+                byte flags = _abilityCommonDataTablePointer.Get(i).Flags;
+                var ability = new Ability()
+                {
+                    Id = i,
+                    JPCost = _abilityCommonDataTablePointer.Get(i).JPCost,
+                    AbilityType = (AbilityType)(flags & 0b1111),
+                    Flags = (AbilityFlags)((flags >> 4) & 0b1111),
+                    AIBehaviorFlags = _abilityCommonDataTablePointer.Get(i).AIBehaviorFlags,
+                };
+
+                _originalTable.Abilities.Add(ability);
+                _moddedTable.Abilities.Add(ability.Clone());
+            }
+
+            //SaveToFolder();
         });
     }
 
@@ -112,6 +116,9 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
                 IList<ModelDiff> changes = _moddedTable.Abilities[abilityKv.Id].DiffModel(abilityKv);
                 foreach (ModelDiff change in changes)
                 {
+                    if (_config.LogAbilityDataTableChanges)
+                        _logger.WriteLine($"[{_modConfig.ModId}] [AbilityData] {moddedTableKv.Key} changed ID {abilityKv.Id} ({change.Name})", Color.Gray);
+
                     RecordChange(moddedTableKv.Key, abilityKv.Id, abilityKv, change);
                 }
             }
@@ -134,9 +141,15 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
         if (ability.Id > 512)
             return;
 
-        var differences = _moddedTable.Abilities[ability.Id].DiffModel(ability);
+        Ability previous = _moddedTable.Abilities[ability.Id];
+        IList<ModelDiff> differences = previous.DiffModel(ability);
         foreach (ModelDiff diff in differences)
+        {
+            if (_config.LogAbilityDataTableChanges)
+                _logger.WriteLine($"[{_modConfig.ModId}] [AbilityData] {modId} changed ID {ability.Id} ({diff.Name})", Color.Gray);
+
             RecordChange(modId, ability.Id, ability, diff);
+        }
 
         // Apply changes applied by other mods first.
         foreach (var change in _changedProperties)
@@ -147,10 +160,12 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
 
         // Actually apply changes
         ref ABILITY_COMMON_DATA abilityCommonData = ref _abilityCommonDataTablePointer.AsRef(ability.Id);
-        abilityCommonData.JPCost = ability.JPCost;
-        abilityCommonData.ChanceToLearn = ability.ChanceToLearn;
-        abilityCommonData.Flags = (byte)((((byte)ability.Flags & 0b1111) << 4) | ((byte)ability.AbilityType & 0b1111));
-        abilityCommonData.AIBehaviorFlags = ability.AIBehaviorFlags;
+        abilityCommonData.JPCost = (ushort)(ability.JPCost ?? previous.JPCost)!;
+        abilityCommonData.ChanceToLearn = (byte)(ability.ChanceToLearn ?? previous.ChanceToLearn)!;
+
+        AbilityFlags abilityFlags = (AbilityFlags)(ability.Flags ?? previous.Flags)!;
+        abilityCommonData.Flags = (byte)((((byte)abilityFlags & 0b1111) << 4) | ((byte)abilityFlags & 0b1111));
+        abilityCommonData.AIBehaviorFlags = (AIBehaviorFlags)(ability.AIBehaviorFlags ?? previous.AIBehaviorFlags)!;
     }
 
     public Ability GetOriginalAbility(int index)

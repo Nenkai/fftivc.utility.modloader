@@ -44,27 +44,22 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
         // Normal item table - 0-255
         _startupScanner.AddMainModuleScan("00 00 00 80 00 00 00 00 00 00 00 00 00 01 01 80 01 01 00 00 64 00 01 00 00 02 03 80 02 01 00 00", e =>
         {
-            Memory.Instance.ChangeProtection((nuint)(processAddress + e.Offset), sizeof(ITEM_COMMON_DATA) * 256, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemCommonDataTablePointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)(processAddress + e.Offset), 256);
+            if (!e.Found)
+            {
+                _logger.WriteLine($"[{_modConfig.ModId}] Could not find ItemData table!", _logger.ColorRed);
+                return;
+            }
+
+            nuint tableAddress = (nuint)(processAddress + e.Offset);
+            _logger.WriteLine($"[{_modConfig.ModId}] Found ItemData table @ 0x{tableAddress:X}");
+
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_COMMON_DATA) * 256, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemCommonDataTablePointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)tableAddress, 256);
 
             for (int i = 0; i < _itemCommonDataTablePointer.Count; i++)
             {
                 var itemRef = _itemCommonDataTablePointer.Get(i);
-                var item = new Item()
-                {
-                    Id = i,
-                    Palette = itemRef.Palette,
-                    SpriteID = itemRef.SpriteID,
-                    RequiredLevel = itemRef.RequiredLevel,
-                    TypeFlags = itemRef.TypeFlags,
-                    AdditionalDataId = itemRef.SecondTableId,
-                    ItemCategory = itemRef.ItemCategory,
-                    Unused_0x06 = itemRef.Unused_0x06,
-                    EquipBonusId = itemRef.EquipBonusId,
-                    Price = itemRef.Price,
-                    ShopAvailability = itemRef.ShopAvailability,
-                    Unused_0x0B = itemRef.Unused_0x0B,
-                };
+                Item item = CreateItem(i, itemRef);
 
                 _originalTable.Items.Add(item);
                 _moddedTable.Items.Add(item.Clone());
@@ -74,27 +69,22 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
         // Extended table, 256->260
         _startupScanner.AddMainModuleScan("0D 15 61 82 20 03 00 54 0A 00 01 00 0D 0C 08 82", e =>
         {
-            Memory.Instance.ChangeProtection((nuint)(processAddress + e.Offset), sizeof(ITEM_COMMON_DATA) * 5, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemCommonDataTable2Pointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)(processAddress + e.Offset), 5); // there's only 5 entries.
+            if (!e.Found)
+            {
+                _logger.WriteLine($"[{_modConfig.ModId}] Could not find ItemData extended table!", _logger.ColorRed);
+                return;
+            }
+
+            nuint tableAddress = (nuint)(processAddress + e.Offset);
+            _logger.WriteLine($"[{_modConfig.ModId}] Found ItemData extended table @ 0x{tableAddress:X}");
+
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_COMMON_DATA) * 5, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemCommonDataTable2Pointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)tableAddress, 5); // there's only 5 entries.
             
             for (int i = 0; i < _itemCommonDataTable2Pointer.Count; i++)
             {
                 var itemRef = _itemCommonDataTable2Pointer.Get(i);
-                var item = new Item()
-                {
-                    Id = 256 + i, // extended table starts at 256.
-                    Palette = itemRef.Palette,
-                    SpriteID = itemRef.SpriteID,
-                    RequiredLevel = itemRef.RequiredLevel,
-                    TypeFlags = itemRef.TypeFlags,
-                    AdditionalDataId = itemRef.SecondTableId,
-                    ItemCategory = itemRef.ItemCategory,
-                    Unused_0x06 = itemRef.Unused_0x06,
-                    EquipBonusId = itemRef.EquipBonusId,
-                    Price = itemRef.Price,
-                    ShopAvailability = itemRef.ShopAvailability,
-                    Unused_0x0B = itemRef.Unused_0x0B,
-                };
+                Item item = CreateItem(256 + i, itemRef); // extended table starts at 256.
 
                 _originalTable.Items.Add(item);
                 _moddedTable.Items.Add(item.Clone());
@@ -102,6 +92,26 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
 
             //SaveToFolder();
         });
+    }
+
+    private static unsafe Item CreateItem(int id, ITEM_COMMON_DATA itemRef)
+    {
+        var item = new Item()
+        {
+            Id = id,
+            Palette = itemRef.Palette,
+            SpriteID = itemRef.SpriteID,
+            RequiredLevel = itemRef.RequiredLevel,
+            TypeFlags = itemRef.TypeFlags,
+            AdditionalDataId = itemRef.SecondTableId,
+            ItemCategory = itemRef.ItemCategory,
+            Unused_0x06 = itemRef.Unused_0x06,
+            EquipBonusId = itemRef.EquipBonusId,
+            Price = itemRef.Price,
+            ShopAvailability = itemRef.ShopAvailability,
+            Unused_0x0B = itemRef.Unused_0x0B,
+        };
+        return item;
     }
 
     private void SaveToFolder()
@@ -145,6 +155,9 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
                 IList<ModelDiff> changes = _moddedTable.Items[itemKv.Id].DiffModel(itemKv);
                 foreach (ModelDiff change in changes)
                 {
+                    if (_config.LogItemDataTableChanges)
+                        _logger.WriteLine($"[{_modConfig.ModId}] [ItemData] {moddedTableKv.Key} changed ID {itemKv.Id} ({change.Name})", Color.Gray);
+
                     RecordChange(moddedTableKv.Key, itemKv.Id, itemKv, change);
                 }
             }
@@ -167,9 +180,15 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
         if (item.Id > 260)
             return;
 
+        var previous = _moddedTable.Items[item.Id];
         var differences = _moddedTable.Items[item.Id].DiffModel(item);
         foreach (ModelDiff diff in differences)
+        {
+            if (_config.LogItemDataTableChanges)
+                _logger.WriteLine($"[{_modConfig.ModId}] [ItemData] {modId} changed ID {item.Id} ({diff.Name})", Color.Gray);
+
             RecordChange(modId, item.Id, item, diff);
+        }
 
         // Apply changes applied by other mods first.
         foreach (var change in _changedProperties)
@@ -180,19 +199,19 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
 
         ref ITEM_COMMON_DATA itemCommonData = ref (item.Id <= 255
          ? ref _itemCommonDataTablePointer.AsRef(item.Id)
-         : ref _itemCommonDataTable2Pointer.AsRef(item.Id));
+         : ref _itemCommonDataTable2Pointer.AsRef(item.Id - 256));
 
-        itemCommonData.Palette = item.Palette;
-        itemCommonData.SpriteID = item.SpriteID;
-        itemCommonData.RequiredLevel = item.RequiredLevel;
-        itemCommonData.TypeFlags = item.TypeFlags;
-        itemCommonData.SecondTableId = item.AdditionalDataId;
-        itemCommonData.ItemCategory = item.ItemCategory;
-        itemCommonData.Unused_0x06 = item.Unused_0x06;
-        itemCommonData.EquipBonusId = item.EquipBonusId;
-        itemCommonData.Price = item.Price;
-        itemCommonData.ShopAvailability = item.ShopAvailability;
-        itemCommonData.Unused_0x0B = item.Unused_0x0B;
+        itemCommonData.Palette = (byte)(item.Palette ?? previous.Palette)!;
+        itemCommonData.SpriteID = (byte)(item.SpriteID ?? previous.SpriteID)!;
+        itemCommonData.RequiredLevel = (byte)(item.RequiredLevel ?? previous.RequiredLevel)!;
+        itemCommonData.TypeFlags = (ItemTypeFlags)(item.TypeFlags ?? previous.TypeFlags)!;
+        itemCommonData.SecondTableId = (byte)(item.AdditionalDataId ?? previous.AdditionalDataId)!;
+        itemCommonData.ItemCategory = (ItemCategory)(item.ItemCategory ?? previous.ItemCategory)!;
+        itemCommonData.Unused_0x06 = (byte)(item.Unused_0x06 ?? previous.Unused_0x06)!;
+        itemCommonData.EquipBonusId = (byte)(item.EquipBonusId ?? previous.EquipBonusId)!;
+        itemCommonData.Price = (byte)(item.Price ?? previous.Price)!;
+        itemCommonData.ShopAvailability = (ItemShopAvailability)(item.ShopAvailability ?? previous.ShopAvailability)!;
+        itemCommonData.Unused_0x0B = (byte)(item.Unused_0x0B ?? previous.Unused_0x0B)!;
     }
 
     public Item GetOriginalItem(int index)

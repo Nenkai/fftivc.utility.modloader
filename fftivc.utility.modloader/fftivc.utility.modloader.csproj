@@ -47,17 +47,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FF16Tools.Files" Version="1.4.0" />
-    <PackageReference Include="FF16Tools.Pack" Version="1.2.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.5" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.5" />
-    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.162">
+    <PackageReference Include="FF16Tools.Files" Version="1.4.1" />
+    <PackageReference Include="FF16Tools.Pack" Version="1.2.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.10" />
+    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.228">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.4.0" ExcludeAssets="runtime" />
-	<PackageReference Include="Reloaded.Memory" Version="9.4.2" />
+	<PackageReference Include="Reloaded.Memory" Version="9.4.3" />
 	<PackageReference Include="Reloaded.Memory.SigScan.ReloadedII.Interfaces" Version="1.2.0" />
 	<PackageReference Include="Reloaded.Mod.Loader.IO" Version="2.5.0" />
     <PackageReference Include="Reloaded.SharedLib.Hooks" Version="1.9.0" />

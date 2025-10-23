@@ -38,40 +38,40 @@ public class Item : DiffableModelBase<Item>, IDiffableModel<Item>
     /// </summary>
     public int Id { get; set; }
 
-    public byte Palette { get; set; }
-    public byte SpriteID { get; set; }
-    public byte RequiredLevel { get; set; }
-    public ItemTypeFlags TypeFlags { get; set; }
+    public byte? Palette { get; set; }
+    public byte? SpriteID { get; set; }
+    public byte? RequiredLevel { get; set; }
+    public ItemTypeFlags? TypeFlags { get; set; }
 
     /// <summary>
     /// or previously 'Second Table ID' as per hacktics
     /// </summary>
-    public byte AdditionalDataId { get; set; }
+    public byte? AdditionalDataId { get; set; }
 
-    public ItemCategory ItemCategory { get; set; } // eGetItemSmallCategory
-    public byte Unused_0x06 { get; set; }
+    public ItemCategory? ItemCategory { get; set; } // eGetItemSmallCategory
+    public byte? Unused_0x06 { get; set; }
 
     /// <summary>
     /// or previously 'Item Attributes' as per hacktics
     /// </summary>
-    public byte EquipBonusId { get; set; } // pspItemGetEquipBonus
-    public ushort Price { get; set; } // GetItemPrice
-    public ItemShopAvailability ShopAvailability { get; set; }
-    public byte Unused_0x0B { get; set; }
+    public byte? EquipBonusId { get; set; } // pspItemGetEquipBonus
+    public ushort? Price { get; set; } // GetItemPrice
+    public ItemShopAvailability? ShopAvailability { get; set; }
+    public byte? Unused_0x0B { get; set; }
 
     public static Dictionary<string, DiffablePropertyItem<Item>> PropertyMap { get; } = new()
     {
-        [nameof(Palette)] =          new DiffablePropertyItem<Item, byte>(nameof(Palette), i => i.Palette, (i, v) => i.Palette = v),
-        [nameof(SpriteID)] =         new DiffablePropertyItem<Item, byte>(nameof(SpriteID), i => i.SpriteID, (i, v) => i.SpriteID = v),
-        [nameof(RequiredLevel)] =    new DiffablePropertyItem<Item, byte>(nameof(RequiredLevel), i => i.RequiredLevel, (i, v) => i.RequiredLevel =v),
-        [nameof(TypeFlags)] =        new DiffablePropertyItem<Item, ItemTypeFlags>(nameof(TypeFlags), i => i.TypeFlags, (i, v) => i.TypeFlags = v),
-        [nameof(AdditionalDataId)] = new DiffablePropertyItem<Item, byte>(nameof(AdditionalDataId), i => i.AdditionalDataId, (i, v) => i.AdditionalDataId = v),
-        [nameof(ItemCategory)] =     new DiffablePropertyItem<Item, ItemCategory>(nameof(ItemCategory), i => i.ItemCategory, (i, v) => i.ItemCategory = v),
-        [nameof(Unused_0x06)] =      new DiffablePropertyItem<Item, byte>(nameof(Unused_0x06), i => i.Unused_0x06, (i, v) => i.Unused_0x06 = v),
-        [nameof(EquipBonusId)] =     new DiffablePropertyItem<Item, byte>(nameof(EquipBonusId), i => i.EquipBonusId, (i, v) => i.EquipBonusId = v),
-        [nameof(Price)] =            new DiffablePropertyItem<Item, ushort>(nameof(Price), i => i.Price, (i, v) => i.Price = v),
-        [nameof(ShopAvailability)] = new DiffablePropertyItem<Item, ItemShopAvailability>(nameof(ShopAvailability), i => i.ShopAvailability, (i, v) => i.ShopAvailability = v),
-        [nameof(Unused_0x0B)] =      new DiffablePropertyItem<Item, byte>(nameof(Unused_0x0B), i => i.Unused_0x0B, (i, v) => i.Unused_0x0B = v),
+        [nameof(Palette)] =          new DiffablePropertyItem<Item, byte?>(nameof(Palette), i => i.Palette, (i, v) => i.Palette = v),
+        [nameof(SpriteID)] =         new DiffablePropertyItem<Item, byte?>(nameof(SpriteID), i => i.SpriteID, (i, v) => i.SpriteID = v),
+        [nameof(RequiredLevel)] =    new DiffablePropertyItem<Item, byte?>(nameof(RequiredLevel), i => i.RequiredLevel, (i, v) => i.RequiredLevel =v),
+        [nameof(TypeFlags)] =        new DiffablePropertyItem<Item, ItemTypeFlags?>(nameof(TypeFlags), i => i.TypeFlags, (i, v) => i.TypeFlags = v),
+        [nameof(AdditionalDataId)] = new DiffablePropertyItem<Item, byte?>(nameof(AdditionalDataId), i => i.AdditionalDataId, (i, v) => i.AdditionalDataId = v),
+        [nameof(ItemCategory)] =     new DiffablePropertyItem<Item, ItemCategory?>(nameof(ItemCategory), i => i.ItemCategory, (i, v) => i.ItemCategory = v),
+        [nameof(Unused_0x06)] =      new DiffablePropertyItem<Item, byte?>(nameof(Unused_0x06), i => i.Unused_0x06, (i, v) => i.Unused_0x06 = v),
+        [nameof(EquipBonusId)] =     new DiffablePropertyItem<Item, byte?>(nameof(EquipBonusId), i => i.EquipBonusId, (i, v) => i.EquipBonusId = v),
+        [nameof(Price)] =            new DiffablePropertyItem<Item, ushort?>(nameof(Price), i => i.Price, (i, v) => i.Price = v),
+        [nameof(ShopAvailability)] = new DiffablePropertyItem<Item, ItemShopAvailability?>(nameof(ShopAvailability), i => i.ShopAvailability, (i, v) => i.ShopAvailability = v),
+        [nameof(Unused_0x0B)] =      new DiffablePropertyItem<Item, byte?>(nameof(Unused_0x0B), i => i.Unused_0x0B, (i, v) => i.Unused_0x0B = v),
     };
 
     /// <summary>

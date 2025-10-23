@@ -36,20 +36,19 @@ public class Ability : DiffableModelBase<Ability>, IDiffableModel<Ability>
     /// </summary>
     public int Id { get; set; }
 
-    public ushort JPCost { get; set; }
-    public byte ChanceToLearn { get; set; }
-    public AbilityFlags Flags { get; set; }
-    public AbilityType AbilityType { get; set; }
-
-    public AIBehaviorFlags AIBehaviorFlags { get; set; }
+    public ushort? JPCost { get; set; }
+    public byte? ChanceToLearn { get; set; }
+    public AbilityFlags? Flags { get; set; }
+    public AbilityType? AbilityType { get; set; }
+    public AIBehaviorFlags? AIBehaviorFlags { get; set; }
 
     public static Dictionary<string, DiffablePropertyItem<Ability>> PropertyMap { get; } = new()
     {
-        [nameof(JPCost)]            = new DiffablePropertyItem<Ability, ushort>(nameof(JPCost), i => i.JPCost, (i, v) => i.JPCost = v),
-        [nameof(ChanceToLearn)]     = new DiffablePropertyItem<Ability, byte>(nameof(ChanceToLearn), i => i.ChanceToLearn, (i, v) => i.ChanceToLearn = v),
-        [nameof(Flags)]             = new DiffablePropertyItem<Ability, AbilityFlags>(nameof(Flags), i => i.Flags, (i, v) => i.Flags = v),
-        [nameof(AbilityType)]       = new DiffablePropertyItem<Ability, AbilityType>(nameof(AbilityType), i => i.AbilityType, (i, v) => i.AbilityType = v),
-        [nameof(AIBehaviorFlags)]   = new DiffablePropertyItem<Ability, AIBehaviorFlags>(nameof(AIBehaviorFlags), i => i.AIBehaviorFlags, (i, v) => i.AIBehaviorFlags = v),
+        [nameof(JPCost)]            = new DiffablePropertyItem<Ability, ushort?>(nameof(JPCost), i => i.JPCost, (i, v) => i.JPCost = v),
+        [nameof(ChanceToLearn)]     = new DiffablePropertyItem<Ability, byte?>(nameof(ChanceToLearn), i => i.ChanceToLearn, (i, v) => i.ChanceToLearn = v),
+        [nameof(Flags)]             = new DiffablePropertyItem<Ability, AbilityFlags?>(nameof(Flags), i => i.Flags, (i, v) => i.Flags = v),
+        [nameof(AbilityType)]       = new DiffablePropertyItem<Ability, AbilityType?>(nameof(AbilityType), i => i.AbilityType, (i, v) => i.AbilityType = v),
+        [nameof(AIBehaviorFlags)]   = new DiffablePropertyItem<Ability, AIBehaviorFlags?>(nameof(AIBehaviorFlags), i => i.AIBehaviorFlags, (i, v) => i.AIBehaviorFlags = v),
     };
 
     /// <summary>

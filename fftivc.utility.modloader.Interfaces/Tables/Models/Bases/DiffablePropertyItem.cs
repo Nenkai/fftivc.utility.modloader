@@ -51,12 +51,21 @@ public abstract record DiffablePropertyItem<TModel>
 /// <param name="Name">Name of the property.</param>
 /// <param name="Getter">Getter, for getting the property value.</param>
 /// <param name="Setter">Setter, for setting the property value.</param>
-public sealed record DiffablePropertyItem<TModel, TValue>(string Name, Func<TModel, TValue> Getter, Action<TModel, TValue> Setter) 
+public sealed record DiffablePropertyItem<TModel, TValue>(string Name, Func<TModel, TValue?> Getter, Action<TModel, TValue> Setter) 
     : DiffablePropertyItem<TModel>(Name)
 {
     /// <inheritdoc/>
-    public override bool HasChanged(TModel original, TModel other) =>
-        !EqualityComparer<TValue>.Default.Equals(Getter(original), Getter(other));
+    public override bool HasChanged(TModel original, TModel other)
+    {
+        TValue? originalPropValue = Getter(original);
+        TValue? otherPropValue = Getter(other);
+
+        // If it's null, it hasn't changed, it simply hasn't been set.
+        if (otherPropValue is null)
+            return false;
+
+        return !EqualityComparer<TValue>.Default.Equals(originalPropValue, otherPropValue);
+    }
 
     /// <inheritdoc/>
     public override ModelDiff CreateDiff(TModel original, TModel other)
