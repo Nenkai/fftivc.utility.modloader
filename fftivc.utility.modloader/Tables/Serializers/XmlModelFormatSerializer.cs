@@ -48,13 +48,15 @@ public class XmlModelFormatSerializer : ITextModelSerializer
         using var stringWriter = new StringWriter();
         using var xmlWriter = XmlWriter.Create(stringWriter, GetWriterSettings());
         serializer.Serialize(model, xmlWriter);
+        xmlWriter.Flush();
+
         return stringWriter.ToString();
     }
 
     public void Serialize<T>(Stream stream, T? model) where T : class
     {
         var serializer = GetSerializer<T>();
-        var xmlWriter = XmlWriter.Create(stream, GetWriterSettings());
+        using var xmlWriter = XmlWriter.Create(stream, GetWriterSettings());
 
         serializer.Serialize(model, xmlWriter);
     }
@@ -65,7 +67,7 @@ public class XmlModelFormatSerializer : ITextModelSerializer
     {
         return new YAXSerializer(typeof(T), new YAXLib.Options.SerializerOptions()
         {
-            SerializationOptions = YAXSerializationOptions.DontSerializeNullObjects, // :pray:
+            SerializationOptions = YAXSerializationOptions.DontSerializeNullObjects,
         });
     }
 }
