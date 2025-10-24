@@ -61,6 +61,7 @@
 	<PackageReference Include="Reloaded.Memory.SigScan.ReloadedII.Interfaces" Version="1.2.0" />
 	<PackageReference Include="Reloaded.Mod.Loader.IO" Version="2.5.0" />
     <PackageReference Include="Reloaded.SharedLib.Hooks" Version="1.9.0" />
+    <PackageReference Include="YAXLib" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
