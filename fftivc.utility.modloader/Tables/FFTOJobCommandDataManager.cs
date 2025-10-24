@@ -19,16 +19,13 @@ using System.Runtime.CompilerServices;
 
 namespace fftivc.utility.modloader.Tables;
 
-public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommand>, IFFTOJobCommandDataManager
+public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommandTable, JobCommand>, IFFTOJobCommandDataManager
 {
     private readonly IModelSerializer<JobCommandTable> _jobCommandSerializer;
 
     private FixedArrayPtr<JOB_COMMAND_DATA> _jobCommandTablePointer;
 
-    private JobCommandTable _originalTable = new();
-    private JobCommandTable _moddedTable = new();
-
-    private Dictionary<string /* mod id */, JobCommandTable> _modTables = [];
+    public override string TableFileName => "JobCommandData";
 
     public FFTOJobCommandDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
         IModelSerializer<JobCommandTable> commandAbilitySerializer)
@@ -91,97 +88,52 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommand>, IFFTO
                     ReactionSupportMovementId6 = itemRef.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId6) ? (ushort)(itemRef.ReactionSupportMovementId6 + 256) : itemRef.ReactionSupportMovementId6,
                 };
 
-                _originalTable.JobCommands.Add(item);
-                _moddedTable.JobCommands.Add(item.Clone());
+                _originalTable.Entries.Add(item);
+                _moddedTable.Entries.Add(item.Clone());
             }
 
-            //SaveToFolder();
+#if DEBUG
+            SaveToFolder();
+#endif
         });
     }
 
     private void SaveToFolder()
     {
-        string dir = Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "TableData");
+        string dir = Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "TableDataDebug");
         Directory.CreateDirectory(dir);
 
         // Serialization tests
-        using var text = File.Create(Path.Combine(dir, "JobCommandData.json"));
+        using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
         _jobCommandSerializer.Serialize(text, "json", _originalTable);
 
-        using var text2 = File.Create(Path.Combine(dir, "JobCommandData.xml"));
+        using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
         _jobCommandSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
-        JobCommandTable? jobCommandTable = _jobCommandSerializer.ReadModelFromFile(Path.Combine(folder, "JobCommandData.xml"));
-        if (jobCommandTable is null)
-            return;
-
-        _logger.WriteLine($"[{_modConfig.ModId}] JobCommand: Queueing '{modId}' table with {jobCommandTable.JobCommands.Count} job commands");
-
-        // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-        _modTables.Add(modId, jobCommandTable);
-    }
-    
-    public void ApplyPendingFileChanges()
-    {
-        if (_originalTable is null)
-            return;
-
-        // Go through pending tables.
-        foreach (KeyValuePair<string, JobCommandTable> moddedTableKv in _modTables)
+        try
         {
-            foreach (var jobCommandKv in moddedTableKv.Value.JobCommands)
-            {
-                if (jobCommandKv.Id > 176)
-                    continue;
+            JobCommandTable? jobCommandTable = _jobCommandSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (jobCommandTable is null)
+                return;
 
-                IList<ModelDiff> changes = _moddedTable.JobCommands[jobCommandKv.Id].DiffModel(jobCommandKv);
-                foreach (ModelDiff change in changes)
-                {
-                    if (_config.LogJobCommandTableChanges)
-                        _logger.WriteLine($"[{_modConfig.ModId}] [JobCommand] {moddedTableKv.Key} changed ID {jobCommandKv.Id} ({change.Name})", Color.Gray);
-
-                    RecordChange(moddedTableKv.Key, jobCommandKv.Id, jobCommandKv, change);
-                }
-            }
+            // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
+            _modTables.Add(modId, jobCommandTable);
         }
-
-        if (_changedProperties.Count > 0)
-            _logger.WriteLine($"[{_modConfig.ModId}] Applyng JobCommand with {_changedProperties.Count} change(s)");
-
-        // Merge everything together into the table
-        foreach (var changedValue in _changedProperties)
+        catch (Exception ex)
         {
-            var jobCommand = _moddedTable.JobCommands[changedValue.Key.Id];
-            jobCommand.ApplyChange(changedValue.Value.Difference);
-            ApplyTablePatch(changedValue.Value.ModIdOwner, jobCommand);
+            _logger.WriteLine($"[{_modConfig.ModId}] {TableFileName}: Errored while reading {TableFileName} from '{folder}' - mod id: {modId}\n{ex}", Color.Red);
+            return;
         }
     }
 
-    public void ApplyTablePatch(string modId, JobCommand jobCommand)
+    public override void ApplyTablePatch(string modId, JobCommand jobCommand)
     {
-        if (jobCommand.Id > 176)
-            return;
+        TrackModelChanges(modId, jobCommand);
 
-        JobCommand previous = _moddedTable.JobCommands[jobCommand.Id];
-        var differences = _moddedTable.JobCommands[jobCommand.Id].DiffModel(jobCommand);
-        foreach (ModelDiff diff in differences)
-        {
-            if (_config.LogJobCommandTableChanges)
-                _logger.WriteLine($"[{_modConfig.ModId}] [JobCommand] {modId} changed ID {jobCommand.Id} ({diff.Name})", Color.Gray);
-
-            RecordChange(modId, jobCommand.Id, jobCommand, diff);
-        }
-
-        // Apply changes applied by other mods first.
-        foreach (var change in _changedProperties)
-        {
-            if (change.Key.Id == jobCommand.Id)
-                jobCommand.ApplyChange(change.Value.Difference);
-        }
-
+        JobCommand previous = _moddedTable.Entries[jobCommand.Id];
         ref JOB_COMMAND_DATA jobCommandData = ref _jobCommandTablePointer.AsRef(jobCommand.Id);
         jobCommandData.ExtendAbilityIdFlagBits = (ExtendAbilityIdFlags)(jobCommand.ExtendAbilityIdFlagBits ?? previous.ExtendAbilityIdFlagBits)!;
         jobCommandData.ExtendReactionSupportMovementIdFlagBits = (ExtendReactionSupportMovementIdFlags)(jobCommand.ExtendReactionSupportMovementIdFlagBits ?? previous.ExtendReactionSupportMovementIdFlagBits)!;
@@ -252,7 +204,7 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommand>, IFFTO
         if (index > 176)
             throw new ArgumentOutOfRangeException(nameof(index), "Job command id can not be more than 176!");
 
-        return _originalTable.JobCommands[index];
+        return _originalTable.Entries[index];
     }
 
     public JobCommand GetJobCommand(int index)
@@ -260,6 +212,6 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommand>, IFFTO
         if (index > 176)
             throw new ArgumentOutOfRangeException(nameof(index), "Command id can not be more than 176!");
 
-        return _moddedTable.JobCommands[index];
+        return _moddedTable.Entries[index];
     }
 }

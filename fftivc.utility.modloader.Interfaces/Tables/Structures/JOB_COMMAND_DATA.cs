@@ -38,7 +38,6 @@ public struct JOB_COMMAND_DATA
     public byte ReactionSupportMovementId4 { get; set; }
     public byte ReactionSupportMovementId5 { get; set; }
     public byte ReactionSupportMovementId6 { get; set; }
-
 }
 
 /// <summary>

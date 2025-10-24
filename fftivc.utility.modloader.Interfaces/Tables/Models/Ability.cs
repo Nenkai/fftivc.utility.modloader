@@ -13,15 +13,10 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 /// <summary>
 /// Ability table. <see href="https://ffhacktics.com/wiki/Ability_Data"/>
 /// </summary>
-public class AbilityTable : IVersionableModel
+public class AbilityTable : TableBase<Ability>, IVersionableModel
 {
     /// <inheritdoc/>
     public uint Version { get; set; } = 1;
-
-    /// <summary>
-    /// Abilities.
-    /// </summary>
-    public List<Ability> Abilities { get; set; } = [];
 }
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -29,7 +24,7 @@ public class AbilityTable : IVersionableModel
 /// <summary>
 /// Ability. <see href="https://ffhacktics.com/wiki/Ability_Data"/>
 /// </summary>
-public class Ability : DiffableModelBase<Ability>, IDiffableModel<Ability>
+public class Ability : DiffableModelBase<Ability>, IDiffableModel<Ability>, IIdentifiableModel
 {
     /// <summary>
     /// Id. No more than 512 in vanilla.

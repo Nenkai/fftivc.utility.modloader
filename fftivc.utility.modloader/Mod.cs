@@ -272,12 +272,20 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         }
 
         string modTablesDir = Path.Combine(modDir, "tables");
-        if (Directory.Exists(modTablesDir))
+        string gameModeDir = GameMode == FFTOGameMode.Enhanced ? "enhanced" : "classic";
+
+        string modCombinedTablesDir = Path.Combine(modTablesDir, "combined");
+        if (Directory.Exists(modCombinedTablesDir))
         {
             foreach (var manager in _tableManagers)
-            {
-                manager.RegisterFolder(modConfig.ModId, modTablesDir);
-            }
+                manager.RegisterFolder(modConfig.ModId, modCombinedTablesDir);
+        }
+
+        string modGameModeTablesDir = Path.Combine(modTablesDir, gameModeDir);
+        if (Directory.Exists(Path.Combine(modTablesDir, modGameModeTablesDir)))
+        {
+            foreach (var manager in _tableManagers)
+                manager.RegisterFolder(modConfig.ModId, modGameModeTablesDir);
         }
     }
 

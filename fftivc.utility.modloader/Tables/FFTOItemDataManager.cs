@@ -18,17 +18,14 @@ using Reloaded.Memory.Interfaces;
 
 namespace fftivc.utility.modloader.Tables;
 
-public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataManager
+public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOItemDataManager
 {
     private readonly IModelSerializer<ItemTable> _itemTableSerializer;
 
+    public override string TableFileName => "ItemData";
+
     private FixedArrayPtr<ITEM_COMMON_DATA> _itemCommonDataTablePointer;
     private FixedArrayPtr<ITEM_COMMON_DATA> _itemCommonDataTable2Pointer;
-
-    private ItemTable _originalTable = new();
-    private ItemTable _moddedTable = new();
-
-    private readonly Dictionary<string /* mod id */, ItemTable> _modTables = [];
 
     public FFTOItemDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<ItemTable> itemSerializer)
@@ -61,8 +58,8 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
                 var itemRef = _itemCommonDataTablePointer.Get(i);
                 Item item = CreateItem(i, itemRef);
 
-                _originalTable.Items.Add(item);
-                _moddedTable.Items.Add(item.Clone());
+                _originalTable.Entries.Add(item);
+                _moddedTable.Entries.Add(item.Clone());
             }
         });
 
@@ -86,11 +83,13 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
                 var itemRef = _itemCommonDataTable2Pointer.Get(i);
                 Item item = CreateItem(256 + i, itemRef); // extended table starts at 256.
 
-                _originalTable.Items.Add(item);
-                _moddedTable.Items.Add(item.Clone());
+                _originalTable.Entries.Add(item);
+                _moddedTable.Entries.Add(item.Clone());
             }
 
-            //SaveToFolder();
+#if DEBUG
+            SaveToFolder();
+#endif
         });
     }
 
@@ -116,87 +115,40 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
 
     private void SaveToFolder()
     {
-        string dir = Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "TableData");
+        string dir = Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "TableDataDebug");
         Directory.CreateDirectory(dir);
 
         // Serialization tests
-        using var text = File.Create(Path.Combine(dir, "ItemData.json"));
+        using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
         _itemTableSerializer.Serialize(text, "json", _originalTable);
 
-        using var text2 = File.Create(Path.Combine(dir, "ItemData.xml"));
+        using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
         _itemTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
-        ItemTable? itemModel = _itemTableSerializer.ReadModelFromFile(Path.Combine(folder, "ItemData.xml"));
-        if (itemModel is null)
-            return;
-
-        _logger.WriteLine($"[{_modConfig.ModId}] ItemData: Queueing '{modId}' with {itemModel.Items.Count} items");
-
-        // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-        _modTables.Add(modId, itemModel);
-    }
-
-    public void ApplyPendingFileChanges()
-    {
-        if (_originalTable is null)
-            return;
-
-        // Go through pending tables.
-        foreach (KeyValuePair<string, ItemTable> moddedTableKv in _modTables)
+        try
         {
-            foreach (var itemKv in moddedTableKv.Value.Items)
-            {
-                if (itemKv.Id > 260)
-                    continue;
+            ItemTable? itemTable = _itemTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (itemTable is null)
+                return;
 
-                IList<ModelDiff> changes = _moddedTable.Items[itemKv.Id].DiffModel(itemKv);
-                foreach (ModelDiff change in changes)
-                {
-                    if (_config.LogItemDataTableChanges)
-                        _logger.WriteLine($"[{_modConfig.ModId}] [ItemData] {moddedTableKv.Key} changed ID {itemKv.Id} ({change.Name})", Color.Gray);
-
-                    RecordChange(moddedTableKv.Key, itemKv.Id, itemKv, change);
-                }
-            }
+            // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
+            _modTables.Add(modId, itemTable);
         }
-
-        if (_changedProperties.Count > 0)
-            _logger.WriteLine($"[{_modConfig.ModId}] Applyng ItemData with {_changedProperties.Count} change(s)");
-
-        // Merge everything together into ABILITY_COMMON_DATA
-        foreach (var changedValue in _changedProperties)
+        catch (Exception ex)
         {
-            var ability = _moddedTable.Items[changedValue.Key.Id];
-            ability.ApplyChange(changedValue.Value.Difference);
-            ApplyTablePatch(changedValue.Value.ModIdOwner, ability);
+            _logger.WriteLine($"[{_modConfig.ModId}] {TableFileName}: Errored while reading {TableFileName} from '{folder}' - mod id: {modId}\n{ex}", Color.Red);
+            return;
         }
     }
 
-    public void ApplyTablePatch(string modId, Item item)
+    public override void ApplyTablePatch(string modId, Item item)
     {
-        if (item.Id > 260)
-            return;
+        TrackModelChanges(modId, item);
 
-        var previous = _moddedTable.Items[item.Id];
-        var differences = _moddedTable.Items[item.Id].DiffModel(item);
-        foreach (ModelDiff diff in differences)
-        {
-            if (_config.LogItemDataTableChanges)
-                _logger.WriteLine($"[{_modConfig.ModId}] [ItemData] {modId} changed ID {item.Id} ({diff.Name})", Color.Gray);
-
-            RecordChange(modId, item.Id, item, diff);
-        }
-
-        // Apply changes applied by other mods first.
-        foreach (var change in _changedProperties)
-        {
-            if (change.Key.Id == item.Id)
-                item.ApplyChange(change.Value.Difference);
-        }
-
+        Item previous = _moddedTable.Entries[item.Id];
         ref ITEM_COMMON_DATA itemCommonData = ref (item.Id <= 255
          ? ref _itemCommonDataTablePointer.AsRef(item.Id)
          : ref _itemCommonDataTable2Pointer.AsRef(item.Id - 256));
@@ -219,7 +171,7 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
         if (index > 260)
             throw new ArgumentOutOfRangeException(nameof(index), "Ability id can not be more than 260!");
 
-        return _originalTable.Items[index];
+        return _originalTable.Entries[index];
     }
 
     public Item GetItem(int index)
@@ -227,6 +179,6 @@ public class FFTOItemDataManager : FFTOTableManagerBase<Item>, IFFTOItemDataMana
         if (index > 260)
             throw new ArgumentOutOfRangeException(nameof(index), "Ability id can not be more than 260!");
 
-        return _moddedTable.Items[index];
+        return _moddedTable.Entries[index];
     }
 }

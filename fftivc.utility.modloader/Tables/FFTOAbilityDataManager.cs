@@ -18,16 +18,13 @@ using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
-public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilityDataManager
+public class FFTOAbilityDataManager : FFTOTableManagerBase<AbilityTable, Ability>, IFFTOAbilityDataManager
 {
     private readonly IModelSerializer<AbilityTable> _abilitySerializer;
 
+    public override string TableFileName => "AbilityData";
+
     private FixedArrayPtr<ABILITY_COMMON_DATA> _abilityCommonDataTablePointer;
-
-    private AbilityTable _originalTable = new();
-    private AbilityTable _moddedTable = new();
-
-    private Dictionary<string /* mod id */, AbilityTable> _modTables = [];
 
     public FFTOAbilityDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
         IModelSerializer<AbilityTable> abilityParser)
@@ -67,96 +64,53 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
                     AIBehaviorFlags = _abilityCommonDataTablePointer.Get(i).AIBehaviorFlags,
                 };
 
-                _originalTable.Abilities.Add(ability);
-                _moddedTable.Abilities.Add(ability.Clone());
+                _originalTable.Entries.Add(ability);
+                _moddedTable.Entries.Add(ability.Clone());
             }
 
-            //SaveToFolder();
+#if DEBUG
+            SaveToFolder();
+#endif
         });
     }
 
     private void SaveToFolder()
     {
-        string dir = Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "TableData");
+        string dir = Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "TableDataDebug");
         Directory.CreateDirectory(dir);
 
         // Serialization tests
-        using var text = File.Create(Path.Combine(dir, "AbilityData.json"));
+        using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
         _abilitySerializer.Serialize(text, "json", _originalTable);
 
-        using var text2 = File.Create(Path.Combine(dir, "AbilityData.xml"));
+        using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
         _abilitySerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
-        AbilityTable? abilityModel = _abilitySerializer.ReadModelFromFile(Path.Combine(folder, "AbilityData.xml"));
-        if (abilityModel is null)
-            return;
-
-        _logger.WriteLine($"[{_modConfig.ModId}] AbilityData: Queueing '{modId}' table with {abilityModel.Abilities.Count} abilities");
-
-        // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-        _modTables.Add(modId, abilityModel);
-    }
-    
-    public void ApplyPendingFileChanges()
-    {
-        if (_originalTable is null)
-            return;
-
-        // Go through pending tables.
-        foreach (KeyValuePair<string, AbilityTable> moddedTableKv in _modTables)
+        try
         {
-            foreach (var abilityKv in moddedTableKv.Value.Abilities)
-            {
-                if (abilityKv.Id > 512)
-                    continue;
+            AbilityTable? abilityTable = _abilitySerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (abilityTable is null)
+                return;
 
-                IList<ModelDiff> changes = _moddedTable.Abilities[abilityKv.Id].DiffModel(abilityKv);
-                foreach (ModelDiff change in changes)
-                {
-                    if (_config.LogAbilityDataTableChanges)
-                        _logger.WriteLine($"[{_modConfig.ModId}] [AbilityData] {moddedTableKv.Key} changed ID {abilityKv.Id} ({change.Name})", Color.Gray);
-
-                    RecordChange(moddedTableKv.Key, abilityKv.Id, abilityKv, change);
-                }
-            }
+            // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
+            _modTables.Add(modId, abilityTable);
         }
-
-        if (_changedProperties.Count > 0)
-            _logger.WriteLine($"[{_modConfig.ModId}] Applyng AbilityData with {_changedProperties.Count} change(s)");
-
-        // Merge everything together into ABILITY_COMMON_DATA
-        foreach (var changedValue in _changedProperties)
+        catch (Exception ex)
         {
-            var ability = _moddedTable.Abilities[changedValue.Key.Id];
-            ability.ApplyChange(changedValue.Value.Difference);
-            ApplyTablePatch(changedValue.Value.ModIdOwner, ability);
+            _logger.WriteLine($"[{_modConfig.ModId}] {TableFileName}: Errored while reading {TableFileName} from '{folder}' - mod id: {modId}\n{ex}", Color.Red);
+            return;
         }
     }
+   
 
-    public void ApplyTablePatch(string modId, Ability ability)
+    public override void ApplyTablePatch(string modId, Ability ability)
     {
-        if (ability.Id > 512)
-            return;
+        TrackModelChanges(modId, ability);
 
-        Ability previous = _moddedTable.Abilities[ability.Id];
-        IList<ModelDiff> differences = previous.DiffModel(ability);
-        foreach (ModelDiff diff in differences)
-        {
-            if (_config.LogAbilityDataTableChanges)
-                _logger.WriteLine($"[{_modConfig.ModId}] [AbilityData] {modId} changed ID {ability.Id} ({diff.Name})", Color.Gray);
-
-            RecordChange(modId, ability.Id, ability, diff);
-        }
-
-        // Apply changes applied by other mods first.
-        foreach (var change in _changedProperties)
-        {
-            if (change.Key.Id == ability.Id)
-                ability.ApplyChange(change.Value.Difference);
-        }
+        Ability previous = _moddedTable.Entries[ability.Id];
 
         // Actually apply changes
         ref ABILITY_COMMON_DATA abilityCommonData = ref _abilityCommonDataTablePointer.AsRef(ability.Id);
@@ -173,7 +127,7 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
         if (index > 512)
             throw new ArgumentOutOfRangeException(nameof(index), "Ability id can not be more than 512!");
 
-        return _originalTable.Abilities[index];
+        return _originalTable.Entries[index];
     }
 
     public Ability GetAbility(int index)
@@ -181,6 +135,6 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<Ability>, IFFTOAbilit
         if (index > 512)
             throw new ArgumentOutOfRangeException(nameof(index), "Ability id can not be more than 512!");
 
-        return _moddedTable.Abilities[index];
+        return _moddedTable.Entries[index];
     }
 }

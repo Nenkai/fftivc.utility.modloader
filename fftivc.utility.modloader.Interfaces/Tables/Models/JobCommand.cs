@@ -14,15 +14,10 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 /// Job command table (skill sets). <see href="https://ffhacktics.com/wiki/Skillsets"/>
 /// Linked to JobCommand nex table.
 /// </summary>
-public class JobCommandTable : IVersionableModel
+public class JobCommandTable : TableBase<JobCommand>, IVersionableModel
 {
     /// <inheritdoc/>
     public uint Version { get; set; } = 1;
-
-    /// <summary>
-    /// Command sets.
-    /// </summary>
-    public List<JobCommand> JobCommands { get; set; } = [];
 }
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -31,7 +26,7 @@ public class JobCommandTable : IVersionableModel
 /// Job command set (skill set). <see href="https://ffhacktics.com/wiki/Skillsets"/> <br/>
 /// NOTE: Extend id flags are handled automatically when setting an ability id.
 /// </summary>
-public class JobCommand : DiffableModelBase<JobCommand>, IDiffableModel<JobCommand>
+public class JobCommand : DiffableModelBase<JobCommand>, IDiffableModel<JobCommand>, IIdentifiableModel
 {
     /// <summary>
     /// Id. No more than 512 in vanilla.

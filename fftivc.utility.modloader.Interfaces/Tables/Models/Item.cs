@@ -14,15 +14,10 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 /// <summary>
 /// Item table. <see href="https://ffhacktics.com/wiki/Item_Data"/>
 /// </summary>
-public class ItemTable : IVersionableModel
+public class ItemTable : TableBase<Item>, IVersionableModel
 {
     /// <inheritdoc/>
     public uint Version { get; set; } = 1;
-
-    /// <summary>
-    /// Abilities.
-    /// </summary>
-    public List<Item> Items { get; set; } = [];
 }
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -30,7 +25,7 @@ public class ItemTable : IVersionableModel
 /// <summary>
 /// Item. <see href="https://ffhacktics.com/wiki/Item_Data"/>
 /// </summary>
-public class Item : DiffableModelBase<Item>, IDiffableModel<Item>
+public class Item : DiffableModelBase<Item>, IDiffableModel<Item>, IIdentifiableModel
 {
     /// <summary>
     /// Id. No more than 512 in vanilla. <br/>
