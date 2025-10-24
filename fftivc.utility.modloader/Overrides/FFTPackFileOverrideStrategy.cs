@@ -160,7 +160,7 @@ public class FFTPackFileOverrideStrategy : IModdedFileOverrideStrategy
           localeRegistry.ModdedFiles.TryGetValue(fileIndex, out FFTPackModdedFileEntry? entry))
         {
             if (_configuration.LogFFTPackFileAccesses)
-                _logger.WriteLine($"[{_modConfig.ModId}] [FFTPack] Accessing modded file {fileIndex} -> {entry.FFTPackPath} (offset: {offset:X}, size: {size:X})", Color.Gray);
+                _logger.WriteLine($"[{_modConfig.ModId}] [FFTPack] Accessing modded file {fileIndex} -> {entry.FFTPackPath} (offset: {offset:X}, max buffer size: {size:X})", Color.Gray);
 
             using var fs = File.OpenRead(entry.LocalFilePath);
             fs.Position = offset;
