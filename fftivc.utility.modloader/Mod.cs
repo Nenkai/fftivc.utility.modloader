@@ -5,8 +5,8 @@ using fftivc.utility.modloader.Interfaces;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Overrides;
+using fftivc.utility.modloader.Serializers;
 using fftivc.utility.modloader.Tables;
-using fftivc.utility.modloader.Tables.Serializers;
 using fftivc.utility.modloader.Template;
 
 using Microsoft.Extensions.DependencyInjection;

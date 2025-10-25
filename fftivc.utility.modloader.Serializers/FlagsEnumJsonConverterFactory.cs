@@ -6,15 +6,20 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace fftivc.utility.modloader.Tables.Serializers;
+namespace fftivc.utility.modloader.Serializers;
 
+/// <summary>
+/// Json converter factory to convert enum flags into arrays of elements for each flag.
+/// </summary>
 public class FlagsEnumJsonConverterFactory : JsonConverterFactory
 {
+    /// <inheritdoc/>
     public override bool CanConvert(Type typeToConvert)
     {
         return typeToConvert.IsEnum && typeToConvert.GetCustomAttributes(typeof(FlagsAttribute), false).Length != 0;
     }
 
+    /// <inheritdoc/>
     public override JsonConverter? CreateConverter(Type typeToConvert, JsonSerializerOptions options)
     {
         Type converterType = typeof(FlagsEnumJsonConverter<>).MakeGenericType(typeToConvert);
@@ -23,6 +28,7 @@ public class FlagsEnumJsonConverterFactory : JsonConverterFactory
 
     private class FlagsEnumJsonConverter<T> : JsonConverter<T> where T : struct
     {
+        /// <inheritdoc/>
         public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             if (reader.TokenType != JsonTokenType.StartArray)
@@ -48,6 +54,7 @@ public class FlagsEnumJsonConverterFactory : JsonConverterFactory
             return (T)Enum.ToObject(typeof(T), result);
         }
 
+        /// <inheritdoc/>
         public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
         {
             var enumValue = Convert.ToInt64(value);

@@ -8,8 +8,12 @@ using System.Xml.Serialization;
 
 using fftivc.utility.modloader.Interfaces.Serializers;
 
-namespace fftivc.utility.modloader.Tables.Serializers;
+namespace fftivc.utility.modloader.Serializers;
 
+/// <summary>
+/// Generic model serializer.
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class ModelSerializer<T> : IModelSerializer<T> where T : class
 {
     private readonly Dictionary<string, IModelFormatSerializer> _modelSerializers = new()
@@ -17,8 +21,11 @@ public class ModelSerializer<T> : IModelSerializer<T> where T : class
         ["xml"] = new XmlModelFormatSerializer(),
         ["json"] = new JsonModelFormatSerializer(),
     };
+
+    /// <inheritdoc/>
     public IReadOnlyDictionary<string, IModelFormatSerializer> FormatHandlers => _modelSerializers.AsReadOnly();
 
+    /// <inheritdoc/>
     public void AddSerializer(string extension, IModelFormatSerializer handler)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(extension, nameof(extension));
@@ -29,6 +36,7 @@ public class ModelSerializer<T> : IModelSerializer<T> where T : class
         _modelSerializers[extension] = handler;
     }
 
+    /// <inheritdoc/>
     public bool RemoveSerializer(string extension)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(extension, nameof(extension));
@@ -39,6 +47,7 @@ public class ModelSerializer<T> : IModelSerializer<T> where T : class
         return _modelSerializers.Remove(extension);
     }
 
+    /// <inheritdoc/>
     public T? ReadModelFromFile(string filePath)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(filePath, nameof(filePath));
@@ -58,6 +67,7 @@ public class ModelSerializer<T> : IModelSerializer<T> where T : class
         return null;
     }
 
+    /// <inheritdoc/>
     public T? Deserialize(ReadOnlySpan<byte> bytes, string extensionType)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(extensionType, nameof(extensionType));
@@ -71,6 +81,7 @@ public class ModelSerializer<T> : IModelSerializer<T> where T : class
         return formatSerializer.Deserialize<T>(bytes);
     }
 
+    /// <inheritdoc/>
     public void Serialize(Stream stream, string extensionType, T? model)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(extensionType, nameof(extensionType));

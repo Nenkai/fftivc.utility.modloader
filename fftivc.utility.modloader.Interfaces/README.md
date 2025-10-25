@@ -1,3 +1,3 @@
-# fftivc.utility.manager.Interfaces
+# fftivc.utility.modloader.Interfaces
 
-Mod pack manager interface for fftivc.utility.manager.Interfaces
+Mod pack manager interface for fftivc.utility.modloader
