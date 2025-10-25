@@ -67,7 +67,12 @@ public abstract class FFTOTableManagerBase<TTable, TModel>
         foreach (ModelDiff diff in differences)
         {
             if (_config.LogItemDataTableChanges)
-                _logger.WriteLine($"[{_modConfig.ModId}] [{TableFileName}] {modId} changed ID {model.Id} ({diff.Name}, value: {diff.NewValue})", Color.Gray);
+            {
+                if (diff.NewValue is System.Collections.IList list)
+                    _logger.WriteLine($"[{_modConfig.ModId}] [{TableFileName}] {modId} changed ID {model.Id} ({diff.Name}, value: list with {list.Count} elements)", Color.Gray);
+                else
+                    _logger.WriteLine($"[{_modConfig.ModId}] [{TableFileName}] {modId} changed ID {model.Id} ({diff.Name}, value: {diff.NewValue})", Color.Gray);
+            }
 
             RecordChange(modId, model.Id, diff);
         }
@@ -98,7 +103,12 @@ public abstract class FFTOTableManagerBase<TTable, TModel>
                 foreach (ModelDiff change in changes)
                 {
                     if (_config.LogAbilityDataTableChanges)
-                        _logger.WriteLine($"[{_modConfig.ModId}] [{TableFileName}] {moddedTableKv.Key} changed ID {model.Id} ({change.Name}, value: {change.NewValue})", Color.Gray);
+                    {
+                        if (change.NewValue is System.Collections.IList list)
+                            _logger.WriteLine($"[{_modConfig.ModId}] [{TableFileName}] {moddedTableKv.Key} changed ID {model.Id} ({change.Name}, value: list with {list.Count} elements)", Color.Gray);
+                        else
+                            _logger.WriteLine($"[{_modConfig.ModId}] [{TableFileName}] {moddedTableKv.Key} changed ID {model.Id} ({change.Name}, value: {change.NewValue})", Color.Gray);
+                    }
 
                     RecordChange(moddedTableKv.Key, model.Id, change);
                 }

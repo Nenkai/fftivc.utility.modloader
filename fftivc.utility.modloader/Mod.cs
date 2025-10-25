@@ -36,7 +36,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         // Tables
         typeof(IFFTOAbilityDataManager),
         typeof(IFFTOItemDataManager),
-        typeof(IFFTOJobCommandDataManager)
+        typeof(IFFTOJobCommandDataManager),
+        typeof(IFFTOStatusEffectDataManager),
     ];
 
     /// <summary>
@@ -174,6 +175,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobCommandDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOStatusEffectDataManager>());
     }
 
     private IServiceProvider BuildServiceCollection()
@@ -207,10 +209,12 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOTableManager, FFTOAbilityDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOJobCommandDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOStatusEffectDataManager>()
             // Individually.
             .AddSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
             .AddSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
             .AddSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
+            .AddSingleton<IFFTOStatusEffectDataManager, FFTOStatusEffectDataManager>()
 
             .AddSingleton<FFTOResourceManagerHooks>()
             .AddSingleton<FFTPackHooks>()

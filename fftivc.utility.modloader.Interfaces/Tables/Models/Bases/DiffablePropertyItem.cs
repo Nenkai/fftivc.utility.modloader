@@ -51,7 +51,8 @@ public abstract record DiffablePropertyItem<TModel>
 /// <param name="Name">Name of the property.</param>
 /// <param name="Getter">Getter, for getting the property value.</param>
 /// <param name="Setter">Setter, for setting the property value.</param>
-public sealed record DiffablePropertyItem<TModel, TValue>(string Name, Func<TModel, TValue?> Getter, Action<TModel, TValue> Setter) 
+/// <param name="comparer">Comparer. If not specified, the default (<see cref="EqualityComparer{T}.Default"/>) will be used.</param>
+public sealed record DiffablePropertyItem<TModel, TValue>(string Name, Func<TModel, TValue?> Getter, Action<TModel, TValue> Setter, IEqualityComparer<TValue>? comparer = null) 
     : DiffablePropertyItem<TModel>(Name)
 {
     /// <inheritdoc/>
@@ -64,7 +65,10 @@ public sealed record DiffablePropertyItem<TModel, TValue>(string Name, Func<TMod
         if (otherPropValue is null)
             return false;
 
-        return !EqualityComparer<TValue>.Default.Equals(originalPropValue, otherPropValue);
+        if (comparer is not null)
+            return !comparer.Equals(originalPropValue, otherPropValue);
+        else
+            return !EqualityComparer<TValue>.Default.Equals(originalPropValue, otherPropValue);
     }
 
     /// <inheritdoc/>
