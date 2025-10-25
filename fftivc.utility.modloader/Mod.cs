@@ -2,8 +2,8 @@
 using fftivc.utility.modloader.FileLists;
 using fftivc.utility.modloader.Hooks;
 using fftivc.utility.modloader.Interfaces;
+using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
-using fftivc.utility.modloader.Interfaces.Tables.Serializers;
 using fftivc.utility.modloader.Overrides;
 using fftivc.utility.modloader.Tables;
 using fftivc.utility.modloader.Tables.Serializers;

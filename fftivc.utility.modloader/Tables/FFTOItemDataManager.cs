@@ -11,10 +11,10 @@ using Reloaded.Mod.Interfaces;
 using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
-using fftivc.utility.modloader.Interfaces.Tables.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
 using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
 using Reloaded.Memory.Interfaces;
+using fftivc.utility.modloader.Interfaces.Serializers;
 
 namespace fftivc.utility.modloader.Tables;
 

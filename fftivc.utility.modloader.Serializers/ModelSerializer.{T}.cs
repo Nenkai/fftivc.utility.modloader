@@ -6,7 +6,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-using fftivc.utility.modloader.Interfaces.Tables.Serializers;
+using fftivc.utility.modloader.Interfaces.Serializers;
 
 namespace fftivc.utility.modloader.Tables.Serializers;
 

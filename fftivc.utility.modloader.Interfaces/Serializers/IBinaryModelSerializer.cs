@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fftivc.utility.modloader.Interfaces.Tables.Serializers;
+namespace fftivc.utility.modloader.Interfaces.Serializers;
 
 /// <summary>
 /// Represents a binary format serializer for a model.

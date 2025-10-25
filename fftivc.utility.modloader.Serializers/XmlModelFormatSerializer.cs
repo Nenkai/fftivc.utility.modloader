@@ -9,8 +9,7 @@ using System.Xml;
 
 using YAXLib; // <- YAXLib is my new homie
 using YAXLib.Enums;
-
-using fftivc.utility.modloader.Interfaces.Tables.Serializers;
+using fftivc.utility.modloader.Interfaces.Serializers;
 
 namespace fftivc.utility.modloader.Tables.Serializers;
 

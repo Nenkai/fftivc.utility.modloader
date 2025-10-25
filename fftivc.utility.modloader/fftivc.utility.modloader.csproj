@@ -66,6 +66,7 @@
 
   <ItemGroup>
 	  <ProjectReference Include="..\fftivc.utility.modloader.Interfaces\fftivc.utility.modloader.Interfaces.csproj" />
+	  <ProjectReference Include="..\fftivc.utility.modloader.Serializers\fftivc.utility.modloader.Serializers.csproj" />
   </ItemGroup>
 
   <ItemGroup>

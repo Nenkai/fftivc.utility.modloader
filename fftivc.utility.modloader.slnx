@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="fftivc.utility.modloader.Interfaces/fftivc.utility.modloader.Interfaces.csproj" />
+  <Project Path="fftivc.utility.modloader.Serializers/fftivc.utility.modloader.Serializers.csproj" />
+  <Project Path="fftivc.utility.modloader/fftivc.utility.modloader.csproj" />
+</Solution>

@@ -1,4 +1,4 @@
-﻿using fftivc.utility.modloader.Interfaces.Tables.Serializers;
+﻿using fftivc.utility.modloader.Interfaces.Serializers;
 
 using System;
 using System.Collections.Generic;
