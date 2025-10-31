@@ -62,6 +62,7 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<AbilityTable, Ability
                     AbilityType = (AbilityType)(flags & 0b1111),
                     Flags = (AbilityFlags)((flags >> 4) & 0b1111),
                     AIBehaviorFlags = _abilityCommonDataTablePointer.Get(i).AIBehaviorFlags,
+                    ChanceToLearn = _abilityCommonDataTablePointer.Get(i).ChanceToLearn,
                 };
 
                 _originalTable.Entries.Add(ability);
