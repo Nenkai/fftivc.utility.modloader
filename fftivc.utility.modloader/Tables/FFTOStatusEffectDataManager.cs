@@ -54,7 +54,7 @@ public class FFTOStatusEffectDataManager : FFTOTableManagerBase<StatusEffectTabl
             _originalTable = new StatusEffectTable();
             for (int i = 0; i < _statusDataTablePointer.Count; i++)
             {
-                StatusEffect statusEffect = StatusEffect.FromStructure(i, ref _statusDataTablePointer.AsRef(i);
+                StatusEffect statusEffect = StatusEffect.FromStructure(i, ref _statusDataTablePointer.AsRef(i));
 
                 _originalTable.Entries.Add(statusEffect);
                 _moddedTable.Entries.Add(statusEffect.Clone());
