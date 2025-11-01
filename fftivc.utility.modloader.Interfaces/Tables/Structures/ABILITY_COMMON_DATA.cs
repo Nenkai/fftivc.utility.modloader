@@ -27,7 +27,7 @@ public enum AbilityFlags : byte
     Unk_0 = 1 << 0,
     LearnOnHit = 1 << 1,
     DisplayAbilityName = 1 << 2,
-    LearnWithJP = 1 << 3,
+    DontLearnWithJP = 1 << 3,
 }
 
 public enum AbilityType : byte
