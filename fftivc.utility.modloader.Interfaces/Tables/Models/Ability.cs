@@ -56,6 +56,7 @@ public class Ability : DiffableModelBase<Ability>, IDiffableModel<Ability>, IIde
             AbilityType = (AbilityType)(flags & 0b1111),
             Flags = (AbilityFlags)((flags >> 4) & 0b1111),
             AIBehaviorFlags = @struct.AIBehaviorFlags,
+            ChanceToLearn = @struct.ChanceToLearn,
         };
 
         return ability;
