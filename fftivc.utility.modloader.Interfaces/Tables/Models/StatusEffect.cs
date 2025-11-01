@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 
 /// <summary>
-/// Status table. <see href="https://ffhacktics.com/wiki/Ability_Data"/>
+/// Status table.
 /// </summary>
 public class StatusEffectTable : TableBase<StatusEffect>, IVersionableModel
 {
@@ -23,7 +23,7 @@ public class StatusEffectTable : TableBase<StatusEffect>, IVersionableModel
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-/// Status. <see href="https://ffhacktics.com/wiki/Ability_Data"/>
+/// Status.
 /// </summary>
 public class StatusEffect : DiffableModelBase<StatusEffect>, IDiffableModel<StatusEffect>, IIdentifiableModel
 {
@@ -50,6 +50,30 @@ public class StatusEffect : DiffableModelBase<StatusEffect>, IDiffableModel<Stat
         [nameof(CancelFlags)]      = new DiffablePropertyItem<StatusEffect, List<StatusEffectType>>(nameof(CancelFlags), i => i.CancelFlags, (i, v) => i.CancelFlags = v, ListEqualityComparer<StatusEffectType>.Default),
         [nameof(NoStackFlags)]     = new DiffablePropertyItem<StatusEffect, List<StatusEffectType>>(nameof(NoStackFlags), i => i.NoStackFlags, (i, v) => i.NoStackFlags = v, ListEqualityComparer<StatusEffectType>.Default),
     };
+
+    public unsafe static StatusEffect FromStructure(int id, ref STATUS_EFFECT_DATA @struct)
+    {
+        var statusEffect = new StatusEffect();
+        statusEffect.Id = id;
+        statusEffect.Unused_0x00 = @struct.Unused_0x00;
+        statusEffect.Unused_0x01 = @struct.Unused_0x01;
+        statusEffect.Order = @struct.Order;
+        statusEffect.Counter = @struct.Counter;
+        statusEffect.CheckFlags = @struct.CheckFlags;
+
+        for (int j = 0; j < 40; j++)
+        {
+            int byteIndex = j / 8;
+            int bitFlag = 0x80 >> (j % 8);
+            if ((@struct.CancelFlags[byteIndex] & bitFlag) != 0)
+                statusEffect.CancelFlags.Add(((StatusEffectType)j + 1));
+
+            if ((@struct.NoStackFlags[byteIndex] & bitFlag) != 0)
+                statusEffect.NoStackFlags.Add(((StatusEffectType)j + 1));
+        }
+
+        return statusEffect;
+    }
 
     /// <summary>
     /// Clones the status effect.

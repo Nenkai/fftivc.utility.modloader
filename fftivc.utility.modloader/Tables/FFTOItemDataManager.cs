@@ -55,8 +55,7 @@ public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOI
 
             for (int i = 0; i < _itemCommonDataTablePointer.Count; i++)
             {
-                var itemRef = _itemCommonDataTablePointer.Get(i);
-                Item item = CreateItem(i, itemRef);
+                Item item = Item.FromStructure(i, ref _itemCommonDataTablePointer.AsRef(i));
 
                 _originalTable.Entries.Add(item);
                 _moddedTable.Entries.Add(item.Clone());
@@ -80,8 +79,7 @@ public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOI
             
             for (int i = 0; i < _itemCommonDataTable2Pointer.Count; i++)
             {
-                var itemRef = _itemCommonDataTable2Pointer.Get(i);
-                Item item = CreateItem(256 + i, itemRef); // extended table starts at 256.
+                Item item = Item.FromStructure(256 + i, ref _itemCommonDataTable2Pointer.AsRef(i)); // extended table starts at 256.
 
                 _originalTable.Entries.Add(item);
                 _moddedTable.Entries.Add(item.Clone());
@@ -91,26 +89,6 @@ public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOI
             SaveToFolder();
 #endif
         });
-    }
-
-    private static unsafe Item CreateItem(int id, ITEM_COMMON_DATA itemRef)
-    {
-        var item = new Item()
-        {
-            Id = id,
-            Palette = itemRef.Palette,
-            SpriteID = itemRef.SpriteID,
-            RequiredLevel = itemRef.RequiredLevel,
-            TypeFlags = itemRef.TypeFlags,
-            AdditionalDataId = itemRef.SecondTableId,
-            ItemCategory = itemRef.ItemCategory,
-            Unused_0x06 = itemRef.Unused_0x06,
-            EquipBonusId = itemRef.EquipBonusId,
-            Price = itemRef.Price,
-            ShopAvailability = itemRef.ShopAvailability,
-            Unused_0x0B = itemRef.Unused_0x0B,
-        };
-        return item;
     }
 
     private void SaveToFolder()

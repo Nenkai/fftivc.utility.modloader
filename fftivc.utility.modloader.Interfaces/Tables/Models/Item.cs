@@ -69,6 +69,27 @@ public class Item : DiffableModelBase<Item>, IDiffableModel<Item>, IIdentifiable
         [nameof(Unused_0x0B)] =      new DiffablePropertyItem<Item, byte?>(nameof(Unused_0x0B), i => i.Unused_0x0B, (i, v) => i.Unused_0x0B = v),
     };
 
+    public static Item FromStructure(int id, ref ITEM_COMMON_DATA @struct)
+    {
+        var item = new Item()
+        {
+            Id = id,
+            Palette = @struct.Palette,
+            SpriteID = @struct.SpriteID,
+            RequiredLevel = @struct.RequiredLevel,
+            TypeFlags = @struct.TypeFlags,
+            AdditionalDataId = @struct.SecondTableId,
+            ItemCategory = @struct.ItemCategory,
+            Unused_0x06 = @struct.Unused_0x06,
+            EquipBonusId = @struct.EquipBonusId,
+            Price = @struct.Price,
+            ShopAvailability = @struct.ShopAvailability,
+            Unused_0x0B = @struct.Unused_0x0B,
+        };
+
+        return item;
+    }
+
     /// <summary>
     /// Clones the item.
     /// </summary>

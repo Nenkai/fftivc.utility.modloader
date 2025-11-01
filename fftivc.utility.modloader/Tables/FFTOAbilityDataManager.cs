@@ -54,15 +54,7 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<AbilityTable, Ability
             _originalTable = new AbilityTable();
             for (int i = 0; i < _abilityCommonDataTablePointer.Count; i++)
             {
-                byte flags = _abilityCommonDataTablePointer.Get(i).Flags;
-                var ability = new Ability()
-                {
-                    Id = i,
-                    JPCost = _abilityCommonDataTablePointer.Get(i).JPCost,
-                    AbilityType = (AbilityType)(flags & 0b1111),
-                    Flags = (AbilityFlags)((flags >> 4) & 0b1111),
-                    AIBehaviorFlags = _abilityCommonDataTablePointer.Get(i).AIBehaviorFlags,
-                };
+                var ability = Ability.FromStructure(i, ref _abilityCommonDataTablePointer.AsRef(i));
 
                 _originalTable.Entries.Add(ability);
                 _moddedTable.Entries.Add(ability.Clone());

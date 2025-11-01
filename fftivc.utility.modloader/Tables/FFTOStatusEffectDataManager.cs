@@ -54,25 +54,7 @@ public class FFTOStatusEffectDataManager : FFTOTableManagerBase<StatusEffectTabl
             _originalTable = new StatusEffectTable();
             for (int i = 0; i < _statusDataTablePointer.Count; i++)
             {
-                ref STATUS_EFFECT_DATA elem = ref _statusDataTablePointer.AsRef(i);
-                var statusEffect = new StatusEffect();
-                statusEffect.Id = i;
-                statusEffect.Unused_0x00 = elem.Unused_0x00;
-                statusEffect.Unused_0x01 = elem.Unused_0x01;
-                statusEffect.Order = elem.Order;
-                statusEffect.Counter = elem.Counter;
-                statusEffect.CheckFlags = elem.CheckFlags;
-
-                for (int j = 0; j < 40; j++)
-                {
-                    int byteIndex = j / 8;
-                    int bitFlag = 0x80 >> (j % 8);
-                    if ((elem.CancelFlags[byteIndex] & bitFlag) != 0)
-                        statusEffect.CancelFlags.Add(((StatusEffectType)j + 1));
-
-                    if ((elem.NoStackFlags[byteIndex] & bitFlag) != 0)
-                        statusEffect.NoStackFlags.Add(((StatusEffectType)j + 1));
-                }
+                StatusEffect statusEffect = StatusEffect.FromStructure(i, ref _statusDataTablePointer.AsRef(i);
 
                 _originalTable.Entries.Add(statusEffect);
                 _moddedTable.Entries.Add(statusEffect.Clone());

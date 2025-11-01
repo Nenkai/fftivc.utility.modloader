@@ -274,6 +274,40 @@ public class JobCommand : DiffableModelBase<JobCommand>, IDiffableModel<JobComma
         [nameof(ReactionSupportMovementId6)]   = new DiffablePropertyItem<JobCommand, ushort?>(nameof(ReactionSupportMovementId6), i => i.ReactionSupportMovementId6, (i, v) => i.ReactionSupportMovementId6 = v),
     };
 
+    public static JobCommand FromStructure(int id, ref JOB_COMMAND_DATA @struct)
+    {
+        var jobCommand = new JobCommand()
+        {
+            Id = id,
+            ExtendAbilityIdFlagBits = @struct.ExtendAbilityIdFlagBits,
+            ExtendReactionSupportMovementIdFlagBits = @struct.ExtendReactionSupportMovementIdFlagBits,
+            AbilityId1 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility1) ? (ushort)(@struct.AbilityId1 + 256) : @struct.AbilityId1,
+            AbilityId2 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility2) ? (ushort)(@struct.AbilityId2 + 256) : @struct.AbilityId2,
+            AbilityId3 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility3) ? (ushort)(@struct.AbilityId3 + 256) : @struct.AbilityId3,
+            AbilityId4 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility4) ? (ushort)(@struct.AbilityId4 + 256) : @struct.AbilityId4,
+            AbilityId5 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility5) ? (ushort)(@struct.AbilityId5 + 256) : @struct.AbilityId5,
+            AbilityId6 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility6) ? (ushort)(@struct.AbilityId6 + 256) : @struct.AbilityId6,
+            AbilityId7 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility7) ? (ushort)(@struct.AbilityId7 + 256) : @struct.AbilityId7,
+            AbilityId8 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility8) ? (ushort)(@struct.AbilityId8 + 256) : @struct.AbilityId8,
+            AbilityId9 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility9) ? (ushort)(@struct.AbilityId9 + 256) : @struct.AbilityId9,
+            AbilityId10 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility10) ? (ushort)(@struct.AbilityId10 + 256) : @struct.AbilityId10,
+            AbilityId11 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility11) ? (ushort)(@struct.AbilityId11 + 256) : @struct.AbilityId11,
+            AbilityId12 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility12) ? (ushort)(@struct.AbilityId12 + 256) : @struct.AbilityId12,
+            AbilityId13 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility13) ? (ushort)(@struct.AbilityId13 + 256) : @struct.AbilityId13,
+            AbilityId14 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility14) ? (ushort)(@struct.AbilityId14 + 256) : @struct.AbilityId14,
+            AbilityId15 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility15) ? (ushort)(@struct.AbilityId15 + 256) : @struct.AbilityId15,
+            AbilityId16 = @struct.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility16) ? (ushort)(@struct.AbilityId16 + 256) : @struct.AbilityId16,
+
+            ReactionSupportMovementId1 = @struct.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId1) ? (ushort)(@struct.ReactionSupportMovementId1 + 256) : @struct.ReactionSupportMovementId1,
+            ReactionSupportMovementId2 = @struct.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId2) ? (ushort)(@struct.ReactionSupportMovementId2 + 256) : @struct.ReactionSupportMovementId2,
+            ReactionSupportMovementId3 = @struct.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId3) ? (ushort)(@struct.ReactionSupportMovementId3 + 256) : @struct.ReactionSupportMovementId3,
+            ReactionSupportMovementId4 = @struct.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId4) ? (ushort)(@struct.ReactionSupportMovementId4 + 256) : @struct.ReactionSupportMovementId4,
+            ReactionSupportMovementId5 = @struct.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId5) ? (ushort)(@struct.ReactionSupportMovementId5 + 256) : @struct.ReactionSupportMovementId5,
+            ReactionSupportMovementId6 = @struct.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId6) ? (ushort)(@struct.ReactionSupportMovementId6 + 256) : @struct.ReactionSupportMovementId6,
+        };
+        return jobCommand;
+    }
+
     /// <summary>
     /// Clones the ability.
     /// </summary>

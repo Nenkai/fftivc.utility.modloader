@@ -46,6 +46,21 @@ public class Ability : DiffableModelBase<Ability>, IDiffableModel<Ability>, IIde
         [nameof(AIBehaviorFlags)]   = new DiffablePropertyItem<Ability, AIBehaviorFlags?>(nameof(AIBehaviorFlags), i => i.AIBehaviorFlags, (i, v) => i.AIBehaviorFlags = v),
     };
 
+    public static Ability FromStructure(int id, ref ABILITY_COMMON_DATA @struct)
+    {
+        byte flags = @struct.Flags;
+        var ability = new Ability()
+        {
+            Id = id,
+            JPCost = @struct.JPCost,
+            AbilityType = (AbilityType)(flags & 0b1111),
+            Flags = (AbilityFlags)((flags >> 4) & 0b1111),
+            AIBehaviorFlags = @struct.AIBehaviorFlags,
+        };
+
+        return ability;
+    }
+
     /// <summary>
     /// Clones the ability.
     /// </summary>

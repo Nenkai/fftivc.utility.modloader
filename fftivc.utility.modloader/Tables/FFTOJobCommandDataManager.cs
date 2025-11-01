@@ -56,40 +56,10 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommandTable, J
             _originalTable = new JobCommandTable();
             for (int i = 0; i < _jobCommandTablePointer.Count; i++)
             {
-                var itemRef = _jobCommandTablePointer.Get(i);
-                // Ugly, I know.
-                var item = new JobCommand()
-                {
-                    Id = i,
-                    ExtendAbilityIdFlagBits = itemRef.ExtendAbilityIdFlagBits,
-                    ExtendReactionSupportMovementIdFlagBits = itemRef.ExtendReactionSupportMovementIdFlagBits,
-                    AbilityId1 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility1) ? (ushort)(itemRef.AbilityId1 + 256) : itemRef.AbilityId1,
-                    AbilityId2 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility2) ? (ushort)(itemRef.AbilityId2 + 256) : itemRef.AbilityId2,
-                    AbilityId3 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility3) ? (ushort)(itemRef.AbilityId3 + 256) : itemRef.AbilityId3,
-                    AbilityId4 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility4) ? (ushort)(itemRef.AbilityId4 + 256) : itemRef.AbilityId4,
-                    AbilityId5 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility5) ? (ushort)(itemRef.AbilityId5 + 256) : itemRef.AbilityId5,
-                    AbilityId6 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility6) ? (ushort)(itemRef.AbilityId6 + 256) : itemRef.AbilityId6,
-                    AbilityId7 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility7) ? (ushort)(itemRef.AbilityId7 + 256) : itemRef.AbilityId7,
-                    AbilityId8 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility8) ? (ushort)(itemRef.AbilityId8 + 256) : itemRef.AbilityId8,
-                    AbilityId9 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility9) ? (ushort)(itemRef.AbilityId9 + 256) : itemRef.AbilityId9,
-                    AbilityId10 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility10) ? (ushort)(itemRef.AbilityId10 + 256) : itemRef.AbilityId10,
-                    AbilityId11 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility11) ? (ushort)(itemRef.AbilityId11 + 256) : itemRef.AbilityId11,
-                    AbilityId12 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility12) ? (ushort)(itemRef.AbilityId12 + 256) : itemRef.AbilityId12,
-                    AbilityId13 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility13) ? (ushort)(itemRef.AbilityId13 + 256) : itemRef.AbilityId13,
-                    AbilityId14 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility14) ? (ushort)(itemRef.AbilityId14 + 256) : itemRef.AbilityId14,
-                    AbilityId15 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility15) ? (ushort)(itemRef.AbilityId15 + 256) : itemRef.AbilityId15,
-                    AbilityId16 = itemRef.ExtendAbilityIdFlagBits.HasFlag(ExtendAbilityIdFlags.ExtendedAbility16) ? (ushort)(itemRef.AbilityId16 + 256) : itemRef.AbilityId16,
+                var jobCommand = JobCommand.FromStructure(i, ref _jobCommandTablePointer.AsRef(i));
 
-                    ReactionSupportMovementId1 = itemRef.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId1) ? (ushort)(itemRef.ReactionSupportMovementId1 + 256) : itemRef.ReactionSupportMovementId1,
-                    ReactionSupportMovementId2 = itemRef.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId2) ? (ushort)(itemRef.ReactionSupportMovementId2 + 256) : itemRef.ReactionSupportMovementId2,
-                    ReactionSupportMovementId3 = itemRef.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId3) ? (ushort)(itemRef.ReactionSupportMovementId3 + 256) : itemRef.ReactionSupportMovementId3,
-                    ReactionSupportMovementId4 = itemRef.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId4) ? (ushort)(itemRef.ReactionSupportMovementId4 + 256) : itemRef.ReactionSupportMovementId4,
-                    ReactionSupportMovementId5 = itemRef.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId5) ? (ushort)(itemRef.ReactionSupportMovementId5 + 256) : itemRef.ReactionSupportMovementId5,
-                    ReactionSupportMovementId6 = itemRef.ExtendReactionSupportMovementIdFlagBits.HasFlag(ExtendReactionSupportMovementIdFlags.ExtendRSMId6) ? (ushort)(itemRef.ReactionSupportMovementId6 + 256) : itemRef.ReactionSupportMovementId6,
-                };
-
-                _originalTable.Entries.Add(item);
-                _moddedTable.Entries.Add(item.Clone());
+                _originalTable.Entries.Add(jobCommand);
+                _moddedTable.Entries.Add(jobCommand.Clone());
             }
 
 #if DEBUG
