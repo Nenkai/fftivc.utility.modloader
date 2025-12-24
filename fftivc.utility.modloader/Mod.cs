@@ -36,8 +36,18 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         // Tables
         typeof(IFFTOAbilityDataManager),
         typeof(IFFTOItemDataManager),
+        typeof(IFFTOItemAttributesDataManager),
+        typeof(IFFTOInflictStatusDataManager),
+        typeof(IFFTOWeaponSecondaryDataManager),
+        typeof(IFFTOShieldSecondaryDataManager),
+        typeof(IFFTOHeadBodySecondaryDataManager),
+        typeof(IFFTOAccessorySecondaryDataManager),
+        typeof(IFFTOChemistItemSecondaryDataManager),
+        typeof(IFFTOMonsterJobCommandDataManager),
         typeof(IFFTOJobCommandDataManager),
+        typeof(IFFTOJobDataManager),
         typeof(IFFTOStatusEffectDataManager),
+        typeof(IFFTOActionMenuDataManager),
     ];
 
     /// <summary>
@@ -174,8 +184,18 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
     {
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemAttributesDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOInflictStatusDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOWeaponSecondaryDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOShieldSecondaryDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOHeadBodySecondaryDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAccessorySecondaryDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOChemistItemSecondaryDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMonsterJobCommandDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobCommandDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOStatusEffectDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOActionMenuDataManager>());
     }
 
     private IServiceProvider BuildServiceCollection()
@@ -208,13 +228,33 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             // ...To grab them as IEnumerable
             .AddSingleton<IFFTOTableManager, FFTOAbilityDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOItemAttributesDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOInflictStatusDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOWeaponSecondaryDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOShieldSecondaryDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOHeadBodySecondaryDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAccessorySecondaryDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOChemistItemSecondaryDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOMonsterJobCommandDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOJobCommandDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOJobDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOStatusEffectDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOActionMenuDataManager>()
             // Individually.
             .AddSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
             .AddSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
+            .AddSingleton<IFFTOItemAttributesDataManager, FFTOItemAttributesDataManager>()
+            .AddSingleton<IFFTOInflictStatusDataManager, FFTOInflictStatusDataManager>()
+            .AddSingleton<IFFTOWeaponSecondaryDataManager, FFTOWeaponSecondaryDataManager>()
+            .AddSingleton<IFFTOShieldSecondaryDataManager, FFTOShieldSecondaryDataManager>()
+            .AddSingleton<IFFTOHeadBodySecondaryDataManager, FFTOHeadBodySecondaryDataManager>()
+            .AddSingleton<IFFTOAccessorySecondaryDataManager, FFTOAccessorySecondaryDataManager>()
+            .AddSingleton<IFFTOChemistItemSecondaryDataManager, FFTOChemistItemSecondaryDataManager>()
+            .AddSingleton<IFFTOMonsterJobCommandDataManager, FFTOMonsterJobCommandDataManager>()
             .AddSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
+            .AddSingleton<IFFTOJobDataManager, FFTOJobDataManager>()
             .AddSingleton<IFFTOStatusEffectDataManager, FFTOStatusEffectDataManager>()
+            .AddSingleton<IFFTOActionMenuDataManager, FFTOActionMenuDataManager>()
 
             .AddSingleton<FFTOResourceManagerHooks>()
             .AddSingleton<FFTPackHooks>()
