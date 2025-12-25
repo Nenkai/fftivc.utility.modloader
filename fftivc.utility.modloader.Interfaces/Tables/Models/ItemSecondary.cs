@@ -66,9 +66,9 @@ public class WeaponSecondary : DiffableModelBase<WeaponSecondary>, IDiffableMode
     public WeaponElementFlags? Elements { get; set; }
 
     /// <summary>
-    /// InflictStatusId or AbilityId if Formula is something like 0x02
+    /// ItemOptionsId or AbilityId if Formula is something like 0x02
     /// </summary>
-    public byte? StatusAbilityId { get; set; }
+    public byte? OptionsAbilityId { get; set; }
 
     public static Dictionary<string, DiffablePropertyItem<WeaponSecondary>> PropertyMap { get; } = new()
     {
@@ -79,7 +79,7 @@ public class WeaponSecondary : DiffableModelBase<WeaponSecondary>, IDiffableMode
         [nameof(Power)] = new DiffablePropertyItem<WeaponSecondary, byte?>(nameof(Power), i => i.Power, (i, v) => i.Power = v),
         [nameof(Evasion)] = new DiffablePropertyItem<WeaponSecondary, byte?>(nameof(Evasion), i => i.Evasion, (i, v) => i.Evasion = v),
         [nameof(Elements)] = new DiffablePropertyItem<WeaponSecondary, WeaponElementFlags?>(nameof(Elements), i => i.Elements, (i, v) => i.Elements = v),
-        [nameof(StatusAbilityId)] = new DiffablePropertyItem<WeaponSecondary, byte?>(nameof(StatusAbilityId), i => i.StatusAbilityId, (i, v) => i.StatusAbilityId = v),
+        [nameof(OptionsAbilityId)] = new DiffablePropertyItem<WeaponSecondary, byte?>(nameof(OptionsAbilityId), i => i.OptionsAbilityId, (i, v) => i.OptionsAbilityId = v),
     };
 
     public static WeaponSecondary FromStructure(int id, ref WEAPON_SECONDARY_DATA @struct)
@@ -94,7 +94,7 @@ public class WeaponSecondary : DiffableModelBase<WeaponSecondary>, IDiffableMode
             Power = @struct.Power,
             Evasion = @struct.Evasion,
             Elements = @struct.Elements,
-            StatusAbilityId = @struct.StatusEffectIdOrAbilityId
+            OptionsAbilityId = @struct.StatusEffectIdOrAbilityId
         };
 
         return data;
@@ -116,7 +116,7 @@ public class WeaponSecondary : DiffableModelBase<WeaponSecondary>, IDiffableMode
             Power = Power,
             Evasion = Evasion,
             Elements = Elements,
-            StatusAbilityId = StatusAbilityId
+            OptionsAbilityId = OptionsAbilityId
         };
     }
 }

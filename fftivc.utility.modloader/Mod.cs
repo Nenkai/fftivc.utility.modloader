@@ -36,8 +36,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         // Tables
         typeof(IFFTOAbilityDataManager),
         typeof(IFFTOItemDataManager),
-        typeof(IFFTOItemAttributesDataManager),
-        typeof(IFFTOInflictStatusDataManager),
+        typeof(IFFTOItemEquipBonusDataManager),
+        typeof(IFFTOItemOptionsDataManager),
         typeof(IFFTOWeaponSecondaryDataManager),
         typeof(IFFTOShieldSecondaryDataManager),
         typeof(IFFTOHeadBodySecondaryDataManager),
@@ -184,8 +184,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
     {
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
-        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemAttributesDataManager>());
-        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOInflictStatusDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemEquipBonusDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemOptionsDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOWeaponSecondaryDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOShieldSecondaryDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOHeadBodySecondaryDataManager>());
@@ -228,8 +228,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             // ...To grab them as IEnumerable
             .AddSingleton<IFFTOTableManager, FFTOAbilityDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemAttributesDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOInflictStatusDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOItemEquipBonusDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOItemOptionsDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOWeaponSecondaryDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOShieldSecondaryDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOHeadBodySecondaryDataManager>()
@@ -239,12 +239,12 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOTableManager, FFTOJobCommandDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOJobDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOStatusEffectDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOActionMenuDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOCommandTypeDataManager>()
             // Individually.
             .AddSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
             .AddSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
-            .AddSingleton<IFFTOItemAttributesDataManager, FFTOItemAttributesDataManager>()
-            .AddSingleton<IFFTOInflictStatusDataManager, FFTOInflictStatusDataManager>()
+            .AddSingleton<IFFTOItemEquipBonusDataManager, FFTOItemEquipBonusDataManager>()
+            .AddSingleton<IFFTOItemOptionsDataManager, FFTOItemOptionsDataManager>()
             .AddSingleton<IFFTOWeaponSecondaryDataManager, FFTOWeaponSecondaryDataManager>()
             .AddSingleton<IFFTOShieldSecondaryDataManager, FFTOShieldSecondaryDataManager>()
             .AddSingleton<IFFTOHeadBodySecondaryDataManager, FFTOHeadBodySecondaryDataManager>()
@@ -254,7 +254,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
             .AddSingleton<IFFTOJobDataManager, FFTOJobDataManager>()
             .AddSingleton<IFFTOStatusEffectDataManager, FFTOStatusEffectDataManager>()
-            .AddSingleton<IFFTOCommandTypeDataManager, FFTOActionMenuDataManager>()
+            .AddSingleton<IFFTOCommandTypeDataManager, FFTOCommandTypeDataManager>()
 
             .AddSingleton<FFTOResourceManagerHooks>()
             .AddSingleton<FFTPackHooks>()

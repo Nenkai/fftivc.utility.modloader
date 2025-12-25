@@ -4,9 +4,9 @@ using fftivc.utility.modloader.Interfaces.Tables.Structures;
 namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 
 /// <summary>
-/// ItemAttributes table. <see href="https://ffhacktics.com/wiki/Item_Attribute"/>
+/// ItemEquipBonus table. <see href="https://ffhacktics.com/wiki/Item_Attribute"/>
 /// </summary>
-public class ItemAttributesTable : TableBase<ItemAttributes>, IVersionableModel
+public class ItemEquipBonusTable : TableBase<ItemEquipBonus>, IVersionableModel
 {
     /// <inheritdoc/>
     public uint Version { get; set; } = 1;
@@ -15,9 +15,9 @@ public class ItemAttributesTable : TableBase<ItemAttributes>, IVersionableModel
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-/// ItemAttributes. <see href="https://ffhacktics.com/wiki/ItemAttribute"/>
+/// ItemEquipBonus. <see href="https://ffhacktics.com/wiki/ItemAttribute"/>
 /// </summary>
-public class ItemAttributes : DiffableModelBase<ItemAttributes>, IDiffableModel<ItemAttributes>, IIdentifiableModel
+public class ItemEquipBonus : DiffableModelBase<ItemEquipBonus>, IDiffableModel<ItemEquipBonus>, IIdentifiableModel
 {
     /// <summary>
     /// Id. No more than 79 in vanilla.
@@ -39,27 +39,27 @@ public class ItemAttributes : DiffableModelBase<ItemAttributes>, IDiffableModel<
     public ItemElementFlags? StrongElements { get; set; }
     public bool? BoostJP { get; set; }
 
-    public static Dictionary<string, DiffablePropertyItem<ItemAttributes>> PropertyMap { get; } = new()
+    public static Dictionary<string, DiffablePropertyItem<ItemEquipBonus>> PropertyMap { get; } = new()
     {
-        [nameof(PABonus)] = new DiffablePropertyItem<ItemAttributes, byte?>(nameof(PABonus), x => x.PABonus, (x, v) => x.PABonus = v),
-        [nameof(MABonus)] = new DiffablePropertyItem<ItemAttributes, byte?>(nameof(MABonus), x => x.MABonus, (x, v) => x.MABonus = v),
-        [nameof(SpeedBonus)] = new DiffablePropertyItem<ItemAttributes, byte?>(nameof(SpeedBonus), x => x.SpeedBonus, (x, v) => x.SpeedBonus = v),
-        [nameof(MoveBonus)] = new DiffablePropertyItem<ItemAttributes, byte?>(nameof(MoveBonus), x => x.MoveBonus, (x, v) => x.MoveBonus = v),
-        [nameof(JumpBonus)] = new DiffablePropertyItem<ItemAttributes, byte?>(nameof(JumpBonus), x => x.JumpBonus, (x, v) => x.JumpBonus = v),
-        [nameof(InnateStatus)] = new DiffablePropertyItem<ItemAttributes, ItemInnateStartImmuneStatus?>(nameof(InnateStatus), x => x.InnateStatus, (x, v) => x.InnateStatus = v),
-        [nameof(ImmuneStatus)] = new DiffablePropertyItem<ItemAttributes, ItemInnateStartImmuneStatus?>(nameof(ImmuneStatus), x => x.ImmuneStatus, (x, v) => x.ImmuneStatus = v),
-        [nameof(StartingStatus)] = new DiffablePropertyItem<ItemAttributes, ItemInnateStartImmuneStatus?>(nameof(StartingStatus), x => x.StartingStatus, (x, v) => x.StartingStatus = v),
-        [nameof(AbsorbElements)] = new DiffablePropertyItem<ItemAttributes, ItemElementFlags?>(nameof(AbsorbElements), x => x.AbsorbElements, (x, v) => x.AbsorbElements = v),
-        [nameof(NullifyElements)] = new DiffablePropertyItem<ItemAttributes, ItemElementFlags?>(nameof(NullifyElements), x => x.NullifyElements, (x, v) => x.NullifyElements = v),
-        [nameof(HalveElements)] = new DiffablePropertyItem<ItemAttributes, ItemElementFlags?>(nameof(HalveElements), x => x.HalveElements, (x, v) => x.HalveElements = v),
-        [nameof(WeakElements)] = new DiffablePropertyItem<ItemAttributes, ItemElementFlags?>(nameof(WeakElements), x => x.WeakElements, (x, v) => x.WeakElements = v),
-        [nameof(StrongElements)] = new DiffablePropertyItem<ItemAttributes, ItemElementFlags?>(nameof(StrongElements), x => x.StrongElements, (x, v) => x.StrongElements = v),
-        [nameof(BoostJP)] = new DiffablePropertyItem<ItemAttributes, bool?>(nameof(BoostJP), x => x.BoostJP, (x, v) => x.BoostJP = v),
+        [nameof(PABonus)] = new DiffablePropertyItem<ItemEquipBonus, byte?>(nameof(PABonus), x => x.PABonus, (x, v) => x.PABonus = v),
+        [nameof(MABonus)] = new DiffablePropertyItem<ItemEquipBonus, byte?>(nameof(MABonus), x => x.MABonus, (x, v) => x.MABonus = v),
+        [nameof(SpeedBonus)] = new DiffablePropertyItem<ItemEquipBonus, byte?>(nameof(SpeedBonus), x => x.SpeedBonus, (x, v) => x.SpeedBonus = v),
+        [nameof(MoveBonus)] = new DiffablePropertyItem<ItemEquipBonus, byte?>(nameof(MoveBonus), x => x.MoveBonus, (x, v) => x.MoveBonus = v),
+        [nameof(JumpBonus)] = new DiffablePropertyItem<ItemEquipBonus, byte?>(nameof(JumpBonus), x => x.JumpBonus, (x, v) => x.JumpBonus = v),
+        [nameof(InnateStatus)] = new DiffablePropertyItem<ItemEquipBonus, ItemInnateStartImmuneStatus?>(nameof(InnateStatus), x => x.InnateStatus, (x, v) => x.InnateStatus = v),
+        [nameof(ImmuneStatus)] = new DiffablePropertyItem<ItemEquipBonus, ItemInnateStartImmuneStatus?>(nameof(ImmuneStatus), x => x.ImmuneStatus, (x, v) => x.ImmuneStatus = v),
+        [nameof(StartingStatus)] = new DiffablePropertyItem<ItemEquipBonus, ItemInnateStartImmuneStatus?>(nameof(StartingStatus), x => x.StartingStatus, (x, v) => x.StartingStatus = v),
+        [nameof(AbsorbElements)] = new DiffablePropertyItem<ItemEquipBonus, ItemElementFlags?>(nameof(AbsorbElements), x => x.AbsorbElements, (x, v) => x.AbsorbElements = v),
+        [nameof(NullifyElements)] = new DiffablePropertyItem<ItemEquipBonus, ItemElementFlags?>(nameof(NullifyElements), x => x.NullifyElements, (x, v) => x.NullifyElements = v),
+        [nameof(HalveElements)] = new DiffablePropertyItem<ItemEquipBonus, ItemElementFlags?>(nameof(HalveElements), x => x.HalveElements, (x, v) => x.HalveElements = v),
+        [nameof(WeakElements)] = new DiffablePropertyItem<ItemEquipBonus, ItemElementFlags?>(nameof(WeakElements), x => x.WeakElements, (x, v) => x.WeakElements = v),
+        [nameof(StrongElements)] = new DiffablePropertyItem<ItemEquipBonus, ItemElementFlags?>(nameof(StrongElements), x => x.StrongElements, (x, v) => x.StrongElements = v),
+        [nameof(BoostJP)] = new DiffablePropertyItem<ItemEquipBonus, bool?>(nameof(BoostJP), x => x.BoostJP, (x, v) => x.BoostJP = v),
     };
 
-    public static ItemAttributes FromStructure(int id, ref ITEM_ATTRIBUTES_DATA @struct)
+    public static ItemEquipBonus FromStructure(int id, ref ITEM_EQUIP_BONUS_DATA @struct)
     {
-        var itemAttr = new ItemAttributes()
+        var itemAttr = new ItemEquipBonus()
         {
             Id = id,
             PABonus = @struct.PABonus,
@@ -85,9 +85,9 @@ public class ItemAttributes : DiffableModelBase<ItemAttributes>, IDiffableModel<
     /// Clones the ability.
     /// </summary>
     /// <returns></returns>
-    public ItemAttributes Clone()
+    public ItemEquipBonus Clone()
     {
-        return new ItemAttributes()
+        return new ItemEquipBonus()
         {
             Id = Id,
             PABonus = PABonus,

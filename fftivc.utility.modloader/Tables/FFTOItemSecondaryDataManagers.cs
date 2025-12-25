@@ -133,7 +133,7 @@ public class FFTOWeaponSecondaryDataManager : FFTOTableManagerBase<WeaponSeconda
         weaponSecondaryData.Power = (byte)(weaponSecondary.Power ?? previous.Power)!;
         weaponSecondaryData.Evasion = (byte)(weaponSecondary.Evasion ?? previous.Evasion)!;
         weaponSecondaryData.Elements = (WeaponElementFlags)(weaponSecondary.Elements ?? previous.Elements)!;
-        weaponSecondaryData.StatusEffectIdOrAbilityId = (byte)(weaponSecondary.StatusAbilityId ?? previous.StatusAbilityId)!;
+        weaponSecondaryData.StatusEffectIdOrAbilityId = (byte)(weaponSecondary.OptionsAbilityId ?? previous.OptionsAbilityId)!;
     }
 
     public WeaponSecondary GetOriginalWeaponSecondary(int index)

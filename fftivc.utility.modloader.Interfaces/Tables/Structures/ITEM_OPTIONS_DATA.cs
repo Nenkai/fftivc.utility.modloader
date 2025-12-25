@@ -4,20 +4,20 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 /// <summary>
-/// INFLICT_STATUS_DATA - See https://ffhacktics.com/wiki/Inflict_Statuses
+/// ITEM_OPTIONS_DATA - (Named as per pspItemGetOptionData); See https://ffhacktics.com/wiki/Inflict_Statuses
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public struct INFLICT_STATUS_DATA
+public struct ITEM_OPTIONS_DATA
 {
-    public InflictStatusOptionType OptionType { get; set; }
-    public InflictStatusEffect1Flags Effects1 { get; set; }
-    public InflictStatusEffect2Flags Effects2 { get; set; }
-    public InflictStatusEffect3Flags Effects3 { get; set; }
-    public InflictStatusEffect4Flags Effects4 { get; set; }
-    public InflictStatusEffect5Flags Effects5 { get; set; }
+    public ItemOptionsType OptionType { get; set; }
+    public ItemOptionsEffect1Flags Effects1 { get; set; }
+    public ItemOptionsEffect2Flags Effects2 { get; set; }
+    public ItemOptionsEffect3Flags Effects3 { get; set; }
+    public ItemOptionsEffect4Flags Effects4 { get; set; }
+    public ItemOptionsEffect5Flags Effects5 { get; set; }
 }
 
-public enum InflictStatusOptionType : byte
+public enum ItemOptionsType : byte
 {
     None = 0,
     AllOrNothing = 1 << 7,
@@ -30,7 +30,7 @@ public enum InflictStatusOptionType : byte
 /// Innate/Starting/Immunity Status Flags (Set 1)
 /// </summary>
 [Flags]
-public enum InflictStatusEffect1Flags : byte
+public enum ItemOptionsEffect1Flags : byte
 {
     Unused1 = 1 << 7,
     Crystal = 1 << 6,
@@ -46,7 +46,7 @@ public enum InflictStatusEffect1Flags : byte
 /// Innate/Starting/Immunity Status Flags (Set 2)
 /// </summary>
 [Flags]
-public enum InflictStatusEffect2Flags : byte
+public enum ItemOptionsEffect2Flags : byte
 {
     Stone = 1 << 7,
     Traitor = 1 << 6,
@@ -62,7 +62,7 @@ public enum InflictStatusEffect2Flags : byte
 /// Innate/Starting/Immunity Status Flags (Set 3)
 /// </summary>
 [Flags]
-public enum InflictStatusEffect3Flags : byte
+public enum ItemOptionsEffect3Flags : byte
 {
     Oil = 1 << 7,
     Float = 1 << 6,
@@ -78,7 +78,7 @@ public enum InflictStatusEffect3Flags : byte
 /// Innate/Starting/Immunity Status Flags (Set 4)
 /// </summary>
 [Flags]
-public enum InflictStatusEffect4Flags : byte
+public enum ItemOptionsEffect4Flags : byte
 {
     Poison = 1 << 7,
     Regen = 1 << 6,
@@ -94,7 +94,7 @@ public enum InflictStatusEffect4Flags : byte
 /// Innate/Starting/Immunity Status Flags (Set 5)
 /// </summary>
 [Flags]
-public enum InflictStatusEffect5Flags : byte
+public enum ItemOptionsEffect5Flags : byte
 {
     Faith = 1 << 7,
     Atheist = 1 << 6,

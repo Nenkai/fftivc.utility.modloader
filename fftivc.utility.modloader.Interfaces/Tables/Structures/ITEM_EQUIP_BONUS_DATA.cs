@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
 
 namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-/// ITEM_ATTRIBUTES_DATA
+/// ITEM_EQUIP_BONUS_DATA (Named as per pspItemGetEquipBonus); Known as "Item Attributes" in FFTPatcher
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public struct ITEM_ATTRIBUTES_DATA
+public struct ITEM_EQUIP_BONUS_DATA
 {
     public byte PABonus { get; set; }
     public byte MABonus { get; set; }
@@ -44,7 +39,7 @@ public struct ITEM_ATTRIBUTES_DATA
 }
 
 /// <summary>
-/// Determines if an item allows the wearer to absorb, nullify, receive half damge from, become weak to, or strenghen elements
+/// Determines if an item allows the wearer to absorb, nullify, receive half damge from, become weak to, or strengthen elements
 /// </summary>
 [Flags]
 public enum ItemElementFlags : byte
