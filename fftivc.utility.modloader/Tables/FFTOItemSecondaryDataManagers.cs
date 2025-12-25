@@ -497,8 +497,6 @@ public class FFTOChemistItemSecondaryDataManager : FFTOTableManagerBase<ChemistI
     {
         var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
 
-        // TODO: There's an extended table, but we only have the data for a single entry :|
-
         // ChemistItem secondary data table - 0-13
         _startupScanner.AddMainModuleScan("48 03 00 48 07 00 48 0F 00 49 02 00 49 05 00 4A 00 00 38 00 01 38 00 02", e =>
         {

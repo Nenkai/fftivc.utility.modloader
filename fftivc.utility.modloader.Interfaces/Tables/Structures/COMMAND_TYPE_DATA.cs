@@ -4,15 +4,15 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 /// <summary>
-/// ACTION_MENU_DATA
+/// COMMAND_TYPE_DATA (Called an Action Menu in FFTPatcher)
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public struct ACTION_MENU_DATA // As per mobile symbols
+public struct COMMAND_TYPE_DATA // As per mobile symbols
 {
-    public ActionMenuType Menu { get; set; }
+    public CommandTypeMenu Menu { get; set; }
 }
 
-public enum ActionMenuType : byte
+public enum CommandTypeMenu : byte
 {
     Default = 0x0,
     ItemInventory = 0x1,
