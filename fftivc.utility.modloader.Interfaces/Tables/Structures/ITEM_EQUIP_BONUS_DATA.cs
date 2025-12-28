@@ -44,6 +44,7 @@ public struct ITEM_EQUIP_BONUS_DATA
 [Flags]
 public enum ItemElementFlags : byte
 {
+    None = 0,
     Fire = 1 << 7,
     Lightning = 1 << 6,
     Ice = 1 << 5,

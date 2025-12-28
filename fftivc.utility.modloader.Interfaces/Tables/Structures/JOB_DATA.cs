@@ -147,6 +147,7 @@ public enum JobEquippableItems5Flags : byte
 [Flags]
 public enum JobElementFlags : byte
 {
+    None = 0,
     Fire = 1 << 7,
     Lightning = 1 << 6,
     Ice = 1 << 5,

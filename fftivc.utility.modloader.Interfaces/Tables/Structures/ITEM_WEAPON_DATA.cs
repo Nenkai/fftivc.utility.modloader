@@ -20,6 +20,7 @@ public struct ITEM_WEAPON_DATA
 [Flags]
 public enum WeaponAttackFlags : byte
 {
+    None = 0,
     Striking = 1 << 7,
     Lunging = 1 << 6,
     Direct = 1 << 5,
@@ -33,6 +34,7 @@ public enum WeaponAttackFlags : byte
 [Flags]
 public enum WeaponElementFlags : byte
 {
+    None = 0,
     Fire = 1 << 7,
     Lightning = 1 << 6,
     Ice = 1 << 5,
