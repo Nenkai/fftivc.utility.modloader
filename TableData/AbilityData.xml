@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded ability table.
+
+Refer to: https://ffhacktics.com/wiki/Ability_Data
+This table links to nex table 'Ability'. Some properties edited here may be overriden by the nex table.
+
+You can use this file as a base to edit Ability data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/AbilityData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ABILITY_COMMON_DATA.cs
+-->
+
+<AbilityTable>
+  <Version>1</Version>
+  <Entries>
+    <Ability>
+      <Id>78</Id> <!-- Bizen Osafune -->
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <AIBehaviorFlags>HP, MP, TargetAllies, Silence, NonSpearAttack, UsableByAI, OnlyHitsAlliesOrSelf</AIBehaviorFlags>
+    </Ability>
+  </Entries>
+</AbilityTable>

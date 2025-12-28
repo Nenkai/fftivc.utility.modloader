@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded job command table.
+
+Refer to: https://ffhacktics.com/wiki/Skillsets
+This table links to nex table 'JobCommand'. Some properties edited here may be overriden by the nex table.
+
+You can use this file as a base to edit Item data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/JobCommandData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+IMPORTANT 3: You do not need to worry about setting ExtendAbilityIdFlagBits or ExtendReactionSupportMovementIdFlagBits.
+The loader will fill these according to ids. You're free to use ids 0-512 directly.
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/JOB_COMMAND_DATA.cs
+-->
+
+<JobCommandTable>
+  <Version>1</Version>
+  <Entries>
+    <JobCommand>
+      <Id>5</Id> <!-- Fundaments -->
+      <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
+      <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId1, ExtendRSMId2</ExtendReactionSupportMovementIdFlagBits>
+      <AbilityId1>146</AbilityId1> <!-- Focus -->
+      <AbilityId2>147</AbilityId2> <!-- Rush -->
+      <AbilityId3>148</AbilityId3> <!-- Throw Stone -->
+      <AbilityId4>149</AbilityId4> <!-- Salve -->
+      <ReactionSupportMovementId1>436</ReactionSupportMovementId1> <!-- Counter Tackle -->
+      <ReactionSupportMovementId2>426</ReactionSupportMovementId2> <!-- Vigilance -->
+    </JobCommand>
+  </Entries>
+</JobCommandTable>
