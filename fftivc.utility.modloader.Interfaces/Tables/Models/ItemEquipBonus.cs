@@ -20,7 +20,7 @@ public class ItemEquipBonusTable : TableBase<ItemEquipBonus>, IVersionableModel
 public class ItemEquipBonus : DiffableModelBase<ItemEquipBonus>, IDiffableModel<ItemEquipBonus>, IIdentifiableModel
 {
     /// <summary>
-    /// Id. No more than 79 in vanilla.
+    /// Id. No more than 84 in vanilla.
     /// </summary>
     public int Id { get; set; }
 

@@ -15,7 +15,7 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOItemEquipBonusDataManager : FFTOTableManagerBase<ItemEquipBonusTable, ItemEquipBonus>, IFFTOItemEquipBonusDataManager
 {
-    private const int ItemEquipBonusCount = 80;
+    private const int ItemEquipBonusCount = 85;
 
     private readonly IModelSerializer<ItemEquipBonusTable> _itemEquipBonusSerializer;
 
