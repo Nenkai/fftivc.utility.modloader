@@ -5,7 +5,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public struct WEAPON_SECONDARY_DATA
+public struct ITEM_WEAPON_DATA
 {
     public byte Range { get; set; }
     public WeaponAttackFlags AttackFlags { get; set; }
@@ -15,35 +15,6 @@ public struct WEAPON_SECONDARY_DATA
     public byte Evasion { get; set; }
     public WeaponElementFlags Elements { get; set; }
     public byte StatusEffectIdOrAbilityId { get; set; }
-}
-
-[StructLayout(LayoutKind.Sequential, Pack = 1)]
-public struct SHIELD_SECONDARY_DATA
-{
-    public byte PhysicalEvasion { get; set; }
-    public byte MagicalEvasion { get; set; }
-}
-
-[StructLayout(LayoutKind.Sequential, Pack = 1)]
-public struct HEAD_BODY_SECONDARY_DATA
-{
-    public byte HPBonus { get; set; }
-    public byte MPBonus { get; set; }
-}
-
-[StructLayout(LayoutKind.Sequential, Pack = 1)]
-public struct ACCESSORY_SECONDARY_DATA
-{
-    public byte PhysicalEvasion { get; set; }
-    public byte MagicalEvasion { get; set; }
-}
-
-[StructLayout(LayoutKind.Sequential, Pack = 1)]
-public struct CHEMIST_ITEM_SECONDARY_DATA
-{
-    public byte Formula { get; set; } // See https://ffhacktics.com/wiki/Formulas
-    public byte Z { get; set; }
-    public byte StatusEffectId { get; set; }
 }
 
 [Flags]
