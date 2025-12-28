@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded item shield table.
+
+Refer to: https://ffhacktics.com/wiki/Shield_Secondary_Data
+
+You can use this file as a base to edit Shield data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/ItemShieldData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ITEM_SHIELD_DATA.cs
+
+-->
+
+<ItemShieldTable>
+  <Version>1</Version>
+  <Entries>
+    <ItemShield>
+      <Id>0</Id>
+      <PhysicalEvasion>10</PhysicalEvasion>
+      <MagicalEvasion>3</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>1</Id>
+      <PhysicalEvasion>13</PhysicalEvasion>
+      <MagicalEvasion>3</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>2</Id>
+      <PhysicalEvasion>16</PhysicalEvasion>
+      <MagicalEvasion>0</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>3</Id>
+      <PhysicalEvasion>19</PhysicalEvasion>
+      <MagicalEvasion>0</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>4</Id>
+      <PhysicalEvasion>22</PhysicalEvasion>
+      <MagicalEvasion>5</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>5</Id>
+      <PhysicalEvasion>25</PhysicalEvasion>
+      <MagicalEvasion>0</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>6</Id>
+      <PhysicalEvasion>28</PhysicalEvasion>
+      <MagicalEvasion>0</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>7</Id>
+      <PhysicalEvasion>31</PhysicalEvasion>
+      <MagicalEvasion>0</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>8</Id>
+      <PhysicalEvasion>10</PhysicalEvasion>
+      <MagicalEvasion>50</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>9</Id>
+      <PhysicalEvasion>34</PhysicalEvasion>
+      <MagicalEvasion>15</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>10</Id>
+      <PhysicalEvasion>37</PhysicalEvasion>
+      <MagicalEvasion>10</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>11</Id>
+      <PhysicalEvasion>40</PhysicalEvasion>
+      <MagicalEvasion>15</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>12</Id>
+      <PhysicalEvasion>43</PhysicalEvasion>
+      <MagicalEvasion>0</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>13</Id>
+      <PhysicalEvasion>46</PhysicalEvasion>
+      <MagicalEvasion>20</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>14</Id>
+      <PhysicalEvasion>50</PhysicalEvasion>
+      <MagicalEvasion>25</MagicalEvasion>
+    </ItemShield>
+    <ItemShield>
+      <Id>15</Id>
+      <PhysicalEvasion>75</PhysicalEvasion>
+      <MagicalEvasion>50</MagicalEvasion>
+    </ItemShield>
+  </Entries>
+</ItemShieldTable>
