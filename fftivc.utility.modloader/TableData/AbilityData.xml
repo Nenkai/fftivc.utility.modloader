@@ -1,0 +1,4121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded ability table.
+
+Refer to: https://ffhacktics.com/wiki/Ability_Data
+This table links to nex table 'Ability'. Some properties edited here may be overriden by the nex table.
+
+You can use this file as a base to edit Ability data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/AbilityData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ABILITY_COMMON_DATA.cs
+-->
+
+<AbilityTable>
+  <Version>1</Version>
+  <Entries>
+    <Ability>
+      <Id>0</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>0</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>None</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>1</Id>
+      <JPCost>50</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, Silence, AffectedByFaith, CheckCT_Target, UndeadReverse, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>2</Id>
+      <JPCost>180</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, Silence, AffectedByFaith, CheckCT_Target, UndeadReverse, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>3</Id>
+      <JPCost>450</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, Silence, AffectedByFaith, CheckCT_Target, UndeadReverse, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>4</Id>
+      <JPCost>800</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, Silence, AffectedByFaith, CheckCT_Target, UndeadReverse, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>5</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, Silence, AffectedByFaith, CheckCT_Target, UndeadReverse, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>6</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, Silence, AffectedByFaith, CheckCT_Target, UndeadReverse, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>7</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>8</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>9</Id>
+      <JPCost>70</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>10</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>11</Id>
+      <JPCost>70</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>12</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>13</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>14</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>15</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>16</Id>
+      <JPCost>50</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>17</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>65</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>18</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>19</Id>
+      <JPCost>900</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>20</Id>
+      <JPCost>50</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>21</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>75</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>22</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>55</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>23</Id>
+      <JPCost>900</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>24</Id>
+      <JPCost>50</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>25</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>85</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>26</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>27</Id>
+      <JPCost>900</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>28</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>29</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>AddStatus, CancelStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>30</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, UndeadReverse, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>31</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>32</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>33</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>34</Id>
+      <JPCost>80</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>35</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>36</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>37</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>38</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>39</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>40</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>0</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>41</Id>
+      <JPCost>900</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, Silence, AffectedByFaith, CheckCT_Target, Reflectable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>42</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>75</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>43</Id>
+      <JPCost>550</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>44</Id>
+      <JPCost>1500</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>45</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>46</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>47</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>48</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, UndeadReverse, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>49</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>50</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>51</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>52</Id>
+      <JPCost>170</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>53</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>54</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>55</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>56</Id>
+      <JPCost>800</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, CancelStatus, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>57</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>58</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>59</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>60</Id>
+      <JPCost>110</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, Silence, AffectedByFaith, CheckCT_Target, UndeadReverse, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>61</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>62</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>75</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>63</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>64</Id>
+      <JPCost>220</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>65</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>Stats, Silence, RandomHits, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>66</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>67</Id>
+      <JPCost>1600</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>68</Id>
+      <JPCost>900</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>69</Id>
+      <JPCost>860</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>70</Id>
+      <JPCost>860</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>71</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>72</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, Silence, AffectedByFaith, CheckCT_Target, UndeadReverse, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>73</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>74</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>75</Id>
+      <JPCost>9999</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName, DontLearnWithJP</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>76</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>77</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>78</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>79</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>80</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>81</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>82</Id>
+      <JPCost>700</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>83</Id>
+      <JPCost>800</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, LinearAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>84</Id>
+      <JPCost>900</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>85</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>86</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, MP, TargetMap, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>87</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, TargetMap, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>88</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, TargetMap, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>89</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, TargetMap, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>90</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, TargetMap, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>91</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, RandomHits, TargetMap, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>92</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, TargetMap, OnlyHitsAlliesOrSelf, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>93</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, TargetMap, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>94</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, TargetMap, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>95</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, TargetMap, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>96</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, TargetMap, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>97</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, TargetMap, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>98</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, RandomHits, TargetMap, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>99</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, TargetMap, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>100</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>101</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>102</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>103</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, LinearAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>104</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>105</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>106</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, MP, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>107</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UndeadReverse, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>108</Id>
+      <JPCost>10</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>PhysicalAttack, EvadeWithMotion, OnlyHitsEnemies, OnlyHitsAlliesOrSelf</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>109</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>110</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>111</Id>
+      <JPCost>450</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>112</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>113</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>114</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>115</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>55</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, PhysicalAttack, EvadeWithMotion, OnlyHitsAlliesOrSelf</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>116</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>Silence, OnlyHitsEnemies</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>117</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, Silence, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>118</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, Silence, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>119</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, Silence, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>120</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>Stats, Silence, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>121</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>Stats, Silence, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>122</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>123</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>Silence</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>124</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>125</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>126</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>127</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>128</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>129</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>130</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>131</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>132</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>133</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>134</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>135</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>136</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>137</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>138</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>139</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>140</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>141</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>142</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>143</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>144</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>145</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>146</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, TargetMap, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>147</Id>
+      <JPCost>80</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>148</Id>
+      <JPCost>90</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, StopAtObstacle, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>149</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>150</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>151</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>152</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>153</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, TargetMap, OnlyHitsAlliesOrSelf</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>154</Id>
+      <JPCost>9999</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>LearnOnHit, DisplayAbilityName, DontLearnWithJP</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>155</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>156</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>157</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>158</Id>
+      <JPCost>700</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>159</Id>
+      <JPCost>800</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, LinearAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>160</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>161</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>162</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>163</Id>
+      <JPCost>800</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>164</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>165</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>166</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>167</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, Silence, AffectedByFaith, CheckCT_Target, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>168</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, TargetMap, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>169</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>170</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>171</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>172</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>173</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>174</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>175</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>176</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>177</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>178</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>179</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>180</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>181</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>182</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>183</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>184</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>185</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>186</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>187</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>188</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>189</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>190</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>191</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>192</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>193</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>194</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>195</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>196</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>197</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>198</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>199</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>200</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>201</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>202</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>203</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>204</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>205</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>206</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>207</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>208</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>209</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>210</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>211</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, Reflectable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>212</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, Silence, CheckCT_Target, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>213</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>214</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>215</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>216</Id>
+      <JPCost>9999</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>217</Id>
+      <JPCost>9999</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>218</Id>
+      <JPCost>9999</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>219</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>220</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>221</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>222</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>223</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>224</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>225</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>226</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>227</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>228</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>229</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>230</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, AffectedByFaith, RandomHits, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>231</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>232</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, CancelStatus, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>233</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, Silence, AffectedByFaith, CheckCT_Target, MagicalAttack, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>234</Id>
+      <JPCost>50</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>235</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>62</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>236</Id>
+      <JPCost>180</JPCost>
+      <ChanceToLearn>64</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, AffectedByFaith, UndeadReverse, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>237</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>66</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>AddStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>238</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>68</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>AddStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>239</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>240</Id>
+      <JPCost>90</JPCost>
+      <ChanceToLearn>72</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>241</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>74</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>242</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>76</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>243</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>78</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>244</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, CancelStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>245</Id>
+      <JPCost>50</JPCost>
+      <ChanceToLearn>82</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>246</Id>
+      <JPCost>170</JPCost>
+      <ChanceToLearn>84</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>247</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>86</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, AffectedByFaith, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>248</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, NonSpearAttack, StopAtObstacle, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>249</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, NonSpearAttack, StopAtObstacle, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>250</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, NonSpearAttack, StopAtObstacle, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>251</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, OnlyHitsEnemies</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>252</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>253</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>254</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>255</Id>
+      <JPCost>900</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>256</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>257</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>258</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>259</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>260</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>261</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>262</Id>
+      <JPCost>700</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>263</Id>
+      <JPCost>1200</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>264</Id>
+      <JPCost>2500</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>265</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>266</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>267</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>268</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>269</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, UndeadReverse, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>270</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>271</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>272</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>273</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>274</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, UndeadReverse, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>275</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>276</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>277</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>278</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>279</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>280</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>281</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>282</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Evadeable, MagicalAttack, StopAtObstacle, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>283</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>284</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Evadeable, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>285</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>286</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Evadeable, PhysicalAttack, NonSpearAttack, StopAtObstacle, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>287</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, CancelStatus, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>288</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>289</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>290</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>291</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, StopAtObstacle, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>292</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, StopAtObstacle, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>293</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, StopAtObstacle, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>294</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, StopAtObstacle, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>295</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, StopAtObstacle, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>296</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>297</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>298</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, UndeadReverse, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>299</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>300</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>301</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Evadeable, PhysicalAttack, StopAtObstacle, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>302</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, Evadeable, MagicalAttack, StopAtObstacle, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>303</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>304</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Silence, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>305</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>306</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>307</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, Evadeable, PhysicalAttack, EvadeWithMotion</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>308</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>309</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, Evadeable, MagicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>310</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>311</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, EvadeWithMotion, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>312</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UndeadReverse, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>313</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>314</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>315</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>316</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>317</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>318</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, UndeadReverse, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>319</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, MP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>320</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>321</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>322</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>323</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, Stats, TargetMap, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>324</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, MagicalAttack, NonSpearAttack, StopAtObstacle, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>325</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>326</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, AddStatus, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>327</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, CancelStatus, Evadeable, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>328</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>329</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Stats, Evadeable, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>330</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>331</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>332</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>333</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>334</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>335</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>336</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>337</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, MagicalAttack, NonSpearAttack, StopAtObstacle, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>338</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, MagicalAttack, NonSpearAttack, StopAtObstacle, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>339</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, MagicalAttack, NonSpearAttack, StopAtObstacle, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>340</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, Melee3Directions, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>341</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, MagicalAttack, Ranged3Directions, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>342</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>343</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>344</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, RandomHits, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>345</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Evadeable, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>346</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>347</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, Silence, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>348</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, CheckCT_Target, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>349</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, CheckCT_Target, MagicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>350</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, CheckCT_Target, OnlyHitsEnemies, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>351</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>352</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>353</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>354</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>355</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>356</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>357</Id>
+      <JPCost>1200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>358</Id>
+      <JPCost>1200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, MP, PhysicalAttack, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>359</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>PhysicalAttack, EvadeWithMotion, OnlyHitsEnemies, OnlyHitsAlliesOrSelf</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>360</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, AddStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>361</Id>
+      <JPCost>450</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>362</Id>
+      <JPCost>550</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, HP, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>363</Id>
+      <JPCost>450</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>364</Id>
+      <JPCost>750</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>365</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, Unequip, Evadeable, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>366</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>55</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, PhysicalAttack, EvadeWithMotion, OnlyHitsAlliesOrSelf</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>367</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Normal</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, PhysicalAttack, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>368</Id>
+      <JPCost>30</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, UndeadReverse, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>369</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, UndeadReverse, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>370</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>45</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, HP, UndeadReverse, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>371</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>25</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, MP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>372</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, MP, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>373</Id>
+      <JPCost>900</JPCost>
+      <ChanceToLearn>5</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, MP, HP, UndeadReverse, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>374</Id>
+      <JPCost>70</JPCost>
+      <ChanceToLearn>65</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>375</Id>
+      <JPCost>80</JPCost>
+      <ChanceToLearn>35</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>376</Id>
+      <JPCost>120</JPCost>
+      <ChanceToLearn>35</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>377</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>35</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>378</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>35</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>379</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>380</Id>
+      <JPCost>700</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>381</Id>
+      <JPCost>90</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Item</AbilityType>
+      <AIBehaviorFlags>TargetAllies, CancelStatus, UndeadReverse, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>382</Id>
+      <JPCost>50</JPCost>
+      <ChanceToLearn>90</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>383</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>384</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>385</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>386</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>387</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>388</Id>
+      <JPCost>120</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>389</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>390</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>391</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>392</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>393</Id>
+      <JPCost>70</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Throwing</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>394</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>395</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>396</Id>
+      <JPCost>550</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>397</Id>
+      <JPCost>800</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>398</Id>
+      <JPCost>1100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>399</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>400</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>401</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>402</Id>
+      <JPCost>550</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>403</Id>
+      <JPCost>700</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>404</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>405</Id>
+      <JPCost>1500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Jumping</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>406</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Aim</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>407</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Aim</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>408</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Aim</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>409</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Aim</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>410</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Aim</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>411</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Aim</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>412</Id>
+      <JPCost>700</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Aim</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>413</Id>
+      <JPCost>1200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Aim</AbilityType>
+      <AIBehaviorFlags>TargetEnemies, HP, EvadeWithMotion, UsableByAI</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>414</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Math</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>415</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>45</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Math</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>416</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>55</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Math</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>417</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Math</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>418</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Math</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>419</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>55</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Math</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>420</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>65</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Math</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>421</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>70</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Math</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>422</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>423</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>424</Id>
+      <JPCost>900</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>425</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>426</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>427</Id>
+      <JPCost>600</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>428</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>429</Id>
+      <JPCost>700</JPCost>
+      <ChanceToLearn>45</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>430</Id>
+      <JPCost>700</JPCost>
+      <ChanceToLearn>45</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>431</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>432</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>433</Id>
+      <JPCost>800</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>434</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>435</Id>
+      <JPCost>800</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>436</Id>
+      <JPCost>180</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>437</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>438</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>439</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>20</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>440</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>441</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>442</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>80</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>443</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>444</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>445</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>446</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>447</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>60</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>448</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>40</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>449</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>450</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>451</Id>
+      <JPCost>700</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>452</Id>
+      <JPCost>450</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>453</Id>
+      <JPCost>1300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Reaction</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>454</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>455</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>45</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>456</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>457</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>458</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>459</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>10</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>460</Id>
+      <JPCost>170</JPCost>
+      <ChanceToLearn>5</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>461</Id>
+      <JPCost>800</JPCost>
+      <ChanceToLearn>25</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>462</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>463</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>464</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>465</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>466</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>467</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>468</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>469</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>470</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>471</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>472</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>473</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>474</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>475</Id>
+      <JPCost>250</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>476</Id>
+      <JPCost>900</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>477</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>478</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>55</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>479</Id>
+      <JPCost>50</JPCost>
+      <ChanceToLearn>35</ChanceToLearn>
+      <Flags>DisplayAbilityName</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>480</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>481</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>0</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>482</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>483</Id>
+      <JPCost>3000</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>484</Id>
+      <JPCost>2000</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>485</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Support</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>486</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>487</Id>
+      <JPCost>560</JPCost>
+      <ChanceToLearn>42</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>488</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>32</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>489</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>490</Id>
+      <JPCost>500</JPCost>
+      <ChanceToLearn>45</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>491</Id>
+      <JPCost>1000</JPCost>
+      <ChanceToLearn>32</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>492</Id>
+      <JPCost>700</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>493</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>494</Id>
+      <JPCost>350</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>495</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>496</Id>
+      <JPCost>400</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>497</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>498</Id>
+      <JPCost>650</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>499</Id>
+      <JPCost>0</JPCost>
+      <ChanceToLearn>100</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>500</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>501</Id>
+      <JPCost>220</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>502</Id>
+      <JPCost>420</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>503</Id>
+      <JPCost>300</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>504</Id>
+      <JPCost>150</JPCost>
+      <ChanceToLearn>30</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>505</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>506</Id>
+      <JPCost>540</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>507</Id>
+      <JPCost>5000</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>508</Id>
+      <JPCost>800</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>509</Id>
+      <JPCost>100</JPCost>
+      <ChanceToLearn>75</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>Movement</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>510</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>None</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+    <Ability>
+      <Id>511</Id>
+      <JPCost>200</JPCost>
+      <ChanceToLearn>50</ChanceToLearn>
+      <Flags>0</Flags>
+      <AbilityType>None</AbilityType>
+      <AIBehaviorFlags>0</AIBehaviorFlags>
+    </Ability>
+  </Entries>
+</AbilityTable>

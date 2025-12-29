@@ -60,10 +60,11 @@ public abstract class FFTOTableManagerBase<TTable, TModel>
     /// <param name="model">Model. Null properties are ignored.</param>
     protected void TrackModelChanges(string modId, TModel model)
     {
-        if (model.Id > _originalTable.Entries.Count)
+        var index = IdToIndex(model.Id);
+        if (index >= _originalTable.Entries.Count)
             return;
 
-        IList<ModelDiff> differences = _moddedTable.Entries[model.Id].DiffModel(model);
+        IList<ModelDiff> differences = _moddedTable.Entries[index].DiffModel(model);
         foreach (ModelDiff diff in differences)
         {
             if (_config.LogItemDataTableChanges)
@@ -95,11 +96,13 @@ public abstract class FFTOTableManagerBase<TTable, TModel>
         {
             foreach (TModel model in moddedTableKv.Value.Entries)
             {
+                var index = IdToIndex(model.Id);
+
                 // Check bounds
-                if (model.Id > _originalTable.Entries.Count)
+                if (index >= _originalTable.Entries.Count)
                     continue;
 
-                IList<ModelDiff> changes = _moddedTable.Entries[model.Id].DiffModel(model);
+                IList<ModelDiff> changes = _moddedTable.Entries[index].DiffModel(model);
                 foreach (ModelDiff change in changes)
                 {
                     if (_config.LogAbilityDataTableChanges)
@@ -116,12 +119,13 @@ public abstract class FFTOTableManagerBase<TTable, TModel>
         }
 
         if (_changedProperties.Count > 0)
-            _logger.WriteLine($"[{_modConfig.ModId}] Applyng {TableFileName} with {_changedProperties.Count} change(s)");
+            _logger.WriteLine($"[{_modConfig.ModId}] Applying {TableFileName} with {_changedProperties.Count} change(s)");
 
         // Merge everything together into our table
         foreach (var changedValue in _changedProperties)
         {
-            TModel model = _moddedTable.Entries[changedValue.Key.Id];
+            var index = IdToIndex(changedValue.Key.Id);
+            TModel model = _moddedTable.Entries[index];
             model.ApplyChange(changedValue.Value.Difference);
             ApplyTablePatch(changedValue.Value.ModIdOwner, model);
         }
@@ -133,6 +137,8 @@ public abstract class FFTOTableManagerBase<TTable, TModel>
     /// <param name="modId">Mod that owns this change.</param>
     /// <param name="model">Model to apply. Null properties are ignored.</param>
     public abstract void ApplyTablePatch(string modId, TModel model);
+
+    protected virtual int IdToIndex(int id) => id;
 
     public void RecordChange(string modId, int id, ModelDiff change)
     {
