@@ -4,6 +4,7 @@
 This table file is used to overwrite the game's hardcoded item armor table.
 
 Refer to: https://ffhacktics.com/wiki/Helm/Armor_Secondary_Data
+It is referenced from the ItemData table, with category ranges defined by ItemCategoryRanges.
 
 You can use this file as a base to edit Armor data in your mod.
 Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/ItemArmorData.xml.
@@ -22,322 +23,322 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
   <Version>1</Version>
   <Entries>
     <ItemArmor>
-      <Id>0</Id>
+      <Id>0</Id> <!-- Leather Helm / れさーへるむ / casque de cuir / lederhelm -->
       <HPBonus>10</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>1</Id>
+      <Id>1</Id> <!-- Bronze Helm / ふろんすへるむ / casque de bronze / bronzehelm -->
       <HPBonus>20</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>2</Id>
+      <Id>2</Id> <!-- Iron Helm / あいあんへるむ / armet de fer / eisenhelm -->
       <HPBonus>30</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>3</Id>
+      <Id>3</Id> <!-- Barbut / はるひゅーた / barbute / barbuta -->
       <HPBonus>40</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>4</Id>
+      <Id>4</Id> <!-- Mythril Helm / みすりるへるむ / armet de mithril / mithril-helm -->
       <HPBonus>50</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>5</Id>
+      <Id>5</Id> <!-- Golden Helm / こーるとへるむ / casque dor / goldhelm -->
       <HPBonus>60</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>6</Id>
+      <Id>6</Id> <!-- Close Helmet / くろすへるむ / bascinet / kreuzhelm -->
       <HPBonus>70</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>7</Id>
+      <Id>7</Id> <!-- Diamond Helm / たいあへるむ / armet de diamant / diamanthelm -->
       <HPBonus>80</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>8</Id>
+      <Id>8</Id> <!-- Platinum Helm / ふらちなへるむ / casque de platine / platinhelm -->
       <HPBonus>90</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>9</Id>
+      <Id>9</Id> <!-- Circlet / さーくれっと / diademe / stirnreif -->
       <HPBonus>100</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>10</Id>
+      <Id>10</Id> <!-- Crystal Helm / くりすたるへるむ / casque de cristal / kristallhelm -->
       <HPBonus>120</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>11</Id>
+      <Id>11</Id> <!-- Genji Helm / けんしのかふと / casque genji / genji-helm -->
       <HPBonus>130</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>12</Id>
+      <Id>12</Id> <!-- Grand Helm / くらんとへるむ / casque de maitre / stechhelm -->
       <HPBonus>150</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>13</Id>
+      <Id>13</Id> <!-- Leather Cap / かわのほうし / chapeau de cuir / lederhut -->
       <HPBonus>8</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>14</Id>
+      <Id>14</Id> <!-- Plumed Hat / はねつきほうし / chapeau a plume / federhut -->
       <HPBonus>16</HPBonus>
       <MPBonus>5</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>15</Id>
+      <Id>15</Id> <!-- Red Hood / あかすきん / chaperon rouge / rote kappe -->
       <HPBonus>24</HPBonus>
       <MPBonus>8</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>16</Id>
+      <Id>16</Id> <!-- Headgear / へっときあ / protege tete / kopfschutz -->
       <HPBonus>32</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>17</Id>
+      <Id>17</Id> <!-- Wizard's Hat / さんかくほうし / chapeau pointu / spitzhut -->
       <HPBonus>40</HPBonus>
       <MPBonus>12</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>18</Id>
+      <Id>18</Id> <!-- Green Beret / くりーんへれー / beret vert / grunes barett -->
       <HPBonus>48</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>19</Id>
+      <Id>19</Id> <!-- Headband / ねしりはちまき / bandeau torsade / stirnband -->
       <HPBonus>56</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>20</Id>
+      <Id>20</Id> <!-- Celebrant's Miter / しさいのほうし / coiffe de pretre / mitra -->
       <HPBonus>64</HPBonus>
       <MPBonus>20</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>21</Id>
+      <Id>21</Id> <!-- Black Cowl / くろすきん / capuchon noir / schwarze kappe -->
       <HPBonus>72</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>22</Id>
+      <Id>22</Id> <!-- Gold Hairpin / きんのかみかさり / barrette dor / goldspange -->
       <HPBonus>80</HPBonus>
       <MPBonus>50</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>23</Id>
+      <Id>23</Id> <!-- Lambent Hat / せんこうまほう / chapeau vif eclair / lichthut -->
       <HPBonus>88</HPBonus>
       <MPBonus>15</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>24</Id>
+      <Id>24</Id> <!-- Thief's Cap / しーふのほうし / chapeau de voleur / diebesmutze -->
       <HPBonus>100</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>25</Id>
+      <Id>25</Id> <!-- Hairband / かちゅーしゃ / serre tete / haarreif -->
       <HPBonus>20</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>26</Id>
+      <Id>26</Id> <!-- Barrette / はれった / barrette / haarspange -->
       <HPBonus>20</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>27</Id>
+      <Id>27</Id> <!-- Ribbon / りほん / ruban / schleife -->
       <HPBonus>10</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>28</Id>
+      <Id>28</Id> <!-- Leather Armor / かわのよろい / armure de cuir / lederrustung -->
       <HPBonus>10</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>29</Id>
+      <Id>29</Id> <!-- Linen Cuirass / りねんきゅらっさ / cuirasse de lin / leinenkurass -->
       <HPBonus>20</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>30</Id>
+      <Id>30</Id> <!-- Bronze Armor / ふろんすあーまー / armure de bronze / bronzerustung -->
       <HPBonus>30</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>31</Id>
+      <Id>31</Id> <!-- Chainmail / ちぇいんめいる / cotte de mailles / kettenhemd -->
       <HPBonus>40</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>32</Id>
+      <Id>32</Id> <!-- Mythril Armor / みすりるあーまー / armure de mithril / mithril-rustung -->
       <HPBonus>50</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>33</Id>
+      <Id>33</Id> <!-- Plate Mail / ふれいとめいる / cotte de plates / plattenpanzer -->
       <HPBonus>60</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>34</Id>
+      <Id>34</Id> <!-- ItemArmorData id -->
       <HPBonus>70</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>35</Id>
+      <Id>35</Id> <!-- Diamond Armor / たいああーまー / armure de diamant / diamantrustung -->
       <HPBonus>80</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>36</Id>
+      <Id>36</Id> <!-- Platinum Armor / ふらちなあーまー / armure de platine / platinrustung -->
       <HPBonus>90</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>37</Id>
+      <Id>37</Id> <!-- Carabineer Mail / きゃらひにえーる / carabiniere / karabinierrustung -->
       <HPBonus>100</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>38</Id>
+      <Id>38</Id> <!-- Crystal Mail / くりすたるめいる / cotte de cristal / kristallrustung -->
       <HPBonus>110</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>39</Id>
+      <Id>39</Id> <!-- Genji Armor / けんしのよろい / armure genji / genji-rustung -->
       <HPBonus>150</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>40</Id>
+      <Id>40</Id> <!-- Mirror Mail / りふれくとめいる / cotte reflectrice / reflek-rustung -->
       <HPBonus>130</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>41</Id>
+      <Id>41</Id> <!-- Maximillian / まくしみりあん / maximilien / maximiliansharnisch -->
       <HPBonus>200</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>42</Id>
+      <Id>42</Id> <!-- Clothing / ふく / habit / gewand -->
       <HPBonus>5</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>43</Id>
+      <Id>43</Id> <!-- Leather Clothing / かわのふく / habit de cuir / lederhemd -->
       <HPBonus>10</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>44</Id>
+      <Id>44</Id> <!-- Leather Plate / れさーふれいと / plastron de cuir / lederpanzer -->
       <HPBonus>18</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>45</Id>
+      <Id>45</Id> <!-- Ringmail / ちぇいんふれいと / plastron de mailles / ringpanzer -->
       <HPBonus>24</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>46</Id>
+      <Id>46</Id> <!-- Mythril Vest / みすりるへすと / veston de mithril / mithril-weste -->
       <HPBonus>30</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>47</Id>
+      <Id>47</Id> <!-- Adamant Vest / あたまんへすと / veston dadamantium / adamant-weste -->
       <HPBonus>36</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>48</Id>
+      <Id>48</Id> <!-- Wizard Clothing / ましゅつしのふく / tunique de sorcier / zaubergewand -->
       <HPBonus>42</HPBonus>
       <MPBonus>15</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>49</Id>
+      <Id>49</Id> <!-- Brigandine / ふりかんたいん / brigandine / brigantine -->
       <HPBonus>50</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>50</Id>
+      <Id>50</Id> <!-- Jujitsu Gi / しゅうしゅつとうき / tenue de jujutsu / judoanzug -->
       <HPBonus>60</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>51</Id>
+      <Id>51</Id> <!-- Power Garb / ちからたすき / sangle de force / energiescharpe -->
       <HPBonus>70</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>52</Id>
+      <Id>52</Id> <!-- Gaia Gear / たいちのころも / tunique de gaia / gaia-anzug -->
       <HPBonus>85</HPBonus>
       <MPBonus>10</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>53</Id>
+      <Id>53</Id> <!-- Ninja Gear / しのひのころも / tenue de shinobi / ninja-anzug -->
       <HPBonus>20</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>54</Id>
+      <Id>54</Id> <!-- Black Garb / くろしょうそく / tenue noire / dunkelanzug -->
       <HPBonus>100</HPBonus>
       <MPBonus>0</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>55</Id>
+      <Id>55</Id> <!-- Rubber Suit / らはーこんしゃす / tunique de latex / gummianzug -->
       <HPBonus>150</HPBonus>
       <MPBonus>30</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>56</Id>
+      <Id>56</Id> <!-- Hempen Robe / あさのろーふ / robe de lin / hanfrobe -->
       <HPBonus>10</HPBonus>
       <MPBonus>10</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>57</Id>
+      <Id>57</Id> <!-- Silken Robe / しるくのろーふ / robe de soie / seidenrobe -->
       <HPBonus>20</HPBonus>
       <MPBonus>16</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>58</Id>
+      <Id>58</Id> <!-- Wizard's Robe / ましゅつしのろーふ / robe denchanteur / zauberumhang -->
       <HPBonus>30</HPBonus>
       <MPBonus>22</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>59</Id>
+      <Id>59</Id> <!-- Chameleon Robe / かめれおんろーふ / robe cameleon / mistelrobe -->
       <HPBonus>40</HPBonus>
       <MPBonus>28</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>60</Id>
+      <Id>60</Id> <!-- White Robe / しろのろーふ / robe blanche / weisse robe -->
       <HPBonus>50</HPBonus>
       <MPBonus>34</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>61</Id>
+      <Id>61</Id> <!-- Black Robe / くろのろーふ / robe noire / schwarze robe -->
       <HPBonus>60</HPBonus>
       <MPBonus>30</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>62</Id>
+      <Id>62</Id> <!-- Luminous Robe / ひかりのろーふ / robe de lumiere / lichtrobe -->
       <HPBonus>75</HPBonus>
       <MPBonus>50</MPBonus>
     </ItemArmor>
     <ItemArmor>
-      <Id>63</Id>
+      <Id>63</Id> <!-- Lordly Robe / ろーふおふろーと / robe de monarque / furstenmantel -->
       <HPBonus>100</HPBonus>
       <MPBonus>80</MPBonus>
     </ItemArmor>

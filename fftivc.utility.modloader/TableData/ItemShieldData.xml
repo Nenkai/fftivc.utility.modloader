@@ -4,6 +4,7 @@
 This table file is used to overwrite the game's hardcoded item shield table.
 
 Refer to: https://ffhacktics.com/wiki/Shield_Secondary_Data
+It is referenced from the ItemData table, with category ranges defined by ItemCategoryRanges.
 
 You can use this file as a base to edit Shield data in your mod.
 Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/ItemShieldData.xml.
@@ -22,82 +23,82 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
   <Version>1</Version>
   <Entries>
     <ItemShield>
-      <Id>0</Id>
+      <Id>0</Id> <!-- Escutcheon / えすかっしょん / ecu / wappenschild -->
       <PhysicalEvasion>10</PhysicalEvasion>
       <MagicalEvasion>3</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>1</Id>
+      <Id>1</Id> <!-- Buckler / はっくらー / targe / buckler -->
       <PhysicalEvasion>13</PhysicalEvasion>
       <MagicalEvasion>3</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>2</Id>
+      <Id>2</Id> <!-- Bronze Shield / ふろんすしーると / bouclier de bronze / bronzeschild -->
       <PhysicalEvasion>16</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>3</Id>
+      <Id>3</Id> <!-- Round Shield / らうんとしーると / rondache / rundschild -->
       <PhysicalEvasion>19</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>4</Id>
+      <Id>4</Id> <!-- Mythril Shield / みすりるしーると / bouclier de mithril / mithril-schild -->
       <PhysicalEvasion>22</PhysicalEvasion>
       <MagicalEvasion>5</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>5</Id>
+      <Id>5</Id> <!-- Golden Shield / こーるとしーると / bouclier dor / goldschild -->
       <PhysicalEvasion>25</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>6</Id>
+      <Id>6</Id> <!-- Ice Shield / あいすしーると / bouclier de glace / eisschild -->
       <PhysicalEvasion>28</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>7</Id>
+      <Id>7</Id> <!-- Flame Shield / ふれいむしーると / bouclier de feu / flammenschild -->
       <PhysicalEvasion>31</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>8</Id>
+      <Id>8</Id> <!-- Aegis Shield / いーしすのたて / aegis / aegis-schild -->
       <PhysicalEvasion>10</PhysicalEvasion>
       <MagicalEvasion>50</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>9</Id>
+      <Id>9</Id> <!-- Diamond Shield / たいあしーると / bouclier de diamant / diamantschild -->
       <PhysicalEvasion>34</PhysicalEvasion>
       <MagicalEvasion>15</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>10</Id>
+      <Id>10</Id> <!-- Platinum Shield / ふらちなしーると / bouclier de platine / platinschild -->
       <PhysicalEvasion>37</PhysicalEvasion>
       <MagicalEvasion>10</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>11</Id>
+      <Id>11</Id> <!-- Crystal Shield / くりすたるのたて / bouclier de cristal / kristallschild -->
       <PhysicalEvasion>40</PhysicalEvasion>
       <MagicalEvasion>15</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>12</Id>
+      <Id>12</Id> <!-- Genji Shield / けんしのたて / bouclier genji / genji-schild -->
       <PhysicalEvasion>43</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>13</Id>
+      <Id>13</Id> <!-- Kaiser Shield / かえさるふれーと / bouclier de cesar / kaiserschild -->
       <PhysicalEvasion>46</PhysicalEvasion>
       <MagicalEvasion>20</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>14</Id>
+      <Id>14</Id> <!-- Venetian Shield / へねちあふれーと / bouclier venitien / venetia-schild -->
       <PhysicalEvasion>50</PhysicalEvasion>
       <MagicalEvasion>25</MagicalEvasion>
     </ItemShield>
     <ItemShield>
-      <Id>15</Id>
+      <Id>15</Id> <!-- Escutcheon / えすかっしょん / ecu / wappenschild -->
       <PhysicalEvasion>75</PhysicalEvasion>
       <MagicalEvasion>50</MagicalEvasion>
     </ItemShield>

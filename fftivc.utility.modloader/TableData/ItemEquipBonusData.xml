@@ -2,6 +2,7 @@
 
 <!--
 This table file is used to overwrite the game's hardcoded item equip bonus table.
+It is referenced from the ItemData table, EquipBonusId.
 
 Refer to: https://ffhacktics.com/wiki/Item_Attribute
 
@@ -21,7 +22,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
   <Version>1</Version>
   <Entries>
     <ItemEquipBonus>
-      <Id>0</Id>
+      <Id>0</Id> <!-- Dummy/Empty -->
       <PABonus>0</PABonus>
       <MABonus>0</MABonus>
       <SpeedBonus>0</SpeedBonus>

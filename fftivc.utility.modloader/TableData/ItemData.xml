@@ -21,27 +21,28 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
 <ItemTable>
   <Version>1</Version>
   <Entries>
+	<!-- Item Range: Weapons -->
     <Item>
-      <Id>0</Id>
+      <Id>0</Id> <!-- Nothing Equipped / すて / vide / nichts -->
       <Palette>0</Palette>
       <SpriteID>0</SpriteID>
       <RequiredLevel>0</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>0</AdditionalDataId>
+      <AdditionalDataId>0</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>None</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
-      <EquipBonusId>0</EquipBonusId>
+      <EquipBonusId>0</EquipBonusId> <!-- Id into ItemEquipBonusData -->
       <Price>0</Price>
       <ShopAvailability>Blank</ShopAvailability>
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>1</Id>
+      <Id>1</Id> <!-- Dagger / たかー / dague / dolch -->
       <Palette>0</Palette>
       <SpriteID>1</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>1</AdditionalDataId>
+      <AdditionalDataId>1</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Knife</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -50,12 +51,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>2</Id>
+      <Id>2</Id> <!-- Mythril Knife / みすりるないふ / poignard de mithril / mithril-messer -->
       <Palette>0</Palette>
       <SpriteID>2</SpriteID>
       <RequiredLevel>3</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>2</AdditionalDataId>
+      <AdditionalDataId>2</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Knife</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -64,12 +65,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>3</Id>
+      <Id>3</Id> <!-- Blind Knife / ふらいんないふ / poignard cecite / blindmesser -->
       <Palette>0</Palette>
       <SpriteID>4</SpriteID>
       <RequiredLevel>7</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>3</AdditionalDataId>
+      <AdditionalDataId>3</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Knife</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -78,12 +79,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>4</Id>
+      <Id>4</Id> <!-- Mage Masher / めいしまっしゃー / baillonneuse / silenquedea -->
       <Palette>2</Palette>
       <SpriteID>6</SpriteID>
       <RequiredLevel>11</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>4</AdditionalDataId>
+      <AdditionalDataId>4</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Knife</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -92,12 +93,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>5</Id>
+      <Id>5</Id> <!-- Platinum Dagger / ふらちなめっさー / dent de platine / platindolch -->
       <Palette>4</Palette>
       <SpriteID>1</SpriteID>
       <RequiredLevel>14</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>5</AdditionalDataId>
+      <AdditionalDataId>5</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Knife</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -106,12 +107,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>6</Id>
+      <Id>6</Id> <!-- Main Gauche / まいんこーしゅ / main gauche / main gauche -->
       <Palette>0</Palette>
       <SpriteID>3</SpriteID>
       <RequiredLevel>21</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>6</AdditionalDataId>
+      <AdditionalDataId>6</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Knife</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -120,12 +121,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>7</Id>
+      <Id>7</Id> <!-- Orichalcum Dirk / おりはるこん / dent dorichalque / orichalcum -->
       <Palette>4</Palette>
       <SpriteID>5</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>7</AdditionalDataId>
+      <AdditionalDataId>7</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Knife</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -134,12 +135,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>8</Id>
+      <Id>8</Id> <!-- Assassin's Dagger / あさしんたかー / assassine / assassinendolch -->
       <Palette>0</Palette>
       <SpriteID>6</SpriteID>
       <RequiredLevel>29</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>8</AdditionalDataId>
+      <AdditionalDataId>8</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Knife</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -148,12 +149,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>9</Id>
+      <Id>9</Id> <!-- Air Knife / えあないふ / dague eolienne / luftmesser -->
       <Palette>4</Palette>
       <SpriteID>2</SpriteID>
       <RequiredLevel>33</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>9</AdditionalDataId>
+      <AdditionalDataId>9</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Knife</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -162,12 +163,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>10</Id>
+      <Id>10</Id> <!-- Zwill Straightblade / そーりんしぇいふ / lame de solingen / zorlin-dolch -->
       <Palette>2</Palette>
       <SpriteID>4</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>10</AdditionalDataId>
+      <AdditionalDataId>10</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Knife</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -176,12 +177,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>11</Id>
+      <Id>11</Id> <!-- Ninja Blade / しのひかたな / shinobi gatana / ninja-schwert -->
       <Palette>0</Palette>
       <SpriteID>7</SpriteID>
       <RequiredLevel>10</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>11</AdditionalDataId>
+      <AdditionalDataId>11</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>NinjaBlade</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -190,12 +191,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>12</Id>
+      <Id>12</Id> <!-- Kunai / くない / kunai / kunai -->
       <Palette>0</Palette>
       <SpriteID>9</SpriteID>
       <RequiredLevel>13</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>12</AdditionalDataId>
+      <AdditionalDataId>12</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>NinjaBlade</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -204,12 +205,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>13</Id>
+      <Id>13</Id> <!-- Kodachi / こたち / kodachi / kodachi -->
       <Palette>0</Palette>
       <SpriteID>8</SpriteID>
       <RequiredLevel>15</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>13</AdditionalDataId>
+      <AdditionalDataId>13</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>NinjaBlade</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -218,12 +219,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>14</Id>
+      <Id>14</Id> <!-- Ninja Longblade / にんしゃろんく / lamelongue ninja / ninja-langschwert -->
       <Palette>2</Palette>
       <SpriteID>7</SpriteID>
       <RequiredLevel>22</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>14</AdditionalDataId>
+      <AdditionalDataId>14</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>NinjaBlade</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -232,12 +233,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>15</Id>
+      <Id>15</Id> <!-- Spellbinder / しゅはくかたな / lame bridante / fesselklinge -->
       <Palette>4</Palette>
       <SpriteID>8</SpriteID>
       <RequiredLevel>27</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>15</AdditionalDataId>
+      <AdditionalDataId>15</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>NinjaBlade</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -246,12 +247,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>16</Id>
+      <Id>16</Id> <!-- Sasuke's Blade / さすけのかたな / katana de sasuke / sasukenin -->
       <Palette>4</Palette>
       <SpriteID>7</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>16</AdditionalDataId>
+      <AdditionalDataId>16</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>NinjaBlade</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -260,12 +261,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>17</Id>
+      <Id>17</Id> <!-- Iga Blade / いかにんとう / lame diga / iganin -->
       <Palette>13</Palette>
       <SpriteID>10</SpriteID>
       <RequiredLevel>96</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>17</AdditionalDataId>
+      <AdditionalDataId>17</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>NinjaBlade</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -274,12 +275,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>18</Id>
+      <Id>18</Id> <!-- Koga Blade / こうかにんとう / lame de koga / koganin -->
       <Palette>11</Palette>
       <SpriteID>11</SpriteID>
       <RequiredLevel>96</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>18</AdditionalDataId>
+      <AdditionalDataId>18</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>NinjaBlade</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -288,12 +289,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>19</Id>
+      <Id>19</Id> <!-- Broadsword / ふろーとそーと / epee large / breitschwert -->
       <Palette>0</Palette>
       <SpriteID>12</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>19</AdditionalDataId>
+      <AdditionalDataId>19</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -302,12 +303,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>20</Id>
+      <Id>20</Id> <!-- Longsword / ろんくそーと / epee longue / langschwert -->
       <Palette>0</Palette>
       <SpriteID>13</SpriteID>
       <RequiredLevel>4</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>20</AdditionalDataId>
+      <AdditionalDataId>20</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -316,12 +317,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>21</Id>
+      <Id>21</Id> <!-- Iron Sword / あいあんそーと / epee de fer / eisenschwert -->
       <Palette>2</Palette>
       <SpriteID>14</SpriteID>
       <RequiredLevel>7</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>21</AdditionalDataId>
+      <AdditionalDataId>21</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -330,12 +331,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>22</Id>
+      <Id>22</Id> <!-- Mythril Sword / みすりるそーと / epee de mithril / mithril-schwert -->
       <Palette>2</Palette>
       <SpriteID>15</SpriteID>
       <RequiredLevel>9</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>22</AdditionalDataId>
+      <AdditionalDataId>22</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -344,12 +345,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>23</Id>
+      <Id>23</Id> <!-- Blood Sword / ふらっとそーと / epee sanguine / blutschwert -->
       <Palette>3</Palette>
       <SpriteID>14</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>23</AdditionalDataId>
+      <AdditionalDataId>23</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -358,12 +359,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>24</Id>
+      <Id>24</Id> <!-- Coral Sword / さんこのつるき / epee de corail / korallschwert -->
       <Palette>1</Palette>
       <SpriteID>16</SpriteID>
       <RequiredLevel>15</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>24</AdditionalDataId>
+      <AdditionalDataId>24</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -372,12 +373,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>25</Id>
+      <Id>25</Id> <!-- Ancient Sword / こたいのつるき / epee antique / antikschwert -->
       <Palette>3</Palette>
       <SpriteID>15</SpriteID>
       <RequiredLevel>21</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>25</AdditionalDataId>
+      <AdditionalDataId>25</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -386,12 +387,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>26</Id>
+      <Id>26</Id> <!-- Sleep Blade / ねむりのつるき / sabre des soupirs / schlummerklinge -->
       <Palette>4</Palette>
       <SpriteID>12</SpriteID>
       <RequiredLevel>23</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>26</AdditionalDataId>
+      <AdditionalDataId>26</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -400,12 +401,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>27</Id>
+      <Id>27</Id> <!-- Platinum Sword / ふらちなそーと / epee de platine / platinschwert -->
       <Palette>4</Palette>
       <SpriteID>17</SpriteID>
       <RequiredLevel>28</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>27</AdditionalDataId>
+      <AdditionalDataId>27</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -414,12 +415,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>28</Id>
+      <Id>28</Id> <!-- Diamond Sword / たいあそーと / epee de diamant / diamantschwert -->
       <Palette>0</Palette>
       <SpriteID>18</SpriteID>
       <RequiredLevel>26</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>28</AdditionalDataId>
+      <AdditionalDataId>28</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -428,12 +429,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>29</Id>
+      <Id>29</Id> <!-- Icebrand / あいすふらんと / epee de glace / eisbrand -->
       <Palette>1</Palette>
       <SpriteID>13</SpriteID>
       <RequiredLevel>34</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>29</AdditionalDataId>
+      <AdditionalDataId>29</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -442,12 +443,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>30</Id>
+      <Id>30</Id> <!-- Runeblade / るーんふれいと / lame runique / runenklinge -->
       <Palette>4</Palette>
       <SpriteID>19</SpriteID>
       <RequiredLevel>37</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>30</AdditionalDataId>
+      <AdditionalDataId>30</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>1</EquipBonusId>
@@ -456,12 +457,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>31</Id>
+      <Id>31</Id> <!-- Nagnarok / なくらろく / nagrarok / nagrarok -->
       <Palette>3</Palette>
       <SpriteID>20</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>31</AdditionalDataId>
+      <AdditionalDataId>31</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -470,12 +471,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>32</Id>
+      <Id>32</Id> <!-- Materia Blade / まてりあふれいと / lame materia / materia-klinge -->
       <Palette>1</Palette>
       <SpriteID>21</SpriteID>
       <RequiredLevel>96</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>32</AdditionalDataId>
+      <AdditionalDataId>32</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Sword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -484,12 +485,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>33</Id>
+      <Id>33</Id> <!-- Defender / てぃふぇんたー / defenderesse / verteidiger -->
       <Palette>3</Palette>
       <SpriteID>22</SpriteID>
       <RequiredLevel>92</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>33</AdditionalDataId>
+      <AdditionalDataId>33</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>KnightSword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -498,12 +499,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>34</Id>
+      <Id>34</Id> <!-- Save the Queen / せいふさくぃーん / garde la reine / koniginnenwache -->
       <Palette>0</Palette>
       <SpriteID>23</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>34</AdditionalDataId>
+      <AdditionalDataId>34</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>KnightSword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>2</EquipBonusId>
@@ -512,12 +513,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>35</Id>
+      <Id>35</Id> <!-- Excalibur / えくすかりはー / excalibur / excalibur -->
       <Palette>3</Palette>
       <SpriteID>24</SpriteID>
       <RequiredLevel>96</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>35</AdditionalDataId>
+      <AdditionalDataId>35</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>KnightSword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>3</EquipBonusId>
@@ -526,12 +527,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>36</Id>
+      <Id>36</Id> <!-- Ragnarok / らくなろく / ragnarok / ragnarok -->
       <Palette>4</Palette>
       <SpriteID>25</SpriteID>
       <RequiredLevel>97</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>36</AdditionalDataId>
+      <AdditionalDataId>36</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>KnightSword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>4</EquipBonusId>
@@ -540,12 +541,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>37</Id>
+      <Id>37</Id> <!-- Chaos Blade / かおすふれいと / lame du chaos / fatalis -->
       <Palette>4</Palette>
       <SpriteID>22</SpriteID>
       <RequiredLevel>98</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>37</AdditionalDataId>
+      <AdditionalDataId>37</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>KnightSword</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>5</EquipBonusId>
@@ -554,12 +555,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>38</Id>
+      <Id>38</Id> <!-- Ashura / あしゅら / ashura / ashura -->
       <Palette>0</Palette>
       <SpriteID>26</SpriteID>
       <RequiredLevel>9</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>38</AdditionalDataId>
+      <AdditionalDataId>38</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Katana</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -568,12 +569,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>39</Id>
+      <Id>39</Id> <!-- Kotetsu / こてつ / kotetsu / kotetsu -->
       <Palette>1</Palette>
       <SpriteID>27</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>39</AdditionalDataId>
+      <AdditionalDataId>39</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Katana</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -582,12 +583,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>40</Id>
+      <Id>40</Id> <!-- Bizen Osafune / ひせんおさふね / bizen osafune / bizen-osafune -->
       <Palette>1</Palette>
       <SpriteID>28</SpriteID>
       <RequiredLevel>15</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>40</AdditionalDataId>
+      <AdditionalDataId>40</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Katana</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -596,12 +597,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>41</Id>
+      <Id>41</Id> <!-- Murasame / むらさめ / murasame / murasame -->
       <Palette>4</Palette>
       <SpriteID>26</SpriteID>
       <RequiredLevel>21</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>41</AdditionalDataId>
+      <AdditionalDataId>41</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Katana</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -610,12 +611,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>42</Id>
+      <Id>42</Id> <!-- Ame-no-Murakumo / あめのむらくも / ama no murakumo / murakumo -->
       <Palette>4</Palette>
       <SpriteID>29</SpriteID>
       <RequiredLevel>24</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>42</AdditionalDataId>
+      <AdditionalDataId>42</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Katana</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -624,12 +625,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>43</Id>
+      <Id>43</Id> <!-- Kiyomori / きよもり / kiyomori / kiyomori -->
       <Palette>5</Palette>
       <SpriteID>28</SpriteID>
       <RequiredLevel>27</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>43</AdditionalDataId>
+      <AdditionalDataId>43</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Katana</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -638,12 +639,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>44</Id>
+      <Id>44</Id> <!-- Muramasa / むらまさ / muramasa / muramasa -->
       <Palette>3</Palette>
       <SpriteID>30</SpriteID>
       <RequiredLevel>30</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>44</AdditionalDataId>
+      <AdditionalDataId>44</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Katana</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -652,12 +653,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>45</Id>
+      <Id>45</Id> <!-- Kiku-ichimonji / きくいちもんし / kiku ichimonji / kikuichimonji -->
       <Palette>5</Palette>
       <SpriteID>31</SpriteID>
       <RequiredLevel>33</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>45</AdditionalDataId>
+      <AdditionalDataId>45</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Katana</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -666,12 +667,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>46</Id>
+      <Id>46</Id> <!-- Masamune / まさむね / masamune / masamune -->
       <Palette>5</Palette>
       <SpriteID>27</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>46</AdditionalDataId>
+      <AdditionalDataId>46</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Katana</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -680,12 +681,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>47</Id>
+      <Id>47</Id> <!-- Chirijiraden / ちりしらてんかさりつるき / chirijiraden kazari / chirijiraden -->
       <Palette>3</Palette>
       <SpriteID>26</SpriteID>
       <RequiredLevel>96</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>47</AdditionalDataId>
+      <AdditionalDataId>47</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Katana</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -694,12 +695,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>48</Id>
+      <Id>48</Id> <!-- Battle Axe / はとるあっくす / hache de guerre / kampfaxt -->
       <Palette>0</Palette>
       <SpriteID>32</SpriteID>
       <RequiredLevel>4</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>48</AdditionalDataId>
+      <AdditionalDataId>48</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Axe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -708,12 +709,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>49</Id>
+      <Id>49</Id> <!-- Giant's Axe / きょしんのおの / hache de geant / riesenaxt -->
       <Palette>15</Palette>
       <SpriteID>33</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>49</AdditionalDataId>
+      <AdditionalDataId>49</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Axe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -722,12 +723,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>50</Id>
+      <Id>50</Id> <!-- Slasher / すらっしゃー / fendeuse / schlitzer -->
       <Palette>5</Palette>
       <SpriteID>34</SpriteID>
       <RequiredLevel>31</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>50</AdditionalDataId>
+      <AdditionalDataId>50</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Axe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -736,12 +737,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>51</Id>
+      <Id>51</Id> <!-- Rod / ろっと / sceptre / zepter -->
       <Palette>5</Palette>
       <SpriteID>35</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>51</AdditionalDataId>
+      <AdditionalDataId>51</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Rod</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -750,12 +751,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>52</Id>
+      <Id>52</Id> <!-- Thunder Rod / さんたーろっと / sceptre de foudre / blitzrute -->
       <Palette>2</Palette>
       <SpriteID>37</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>52</AdditionalDataId>
+      <AdditionalDataId>52</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Rod</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>6</EquipBonusId>
@@ -764,12 +765,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>53</Id>
+      <Id>53</Id> <!-- Flame Rod / ふれいむろっと / sceptre de flamme / flammenzepter -->
       <Palette>3</Palette>
       <SpriteID>36</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>53</AdditionalDataId>
+      <AdditionalDataId>53</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Rod</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>7</EquipBonusId>
@@ -778,12 +779,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>54</Id>
+      <Id>54</Id> <!-- Ice Rod / あいすろっと / sceptre de glace / frostrute -->
       <Palette>1</Palette>
       <SpriteID>37</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>54</AdditionalDataId>
+      <AdditionalDataId>54</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Rod</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>8</EquipBonusId>
@@ -792,12 +793,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>55</Id>
+      <Id>55</Id> <!-- Poison Rod / ほいすんろっと / sceptre toxique / giftrute -->
       <Palette>6</Palette>
       <SpriteID>36</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>55</AdditionalDataId>
+      <AdditionalDataId>55</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Rod</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -806,12 +807,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>56</Id>
+      <Id>56</Id> <!-- Wizard's Rod / うぃさーとろっと / sceptre de sorcier / magierrute -->
       <Palette>0</Palette>
       <SpriteID>38</SpriteID>
       <RequiredLevel>23</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>56</AdditionalDataId>
+      <AdditionalDataId>56</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Rod</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>9</EquipBonusId>
@@ -820,12 +821,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>57</Id>
+      <Id>57</Id> <!-- Dragon Rod / とらこんろっと / sceptre de dragon / drachenstab -->
       <Palette>7</Palette>
       <SpriteID>36</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>57</AdditionalDataId>
+      <AdditionalDataId>57</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Rod</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -834,12 +835,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>58</Id>
+      <Id>58</Id> <!-- Rod of Faith / ふぇいすろっと / sceptre de la foi / ener-rute -->
       <Palette>3</Palette>
       <SpriteID>37</SpriteID>
       <RequiredLevel>96</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>58</AdditionalDataId>
+      <AdditionalDataId>58</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Rod</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>73</EquipBonusId>
@@ -848,12 +849,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>59</Id>
+      <Id>59</Id> <!-- Oak Staff / おーくすたっふ / crosse de chene / eichenstab -->
       <Palette>3</Palette>
       <SpriteID>39</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>59</AdditionalDataId>
+      <AdditionalDataId>59</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Staff</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -862,12 +863,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>60</Id>
+      <Id>60</Id> <!-- White Staff / ほわいとすたっふ / crosse blanche / weisser stab -->
       <Palette>2</Palette>
       <SpriteID>39</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>60</AdditionalDataId>
+      <AdditionalDataId>60</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Staff</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -876,12 +877,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>61</Id>
+      <Id>61</Id> <!-- Healing Staff / いやしのつえ / baton guerisseur / heilerstab -->
       <Palette>0</Palette>
       <SpriteID>40</SpriteID>
       <RequiredLevel>9</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>61</AdditionalDataId>
+      <AdditionalDataId>61</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Staff</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -890,12 +891,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>62</Id>
+      <Id>62</Id> <!-- Serpent Staff / へひのつえ / baton ophidien / schlangenstab -->
       <Palette>1</Palette>
       <SpriteID>39</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>62</AdditionalDataId>
+      <AdditionalDataId>62</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Staff</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -904,12 +905,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>63</Id>
+      <Id>63</Id> <!-- Mage's Staff / ましゅつしのつえ / baton de mage / zauberstab -->
       <Palette>3</Palette>
       <SpriteID>41</SpriteID>
       <RequiredLevel>15</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>63</AdditionalDataId>
+      <AdditionalDataId>63</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Staff</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>10</EquipBonusId>
@@ -918,12 +919,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>64</Id>
+      <Id>64</Id> <!-- Golden Staff / こーるとすたっふ / crosse dor / goldstock -->
       <Palette>2</Palette>
       <SpriteID>41</SpriteID>
       <RequiredLevel>24</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>64</AdditionalDataId>
+      <AdditionalDataId>64</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Staff</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -932,12 +933,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>65</Id>
+      <Id>65</Id> <!-- Zeus Mace / めいすおふせうす / masse de zeus / zeus kolben -->
       <Palette>0</Palette>
       <SpriteID>42</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>65</AdditionalDataId>
+      <AdditionalDataId>65</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Staff</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>11</EquipBonusId>
@@ -946,12 +947,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>66</Id>
+      <Id>66</Id> <!-- Staff of the Magi / けんしゃのつえ / baton de sage / weisenstock -->
       <Palette>2</Palette>
       <SpriteID>42</SpriteID>
       <RequiredLevel>96</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>66</AdditionalDataId>
+      <AdditionalDataId>66</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Staff</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -960,12 +961,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>67</Id>
+      <Id>67</Id> <!-- Iron Flail / ふれいる / fleau darmes / dreschflegel -->
       <Palette>2</Palette>
       <SpriteID>43</SpriteID>
       <RequiredLevel>10</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>67</AdditionalDataId>
+      <AdditionalDataId>67</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Flail</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -974,12 +975,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>68</Id>
+      <Id>68</Id> <!-- Flail of Flame / ふれいむういっふ / fleau de flamme / feuerpeitsche -->
       <Palette>1</Palette>
       <SpriteID>43</SpriteID>
       <RequiredLevel>20</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>68</AdditionalDataId>
+      <AdditionalDataId>68</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Flail</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -988,12 +989,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>69</Id>
+      <Id>69</Id> <!-- Morning Star / もーにんくすたー / etoile du matin / morgenstern -->
       <Palette>0</Palette>
       <SpriteID>43</SpriteID>
       <RequiredLevel>32</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>69</AdditionalDataId>
+      <AdditionalDataId>69</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Flail</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1002,12 +1003,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>70</Id>
+      <Id>70</Id> <!-- Scorpion Tail / さそりのしっほ / queue de scorpion / skorpion -->
       <Palette>3</Palette>
       <SpriteID>43</SpriteID>
       <RequiredLevel>90</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>70</AdditionalDataId>
+      <AdditionalDataId>70</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Flail</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1016,12 +1017,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>71</Id>
+      <Id>71</Id> <!-- Romandan Pistol / ろまんたしゅう / fusil romandien / romanda-flinte -->
       <Palette>5</Palette>
       <SpriteID>44</SpriteID>
       <RequiredLevel>11</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>71</AdditionalDataId>
+      <AdditionalDataId>71</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Gun</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1030,12 +1031,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>72</Id>
+      <Id>72</Id> <!-- Mythril Gun / みすりるしゅう / fusil de mithril / mithril-flinte -->
       <Palette>7</Palette>
       <SpriteID>44</SpriteID>
       <RequiredLevel>15</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>72</AdditionalDataId>
+      <AdditionalDataId>72</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Gun</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1044,12 +1045,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>73</Id>
+      <Id>73</Id> <!-- Stoneshooter / せきかしゅう / fusil petrifiant / steinflinte -->
       <Palette>0</Palette>
       <SpriteID>45</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>73</AdditionalDataId>
+      <AdditionalDataId>73</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Gun</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>72</EquipBonusId>
@@ -1058,12 +1059,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>74</Id>
+      <Id>74</Id> <!-- Glacial Gun / くれいしゃるかん / cryopistolet / frostflinte -->
       <Palette>2</Palette>
       <SpriteID>46</SpriteID>
       <RequiredLevel>91</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>74</AdditionalDataId>
+      <AdditionalDataId>74</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Gun</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1072,12 +1073,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>75</Id>
+      <Id>75</Id> <!-- Blaze Gun / ふれいすかん / pyropistolet / feuertrommel -->
       <Palette>3</Palette>
       <SpriteID>46</SpriteID>
       <RequiredLevel>92</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>75</AdditionalDataId>
+      <AdditionalDataId>75</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Gun</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1086,12 +1087,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>76</Id>
+      <Id>76</Id> <!-- Blaster / ふらすとかん / foudropistolet / strahlenkanone -->
       <Palette>5</Palette>
       <SpriteID>46</SpriteID>
       <RequiredLevel>93</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>76</AdditionalDataId>
+      <AdditionalDataId>76</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Gun</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1100,12 +1101,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>77</Id>
+      <Id>77</Id> <!-- Bowgun / ほうかん / arbalete / pistolenarmbrust -->
       <Palette>3</Palette>
       <SpriteID>47</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>77</AdditionalDataId>
+      <AdditionalDataId>77</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Crossbow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1114,12 +1115,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>78</Id>
+      <Id>78</Id> <!-- Knightslayer / ないときらー / galanticide / ritterschreck -->
       <Palette>1</Palette>
       <SpriteID>47</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>78</AdditionalDataId>
+      <AdditionalDataId>78</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Crossbow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1128,12 +1129,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>79</Id>
+      <Id>79</Id> <!-- Crossbow / くろすほう / manubaliste / armbrust -->
       <Palette>7</Palette>
       <SpriteID>47</SpriteID>
       <RequiredLevel>11</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>79</AdditionalDataId>
+      <AdditionalDataId>79</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Crossbow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1142,12 +1143,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>80</Id>
+      <Id>80</Id> <!-- Poison Crossbow / ほいすんほう / arbalete poison / giftarmbrust -->
       <Palette>6</Palette>
       <SpriteID>48</SpriteID>
       <RequiredLevel>14</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>80</AdditionalDataId>
+      <AdditionalDataId>80</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Crossbow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1156,12 +1157,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>81</Id>
+      <Id>81</Id> <!-- Hunting Crossbow / はんてぃんくほう / arbalete de chasse / jagdbogen -->
       <Palette>7</Palette>
       <SpriteID>48</SpriteID>
       <RequiredLevel>24</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>81</AdditionalDataId>
+      <AdditionalDataId>81</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Crossbow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1170,12 +1171,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>82</Id>
+      <Id>82</Id> <!-- Gastrophetes / かすとらふぇてす / gastraphete / gastraphetes -->
       <Palette>2</Palette>
       <SpriteID>48</SpriteID>
       <RequiredLevel>33</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>82</AdditionalDataId>
+      <AdditionalDataId>82</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Crossbow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1184,12 +1185,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>83</Id>
+      <Id>83</Id> <!-- Longbow / ろんくほう / arc long / langbogen -->
       <Palette>3</Palette>
       <SpriteID>49</SpriteID>
       <RequiredLevel>2</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>83</AdditionalDataId>
+      <AdditionalDataId>83</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1198,12 +1199,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>84</Id>
+      <Id>84</Id> <!-- Silver Bow / きんのゆみ / arc dargent / silberbogen -->
       <Palette>2</Palette>
       <SpriteID>49</SpriteID>
       <RequiredLevel>6</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>84</AdditionalDataId>
+      <AdditionalDataId>84</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1212,12 +1213,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>85</Id>
+      <Id>85</Id> <!-- Ice Bow / こおりのゆみ / arc de glace / frostbogen -->
       <Palette>5</Palette>
       <SpriteID>49</SpriteID>
       <RequiredLevel>11</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>85</AdditionalDataId>
+      <AdditionalDataId>85</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1226,12 +1227,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>86</Id>
+      <Id>86</Id> <!-- Lightning Bow / らいとにんくほう / arc de foudre / blitzbogen -->
       <Palette>0</Palette>
       <SpriteID>50</SpriteID>
       <RequiredLevel>15</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>86</AdditionalDataId>
+      <AdditionalDataId>86</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1240,12 +1241,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>87</Id>
+      <Id>87</Id> <!-- Windslash Bow / かせきりのゆみ / arc rafale / windbogen -->
       <Palette>7</Palette>
       <SpriteID>49</SpriteID>
       <RequiredLevel>27</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>87</AdditionalDataId>
+      <AdditionalDataId>87</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1254,12 +1255,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>88</Id>
+      <Id>88</Id> <!-- Mythril Bow / みすりるのゆみ / arc de mithril / mithril-bogen -->
       <Palette>7</Palette>
       <SpriteID>51</SpriteID>
       <RequiredLevel>20</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>88</AdditionalDataId>
+      <AdditionalDataId>88</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1268,12 +1269,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>89</Id>
+      <Id>89</Id> <!-- Artemis Bow / あるてみすのゆみ / arc dartemis / artemis bogen -->
       <Palette>1</Palette>
       <SpriteID>51</SpriteID>
       <RequiredLevel>37</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>89</AdditionalDataId>
+      <AdditionalDataId>89</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1282,12 +1283,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>90</Id>
+      <Id>90</Id> <!-- Yoichi Bow / よいちのゆみ / arc de yoichi / yoichi-bogen -->
       <Palette>3</Palette>
       <SpriteID>52</SpriteID>
       <RequiredLevel>52</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>90</AdditionalDataId>
+      <AdditionalDataId>90</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1296,12 +1297,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>91</Id>
+      <Id>91</Id> <!-- Perseus Bow / へるせうすのゆみ / arc de persee / perseus' bogen -->
       <Palette>5</Palette>
       <SpriteID>53</SpriteID>
       <RequiredLevel>53</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>91</AdditionalDataId>
+      <AdditionalDataId>91</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bow</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1310,12 +1311,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>92</Id>
+      <Id>92</Id> <!-- Lamia's Harp / らみあのたてこと / lyre de lamia / lamia-harfe -->
       <Palette>3</Palette>
       <SpriteID>54</SpriteID>
       <RequiredLevel>13</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>92</AdditionalDataId>
+      <AdditionalDataId>92</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Instrument</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1324,12 +1325,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>93</Id>
+      <Id>93</Id> <!-- Bloodstring Harp / ちのしゅうにけん / harpe de sang / blutstreicher -->
       <Palette>6</Palette>
       <SpriteID>54</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>93</AdditionalDataId>
+      <AdditionalDataId>93</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Instrument</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1338,12 +1339,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>94</Id>
+      <Id>94</Id> <!-- Faerie Harp / ようせいのはーふ / harpe de fee / feenharfe -->
       <Palette>2</Palette>
       <SpriteID>54</SpriteID>
       <RequiredLevel>36</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>94</AdditionalDataId>
+      <AdditionalDataId>94</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Instrument</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1352,12 +1353,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>95</Id>
+      <Id>95</Id> <!-- Battle Folio / はとるてぃくと / encyclopedie militaire / kampfschrift -->
       <Palette>2</Palette>
       <SpriteID>55</SpriteID>
       <RequiredLevel>13</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>95</AdditionalDataId>
+      <AdditionalDataId>95</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Book</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1366,12 +1367,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>96</Id>
+      <Id>96</Id> <!-- Bestiary / かいふつしてん / bestiaire monstrueux / bestiarium -->
       <Palette>7</Palette>
       <SpriteID>55</SpriteID>
       <RequiredLevel>23</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>96</AdditionalDataId>
+      <AdditionalDataId>96</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Book</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1380,12 +1381,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>97</Id>
+      <Id>97</Id> <!-- Papyrus Codex / はひるすふれいと / parchemin blinde / papyrus-kodex -->
       <Palette>5</Palette>
       <SpriteID>55</SpriteID>
       <RequiredLevel>34</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>97</AdditionalDataId>
+      <AdditionalDataId>97</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Book</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1394,12 +1395,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>98</Id>
+      <Id>98</Id> <!-- Omnilex / またれむしえん / omnilex / omnilex -->
       <Palette>3</Palette>
       <SpriteID>55</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>98</AdditionalDataId>
+      <AdditionalDataId>98</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Book</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1408,12 +1409,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>99</Id>
+      <Id>99</Id> <!-- Javelin / しゃへりん / javelot / jagdspeer -->
       <Palette>8</Palette>
       <SpriteID>56</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>99</AdditionalDataId>
+      <AdditionalDataId>99</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Polearm</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1422,12 +1423,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>100</Id>
+      <Id>100</Id> <!-- Spear / すひあ / hast / speer -->
       <Palette>1</Palette>
       <SpriteID>59</SpriteID>
       <RequiredLevel>16</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>100</AdditionalDataId>
+      <AdditionalDataId>100</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Polearm</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1436,12 +1437,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>101</Id>
+      <Id>101</Id> <!-- Mythril Spear / みすりるすひあ / hast de mithril / mithril-speer -->
       <Palette>4</Palette>
       <SpriteID>57</SpriteID>
       <RequiredLevel>21</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>101</AdditionalDataId>
+      <AdditionalDataId>101</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Polearm</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1450,12 +1451,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>102</Id>
+      <Id>102</Id> <!-- Partisan / はるちさん / pertuisane / partisane -->
       <Palette>7</Palette>
       <SpriteID>59</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>102</AdditionalDataId>
+      <AdditionalDataId>102</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Polearm</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1464,12 +1465,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>103</Id>
+      <Id>103</Id> <!-- Obelisk / おへりすく / obelisque / obelisk -->
       <Palette>4</Palette>
       <SpriteID>58</SpriteID>
       <RequiredLevel>29</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>103</AdditionalDataId>
+      <AdditionalDataId>103</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Polearm</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1478,12 +1479,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>104</Id>
+      <Id>104</Id> <!-- Holy Lance / ほーりーらんす / lance sacree / heilige lanze -->
       <Palette>2</Palette>
       <SpriteID>60</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>104</AdditionalDataId>
+      <AdditionalDataId>104</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Polearm</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1492,12 +1493,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>105</Id>
+      <Id>105</Id> <!-- Dragon Whisker / りゅうのひけ / barbe de dragon / drachenbart -->
       <Palette>5</Palette>
       <SpriteID>56</SpriteID>
       <RequiredLevel>96</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>105</AdditionalDataId>
+      <AdditionalDataId>105</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Polearm</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1506,12 +1507,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>106</Id>
+      <Id>106</Id> <!-- Javelin / しゃへりん / javelot / wurfspeer -->
       <Palette>8</Palette>
       <SpriteID>58</SpriteID>
       <RequiredLevel>97</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>106</AdditionalDataId>
+      <AdditionalDataId>106</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Polearm</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1520,12 +1521,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>107</Id>
+      <Id>107</Id> <!-- Cypress Pole / さいふれすはいる / pieu de cypres / zypressenstab -->
       <Palette>0</Palette>
       <SpriteID>61</SpriteID>
       <RequiredLevel>9</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>107</AdditionalDataId>
+      <AdditionalDataId>107</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Pole</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1534,12 +1535,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>108</Id>
+      <Id>108</Id> <!-- Battle Bamboo / はとるはんふー / bambou de combat / kampfstab -->
       <Palette>7</Palette>
       <SpriteID>62</SpriteID>
       <RequiredLevel>13</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>108</AdditionalDataId>
+      <AdditionalDataId>108</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Pole</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1548,12 +1549,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>109</Id>
+      <Id>109</Id> <!-- Musk Pole / しゃこうしゃく / baton musque / moschus-stab -->
       <Palette>2</Palette>
       <SpriteID>61</SpriteID>
       <RequiredLevel>21</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>109</AdditionalDataId>
+      <AdditionalDataId>109</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Pole</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1562,12 +1563,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>110</Id>
+      <Id>110</Id> <!-- Iron Fan / てっせん / eventail de fer / stahlfacher -->
       <Palette>1</Palette>
       <SpriteID>62</SpriteID>
       <RequiredLevel>24</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>110</AdditionalDataId>
+      <AdditionalDataId>110</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Pole</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1576,12 +1577,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>111</Id>
+      <Id>111</Id> <!-- Gokuu's Pole / こくうのほう / baton de wukong / gokus stab -->
       <Palette>3</Palette>
       <SpriteID>63</SpriteID>
       <RequiredLevel>27</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>111</AdditionalDataId>
+      <AdditionalDataId>111</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Pole</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1590,12 +1591,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>112</Id>
+      <Id>112</Id> <!-- Ivory Pole / そうけのほう / baton divoire / elfenbeinstab -->
       <Palette>6</Palette>
       <SpriteID>64</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>112</AdditionalDataId>
+      <AdditionalDataId>112</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Pole</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1604,12 +1605,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>113</Id>
+      <Id>113</Id> <!-- Eight-fluted Pole / はっかくほう / baton octogonal / achtkanter -->
       <Palette>0</Palette>
       <SpriteID>63</SpriteID>
       <RequiredLevel>40</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>113</AdditionalDataId>
+      <AdditionalDataId>113</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Pole</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1618,12 +1619,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>114</Id>
+      <Id>114</Id> <!-- Whale Whisker / くしらのひけ / barbe de cachalot / walbart -->
       <Palette>3</Palette>
       <SpriteID>65</SpriteID>
       <RequiredLevel>96</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>114</AdditionalDataId>
+      <AdditionalDataId>114</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Pole</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1632,12 +1633,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>115</Id>
+      <Id>115</Id> <!-- Catskin Bag / ちゃこるのはっく / sac de marque c. / chagaulle-tasche -->
       <Palette>2</Palette>
       <SpriteID>66</SpriteID>
       <RequiredLevel>80</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>115</AdditionalDataId>
+      <AdditionalDataId>115</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bag</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>12</EquipBonusId>
@@ -1646,12 +1647,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>116</Id>
+      <Id>116</Id> <!-- Fallingstar Bag / ふぁすてのはっく / sac de marque f.s. / fastait-tasche -->
       <Palette>7</Palette>
       <SpriteID>66</SpriteID>
       <RequiredLevel>81</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>116</AdditionalDataId>
+      <AdditionalDataId>116</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bag</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1660,12 +1661,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>117</Id>
+      <Id>117</Id> <!-- Proudhide Bag / はとらのはっく / sac de marque p. / patora-tasche -->
       <Palette>5</Palette>
       <SpriteID>66</SpriteID>
       <RequiredLevel>82</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>117</AdditionalDataId>
+      <AdditionalDataId>117</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bag</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>13</EquipBonusId>
@@ -1674,12 +1675,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>118</Id>
+      <Id>118</Id> <!-- Hardscale Bag / へりおねのはっく / sac de marque h. / helione-tasche -->
       <Palette>1</Palette>
       <SpriteID>66</SpriteID>
       <RequiredLevel>83</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>118</AdditionalDataId>
+      <AdditionalDataId>118</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bag</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>14</EquipBonusId>
@@ -1688,12 +1689,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>119</Id>
+      <Id>119</Id> <!-- Damask Cloth / へるしあ / etoffe persane / perserteppich -->
       <Palette>5</Palette>
       <SpriteID>67</SpriteID>
       <RequiredLevel>24</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>119</AdditionalDataId>
+      <AdditionalDataId>119</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Cloth</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1702,12 +1703,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>120</Id>
+      <Id>120</Id> <!-- Cashmere / かしみーる / etoffe de cachemire / kaschmir -->
       <Palette>7</Palette>
       <SpriteID>68</SpriteID>
       <RequiredLevel>29</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>120</AdditionalDataId>
+      <AdditionalDataId>120</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Cloth</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1716,12 +1717,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>121</Id>
+      <Id>121</Id> <!-- Wyrmweave Silk / りょうさんけん / etoffe de brocart / seidentuch -->
       <Palette>6</Palette>
       <SpriteID>67</SpriteID>
       <RequiredLevel>95</RequiredLevel>
       <TypeFlags>Rare, Weapon</TypeFlags>
-      <AdditionalDataId>121</AdditionalDataId>
+      <AdditionalDataId>121</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Cloth</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1730,12 +1731,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>122</Id>
+      <Id>122</Id> <!-- Shuriken / しゅりけん / shuriken / shuriken -->
       <Palette>0</Palette>
       <SpriteID>69</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>122</AdditionalDataId>
+      <AdditionalDataId>122</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Throwing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1744,12 +1745,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>123</Id>
+      <Id>123</Id> <!-- Fuma Shuriken / ふうまのしゅりけん / shuriken du clan fuma / fuma-shuriken -->
       <Palette>3</Palette>
       <SpriteID>69</SpriteID>
       <RequiredLevel>18</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>123</AdditionalDataId>
+      <AdditionalDataId>123</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Throwing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1758,12 +1759,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>124</Id>
+      <Id>124</Id> <!-- Yagyu Darkrood / やきゅうのしっこく / etoile du clan yagyu / yagyunoshikkoku -->
       <Palette>1</Palette>
       <SpriteID>69</SpriteID>
       <RequiredLevel>33</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>124</AdditionalDataId>
+      <AdditionalDataId>124</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Throwing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1772,12 +1773,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>125</Id>
+      <Id>125</Id> <!-- Flameburst Bomb / かとんのたま / bombe incendiaire / schlupfbombe -->
       <Palette>3</Palette>
       <SpriteID>70</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>125</AdditionalDataId>
+      <AdditionalDataId>125</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bomb</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1786,12 +1787,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>126</Id>
+      <Id>126</Id> <!-- Snowmelt Bomb / ひょうすいのたま / bombe hydraulique / schneeschmelze -->
       <Palette>5</Palette>
       <SpriteID>70</SpriteID>
       <RequiredLevel>18</RequiredLevel>
       <TypeFlags>Weapon</TypeFlags>
-      <AdditionalDataId>126</AdditionalDataId>
+      <AdditionalDataId>126</AdditionalDataId> <!-- ItemWeaponData id -->
       <ItemCategory>Bomb</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1800,7 +1801,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>127</Id>
+      <Id>127</Id> <!-- Spark Bomb / らいしんのたま / bombe foudroyante / blitzknall -->
       <Palette>2</Palette>
       <SpriteID>70</SpriteID>
       <RequiredLevel>29</RequiredLevel>
@@ -1813,8 +1814,10 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ShopAvailability>Chapter2_MeetDraclau</ShopAvailability>
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
+	  
+	<!-- Item Range: Shields -->
     <Item>
-      <Id>128</Id>
+      <Id>128</Id> <!-- Escutcheon / えすかっしょん / ecu / wappenschild -->
       <Palette>0</Palette>
       <SpriteID>71</SpriteID>
       <RequiredLevel>1</RequiredLevel>
@@ -1822,18 +1825,18 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <AdditionalDataId>0</AdditionalDataId>
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
-      <EquipBonusId>0</EquipBonusId>
+      <EquipBonusId>0</EquipBonusId> <!-- ItemShieldData id -->
       <Price>400</Price>
       <ShopAvailability>Chapter1_Start</ShopAvailability>
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>129</Id>
+      <Id>129</Id> <!-- Buckler / はっくらー / targe / buckler -->
       <Palette>2</Palette>
       <SpriteID>76</SpriteID>
       <RequiredLevel>3</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>1</AdditionalDataId>
+      <AdditionalDataId>1</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1842,12 +1845,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>130</Id>
+      <Id>130</Id> <!-- Bronze Shield / ふろんすしーると / bouclier de bronze / bronzeschild -->
       <Palette>1</Palette>
       <SpriteID>72</SpriteID>
       <RequiredLevel>6</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>2</AdditionalDataId>
+      <AdditionalDataId>2</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1856,12 +1859,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>131</Id>
+      <Id>131</Id> <!-- Round Shield / らうんとしーると / rondache / rundschild -->
       <Palette>7</Palette>
       <SpriteID>76</SpriteID>
       <RequiredLevel>9</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>3</AdditionalDataId>
+      <AdditionalDataId>3</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1870,12 +1873,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>132</Id>
+      <Id>132</Id> <!-- Mythril Shield / みすりるしーると / bouclier de mithril / mithril-schild -->
       <Palette>5</Palette>
       <SpriteID>74</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>4</AdditionalDataId>
+      <AdditionalDataId>4</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1884,12 +1887,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>133</Id>
+      <Id>133</Id> <!-- Golden Shield / こーるとしーると / bouclier dor / goldschild -->
       <Palette>0</Palette>
       <SpriteID>78</SpriteID>
       <RequiredLevel>15</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>5</AdditionalDataId>
+      <AdditionalDataId>5</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1898,12 +1901,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>134</Id>
+      <Id>134</Id> <!-- Ice Shield / あいすしーると / bouclier de glace / eisschild -->
       <Palette>1</Palette>
       <SpriteID>73</SpriteID>
       <RequiredLevel>22</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>6</AdditionalDataId>
+      <AdditionalDataId>6</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>15</EquipBonusId>
@@ -1912,12 +1915,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>135</Id>
+      <Id>135</Id> <!-- Flame Shield / ふれいむしーると / bouclier de feu / flammenschild -->
       <Palette>3</Palette>
       <SpriteID>79</SpriteID>
       <RequiredLevel>22</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>7</AdditionalDataId>
+      <AdditionalDataId>7</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>16</EquipBonusId>
@@ -1926,12 +1929,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>136</Id>
+      <Id>136</Id> <!-- Aegis Shield / いーしすのたて / aegis / aegis-schild -->
       <Palette>3</Palette>
       <SpriteID>73</SpriteID>
       <RequiredLevel>22</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>8</AdditionalDataId>
+      <AdditionalDataId>8</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>17</EquipBonusId>
@@ -1940,12 +1943,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>137</Id>
+      <Id>137</Id> <!-- Diamond Shield / たいあしーると / bouclier de diamant / diamantschild -->
       <Palette>5</Palette>
       <SpriteID>77</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>9</AdditionalDataId>
+      <AdditionalDataId>9</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1954,12 +1957,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>138</Id>
+      <Id>138</Id> <!-- Platinum Shield / ふらちなしーると / bouclier de platine / platinschild -->
       <Palette>1</Palette>
       <SpriteID>74</SpriteID>
       <RequiredLevel>29</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>10</AdditionalDataId>
+      <AdditionalDataId>10</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1968,12 +1971,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>139</Id>
+      <Id>139</Id> <!-- Crystal Shield / くりすたるのたて / bouclier de cristal / kristallschild -->
       <Palette>1</Palette>
       <SpriteID>77</SpriteID>
       <RequiredLevel>36</RequiredLevel>
       <TypeFlags>Shield</TypeFlags>
-      <AdditionalDataId>11</AdditionalDataId>
+      <AdditionalDataId>11</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1982,12 +1985,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>140</Id>
+      <Id>140</Id> <!-- Genji Shield / けんしのたて / bouclier genji / genji-schild -->
       <Palette>5</Palette>
       <SpriteID>73</SpriteID>
       <RequiredLevel>36</RequiredLevel>
       <TypeFlags>Rare, Shield</TypeFlags>
-      <AdditionalDataId>12</AdditionalDataId>
+      <AdditionalDataId>12</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -1996,12 +1999,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>141</Id>
+      <Id>141</Id> <!-- Kaiser Shield / かえさるふれーと / bouclier de cesar / kaiserschild -->
       <Palette>1</Palette>
       <SpriteID>76</SpriteID>
       <RequiredLevel>39</RequiredLevel>
       <TypeFlags>Rare, Shield</TypeFlags>
-      <AdditionalDataId>13</AdditionalDataId>
+      <AdditionalDataId>13</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>18</EquipBonusId>
@@ -2010,12 +2013,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>142</Id>
+      <Id>142</Id> <!-- Venetian Shield / へねちあふれーと / bouclier venitien / venetia-schild -->
       <Palette>3</Palette>
       <SpriteID>75</SpriteID>
       <RequiredLevel>40</RequiredLevel>
       <TypeFlags>Rare, Shield</TypeFlags>
-      <AdditionalDataId>14</AdditionalDataId>
+      <AdditionalDataId>14</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>19</EquipBonusId>
@@ -2024,12 +2027,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>143</Id>
+      <Id>143</Id> <!-- Escutcheon / えすかっしょん / ecu / wappenschild -->
       <Palette>7</Palette>
       <SpriteID>78</SpriteID>
       <RequiredLevel>50</RequiredLevel>
       <TypeFlags>Rare, Shield</TypeFlags>
-      <AdditionalDataId>15</AdditionalDataId>
+      <AdditionalDataId>15</AdditionalDataId> <!-- ItemShieldData id -->
       <ItemCategory>Shield</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2037,13 +2040,15 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ShopAvailability>Unknown20</ShopAvailability>
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
+
+	<!-- Item Range: Armors -->
     <Item>
-      <Id>144</Id>
+      <Id>144</Id> <!-- Leather Helm / れさーへるむ / casque de cuir / lederhelm -->
       <Palette>0</Palette>
       <SpriteID>80</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>0</AdditionalDataId>
+      <AdditionalDataId>0</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2052,12 +2057,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>145</Id>
+      <Id>145</Id> <!-- Bronze Helm / ふろんすへるむ / casque de bronze / bronzehelm -->
       <Palette>13</Palette>
       <SpriteID>81</SpriteID>
       <RequiredLevel>4</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>1</AdditionalDataId>
+      <AdditionalDataId>1</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2066,12 +2071,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>146</Id>
+      <Id>146</Id> <!-- Iron Helm / あいあんへるむ / armet de fer / eisenhelm -->
       <Palette>9</Palette>
       <SpriteID>81</SpriteID>
       <RequiredLevel>7</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>2</AdditionalDataId>
+      <AdditionalDataId>2</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2080,12 +2085,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>147</Id>
+      <Id>147</Id> <!-- Barbut / はるひゅーた / barbute / barbuta -->
       <Palette>11</Palette>
       <SpriteID>82</SpriteID>
       <RequiredLevel>9</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>3</AdditionalDataId>
+      <AdditionalDataId>3</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2094,12 +2099,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>148</Id>
+      <Id>148</Id> <!-- Mythril Helm / みすりるへるむ / armet de mithril / mithril-helm -->
       <Palette>10</Palette>
       <SpriteID>83</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>4</AdditionalDataId>
+      <AdditionalDataId>4</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2108,12 +2113,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>149</Id>
+      <Id>149</Id> <!-- Golden Helm / こーるとへるむ / casque dor / goldhelm -->
       <Palette>0</Palette>
       <SpriteID>83</SpriteID>
       <RequiredLevel>15</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>5</AdditionalDataId>
+      <AdditionalDataId>5</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2122,12 +2127,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>150</Id>
+      <Id>150</Id> <!-- Close Helmet / くろすへるむ / bascinet / kreuzhelm -->
       <Palette>13</Palette>
       <SpriteID>84</SpriteID>
       <RequiredLevel>17</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>6</AdditionalDataId>
+      <AdditionalDataId>6</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2136,12 +2141,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>151</Id>
+      <Id>151</Id> <!-- Diamond Helm / たいあへるむ / armet de diamant / diamanthelm -->
       <Palette>12</Palette>
       <SpriteID>85</SpriteID>
       <RequiredLevel>22</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>7</AdditionalDataId>
+      <AdditionalDataId>7</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2150,12 +2155,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>152</Id>
+      <Id>152</Id> <!-- Platinum Helm / ふらちなへるむ / casque de platine / platinhelm -->
       <Palette>10</Palette>
       <SpriteID>86</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>8</AdditionalDataId>
+      <AdditionalDataId>8</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2164,12 +2169,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>153</Id>
+      <Id>153</Id> <!-- Circlet / さーくれっと / diademe / stirnreif -->
       <Palette>11</Palette>
       <SpriteID>87</SpriteID>
       <RequiredLevel>29</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>9</AdditionalDataId>
+      <AdditionalDataId>9</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2178,12 +2183,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>154</Id>
+      <Id>154</Id> <!-- Crystal Helm / くりすたるへるむ / casque de cristal / kristallhelm -->
       <Palette>9</Palette>
       <SpriteID>85</SpriteID>
       <RequiredLevel>27</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>10</AdditionalDataId>
+      <AdditionalDataId>10</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2192,12 +2197,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>155</Id>
+      <Id>155</Id> <!-- Genji Helm / けんしのかふと / casque genji / genji-helm -->
       <Palette>12</Palette>
       <SpriteID>88</SpriteID>
       <RequiredLevel>36</RequiredLevel>
       <TypeFlags>Rare, Headgear</TypeFlags>
-      <AdditionalDataId>11</AdditionalDataId>
+      <AdditionalDataId>11</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2206,12 +2211,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>156</Id>
+      <Id>156</Id> <!-- Grand Helm / くらんとへるむ / casque de maitre / stechhelm -->
       <Palette>9</Palette>
       <SpriteID>89</SpriteID>
       <RequiredLevel>40</RequiredLevel>
       <TypeFlags>Rare, Headgear</TypeFlags>
-      <AdditionalDataId>12</AdditionalDataId>
+      <AdditionalDataId>12</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Helmet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>20</EquipBonusId>
@@ -2220,12 +2225,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>157</Id>
+      <Id>157</Id> <!-- Leather Cap / かわのほうし / chapeau de cuir / lederhut -->
       <Palette>11</Palette>
       <SpriteID>90</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>13</AdditionalDataId>
+      <AdditionalDataId>13</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2234,12 +2239,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>158</Id>
+      <Id>158</Id> <!-- Plumed Hat / はねつきほうし / chapeau a plume / federhut -->
       <Palette>13</Palette>
       <SpriteID>91</SpriteID>
       <RequiredLevel>4</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>14</AdditionalDataId>
+      <AdditionalDataId>14</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2248,12 +2253,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>159</Id>
+      <Id>159</Id> <!-- Red Hood / あかすきん / chaperon rouge / rote kappe -->
       <Palette>12</Palette>
       <SpriteID>92</SpriteID>
       <RequiredLevel>7</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>15</AdditionalDataId>
+      <AdditionalDataId>15</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2262,12 +2267,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>160</Id>
+      <Id>160</Id> <!-- Headgear / へっときあ / protege tete / kopfschutz -->
       <Palette>10</Palette>
       <SpriteID>93</SpriteID>
       <RequiredLevel>10</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>16</AdditionalDataId>
+      <AdditionalDataId>16</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>21</EquipBonusId>
@@ -2276,12 +2281,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>161</Id>
+      <Id>161</Id> <!-- Wizard's Hat / さんかくほうし / chapeau pointu / spitzhut -->
       <Palette>12</Palette>
       <SpriteID>94</SpriteID>
       <RequiredLevel>13</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>17</AdditionalDataId>
+      <AdditionalDataId>17</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>22</EquipBonusId>
@@ -2290,12 +2295,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>162</Id>
+      <Id>162</Id> <!-- Green Beret / くりーんへれー / beret vert / grunes barett -->
       <Palette>11</Palette>
       <SpriteID>95</SpriteID>
       <RequiredLevel>16</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>18</AdditionalDataId>
+      <AdditionalDataId>18</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>23</EquipBonusId>
@@ -2304,12 +2309,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>163</Id>
+      <Id>163</Id> <!-- Headband / ねしりはちまき / bandeau torsade / stirnband -->
       <Palette>2</Palette>
       <SpriteID>96</SpriteID>
       <RequiredLevel>21</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>19</AdditionalDataId>
+      <AdditionalDataId>19</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>24</EquipBonusId>
@@ -2318,12 +2323,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>164</Id>
+      <Id>164</Id> <!-- Celebrant's Miter / しさいのほうし / coiffe de pretre / mitra -->
       <Palette>11</Palette>
       <SpriteID>97</SpriteID>
       <RequiredLevel>24</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>20</AdditionalDataId>
+      <AdditionalDataId>20</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>25</EquipBonusId>
@@ -2332,12 +2337,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>165</Id>
+      <Id>165</Id> <!-- Black Cowl / くろすきん / capuchon noir / schwarze kappe -->
       <Palette>15</Palette>
       <SpriteID>92</SpriteID>
       <RequiredLevel>27</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>21</AdditionalDataId>
+      <AdditionalDataId>21</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2346,12 +2351,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>166</Id>
+      <Id>166</Id> <!-- Gold Hairpin / きんのかみかさり / barrette dor / goldspange -->
       <Palette>11</Palette>
       <SpriteID>98</SpriteID>
       <RequiredLevel>32</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>22</AdditionalDataId>
+      <AdditionalDataId>22</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>26</EquipBonusId>
@@ -2360,12 +2365,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>167</Id>
+      <Id>167</Id> <!-- Lambent Hat / せんこうまほう / chapeau vif eclair / lichthut -->
       <Palette>13</Palette>
       <SpriteID>99</SpriteID>
       <RequiredLevel>38</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>23</AdditionalDataId>
+      <AdditionalDataId>23</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>27</EquipBonusId>
@@ -2374,12 +2379,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>168</Id>
+      <Id>168</Id> <!-- Thief's Cap / しーふのほうし / chapeau de voleur / diebesmutze -->
       <Palette>9</Palette>
       <SpriteID>95</SpriteID>
       <RequiredLevel>46</RequiredLevel>
       <TypeFlags>Headgear</TypeFlags>
-      <AdditionalDataId>24</AdditionalDataId>
+      <AdditionalDataId>24</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Hat</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>28</EquipBonusId>
@@ -2388,12 +2393,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>169</Id>
+      <Id>169</Id> <!-- Hairband / かちゅーしゃ / serre tete / haarreif -->
       <Palette>11</Palette>
       <SpriteID>100</SpriteID>
       <RequiredLevel>50</RequiredLevel>
       <TypeFlags>Rare, Headgear</TypeFlags>
-      <AdditionalDataId>25</AdditionalDataId>
+      <AdditionalDataId>25</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>HairAdornment</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>69</EquipBonusId>
@@ -2402,12 +2407,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>170</Id>
+      <Id>170</Id> <!-- Barrette / はれった / barrette / haarspange -->
       <Palette>12</Palette>
       <SpriteID>101</SpriteID>
       <RequiredLevel>51</RequiredLevel>
       <TypeFlags>Rare, Headgear</TypeFlags>
-      <AdditionalDataId>26</AdditionalDataId>
+      <AdditionalDataId>26</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>HairAdornment</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>70</EquipBonusId>
@@ -2416,12 +2421,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>171</Id>
+      <Id>171</Id> <!-- Ribbon / りほん / ruban / schleife -->
       <Palette>11</Palette>
       <SpriteID>102</SpriteID>
       <RequiredLevel>52</RequiredLevel>
       <TypeFlags>Rare, Headgear</TypeFlags>
-      <AdditionalDataId>27</AdditionalDataId>
+      <AdditionalDataId>27</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>HairAdornment</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>71</EquipBonusId>
@@ -2430,12 +2435,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>172</Id>
+      <Id>172</Id> <!-- Leather Armor / かわのよろい / armure de cuir / lederrustung -->
       <Palette>0</Palette>
       <SpriteID>106</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>28</AdditionalDataId>
+      <AdditionalDataId>28</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2444,12 +2449,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>173</Id>
+      <Id>173</Id> <!-- Linen Cuirass / りねんきゅらっさ / cuirasse de lin / leinenkurass -->
       <Palette>11</Palette>
       <SpriteID>107</SpriteID>
       <RequiredLevel>4</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>29</AdditionalDataId>
+      <AdditionalDataId>29</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2458,12 +2463,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>174</Id>
+      <Id>174</Id> <!-- Bronze Armor / ふろんすあーまー / armure de bronze / bronzerustung -->
       <Palette>14</Palette>
       <SpriteID>103</SpriteID>
       <RequiredLevel>6</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>30</AdditionalDataId>
+      <AdditionalDataId>30</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2472,12 +2477,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>175</Id>
+      <Id>175</Id> <!-- Chainmail / ちぇいんめいる / cotte de mailles / kettenhemd -->
       <Palette>3</Palette>
       <SpriteID>108</SpriteID>
       <RequiredLevel>8</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>31</AdditionalDataId>
+      <AdditionalDataId>31</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2486,12 +2491,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>176</Id>
+      <Id>176</Id> <!-- Mythril Armor / みすりるあーまー / armure de mithril / mithril-rustung -->
       <Palette>9</Palette>
       <SpriteID>103</SpriteID>
       <RequiredLevel>11</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>32</AdditionalDataId>
+      <AdditionalDataId>32</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2500,12 +2505,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>177</Id>
+      <Id>177</Id> <!-- Plate Mail / ふれいとめいる / cotte de plates / plattenpanzer -->
       <Palette>0</Palette>
       <SpriteID>104</SpriteID>
       <RequiredLevel>14</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>33</AdditionalDataId>
+      <AdditionalDataId>33</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2514,12 +2519,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>178</Id>
+      <Id>178</Id> <!-- Golden Armor / こーるとあーまー / armure dor / goldrustung -->
       <Palette>2</Palette>
       <SpriteID>104</SpriteID>
       <RequiredLevel>17</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>34</AdditionalDataId>
+      <AdditionalDataId>34</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2528,12 +2533,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>179</Id>
+      <Id>179</Id> <!-- Diamond Armor / たいああーまー / armure de diamant / diamantrustung -->
       <Palette>10</Palette>
       <SpriteID>105</SpriteID>
       <RequiredLevel>22</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>35</AdditionalDataId>
+      <AdditionalDataId>35</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2542,12 +2547,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>180</Id>
+      <Id>180</Id> <!-- Platinum Armor / ふらちなあーまー / armure de platine / platinrustung -->
       <Palette>8</Palette>
       <SpriteID>109</SpriteID>
       <RequiredLevel>26</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>36</AdditionalDataId>
+      <AdditionalDataId>36</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2556,12 +2561,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>181</Id>
+      <Id>181</Id> <!-- Carabineer Mail / きゃらひにえーる / carabiniere / karabinierrustung -->
       <Palette>8</Palette>
       <SpriteID>110</SpriteID>
       <RequiredLevel>30</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>37</AdditionalDataId>
+      <AdditionalDataId>37</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2570,12 +2575,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>182</Id>
+      <Id>182</Id> <!-- Crystal Mail / くりすたるめいる / cotte de cristal / kristallrustung -->
       <Palette>5</Palette>
       <SpriteID>105</SpriteID>
       <RequiredLevel>37</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>38</AdditionalDataId>
+      <AdditionalDataId>38</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2584,12 +2589,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>183</Id>
+      <Id>183</Id> <!-- Genji Armor / けんしのよろい / armure genji / genji-rustung -->
       <Palette>3</Palette>
       <SpriteID>111</SpriteID>
       <RequiredLevel>37</RequiredLevel>
       <TypeFlags>Rare, Armor</TypeFlags>
-      <AdditionalDataId>39</AdditionalDataId>
+      <AdditionalDataId>39</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2598,12 +2603,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>184</Id>
+      <Id>184</Id> <!-- Mirror Mail / りふれくとめいる / cotte reflectrice / reflek-rustung -->
       <Palette>3</Palette>
       <SpriteID>112</SpriteID>
       <RequiredLevel>39</RequiredLevel>
       <TypeFlags>Rare, Armor</TypeFlags>
-      <AdditionalDataId>40</AdditionalDataId>
+      <AdditionalDataId>40</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>29</EquipBonusId>
@@ -2612,12 +2617,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>185</Id>
+      <Id>185</Id> <!-- Maximillian / まくしみりあん / maximilien / maximiliansharnisch -->
       <Palette>13</Palette>
       <SpriteID>113</SpriteID>
       <RequiredLevel>45</RequiredLevel>
       <TypeFlags>Rare, Armor</TypeFlags>
-      <AdditionalDataId>41</AdditionalDataId>
+      <AdditionalDataId>41</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Armor</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2626,12 +2631,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>186</Id>
+      <Id>186</Id> <!-- Clothing / ふく / habit / gewand -->
       <Palette>6</Palette>
       <SpriteID>116</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>42</AdditionalDataId>
+      <AdditionalDataId>42</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2640,12 +2645,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>187</Id>
+      <Id>187</Id> <!-- Leather Clothing / かわのふく / habit de cuir / lederhemd -->
       <Palette>3</Palette>
       <SpriteID>117</SpriteID>
       <RequiredLevel>3</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>43</AdditionalDataId>
+      <AdditionalDataId>43</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2654,12 +2659,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>188</Id>
+      <Id>188</Id> <!-- Leather Plate / れさーふれいと / plastron de cuir / lederpanzer -->
       <Palette>2</Palette>
       <SpriteID>118</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>44</AdditionalDataId>
+      <AdditionalDataId>44</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2668,12 +2673,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>189</Id>
+      <Id>189</Id> <!-- Ringmail / ちぇいんふれいと / plastron de mailles / ringpanzer -->
       <Palette>6</Palette>
       <SpriteID>119</SpriteID>
       <RequiredLevel>7</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>45</AdditionalDataId>
+      <AdditionalDataId>45</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2682,12 +2687,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>190</Id>
+      <Id>190</Id> <!-- Mythril Vest / みすりるへすと / veston de mithril / mithril-weste -->
       <Palette>4</Palette>
       <SpriteID>115</SpriteID>
       <RequiredLevel>10</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>46</AdditionalDataId>
+      <AdditionalDataId>46</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2696,12 +2701,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>191</Id>
+      <Id>191</Id> <!-- Adamant Vest / あたまんへすと / veston dadamantium / adamant-weste -->
       <Palette>11</Palette>
       <SpriteID>115</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>47</AdditionalDataId>
+      <AdditionalDataId>47</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2710,12 +2715,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>192</Id>
+      <Id>192</Id> <!-- Wizard Clothing / ましゅつしのふく / tunique de sorcier / zaubergewand -->
       <Palette>3</Palette>
       <SpriteID>120</SpriteID>
       <RequiredLevel>14</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>48</AdditionalDataId>
+      <AdditionalDataId>48</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2724,12 +2729,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>193</Id>
+      <Id>193</Id> <!-- Brigandine / ふりかんたいん / brigandine / brigantine -->
       <Palette>1</Palette>
       <SpriteID>121</SpriteID>
       <RequiredLevel>17</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>49</AdditionalDataId>
+      <AdditionalDataId>49</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2738,12 +2743,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>194</Id>
+      <Id>194</Id> <!-- Jujitsu Gi / しゅうしゅつとうき / tenue de jujutsu / judoanzug -->
       <Palette>0</Palette>
       <SpriteID>122</SpriteID>
       <RequiredLevel>21</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>50</AdditionalDataId>
+      <AdditionalDataId>50</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>30</EquipBonusId>
@@ -2752,12 +2757,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>195</Id>
+      <Id>195</Id> <!-- Power Garb / ちからたすき / sangle de force / energiescharpe -->
       <Palette>3</Palette>
       <SpriteID>123</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>51</AdditionalDataId>
+      <AdditionalDataId>51</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>31</EquipBonusId>
@@ -2766,12 +2771,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>196</Id>
+      <Id>196</Id> <!-- Gaia Gear / たいちのころも / tunique de gaia / gaia-anzug -->
       <Palette>11</Palette>
       <SpriteID>124</SpriteID>
       <RequiredLevel>29</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>52</AdditionalDataId>
+      <AdditionalDataId>52</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>32</EquipBonusId>
@@ -2780,12 +2785,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>197</Id>
+      <Id>197</Id> <!-- Ninja Gear / しのひのころも / tenue de shinobi / ninja-anzug -->
       <Palette>3</Palette>
       <SpriteID>114</SpriteID>
       <RequiredLevel>35</RequiredLevel>
       <TypeFlags>Rare, Armor</TypeFlags>
-      <AdditionalDataId>53</AdditionalDataId>
+      <AdditionalDataId>53</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>33</EquipBonusId>
@@ -2794,12 +2799,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>198</Id>
+      <Id>198</Id> <!-- Black Garb / くろしょうそく / tenue noire / dunkelanzug -->
       <Palette>11</Palette>
       <SpriteID>114</SpriteID>
       <RequiredLevel>37</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>54</AdditionalDataId>
+      <AdditionalDataId>54</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>34</EquipBonusId>
@@ -2808,12 +2813,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>199</Id>
+      <Id>199</Id> <!-- Rubber Suit / らはーこんしゃす / tunique de latex / gummianzug -->
       <Palette>3</Palette>
       <SpriteID>125</SpriteID>
       <RequiredLevel>50</RequiredLevel>
       <TypeFlags>Rare, Armor</TypeFlags>
-      <AdditionalDataId>55</AdditionalDataId>
+      <AdditionalDataId>55</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Clothing</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>35</EquipBonusId>
@@ -2822,12 +2827,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>200</Id>
+      <Id>200</Id> <!-- Hempen Robe / あさのろーふ / robe de lin / hanfrobe -->
       <Palette>6</Palette>
       <SpriteID>126</SpriteID>
       <RequiredLevel>3</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>56</AdditionalDataId>
+      <AdditionalDataId>56</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Robe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2836,12 +2841,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>201</Id>
+      <Id>201</Id> <!-- Silken Robe / しるくのろーふ / robe de soie / seidenrobe -->
       <Palette>1</Palette>
       <SpriteID>126</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>57</AdditionalDataId>
+      <AdditionalDataId>57</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Robe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -2850,12 +2855,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>202</Id>
+      <Id>202</Id> <!-- Wizard's Robe / ましゅつしのろーふ / robe denchanteur / zauberumhang -->
       <Palette>11</Palette>
       <SpriteID>127</SpriteID>
       <RequiredLevel>11</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>58</AdditionalDataId>
+      <AdditionalDataId>58</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Robe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>36</EquipBonusId>
@@ -2864,12 +2869,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>203</Id>
+      <Id>203</Id> <!-- Chameleon Robe / かめれおんろーふ / robe cameleon / mistelrobe -->
       <Palette>11</Palette>
       <SpriteID>128</SpriteID>
       <RequiredLevel>16</RequiredLevel>
       <TypeFlags>Rare, Armor</TypeFlags>
-      <AdditionalDataId>59</AdditionalDataId>
+      <AdditionalDataId>59</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Robe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>37</EquipBonusId>
@@ -2878,12 +2883,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>204</Id>
+      <Id>204</Id> <!-- White Robe / しろのろーふ / robe blanche / weisse robe -->
       <Palette>12</Palette>
       <SpriteID>129</SpriteID>
       <RequiredLevel>26</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>60</AdditionalDataId>
+      <AdditionalDataId>60</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Robe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>38</EquipBonusId>
@@ -2892,12 +2897,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>205</Id>
+      <Id>205</Id> <!-- Black Robe / くろのろーふ / robe noire / schwarze robe -->
       <Palette>12</Palette>
       <SpriteID>130</SpriteID>
       <RequiredLevel>31</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>61</AdditionalDataId>
+      <AdditionalDataId>61</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Robe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>39</EquipBonusId>
@@ -2906,12 +2911,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>206</Id>
+      <Id>206</Id> <!-- Luminous Robe / ひかりのろーふ / robe de lumiere / lichtrobe -->
       <Palette>13</Palette>
       <SpriteID>131</SpriteID>
       <RequiredLevel>38</RequiredLevel>
       <TypeFlags>Armor</TypeFlags>
-      <AdditionalDataId>62</AdditionalDataId>
+      <AdditionalDataId>62</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Robe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>40</EquipBonusId>
@@ -2920,12 +2925,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>207</Id>
+      <Id>207</Id> <!-- Lordly Robe / ろーふおふろーと / robe de monarque / furstenmantel -->
       <Palette>13</Palette>
       <SpriteID>127</SpriteID>
       <RequiredLevel>45</RequiredLevel>
       <TypeFlags>Rare, Armor</TypeFlags>
-      <AdditionalDataId>63</AdditionalDataId>
+      <AdditionalDataId>63</AdditionalDataId> <!-- ItemArmorData id -->
       <ItemCategory>Robe</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>41</EquipBonusId>
@@ -2933,13 +2938,15 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ShopAvailability>Unknown20</ShopAvailability>
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
+
+	<!-- Item Range: Accessories -->
     <Item>
-      <Id>208</Id>
+      <Id>208</Id> <!-- Battle Boots / はとるふーつ / bottes de combat / kampfstiefel -->
       <Palette>0</Palette>
       <SpriteID>132</SpriteID>
       <RequiredLevel>10</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>0</AdditionalDataId>
+      <AdditionalDataId>0</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Shoes</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>42</EquipBonusId>
@@ -2948,12 +2955,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>209</Id>
+      <Id>209</Id> <!-- Spiked Boots / すはいくしゅーす / souliers cloutes / kletterstiefel -->
       <Palette>0</Palette>
       <SpriteID>133</SpriteID>
       <RequiredLevel>20</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>1</AdditionalDataId>
+      <AdditionalDataId>1</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Shoes</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>43</EquipBonusId>
@@ -2962,12 +2969,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>210</Id>
+      <Id>210</Id> <!-- Germinas Boots / けるみなすふーつ / bottes de germinas / germinas-stiefel -->
       <Palette>1</Palette>
       <SpriteID>134</SpriteID>
       <RequiredLevel>30</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>2</AdditionalDataId>
+      <AdditionalDataId>2</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Shoes</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>44</EquipBonusId>
@@ -2976,12 +2983,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>211</Id>
+      <Id>211</Id> <!-- Rubber Boots / らはーしゅーす / bottes en latex / gummischuhe -->
       <Palette>1</Palette>
       <SpriteID>135</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>3</AdditionalDataId>
+      <AdditionalDataId>3</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Shoes</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>45</EquipBonusId>
@@ -2990,12 +2997,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>212</Id>
+      <Id>212</Id> <!-- Winged Boots / ふぇさーふーつ / bottes ailees / federstiefel -->
       <Palette>2</Palette>
       <SpriteID>136</SpriteID>
       <RequiredLevel>50</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>4</AdditionalDataId>
+      <AdditionalDataId>4</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Shoes</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>46</EquipBonusId>
@@ -3004,12 +3011,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>213</Id>
+      <Id>213</Id> <!-- Hermes Shoes / えるめすのくつ / sandales dhermes / hermes-stiefel -->
       <Palette>5</Palette>
       <SpriteID>137</SpriteID>
       <RequiredLevel>30</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>5</AdditionalDataId>
+      <AdditionalDataId>5</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Shoes</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>47</EquipBonusId>
@@ -3018,12 +3025,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>214</Id>
+      <Id>214</Id> <!-- Red Shoes / あかいくつ / souliers rouges / rote stiefel -->
       <Palette>3</Palette>
       <SpriteID>138</SpriteID>
       <RequiredLevel>40</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>6</AdditionalDataId>
+      <AdditionalDataId>6</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Shoes</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>48</EquipBonusId>
@@ -3032,12 +3039,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>215</Id>
+      <Id>215</Id> <!-- Power Gauntlets / はわーりすと / poignets de force / kraftreif -->
       <Palette>0</Palette>
       <SpriteID>139</SpriteID>
       <RequiredLevel>20</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>7</AdditionalDataId>
+      <AdditionalDataId>7</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Armguard</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>49</EquipBonusId>
@@ -3046,12 +3053,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>216</Id>
+      <Id>216</Id> <!-- Genji Gloves / けんしのこて / gants genji / genji-handschuhe -->
       <Palette>3</Palette>
       <SpriteID>140</SpriteID>
       <RequiredLevel>50</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>8</AdditionalDataId>
+      <AdditionalDataId>8</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Armguard</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>50</EquipBonusId>
@@ -3060,12 +3067,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>217</Id>
+      <Id>217</Id> <!-- Magepower Gloves / まりょくのこて / gants mystiques / magus-handschuh -->
       <Palette>3</Palette>
       <SpriteID>141</SpriteID>
       <RequiredLevel>35</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>9</AdditionalDataId>
+      <AdditionalDataId>9</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Armguard</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>51</EquipBonusId>
@@ -3074,12 +3081,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>218</Id>
+      <Id>218</Id> <!-- Bracers / ふれいさー / brassards / lederhandschuhe -->
       <Palette>4</Palette>
       <SpriteID>142</SpriteID>
       <RequiredLevel>60</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>10</AdditionalDataId>
+      <AdditionalDataId>10</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Armguard</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>52</EquipBonusId>
@@ -3088,12 +3095,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>219</Id>
+      <Id>219</Id> <!-- Reflect Ring / りふれくとりんく / bague reflectrice / spiegelring -->
       <Palette>0</Palette>
       <SpriteID>143</SpriteID>
       <RequiredLevel>50</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>11</AdditionalDataId>
+      <AdditionalDataId>11</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Ring</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>53</EquipBonusId>
@@ -3102,12 +3109,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>220</Id>
+      <Id>220</Id> <!-- Protect Ring / まもりのゆひわ / anneau protecteur / schutzring -->
       <Palette>6</Palette>
       <SpriteID>143</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>12</AdditionalDataId>
+      <AdditionalDataId>12</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Ring</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>54</EquipBonusId>
@@ -3116,12 +3123,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>221</Id>
+      <Id>221</Id> <!-- Magick Ring / まほうのりんく / bague de mage / magiering -->
       <Palette>0</Palette>
       <SpriteID>144</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>13</AdditionalDataId>
+      <AdditionalDataId>13</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Ring</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>55</EquipBonusId>
@@ -3130,12 +3137,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>222</Id>
+      <Id>222</Id> <!-- Cursed Ring / のろいのゆひわ / bague maudite / fluchring -->
       <Palette>4</Palette>
       <SpriteID>144</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>14</AdditionalDataId>
+      <AdditionalDataId>14</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Ring</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>56</EquipBonusId>
@@ -3144,12 +3151,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>223</Id>
+      <Id>223</Id> <!-- Angel Ring / てんしのゆひわ / bague dange / engelsring -->
       <Palette>8</Palette>
       <SpriteID>145</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>15</AdditionalDataId>
+      <AdditionalDataId>15</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Ring</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>57</EquipBonusId>
@@ -3158,12 +3165,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>224</Id>
+      <Id>224</Id> <!-- Diamond Bracelet / たいあのうてわ / bracelet de diamant / diamant-armreif -->
       <Palette>4</Palette>
       <SpriteID>146</SpriteID>
       <RequiredLevel>26</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>16</AdditionalDataId>
+      <AdditionalDataId>16</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Armlet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>58</EquipBonusId>
@@ -3172,12 +3179,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>225</Id>
+      <Id>225</Id> <!-- Jade Armlet / ひすいのうてわ / bracelet de jade / jadereif -->
       <Palette>11</Palette>
       <SpriteID>147</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>17</AdditionalDataId>
+      <AdditionalDataId>17</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Armlet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>59</EquipBonusId>
@@ -3186,12 +3193,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>226</Id>
+      <Id>226</Id> <!-- Japa Mala / ひゃくはちのしゅす / mala / mala -->
       <Palette>0</Palette>
       <SpriteID>148</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>18</AdditionalDataId>
+      <AdditionalDataId>18</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Armlet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>60</EquipBonusId>
@@ -3200,12 +3207,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>227</Id>
+      <Id>227</Id> <!-- Nu Khai Armband / んかいのうてわ / bracelet de nkai / nkai-armreif -->
       <Palette>11</Palette>
       <SpriteID>149</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>19</AdditionalDataId>
+      <AdditionalDataId>19</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Armlet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>61</EquipBonusId>
@@ -3214,12 +3221,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>228</Id>
+      <Id>228</Id> <!-- Guardian Bracelet / まもりのうてわ / bracelet protecteur / schutzreif -->
       <Palette>6</Palette>
       <SpriteID>150</SpriteID>
       <RequiredLevel>25</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>20</AdditionalDataId>
+      <AdditionalDataId>20</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Armlet</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>62</EquipBonusId>
@@ -3228,12 +3235,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>229</Id>
+      <Id>229</Id> <!-- Shoulder Cape / すもーるまんと / cape courte / schultermantel -->
       <Palette>9</Palette>
       <SpriteID>151</SpriteID>
       <RequiredLevel>10</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>21</AdditionalDataId>
+      <AdditionalDataId>21</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Cloak</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3242,12 +3249,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>230</Id>
+      <Id>230</Id> <!-- Leather Cloak / かわのまんと / cape de cuir / ledermantel -->
       <Palette>14</Palette>
       <SpriteID>152</SpriteID>
       <RequiredLevel>20</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>22</AdditionalDataId>
+      <AdditionalDataId>22</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Cloak</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3256,12 +3263,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>231</Id>
+      <Id>231</Id> <!-- Mage's Cloak / まとうしのまんと / cape de mage / zaubermantel -->
       <Palette>13</Palette>
       <SpriteID>153</SpriteID>
       <RequiredLevel>30</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>23</AdditionalDataId>
+      <AdditionalDataId>23</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Cloak</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>63</EquipBonusId>
@@ -3270,12 +3277,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>232</Id>
+      <Id>232</Id> <!-- Elven Cloak / えるふのまんと / cape elfique / elfenmantel -->
       <Palette>11</Palette>
       <SpriteID>154</SpriteID>
       <RequiredLevel>40</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>24</AdditionalDataId>
+      <AdditionalDataId>24</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Cloak</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3284,12 +3291,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>233</Id>
+      <Id>233</Id> <!-- Vampire Cape / とらきゅらまんと / cape de dracula / vampirmantel -->
       <Palette>14</Palette>
       <SpriteID>155</SpriteID>
       <RequiredLevel>49</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>25</AdditionalDataId>
+      <AdditionalDataId>25</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Cloak</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3298,12 +3305,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>234</Id>
+      <Id>234</Id> <!-- Featherweave Cloak / ふぇさーまんと / cape de plumes / federmantel -->
       <Palette>13</Palette>
       <SpriteID>156</SpriteID>
       <RequiredLevel>50</RequiredLevel>
       <TypeFlags>Accessory</TypeFlags>
-      <AdditionalDataId>26</AdditionalDataId>
+      <AdditionalDataId>26</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Cloak</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3312,12 +3319,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>235</Id>
+      <Id>235</Id> <!-- Invisibility Cloak / きえるまんと / cape invisible / tarnmantel -->
       <Palette>14</Palette>
       <SpriteID>157</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>27</AdditionalDataId>
+      <AdditionalDataId>27</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Cloak</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>64</EquipBonusId>
@@ -3326,12 +3333,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>236</Id>
+      <Id>236</Id> <!-- Chantage / しゃんたーしゅ / chantage / chantage -->
       <Palette>11</Palette>
       <SpriteID>158</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>28</AdditionalDataId>
+      <AdditionalDataId>28</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Perfume</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>65</EquipBonusId>
@@ -3340,12 +3347,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>237</Id>
+      <Id>237</Id> <!-- Envoûtement / しぇるしぇ / envoutement / envoutement -->
       <Palette>13</Palette>
       <SpriteID>159</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>29</AdditionalDataId>
+      <AdditionalDataId>29</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Perfume</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>66</EquipBonusId>
@@ -3354,12 +3361,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>238</Id>
+      <Id>238</Id> <!-- Septième Sens / せってぃえむそん / septieme sens / septieme sens -->
       <Palette>2</Palette>
       <SpriteID>160</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>30</AdditionalDataId>
+      <AdditionalDataId>30</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Perfume</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>67</EquipBonusId>
@@ -3368,12 +3375,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>239</Id>
+      <Id>239</Id> <!-- Sortilège / そるてぃれーしゅ / sortilege / sortilege -->
       <Palette>8</Palette>
       <SpriteID>161</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Rare, Accessory</TypeFlags>
-      <AdditionalDataId>31</AdditionalDataId>
+      <AdditionalDataId>31</AdditionalDataId> <!-- ItemAccesoryData Id -->
       <ItemCategory>Perfume</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>68</EquipBonusId>
@@ -3381,13 +3388,15 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ShopAvailability>Unknown20</ShopAvailability>
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
+
+	<!-- Item Range: Consumables -->
     <Item>
-      <Id>240</Id>
+      <Id>240</Id> <!-- Potion / ほーしょん / potion / heiltrank -->
       <Palette>13</Palette>
       <SpriteID>162</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>0</AdditionalDataId>
+      <AdditionalDataId>0</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3396,12 +3405,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>241</Id>
+      <Id>241</Id> <!-- High Potion / はいほーしょん / super potion / supertrank -->
       <Palette>13</Palette>
       <SpriteID>176</SpriteID>
       <RequiredLevel>2</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>1</AdditionalDataId>
+      <AdditionalDataId>1</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3410,12 +3419,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>242</Id>
+      <Id>242</Id> <!-- X-Potion / えくすほーしょん / maxi potion / ubertrank -->
       <Palette>13</Palette>
       <SpriteID>177</SpriteID>
       <RequiredLevel>3</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>2</AdditionalDataId>
+      <AdditionalDataId>2</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3424,12 +3433,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>243</Id>
+      <Id>243</Id> <!-- Ether / えーてる / ether / ather -->
       <Palette>11</Palette>
       <SpriteID>165</SpriteID>
       <RequiredLevel>4</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>3</AdditionalDataId>
+      <AdditionalDataId>3</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3438,12 +3447,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>244</Id>
+      <Id>244</Id> <!-- High Ether / はいえーてる / super ether / super-ather -->
       <Palette>11</Palette>
       <SpriteID>166</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>4</AdditionalDataId>
+      <AdditionalDataId>4</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3452,12 +3461,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>245</Id>
+      <Id>245</Id> <!-- Elixir / えりくさー / elixir / elixier -->
       <Palette>11</Palette>
       <SpriteID>167</SpriteID>
       <RequiredLevel>14</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>13</AdditionalDataId>
+      <AdditionalDataId>13</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3466,12 +3475,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>246</Id>
+      <Id>246</Id> <!-- Antidote / とくけし / antidote / gegengift -->
       <Palette>12</Palette>
       <SpriteID>168</SpriteID>
       <RequiredLevel>6</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>5</AdditionalDataId>
+      <AdditionalDataId>5</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3480,12 +3489,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>247</Id>
+      <Id>247</Id> <!-- Eye Drops / めくすり / collyre / augentropfen -->
       <Palette>14</Palette>
       <SpriteID>169</SpriteID>
       <RequiredLevel>7</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>6</AdditionalDataId>
+      <AdditionalDataId>6</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3494,12 +3503,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>248</Id>
+      <Id>248</Id> <!-- Echo Herbs / やまひこそう / herbe decho / echokraut -->
       <Palette>11</Palette>
       <SpriteID>170</SpriteID>
       <RequiredLevel>8</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>7</AdditionalDataId>
+      <AdditionalDataId>7</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3508,12 +3517,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>249</Id>
+      <Id>249</Id> <!-- Maiden's Kiss / おとめのきっす / baiser de jouvencelle / jungfernkuss -->
       <Palette>9</Palette>
       <SpriteID>171</SpriteID>
       <RequiredLevel>9</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>8</AdditionalDataId>
+      <AdditionalDataId>8</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3522,12 +3531,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>250</Id>
+      <Id>250</Id> <!-- Gold Needle / きんのはり / epingle dor / goldnadel -->
       <Palette>13</Palette>
       <SpriteID>172</SpriteID>
       <RequiredLevel>10</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>9</AdditionalDataId>
+      <AdditionalDataId>9</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3536,12 +3545,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>251</Id>
+      <Id>251</Id> <!-- Holy Water / せいすい / eau benite / weihwasser -->
       <Palette>9</Palette>
       <SpriteID>173</SpriteID>
       <RequiredLevel>11</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>10</AdditionalDataId>
+      <AdditionalDataId>10</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3550,12 +3559,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>252</Id>
+      <Id>252</Id> <!-- Remedy / はんのうやく / remede / allheilmittel -->
       <Palette>11</Palette>
       <SpriteID>174</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>11</AdditionalDataId>
+      <AdditionalDataId>11</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3564,12 +3573,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>253</Id>
+      <Id>253</Id> <!-- Phoenix Down / ふぇにっくすのお / queue de phenix / phonixfeder -->
       <Palette>14</Palette>
       <SpriteID>175</SpriteID>
       <RequiredLevel>13</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>12</AdditionalDataId>
+      <AdditionalDataId>12</AdditionalDataId> <!-- ItemConsumableData Id -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3577,6 +3586,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ShopAvailability>Chapter1_Start</ShopAvailability>
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
+	  
+	<!-- Item Range: Random (This id represents a random item) -->
     <Item>
       <Id>254</Id>
       <Palette>0</Palette>
@@ -3591,6 +3602,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ShopAvailability>Blank</ShopAvailability>
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
+	  
+	<!-- Unused -->
     <Item>
       <Id>255</Id>
       <Palette>0</Palette>
@@ -3605,8 +3618,10 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ShopAvailability>Blank</ShopAvailability>
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
+
+	<!-- Item Range: IVC Specifics / Digital Deluxe Edition Bonuses -->
     <Item>
-      <Id>256</Id>
+      <Id>256</Id> <!-- Materia Blade Plus / まてりあふれいとかい / lame materia ii / materia-klinge plus -->
       <Palette>13</Palette>
       <SpriteID>21</SpriteID>
       <RequiredLevel>97</RequiredLevel>
@@ -3620,7 +3635,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>257</Id>
+      <Id>257</Id> <!-- Akademy Blade / あかてみーふれいと / lame de lacademie / akademieklinge -->
       <Palette>13</Palette>
       <SpriteID>12</SpriteID>
       <RequiredLevel>8</RequiredLevel>
@@ -3634,7 +3649,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>258</Id>
+      <Id>258</Id> <!-- Akademy Beret / あかてみーへれー / beret de lacademie / akademiebarett -->
       <Palette>3</Palette>
       <SpriteID>95</SpriteID>
       <RequiredLevel>5</RequiredLevel>
@@ -3648,7 +3663,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>259</Id>
+      <Id>259</Id> <!-- Akademy Tunic / あかてみーこーと / manteau de lacademie / akademiejacke -->
       <Palette>13</Palette>
       <SpriteID>178</SpriteID>
       <RequiredLevel>6</RequiredLevel>
@@ -3662,7 +3677,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Unused_0x0B>0</Unused_0x0B>
     </Item>
     <Item>
-      <Id>260</Id>
+      <Id>260</Id> <!-- Ring of Aptitude / しょふりんく / anneau des vocations / job-ring -->
       <Palette>12</Palette>
       <SpriteID>143</SpriteID>
       <RequiredLevel>51</RequiredLevel>

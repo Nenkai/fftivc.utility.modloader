@@ -4,6 +4,7 @@
 This table file is used to overwrite the game's hardcoded item accessory table.
 
 Refer to: https://ffhacktics.com/wiki/Accessory_Secondary_Data
+It is referenced from the ItemData table, with category ranges defined by ItemCategoryRanges.
 
 You can use this file as a base to edit Accessory data in your mod.
 Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/ItemAccessoryData.xml.
@@ -22,162 +23,162 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
   <Version>1</Version>
   <Entries>
     <ItemAccessory>
-      <Id>0</Id>
+      <Id>0</Id> <!-- Battle Boots / はとるふーつ / bottes de combat / kampfstiefel -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>1</Id>
+      <Id>1</Id> <!-- Spiked Boots / すはいくしゅーす / souliers cloutes / kletterstiefel -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>2</Id>
+      <Id>2</Id> <!-- Germinas Boots / けるみなすふーつ / bottes de germinas / germinas-stiefel -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>3</Id>
+      <Id>3</Id> <!-- Rubber Boots / らはーしゅーす / bottes en latex / gummischuhe -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>4</Id>
+      <Id>4</Id> <!-- Winged Boots / ふぇさーふーつ / bottes ailees / federstiefel -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>5</Id>
+      <Id>5</Id> <!-- Hermes Shoes / えるめすのくつ / sandales dhermes / hermes-stiefel -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>6</Id>
+      <Id>6</Id> <!-- Red Shoes / あかいくつ / souliers rouges / rote stiefel -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>7</Id>
+      <Id>7</Id> <!-- Power Gauntlets / はわーりすと / poignets de force / kraftreif -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>8</Id>
+      <Id>8</Id> <!-- Genji Gloves / けんしのこて / gants genji / genji-handschuhe -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>9</Id>
+      <Id>9</Id> <!-- Magepower Gloves / まりょくのこて / gants mystiques / magus-handschuh -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>10</Id>
+      <Id>10</Id> <!-- Bracers / ふれいさー / brassards / lederhandschuhe -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>11</Id>
+      <Id>11</Id> <!-- Reflect Ring / りふれくとりんく / bague reflectrice / spiegelring -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>12</Id>
+      <Id>12</Id> <!-- Protect Ring / まもりのゆひわ / anneau protecteur / schutzring -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>13</Id>
+      <Id>13</Id> <!-- Magick Ring / まほうのりんく / bague de mage / magiering -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>14</Id>
+      <Id>14</Id> <!-- Cursed Ring / のろいのゆひわ / bague maudite / fluchring -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>15</Id>
+      <Id>15</Id> <!-- Angel Ring / てんしのゆひわ / bague dange / engelsring -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>16</Id>
+      <Id>16</Id> <!-- Diamond Bracelet / たいあのうてわ / bracelet de diamant / diamant-armreif -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>17</Id>
+      <Id>17</Id> <!-- Jade Armlet / ひすいのうてわ / bracelet de jade / jadereif -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>18</Id>
+      <Id>18</Id> <!-- Japa Mala / ひゃくはちのしゅす / mala / mala -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>19</Id>
+      <Id>19</Id> <!-- Nu Khai Armband / んかいのうてわ / bracelet de nkai / nkai-armreif -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>20</Id>
+      <Id>20</Id> <!-- Guardian Bracelet / まもりのうてわ / bracelet protecteur / schutzreif -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>21</Id>
+      <Id>21</Id> <!-- Shoulder Cape / すもーるまんと / cape courte / schultermantel -->
       <PhysicalEvasion>10</PhysicalEvasion>
       <MagicalEvasion>10</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>22</Id>
+      <Id>22</Id> <!-- Leather Cloak / かわのまんと / cape de cuir / ledermantel -->
       <PhysicalEvasion>15</PhysicalEvasion>
       <MagicalEvasion>15</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>23</Id>
+      <Id>23</Id> <!-- Mage's Cloak / まとうしのまんと / cape de mage / zaubermantel -->
       <PhysicalEvasion>18</PhysicalEvasion>
       <MagicalEvasion>18</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>24</Id>
+      <Id>24</Id> <!-- Elven Cloak / えるふのまんと / cape elfique / elfenmantel -->
       <PhysicalEvasion>25</PhysicalEvasion>
       <MagicalEvasion>25</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>25</Id>
+      <Id>25</Id> <!-- Vampire Cape / とらきゅらまんと / cape de dracula / vampirmantel -->
       <PhysicalEvasion>28</PhysicalEvasion>
       <MagicalEvasion>28</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>26</Id>
+      <Id>26</Id> <!-- Featherweave Cloak / ふぇさーまんと / cape de plumes / federmantel -->
       <PhysicalEvasion>40</PhysicalEvasion>
       <MagicalEvasion>30</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>27</Id>
+      <Id>27</Id> <!-- Invisibility Cloak / きえるまんと / cape invisible / tarnmantel -->
       <PhysicalEvasion>35</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>28</Id>
+      <Id>28</Id> <!-- Chantage / しゃんたーしゅ / chantage / chantage -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>29</Id>
+      <Id>29</Id> <!-- Envoûtement / しぇるしぇ / envoutement / envoutement -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>30</Id>
+      <Id>30</Id> <!-- Septième Sens / せってぃえむそん / septieme sens / septieme sens -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>
     <ItemAccessory>
-      <Id>31</Id>
+      <Id>31</Id> <!-- Sortilège / そるてぃれーしゅ / sortilege / sortilege -->
       <PhysicalEvasion>0</PhysicalEvasion>
       <MagicalEvasion>0</MagicalEvasion>
     </ItemAccessory>

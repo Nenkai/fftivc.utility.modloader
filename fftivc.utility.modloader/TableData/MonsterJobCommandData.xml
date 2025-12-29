@@ -4,6 +4,7 @@
 This table file is used to overwrite the game's hardcoded monster job command table.
 
 Refer to: https://ffhacktics.com/wiki/Monster_Skills
+This table represents jobs for monsters, thus the id continues on top of JobData. The data is however different.
 
 You can use this file as a base to edit Monster Job Command data in your mod.
 Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/MonsterJobCommandData.xml.
@@ -14,9 +15,6 @@ value from the original table or, from other mods making changes depending on mo
 
 IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
 
-IMPORTANT 3: You do not need to worry about setting ExtendMonsterAbilityIdFlagBits.
-The loader will fill these according to ids. You're free to use ids 0-512 directly.
-
 For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/MONSTER_JOB_COMMAND_DATA.cs
 
 NOTE: Innate abilities for monsters may be set with their Job Data
@@ -26,336 +24,336 @@ NOTE: Innate abilities for monsters may be set with their Job Data
   <Version>1</Version>
   <Entries>
     <MonsterJobCommand>
-      <Id>176</Id>
+      <Id>176</Id> <!-- Chocobo -->
       <AbilityId1>265</AbilityId1>
       <AbilityId2>269</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>268</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>177</Id>
+      <Id>177</Id> <!-- Black Chocobo -->
       <AbilityId1>265</AbilityId1>
       <AbilityId2>266</AbilityId2>
       <AbilityId3>268</AbilityId3>
       <AbilityId4>267</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>178</Id>
+      <Id>178</Id> <!-- Red Chocobo -->
       <AbilityId1>265</AbilityId1>
       <AbilityId2>266</AbilityId2>
       <AbilityId3>267</AbilityId3>
       <AbilityId4>269</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>179</Id>
+      <Id>179</Id> <!-- Goblin -->
       <AbilityId1>270</AbilityId1>
       <AbilityId2>273</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>271</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>180</Id>
+      <Id>180</Id> <!-- Black Goblin -->
       <AbilityId1>270</AbilityId1>
       <AbilityId2>272</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>271</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>181</Id>
+      <Id>181</Id> <!-- Gobbledeguck -->
       <AbilityId1>270</AbilityId1>
       <AbilityId2>273</AbilityId2>
       <AbilityId3>271</AbilityId3>
       <AbilityId4>274</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>182</Id>
+      <Id>182</Id> <!-- Bomb -->
       <AbilityId1>275</AbilityId1>
       <AbilityId2>277</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>276</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>183</Id>
+      <Id>183</Id> <!-- Grenade -->
       <AbilityId1>275</AbilityId1>
       <AbilityId2>225</AbilityId2>
       <AbilityId3>277</AbilityId3>
       <AbilityId4>278</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>184</Id>
+      <Id>184</Id> <!-- Explosive -->
       <AbilityId1>275</AbilityId1>
       <AbilityId2>277</AbilityId2>
       <AbilityId3>279</AbilityId3>
       <AbilityId4>226</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>185</Id>
+      <Id>185</Id> <!-- Red Panther -->
       <AbilityId1>280</AbilityId1>
       <AbilityId2>283</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>281</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>186</Id>
+      <Id>186</Id> <!-- Cuar (Coeurl) -->
       <AbilityId1>280</AbilityId1>
       <AbilityId2>281</AbilityId2>
       <AbilityId3>283</AbilityId3>
       <AbilityId4>282</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>187</Id>
+      <Id>187</Id> <!-- Vampire (Vampire Cat) -->
       <AbilityId1>280</AbilityId1>
       <AbilityId2>281</AbilityId2>
       <AbilityId3>282</AbilityId3>
       <AbilityId4>284</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>188</Id>
+      <Id>188</Id> <!-- Pisco Demon (Piscodaemon) -->
       <AbilityId1>285</AbilityId1>
       <AbilityId2>0</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>286</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>189</Id>
+      <Id>189</Id> <!-- Squidlarkin (Squidraken) -->
       <AbilityId1>285</AbilityId1>
       <AbilityId2>286</AbilityId2>
       <AbilityId3>287</AbilityId3>
       <AbilityId4>288</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>190</Id>
+      <Id>190</Id> <!-- Mindflare (Mindflayer) -->
       <AbilityId1>285</AbilityId1>
       <AbilityId2>286</AbilityId2>
       <AbilityId3>288</AbilityId3>
       <AbilityId4>289</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>191</Id>
+      <Id>191</Id> <!-- Skeleton -->
       <AbilityId1>290</AbilityId1>
       <AbilityId2>291</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>292</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>192</Id>
+      <Id>192</Id> <!-- Bone Snatch (Bonesnatch) -->
       <AbilityId1>290</AbilityId1>
       <AbilityId2>292</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>293</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>193</Id>
+      <Id>193</Id> <!-- Living Bone (Skeletal Fiend) -->
       <AbilityId1>290</AbilityId1>
       <AbilityId2>293</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>294</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>194</Id>
+      <Id>194</Id> <!-- Ghoul -->
       <AbilityId1>295</AbilityId1>
       <AbilityId2>297</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>299</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>195</Id>
+      <Id>195</Id> <!-- Gust (Ghast) -->
       <AbilityId1>295</AbilityId1>
       <AbilityId2>299</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>298</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>196</Id>
+      <Id>196</Id> <!-- Revnant (Revenant) -->
       <AbilityId1>295</AbilityId1>
       <AbilityId2>298</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>296</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>197</Id>
+      <Id>197</Id> <!-- Flotiball (Floating Eye) -->
       <AbilityId1>300</AbilityId1>
       <AbilityId2>0</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>302</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>198</Id>
+      <Id>198</Id> <!-- Ahriman -->
       <AbilityId1>300</AbilityId1>
       <AbilityId2>301</AbilityId2>
       <AbilityId3>302</AbilityId3>
       <AbilityId4>304</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>199</Id>
+      <Id>199</Id> <!-- Plague (Plague Horror) -->
       <AbilityId1>300</AbilityId1>
       <AbilityId2>301</AbilityId2>
       <AbilityId3>304</AbilityId3>
       <AbilityId4>303</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>200</Id>
+      <Id>200</Id> <!-- Juravis (Jura Aevis) -->
       <AbilityId1>305</AbilityId1>
       <AbilityId2>0</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>308</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>201</Id>
+      <Id>201</Id> <!-- Steel Hawk (Steelhawk) -->
       <AbilityId1>305</AbilityId1>
       <AbilityId2>307</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>306</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>202</Id>
+      <Id>202</Id> <!-- Cocatoris (Cockatrice) -->
       <AbilityId1>305</AbilityId1>
       <AbilityId2>306</AbilityId2>
       <AbilityId3>308</AbilityId3>
       <AbilityId4>309</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>203</Id>
+      <Id>203</Id> <!-- Uribo (Pig) -->
       <AbilityId1>310</AbilityId1>
       <AbilityId2>0</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>312</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>204</Id>
+      <Id>204</Id> <!-- Porky (Swine) -->
       <AbilityId1>310</AbilityId1>
       <AbilityId2>313</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>311</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>205</Id>
+      <Id>205</Id> <!-- Wildbow (Wild Boar) -->
       <AbilityId1>310</AbilityId1>
       <AbilityId2>311</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>314</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>206</Id>
+      <Id>206</Id> <!-- Woodman (Dryad) -->
       <AbilityId1>315</AbilityId1>
       <AbilityId2>0</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>316</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>207</Id>
+      <Id>207</Id> <!-- Trent -->
       <AbilityId1>315</AbilityId1>
       <AbilityId2>318</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>317</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>208</Id>
+      <Id>208</Id> <!-- Taiju (Elder Treant) -->
       <AbilityId1>315</AbilityId1>
       <AbilityId2>316</AbilityId2>
       <AbilityId3>317</AbilityId3>
       <AbilityId4>319</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>209</Id>
+      <Id>209</Id> <!-- Bull Demon (Wisenkin) -->
       <AbilityId1>320</AbilityId1>
       <AbilityId2>0</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>323</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>210</Id>
+      <Id>210</Id> <!-- Minitaurus (Minotaur) -->
       <AbilityId1>320</AbilityId1>
       <AbilityId2>321</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>324</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>211</Id>
+      <Id>211</Id> <!-- Sacred (Sekhret) -->
       <AbilityId1>320</AbilityId1>
       <AbilityId2>322</AbilityId2>
       <AbilityId3>323</AbilityId3>
       <AbilityId4>324</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>212</Id>
+      <Id>212</Id> <!-- Morbol (Malboro) -->
       <AbilityId1>325</AbilityId1>
       <AbilityId2>326</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>328</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>213</Id>
+      <Id>213</Id> <!-- Ochu -->
       <AbilityId1>325</AbilityId1>
       <AbilityId2>327</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>326</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>214</Id>
+      <Id>214</Id> <!-- Great Morbol (Greater Malboro) -->
       <AbilityId1>325</AbilityId1>
       <AbilityId2>328</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>329</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>215</Id>
+      <Id>215</Id> <!-- Behemoth -->
       <AbilityId1>330</AbilityId1>
       <AbilityId2>331</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>334</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>216</Id>
+      <Id>216</Id> <!-- King Behemoth (Behemoth King) -->
       <AbilityId1>330</AbilityId1>
       <AbilityId2>331</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>332</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>217</Id>
+      <Id>217</Id> <!-- Dark Behemoth -->
       <AbilityId1>330</AbilityId1>
       <AbilityId2>331</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>333</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>218</Id>
+      <Id>218</Id> <!-- Dragon -->
       <AbilityId1>335</AbilityId1>
       <AbilityId2>0</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>336</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>219</Id>
+      <Id>219</Id> <!-- Blue Dragon -->
       <AbilityId1>335</AbilityId1>
       <AbilityId2>337</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>339</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>220</Id>
+      <Id>220</Id> <!-- Red Dragon -->
       <AbilityId1>335</AbilityId1>
       <AbilityId2>338</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>339</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>221</Id>
+      <Id>221</Id> <!-- Hyudra (Hydra) -->
       <AbilityId1>340</AbilityId1>
       <AbilityId2>0</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>341</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>222</Id>
+      <Id>222</Id> <!-- Hydra (Greater Hydra) -->
       <AbilityId1>340</AbilityId1>
       <AbilityId2>343</AbilityId2>
       <AbilityId3>0</AbilityId3>
       <AbilityId4>342</AbilityId4>
     </MonsterJobCommand>
     <MonsterJobCommand>
-      <Id>223</Id>
+      <Id>223</Id> <!-- Tiamat -->
       <AbilityId1>341</AbilityId1>
       <AbilityId2>342</AbilityId2>
       <AbilityId3>343</AbilityId3>

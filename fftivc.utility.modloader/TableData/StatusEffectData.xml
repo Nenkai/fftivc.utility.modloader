@@ -125,7 +125,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>3</Id>
+      <Id>3</Id> <!-- KO / 戦闘不能 / Invalidité / K. o. -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>22</Order>
@@ -142,7 +142,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>4</Id>
+      <Id>4</Id> <!-- Undead / アンデッド / Mort-vivant / Untot -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>8</Order>
@@ -156,7 +156,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>5</Id>
+      <Id>5</Id> <!-- Readying / チャージ中 / Charge / Vorbereiten -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>7</Order>
@@ -171,7 +171,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>6</Id>
+      <Id>6</Id> <!-- Jumping / ジャンプ中 / En cours de saut / Im Sprung -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>6</Order>
@@ -185,7 +185,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>7</Id>
+      <Id>7</Id> <!-- Evading / 回避構え中 / Qui-vive / Bereitschaft -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>5</Order>
@@ -199,7 +199,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>8</Id>
+      <Id>8</Id> <!-- Performing / 詩い踊り中 / Récital / Performance -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>36</Order>
@@ -225,7 +225,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>9</Id>
+      <Id>9</Id> <!-- Stone / 石化 / Pétrification / Stein -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>21</Order>
@@ -239,7 +239,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>10</Id>
+      <Id>10</Id> <!-- Traitor / 勧誘 / Débauchage / Angeworben -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>25</Order>
@@ -253,7 +253,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>11</Id>
+      <Id>11</Id> <!-- Blindness / 暗闇 / Cécité / Blind -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>31</Order>
@@ -272,7 +272,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>12</Id>
+      <Id>12</Id> <!-- Confusion / 混乱 / Confusion / Konfus -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>33</Order>
@@ -286,7 +286,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>13</Id>
+      <Id>13</Id> <!-- Silence / 沈黙 / Silence / Stumm -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>30</Order>
@@ -305,7 +305,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>14</Id>
+      <Id>14</Id> <!-- Vampire / 吸血 / Vampire / Vampir -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>0</Order>
@@ -368,7 +368,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>16</Id>
+      <Id>16</Id> <!-- [MARKED FOR DELETION - REPORT IF DISPLAYED] Chest / USE16 / Trésor /  -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>23</Order>
@@ -382,7 +382,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>17</Id>
+      <Id>17</Id> <!-- Oil / オイル / Huile / Öl -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>15</Order>
@@ -396,7 +396,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>18</Id>
+      <Id>18</Id> <!-- Float / レビテト / Lévitation / Levitas -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>14</Order>
@@ -411,7 +411,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>19</Id>
+      <Id>19</Id> <!-- Reraise / リレイズ / Auréole / Schutzengel -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>13</Order>
@@ -425,7 +425,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>20</Id>
+      <Id>20</Id> <!-- Invisibility / 透明 / Invisibilité / Unsichtbar -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>24</Order>
@@ -444,7 +444,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>21</Id>
+      <Id>21</Id> <!-- Berserk / バーサク / Furie / Tobsucht -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>4</Order>
@@ -464,7 +464,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>22</Id>
+      <Id>22</Id> <!-- Chicken / チキン / Poule mouillée / Feige -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>32</Order>
@@ -483,7 +483,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>23</Id>
+      <Id>23</Id> <!-- Toad / カエル / Crapaud / Frosch -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>3</Order>
@@ -496,7 +496,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>24</Id>
+      <Id>24</Id> <!-- [MARKED FOR DELETION - REPORT IF DISPLAYED] Critical / USE24 / Agonie / (Wird gelöscht) Kritisch -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>26</Order>
@@ -512,7 +512,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>25</Id>
+      <Id>25</Id> <!-- Poison / 毒 / Poison / Gift -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>12</Order>
@@ -528,7 +528,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>26</Id>
+      <Id>26</Id> <!-- Regen / リジェネ / Récupération / Regena -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>19</Order>
@@ -542,7 +542,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>27</Id>
+      <Id>27</Id> <!-- Protect / プロテス / Bouclier / Protes -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>18</Order>
@@ -556,7 +556,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>28</Id>
+      <Id>28</Id> <!-- Shell / シェル / Barrière / Vallum -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>17</Order>
@@ -572,7 +572,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>29</Id>
+      <Id>29</Id> <!-- Haste / ヘイスト / Hâte / Hast -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>27</Order>
@@ -588,7 +588,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>30</Id>
+      <Id>30</Id> <!-- Slow / スロウ / Lenteur / Gemach -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>34</Order>
@@ -602,7 +602,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>31</Id>
+      <Id>31</Id> <!-- Stop / ストップ / Stop / Stopp -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>2</Order>
@@ -632,7 +632,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>33</Id>
+      <Id>33</Id> <!-- Faith / フェイス / Conversion / Ener -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>10</Order>
@@ -648,7 +648,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>34</Id>
+      <Id>34</Id> <!-- Atheist / イノセン / Reniement / Zweifel -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>20</Order>
@@ -667,7 +667,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>35</Id>
+      <Id>35</Id> <!-- Charmed / チャーム / Charme / Betört -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>35</Order>
@@ -686,7 +686,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>36</Id>
+      <Id>36</Id> <!-- Sleep / 睡眠 / Sommeil / Schlaf -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>28</Order>
@@ -700,7 +700,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>37</Id>
+      <Id>37</Id> <!-- Immobilize / ドンムブ / Inertie / Defix -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>29</Order>
@@ -714,7 +714,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>38</Id>
+      <Id>38</Id> <!-- Disable / ドンアク / Inaction / Inakt -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>16</Order>
@@ -728,7 +728,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>39</Id>
+      <Id>39</Id> <!-- Reflect / リフレク / Miroir / Reflek -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>9</Order>

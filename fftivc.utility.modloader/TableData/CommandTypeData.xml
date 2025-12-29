@@ -22,7 +22,28 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
   <Entries>
     <CommandType>
       <Id>0</Id>
+		
+      <!-- 
+	  Valid options are:
+	  - Default,
+      - ItemInventory,
+      - WeaponInventory,
+      - Mathematics,
+      - Elements,
+      - Blank0x5,
+      - Monster,
+      - KatanaInventory,
+      - Attack,
+      - Jump,
+      - Aim,
+      - Defend,
+      - ChangeEquipment,
+      - Unknown0xD,
+      - Blank0xE,
+      - Unknown0xF
+	  -->
       <Menu>Unknown0xF</Menu>
+		
     </CommandType>
     <CommandType>
       <Id>1</Id>

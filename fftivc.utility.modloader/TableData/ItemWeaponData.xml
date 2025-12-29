@@ -4,6 +4,7 @@
 This table file is used to overwrite the game's hardcoded item weapon table.
 
 Refer to: https://ffhacktics.com/wiki/Weapon_Secondary_Data
+It is referenced from the ItemData table, with category ranges defined by ItemCategoryRanges.
 
 You can use this file as a base to edit Weapon data in your mod.
 Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/ItemWeaponData.xml.
@@ -24,10 +25,10 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
   <Version>1</Version>
   <Entries>
     <ItemWeapon>
-      <Id>0</Id>
+      <Id>0</Id> <!-- Nothing Equipped / すて / vide / nichts -->
       <Range>1</Range>
       <AttackFlags>TwoSwords, Striking</AttackFlags>
-      <Formula>1</Formula>
+      <Formula>1</Formula> <!-- 0x01, refer to https://ffhacktics.com/wiki/Formulas -->
       <Unused_0x03>255</Unused_0x03>
       <Power>0</Power>
       <Evasion>0</Evasion>
@@ -35,7 +36,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>1</Id>
+      <Id>1</Id> <!-- Dagger / たかー / dague / dolch -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -46,7 +47,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>2</Id>
+      <Id>2</Id> <!-- Mythril Knife / みすりるないふ / poignard de mithril / mithril-messer -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -57,7 +58,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>3</Id>
+      <Id>3</Id> <!-- Blind Knife / ふらいんないふ / poignard cecite / blindmesser -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -68,7 +69,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>9</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>4</Id>
+      <Id>4</Id> <!-- Mage Masher / めいしまっしゃー / baillonneuse / silenquedea -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -79,7 +80,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>10</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>5</Id>
+      <Id>5</Id> <!-- Platinum Dagger / ふらちなめっさー / dent de platine / platindolch -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -90,7 +91,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>6</Id>
+      <Id>6</Id> <!-- Main Gauche / まいんこーしゅ / main gauche / main gauche -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -101,7 +102,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>7</Id>
+      <Id>7</Id> <!-- Orichalcum Dirk / おりはるこん / dent dorichalque / orichalcum -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -112,7 +113,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>8</Id>
+      <Id>8</Id> <!-- Assassin's Dagger / あさしんたかー / assassine / assassinendolch -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -123,7 +124,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>11</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>9</Id>
+      <Id>9</Id> <!-- Air Knife / えあないふ / dague eolienne / luftmesser -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -134,7 +135,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>10</Id>
+      <Id>10</Id> <!-- Zwill Straightblade / そーりんしぇいふ / lame de solingen / zorlin-dolch -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -145,7 +146,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>12</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>11</Id>
+      <Id>11</Id> <!-- Ninja Blade / しのひかたな / shinobi gatana / ninja-schwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -156,7 +157,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>12</Id>
+      <Id>12</Id> <!-- Kunai / くない / kunai / kunai -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -167,7 +168,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>13</Id>
+      <Id>13</Id> <!-- Kodachi / こたち / kodachi / kodachi -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -178,7 +179,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>14</Id>
+      <Id>14</Id> <!-- Ninja Longblade / にんしゃろんく / lamelongue ninja / ninja-langschwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -189,7 +190,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>15</Id>
+      <Id>15</Id> <!-- Spellbinder / しゅはくかたな / lame bridante / fesselklinge -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -200,7 +201,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>13</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>16</Id>
+      <Id>16</Id> <!-- Sasuke's Blade / さすけのかたな / katana de sasuke / sasukenin -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -211,7 +212,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>17</Id>
+      <Id>17</Id> <!-- Iga Blade / いかにんとう / lame diga / iganin -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -222,7 +223,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>18</Id>
+      <Id>18</Id> <!-- Koga Blade / こうかにんとう / lame de koga / koganin -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -233,7 +234,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>19</Id>
+      <Id>19</Id> <!-- Broadsword / ふろーとそーと / epee large / breitschwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -244,7 +245,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>20</Id>
+      <Id>20</Id> <!-- Longsword / ろんくそーと / epee longue / langschwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -255,7 +256,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>21</Id>
+      <Id>21</Id> <!-- Iron Sword / あいあんそーと / epee de fer / eisenschwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -266,7 +267,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>22</Id>
+      <Id>22</Id> <!-- Mythril Sword / みすりるそーと / epee de mithril / mithril-schwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -277,7 +278,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>23</Id>
+      <Id>23</Id> <!-- Blood Sword / ふらっとそーと / epee sanguine / blutschwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>6</Formula>
@@ -288,7 +289,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>24</Id>
+      <Id>24</Id> <!-- Coral Sword / さんこのつるき / epee de corail / korallschwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -299,7 +300,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>25</Id>
+      <Id>25</Id> <!-- Ancient Sword / こたいのつるき / epee antique / antikschwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -310,7 +311,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>14</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>26</Id>
+      <Id>26</Id> <!-- Sleep Blade / ねむりのつるき / sabre des soupirs / schlummerklinge -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -321,7 +322,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>15</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>27</Id>
+      <Id>27</Id> <!-- Platinum Sword / ふらちなそーと / epee de platine / platinschwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -332,7 +333,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>28</Id>
+      <Id>28</Id> <!-- Diamond Sword / たいあそーと / epee de diamant / diamantschwert -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -343,7 +344,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>29</Id>
+      <Id>29</Id> <!-- Icebrand / あいすふらんと / epee de glace / eisbrand -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>2</Formula>
@@ -354,7 +355,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>25</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>30</Id>
+      <Id>30</Id> <!-- Runeblade / るーんふれいと / lame runique / runenklinge -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -365,7 +366,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>31</Id>
+      <Id>31</Id> <!-- Nagnarok / なくらろく / nagrarok / nagrarok -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -376,7 +377,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>16</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>32</Id>
+      <Id>32</Id> <!-- Materia Blade / まてりあふれいと / lame materia / materia-klinge -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -387,7 +388,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>33</Id>
+      <Id>33</Id> <!-- Defender / てぃふぇんたー / defenderesse / verteidiger -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -398,7 +399,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>34</Id>
+      <Id>34</Id> <!-- Save the Queen / せいふさくぃーん / garde la reine / koniginnenwache -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -409,7 +410,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>35</Id>
+      <Id>35</Id> <!-- Excalibur / えくすかりはー / excalibur / excalibur -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -420,7 +421,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>36</Id>
+      <Id>36</Id> <!-- Ragnarok / らくなろく / ragnarok / ragnarok -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -431,7 +432,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>37</Id>
+      <Id>37</Id> <!-- Chaos Blade / かおすふれいと / lame du chaos / fatalis -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -442,7 +443,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>17</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>38</Id>
+      <Id>38</Id> <!-- Ashura / あしゅら / ashura / ashura -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -453,7 +454,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>39</Id>
+      <Id>39</Id> <!-- Kotetsu / こてつ / kotetsu / kotetsu -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -464,7 +465,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>40</Id>
+      <Id>40</Id> <!-- Bizen Osafune / ひせんおさふね / bizen osafune / bizen-osafune -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -475,7 +476,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>41</Id>
+      <Id>41</Id> <!-- Murasame / むらさめ / murasame / murasame -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -486,7 +487,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>42</Id>
+      <Id>42</Id> <!-- Ame-no-Murakumo / あめのむらくも / ama no murakumo / murakumo -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -497,7 +498,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>43</Id>
+      <Id>43</Id> <!-- Kiyomori / きよもり / kiyomori / kiyomori -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -508,7 +509,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>44</Id>
+      <Id>44</Id> <!-- Muramasa / むらまさ / muramasa / muramasa -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -519,7 +520,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>45</Id>
+      <Id>45</Id> <!-- Kiku-ichimonji / きくいちもんし / kiku ichimonji / kikuichimonji -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -530,7 +531,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>46</Id>
+      <Id>46</Id> <!-- Masamune / まさむね / masamune / masamune -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -541,7 +542,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>47</Id>
+      <Id>47</Id> <!-- Chirijiraden / ちりしらてんかさりつるき / chirijiraden kazari / chirijiraden -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -552,7 +553,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>48</Id>
+      <Id>48</Id> <!-- Battle Axe / はとるあっくす / hache de guerre / kampfaxt -->
       <Range>1</Range>
       <AttackFlags>ForcedTwoHands, Throwable, TwoHands, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -563,7 +564,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>49</Id>
+      <Id>49</Id> <!-- Giant's Axe / きょしんのおの / hache de geant / riesenaxt -->
       <Range>1</Range>
       <AttackFlags>ForcedTwoHands, Throwable, TwoHands, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -574,7 +575,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>50</Id>
+      <Id>50</Id> <!-- Slasher / すらっしゃー / fendeuse / schlitzer -->
       <Range>1</Range>
       <AttackFlags>ForcedTwoHands, Throwable, TwoHands, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -585,7 +586,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>18</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>51</Id>
+      <Id>51</Id> <!-- Rod / ろっと / sceptre / zepter -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -596,7 +597,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>52</Id>
+      <Id>52</Id> <!-- Thunder Rod / さんたーろっと / sceptre de foudre / blitzrute -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>2</Formula>
@@ -607,7 +608,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>20</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>53</Id>
+      <Id>53</Id> <!-- Flame Rod / ふれいむろっと / sceptre de flamme / flammenzepter -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>2</Formula>
@@ -618,7 +619,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>16</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>54</Id>
+      <Id>54</Id> <!-- Ice Rod / あいすろっと / sceptre de glace / frostrute -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>2</Formula>
@@ -629,7 +630,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>24</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>55</Id>
+      <Id>55</Id> <!-- Poison Rod / ほいすんろっと / sceptre toxique / giftrute -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -640,7 +641,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>19</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>56</Id>
+      <Id>56</Id> <!-- Wizard's Rod / うぃさーとろっと / sceptre de sorcier / magierrute -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -651,7 +652,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>57</Id>
+      <Id>57</Id> <!-- Dragon Rod / とらこんろっと / sceptre de dragon / drachenstab -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -662,7 +663,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>58</Id>
+      <Id>58</Id> <!-- Rod of Faith / ふぇいすろっと / sceptre de la foi / ener-rute -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -673,7 +674,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>20</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>59</Id>
+      <Id>59</Id> <!-- Oak Staff / おーくすたっふ / crosse de chene / eichenstab -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -684,7 +685,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>60</Id>
+      <Id>60</Id> <!-- White Staff / ほわいとすたっふ / crosse blanche / weisser stab -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -695,7 +696,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>28</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>61</Id>
+      <Id>61</Id> <!-- Healing Staff / いやしのつえ / baton guerisseur / heilerstab -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>7</Formula>
@@ -706,7 +707,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>62</Id>
+      <Id>62</Id> <!-- Serpent Staff / へひのつえ / baton ophidien / schlangenstab -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -717,7 +718,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>63</Id>
+      <Id>63</Id> <!-- Mage's Staff / ましゅつしのつえ / baton de mage / zauberstab -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -728,7 +729,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>64</Id>
+      <Id>64</Id> <!-- Golden Staff / こーるとすたっふ / crosse dor / goldstock -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -739,7 +740,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>65</Id>
+      <Id>65</Id> <!-- Zeus Mace / めいすおふせうす / masse de zeus / zeus kolben -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -750,7 +751,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>66</Id>
+      <Id>66</Id> <!-- Staff of the Magi / けんしゃのつえ / baton de sage / weisenstock -->
       <Range>1</Range>
       <AttackFlags>TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -761,7 +762,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>67</Id>
+      <Id>67</Id> <!-- Iron Flail / ふれいる / fleau darmes / dreschflegel -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -772,7 +773,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>68</Id>
+      <Id>68</Id> <!-- Flail of Flame / ふれいむういっふ / fleau de flamme / feuerpeitsche -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>2</Formula>
@@ -783,7 +784,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>17</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>69</Id>
+      <Id>69</Id> <!-- Morning Star / もーにんくすたー / etoile du matin / morgenstern -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -794,7 +795,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>70</Id>
+      <Id>70</Id> <!-- Scorpion Tail / さそりのしっほ / queue de scorpion / skorpion -->
       <Range>1</Range>
       <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
       <Formula>1</Formula>
@@ -805,7 +806,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>71</Id>
+      <Id>71</Id> <!-- Romandan Pistol / ろまんたしゅう / fusil romandien / romanda-flinte -->
       <Range>8</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>3</Formula>
@@ -816,7 +817,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>72</Id>
+      <Id>72</Id> <!-- Mythril Gun / みすりるしゅう / fusil de mithril / mithril-flinte -->
       <Range>8</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>3</Formula>
@@ -827,7 +828,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>73</Id>
+      <Id>73</Id> <!-- Stoneshooter / せきかしゅう / fusil petrifiant / steinflinte -->
       <Range>8</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>3</Formula>
@@ -838,7 +839,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>74</Id>
+      <Id>74</Id> <!-- Glacial Gun / くれいしゃるかん / cryopistolet / frostflinte -->
       <Range>8</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>4</Formula>
@@ -849,7 +850,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>75</Id>
+      <Id>75</Id> <!-- Blaze Gun / ふれいすかん / pyropistolet / feuertrommel -->
       <Range>8</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>4</Formula>
@@ -860,7 +861,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>76</Id>
+      <Id>76</Id> <!-- Blaster / ふらすとかん / foudropistolet / strahlenkanone -->
       <Range>8</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>4</Formula>
@@ -871,7 +872,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>77</Id>
+      <Id>77</Id> <!-- Bowgun / ほうかん / arbalete / pistolenarmbrust -->
       <Range>4</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>1</Formula>
@@ -882,7 +883,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>78</Id>
+      <Id>78</Id> <!-- Knightslayer / ないときらー / galanticide / ritterschreck -->
       <Range>4</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>1</Formula>
@@ -893,7 +894,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>21</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>79</Id>
+      <Id>79</Id> <!-- Crossbow / くろすほう / manubaliste / armbrust -->
       <Range>4</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>1</Formula>
@@ -904,7 +905,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>80</Id>
+      <Id>80</Id> <!-- Poison Crossbow / ほいすんほう / arbalete poison / giftarmbrust -->
       <Range>4</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>1</Formula>
@@ -915,7 +916,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>22</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>81</Id>
+      <Id>81</Id> <!-- Hunting Crossbow / はんてぃんくほう / arbalete de chasse / jagdbogen -->
       <Range>4</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>1</Formula>
@@ -926,7 +927,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>82</Id>
+      <Id>82</Id> <!-- Gastrophetes / かすとらふぇてす / gastraphete / gastraphetes -->
       <Range>4</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>1</Formula>
@@ -937,7 +938,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>83</Id>
+      <Id>83</Id> <!-- Longbow / ろんくほう / arc long / langbogen -->
       <Range>5</Range>
       <AttackFlags>ForcedTwoHands, TwoHands, Arc</AttackFlags>
       <Formula>1</Formula>
@@ -948,7 +949,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>84</Id>
+      <Id>84</Id> <!-- Silver Bow / きんのゆみ / arc dargent / silberbogen -->
       <Range>5</Range>
       <AttackFlags>ForcedTwoHands, TwoHands, Arc</AttackFlags>
       <Formula>1</Formula>
@@ -959,7 +960,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>85</Id>
+      <Id>85</Id> <!-- Ice Bow / こおりのゆみ / arc de glace / frostbogen -->
       <Range>5</Range>
       <AttackFlags>ForcedTwoHands, TwoHands, Arc</AttackFlags>
       <Formula>1</Formula>
@@ -970,7 +971,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>86</Id>
+      <Id>86</Id> <!-- Lightning Bow / らいとにんくほう / arc de foudre / blitzbogen -->
       <Range>5</Range>
       <AttackFlags>ForcedTwoHands, TwoHands, Arc</AttackFlags>
       <Formula>2</Formula>
@@ -981,7 +982,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>21</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>87</Id>
+      <Id>87</Id> <!-- Windslash Bow / かせきりのゆみ / arc rafale / windbogen -->
       <Range>5</Range>
       <AttackFlags>ForcedTwoHands, TwoHands, Arc</AttackFlags>
       <Formula>1</Formula>
@@ -992,7 +993,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>88</Id>
+      <Id>88</Id> <!-- Mythril Bow / みすりるのゆみ / arc de mithril / mithril-bogen -->
       <Range>5</Range>
       <AttackFlags>ForcedTwoHands, TwoHands, Arc</AttackFlags>
       <Formula>1</Formula>
@@ -1003,7 +1004,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>89</Id>
+      <Id>89</Id> <!-- Artemis Bow / あるてみすのゆみ / arc dartemis / artemis bogen -->
       <Range>5</Range>
       <AttackFlags>ForcedTwoHands, TwoHands, Arc</AttackFlags>
       <Formula>1</Formula>
@@ -1014,7 +1015,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>90</Id>
+      <Id>90</Id> <!-- Yoichi Bow / よいちのゆみ / arc de yoichi / yoichi-bogen -->
       <Range>5</Range>
       <AttackFlags>ForcedTwoHands, TwoHands, Arc</AttackFlags>
       <Formula>1</Formula>
@@ -1025,7 +1026,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>91</Id>
+      <Id>91</Id> <!-- Perseus Bow / へるせうすのゆみ / arc de persee / perseus' bogen -->
       <Range>5</Range>
       <AttackFlags>ForcedTwoHands, TwoHands, Arc</AttackFlags>
       <Formula>1</Formula>
@@ -1036,7 +1037,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>92</Id>
+      <Id>92</Id> <!-- Lamia's Harp / らみあのたてこと / lyre de lamia / lamia-harfe -->
       <Range>3</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1047,7 +1048,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>23</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>93</Id>
+      <Id>93</Id> <!-- Bloodstring Harp / ちのしゅうにけん / harpe de sang / blutstreicher -->
       <Range>3</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>6</Formula>
@@ -1058,7 +1059,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>94</Id>
+      <Id>94</Id> <!-- Faerie Harp / ようせいのはーふ / harpe de fee / feenharfe -->
       <Range>3</Range>
       <AttackFlags>Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1069,7 +1070,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>24</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>95</Id>
+      <Id>95</Id> <!-- Battle Folio / はとるてぃくと / encyclopedie militaire / kampfschrift -->
       <Range>3</Range>
       <AttackFlags>Throwable, Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1080,7 +1081,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>96</Id>
+      <Id>96</Id> <!-- Bestiary / かいふつしてん / bestiaire monstrueux / bestiarium -->
       <Range>3</Range>
       <AttackFlags>Throwable, Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1091,7 +1092,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>97</Id>
+      <Id>97</Id> <!-- Papyrus Codex / はひるすふれいと / parchemin blinde / papyrus-kodex -->
       <Range>3</Range>
       <AttackFlags>Throwable, Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1102,7 +1103,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>98</Id>
+      <Id>98</Id> <!-- Omnilex / またれむしえん / omnilex / omnilex -->
       <Range>3</Range>
       <AttackFlags>Throwable, Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1113,7 +1114,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>99</Id>
+      <Id>99</Id> <!-- Javelin / しゃへりん / javelot / jagdspeer -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1124,7 +1125,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>100</Id>
+      <Id>100</Id> <!-- Spear / すひあ / hast / speer -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1135,7 +1136,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>101</Id>
+      <Id>101</Id> <!-- Mythril Spear / みすりるすひあ / hast de mithril / mithril-speer -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1146,7 +1147,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>102</Id>
+      <Id>102</Id> <!-- Partisan / はるちさん / pertuisane / partisane -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1157,7 +1158,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>103</Id>
+      <Id>103</Id> <!-- Obelisk / おへりすく / obelisque / obelisk -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1168,7 +1169,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>104</Id>
+      <Id>104</Id> <!-- Holy Lance / ほーりーらんす / lance sacree / heilige lanze -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>2</Formula>
@@ -1179,7 +1180,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>15</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>105</Id>
+      <Id>105</Id> <!-- Dragon Whisker / りゅうのひけ / barbe de dragon / drachenbart -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1190,7 +1191,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>106</Id>
+      <Id>106</Id> <!-- Javelin / しゃへりん / javelot / wurfspeer -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1201,7 +1202,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>107</Id>
+      <Id>107</Id> <!-- Cypress Pole / さいふれすはいる / pieu de cypres / zypressenstab -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1212,7 +1213,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>108</Id>
+      <Id>108</Id> <!-- Battle Bamboo / はとるはんふー / bambou de combat / kampfstab -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1223,7 +1224,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>109</Id>
+      <Id>109</Id> <!-- Musk Pole / しゃこうしゃく / baton musque / moschus-stab -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1234,7 +1235,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>110</Id>
+      <Id>110</Id> <!-- Iron Fan / てっせん / eventail de fer / stahlfacher -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1245,7 +1246,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>111</Id>
+      <Id>111</Id> <!-- Gokuu's Pole / こくうのほう / baton de wukong / gokus stab -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1256,7 +1257,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>25</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>112</Id>
+      <Id>112</Id> <!-- Ivory Pole / そうけのほう / baton divoire / elfenbeinstab -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1267,7 +1268,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>113</Id>
+      <Id>113</Id> <!-- Eight-fluted Pole / はっかくほう / baton octogonal / achtkanter -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1278,7 +1279,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>26</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>114</Id>
+      <Id>114</Id> <!-- Whale Whisker / くしらのひけ / barbe de cachalot / walbart -->
       <Range>2</Range>
       <AttackFlags>Throwable, TwoHands, Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1289,7 +1290,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>115</Id>
+      <Id>115</Id> <!-- Catskin Bag / ちゃこるのはっく / sac de marque c. / chagaulle-tasche -->
       <Range>1</Range>
       <AttackFlags>Striking</AttackFlags>
       <Formula>1</Formula>
@@ -1300,7 +1301,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>116</Id>
+      <Id>116</Id> <!-- Fallingstar Bag / ふぁすてのはっく / sac de marque f.s. / fastait-tasche -->
       <Range>1</Range>
       <AttackFlags>Striking</AttackFlags>
       <Formula>1</Formula>
@@ -1311,7 +1312,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>117</Id>
+      <Id>117</Id> <!-- Proudhide Bag / はとらのはっく / sac de marque p. / patora-tasche -->
       <Range>1</Range>
       <AttackFlags>Striking</AttackFlags>
       <Formula>1</Formula>
@@ -1322,7 +1323,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>118</Id>
+      <Id>118</Id> <!-- Hardscale Bag / へりおねのはっく / sac de marque h. / helione-tasche -->
       <Range>1</Range>
       <AttackFlags>Striking</AttackFlags>
       <Formula>1</Formula>
@@ -1333,7 +1334,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>119</Id>
+      <Id>119</Id> <!-- Damask Cloth / へるしあ / etoffe persane / perserteppich -->
       <Range>2</Range>
       <AttackFlags>Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1344,7 +1345,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>120</Id>
+      <Id>120</Id> <!-- Cashmere / かしみーる / etoffe de cachemire / kaschmir -->
       <Range>2</Range>
       <AttackFlags>Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1355,7 +1356,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>121</Id>
+      <Id>121</Id> <!-- Wyrmweave Silk / りょうさんけん / etoffe de brocart / seidentuch -->
       <Range>2</Range>
       <AttackFlags>Lunging</AttackFlags>
       <Formula>1</Formula>
@@ -1366,7 +1367,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>122</Id>
+      <Id>122</Id> <!-- Shuriken / しゅりけん / shuriken / shuriken -->
       <Range>0</Range>
       <AttackFlags>Throwable, Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1377,7 +1378,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>123</Id>
+      <Id>123</Id> <!-- Fuma Shuriken / ふうまのしゅりけん / shuriken du clan fuma / fuma-shuriken -->
       <Range>0</Range>
       <AttackFlags>Throwable, Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1388,7 +1389,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>124</Id>
+      <Id>124</Id> <!-- Yagyu Darkrood / やきゅうのしっこく / etoile du clan yagyu / yagyunoshikkoku -->
       <Range>0</Range>
       <AttackFlags>Throwable, Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1399,7 +1400,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>125</Id>
+      <Id>125</Id> <!-- Flameburst Bomb / かとんのたま / bombe incendiaire / schlupfbombe -->
       <Range>0</Range>
       <AttackFlags>Throwable, Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1410,7 +1411,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>126</Id>
+      <Id>126</Id> <!-- Snowmelt Bomb / ひょうすいのたま / bombe hydraulique / schneeschmelze -->
       <Range>0</Range>
       <AttackFlags>Throwable, Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1421,7 +1422,7 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
     <ItemWeapon>
-      <Id>127</Id>
+      <Id>127</Id> <!-- Spark Bomb / らいしんのたま / bombe foudroyante / blitzknall -->
       <Range>0</Range>
       <AttackFlags>Throwable, Direct</AttackFlags>
       <Formula>1</Formula>
@@ -1429,28 +1430,6 @@ IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability
       <Power>8</Power>
       <Evasion>0</Evasion>
       <Elements>Lightning</Elements>
-      <OptionsAbilityId>0</OptionsAbilityId>
-    </ItemWeapon>
-    <ItemWeapon>
-      <Id>128</Id>
-      <Range>1</Range>
-      <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
-      <Formula>1</Formula>
-      <Unused_0x03>255</Unused_0x03>
-      <Power>16</Power>
-      <Evasion>10</Evasion>
-      <Elements>None</Elements>
-      <OptionsAbilityId>0</OptionsAbilityId>
-    </ItemWeapon>
-    <ItemWeapon>
-      <Id>129</Id>
-      <Range>1</Range>
-      <AttackFlags>Throwable, TwoHands, TwoSwords, Striking</AttackFlags>
-      <Formula>1</Formula>
-      <Unused_0x03>255</Unused_0x03>
-      <Power>6</Power>
-      <Evasion>10</Evasion>
-      <Elements>None</Elements>
       <OptionsAbilityId>0</OptionsAbilityId>
     </ItemWeapon>
   </Entries>

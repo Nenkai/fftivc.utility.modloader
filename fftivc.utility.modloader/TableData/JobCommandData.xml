@@ -52,7 +52,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>1</Id>
+      <Id>1</Id> <!-- Attack / たたかう / Attaque / Attacke -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>0</AbilityId1>
@@ -79,7 +79,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>2</Id>
+      <Id>2</Id> <!-- Evasive Stance / 回避構え / Qui-vive / Bereitschaft -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>0</AbilityId1>
@@ -106,7 +106,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>3</Id>
+      <Id>3</Id> <!-- Reequip / 戦闘装備変更 / Changement d'équipement / Ausrüstung wechseln -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>0</AbilityId1>
@@ -160,7 +160,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>5</Id>
+      <Id>5</Id> <!-- Fundaments / 基本技 / Bases du combat / Grundlagen -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>146</AbilityId1>
@@ -187,7 +187,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>6</Id>
+      <Id>6</Id> <!-- Items / アイテム / Objets / Gegenstand -->
       <ExtendAbilityIdFlagBits>ExtendedAbility8, ExtendedAbility7, ExtendedAbility6, ExtendedAbility5, ExtendedAbility4, ExtendedAbility3, ExtendedAbility2, ExtendedAbility1, ExtendedAbility14, ExtendedAbility13, ExtendedAbility12, ExtendedAbility11, ExtendedAbility10, ExtendedAbility9</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>368</AbilityId1>
@@ -214,7 +214,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>7</Id>
+      <Id>7</Id> <!-- Arts of War / 戦技 / Arts tactiques / Kriegskünste -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>138</AbilityId1>
@@ -241,7 +241,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>8</Id>
+      <Id>8</Id> <!-- Aim / チャージ / Charge / Zielen -->
       <ExtendAbilityIdFlagBits>ExtendedAbility8, ExtendedAbility7, ExtendedAbility6, ExtendedAbility5, ExtendedAbility4, ExtendedAbility3, ExtendedAbility2, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>406</AbilityId1>
@@ -268,7 +268,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>9</Id>
+      <Id>9</Id> <!-- Martial Arts / 拳術 / Arts martiaux / Kampfkünste -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>100</AbilityId1>
@@ -295,7 +295,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>10</Id>
+      <Id>10</Id> <!-- White Magicks / 白魔法 / Magie blanche / Weißmagie -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>1</AbilityId1>
@@ -322,7 +322,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>11</Id>
+      <Id>11</Id> <!-- Black Magicks / 黒魔法 / Magie noire / Schwarzmagie -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>16</AbilityId1>
@@ -349,7 +349,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>12</Id>
+      <Id>12</Id> <!-- Time Magicks / 時魔法 / Magie temporelle / Zeitmagie -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>32</AbilityId1>
@@ -376,7 +376,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>13</Id>
+      <Id>13</Id> <!-- Summon / 召喚魔法 / Invocation / Beschwören -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>60</AbilityId1>
@@ -403,7 +403,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>14</Id>
+      <Id>14</Id> <!-- Steal / 盗む / Vol / Stehlen -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>108</AbilityId1>
@@ -430,7 +430,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>490</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>15</Id>
+      <Id>15</Id> <!-- Speechcraft / 話術 / Médiation / Rhetorik -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>116</AbilityId1>
@@ -457,7 +457,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>16</Id>
+      <Id>16</Id> <!-- Mystic Arts / 陰陽術 / Voie du yin-yang / Mystik -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>46</AbilityId1>
@@ -484,7 +484,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>17</Id>
+      <Id>17</Id> <!-- Geomancy / 風水術 / Géomancie / Feng Shui -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>126</AbilityId1>
@@ -511,7 +511,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>18</Id>
+      <Id>18</Id> <!-- Jump / ジャンプ / Saut / Sprung -->
       <ExtendAbilityIdFlagBits>ExtendedAbility8, ExtendedAbility7, ExtendedAbility6, ExtendedAbility5, ExtendedAbility4, ExtendedAbility3, ExtendedAbility2, ExtendedAbility1, ExtendedAbility12, ExtendedAbility11, ExtendedAbility10, ExtendedAbility9</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>394</AbilityId1>
@@ -538,7 +538,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>19</Id>
+      <Id>19</Id> <!-- Iaido / 引き出す / Iaidō / Iaido -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>76</AbilityId1>
@@ -565,7 +565,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>20</Id>
+      <Id>20</Id> <!-- Throw / 投げる / Lancer d'arme / Werfen -->
       <ExtendAbilityIdFlagBits>ExtendedAbility8, ExtendedAbility7, ExtendedAbility6, ExtendedAbility5, ExtendedAbility4, ExtendedAbility3, ExtendedAbility2, ExtendedAbility1, ExtendedAbility12, ExtendedAbility11, ExtendedAbility10, ExtendedAbility9</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>382</AbilityId1>
@@ -592,7 +592,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>21</Id>
+      <Id>21</Id> <!-- Arithmeticks / 算術 / Arithmétique / Arithmetik -->
       <ExtendAbilityIdFlagBits>ExtendedAbility8, ExtendedAbility7, ExtendedAbility6, ExtendedAbility5, ExtendedAbility4, ExtendedAbility3, ExtendedAbility2, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>414</AbilityId1>
@@ -619,7 +619,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>22</Id>
+      <Id>22</Id> <!-- Bardsong / 詩う / Chant / Gesang -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>86</AbilityId1>
@@ -646,7 +646,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>23</Id>
+      <Id>23</Id> <!-- Dance / 踊る / Danse / Tanz -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>93</AbilityId1>
@@ -673,7 +673,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>24</Id>
+      <Id>24</Id> <!-- Mimic / ものまね / Imitation / Pantomimik -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>0</AbilityId1>
@@ -700,7 +700,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>25</Id>
+      <Id>25</Id> <!-- Mettle / ガッツ / Vaillance / Einsatz -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>146</AbilityId1>
@@ -727,7 +727,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>26</Id>
+      <Id>26</Id> <!-- Mettle / ガッツ / Vaillance / Einsatz -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>146</AbilityId1>
@@ -754,7 +754,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>27</Id>
+      <Id>27</Id> <!-- Mettle / ガッツ / Vaillance / Einsatz -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>146</AbilityId1>
@@ -781,7 +781,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>28</Id>
+      <Id>28</Id> <!-- Mettle / ガッツ / Vaillance / Einsatz -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>146</AbilityId1>
@@ -808,7 +808,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>29</Id>
+      <Id>29</Id> <!-- Holy Sword / 聖剣技 / Lames sacrées / Heilige Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>155</AbilityId1>
@@ -862,7 +862,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>31</Id>
+      <Id>31</Id> <!-- Fundaments / 基本技 / Bases du combat / Grundlagen -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>146</AbilityId1>
@@ -889,7 +889,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>32</Id>
+      <Id>32</Id> <!-- Fell Sword / 暗黒剣 / Lames ténébreuses / Schwarzschwert -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>165</AbilityId1>
@@ -916,7 +916,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>33</Id>
+      <Id>33</Id> <!-- Holy Sword / 聖剣技 / Lames sacrées / Heilige Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>155</AbilityId1>
@@ -943,7 +943,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>34</Id>
+      <Id>34</Id> <!-- Holy Sword / 聖剣技 / Lames sacrées / Heilige Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>155</AbilityId1>
@@ -997,7 +997,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>36</Id>
+      <Id>36</Id> <!-- Holy Magicks / 聖魔法 / Magie sainte / Heilige Magie -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>212</AbilityId1>
@@ -1024,7 +1024,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>37</Id>
+      <Id>37</Id> <!-- Aimed Shot / 狙撃 / Visée / Schießen -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>213</AbilityId1>
@@ -1051,7 +1051,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>38</Id>
+      <Id>38</Id> <!-- Aimed Shot / 狙撃 / Visée / Schießen -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>213</AbilityId1>
@@ -1078,7 +1078,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>39</Id>
+      <Id>39</Id> <!-- Fell Sword / 暗黒剣 / Lames ténébreuses / Schwarzschwert -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>165</AbilityId1>
@@ -1105,7 +1105,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>40</Id>
+      <Id>40</Id> <!-- Holy Sword / 聖剣技 / Lames sacrées / Heilige Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>155</AbilityId1>
@@ -1132,7 +1132,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>41</Id>
+      <Id>41</Id> <!-- Limit / リミット / Transcendance / Limit -->
       <ExtendAbilityIdFlagBits>ExtendedAbility8, ExtendedAbility7, ExtendedAbility6, ExtendedAbility5, ExtendedAbility4, ExtendedAbility3, ExtendedAbility2, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>257</AbilityId1>
@@ -1159,7 +1159,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>42</Id>
+      <Id>42</Id> <!-- Priest Magicks / 白養魔法 / Magisme blanc / Sakrales Urteil -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>3</AbilityId1>
@@ -1186,7 +1186,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>43</Id>
+      <Id>43</Id> <!-- Dragon / ドラゴン / Draconisme / Drache -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>248</AbilityId1>
@@ -1213,7 +1213,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>44</Id>
+      <Id>44</Id> <!-- Breath / ブレス / Souffles / Drachenatem -->
       <ExtendAbilityIdFlagBits>ExtendedAbility3, ExtendedAbility2, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>337</AbilityId1>
@@ -1240,7 +1240,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>45</Id>
+      <Id>45</Id> <!-- Sky Mantra / 真言 / Mantra / Himmelsmantra -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>169</AbilityId1>
@@ -1267,7 +1267,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>46</Id>
+      <Id>46</Id> <!-- Nether Mantra / 裏真言 / Exo-mantra / Antimantra -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>175</AbilityId1>
@@ -1294,7 +1294,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>47</Id>
+      <Id>47</Id> <!-- Astrology / 星天 / Astromancie / Astrologie -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>168</AbilityId1>
@@ -1321,7 +1321,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>48</Id>
+      <Id>48</Id> <!-- Holy Sword / 聖剣技 / Lames sacrées / Heilige Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>155</AbilityId1>
@@ -1348,7 +1348,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>49</Id>
+      <Id>49</Id> <!-- Holy Magicks / 聖魔法 / Magie sainte / Heilige Magie -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>212</AbilityId1>
@@ -1375,7 +1375,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>50</Id>
+      <Id>50</Id> <!-- Sky Mantra / 真言 / Mantra / Himmelsmantra -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>169</AbilityId1>
@@ -1402,7 +1402,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>51</Id>
+      <Id>51</Id> <!-- Arts of War / 戦技 / Arts tactiques / Schwertkünste -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>138</AbilityId1>
@@ -1429,7 +1429,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>52</Id>
+      <Id>52</Id> <!-- Jump / ジャンプ / Saut / Sprung -->
       <ExtendAbilityIdFlagBits>ExtendedAbility2, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>398</AbilityId1>
@@ -1456,7 +1456,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>53</Id>
+      <Id>53</Id> <!-- Pugilism / 拳技 / Pugilat / Faustkampf -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>102</AbilityId1>
@@ -1483,7 +1483,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>54</Id>
+      <Id>54</Id> <!-- Subdual Arts / 仕手 / Exécution / Geheimtechnik -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>181</AbilityId1>
@@ -1510,7 +1510,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>55</Id>
+      <Id>55</Id> <!-- Subdual Arts / 仕手 / Exécution / Geheimtechnik -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>181</AbilityId1>
@@ -1537,7 +1537,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>56</Id>
+      <Id>56</Id> <!-- Throw / 投げる / Lancer d'arme / Werfen -->
       <ExtendAbilityIdFlagBits>ExtendedAbility3, ExtendedAbility2, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>383</AbilityId1>
@@ -1564,7 +1564,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>57</Id>
+      <Id>57</Id> <!-- Throw / 投げる / Lancer d'arme / Werfen -->
       <ExtendAbilityIdFlagBits>ExtendedAbility2, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>382</AbilityId1>
@@ -1591,7 +1591,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>58</Id>
+      <Id>58</Id> <!-- Holy Sword / 聖剣技 / Lames sacrées / Heilige Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>158</AbilityId1>
@@ -1618,7 +1618,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>59</Id>
+      <Id>59</Id> <!-- Sword Spirit / 刀魂放気 / Esprit des lames / Schwertseele -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>76</AbilityId1>
@@ -1645,7 +1645,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>60</Id>
+      <Id>60</Id> <!-- Unyielding Blade / 剛剣 / Lames inflexibles / Eiserne Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>160</AbilityId1>
@@ -1672,7 +1672,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>61</Id>
+      <Id>61</Id> <!-- Magick Arts / 全魔法 / Magie universelle / Magiesturm -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>55</AbilityId1>
@@ -1699,7 +1699,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>62</Id>
+      <Id>62</Id> <!-- Sword Spirit / 刀魂放気 / Esprit des lames / Schwertseele -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>76</AbilityId1>
@@ -1726,7 +1726,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>63</Id>
+      <Id>63</Id> <!-- Vampire / 吸血 / Succion de sang / Blutsaugen -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>200</AbilityId1>
@@ -1753,7 +1753,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>64</Id>
+      <Id>64</Id> <!-- Unyielding Blade / 剛剣 / Lames inflexibles / Eiserne Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>160</AbilityId1>
@@ -1780,7 +1780,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>65</Id>
+      <Id>65</Id> <!-- Magick Arts / 全魔法 / Magie universelle / Magiesturm -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>218</AbilityId1>
@@ -1807,7 +1807,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>66</Id>
+      <Id>66</Id> <!-- Unyielding Blade / 剛剣 / Lames inflexibles / Eiserne Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>160</AbilityId1>
@@ -1834,7 +1834,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>67</Id>
+      <Id>67</Id> <!-- Unyielding Blade / 剛剣 / Lames inflexibles / Eiserne Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>160</AbilityId1>
@@ -1861,7 +1861,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>68</Id>
+      <Id>68</Id> <!-- Aimed Shot / 狙撃 / Visée / Schießen -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>213</AbilityId1>
@@ -1888,7 +1888,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>69</Id>
+      <Id>69</Id> <!-- Spellblade / 魔法剣 / Magilame / Magieklinge -->
       <ExtendAbilityIdFlagBits>ExtendedAbility15</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>234</AbilityId1>
@@ -1915,7 +1915,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>70</Id>
+      <Id>70</Id> <!-- Swordsmanship / 剣技 / Arts de l'épée / Schwertkunst -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>155</AbilityId1>
@@ -1942,7 +1942,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>71</Id>
+      <Id>71</Id> <!-- Magick Arts / 全魔法 / Magie universelle / Magiesturm -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>18</AbilityId1>
@@ -1969,7 +1969,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>72</Id>
+      <Id>72</Id> <!-- Magick Arts / 全魔法 / Magie universelle / Magiesturm -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>15</AbilityId1>
@@ -2023,7 +2023,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>74</Id>
+      <Id>74</Id> <!-- Swordplay / 全剣技 / Épée universelle / Schwertmeister -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>155</AbilityId1>
@@ -2050,7 +2050,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>75</Id>
+      <Id>75</Id> <!-- Blade of Ruin / 破壊魔剣 / Lames destructrices / Verwüstende Klinge -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>196</AbilityId1>
@@ -2077,7 +2077,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>76</Id>
+      <Id>76</Id> <!-- Holy Magicks / 聖魔法 / Magie sainte / Heilige Magie -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>212</AbilityId1>
@@ -4210,7 +4210,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>155</Id>
+      <Id>155</Id> <!-- Arts of War / 戦技 / Arts tactiques / Schwertkünste -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>138</AbilityId1>
@@ -4237,7 +4237,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>156</Id>
+      <Id>156</Id> <!-- Aim / チャージ / Charge / Zielen -->
       <ExtendAbilityIdFlagBits>ExtendedAbility7, ExtendedAbility6, ExtendedAbility5, ExtendedAbility4, ExtendedAbility3, ExtendedAbility2, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>406</AbilityId1>
@@ -4264,7 +4264,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>157</Id>
+      <Id>157</Id> <!-- Black Magicks / 黒魔法 / Magie noire / Schwarzmagie -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>17</AbilityId1>
@@ -4291,7 +4291,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>158</Id>
+      <Id>158</Id> <!-- Time Magicks / 時魔法 / Magie temporelle / Zeitmagie -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>32</AbilityId1>
@@ -4318,7 +4318,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>159</Id>
+      <Id>159</Id> <!-- Mystic Arts / 陰陽術 / Voie du yin-yang / Mystik -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>46</AbilityId1>
@@ -4345,7 +4345,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>486</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>160</Id>
+      <Id>160</Id> <!-- Summon / 召喚魔法 / Invocation / Beschwören -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>61</AbilityId1>
@@ -4615,7 +4615,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>170</Id>
+      <Id>170</Id> <!-- Spellcraft / マジック / Occultisme / Magie -->
       <ExtendAbilityIdFlagBits>ExtendedAbility2, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>355</AbilityId1>
@@ -4642,7 +4642,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>171</Id>
+      <Id>171</Id> <!-- Tasks / 作業 / Travail / Algorithmus -->
       <ExtendAbilityIdFlagBits>ExtendedAbility4, ExtendedAbility3, ExtendedAbility2, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>351</AbilityId1>
@@ -4669,7 +4669,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>172</Id>
+      <Id>172</Id> <!-- Bio / バイオ / Magie toxique / Bio -->
       <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>202</AbilityId1>
@@ -4723,7 +4723,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>174</Id>
+      <Id>174</Id> <!-- Dark Arts / 暗魔術 / Magie ténébreuse / Dunkle Flüche -->
       <ExtendAbilityIdFlagBits>ExtendedAbility3, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>348</AbilityId1>
@@ -4750,7 +4750,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
     </JobCommand>
     <JobCommand>
-      <Id>175</Id>
+      <Id>175</Id> <!-- Demon Magicks / 闇魔術 / Magie obscure / Dämonie -->
       <ExtendAbilityIdFlagBits>ExtendedAbility5, ExtendedAbility4, ExtendedAbility1</ExtendAbilityIdFlagBits>
       <ExtendReactionSupportMovementIdFlagBits>0</ExtendReactionSupportMovementIdFlagBits>
       <AbilityId1>349</AbilityId1>
