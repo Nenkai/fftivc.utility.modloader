@@ -20,18 +20,20 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOItemDataManager
 {
-    private readonly IModelSerializer<ItemTable> _itemTableSerializer;
+    private readonly IModelSerializer<ItemTable> _modelTableSerializer;
 
     public override string TableFileName => "ItemData";
+    public int NumEntries => 261;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<ITEM_COMMON_DATA> _itemCommonDataTablePointer;
     private FixedArrayPtr<ITEM_COMMON_DATA> _itemCommonDataTable2Pointer;
 
     public FFTOItemDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
-        IModelSerializer<ItemTable> itemSerializer)
+        IModelSerializer<ItemTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _itemTableSerializer = itemSerializer;
+        _modelTableSerializer = modelTableSerializer;
     }
 
     public unsafe void Init()
@@ -55,10 +57,10 @@ public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOI
 
             for (int i = 0; i < _itemCommonDataTablePointer.Count; i++)
             {
-                Item item = Item.FromStructure(i, ref _itemCommonDataTablePointer.AsRef(i));
+                Item model = Item.FromStructure(i, ref _itemCommonDataTablePointer.AsRef(i));
 
-                _originalTable.Entries.Add(item);
-                _moddedTable.Entries.Add(item.Clone());
+                _originalTable.Entries.Add(model);
+                _moddedTable.Entries.Add(model.Clone());
             }
         });
 
@@ -79,10 +81,10 @@ public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOI
             
             for (int i = 0; i < _itemCommonDataTable2Pointer.Count; i++)
             {
-                Item item = Item.FromStructure(256 + i, ref _itemCommonDataTable2Pointer.AsRef(i)); // extended table starts at 256.
+                Item model = Item.FromStructure(256 + i, ref _itemCommonDataTable2Pointer.AsRef(i)); // extended table starts at 256.
 
-                _originalTable.Entries.Add(item);
-                _moddedTable.Entries.Add(item.Clone());
+                _originalTable.Entries.Add(model);
+                _moddedTable.Entries.Add(model.Clone());
             }
 
 #if DEBUG
@@ -98,22 +100,22 @@ public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOI
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _itemTableSerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _itemTableSerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            ItemTable? itemTable = _itemTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
-            if (itemTable is null)
+            ItemTable? modelTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (modelTable is null)
                 return;
 
             // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-            _modTables.Add(modId, itemTable);
+            _modTables.Add(modId, modelTable);
         }
         catch (Exception ex)
         {
@@ -122,40 +124,40 @@ public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOI
         }
     }
 
-    public override void ApplyTablePatch(string modId, Item item)
+    public override void ApplyTablePatch(string modId, Item model)
     {
-        TrackModelChanges(modId, item);
+        TrackModelChanges(modId, model);
 
-        Item previous = _moddedTable.Entries[item.Id];
-        ref ITEM_COMMON_DATA itemCommonData = ref (item.Id <= 255
-         ? ref _itemCommonDataTablePointer.AsRef(item.Id)
-         : ref _itemCommonDataTable2Pointer.AsRef(item.Id - 256));
+        Item previous = _moddedTable.Entries[model.Id];
+        ref ITEM_COMMON_DATA data = ref (model.Id <= 255
+         ? ref _itemCommonDataTablePointer.AsRef(model.Id)
+         : ref _itemCommonDataTable2Pointer.AsRef(model.Id - 256));
 
-        itemCommonData.Palette = (byte)(item.Palette ?? previous.Palette)!;
-        itemCommonData.SpriteID = (byte)(item.SpriteID ?? previous.SpriteID)!;
-        itemCommonData.RequiredLevel = (byte)(item.RequiredLevel ?? previous.RequiredLevel)!;
-        itemCommonData.TypeFlags = (ItemTypeFlags)(item.TypeFlags ?? previous.TypeFlags)!;
-        itemCommonData.SecondTableId = (byte)(item.AdditionalDataId ?? previous.AdditionalDataId)!;
-        itemCommonData.ItemCategory = (ItemCategory)(item.ItemCategory ?? previous.ItemCategory)!;
-        itemCommonData.Unused_0x06 = (byte)(item.Unused_0x06 ?? previous.Unused_0x06)!;
-        itemCommonData.EquipBonusId = (byte)(item.EquipBonusId ?? previous.EquipBonusId)!;
-        itemCommonData.Price = (byte)(item.Price ?? previous.Price)!;
-        itemCommonData.ShopAvailability = (ItemShopAvailability)(item.ShopAvailability ?? previous.ShopAvailability)!;
-        itemCommonData.Unused_0x0B = (byte)(item.Unused_0x0B ?? previous.Unused_0x0B)!;
+        data.Palette = (byte)(model.Palette ?? previous.Palette)!;
+        data.SpriteID = (byte)(model.SpriteID ?? previous.SpriteID)!;
+        data.RequiredLevel = (byte)(model.RequiredLevel ?? previous.RequiredLevel)!;
+        data.TypeFlags = (ItemTypeFlags)(model.TypeFlags ?? previous.TypeFlags)!;
+        data.SecondTableId = (byte)(model.AdditionalDataId ?? previous.AdditionalDataId)!;
+        data.ItemCategory = (ItemCategory)(model.ItemCategory ?? previous.ItemCategory)!;
+        data.Unused_0x06 = (byte)(model.Unused_0x06 ?? previous.Unused_0x06)!;
+        data.EquipBonusId = (byte)(model.EquipBonusId ?? previous.EquipBonusId)!;
+        data.Price = (byte)(model.Price ?? previous.Price)!;
+        data.ShopAvailability = (ItemShopAvailability)(model.ShopAvailability ?? previous.ShopAvailability)!;
+        data.Unused_0x0B = (byte)(model.Unused_0x0B ?? previous.Unused_0x0B)!;
     }
 
     public Item GetOriginalItem(int index)
     {
-        if (index > 260)
-            throw new ArgumentOutOfRangeException(nameof(index), "Ability id can not be more than 260!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"Ability id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public Item GetItem(int index)
     {
-        if (index > 260)
-            throw new ArgumentOutOfRangeException(nameof(index), "Ability id can not be more than 260!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"Ability id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

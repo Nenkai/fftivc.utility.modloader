@@ -18,17 +18,17 @@ public class FFTOMonsterJobCommandDataManager : FFTOTableManagerBase<MonsterJobC
     private const short LastJobCommandId = 0xDF;    // Tiamat
     private const int DataCount = LastJobCommandId - FirstJobCommandId + 1;
 
-    private readonly IModelSerializer<MonsterJobCommandTable> _monsterJobCommandSerializer;
+    private readonly IModelSerializer<MonsterJobCommandTable> _modelTableSerializer;
 
     public override string TableFileName => "MonsterJobCommandData";
 
     private FixedArrayPtr<MONSTER_JOB_COMMAND_DATA> _monsterJobCommandDataTablePointer;
 
     public FFTOMonsterJobCommandDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
-        IModelSerializer<MonsterJobCommandTable> monsterJobCommandParser)
+        IModelSerializer<MonsterJobCommandTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _monsterJobCommandSerializer = monsterJobCommandParser;
+        _modelTableSerializer = modelTableSerializer;
     }
 
     public unsafe void Init()
@@ -55,10 +55,10 @@ public class FFTOMonsterJobCommandDataManager : FFTOTableManagerBase<MonsterJobC
             _originalTable = new MonsterJobCommandTable();
             for (int i = 0; i < _monsterJobCommandDataTablePointer.Count; i++)
             {
-                var monsterJobCommand = MonsterJobCommand.FromStructure(i + FirstJobCommandId, ref _monsterJobCommandDataTablePointer.AsRef(i));
+                var model = MonsterJobCommand.FromStructure(i + FirstJobCommandId, ref _monsterJobCommandDataTablePointer.AsRef(i));
 
-                _originalTable.Entries.Add(monsterJobCommand);
-                _moddedTable.Entries.Add(monsterJobCommand.Clone());
+                _originalTable.Entries.Add(model);
+                _moddedTable.Entries.Add(model.Clone());
             }
 
 #if DEBUG
@@ -74,17 +74,17 @@ public class FFTOMonsterJobCommandDataManager : FFTOTableManagerBase<MonsterJobC
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _monsterJobCommandSerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _monsterJobCommandSerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            MonsterJobCommandTable? monsterJobCommandTable = _monsterJobCommandSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            MonsterJobCommandTable? monsterJobCommandTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
             if (monsterJobCommandTable is null)
                 return;
 
@@ -98,27 +98,27 @@ public class FFTOMonsterJobCommandDataManager : FFTOTableManagerBase<MonsterJobC
         }
     }
    
-    public override void ApplyTablePatch(string modId, MonsterJobCommand monsterJobCommand)
+    public override void ApplyTablePatch(string modId, MonsterJobCommand model)
     {
-        TrackModelChanges(modId, monsterJobCommand);
+        TrackModelChanges(modId, model);
 
-        var index = IdToIndex(monsterJobCommand.Id);
+        var index = IdToIndex(model.Id);
         MonsterJobCommand previous = _moddedTable.Entries[index];
 
         // Actually apply changes
-        ref MONSTER_JOB_COMMAND_DATA monsterJobCommandData = ref _monsterJobCommandDataTablePointer.AsRef(index);
+        ref MONSTER_JOB_COMMAND_DATA data = ref _monsterJobCommandDataTablePointer.AsRef(index);
         
-        var ability1 = monsterJobCommand.AbilityId1 ?? (ushort)previous.AbilityId1!;
-        var ability2 = monsterJobCommand.AbilityId2 ?? (ushort)previous.AbilityId2!;
-        var ability3 = monsterJobCommand.AbilityId3 ?? (ushort)previous.AbilityId3!;
-        var ability4 = monsterJobCommand.AbilityId4 ?? (ushort)previous.AbilityId4!;
+        var ability1 = model.AbilityId1 ?? (ushort)previous.AbilityId1!;
+        var ability2 = model.AbilityId2 ?? (ushort)previous.AbilityId2!;
+        var ability3 = model.AbilityId3 ?? (ushort)previous.AbilityId3!;
+        var ability4 = model.AbilityId4 ?? (ushort)previous.AbilityId4!;
 
-        monsterJobCommandData.AbilityId1 = (byte)((ability1 > 255 ? ability1 - 256 : ability1) & 0xFF);
-        monsterJobCommandData.AbilityId2 = (byte)((ability2 > 255 ? ability2 - 256 : ability2) & 0xFF);
-        monsterJobCommandData.AbilityId3 = (byte)((ability3 > 255 ? ability3 - 256 : ability3) & 0xFF);
-        monsterJobCommandData.AbilityId4 = (byte)((ability4 > 255 ? ability4 - 256 : ability4) & 0xFF);
+        data.AbilityId1 = (byte)((ability1 > 255 ? ability1 - 256 : ability1) & 0xFF);
+        data.AbilityId2 = (byte)((ability2 > 255 ? ability2 - 256 : ability2) & 0xFF);
+        data.AbilityId3 = (byte)((ability3 > 255 ? ability3 - 256 : ability3) & 0xFF);
+        data.AbilityId4 = (byte)((ability4 > 255 ? ability4 - 256 : ability4) & 0xFF);
 
-        monsterJobCommandData.ExtendMonsterAbilityIdFlagBits =
+        data.ExtendMonsterAbilityIdFlagBits =
             (ability1 > 255 ? ExtendMonsterAbilityIdFlags.ExtendedAbility1 : 0) |
             (ability2 > 255 ? ExtendMonsterAbilityIdFlags.ExtendedAbility2 : 0) |
             (ability3 > 255 ? ExtendMonsterAbilityIdFlags.ExtendedAbility3 : 0) |
@@ -127,7 +127,7 @@ public class FFTOMonsterJobCommandDataManager : FFTOTableManagerBase<MonsterJobC
 
     public MonsterJobCommand GetOriginalMonsterJobCommand(int index)
     {
-        if (index >= DataCount)
+        if (index < FirstJobCommandId || index > LastJobCommandId)
             throw new ArgumentOutOfRangeException(nameof(index), $"MonsterJobCommand id can not be less than {FirstJobCommandId} or more than {LastJobCommandId}!");
 
         return _originalTable.Entries[index];
@@ -135,7 +135,7 @@ public class FFTOMonsterJobCommandDataManager : FFTOTableManagerBase<MonsterJobC
 
     public MonsterJobCommand GetMonsterJobCommand(int index)
     {
-        if (index >= DataCount)
+        if (index < FirstJobCommandId || index > LastJobCommandId)
             throw new ArgumentOutOfRangeException(nameof(index), $"MonsterJobCommand id can not be less than {FirstJobCommandId} or more than {LastJobCommandId}!");
 
         return _moddedTable.Entries[index];

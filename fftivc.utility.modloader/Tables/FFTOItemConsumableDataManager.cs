@@ -14,17 +14,19 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOItemConsumableDataManager : FFTOTableManagerBase<ItemConsumableTable, ItemConsumable>, IFFTOItemConsumableDataManager
 {
-    private readonly IModelSerializer<ItemConsumableTable> _dataTableSerializer;
+    private readonly IModelSerializer<ItemConsumableTable> _modelTableSerializer;
 
     public override string TableFileName => "ItemConsumableData";
+    public int NumEntries => 14;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<ITEM_CONSUMABLE_DATA> _itemConsumableDataTablePointer;
 
     public FFTOItemConsumableDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
-        IModelSerializer<ItemConsumableTable> dataTableSerializer)
+        IModelSerializer<ItemConsumableTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _dataTableSerializer = dataTableSerializer;
+        _modelTableSerializer = modelTableSerializer;
     }
 
     public unsafe void Init()
@@ -43,8 +45,8 @@ public class FFTOItemConsumableDataManager : FFTOTableManagerBase<ItemConsumable
             nuint tableAddress = (nuint)(processAddress + e.Offset);
             _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_CONSUMABLE_DATA) * 14, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemConsumableDataTablePointer = new FixedArrayPtr<ITEM_CONSUMABLE_DATA>((ITEM_CONSUMABLE_DATA*)tableAddress, 14);
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_CONSUMABLE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemConsumableDataTablePointer = new FixedArrayPtr<ITEM_CONSUMABLE_DATA>((ITEM_CONSUMABLE_DATA*)tableAddress, NumEntries);
 
             for (int i = 0; i < _itemConsumableDataTablePointer.Count; i++)
             {
@@ -67,17 +69,17 @@ public class FFTOItemConsumableDataManager : FFTOTableManagerBase<ItemConsumable
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _dataTableSerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _dataTableSerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            ItemConsumableTable? itemConsumableSecondaryTable = _dataTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            ItemConsumableTable? itemConsumableSecondaryTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
             if (itemConsumableSecondaryTable is null)
                 return;
 
@@ -91,30 +93,30 @@ public class FFTOItemConsumableDataManager : FFTOTableManagerBase<ItemConsumable
         }
     }
 
-    public override void ApplyTablePatch(string modId, ItemConsumable itemConsumable)
+    public override void ApplyTablePatch(string modId, ItemConsumable model)
     {
-        TrackModelChanges(modId, itemConsumable);
+        TrackModelChanges(modId, model);
 
-        ItemConsumable previous = _moddedTable.Entries[itemConsumable.Id];
-        ref ITEM_CONSUMABLE_DATA itemConsumableData = ref _itemConsumableDataTablePointer.AsRef(itemConsumable.Id);
+        ItemConsumable previous = _moddedTable.Entries[model.Id];
+        ref ITEM_CONSUMABLE_DATA itemConsumableData = ref _itemConsumableDataTablePointer.AsRef(model.Id);
 
-        itemConsumableData.Formula = (byte)(itemConsumable.Formula ?? previous.Formula)!;
-        itemConsumableData.Z = (byte)(itemConsumable.Z ?? previous.Z)!;
-        itemConsumableData.StatusEffectId = (byte)(itemConsumable.StatusEffectId ?? previous.StatusEffectId)!;
+        itemConsumableData.Formula = (byte)(model.Formula ?? previous.Formula)!;
+        itemConsumableData.Z = (byte)(model.Z ?? previous.Z)!;
+        itemConsumableData.StatusEffectId = (byte)(model.StatusEffectId ?? previous.StatusEffectId)!;
     }
 
     public ItemConsumable GetOriginalConsumableItem(int index)
     {
-        if (index > 13)
-            throw new ArgumentOutOfRangeException(nameof(index), "ItemConsumable id can not be more than 13!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemConsumable id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public ItemConsumable GetConsumableItem(int index)
     {
-        if (index > 13)
-            throw new ArgumentOutOfRangeException(nameof(index), "ItemConsumable id can not be more than 13!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemConsumable id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

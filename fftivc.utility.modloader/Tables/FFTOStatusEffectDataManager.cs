@@ -20,17 +20,19 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOStatusEffectDataManager : FFTOTableManagerBase<StatusEffectTable, StatusEffect>, IFFTOStatusEffectDataManager
 {
-    private readonly IModelSerializer<StatusEffectTable> _statusTableSerializer;
+    private readonly IModelSerializer<StatusEffectTable> _modelTableSerializer;
 
     public override string TableFileName => "StatusEffectData";
+    public int NumEntries => 40;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<STATUS_EFFECT_DATA> _statusDataTablePointer;
 
     public FFTOStatusEffectDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
-        IModelSerializer<StatusEffectTable> statusTableSerializer)
+        IModelSerializer<StatusEffectTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _statusTableSerializer = statusTableSerializer;
+        _modelTableSerializer = modelTableSerializer;
     }
 
     public unsafe void Init()
@@ -41,23 +43,23 @@ public class FFTOStatusEffectDataManager : FFTOTableManagerBase<StatusEffectTabl
         {
             if (!e.Found)
             {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find StatusEffectData table!", _logger.ColorRed);
+                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
                 return;
             }
 
             nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found StatusEffectData table @ 0x{tableAddress:X}");
+            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(STATUS_EFFECT_DATA) * 40, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _statusDataTablePointer = new FixedArrayPtr<STATUS_EFFECT_DATA>((STATUS_EFFECT_DATA*)tableAddress, 40);
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(STATUS_EFFECT_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _statusDataTablePointer = new FixedArrayPtr<STATUS_EFFECT_DATA>((STATUS_EFFECT_DATA*)tableAddress, NumEntries);
 
             _originalTable = new StatusEffectTable();
             for (int i = 0; i < _statusDataTablePointer.Count; i++)
             {
-                StatusEffect statusEffect = StatusEffect.FromStructure(i, ref _statusDataTablePointer.AsRef(i));
+                StatusEffect model = StatusEffect.FromStructure(i, ref _statusDataTablePointer.AsRef(i));
 
-                _originalTable.Entries.Add(statusEffect);
-                _moddedTable.Entries.Add(statusEffect.Clone());
+                _originalTable.Entries.Add(model);
+                _moddedTable.Entries.Add(model.Clone());
             }
 
 #if DEBUG
@@ -73,22 +75,22 @@ public class FFTOStatusEffectDataManager : FFTOTableManagerBase<StatusEffectTabl
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _statusTableSerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _statusTableSerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            StatusEffectTable? statusTable = _statusTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
-            if (statusTable is null)
+            StatusEffectTable? modelTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (modelTable is null)
                 return;
 
             // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-            _modTables.Add(modId, statusTable);
+            _modTables.Add(modId, modelTable);
         }
         catch (Exception ex)
         {
@@ -98,49 +100,49 @@ public class FFTOStatusEffectDataManager : FFTOTableManagerBase<StatusEffectTabl
     }
    
 
-    public unsafe override void ApplyTablePatch(string modId, StatusEffect status)
+    public unsafe override void ApplyTablePatch(string modId, StatusEffect model)
     {
-        TrackModelChanges(modId, status);
+        TrackModelChanges(modId, model);
 
-        StatusEffect previous = _moddedTable.Entries[status.Id];
+        StatusEffect previous = _moddedTable.Entries[model.Id];
 
         // Actually apply changes
-        ref STATUS_EFFECT_DATA statusEffectData = ref _statusDataTablePointer.AsRef(status.Id);
-        statusEffectData.Unused_0x00 = (byte)(status.Unused_0x00 ?? previous.Unused_0x00)!;
-        statusEffectData.Unused_0x01 = (byte)(status.Unused_0x01 ?? previous.Unused_0x01)!;
-        statusEffectData.Order = (byte)(status.Order ?? previous.Order)!;
-        statusEffectData.Counter = (byte)(status.Counter ?? previous.Counter)!;
-        statusEffectData.CheckFlags = (StatusCheckFlags)(status.CheckFlags ?? previous.CheckFlags)!;
+        ref STATUS_EFFECT_DATA data = ref _statusDataTablePointer.AsRef(model.Id);
+        data.Unused_0x00 = (byte)(model.Unused_0x00 ?? previous.Unused_0x00)!;
+        data.Unused_0x01 = (byte)(model.Unused_0x01 ?? previous.Unused_0x01)!;
+        data.Order = (byte)(model.Order ?? previous.Order)!;
+        data.Counter = (byte)(model.Counter ?? previous.Counter)!;
+        data.CheckFlags = (StatusCheckFlags)(model.CheckFlags ?? previous.CheckFlags)!;
 
-        var cancelFlags = status.CancelFlags ?? previous.CancelFlags;
+        var cancelFlags = model.CancelFlags ?? previous.CancelFlags;
         foreach (StatusEffectType flag in cancelFlags)
         {
             int byteIndex = (byte)(flag - 1) / 8;
             int bitIndex = (byte)(flag - 1) % 8;
-            statusEffectData.CancelFlags[byteIndex] |= (byte)(0x80 >> bitIndex);
+            data.CancelFlags[byteIndex] |= (byte)(0x80 >> bitIndex);
         }
 
-        var noStackFlags = status.NoStackFlags ?? previous.NoStackFlags;
+        var noStackFlags = model.NoStackFlags ?? previous.NoStackFlags;
         foreach (StatusEffectType flag in noStackFlags)
         {
             int byteIndex = (byte)(flag - 1) / 8;
             int bitIndex = (byte)(flag - 1) % 8;
-            statusEffectData.NoStackFlags[byteIndex] |= (byte)(0x80 >> bitIndex);
+            data.NoStackFlags[byteIndex] |= (byte)(0x80 >> bitIndex);
         }
     }
 
     public StatusEffect GetOriginalStatusEffect(int index)
     {
-        if (index > 40)
-            throw new ArgumentOutOfRangeException(nameof(index), "Status id can not be more than 40!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"Status id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public StatusEffect GetStatusEffect(int index)
     {
-        if (index > 40)
-            throw new ArgumentOutOfRangeException(nameof(index), "Status id can not be more than 40!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"Status id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

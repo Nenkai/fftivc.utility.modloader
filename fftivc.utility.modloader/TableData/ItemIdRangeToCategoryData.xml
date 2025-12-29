@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded item category range table.
+
+The game iterates through this table to determine the id of a category. Essentially, determines that 0-122 are weapons, 123-127 are throwables, etc.
+This table is only used to determine: ItemId -> ItemCategory -> DataType
+
+!!!!!! In practice you have little reason to be editing this table unless you know what you're doing! It may break other mods! !!!!!
+
+You can use this file as a base to edit Item Category Range data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/ItemIdRangeToCategoryData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ITEM_ID_RANGE_TO_CATEGORY_DATA.cs
+-->
+<ItemIdRangeToCategoryTable>
+  <Version>1</Version>
+  <Entries>
+	<ItemIdRangeToCategory>
+      <Id>0</Id> <!-- Weapons -->
+      <StartItemId>0</StartItemId>
+    </ItemIdRangeToCategory>
+    <ItemIdRangeToCategory>
+      <Id>1</Id> <!-- Weapon (Throwables) -->
+      <StartItemId>122</StartItemId>
+    </ItemIdRangeToCategory>
+	<ItemIdRangeToCategory>
+      <Id>2</Id> <!-- Shields -->
+      <StartItemId>128</StartItemId>
+    </ItemIdRangeToCategory>
+	<ItemIdRangeToCategory>
+      <Id>3</Id> <!-- Armors (Hats) -->
+      <StartItemId>144</StartItemId>
+    </ItemIdRangeToCategory>
+    <ItemIdRangeToCategory>
+      <Id>4</Id> <!-- Armors (Body) -->
+      <StartItemId>172</StartItemId>
+    </ItemIdRangeToCategory>
+	<ItemIdRangeToCategory>
+      <Id>5</Id> <!-- Accessories -->
+      <StartItemId>208</StartItemId>
+    </ItemIdRangeToCategory>
+	<ItemIdRangeToCategory>
+      <Id>6</Id> <!-- Consumables -->
+      <StartItemId>240</StartItemId>
+    </ItemIdRangeToCategory>
+	<ItemIdRangeToCategory>
+      <Id>7</Id>
+      <StartItemId>256</StartItemId>
+    </ItemIdRangeToCategory>
+    <ItemIdRangeToCategory>
+      <Id>8</Id>
+      <StartItemId>258</StartItemId>
+    </ItemIdRangeToCategory>
+    <ItemIdRangeToCategory>
+      <Id>9</Id>
+      <StartItemId>258</StartItemId>
+    </ItemIdRangeToCategory>
+    <ItemIdRangeToCategory>
+      <Id>10</Id>
+      <StartItemId>258</StartItemId>
+    </ItemIdRangeToCategory>
+    <ItemIdRangeToCategory>
+      <Id>11</Id>
+      <StartItemId>259</StartItemId>
+    </ItemIdRangeToCategory>
+    <ItemIdRangeToCategory>
+      <Id>12</Id>
+      <StartItemId>260</StartItemId>
+    </ItemIdRangeToCategory>
+    <ItemIdRangeToCategory>
+      <Id>13</Id>
+      <StartItemId>261</StartItemId>
+    </ItemIdRangeToCategory>
+  </Entries>
+</ItemIdRangeToCategoryTable>

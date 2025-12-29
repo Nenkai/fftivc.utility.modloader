@@ -14,17 +14,19 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOItemArmorDataManager : FFTOTableManagerBase<ItemArmorTable, ItemArmor>, IFFTOItemArmorDataManager
 {
-    private readonly IModelSerializer<ItemArmorTable> _dataTableSerializer;
+    private readonly IModelSerializer<ItemArmorTable> _modelTableSerializer;
 
     public override string TableFileName => "ItemArmorData";
+    public int NumEntries => 64;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<ITEM_ARMOR_DATA> _itemArmorDataTablePointer;
 
     public FFTOItemArmorDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
-        IModelSerializer<ItemArmorTable> dataTableSerializer)
+        IModelSerializer<ItemArmorTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _dataTableSerializer = dataTableSerializer;
+        _modelTableSerializer = modelTableSerializer;
     }
 
     public unsafe void Init()
@@ -45,15 +47,15 @@ public class FFTOItemArmorDataManager : FFTOTableManagerBase<ItemArmorTable, Ite
             nuint tableAddress = (nuint)(processAddress + e.Offset);
             _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_ARMOR_DATA) * 64, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemArmorDataTablePointer = new FixedArrayPtr<ITEM_ARMOR_DATA>((ITEM_ARMOR_DATA*)tableAddress, 64);
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_ARMOR_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemArmorDataTablePointer = new FixedArrayPtr<ITEM_ARMOR_DATA>((ITEM_ARMOR_DATA*)tableAddress, NumEntries);
 
             for (int i = 0; i < _itemArmorDataTablePointer.Count; i++)
             {
-                ItemArmor entry = ItemArmor.FromStructure(i, ref _itemArmorDataTablePointer.AsRef(i));
+                ItemArmor model = ItemArmor.FromStructure(i, ref _itemArmorDataTablePointer.AsRef(i));
 
-                _originalTable.Entries.Add(entry);
-                _moddedTable.Entries.Add(entry.Clone());
+                _originalTable.Entries.Add(model);
+                _moddedTable.Entries.Add(model.Clone());
             }
 
 #if DEBUG
@@ -69,22 +71,22 @@ public class FFTOItemArmorDataManager : FFTOTableManagerBase<ItemArmorTable, Ite
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _dataTableSerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _dataTableSerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            ItemArmorTable? itemArmorTable = _dataTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
-            if (itemArmorTable is null)
+            ItemArmorTable? modelTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (modelTable is null)
                 return;
 
             // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-            _modTables.Add(modId, itemArmorTable);
+            _modTables.Add(modId, modelTable);
         }
         catch (Exception ex)
         {
@@ -93,29 +95,29 @@ public class FFTOItemArmorDataManager : FFTOTableManagerBase<ItemArmorTable, Ite
         }
     }
 
-    public override void ApplyTablePatch(string modId, ItemArmor itemArmor)
+    public override void ApplyTablePatch(string modId, ItemArmor model)
     {
-        TrackModelChanges(modId, itemArmor);
+        TrackModelChanges(modId, model);
 
-        ItemArmor previous = _moddedTable.Entries[itemArmor.Id];
-        ref ITEM_ARMOR_DATA itemArmorData = ref _itemArmorDataTablePointer.AsRef(itemArmor.Id);
+        ItemArmor previous = _moddedTable.Entries[model.Id];
+        ref ITEM_ARMOR_DATA data = ref _itemArmorDataTablePointer.AsRef(model.Id);
 
-        itemArmorData.HPBonus = (byte)(itemArmor.HPBonus ?? previous.HPBonus)!;
-        itemArmorData.MPBonus = (byte)(itemArmor.MPBonus ?? previous.MPBonus)!;
+        data.HPBonus = (byte)(model.HPBonus ?? previous.HPBonus)!;
+        data.MPBonus = (byte)(model.MPBonus ?? previous.MPBonus)!;
     }
 
     public ItemArmor GetOriginalArmorItem(int index)
     {
-        if (index > 63)
-            throw new ArgumentOutOfRangeException(nameof(index), "ItemArmor id can not be more than 63!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemArmor id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public ItemArmor GetArmorItem(int index)
     {
-        if (index > 63)
-            throw new ArgumentOutOfRangeException(nameof(index), "ItemArmor id can not be more than 63!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemArmor id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

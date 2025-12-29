@@ -14,11 +14,11 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOCommandTypeDataManager : FFTOTableManagerBase<CommandTypeTable, CommandType>, IFFTOCommandTypeDataManager
 {
-    private const int EntryCount = 256;
-
-    private readonly IModelSerializer<CommandTypeTable> _commandTypeSerializer;
+    private readonly IModelSerializer<CommandTypeTable> _modelTableSerializer;
 
     public override string TableFileName => "CommandTypeData";
+    public int NumEntries => 512;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<COMMAND_TYPE_DATA> _commandTypeDataTablePointer;
 
@@ -26,7 +26,7 @@ public class FFTOCommandTypeDataManager : FFTOTableManagerBase<CommandTypeTable,
         IModelSerializer<CommandTypeTable> commandTypeParser)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _commandTypeSerializer = commandTypeParser;
+        _modelTableSerializer = commandTypeParser;
     }
 
     public unsafe void Init()
@@ -37,23 +37,23 @@ public class FFTOCommandTypeDataManager : FFTOTableManagerBase<CommandTypeTable,
         {
             if (!e.Found)
             {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find CommandTypeData table!", _logger.ColorRed);
+                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
                 return;
             }
 
             nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found CommandTypeData table @ 0x{tableAddress:X}");
+            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(COMMAND_TYPE_DATA) * EntryCount, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _commandTypeDataTablePointer = new FixedArrayPtr<COMMAND_TYPE_DATA>((COMMAND_TYPE_DATA*)tableAddress, EntryCount);
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(COMMAND_TYPE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _commandTypeDataTablePointer = new FixedArrayPtr<COMMAND_TYPE_DATA>((COMMAND_TYPE_DATA*)tableAddress, NumEntries);
 
             _originalTable = new CommandTypeTable();
             for (int i = 0; i < _commandTypeDataTablePointer.Count; i++)
             {
-                var commandType = CommandType.FromStructure(i, ref _commandTypeDataTablePointer.AsRef(i));
+                var model = CommandType.FromStructure(i, ref _commandTypeDataTablePointer.AsRef(i));
 
-                _originalTable.Entries.Add(commandType);
-                _moddedTable.Entries.Add(commandType.Clone());
+                _originalTable.Entries.Add(model);
+                _moddedTable.Entries.Add(model.Clone());
             }
 
 #if DEBUG
@@ -69,22 +69,22 @@ public class FFTOCommandTypeDataManager : FFTOTableManagerBase<CommandTypeTable,
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _commandTypeSerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _commandTypeSerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            CommandTypeTable? commandTypeTable = _commandTypeSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
-            if (commandTypeTable is null)
+            CommandTypeTable? modelTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (modelTable is null)
                 return;
 
             // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-            _modTables.Add(modId, commandTypeTable);
+            _modTables.Add(modId, modelTable);
         }
         catch (Exception ex)
         {
@@ -93,29 +93,29 @@ public class FFTOCommandTypeDataManager : FFTOTableManagerBase<CommandTypeTable,
         }
     }
    
-    public override void ApplyTablePatch(string modId, CommandType commandType)
+    public override void ApplyTablePatch(string modId, CommandType model)
     {
-        TrackModelChanges(modId, commandType);
+        TrackModelChanges(modId, model);
 
-        CommandType previous = _moddedTable.Entries[commandType.Id];
+        CommandType previous = _moddedTable.Entries[model.Id];
 
         // Actually apply changes
-        ref COMMAND_TYPE_DATA commandTypeData = ref _commandTypeDataTablePointer.AsRef(commandType.Id);
-        commandTypeData.Menu = (CommandTypeMenu)(commandType.Menu ?? previous.Menu)!;
+        ref COMMAND_TYPE_DATA data = ref _commandTypeDataTablePointer.AsRef(model.Id);
+        data.Menu = (CommandTypeMenu)(model.Menu ?? previous.Menu)!;
     }
 
     public CommandType GetOriginalCommandType(int index)
     {
-        if (index >= EntryCount)
-            throw new ArgumentOutOfRangeException(nameof(index), $"CommandType id can not be more than {EntryCount - 1}!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"CommandType id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public CommandType GetCommandType(int index)
     {
-        if (index >= EntryCount)
-            throw new ArgumentOutOfRangeException(nameof(index), $"CommandType id can not be more than {EntryCount - 1}!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"CommandType id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

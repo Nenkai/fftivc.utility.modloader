@@ -21,17 +21,19 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommandTable, JobCommand>, IFFTOJobCommandDataManager
 {
-    private readonly IModelSerializer<JobCommandTable> _jobCommandSerializer;
+    private readonly IModelSerializer<JobCommandTable> _modelTableSerializer;
+
+    public override string TableFileName => "JobCommandData";
+    public int NumEntries => 176;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<JOB_COMMAND_DATA> _jobCommandTablePointer;
 
-    public override string TableFileName => "JobCommandData";
-
     public FFTOJobCommandDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
-        IModelSerializer<JobCommandTable> commandAbilitySerializer)
+        IModelSerializer<JobCommandTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _jobCommandSerializer = commandAbilitySerializer;
+        _modelTableSerializer = modelTableSerializer;
     }
 
     public unsafe void Init()
@@ -50,8 +52,8 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommandTable, J
             nuint startTableOffset = (nuint)processAddress + (nuint)(e.Offset - (Unsafe.SizeOf<JOB_COMMAND_DATA>() * 5));
             _logger.WriteLine($"[{_modConfig.ModId}] Found JobCommandData table @ 0x{startTableOffset:X}");
 
-            Memory.Instance.ChangeProtection(startTableOffset, sizeof(JOB_COMMAND_DATA) * 176, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _jobCommandTablePointer = new FixedArrayPtr<JOB_COMMAND_DATA>((JOB_COMMAND_DATA*)startTableOffset, 176);
+            Memory.Instance.ChangeProtection(startTableOffset, sizeof(JOB_COMMAND_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _jobCommandTablePointer = new FixedArrayPtr<JOB_COMMAND_DATA>((JOB_COMMAND_DATA*)startTableOffset, NumEntries);
 
             _originalTable = new JobCommandTable();
             for (int i = 0; i < _jobCommandTablePointer.Count; i++)
@@ -75,17 +77,17 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommandTable, J
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _jobCommandSerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _jobCommandSerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            JobCommandTable? jobCommandTable = _jobCommandSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            JobCommandTable? jobCommandTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
             if (jobCommandTable is null)
                 return;
 
@@ -171,16 +173,16 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommandTable, J
 
     public JobCommand GetOriginalJobCommand(int index)
     {
-        if (index > 176)
-            throw new ArgumentOutOfRangeException(nameof(index), "Job command id can not be more than 176!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"Job command id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public JobCommand GetJobCommand(int index)
     {
-        if (index > 176)
-            throw new ArgumentOutOfRangeException(nameof(index), "Command id can not be more than 176!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"Job command id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

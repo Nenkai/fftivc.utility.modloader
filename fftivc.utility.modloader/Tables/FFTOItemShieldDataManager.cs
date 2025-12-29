@@ -17,6 +17,8 @@ public class FFTOItemShieldDataManager : FFTOTableManagerBase<ItemShieldTable, I
     private readonly IModelSerializer<ItemShieldTable> _dataTableSerializer;
 
     public override string TableFileName => "ItemShieldData";
+    public int NumEntries => 16;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<ITEM_SHIELD_DATA> _itemShieldDataTablePointer;
 
@@ -43,8 +45,8 @@ public class FFTOItemShieldDataManager : FFTOTableManagerBase<ItemShieldTable, I
             nuint tableAddress = (nuint)(processAddress + e.Offset);
             _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_SHIELD_DATA) * 16, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemShieldDataTablePointer = new FixedArrayPtr<ITEM_SHIELD_DATA>((ITEM_SHIELD_DATA*)tableAddress, 16);
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_SHIELD_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemShieldDataTablePointer = new FixedArrayPtr<ITEM_SHIELD_DATA>((ITEM_SHIELD_DATA*)tableAddress, NumEntries);
 
             for (int i = 0; i < _itemShieldDataTablePointer.Count; i++)
             {
@@ -77,12 +79,12 @@ public class FFTOItemShieldDataManager : FFTOTableManagerBase<ItemShieldTable, I
     {
         try
         {
-            ItemShieldTable? itemShieldTable = _dataTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
-            if (itemShieldTable is null)
+            ItemShieldTable? modekTable = _dataTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (modekTable is null)
                 return;
 
             // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-            _modTables.Add(modId, itemShieldTable);
+            _modTables.Add(modId, modekTable);
         }
         catch (Exception ex)
         {
@@ -91,29 +93,29 @@ public class FFTOItemShieldDataManager : FFTOTableManagerBase<ItemShieldTable, I
         }
     }
 
-    public override void ApplyTablePatch(string modId, ItemShield itemShield)
+    public override void ApplyTablePatch(string modId, ItemShield model)
     {
-        TrackModelChanges(modId, itemShield);
+        TrackModelChanges(modId, model);
 
-        ItemShield previous = _moddedTable.Entries[itemShield.Id];
-        ref ITEM_SHIELD_DATA itemShieldData = ref _itemShieldDataTablePointer.AsRef(itemShield.Id);
+        ItemShield previous = _moddedTable.Entries[model.Id];
+        ref ITEM_SHIELD_DATA data = ref _itemShieldDataTablePointer.AsRef(model.Id);
 
-        itemShieldData.PhysicalEvasion = (byte)(itemShield.PhysicalEvasion ?? previous.PhysicalEvasion)!;
-        itemShieldData.MagicalEvasion = (byte)(itemShield.MagicalEvasion ?? previous.MagicalEvasion)!;
+        data.PhysicalEvasion = (byte)(model.PhysicalEvasion ?? previous.PhysicalEvasion)!;
+        data.MagicalEvasion = (byte)(model.MagicalEvasion ?? previous.MagicalEvasion)!;
     }
 
     public ItemShield GetOriginalShieldItem(int index)
     {
-        if (index > 15)
-            throw new ArgumentOutOfRangeException(nameof(index), "ItemShield id can not be more than 15!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemShield id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public ItemShield GetShieldItem(int index)
     {
-        if (index > 15)
-            throw new ArgumentOutOfRangeException(nameof(index), "ItemShield id can not be more than 15!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemShield id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

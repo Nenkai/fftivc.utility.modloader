@@ -15,19 +15,19 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOItemEquipBonusDataManager : FFTOTableManagerBase<ItemEquipBonusTable, ItemEquipBonus>, IFFTOItemEquipBonusDataManager
 {
-    private const int ItemEquipBonusCount = 85;
+    private readonly IModelSerializer<ItemEquipBonusTable> _modelTableSerializer;
 
-    private readonly IModelSerializer<ItemEquipBonusTable> _itemEquipBonusSerializer;
+    public override string TableFileName => "ItemEquipBonusData";
+    public int NumEntries => 85;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<ITEM_EQUIP_BONUS_DATA> _itemEquipBonusTablePointer;
 
-    public override string TableFileName => "ItemEquipBonusData";
-
     public FFTOItemEquipBonusDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
-        IModelSerializer<ItemEquipBonusTable> itemEquipBonusSerializer)
+        IModelSerializer<ItemEquipBonusTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _itemEquipBonusSerializer = itemEquipBonusSerializer;
+        _modelTableSerializer = modelTableSerializer;
     }
 
     public unsafe void Init()
@@ -47,8 +47,8 @@ public class FFTOItemEquipBonusDataManager : FFTOTableManagerBase<ItemEquipBonus
 
             _logger.WriteLine($"[{_modConfig.ModId}] Found ItemEquipBonusData table @ 0x{startTableOffset:X}");
 
-            Memory.Instance.ChangeProtection(startTableOffset, sizeof(ITEM_EQUIP_BONUS_DATA) * ItemEquipBonusCount, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemEquipBonusTablePointer = new FixedArrayPtr<ITEM_EQUIP_BONUS_DATA>((ITEM_EQUIP_BONUS_DATA*)startTableOffset, ItemEquipBonusCount);
+            Memory.Instance.ChangeProtection(startTableOffset, sizeof(ITEM_EQUIP_BONUS_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemEquipBonusTablePointer = new FixedArrayPtr<ITEM_EQUIP_BONUS_DATA>((ITEM_EQUIP_BONUS_DATA*)startTableOffset, NumEntries);
 
             _originalTable = new ItemEquipBonusTable();
             for (int i = 0; i < _itemEquipBonusTablePointer.Count; i++)
@@ -72,22 +72,22 @@ public class FFTOItemEquipBonusDataManager : FFTOTableManagerBase<ItemEquipBonus
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _itemEquipBonusSerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _itemEquipBonusSerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            ItemEquipBonusTable? itemEquipBonusTable = _itemEquipBonusSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
-            if (itemEquipBonusTable is null)
+            ItemEquipBonusTable? modelTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (modelTable is null)
                 return;
 
             // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-            _modTables.Add(modId, itemEquipBonusTable);
+            _modTables.Add(modId, modelTable);
         }
         catch (Exception ex)
         {
@@ -96,83 +96,83 @@ public class FFTOItemEquipBonusDataManager : FFTOTableManagerBase<ItemEquipBonus
         }
     }
 
-    public override void ApplyTablePatch(string modId, ItemEquipBonus itemEquipBonus)
+    public override void ApplyTablePatch(string modId, ItemEquipBonus model)
     {
-        TrackModelChanges(modId, itemEquipBonus);
+        TrackModelChanges(modId, model);
 
-        ItemEquipBonus previous = _moddedTable.Entries[itemEquipBonus.Id];
-        ref ITEM_EQUIP_BONUS_DATA itemEquipBonusData = ref _itemEquipBonusTablePointer.AsRef(itemEquipBonus.Id);
+        ItemEquipBonus previous = _moddedTable.Entries[model.Id];
+        ref ITEM_EQUIP_BONUS_DATA data = ref _itemEquipBonusTablePointer.AsRef(model.Id);
 
-        itemEquipBonusData.PABonus = itemEquipBonus.PABonus ?? (byte)previous.PABonus!;
-        itemEquipBonusData.MABonus = itemEquipBonus.MABonus ?? (byte)previous.MABonus!;
-        itemEquipBonusData.SpeedBonus = itemEquipBonus.SpeedBonus ?? (byte)previous.SpeedBonus!;
-        itemEquipBonusData.MoveBonus = itemEquipBonus.MoveBonus ?? (byte)previous.MoveBonus!;
-        itemEquipBonusData.JumpBonus = itemEquipBonus.JumpBonus ?? (byte)previous.JumpBonus!;
-        itemEquipBonusData.InnateStatus1 = itemEquipBonus.InnateStatus.HasValue
-            ? (ItemInnateStartImmuneStatus1Flags)(((ulong)itemEquipBonus.InnateStatus.Value & 0xFF00000000UL) >> 32)
+        data.PABonus = model.PABonus ?? (byte)previous.PABonus!;
+        data.MABonus = model.MABonus ?? (byte)previous.MABonus!;
+        data.SpeedBonus = model.SpeedBonus ?? (byte)previous.SpeedBonus!;
+        data.MoveBonus = model.MoveBonus ?? (byte)previous.MoveBonus!;
+        data.JumpBonus = model.JumpBonus ?? (byte)previous.JumpBonus!;
+        data.InnateStatus1 = model.InnateStatus.HasValue
+            ? (ItemInnateStartImmuneStatus1Flags)(((ulong)model.InnateStatus.Value & 0xFF00000000UL) >> 32)
             : (ItemInnateStartImmuneStatus1Flags)(((ulong)previous.InnateStatus!.Value & 0xFF00000000UL) >> 32);
-        itemEquipBonusData.InnateStatus2 = itemEquipBonus.InnateStatus.HasValue
-            ? (ItemInnateStartImmuneStatus2Flags)(((ulong)itemEquipBonus.InnateStatus.Value & 0xFF000000UL) >> 24)
+        data.InnateStatus2 = model.InnateStatus.HasValue
+            ? (ItemInnateStartImmuneStatus2Flags)(((ulong)model.InnateStatus.Value & 0xFF000000UL) >> 24)
             : (ItemInnateStartImmuneStatus2Flags)(((ulong)previous.InnateStatus!.Value & 0xFF000000UL) >> 24);
-        itemEquipBonusData.InnateStatus3 = itemEquipBonus.InnateStatus.HasValue
-            ? (ItemInnateStartImmuneStatus3Flags)(((ulong)itemEquipBonus.InnateStatus.Value & 0xFF0000UL) >> 16)
+        data.InnateStatus3 = model.InnateStatus.HasValue
+            ? (ItemInnateStartImmuneStatus3Flags)(((ulong)model.InnateStatus.Value & 0xFF0000UL) >> 16)
             : (ItemInnateStartImmuneStatus3Flags)(((ulong)previous.InnateStatus!.Value & 0xFF0000UL) >> 16);
-        itemEquipBonusData.InnateStatus4 = itemEquipBonus.InnateStatus.HasValue
-            ? (ItemInnateStartImmuneStatus4Flags)(((ulong)itemEquipBonus.InnateStatus.Value & 0xFF00UL) >> 8)
+        data.InnateStatus4 = model.InnateStatus.HasValue
+            ? (ItemInnateStartImmuneStatus4Flags)(((ulong)model.InnateStatus.Value & 0xFF00UL) >> 8)
             : (ItemInnateStartImmuneStatus4Flags)(((ulong)previous.InnateStatus!.Value & 0xFF00UL) >> 8);
-        itemEquipBonusData.InnateStatus5 = itemEquipBonus.InnateStatus.HasValue
-            ? (ItemInnateStartImmuneStatus5Flags)(((ulong)itemEquipBonus.InnateStatus.Value & 0xFFUL) >> 0)
+        data.InnateStatus5 = model.InnateStatus.HasValue
+            ? (ItemInnateStartImmuneStatus5Flags)(((ulong)model.InnateStatus.Value & 0xFFUL) >> 0)
             : (ItemInnateStartImmuneStatus5Flags)(((ulong)previous.InnateStatus!.Value & 0xFFUL) >> 0);
-        itemEquipBonusData.ImmuneStatus1 = itemEquipBonus.ImmuneStatus.HasValue
-            ? (ItemInnateStartImmuneStatus1Flags)(((ulong)itemEquipBonus.ImmuneStatus.Value & 0xFF00000000UL) >> 32)
+        data.ImmuneStatus1 = model.ImmuneStatus.HasValue
+            ? (ItemInnateStartImmuneStatus1Flags)(((ulong)model.ImmuneStatus.Value & 0xFF00000000UL) >> 32)
             : (ItemInnateStartImmuneStatus1Flags)(((ulong)previous.ImmuneStatus!.Value & 0xFF00000000UL) >> 32);
-        itemEquipBonusData.ImmuneStatus2 = itemEquipBonus.ImmuneStatus.HasValue
-            ? (ItemInnateStartImmuneStatus2Flags)(((ulong)itemEquipBonus.ImmuneStatus.Value & 0xFF000000UL) >> 24)
+        data.ImmuneStatus2 = model.ImmuneStatus.HasValue
+            ? (ItemInnateStartImmuneStatus2Flags)(((ulong)model.ImmuneStatus.Value & 0xFF000000UL) >> 24)
             : (ItemInnateStartImmuneStatus2Flags)(((ulong)previous.ImmuneStatus!.Value & 0xFF000000UL) >> 24);
-        itemEquipBonusData.ImmuneStatus3 = itemEquipBonus.ImmuneStatus.HasValue
-            ? (ItemInnateStartImmuneStatus3Flags)(((ulong)itemEquipBonus.ImmuneStatus.Value & 0xFF0000UL) >> 16)
+        data.ImmuneStatus3 = model.ImmuneStatus.HasValue
+            ? (ItemInnateStartImmuneStatus3Flags)(((ulong)model.ImmuneStatus.Value & 0xFF0000UL) >> 16)
             : (ItemInnateStartImmuneStatus3Flags)(((ulong)previous.ImmuneStatus!.Value & 0xFF0000UL) >> 16);
-        itemEquipBonusData.ImmuneStatus4 = itemEquipBonus.ImmuneStatus.HasValue
-            ? (ItemInnateStartImmuneStatus4Flags)(((ulong)itemEquipBonus.ImmuneStatus.Value & 0xFF00UL) >> 8)
+        data.ImmuneStatus4 = model.ImmuneStatus.HasValue
+            ? (ItemInnateStartImmuneStatus4Flags)(((ulong)model.ImmuneStatus.Value & 0xFF00UL) >> 8)
             : (ItemInnateStartImmuneStatus4Flags)(((ulong)previous.ImmuneStatus!.Value & 0xFF00UL) >> 8);
-        itemEquipBonusData.ImmuneStatus5 = itemEquipBonus.ImmuneStatus.HasValue
-            ? (ItemInnateStartImmuneStatus5Flags)(((ulong)itemEquipBonus.ImmuneStatus.Value & 0xFFUL) >> 0)
+        data.ImmuneStatus5 = model.ImmuneStatus.HasValue
+            ? (ItemInnateStartImmuneStatus5Flags)(((ulong)model.ImmuneStatus.Value & 0xFFUL) >> 0)
             : (ItemInnateStartImmuneStatus5Flags)(((ulong)previous.ImmuneStatus!.Value & 0xFFUL) >> 0);
-        itemEquipBonusData.StartingStatus1 = itemEquipBonus.StartingStatus.HasValue
-            ? (ItemInnateStartImmuneStatus1Flags)(((ulong)itemEquipBonus.StartingStatus.Value & 0xFF00000000UL) >> 32)
+        data.StartingStatus1 = model.StartingStatus.HasValue
+            ? (ItemInnateStartImmuneStatus1Flags)(((ulong)model.StartingStatus.Value & 0xFF00000000UL) >> 32)
             : (ItemInnateStartImmuneStatus1Flags)(((ulong)previous.StartingStatus!.Value & 0xFF00000000UL) >> 32);
-        itemEquipBonusData.StartingStatus2 = itemEquipBonus.StartingStatus.HasValue
-            ? (ItemInnateStartImmuneStatus2Flags)(((ulong)itemEquipBonus.StartingStatus.Value & 0xFF000000UL) >> 24)
+        data.StartingStatus2 = model.StartingStatus.HasValue
+            ? (ItemInnateStartImmuneStatus2Flags)(((ulong)model.StartingStatus.Value & 0xFF000000UL) >> 24)
             : (ItemInnateStartImmuneStatus2Flags)(((ulong)previous.StartingStatus!.Value & 0xFF000000UL) >> 24);
-        itemEquipBonusData.StartingStatus3 = itemEquipBonus.StartingStatus.HasValue
-            ? (ItemInnateStartImmuneStatus3Flags)(((ulong)itemEquipBonus.StartingStatus.Value & 0xFF0000UL) >> 16)
+        data.StartingStatus3 = model.StartingStatus.HasValue
+            ? (ItemInnateStartImmuneStatus3Flags)(((ulong)model.StartingStatus.Value & 0xFF0000UL) >> 16)
             : (ItemInnateStartImmuneStatus3Flags)(((ulong)previous.StartingStatus!.Value & 0xFF0000UL) >> 16);
-        itemEquipBonusData.StartingStatus4 = itemEquipBonus.StartingStatus.HasValue
-            ? (ItemInnateStartImmuneStatus4Flags)(((ulong)itemEquipBonus.StartingStatus.Value & 0xFF00UL) >> 8)
+        data.StartingStatus4 = model.StartingStatus.HasValue
+            ? (ItemInnateStartImmuneStatus4Flags)(((ulong)model.StartingStatus.Value & 0xFF00UL) >> 8)
             : (ItemInnateStartImmuneStatus4Flags)(((ulong)previous.StartingStatus!.Value & 0xFF00UL) >> 8);
-        itemEquipBonusData.StartingStatus5 = itemEquipBonus.StartingStatus.HasValue
-            ? (ItemInnateStartImmuneStatus5Flags)(((ulong)itemEquipBonus.StartingStatus.Value & 0xFFUL) >> 0)
+        data.StartingStatus5 = model.StartingStatus.HasValue
+            ? (ItemInnateStartImmuneStatus5Flags)(((ulong)model.StartingStatus.Value & 0xFFUL) >> 0)
             : (ItemInnateStartImmuneStatus5Flags)(((ulong)previous.StartingStatus!.Value & 0xFFUL) >> 0);
-        itemEquipBonusData.AbsorbElementsFlagBits = itemEquipBonus.AbsorbElements ?? (ItemElementFlags)previous.AbsorbElements!;
-        itemEquipBonusData.NullifyElementsFlagBits = itemEquipBonus.NullifyElements ?? (ItemElementFlags)previous.NullifyElements!;
-        itemEquipBonusData.HalveElementsFlagBits = itemEquipBonus.HalveElements ?? (ItemElementFlags)previous.HalveElements!;
-        itemEquipBonusData.WeakElementsFlagBits = itemEquipBonus.WeakElements ?? (ItemElementFlags)previous.WeakElements!;
-        itemEquipBonusData.StrongElementsFlagBits = itemEquipBonus.StrongElements ?? (ItemElementFlags)previous.StrongElements!;
-        itemEquipBonusData.BoostJP = (itemEquipBonus.BoostJP ?? previous.BoostJP) == true ? (byte)1 : (byte)0;
+        data.AbsorbElementsFlagBits = model.AbsorbElements ?? (ItemElementFlags)previous.AbsorbElements!;
+        data.NullifyElementsFlagBits = model.NullifyElements ?? (ItemElementFlags)previous.NullifyElements!;
+        data.HalveElementsFlagBits = model.HalveElements ?? (ItemElementFlags)previous.HalveElements!;
+        data.WeakElementsFlagBits = model.WeakElements ?? (ItemElementFlags)previous.WeakElements!;
+        data.StrongElementsFlagBits = model.StrongElements ?? (ItemElementFlags)previous.StrongElements!;
+        data.BoostJP = (model.BoostJP ?? previous.BoostJP) == true ? (byte)1 : (byte)0;
     }
 
     public ItemEquipBonus GetOriginalItemEquipBonus(int index)
     {
-        if (index >= ItemEquipBonusCount)
-            throw new ArgumentOutOfRangeException(nameof(index), $"ItemEquipBonus id can not be more than {ItemEquipBonusCount - 1}!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemEquipBonus id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public ItemEquipBonus GetItemEquipBonus(int index)
     {
-        if (index >= ItemEquipBonusCount)
-            throw new ArgumentOutOfRangeException(nameof(index), $"ItemEquipBonus id can not be more than {ItemEquipBonusCount - 1}!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemEquipBonus id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

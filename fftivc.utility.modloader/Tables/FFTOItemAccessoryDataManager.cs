@@ -15,9 +15,11 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOItemAccessoryDataManager : FFTOTableManagerBase<ItemAccessoryTable, ItemAccessory>, IFFTOItemAccessoryDataManager
 {
-    private readonly IModelSerializer<ItemAccessoryTable> _dataTableSerializer;
+    private readonly IModelSerializer<ItemAccessoryTable> _modelTableSerializer;
 
     public override string TableFileName => "ItemAccessoryData";
+    public int NumEntries => 32;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<ITEM_ACCESSORY_DATA> _itemAccessoryDataTablePointer;
 
@@ -25,7 +27,7 @@ public class FFTOItemAccessoryDataManager : FFTOTableManagerBase<ItemAccessoryTa
         IModelSerializer<ItemAccessoryTable> dataTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _dataTableSerializer = dataTableSerializer;
+        _modelTableSerializer = dataTableSerializer;
     }
 
     public unsafe void Init()
@@ -47,15 +49,15 @@ public class FFTOItemAccessoryDataManager : FFTOTableManagerBase<ItemAccessoryTa
             nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - (Unsafe.SizeOf<ITEM_ACCESSORY_DATA>() * 16));
             _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_ACCESSORY_DATA) * 32, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemAccessoryDataTablePointer = new FixedArrayPtr<ITEM_ACCESSORY_DATA>((ITEM_ACCESSORY_DATA*)tableAddress, 32);
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_ACCESSORY_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemAccessoryDataTablePointer = new FixedArrayPtr<ITEM_ACCESSORY_DATA>((ITEM_ACCESSORY_DATA*)tableAddress, NumEntries);
 
             for (int i = 0; i < _itemAccessoryDataTablePointer.Count; i++)
             {
-                ItemAccessory entry = ItemAccessory.FromStructure(i, ref _itemAccessoryDataTablePointer.AsRef(i));
+                ItemAccessory model = ItemAccessory.FromStructure(i, ref _itemAccessoryDataTablePointer.AsRef(i));
 
-                _originalTable.Entries.Add(entry);
-                _moddedTable.Entries.Add(entry.Clone());
+                _originalTable.Entries.Add(model);
+                _moddedTable.Entries.Add(model.Clone());
             }
 
 #if DEBUG
@@ -71,17 +73,17 @@ public class FFTOItemAccessoryDataManager : FFTOTableManagerBase<ItemAccessoryTa
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _dataTableSerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _dataTableSerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            ItemAccessoryTable? itemAccessoryTable = _dataTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            ItemAccessoryTable? itemAccessoryTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
             if (itemAccessoryTable is null)
                 return;
 
@@ -108,16 +110,16 @@ public class FFTOItemAccessoryDataManager : FFTOTableManagerBase<ItemAccessoryTa
 
     public ItemAccessory GetOriginalAccessoryItem(int index)
     {
-        if (index > 31)
-            throw new ArgumentOutOfRangeException(nameof(index), "ItemAccessory id can not be more than 31!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemAccessory id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public ItemAccessory GetAccessoryItem(int index)
     {
-        if (index > 31)
-            throw new ArgumentOutOfRangeException(nameof(index), "ItemAccessory id can not be more than 31!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemAccessory id can not be more than {MaxId}");
 
         return _moddedTable.Entries[index];
     }

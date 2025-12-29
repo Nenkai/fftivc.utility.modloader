@@ -14,18 +14,19 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOItemWeaponDataManager : FFTOTableManagerBase<ItemWeaponTable, ItemWeapon>, IFFTOItemWeaponDataManager
 {
-    private readonly IModelSerializer<ItemWeaponTable> _dataTableSerializer;
+    private readonly IModelSerializer<ItemWeaponTable> _modelTableSerializer;
 
     public override string TableFileName => "ItemWeaponData";
+    public int NumEntries => 128;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<ITEM_WEAPON_DATA> _itemWeaponDataTablePointer;
-    private FixedArrayPtr<ITEM_WEAPON_DATA> _itemWeaponDataTable2Pointer;
 
     public FFTOItemWeaponDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
-        IModelSerializer<ItemWeaponTable> dataTableSerializer)
+        IModelSerializer<ItemWeaponTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _dataTableSerializer = dataTableSerializer;
+        _modelTableSerializer = modelTableSerializer;
     }
 
     public unsafe void Init()
@@ -49,14 +50,21 @@ public class FFTOItemWeaponDataManager : FFTOTableManagerBase<ItemWeaponTable, I
 
             for (int i = 0; i < _itemWeaponDataTablePointer.Count; i++)
             {
-                ItemWeapon entry = ItemWeapon.FromStructure(i, ref _itemWeaponDataTablePointer.AsRef(i));
+                ItemWeapon model = ItemWeapon.FromStructure(i, ref _itemWeaponDataTablePointer.AsRef(i));
 
-                _originalTable.Entries.Add(entry);
-                _moddedTable.Entries.Add(entry.Clone());
+                _originalTable.Entries.Add(model);
+                _moddedTable.Entries.Add(model.Clone());
             }
+
+#if DEBUG
+            SaveToFolder();
+#endif
+
         });
 
-        // Weapon secondary data extended table - 128-129
+        // Weapon data wotl table (?)
+        // TODO: Move this to another manager
+        /*
         _startupScanner.AddMainModuleScan("01 8E 01 FF 10 0A 00 00 01 8E 01 FF 06 0A 00 00", e =>
         {
             if (!e.Found)
@@ -73,16 +81,13 @@ public class FFTOItemWeaponDataManager : FFTOTableManagerBase<ItemWeaponTable, I
 
             for (int i = 0; i < _itemWeaponDataTable2Pointer.Count; i++)
             {
-                ItemWeapon entry = ItemWeapon.FromStructure(128 + i, ref _itemWeaponDataTable2Pointer.AsRef(i));
+                ItemWeapon entry = ItemWeapon.FromStructure(i, ref _itemWeaponDataTable2Pointer.AsRef(i));
 
-                _originalTable.Entries.Add(entry);
-                _moddedTable.Entries.Add(entry.Clone());
+                TODO
             }
 
-#if DEBUG
-            SaveToFolder();
-#endif
         });
+        */
     }
 
     private void SaveToFolder()
@@ -92,22 +97,22 @@ public class FFTOItemWeaponDataManager : FFTOTableManagerBase<ItemWeaponTable, I
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _dataTableSerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _dataTableSerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            ItemWeaponTable? itemWeaponTable = _dataTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
-            if (itemWeaponTable is null)
+            ItemWeaponTable? modelTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (modelTable is null)
                 return;
 
             // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-            _modTables.Add(modId, itemWeaponTable);
+            _modTables.Add(modId, modelTable);
         }
         catch (Exception ex)
         {
@@ -116,37 +121,35 @@ public class FFTOItemWeaponDataManager : FFTOTableManagerBase<ItemWeaponTable, I
         }
     }
 
-    public override void ApplyTablePatch(string modId, ItemWeapon itemWeapon)
+    public override void ApplyTablePatch(string modId, ItemWeapon model)
     {
-        TrackModelChanges(modId, itemWeapon);
+        TrackModelChanges(modId, model);
 
-        ItemWeapon previous = _moddedTable.Entries[itemWeapon.Id];
-        ref ITEM_WEAPON_DATA itemWeaponData = ref (itemWeapon.Id < 128
-         ? ref _itemWeaponDataTablePointer.AsRef(itemWeapon.Id)
-         : ref _itemWeaponDataTable2Pointer.AsRef(itemWeapon.Id - 128));
+        ItemWeapon previous = _moddedTable.Entries[model.Id];
+        ref ITEM_WEAPON_DATA data = ref _itemWeaponDataTablePointer.AsRef(model.Id);
 
-        itemWeaponData.Range = (byte)(itemWeapon.Range ?? previous.Range)!;
-        itemWeaponData.AttackFlags = (WeaponAttackFlags)(itemWeapon.AttackFlags ?? previous.AttackFlags)!;
-        itemWeaponData.Formula = (byte)(itemWeapon.Formula ?? previous.Formula)!;
-        itemWeaponData.Unused_0x03 = (byte)(itemWeapon.Unused_0x03 ?? previous.Unused_0x03)!;
-        itemWeaponData.Power = (byte)(itemWeapon.Power ?? previous.Power)!;
-        itemWeaponData.Evasion = (byte)(itemWeapon.Evasion ?? previous.Evasion)!;
-        itemWeaponData.Elements = (WeaponElementFlags)(itemWeapon.Elements ?? previous.Elements)!;
-        itemWeaponData.StatusEffectIdOrAbilityId = (byte)(itemWeapon.OptionsAbilityId ?? previous.OptionsAbilityId)!;
+        data.Range = (byte)(model.Range ?? previous.Range)!;
+        data.AttackFlags = (WeaponAttackFlags)(model.AttackFlags ?? previous.AttackFlags)!;
+        data.Formula = (byte)(model.Formula ?? previous.Formula)!;
+        data.Unused_0x03 = (byte)(model.Unused_0x03 ?? previous.Unused_0x03)!;
+        data.Power = (byte)(model.Power ?? previous.Power)!;
+        data.Evasion = (byte)(model.Evasion ?? previous.Evasion)!;
+        data.Elements = (WeaponElementFlags)(model.Elements ?? previous.Elements)!;
+        data.StatusEffectIdOrAbilityId = (byte)(model.OptionsAbilityId ?? previous.OptionsAbilityId)!;
     }
 
     public ItemWeapon GetOriginalWeaponItem(int index)
     {
-        if (index > 129)
-            throw new ArgumentOutOfRangeException(nameof(index), "ItemWeapon id can not be more than 129!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemWeapon id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public ItemWeapon GetWeaponItem(int index)
     {
-        if (index > 129)
-            throw new ArgumentOutOfRangeException(nameof(index), "ItemWeapon id can not be more than 129!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"ItemWeapon id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

@@ -36,6 +36,9 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         // Tables
         typeof(IFFTOAbilityDataManager),
         typeof(IFFTOItemDataManager),
+        typeof(IFFTOItemIdRangeToCategoryManager),
+        typeof(IFFTOItemCategoryToDataTypeManager),
+        typeof(IFFTODataTypeToItemIdRangeManager),
         typeof(IFFTOItemEquipBonusDataManager),
         typeof(IFFTOItemOptionsDataManager),
         typeof(IFFTOItemWeaponDataManager),
@@ -184,6 +187,9 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
     {
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemIdRangeToCategoryManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemCategoryToDataTypeManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTODataTypeToItemIdRangeManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemEquipBonusDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemOptionsDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemWeaponDataManager>());
@@ -228,6 +234,9 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             // ...To grab them as IEnumerable
             .AddSingleton<IFFTOTableManager, FFTOAbilityDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTODataTypeToItemIdRangeManager>()
+            .AddSingleton<IFFTOTableManager, FFTOItemIdRangeToCategoryManager>()
+            .AddSingleton<IFFTOTableManager, FFTOItemCategoryToDataTypeManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemEquipBonusDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemOptionsDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemWeaponDataManager>()
@@ -243,6 +252,9 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             // Individually.
             .AddSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
             .AddSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
+            .AddSingleton<IFFTODataTypeToItemIdRangeManager, FFTODataTypeToItemIdRangeManager>()
+            .AddSingleton<IFFTOItemIdRangeToCategoryManager, FFTOItemIdRangeToCategoryManager>()
+            .AddSingleton<IFFTOItemCategoryToDataTypeManager, FFTOItemCategoryToDataTypeManager>()
             .AddSingleton<IFFTOItemEquipBonusDataManager, FFTOItemEquipBonusDataManager>()
             .AddSingleton<IFFTOItemOptionsDataManager, FFTOItemOptionsDataManager>()
             .AddSingleton<IFFTOItemWeaponDataManager, FFTOItemWeaponDataManager>()

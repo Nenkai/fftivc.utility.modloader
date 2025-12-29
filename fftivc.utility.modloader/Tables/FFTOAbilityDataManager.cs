@@ -20,17 +20,19 @@ namespace fftivc.utility.modloader.Tables;
 
 public class FFTOAbilityDataManager : FFTOTableManagerBase<AbilityTable, Ability>, IFFTOAbilityDataManager
 {
-    private readonly IModelSerializer<AbilityTable> _abilitySerializer;
+    private readonly IModelSerializer<AbilityTable> _modelTableSerializer;
 
     public override string TableFileName => "AbilityData";
+    public int NumEntries => 512;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<ABILITY_COMMON_DATA> _abilityCommonDataTablePointer;
 
     public FFTOAbilityDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
-        IModelSerializer<AbilityTable> abilityParser)
+        IModelSerializer<AbilityTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
-        _abilitySerializer = abilityParser;
+        _modelTableSerializer = modelTableSerializer;
     }
 
     public unsafe void Init()
@@ -41,23 +43,23 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<AbilityTable, Ability
         {
             if (!e.Found)
             {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find AbilityData table!", _logger.ColorRed);
+                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
                 return;
             }
 
             nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found AbilityData table @ 0x{tableAddress:X}");
+            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_COMMON_DATA) * 512, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _abilityCommonDataTablePointer = new FixedArrayPtr<ABILITY_COMMON_DATA>((ABILITY_COMMON_DATA*)tableAddress, 512);
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_COMMON_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _abilityCommonDataTablePointer = new FixedArrayPtr<ABILITY_COMMON_DATA>((ABILITY_COMMON_DATA*)tableAddress, NumEntries);
 
             _originalTable = new AbilityTable();
             for (int i = 0; i < _abilityCommonDataTablePointer.Count; i++)
             {
-                var ability = Ability.FromStructure(i, ref _abilityCommonDataTablePointer.AsRef(i));
+                var model = Ability.FromStructure(i, ref _abilityCommonDataTablePointer.AsRef(i));
 
-                _originalTable.Entries.Add(ability);
-                _moddedTable.Entries.Add(ability.Clone());
+                _originalTable.Entries.Add(model);
+                _moddedTable.Entries.Add(model.Clone());
             }
 
 #if DEBUG
@@ -73,22 +75,22 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<AbilityTable, Ability
 
         // Serialization tests
         using var text = File.Create(Path.Combine(dir, $"{TableFileName}.json"));
-        _abilitySerializer.Serialize(text, "json", _originalTable);
+        _modelTableSerializer.Serialize(text, "json", _originalTable);
 
         using var text2 = File.Create(Path.Combine(dir, $"{TableFileName}.xml"));
-        _abilitySerializer.Serialize(text2, "xml", _originalTable);
+        _modelTableSerializer.Serialize(text2, "xml", _originalTable);
     }
 
     public void RegisterFolder(string modId, string folder)
     {
         try
         {
-            AbilityTable? abilityTable = _abilitySerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
-            if (abilityTable is null)
+            AbilityTable? modelTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            if (modelTable is null)
                 return;
 
             // Don't do changes just yet. We need the original table, the scan might not have been completed yet.
-            _modTables.Add(modId, abilityTable);
+            _modTables.Add(modId, modelTable);
         }
         catch (Exception ex)
         {
@@ -98,34 +100,34 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<AbilityTable, Ability
     }
    
 
-    public override void ApplyTablePatch(string modId, Ability ability)
+    public override void ApplyTablePatch(string modId, Ability model)
     {
-        TrackModelChanges(modId, ability);
+        TrackModelChanges(modId, model);
 
-        Ability previous = _moddedTable.Entries[ability.Id];
+        Ability previous = _moddedTable.Entries[model.Id];
 
         // Actually apply changes
-        ref ABILITY_COMMON_DATA abilityCommonData = ref _abilityCommonDataTablePointer.AsRef(ability.Id);
-        abilityCommonData.JPCost = (ushort)(ability.JPCost ?? previous.JPCost)!;
-        abilityCommonData.ChanceToLearn = (byte)(ability.ChanceToLearn ?? previous.ChanceToLearn)!;
+        ref ABILITY_COMMON_DATA data = ref _abilityCommonDataTablePointer.AsRef(model.Id);
+        data.JPCost = (ushort)(model.JPCost ?? previous.JPCost)!;
+        data.ChanceToLearn = (byte)(model.ChanceToLearn ?? previous.ChanceToLearn)!;
 
-        AbilityFlags abilityFlags = (AbilityFlags)(ability.Flags ?? previous.Flags)!;
-        abilityCommonData.Flags = (byte)((((byte)abilityFlags & 0b1111) << 4) | ((byte)abilityFlags & 0b1111));
-        abilityCommonData.AIBehaviorFlags = (AIBehaviorFlags)(ability.AIBehaviorFlags ?? previous.AIBehaviorFlags)!;
+        AbilityFlags abilityFlags = (AbilityFlags)(model.Flags ?? previous.Flags)!;
+        data.Flags = (byte)((((byte)abilityFlags & 0b1111) << 4) | ((byte)abilityFlags & 0b1111));
+        data.AIBehaviorFlags = (AIBehaviorFlags)(model.AIBehaviorFlags ?? previous.AIBehaviorFlags)!;
     }
 
     public Ability GetOriginalAbility(int index)
     {
-        if (index > 512)
-            throw new ArgumentOutOfRangeException(nameof(index), "Ability id can not be more than 512!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"Ability id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public Ability GetAbility(int index)
     {
-        if (index > 512)
-            throw new ArgumentOutOfRangeException(nameof(index), "Ability id can not be more than 512!");
+        if (index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"Ability id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }
