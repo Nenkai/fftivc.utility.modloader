@@ -141,7 +141,7 @@ public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOI
         data.ItemCategory = (ItemCategory)(model.ItemCategory ?? previous.ItemCategory)!;
         data.Unused_0x06 = (byte)(model.Unused_0x06 ?? previous.Unused_0x06)!;
         data.EquipBonusId = (byte)(model.EquipBonusId ?? previous.EquipBonusId)!;
-        data.Price = (byte)(model.Price ?? previous.Price)!;
+        data.Price = (ushort)(model.Price ?? previous.Price)!;
         data.ShopAvailability = (ItemShopAvailability)(model.ShopAvailability ?? previous.ShopAvailability)!;
         data.Unused_0x0B = (byte)(model.Unused_0x0B ?? previous.Unused_0x0B)!;
     }
