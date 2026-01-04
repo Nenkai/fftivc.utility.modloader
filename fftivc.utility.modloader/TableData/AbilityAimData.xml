@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded Aim/Charge abilities secondary data table.
+
+You can use this file as a base to edit Aim/Charge abilities data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/AbilityAimData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+-->
+
+<AbilityAimTable>
+  <Version>1</Version>
+  <Entries>
+    <AbilityAim>
+      <Id>0</Id>
+      <Ticks>3</Ticks>
+      <Power>1</Power>
+    </AbilityAim>
+    <AbilityAim>
+      <Id>1</Id>
+      <Ticks>4</Ticks>
+      <Power>2</Power>
+    </AbilityAim>
+    <AbilityAim>
+      <Id>2</Id>
+      <Ticks>5</Ticks>
+      <Power>3</Power>
+    </AbilityAim>
+    <AbilityAim>
+      <Id>3</Id>
+      <Ticks>6</Ticks>
+      <Power>4</Power>
+    </AbilityAim>
+    <AbilityAim>
+      <Id>4</Id>
+      <Ticks>7</Ticks>
+      <Power>5</Power>
+    </AbilityAim>
+    <AbilityAim>
+      <Id>5</Id>
+      <Ticks>8</Ticks>
+      <Power>7</Power>
+    </AbilityAim>
+    <AbilityAim>
+      <Id>6</Id>
+      <Ticks>10</Ticks>
+      <Power>10</Power>
+    </AbilityAim>
+    <AbilityAim>
+      <Id>7</Id>
+      <Ticks>13</Ticks>
+      <Power>20</Power>
+    </AbilityAim>
+  </Entries>
+</AbilityAimTable>

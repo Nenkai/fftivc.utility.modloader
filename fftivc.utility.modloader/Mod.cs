@@ -35,6 +35,12 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         typeof(IFFTOModPackManager),
         // Tables
         typeof(IFFTOAbilityDataManager),
+        typeof(IFFTOAbilityEffectDataManager),
+        typeof(IFFTOAbilityAnimationDataManager),
+        typeof(IFFTOAbilityAimDataManager),
+        typeof(IFFTOAbilityJumpDataManager),
+        typeof(IFFTOAbilityMathDataManager),
+        typeof(IFFTOAbilityThrowDataManager),
         typeof(IFFTOItemDataManager),
         typeof(IFFTOItemIdRangeToCategoryManager),
         typeof(IFFTOItemCategoryToDataTypeManager),
@@ -187,6 +193,12 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
     private void RegisterTableManagersAsR2Controllers()
     {
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityEffectDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityAnimationDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityAimDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityJumpDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityMathDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityThrowDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemIdRangeToCategoryManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemCategoryToDataTypeManager>());
@@ -235,6 +247,12 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddTransient(typeof(IModelSerializer<>), typeof(ModelSerializer<>))
             // ...To grab them as IEnumerable
             .AddSingleton<IFFTOTableManager, FFTOAbilityDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityEffectDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityAnimationDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityAimDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityJumpDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityMathDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityThrowDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemDataManager>()
             .AddSingleton<IFFTOTableManager, FFTODataTypeToItemIdRangeManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemIdRangeToCategoryManager>()
@@ -254,6 +272,12 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOTableManager, FFTOCommandTypeDataManager>()
             // Individually.
             .AddSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
+            .AddSingleton<IFFTOAbilityEffectDataManager, FFTOAbilityEffectDataManager>()
+            .AddSingleton<IFFTOAbilityAnimationDataManager, FFTOAbilityAnimationDataManager>()
+            .AddSingleton<IFFTOAbilityAimDataManager, FFTOAbilityAimDataManager>()
+            .AddSingleton<IFFTOAbilityJumpDataManager, FFTOAbilityJumpDataManager>()
+            .AddSingleton<IFFTOAbilityMathDataManager, FFTOAbilityMathDataManager>()
+            .AddSingleton<IFFTOAbilityThrowDataManager, FFTOAbilityThrowDataManager>()
             .AddSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
             .AddSingleton<IFFTODataTypeToItemIdRangeManager, FFTODataTypeToItemIdRangeManager>()
             .AddSingleton<IFFTOItemIdRangeToCategoryManager, FFTOItemIdRangeToCategoryManager>()
