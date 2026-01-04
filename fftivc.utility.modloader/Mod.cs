@@ -47,6 +47,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         typeof(IFFTOItemAccessoryDataManager),
         typeof(IFFTOItemConsumableDataManager),
         typeof(IFFTOMonsterJobCommandDataManager),
+        typeof(IFFTOMapItemDataManager),
         typeof(IFFTOJobCommandDataManager),
         typeof(IFFTOJobDataManager),
         typeof(IFFTOStatusEffectDataManager),
@@ -198,6 +199,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemAccessoryDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemConsumableDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMonsterJobCommandDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMapItemDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobCommandDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOStatusEffectDataManager>());
@@ -245,6 +247,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOTableManager, FFTOItemAccessoryDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemConsumableDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOMonsterJobCommandDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOMapItemDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOJobCommandDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOJobDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOStatusEffectDataManager>()
@@ -263,6 +266,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOItemAccessoryDataManager, FFTOItemAccessoryDataManager>()
             .AddSingleton<IFFTOItemConsumableDataManager, FFTOItemConsumableDataManager>()
             .AddSingleton<IFFTOMonsterJobCommandDataManager, FFTOMonsterJobCommandDataManager>()
+            .AddSingleton<IFFTOMapItemDataManager, FFTOMapItemDataManager>()
             .AddSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
             .AddSingleton<IFFTOJobDataManager, FFTOJobDataManager>()
             .AddSingleton<IFFTOStatusEffectDataManager, FFTOStatusEffectDataManager>()
