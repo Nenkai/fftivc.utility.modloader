@@ -13,93 +13,61 @@ Only properties that are actually included in this file will be tracked as edite
 value from the original table or, from other mods making changes depending on mod order.
 
 IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+IMPORTANT 3: Id cannot be more than 393 (hardcoded table size is 12, 382 + 12).
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ABILITY_THROW_DATA.cs
 -->
 
 <AbilityThrowTable>
   <Version>1</Version>
   <Entries>
     <AbilityThrow>
-      <Id>0</Id>
+      <Id>382</Id> <!-- Throw Shuriken / 手裏剣投げ / Lancer de shuriken / Shuriken werfen -->
       <ItemType>Throwing</ItemType>
-      <!-- 
-	      Valid options are:
-          - Knife
-          - NinjaBlade
-          - Sword
-          - KnightSword
-          - Katana
-          - Axe
-          - Rod
-          - Staff
-          - Flail
-          - Gun
-          - Crossbow
-          - Bow
-          - Instrument
-          - Book
-          - Polearm
-          - Pole
-          - Bag
-          - Cloth
-          - Shield
-          - Helmet
-          - Hat
-          - HairAdornment
-          - Armor
-          - Clothing
-          - Robe
-          - Shoes
-          - Armguard
-          - Ring
-          - Armlet
-          - Cloak
-          - Perfume
-          - Throwing
-          - Bomb
-	    -->
     </AbilityThrow>
     <AbilityThrow>
-      <Id>1</Id>
+      <Id>383</Id> <!-- Throw Daggers / 短剣投げ / Lancer de poignard / Dolch werfen -->
       <ItemType>Knife</ItemType>
     </AbilityThrow>
     <AbilityThrow>
-      <Id>2</Id>
+      <Id>384</Id> <!-- Throw Swords / 剣投げ / Lancer d'épée / Schwert werfen -->
       <ItemType>Sword</ItemType>
     </AbilityThrow>
     <AbilityThrow>
-      <Id>3</Id>
+      <Id>385</Id> <!-- Throw Flails / 連接棍投げ / Lancer de fléau / Flegel werfen -->
       <ItemType>Flail</ItemType>
     </AbilityThrow>
     <AbilityThrow>
-      <Id>4</Id>
+      <Id>386</Id> <!-- Throw Katana / 刀投げ / Lancer de katana de samouraï / Katana werfen -->
       <ItemType>Katana</ItemType>
     </AbilityThrow>
     <AbilityThrow>
-      <Id>5</Id>
+      <Id>387</Id> <!-- Throw Ninja Blades / 忍者刀投げ / Lancer de katana de ninja / Ninja-Schwert werfen -->
       <ItemType>NinjaBlade</ItemType>
     </AbilityThrow>
     <AbilityThrow>
-      <Id>6</Id>
+      <Id>388</Id> <!-- Throw Axes / 斧投げ / Lancer de hache / Axt werfen -->
       <ItemType>Axe</ItemType>
     </AbilityThrow>
     <AbilityThrow>
-      <Id>7</Id>
+      <Id>389</Id> <!-- Throw Polearms / 槍投げ / Lancer d'arme d'hast / Speer werfen -->
       <ItemType>Polearm</ItemType>
     </AbilityThrow>
     <AbilityThrow>
-      <Id>8</Id>
+      <Id>390</Id> <!-- Throw Poles / 棒投げ / Lancer de bâton de combat / Stab werfen -->
       <ItemType>Pole</ItemType>
     </AbilityThrow>
     <AbilityThrow>
-      <Id>9</Id>
+      <Id>391</Id> <!-- Throw Knight's Swords / 騎士剣投げ / Lancer de grande épée / Ritterschwert werfen -->
       <ItemType>KnightSword</ItemType>
     </AbilityThrow>
     <AbilityThrow>
-      <Id>10</Id>
+      <Id>392</Id> <!-- Throw Books / 辞書投げ / Lancer d'encyclopédie / Buch werfen -->
       <ItemType>Book</ItemType>
     </AbilityThrow>
     <AbilityThrow>
-      <Id>11</Id>
+      <Id>393</Id> <!-- Throw Bombs / 玉投げ / Lancer de projectile / Wurfgeschoss werfen -->
       <ItemType>Bomb</ItemType>
     </AbilityThrow>
   </Entries>

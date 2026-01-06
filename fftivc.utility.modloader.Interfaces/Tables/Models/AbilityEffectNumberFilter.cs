@@ -6,7 +6,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 /// <summary>
 /// Ability effect table. <see href="https://ffhacktics.com/wiki/Effects"/>
 /// </summary>
-public class AbilityEffectTable : TableBase<AbilityEffect>, IVersionableModel
+public class AbilityEffectNumberFilterTable : TableBase<AbilityEffectNumberFilter>, IVersionableModel
 {
     /// <inheritdoc/>
     public uint Version { get; set; } = 1;
@@ -17,23 +17,23 @@ public class AbilityEffectTable : TableBase<AbilityEffect>, IVersionableModel
 /// <summary>
 /// Ability effect.
 /// </summary>
-public class AbilityEffect : DiffableModelBase<AbilityEffect>, IDiffableModel<AbilityEffect>, IIdentifiableModel
+public class AbilityEffectNumberFilter : DiffableModelBase<AbilityEffectNumberFilter>, IDiffableModel<AbilityEffectNumberFilter>, IIdentifiableModel
 {
     /// <summary>
     /// Id. No more than 453 in vanilla.
     /// </summary>
     public int Id { get; set; }
 
-    public ushort? EffectId { get; set; }
+    public short? EffectId { get; set; }
 
-    public static Dictionary<string, DiffablePropertyItem<AbilityEffect>> PropertyMap { get; } = new()
+    public static Dictionary<string, DiffablePropertyItem<AbilityEffectNumberFilter>> PropertyMap { get; } = new()
     {
-        [nameof(EffectId)] = new DiffablePropertyItem<AbilityEffect, ushort?>(nameof(EffectId), i => i.EffectId, (i, v) => i.EffectId = v),
+        [nameof(EffectId)] = new DiffablePropertyItem<AbilityEffectNumberFilter, short?>(nameof(EffectId), i => i.EffectId, (i, v) => i.EffectId = v),
     };
 
-    public static AbilityEffect FromStructure(int id, ref ABILITY_EFFECT_DATA @struct)
+    public static AbilityEffectNumberFilter FromStructure(int id, ref ABILITY_EFFECT_NUMBER_FILTER_DATA @struct)
     {
-        var abilityEffect = new AbilityEffect()
+        var abilityEffect = new AbilityEffectNumberFilter()
         {
             Id = id,
             EffectId = @struct.EffectId,
@@ -46,9 +46,9 @@ public class AbilityEffect : DiffableModelBase<AbilityEffect>, IDiffableModel<Ab
     /// Clones the ability effect.
     /// </summary>
     /// <returns></returns>
-    public AbilityEffect Clone()
+    public AbilityEffectNumberFilter Clone()
     {
-        return new AbilityEffect()
+        return new AbilityEffectNumberFilter()
         {
             Id = Id,
             EffectId = EffectId,

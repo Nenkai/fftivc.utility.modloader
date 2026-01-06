@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded Aim/Charge abilities secondary data table.
+This table specifically provides extra data for ability 406 through 413 (hardcoded).
+
+You can use this file as a base to edit Aim/Charge abilities data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/AbilityChargeAimTable.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+IMPORTANT 3: Id cannot be more than 413 (hardcoded table size is 8, 406 + 8).
+-->
+
+<AbilityChargeAimTable>
+  <Version>1</Version>
+  <Entries>
+    <AbilityChargeAim>
+      <Id>406</Id> <!-- Aim +1 / チャージ＋１ / Charge +1 / Zielen +1 -->
+      <Ticks>3</Ticks>
+      <Power>1</Power>
+    </AbilityChargeAim>
+    <AbilityChargeAim>
+      <Id>407</Id> <!-- Aim +2 / チャージ＋２ / Charge +2 / Zielen +2 -->
+      <Ticks>4</Ticks>
+      <Power>2</Power>
+    </AbilityChargeAim>
+    <AbilityChargeAim>
+      <Id>408</Id> <!-- Aim +3 / チャージ＋３ / Charge +3 / Zielen +3 -->
+      <Ticks>5</Ticks>
+      <Power>3</Power>
+    </AbilityChargeAim>
+    <AbilityChargeAim>
+      <Id>409</Id> <!-- Aim +4 / チャージ＋４ / Charge +4 / Zielen +4 -->
+      <Ticks>6</Ticks>
+      <Power>4</Power>
+    </AbilityChargeAim>
+    <AbilityChargeAim>
+      <Id>410</Id> <!-- Aim +5 / チャージ＋５ / Charge +5 / Zielen +5 -->
+      <Ticks>7</Ticks>
+      <Power>5</Power>
+    </AbilityChargeAim>
+    <AbilityChargeAim>
+      <Id>411</Id> <!-- Aim +7 / チャージ＋７ / Charge +7 / Zielen +7 -->
+      <Ticks>8</Ticks>
+      <Power>7</Power>
+    </AbilityChargeAim>
+    <AbilityChargeAim>
+      <Id>412</Id> <!-- Aim +10 / チャージ＋１０ / Charge +10 / Zielen +10 -->
+      <Ticks>10</Ticks>
+      <Power>10</Power>
+    </AbilityChargeAim>
+    <AbilityChargeAim>
+      <Id>413</Id> <!-- Aim +20 / チャージ＋２０ / Charge +20 / Zielen +20 -->
+      <Ticks>13</Ticks>
+      <Power>20</Power>
+    </AbilityChargeAim>
+  </Entries>
+</AbilityChargeAimTable>

@@ -4,7 +4,7 @@
 This table file is used to overwrite the game's hardcoded map items table.
 
 You can use this file as a base to edit Map Items data in your mod.
-Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/MapItemData.xml.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/MapTrapData.xml.
 
 IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
 Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
@@ -12,30 +12,21 @@ value from the original table or, from other mods making changes depending on mo
 
 IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
 
+IMPORTANT 3: Id cannot be more than 127 (hardcoded table size is 128).
+
 For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/MAP_ITEM_DATA.cs
 -->
 
-<MapItemTable>
+<MapTrapFormationTable>
   <Version>1</Version>
   <Entries>
-    <MapItem>
+    <MapTrapFormation>
       <Id>0</Id> <!-- Empty/Dummy -->
       
       <!-- Item 1 - There are up to 4 items per map -->
       <X1>0</X1> <!-- 0-15 -->
       <Y1>0</Y1> <!-- 0-15 -->     
       <TrapFlags1>None</TrapFlags1>
-      <!-- 
-	      Valid options are:
-	        - None
-          - NoActivation
-          - AlwaysTrap
-          - DisableTrap
-          - SteelNeedle
-          - SleepingGas
-          - Deathtrap
-          - Degenerator
-	    -->
       <RareItemId1>0</RareItemId1> <!-- ItemData id -->
       <CommonItemId1>0</CommonItemId1> <!-- ItemData id -->
       
@@ -59,9 +50,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>1</Id> <!-- Eagrose Castle Gate -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>1</Id> <!-- Eagrose Castle Gate / PN10200 / Portes du château d'Yguros / Am Tor von Schloss Eagrose -->
       <X1>1</X1>
       <Y1>12</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -82,9 +73,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>214</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>2</Id> <!-- Lesalia Castle Postern -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>2</Id> <!-- Lesalia Castle Postern / ルザリア城 裏門 / Poterne du château de Lesalia / Am Hintertor von Schloss Lesalia -->
       <X1>0</X1>
       <Y1>10</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -105,9 +96,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>25</RareItemId4>
       <CommonItemId4>251</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>3</Id> <!-- Mullonde Cathedral Nave -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>3</Id> <!-- Mullonde Cathedral Nave / 聖地ミュロンド 寺院大広間 / Nef de la cathédrale sainte de Mullonde / Mullonde – In der Halle -->
       <X1>4</X1>
       <Y1>0</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -128,9 +119,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>242</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>4</Id> <!-- Office of Lesalia Castle -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>4</Id> <!-- Lesalia Castle Study / PN10500 / Étude du château de Lesalia / Schloss Lesalia – Geheimkabinett -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -151,9 +142,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>5</Id> <!-- Riovanes Castle Roof -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>5</Id> <!-- Riovanes Castle Roof / リオファネス城 屋上 / Toit du château de Riofanès / Burg Riovanes – Auf dem Burgdach -->
       <X1>0</X1>
       <Y1>3</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -174,9 +165,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>13</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>6</Id> <!-- Riovanes Castle Gate -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>6</Id> <!-- Riovanes Castle Gate / リオファネス城 城門前 / Portes du château de Riofanès / Burg Riovanes – Am Burgtor -->
       <X1>0</X1>
       <Y1>10</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -197,9 +188,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>164</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>7</Id> <!-- Riovanes Castle Keep -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>7</Id> <!-- Riovanes Castle Keep / リオファネス城 城内 / Donjon du château de Riofanès / In der Burg Riovanes -->
       <X1>0</X1>
       <Y1>9</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -220,9 +211,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>210</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>8</Id> <!-- Riovanes Castle -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>8</Id> <!-- Riovanes Castle / リオファネス城 / Château de Riofanès / Burg Riovanes -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -243,9 +234,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>9</Id> <!-- Citadel of Igros Castle -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>9</Id> <!-- Eagrose Castle Solar / PN11000 / Enceinte du château d'Yguros / Schloss Eagrose – Schlossmauer -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -266,9 +257,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>10</Id> <!-- Eagrose Castle Keep -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>10</Id> <!-- Eagrose Castle Keep / イグーロス城 城内 / Donjon du château d'Yguros / Im Schloss Eagrose -->
       <X1>1</X1>
       <Y1>3</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -289,9 +280,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>61</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>11</Id> <!-- Eagrose Castle Solar -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>11</Id> <!-- Eagrose Castle Solar / イグーロス城 執務室 / Étude du château d'Yguros / Schloss Eagrose – Geheimkabinett -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -312,9 +303,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>12</Id> <!-- Lionel Castle Gate -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>12</Id> <!-- Lionel Castle Gate / ライオネル城 城門前 / Portes du château de Lionel / Am Tor von Schloss Lionel -->
       <X1>1</X1>
       <Y1>7</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -335,9 +326,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>211</RareItemId4>
       <CommonItemId4>248</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>13</Id> <!-- Lionel Castle Oratory -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>13</Id> <!-- Lionel Castle Oratory / ライオネル城 城内 / Oratoire du château de Lionel / Im Schloss Lionel -->
       <X1>3</X1>
       <Y1>6</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -358,9 +349,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>40</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>14</Id> <!-- Lionel Castle Parlor -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>14</Id> <!-- Lionel Castle Parlor / PN11500 / Étude du château de Lionel / Schloss Lionel – Geheimkabinett -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -381,9 +372,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>15</Id> <!-- Limberry Castle Gate -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>15</Id> <!-- Limberry Castle Gate / ランベリー城 城門 / Portes du château de Limberry / Am Tor von Schloss Limberry -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -404,9 +395,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>16</Id> <!-- Limberry Castle Keep -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>16</Id> <!-- Limberry Castle Keep / ランベリー城 城内 / Donjon du château de Limberry / Im Schloss Limberry -->
       <X1>0</X1>
       <Y1>10</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -427,9 +418,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>44</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>17</Id> <!-- Limberry Castle Undercroft -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>17</Id> <!-- Limberry Castle Undercroft / ランベリー城 地下墓地 / Hypogée du château de Limberry / Limberry-Katakomben -->
       <X1>1</X1>
       <Y1>3</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -450,9 +441,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>118</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>18</Id> <!-- Limberry Castle Parlor -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>18</Id> <!-- Limberry Castle Parlor / PN11900 / Étude du château de Limberry / Schloss Limberry – Geheimkabinett -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -473,9 +464,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>19</Id> <!-- Limberry Castle Gate -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>19</Id> <!-- Limberry Castle Gate / ランベリー城 城門 / Portes du château de Limberry / Am Tor von Schloss Limberry -->
       <X1>2</X1>
       <Y1>6</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -496,9 +487,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>218</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>20</Id> <!-- Zeltennia Castle Keep -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>20</Id> <!-- Zeltennia Castle Keep / ゼルテニア城 城内 / Donjon du château de Zeltennia / Im Schloss Zeltennia -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -519,9 +510,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>21</Id> <!-- Zeltennia Castle -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>21</Id> <!-- Zeltennia Castle / ゼルテニア城 / Château de Zeltennia / Schloss Zeltennia -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -542,9 +533,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>22</Id> <!-- Gariland -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>22</Id> <!-- Gariland / 魔法都市ガリランド / Cité magique de Gariland / Magiestadt Gariland -->
       <X1>2</X1>
       <Y1>0</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -565,9 +556,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>23</Id> <!-- The Beoulve Manse -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>23</Id> <!-- The Beoulve Manse / ベオルブ邸 / Château des Béoulve / Das Anwesen der Beoulves -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -588,9 +579,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>24</Id> <!-- The Royal Military Akademy At Gariland -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>24</Id> <!-- The Royal Military Akademy / 士官アカデミー講堂 / Auditoire de l'Académie / Königliche Militärakademie Gariland -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -611,9 +602,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>25</Id> <!-- Yardrow -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>25</Id> <!-- Yardrow / 城塞都市ヤードー / Citadelle de Yardow / Stadtfestung Yardrow -->
       <X1>4</X1>
       <Y1>7</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -634,9 +625,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>81</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>26</Id> <!-- Yardrow Armory -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>26</Id> <!-- Yardrow Armory / PN12600 / Arsenal de Yardow / Yardrower Zeughaus -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -657,9 +648,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>27</Id> <!-- Gollund -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>27</Id> <!-- Gollund / 炭鉱都市ゴルランド / Cité minière de Gollund / Bergbaustadt Gollund -->
       <X1>0</X1>
       <Y1>9</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -680,9 +671,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>150</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>28</Id> <!-- Gollund Colliery Ridge -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>28</Id> <!-- Gollund Colliery Ridge / 炭鉱都市ゴルランド 炭坑 地下一階 / Mine de Gollund - premier niveau / Gollund-Bergwerk – Obere Schicht -->
       <X1>1</X1>
       <Y1>0</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -703,9 +694,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>88</RareItemId4>
       <CommonItemId4>250</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>29</Id> <!-- Gollund Colliery Slope -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>29</Id> <!-- Gollund Colliery Slope / 炭鉱都市ゴルランド 炭坑 地下二階 / Mine de Gollund - deuxième niveau / Gollund-Bergwerk – Mittlere Schicht -->
       <X1>2</X1>
       <Y1>1</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -726,9 +717,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>190</RareItemId4>
       <CommonItemId4>250</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>30</Id> <!-- Gollund Colliery Floor -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>30</Id> <!-- Gollund Colliery Floor / 炭鉱都市ゴルランド 炭坑 地下三階 / Mine de Gollund - troisième niveau / Gollund-Bergwerk – Untere Schicht -->
       <X1>2</X1>
       <Y1>2</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -749,9 +740,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>88</RareItemId4>
       <CommonItemId4>250</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>31</Id> <!-- Dorter -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>31</Id> <!-- Dorter / 貿易都市ドーター / Cité marchande de Dorter / Handelsstadt Dorter -->
       <X1>0</X1>
       <Y1>1</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -772,9 +763,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>147</RareItemId4>
       <CommonItemId4>248</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>32</Id> <!-- Dorter Slums -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>32</Id> <!-- Dorter Slums / ドーターのスラム / Bas quartiers de Dorter / Dorter-Slums -->
       <X1>0</X1>
       <Y1>11</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -795,9 +786,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>20</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>33</Id> <!-- Hospital in Slums -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>33</Id> <!-- Slum Infirmary / PN13300 / Infirmerie des bas quartiers / (Wird gelöscht) Slum-Hospital -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -818,9 +809,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>34</Id> <!-- The Sand Rat's Sietch -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>34</Id> <!-- The Sand Rat's Sietch / 砂鼠の穴ぐら / Repaire des rats des sables / Wüstenloch der Sandratten -->
       <X1>5</X1>
       <Y1>4</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -841,9 +832,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>187</RareItemId4>
       <CommonItemId4>247</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>35</Id> <!-- Zaland -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>35</Id> <!-- Zaland / 城塞都市ザランダ / Citadelle de Zalanda / Stadtfestung Zaland -->
       <X1>0</X1>
       <Y1>2</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -864,9 +855,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>148</RareItemId4>
       <CommonItemId4>248</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>36</Id> <!-- Outlying Church -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>36</Id> <!-- Outlying Church / 町外れの教会 / Église isolée / Kirche am Stadtrand -->
       <X1>2</X1>
       <Y1>8</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -887,9 +878,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>8</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>37</Id> <!-- Ruins outside Zaland -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>37</Id> <!-- Zaland Outskirts / PN13700 / Ruines à la périphérie de Zalanda / Am Stadtrand von Zaland -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -910,9 +901,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>38</Id> <!-- Goug -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>38</Id> <!-- Goug / 機工都市ゴーグ / Cité mécanique de Goug / Uhrwerksstadt Goug -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -933,9 +924,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>39</Id> <!-- Golland Coal Shaft -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>39</Id> <!-- Gollund Colliery Shaft / 炭鉱都市ゴルランド 坑道 / Galerie de la mine de Gollund / Gollund-Bergwerk – Minenstollen -->
       <X1>1</X1>
       <Y1>3</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -956,9 +947,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>190</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>40</Id> <!-- Goug Lowtown -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>40</Id> <!-- Goug Lowtown / ゴーグのスラム / Bas quartiers de Goug / Goug-Slums -->
       <X1>2</X1>
       <Y1>5</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -979,9 +970,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>95</RareItemId4>
       <CommonItemId4>248</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>41</Id> <!-- Bunansa Residence -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>41</Id> <!-- Bunansa Residence / ベスロディオの家 / Résidence des Bunansa / Im Haus der Bunansas -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1002,9 +993,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>42</Id> <!-- Warjilis -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>42</Id> <!-- Warjilis / 貿易都市ウォージリス / Cité marchande de War-Jilis / Handelshafen Warjilis -->
       <X1>2</X1>
       <Y1>14</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1025,9 +1016,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>41</RareItemId4>
       <CommonItemId4>243</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>43</Id> <!-- Warjilis Harbor -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>43</Id> <!-- Warjilis Harbor / ウォージリスの港 / Port de War-Jilis / Hafen von Warjilis -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1048,9 +1039,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>44</Id> <!-- Bervenia -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>44</Id> <!-- Bervenia / 自治都市ベルベニア / Cité autonome de Belvénia / Freie Stadt Bervenia -->
       <X1>0</X1>
       <Y1>8</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1071,9 +1062,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>111</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>45</Id> <!-- Zeltennia Castle Chapel Ruins -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>45</Id> <!-- Zeltennia Castle - Chapel Ruins / ゼルテニア城の教会跡 / Ruines de l'église du château de Zeltennia / Bei der Klosterruine von Schloss Zeltennia -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1094,9 +1085,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>46</Id> <!-- The Tomb of Barbaneth Beoulve -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>46</Id> <!-- The Tomb of Barbaneth Beoulve / 天騎士バルバネスの墓 / Stèle de Barbaneth Béoulve / Am Grab von Barbaneth Boulve -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1117,9 +1108,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>47</Id> <!-- Sal Ghidos -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>47</Id> <!-- Sal Ghidos / 貿易都市ザーギドス / Cité marchande de Zarghidos / Marktstadt Sal Ghidos -->
       <X1>0</X1>
       <Y1>2</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1140,9 +1131,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>223</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>48</Id> <!-- Sal Ghidos Slumtown -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>48</Id> <!-- Sal Ghidos Slumtown / PN14800 / Bas quartiers de Zarghidos / Sal-Ghidos-Slums -->
       <X1>1</X1>
       <Y1>9</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1163,9 +1154,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>227</RareItemId4>
       <CommonItemId4>243</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>49</Id> <!-- Ziekden Fortress -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>49</Id> <!-- Ziekden Fortress / ジークデン砦 / Forteresse de Ziekden / Burg Ziekden -->
       <X1>3</X1>
       <Y1>3</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1186,9 +1177,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>201</RareItemId4>
       <CommonItemId4>247</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>50</Id> <!-- Mullonde Cathedral -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>50</Id> <!-- Mullonde Cathedral / 聖地ミュロンド 寺院正門 / Frontispice de la cathédrale sainte de Mullonde / Mullonde – Vor der Kathedrale -->
       <X1>0</X1>
       <Y1>5</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1209,9 +1200,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>241</RareItemId4>
       <CommonItemId4>244</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>51</Id> <!-- Mullonde Cathedral -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>51</Id> <!-- Mullonde Cathedral / 聖地ミュロンド 寺院正門 / Frontispice de la cathédrale sainte de Mullonde / Mullonde – Vor der Kathedrale -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1232,9 +1223,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>52</Id> <!-- Mullonde Cathedral Sanctuary -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>52</Id> <!-- Mullonde Cathedral Sanctuary / 聖地ミュロンド 地下礼拝堂 / Sacrarium de la cathédrale sainte de Mullonde / Mullonde – Krypta -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1255,9 +1246,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>53</Id> <!-- The Necrohol Gate -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>53</Id> <!-- The Imperial Capitoline / P15200 / Nécropole de Mullonde - Secteur impérial / [P15200] (Dummy?) Totenstatt Mullonde – Im Kapitol -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1278,9 +1269,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>54</Id> <!-- Lost Halidom -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>54</Id> <!-- Lost Halidom / 死都ミュロンド 失われた聖域 / Nécropole de Mullonde - Havre perdu / Verlorenes Heiligtum -->
       <X1>2</X1>
       <Y1>7</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1301,9 +1292,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>245</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>55</Id> <!-- Airship Graveyard -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>55</Id> <!-- Airship Graveyard / 死都ミュロンド 飛空艇の墓場 / Nécropole de Mullonde - Cimetière des aéronefs / Friedhof der Luftschiffe -->
       <X1>0</X1>
       <Y1>1</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1324,9 +1315,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>245</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>56</Id> <!-- Orbonne Monastery -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>56</Id> <!-- Orbonne Monastery / オーボンヌ修道院 / Monastère d'Orbonne / Kloster von Orbonne -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1347,9 +1338,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>57</Id> <!-- Monastery Vaults: First Level -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>57</Id> <!-- Monastery Vaults - First Level / オーボンヌ修道院 地下書庫 地下一階 / Bibliothèque souterraine niveau -1 / Klosterarchiv – 1. Untergeschoss -->
       <X1>1</X1>
       <Y1>11</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1370,9 +1361,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>227</RareItemId4>
       <CommonItemId4>251</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>58</Id> <!-- Monastery Vaults: Second Level -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>58</Id> <!-- Monastery Vaults - Second Level / オーボンヌ修道院 地下書庫 地下二階 / Bibliothèque souterraine niveau -2 / Klosterarchiv – 2. Untergeschoss -->
       <X1>0</X1>
       <Y1>9</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1393,9 +1384,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>109</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>59</Id> <!-- Monastery Vaults: Third Level -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>59</Id> <!-- Monastery Vaults - Third Level / オーボンヌ修道院 地下書庫 地下三階 / Bibliothèque souterraine niveau -3 / Klosterarchiv – 3. Untergeschoss -->
       <X1>0</X1>
       <Y1>10</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1416,9 +1407,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>163</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>60</Id> <!-- Monastery Vaults: Fourth Level -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>60</Id> <!-- Monastery Vaults - Fourth Level / オーボンヌ修道院 地下書庫 地下四階 / Bibliothèque souterraine niveau -4 / Klosterarchiv – 4. Untergeschoss -->
       <X1>0</X1>
       <Y1>7</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1439,9 +1430,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>245</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>61</Id> <!-- Monastery Vaults: Fifth Level -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>61</Id> <!-- Monastery Vaults - Fifth Level / オーボンヌ修道院 地下書庫 地下五階 / Bibliothèque souterraine niveau -5 / Klosterarchiv – 5. Untergeschoss -->
       <X1>0</X1>
       <Y1>14</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1462,9 +1453,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>245</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>62</Id> <!-- Orbonne Monastery -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>62</Id> <!-- Orbonne Monastery / オーボンヌ修道院 礼拝堂 / Sacrarium du monastère d'Orbonne / Kloster von Orbonne – Altarraum -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1485,9 +1476,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>63</Id> <!-- Golgollada Gallows -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>63</Id> <!-- Golgollada Gallows / ゴルゴラルダ処刑場 / Potence de Gorgoralda / Galgen von Golgollada -->
       <X1>0</X1>
       <Y1>8</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1508,9 +1499,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>162</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>64</Id> <!-- Fort Besselat Sluice -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>64</Id> <!-- Fort Besselat Sluice / ベスラ要塞 水門前 / Écluse de Besselat / Burg Besselat – Schleuse -->
       <X1>1</X1>
       <Y1>5</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1531,9 +1522,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>182</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>65</Id> <!-- Fort Besselat Granary -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>65</Id> <!-- Fort Besselat Granary / PN16400 / Cellier de la forteresse de Besselat / Burg Besselat – Kornspeicher -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1554,9 +1545,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>66</Id> <!-- Fort Besselat: South Wall -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>66</Id> <!-- Fort Besselat - South Wall / ベスラ要塞 城壁南 / Enceinte sud de la forteresse de Besselat / Burg Besselat – Südwall -->
       <X1>1</X1>
       <Y1>11</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1577,9 +1568,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>181</RareItemId4>
       <CommonItemId4>244</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>67</Id> <!-- Fort Besselat: North Wall -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>67</Id> <!-- Fort Besselat - North Wall / ベスラ要塞 城壁北 / Enceinte nord de la forteresse de Besselat / Burg Besselat – Nordwall -->
       <X1>0</X1>
       <Y1>10</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1600,9 +1591,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>45</RareItemId4>
       <CommonItemId4>242</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>68</Id> <!-- Fort Besselat -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>68</Id> <!-- Fort Besselat / ベスラ要塞 / Forteresse de Besselat / Burg Besselat -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1623,9 +1614,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>69</Id> <!-- The Necrohol of Mullonde -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>69</Id> <!-- The Necrohol of Mullonde / 死都ミュロンド ミュロンド中枢 / Nécropole de Mullonde - Chœur / Totenstatt Mullonde – Im Kapitol -->
       <X1>0</X1>
       <Y1>3</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1646,9 +1637,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>245</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>70</Id> <!-- Nelveska Temple -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>70</Id> <!-- Nelveska Temple / ネルベスカ神殿 / Temple de Nelveska / Nelveska-Tempel -->
       <X1>1</X1>
       <Y1>2</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1669,9 +1660,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>106</RareItemId4>
       <CommonItemId4>99</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>71</Id> <!-- Dorvauldar Marsh -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>71</Id> <!-- Dorvauldar Marsh / ドルボダル湿原 / Marais de Dolbodar / Dorvauldar-Sumpf -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>SteelNeedle</TrapFlags1>
@@ -1692,9 +1683,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Degenerator</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>72</Id> <!-- Fovoham Windflats -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>72</Id> <!-- Fovoham Windflats / フォボハム平原 / Plaine de Fovoham / Fovoham-Plateau -->
       <X1>0</X1>
       <Y1>8</Y1>
       <TrapFlags1>SleepingGas</TrapFlags1>
@@ -1715,9 +1706,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>SteelNeedle</TrapFlags4>
       <RareItemId4>84</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>73</Id> <!-- Mill Interior -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>73</Id> <!-- Mill Interior / PN17200 / Cœur du moulin / In der Mühle -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -1738,9 +1729,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>74</Id> <!-- The Siedge Weald -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>74</Id> <!-- The Siedge Weald / スウィージの森 / Futaie de Suigy / Siedge-Wald -->
       <X1>0</X1>
       <Y1>1</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1761,9 +1752,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>157</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>75</Id> <!-- Mount Bervenia -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>75</Id> <!-- Mount Bervenia / ベルベニア活火山 / Mont Belvénia / Vulkan Bervenia -->
       <X1>3</X1>
       <Y1>10</Y1>
       <TrapFlags1>Deathtrap</TrapFlags1>
@@ -1784,9 +1775,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Deathtrap</TrapFlags4>
       <RareItemId4>256</RareItemId4>
       <CommonItemId4>256</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>76</Id> <!-- Zeklaus Desert -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>76</Id> <!-- Zeklaus Desert / ゼクラス砂漠 / Désert de Zeklaus / Zeklaus-Wüste -->
       <X1>0</X1>
       <Y1>6</Y1>
       <TrapFlags1>Degenerator</TrapFlags1>
@@ -1807,9 +1798,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Degenerator, DisableTrap</TrapFlags4>
       <RareItemId4>52</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>77</Id> <!-- Lenalian Plateau -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>77</Id> <!-- Lenalian Plateau / レナリア台地 / Plateau de Lenalia / Lenalia-Flachland -->
       <X1>2</X1>
       <Y1>8</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1830,9 +1821,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>174</RareItemId4>
       <CommonItemId4>247</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>78</Id> <!-- Tchigolith Fenlands -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>78</Id> <!-- Tchigolith Fenlands / ツィゴリス湿原 / Palud de Tsigolith / Tchigolith-Moor -->
       <X1>1</X1>
       <Y1>0</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1853,9 +1844,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>71</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>79</Id> <!-- The Yuguewood -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>79</Id> <!-- The Yuguewood / ユーグォの森 / Bois de Yugwo / Yuge-Wald -->
       <X1>0</X1>
       <Y1>1</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1876,9 +1867,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>119</RareItemId4>
       <CommonItemId4>251</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>80</Id> <!-- Araguay Woods -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>80</Id> <!-- Araguay Woods / アラグアイの森 / Forêt d'Arag-aï / Araguay-Wälder -->
       <X1>3</X1>
       <Y1>5</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1899,9 +1890,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>209</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>81</Id> <!-- Grogh Heights -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>81</Id> <!-- Grogh Heights / グローグの丘 / Collines de Grogh / Grogh-Höhen -->
       <X1>0</X1>
       <Y1>1</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1922,9 +1913,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>42</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>82</Id> <!-- Beddha Sandwaste -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>82</Id> <!-- Beddha Sandwaste / ベッド砂漠 / Désert de Bedd / Beddha-Wüste -->
       <X1>3</X1>
       <Y1>7</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1945,9 +1936,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>124</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>83</Id> <!-- Zeirchele Falls -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>83</Id> <!-- Zeirchele Falls / ゼイレキレの滝 / Chutes de Zeireh-Kireh / Zeirchele-Fälle -->
       <X1>1</X1>
       <Y1>6</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1968,9 +1959,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>55</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>84</Id> <!-- Balias Tor -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>84</Id> <!-- Balias Tor / バリアスの丘 / Talus de Varius / Balias-Höhe -->
       <X1>3</X1>
       <Y1>6</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -1991,9 +1982,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>215</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>85</Id> <!-- Mandalia Plain -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>85</Id> <!-- Mandalia Plain / マンダリア平原 / Plaine de Mandalia / Mandalia-Ebene -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -2014,9 +2005,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>59</RareItemId4>
       <CommonItemId4>247</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>86</Id> <!-- Dugeura Pass -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>86</Id> <!-- Dugeura Pass / ドグーラ峠 / Col de D'guhra / Dugeura-Pass -->
       <X1>0</X1>
       <Y1>4</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -2037,9 +2028,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>87</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>87</Id> <!-- Balias Swale -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>87</Id> <!-- Balias Swale / バリアスの谷 / Vallon de Varius / Balias-Tal -->
       <X1>0</X1>
       <Y1>11</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -2060,9 +2051,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>126</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>88</Id> <!-- Finnath Creek -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>88</Id> <!-- Finnath Creek / フィナス河 / Delta de Finnath / Finnath-Strom -->
       <X1>1</X1>
       <Y1>5</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -2083,9 +2074,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>195</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>89</Id> <!-- Lake Poeskas -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>89</Id> <!-- Lake Poescas / ポエスカス湖 / Lac de Poescas / Poescas-See -->
       <X1>3</X1>
       <Y1>13</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -2106,9 +2097,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>180</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>90</Id> <!-- Mount Germinas -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>90</Id> <!-- Mount Germinas / ゲルミナス山岳 / Mont Germinas / Germinas-Gebirge -->
       <X1>3</X1>
       <Y1>3</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -2129,9 +2120,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>69</RareItemId4>
       <CommonItemId4>252</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>91</Id> <!-- Brigands' Den -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>91</Id> <!-- Brigands' Den / 盗賊の砦 / Antre des brigands / Räuberschanze -->
       <X1>1</X1>
       <Y1>10</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -2152,9 +2143,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>83</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>92</Id> <!-- Igros·Beoulve residence -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>92</Id> <!-- Eagrose - The Beoulve Manse / 成都イグーロス ベオルブ邸 / Yguros, château des Béoulve / Das Anwesen der Beoulves in Eagrose -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -2175,9 +2166,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>93</Id> <!-- Broke down shed·Wooden building -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>93</Id> <!-- Rooftops - Wood / PN19200 / Entrepôt de bois / Auf dem Holzbau -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -2198,9 +2189,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>94</Id> <!-- Broke down shed·Stone building -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>94</Id> <!-- Rooftops - Stone / PN19300 / Entrepôt de pierres / Auf dem Steinbau -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -2221,9 +2212,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>95</Id> <!-- Church -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>95</Id> <!-- Church / PN19400 / Église / Kirche -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -2244,9 +2235,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>96</Id> <!-- Pub -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>96</Id> <!-- Tavern / PN19500 / Taverne / Taverne -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -2267,9 +2258,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>97</Id> <!-- Inside castle gate in Lesalia -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>97</Id> <!-- (Unused?) Lesalia Castle - Inner Court / P19600 / Cour du château de Lesalia / (Dummy?) Schloss Lesalia – Innen -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -2290,9 +2281,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>98</Id> <!-- Outside castle gate in Lesalia -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>98</Id> <!-- (Unused?) Lesalia Castle Perimeter / P19700 / Enceinte du château de Lesalia / (Dummy?) Schloss Lesalia – Außen -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -2313,9 +2304,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>99</Id> <!-- Main street of Lesalia -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>99</Id> <!-- (Unused?) Lesalia Thoroughfare / P19800 / Artère principale de Lesalia / (Dummy?) Lesalia – Hauptstraße -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -2336,9 +2327,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>100</Id> <!-- Public cemetary -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>100</Id> <!-- Cemetery / PN19900 / Cimetière communal / Friedhof -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -2359,8 +2350,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>101</Id> <!-- Tutorial 1 -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2382,8 +2373,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>102</Id> <!-- Tutorial 2 -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2405,9 +2396,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>103</Id> <!-- Windflat Mill -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>103</Id> <!-- Windflat Mill / 風車小屋 / Moulin de Fovoham / Bei der Mühle -->
       <X1>0</X1>
       <Y1>9</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -2428,8 +2419,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>4</RareItemId4>
       <CommonItemId4>241</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>104</Id> <!-- The Beoulve Manse: In the waning days of the Fifty Years' War -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2451,9 +2442,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>105</Id> <!-- Noissim -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>105</Id> <!-- TERMINATION / TERMINATION / Liquidation / VERNICHTUNG -->
       <X1>0</X1>
       <Y1>4</Y1>
       <TrapFlags1>SteelNeedle</TrapFlags1>
@@ -2474,9 +2465,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Degenerator, Deathtrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>106</Id> <!-- Termination -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>106</Id> <!-- DELTA / DELTA / Le delta / DELTA -->
       <X1>0</X1>
       <Y1>2</Y1>
       <TrapFlags1>SteelNeedle</TrapFlags1>
@@ -2497,9 +2488,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Deathtrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>107</Id> <!-- Delta -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>107</Id> <!-- NOISSIM / NOISSIM / Rotor / NOISSIM -->
       <X1>0</X1>
       <Y1>6</Y1>
       <TrapFlags1>SteelNeedle</TrapFlags1>
@@ -2520,9 +2511,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Deathtrap</TrapFlags4>
       <RareItemId4>43</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>108</Id> <!-- Valkyries -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>108</Id> <!-- VOYAGE / VOYAGE / La lance / REISE -->
       <X1>2</X1>
       <Y1>10</Y1>
       <TrapFlags1>SteelNeedle</TrapFlags1>
@@ -2543,9 +2534,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Deathtrap</TrapFlags4>
       <RareItemId4>91</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>109</Id> <!-- Yrotciv -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>109</Id> <!-- BRIDGE / BRIDGE / Le pont / BRÜCKE -->
       <X1>4</X1>
       <Y1>4</Y1>
       <TrapFlags1>SteelNeedle</TrapFlags1>
@@ -2566,9 +2557,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Deathtrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>110</Id> <!-- Tiger -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>110</Id> <!-- VALKYRIES / VALKYRIES / La chevauchée / WALKÜREN -->
       <X1>4</X1>
       <Y1>2</Y1>
       <TrapFlags1>SteelNeedle</TrapFlags1>
@@ -2589,9 +2580,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Deathtrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>111</Id> <!-- Bridge -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>111</Id> <!-- YROTCIV / YROTCIV / L'odeur / HPMUIRT -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>SteelNeedle</TrapFlags1>
@@ -2612,9 +2603,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Deathtrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>112</Id> <!-- Voyage -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>112</Id> <!-- TIGER / TIGER / Le tigre / TIGER -->
       <X1>9</X1>
       <Y1>8</Y1>
       <TrapFlags1>SteelNeedle</TrapFlags1>
@@ -2635,9 +2626,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Deathtrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>113</Id> <!-- Horror -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>113</Id> <!-- HORROR / HORROR / L'horreur / GRAUEN -->
       <X1>1</X1>
       <Y1>3</Y1>
       <TrapFlags1>SteelNeedle</TrapFlags1>
@@ -2658,9 +2649,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>Deathtrap</TrapFlags4>
       <RareItemId4>142</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>114</Id> <!-- End -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>114</Id> <!-- END / END / La fin / ENDE -->
       <X1>5</X1>
       <Y1>10</Y1>
       <TrapFlags1>DisableTrap</TrapFlags1>
@@ -2681,9 +2672,9 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>245</RareItemId4>
       <CommonItemId4>253</CommonItemId4>
-    </MapItem>
-    <MapItem>
-      <Id>115</Id> <!-- Abandoned Watchtower -->
+    </MapTrapFormation>
+    <MapTrapFormation>
+      <Id>115</Id> <!-- (Unused?) Abandoned Watchtower / PN21100 / Tourelle en ruine / (Dummy?) Verlassener Wachtturm -->
       <X1>0</X1>
       <Y1>0</Y1>
       <TrapFlags1>None</TrapFlags1>
@@ -2704,8 +2695,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>None</TrapFlags4>
       <RareItemId4>0</RareItemId4>
       <CommonItemId4>0</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>116</Id> <!-- (No name) - Battle Arena -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2727,8 +2718,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>241</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>117</Id> <!-- (No name) - Checkerboard Wall -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2750,8 +2741,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>241</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>118</Id> <!-- (No name) - Checkerboard Wall ??? -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2773,8 +2764,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>241</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>119</Id> <!-- (No name) - Checkerboard Wall Waterland -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2796,8 +2787,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>241</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>120</Id> <!-- (Garbled name) - Sloped Checkerboard -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2819,8 +2810,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>241</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>121</Id> <!-- Unused -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2842,8 +2833,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>241</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>122</Id> <!-- Unused -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2865,8 +2856,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>241</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>123</Id> <!-- Unused -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2888,8 +2879,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>241</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>124</Id> <!-- Unused -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2911,8 +2902,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>241</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>125</Id> <!-- Unused -->
       <X1>14</X1>
       <Y1>1</Y1>
@@ -2934,8 +2925,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>25</RareItemId4>
       <CommonItemId4>20</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>126</Id> <!-- Zeltennia Castle Postern -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2957,8 +2948,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>240</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
-    <MapItem>
+    </MapTrapFormation>
+    <MapTrapFormation>
       <Id>127</Id> <!-- Limberry Castle: Inner Court -->
       <X1>0</X1>
       <Y1>0</Y1>
@@ -2980,6 +2971,6 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <TrapFlags4>DisableTrap</TrapFlags4>
       <RareItemId4>240</RareItemId4>
       <CommonItemId4>240</CommonItemId4>
-    </MapItem>
+    </MapTrapFormation>
   </Entries>
-</MapItemTable>
+</MapTrapFormationTable>

@@ -15,9 +15,11 @@ value from the original table or, from other mods making changes depending on mo
 
 IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
 
-For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ITEM_WEAPON_DATA.cs
+IMPORTANT 3: Id cannot be more than 127 (hardcoded table size is 128).
 
-IMPORTANT 3: If using Formula 02, <OptionsAbilityId> should be set to an ability id; otherwise, <OptionsAbilityId> should be set to an "item options" id or 0.
+IMPORTANT 4: If using Formula 02, <OptionsAbilityId> should be set to an ability id; otherwise, <OptionsAbilityId> should be set to an "item options" id or 0.
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ITEM_WEAPON_DATA.cs
 
 -->
 

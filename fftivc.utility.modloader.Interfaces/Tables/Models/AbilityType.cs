@@ -4,9 +4,9 @@ using fftivc.utility.modloader.Interfaces.Tables.Structures;
 namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 
 /// <summary>
-/// Ability animation sequence table. <see href="https://ffhacktics.com/wiki/Animations_(Tab)"/>
+/// Ability type/animation sequence table. <see href="https://ffhacktics.com/wiki/Animations_(Tab)"/> <br/>
 /// </summary>
-public class AbilityAnimationTable : TableBase<AbilityAnimation>, IVersionableModel
+public class AbilityTypeTable : TableBase<AbilityType>, IVersionableModel
 {
     /// <inheritdoc/>
     public uint Version { get; set; } = 1;
@@ -17,7 +17,7 @@ public class AbilityAnimationTable : TableBase<AbilityAnimation>, IVersionableMo
 /// <summary>
 /// Ability animation sequence.
 /// </summary>
-public class AbilityAnimation : DiffableModelBase<AbilityAnimation>, IDiffableModel<AbilityAnimation>, IIdentifiableModel
+public class AbilityType : DiffableModelBase<AbilityType>, IDiffableModel<AbilityType>, IIdentifiableModel
 {
     /// <summary>
     /// Id. No more than 453 in vanilla.
@@ -28,16 +28,16 @@ public class AbilityAnimation : DiffableModelBase<AbilityAnimation>, IDiffableMo
     public byte? Animation2 { get; set; }
     public byte? Animation3 { get; set; }
 
-    public static Dictionary<string, DiffablePropertyItem<AbilityAnimation>> PropertyMap { get; } = new()
+    public static Dictionary<string, DiffablePropertyItem<AbilityType>> PropertyMap { get; } = new()
     {
-        [nameof(Animation1)] = new DiffablePropertyItem<AbilityAnimation, byte?>(nameof(Animation1), i => i.Animation1, (i, v) => i.Animation1 = v),
-        [nameof(Animation2)] = new DiffablePropertyItem<AbilityAnimation, byte?>(nameof(Animation2), i => i.Animation2, (i, v) => i.Animation2 = v),
-        [nameof(Animation3)] = new DiffablePropertyItem<AbilityAnimation, byte?>(nameof(Animation3), i => i.Animation3, (i, v) => i.Animation3 = v),
+        [nameof(Animation1)] = new DiffablePropertyItem<AbilityType, byte?>(nameof(Animation1), i => i.Animation1, (i, v) => i.Animation1 = v),
+        [nameof(Animation2)] = new DiffablePropertyItem<AbilityType, byte?>(nameof(Animation2), i => i.Animation2, (i, v) => i.Animation2 = v),
+        [nameof(Animation3)] = new DiffablePropertyItem<AbilityType, byte?>(nameof(Animation3), i => i.Animation3, (i, v) => i.Animation3 = v),
     };
 
-    public static AbilityAnimation FromStructure(int id, ref ABILITY_ANIMATION_DATA @struct)
+    public static AbilityType FromStructure(int id, ref ABILITY_TYPE_DATA @struct)
     {
-        var animationSequence = new AbilityAnimation()
+        var animationSequence = new AbilityType()
         {
             Id = id,
             Animation1 = @struct.Animation1,
@@ -52,9 +52,9 @@ public class AbilityAnimation : DiffableModelBase<AbilityAnimation>, IDiffableMo
     /// Clones the ability animation sequence.
     /// </summary>
     /// <returns></returns>
-    public AbilityAnimation Clone()
+    public AbilityType Clone()
     {
-        return new AbilityAnimation()
+        return new AbilityType()
         {
             Id = Id,
             Animation1 = Animation1,

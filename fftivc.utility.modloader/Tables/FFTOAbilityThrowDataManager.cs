@@ -1,9 +1,11 @@
 ﻿using System.Diagnostics;
+
 using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
@@ -17,6 +19,7 @@ public class FFTOAbilityThrowDataManager : FFTOTableManagerBase<AbilityThrowTabl
     private readonly IModelSerializer<AbilityThrowTable> _modelTableSerializer;
 
     public override string TableFileName => "AbilityThrowData";
+    public int BaseId => 393;
     public int NumEntries => 12;
     public int MaxId => NumEntries - 1;
 
@@ -49,7 +52,7 @@ public class FFTOAbilityThrowDataManager : FFTOTableManagerBase<AbilityThrowTabl
 
             for (int i = 0; i < _abilityThrowDataTablePointer.Count; i++)
             {
-                AbilityThrow model = AbilityThrow.FromStructure(i, ref _abilityThrowDataTablePointer.AsRef(i));
+                AbilityThrow model = AbilityThrow.FromStructure(BaseId + i, ref _abilityThrowDataTablePointer.AsRef(i));
 
                 _originalTable.Entries.Add(model);
                 _moddedTable.Entries.Add(model.Clone());
@@ -104,16 +107,16 @@ public class FFTOAbilityThrowDataManager : FFTOTableManagerBase<AbilityThrowTabl
 
     public AbilityThrow GetOriginalThrowAbility(int index)
     {
-        if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityThrow id can not be more than {MaxId}!");
+        if (index < BaseId || index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be less than {BaseId} or more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public AbilityThrow GetThrowAbility(int index)
     {
-        if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityThrow id can not be more than {MaxId}");
+        if (index < BaseId || index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be less than {BaseId} or more than {MaxId}");
 
         return _moddedTable.Entries[index];
     }

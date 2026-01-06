@@ -17,6 +17,7 @@ public class FFTOAbilityMathDataManager : FFTOTableManagerBase<AbilityMathTable,
     private readonly IModelSerializer<AbilityMathTable> _modelTableSerializer;
 
     public override string TableFileName => "AbilityMathData";
+    public int BaseId => 414;
     public int NumEntries => 8;
     public int MaxId => NumEntries - 1;
 
@@ -49,7 +50,7 @@ public class FFTOAbilityMathDataManager : FFTOTableManagerBase<AbilityMathTable,
 
             for (int i = 0; i < _abilityMathDataTablePointer.Count; i++)
             {
-                AbilityMath model = AbilityMath.FromStructure(i, ref _abilityMathDataTablePointer.AsRef(i));
+                AbilityMath model = AbilityMath.FromStructure(BaseId + i, ref _abilityMathDataTablePointer.AsRef(i));
 
                 _originalTable.Entries.Add(model);
                 _moddedTable.Entries.Add(model.Clone());
@@ -104,16 +105,16 @@ public class FFTOAbilityMathDataManager : FFTOTableManagerBase<AbilityMathTable,
 
     public AbilityMath GetOriginalMathAbility(int index)
     {
-        if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityMath id can not be more than {MaxId}!");
+        if (index < BaseId || index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be less than {BaseId} or more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public AbilityMath GetMathAbility(int index)
     {
-        if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityMath id can not be more than {MaxId}");
+        if (index < BaseId || index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be less than {BaseId} or more than {MaxId}");
 
         return _moddedTable.Entries[index];
     }

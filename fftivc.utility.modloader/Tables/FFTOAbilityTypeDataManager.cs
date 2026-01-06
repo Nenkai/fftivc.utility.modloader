@@ -13,18 +13,18 @@ using Reloaded.Mod.Interfaces;
 
 namespace fftivc.utility.modloader.Tables;
 
-public class FFTOAbilityAnimationDataManager : FFTOTableManagerBase<AbilityAnimationTable, AbilityAnimation>, IFFTOAbilityAnimationDataManager
+public class FFTOAbilityTypeDataManager : FFTOTableManagerBase<AbilityTypeTable, Interfaces.Tables.Models.AbilityType>, IFFTOAbilityTypeDataManager
 {
-    private readonly IModelSerializer<AbilityAnimationTable> _modelTableSerializer;
+    private readonly IModelSerializer<AbilityTypeTable> _modelTableSerializer;
 
-    public override string TableFileName => "AbilityAnimationData";
+    public override string TableFileName => "AbilityTypeData";
     public int NumEntries => 454;
     public int MaxId => NumEntries - 1;
 
-    private FixedArrayPtr<ABILITY_ANIMATION_DATA> _abilityAnimationDataTablePointer;
+    private FixedArrayPtr<ABILITY_TYPE_DATA> _abilityTypeDataTablePointer;
 
-    public FFTOAbilityAnimationDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
-        IModelSerializer<AbilityAnimationTable> modelTableSerializer)
+    public FFTOAbilityTypeDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+        IModelSerializer<AbilityTypeTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
@@ -43,16 +43,16 @@ public class FFTOAbilityAnimationDataManager : FFTOTableManagerBase<AbilityAnima
             }
 
             // Go back 57 entries
-            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - 57 * Unsafe.SizeOf<ABILITY_ANIMATION_DATA>());
-            _logger.WriteLine($"[{_modConfig.ModId}] Found AnimationSequenceData table @ 0x{tableAddress:X}");
+            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - (57 * Unsafe.SizeOf<ABILITY_TYPE_DATA>()));
+            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_ANIMATION_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _abilityAnimationDataTablePointer = new FixedArrayPtr<ABILITY_ANIMATION_DATA>((ABILITY_ANIMATION_DATA*)tableAddress, NumEntries);
-            _originalTable = new AbilityAnimationTable();
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_TYPE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _abilityTypeDataTablePointer = new FixedArrayPtr<ABILITY_TYPE_DATA>((ABILITY_TYPE_DATA*)tableAddress, NumEntries);
+            _originalTable = new AbilityTypeTable();
 
-            for (int i = 0; i < _abilityAnimationDataTablePointer.Count; i++)
+            for (int i = 0; i < _abilityTypeDataTablePointer.Count; i++)
             {
-                AbilityAnimation model = AbilityAnimation.FromStructure(i, ref _abilityAnimationDataTablePointer.AsRef(i));
+                Interfaces.Tables.Models.AbilityType model = Interfaces.Tables.Models.AbilityType.FromStructure(i, ref _abilityTypeDataTablePointer.AsRef(i));
 
                 _originalTable.Entries.Add(model);
                 _moddedTable.Entries.Add(model.Clone());
@@ -81,7 +81,7 @@ public class FFTOAbilityAnimationDataManager : FFTOTableManagerBase<AbilityAnima
     {
         try
         {
-            AbilityAnimationTable? abilityAnimationTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            AbilityTypeTable? abilityAnimationTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
             if (abilityAnimationTable is null)
                 return;
 
@@ -95,30 +95,30 @@ public class FFTOAbilityAnimationDataManager : FFTOTableManagerBase<AbilityAnima
         }
     }
    
-    public override void ApplyTablePatch(string modId, AbilityAnimation model)
+    public override void ApplyTablePatch(string modId, Interfaces.Tables.Models.AbilityType model)
     {
         TrackModelChanges(modId, model);
 
-        AbilityAnimation previous = _moddedTable.Entries[model.Id];
-        ref ABILITY_ANIMATION_DATA abilityAnimationData = ref _abilityAnimationDataTablePointer.AsRef(model.Id);
+        Interfaces.Tables.Models.AbilityType previous = _moddedTable.Entries[model.Id];
+        ref ABILITY_TYPE_DATA abilityAnimationData = ref _abilityTypeDataTablePointer.AsRef(model.Id);
 
         abilityAnimationData.Animation1 = (byte)(model.Animation1 ?? previous.Animation1)!;
         abilityAnimationData.Animation2 = (byte)(model.Animation2 ?? previous.Animation2)!;
         abilityAnimationData.Animation3 = (byte)(model.Animation3 ?? previous.Animation3)!;
     }
 
-    public AbilityAnimation GetOriginalAbilityAnimation(int index)
+    public Interfaces.Tables.Models.AbilityType GetOriginalAbilityType(int index)
     {
         if (index >= MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityAnimation id can not be more than {MaxId}!");
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
-    public AbilityAnimation GetAbilityAnimation(int index)
+    public Interfaces.Tables.Models.AbilityType GetAbilityType(int index)
     {
         if (index >= MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityAnimation id can not be more than {MaxId}!");
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

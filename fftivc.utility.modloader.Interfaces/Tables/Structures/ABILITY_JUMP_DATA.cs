@@ -5,7 +5,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-/// ABILITY_JUMP_DATA
+/// ABILITY_JUMP_DATA, referenced as 'aj' in FFT Mobile symbols.
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct ABILITY_JUMP_DATA

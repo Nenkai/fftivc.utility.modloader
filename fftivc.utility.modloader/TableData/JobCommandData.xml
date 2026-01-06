@@ -15,7 +15,9 @@ value from the original table or, from other mods making changes depending on mo
 
 IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
 
-IMPORTANT 3: You do not need to worry about setting ExtendAbilityIdFlagBits or ExtendReactionSupportMovementIdFlagBits.
+IMPORTANT 3: Id cannot be more than 175 (hardcoded table size is 176).
+
+IMPORTANT 4: You do not need to worry about setting ExtendAbilityIdFlagBits or ExtendReactionSupportMovementIdFlagBits.
 The loader will fill these according to ids. You're free to use ids 0-512 directly.
 
 For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/JOB_COMMAND_DATA.cs

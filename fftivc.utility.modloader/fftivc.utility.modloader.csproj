@@ -76,16 +76,16 @@
     <None Update="Preview.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="TableData\AbilityAimData.xml">
+    <None Update="TableData\AbilityChargeAimData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="TableData\AbilityAnimationData.xml">
+    <None Update="TableData\AbilityTypeData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TableData\AbilityData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="TableData\AbilityEffectData.xml">
+    <None Update="TableData\AbilityEffectNumberFilterData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TableData\AbilityJumpData.xml">
@@ -139,7 +139,7 @@
     <None Update="TableData\JobData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="TableData\MapItemData.xml">
+    <None Update="TableData\MapTrapFormationData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TableData\MonsterJobCommandData.xml">

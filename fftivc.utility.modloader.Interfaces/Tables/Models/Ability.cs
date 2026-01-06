@@ -34,7 +34,7 @@ public class Ability : DiffableModelBase<Ability>, IDiffableModel<Ability>, IIde
     public ushort? JPCost { get; set; }
     public byte? ChanceToLearn { get; set; }
     public AbilityFlags? Flags { get; set; }
-    public AbilityType? AbilityType { get; set; }
+    public Structures.AbilityType? AbilityType { get; set; }
     public AIBehaviorFlags? AIBehaviorFlags { get; set; }
 
     public static Dictionary<string, DiffablePropertyItem<Ability>> PropertyMap { get; } = new()
@@ -42,7 +42,7 @@ public class Ability : DiffableModelBase<Ability>, IDiffableModel<Ability>, IIde
         [nameof(JPCost)]            = new DiffablePropertyItem<Ability, ushort?>(nameof(JPCost), i => i.JPCost, (i, v) => i.JPCost = v),
         [nameof(ChanceToLearn)]     = new DiffablePropertyItem<Ability, byte?>(nameof(ChanceToLearn), i => i.ChanceToLearn, (i, v) => i.ChanceToLearn = v),
         [nameof(Flags)]             = new DiffablePropertyItem<Ability, AbilityFlags?>(nameof(Flags), i => i.Flags, (i, v) => i.Flags = v),
-        [nameof(AbilityType)]       = new DiffablePropertyItem<Ability, AbilityType?>(nameof(AbilityType), i => i.AbilityType, (i, v) => i.AbilityType = v),
+        [nameof(AbilityType)]       = new DiffablePropertyItem<Ability, Structures.AbilityType?>(nameof(AbilityType), i => i.AbilityType, (i, v) => i.AbilityType = v),
         [nameof(AIBehaviorFlags)]   = new DiffablePropertyItem<Ability, AIBehaviorFlags?>(nameof(AIBehaviorFlags), i => i.AIBehaviorFlags, (i, v) => i.AIBehaviorFlags = v),
     };
 
@@ -53,7 +53,7 @@ public class Ability : DiffableModelBase<Ability>, IDiffableModel<Ability>, IIde
         {
             Id = id,
             JPCost = @struct.JPCost,
-            AbilityType = (AbilityType)(flags & 0b1111),
+            AbilityType = (Structures.AbilityType)(flags & 0b1111),
             Flags = (AbilityFlags)((flags >> 4) & 0b1111),
             AIBehaviorFlags = @struct.AIBehaviorFlags,
             ChanceToLearn = @struct.ChanceToLearn,

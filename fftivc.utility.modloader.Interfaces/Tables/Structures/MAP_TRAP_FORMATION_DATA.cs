@@ -4,8 +4,11 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
+/// <summary>
+/// Referenced to as "trap_form" in FFT Mobile symbols
+/// </summary>
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public struct MAP_ITEM_DATA
+public struct MAP_TRAP_FORMATION_DATA
 {
     /// <summary>
     /// X and Y share the same byte; therefore, X and Y must range between 0 and 15

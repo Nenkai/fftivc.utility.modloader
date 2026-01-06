@@ -13,18 +13,18 @@ using Reloaded.Mod.Interfaces;
 
 namespace fftivc.utility.modloader.Tables;
 
-public class FFTOAbilityEffectDataManager : FFTOTableManagerBase<AbilityEffectTable, AbilityEffect>, IFFTOAbilityEffectDataManager
+public class FFTOAbilityEffectNumberFilterManager : FFTOTableManagerBase<AbilityEffectNumberFilterTable, AbilityEffectNumberFilter>, IFFTOAbilityEffectNumberFilterDataManager
 {
-    private readonly IModelSerializer<AbilityEffectTable> _modelTableSerializer;
+    private readonly IModelSerializer<AbilityEffectNumberFilterTable> _modelTableSerializer;
 
-    public override string TableFileName => "AbilityEffectData";
+    public override string TableFileName => "AbilityEffectNumberFilterData";
     public int NumEntries => 454;
     public int MaxId => NumEntries - 1;
 
-    private FixedArrayPtr<ABILITY_EFFECT_DATA> _abilityEffectDataTablePointer;
+    private FixedArrayPtr<ABILITY_EFFECT_NUMBER_FILTER_DATA> _abilityEffectNumberFilterDataTablePointer;
 
-    public FFTOAbilityEffectDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
-        IModelSerializer<AbilityEffectTable> modelTableSerializer)
+    public FFTOAbilityEffectNumberFilterManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+        IModelSerializer<AbilityEffectNumberFilterTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
@@ -43,16 +43,16 @@ public class FFTOAbilityEffectDataManager : FFTOTableManagerBase<AbilityEffectTa
             }
 
             // Go back 51 entries
-            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - 51 * Unsafe.SizeOf<ABILITY_EFFECT_DATA>());
+            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - 51 * Unsafe.SizeOf<ABILITY_EFFECT_NUMBER_FILTER_DATA>());
             _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_EFFECT_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _abilityEffectDataTablePointer = new FixedArrayPtr<ABILITY_EFFECT_DATA>((ABILITY_EFFECT_DATA*)tableAddress, NumEntries);
-            _originalTable = new AbilityEffectTable();
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_EFFECT_NUMBER_FILTER_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _abilityEffectNumberFilterDataTablePointer = new FixedArrayPtr<ABILITY_EFFECT_NUMBER_FILTER_DATA>((ABILITY_EFFECT_NUMBER_FILTER_DATA*)tableAddress, NumEntries);
+            _originalTable = new AbilityEffectNumberFilterTable();
 
-            for (int i = 0; i < _abilityEffectDataTablePointer.Count; i++)
+            for (int i = 0; i < _abilityEffectNumberFilterDataTablePointer.Count; i++)
             {
-                AbilityEffect model = AbilityEffect.FromStructure(i, ref _abilityEffectDataTablePointer.AsRef(i));
+                AbilityEffectNumberFilter model = AbilityEffectNumberFilter.FromStructure(i, ref _abilityEffectNumberFilterDataTablePointer.AsRef(i));
 
                 _originalTable.Entries.Add(model);
                 _moddedTable.Entries.Add(model.Clone());
@@ -81,7 +81,7 @@ public class FFTOAbilityEffectDataManager : FFTOTableManagerBase<AbilityEffectTa
     {
         try
         {
-            AbilityEffectTable? abilityEffectTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            AbilityEffectNumberFilterTable? abilityEffectTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
             if (abilityEffectTable is null)
                 return;
 
@@ -95,28 +95,28 @@ public class FFTOAbilityEffectDataManager : FFTOTableManagerBase<AbilityEffectTa
         }
     }
    
-    public override void ApplyTablePatch(string modId, AbilityEffect model)
+    public override void ApplyTablePatch(string modId, AbilityEffectNumberFilter model)
     {
         TrackModelChanges(modId, model);
 
-        AbilityEffect previous = _moddedTable.Entries[model.Id];
-        ref ABILITY_EFFECT_DATA abilityEffectData = ref _abilityEffectDataTablePointer.AsRef(model.Id);
+        AbilityEffectNumberFilter previous = _moddedTable.Entries[model.Id];
+        ref ABILITY_EFFECT_NUMBER_FILTER_DATA abilityEffectData = ref _abilityEffectNumberFilterDataTablePointer.AsRef(model.Id);
 
-        abilityEffectData.EffectId = (ushort)(model.EffectId ?? previous.EffectId)!;
+        abilityEffectData.EffectId = (short)(model.EffectId ?? previous.EffectId)!;
     }
 
-    public AbilityEffect GetOriginalAbilityEffect(int index)
+    public AbilityEffectNumberFilter GetOriginalAbilityEffectNumberFilter(int index)
     {
         if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityEffect id can not be more than {MaxId}!");
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
-    public AbilityEffect GetAbilityEffect(int index)
+    public AbilityEffectNumberFilter GetAbilityEffectNumberFilter(int index)
     {
         if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityEffect id can not be more than {MaxId}!");
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

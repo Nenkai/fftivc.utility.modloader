@@ -6,7 +6,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 /// <summary>
 /// Aim ability secondary data
 /// </summary>
-public class AbilityAimTable : TableBase<AbilityAim>, IVersionableModel
+public class AbilityChargeAimTable : TableBase<AbilityChargeAim>, IVersionableModel
 {
     /// <inheritdoc/>
     public uint Version { get; set; } = 1;
@@ -17,22 +17,22 @@ public class AbilityAimTable : TableBase<AbilityAim>, IVersionableModel
 /// <summary>
 /// Aim ability secondary data. <see href="https://ffhacktics.com/wiki/Ability_Secondary_Data:_Charge_Abilities"/>
 /// </summary>
-public class AbilityAim : DiffableModelBase<AbilityAim>, IDiffableModel<AbilityAim>, IIdentifiableModel
+public class AbilityChargeAim : DiffableModelBase<AbilityChargeAim>, IDiffableModel<AbilityChargeAim>, IIdentifiableModel
 {
     public int Id { get; set; }
 
     public byte? Ticks { get; set; }
     public byte? Power { get; set; }
 
-    public static Dictionary<string, DiffablePropertyItem<AbilityAim>> PropertyMap { get; } = new()
+    public static Dictionary<string, DiffablePropertyItem<AbilityChargeAim>> PropertyMap { get; } = new()
     {
-        [nameof(Ticks)] = new DiffablePropertyItem<AbilityAim, byte?>(nameof(Ticks), i => i.Ticks, (i, v) => i.Ticks = v),
-        [nameof(Power)] = new DiffablePropertyItem<AbilityAim, byte?>(nameof(Power), i => i.Power, (i, v) => i.Power = v),
+        [nameof(Ticks)] = new DiffablePropertyItem<AbilityChargeAim, byte?>(nameof(Ticks), i => i.Ticks, (i, v) => i.Ticks = v),
+        [nameof(Power)] = new DiffablePropertyItem<AbilityChargeAim, byte?>(nameof(Power), i => i.Power, (i, v) => i.Power = v),
     };
 
-    public static AbilityAim FromStructure(int id, ref ABILITY_AIM_DATA @struct)
+    public static AbilityChargeAim FromStructure(int id, ref ABILITY_CHARGE_AIM_DATA @struct)
     {
-        var data = new AbilityAim()
+        var data = new AbilityChargeAim()
         {
             Id = id,
             Ticks = @struct.Ticks,
@@ -45,9 +45,9 @@ public class AbilityAim : DiffableModelBase<AbilityAim>, IDiffableModel<AbilityA
     /// <summary>
     /// Clones the ability data.
     /// </summary>
-    public AbilityAim Clone()
+    public AbilityChargeAim Clone()
     {
-        return new AbilityAim()
+        return new AbilityChargeAim()
         {
             Id = Id,
             Ticks = Ticks,

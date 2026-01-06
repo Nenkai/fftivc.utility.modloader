@@ -13,18 +13,18 @@ using Reloaded.Mod.Interfaces;
 
 namespace fftivc.utility.modloader.Tables;
 
-public class FFTOMapItemDataManager : FFTOTableManagerBase<MapItemTable, MapItem>, IFFTOMapItemDataManager
+public class FFTOMapTrapFormationDataManager : FFTOTableManagerBase<MapTrapFormationTable, MapTrapFormation>, IFFTOMapItemDataManager
 {
-    private readonly IModelSerializer<MapItemTable> _modelTableSerializer;
+    private readonly IModelSerializer<MapTrapFormationTable> _modelTableSerializer;
 
-    public override string TableFileName => "MapItemData";
+    public override string TableFileName => "MapTrapFormationData";
     public int NumEntries => 128;
     public int MaxId => NumEntries - 1;
 
-    private FixedArrayPtr<MAP_ITEM_DATA> _mapItemDataTablePointer;
+    private FixedArrayPtr<MAP_TRAP_FORMATION_DATA> _mapTrapFormationDataTablePointer;
 
-    public FFTOMapItemDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
-        IModelSerializer<MapItemTable> modelTableSerializer)
+    public FFTOMapTrapFormationDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+        IModelSerializer<MapTrapFormationTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
@@ -43,16 +43,16 @@ public class FFTOMapItemDataManager : FFTOTableManagerBase<MapItemTable, MapItem
             }
 
             // Go back 1 entry - we skipped zeroes
-            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - (Unsafe.SizeOf<MAP_ITEM_DATA>() * 1));
+            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - (Unsafe.SizeOf<MAP_TRAP_FORMATION_DATA>() * 1));
             _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(MAP_ITEM_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _mapItemDataTablePointer = new FixedArrayPtr<MAP_ITEM_DATA>((MAP_ITEM_DATA*)tableAddress, NumEntries);
-            _originalTable = new MapItemTable();
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(MAP_TRAP_FORMATION_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _mapTrapFormationDataTablePointer = new FixedArrayPtr<MAP_TRAP_FORMATION_DATA>((MAP_TRAP_FORMATION_DATA*)tableAddress, NumEntries);
+            _originalTable = new MapTrapFormationTable();
 
-            for (int i = 0; i < _mapItemDataTablePointer.Count; i++)
+            for (int i = 0; i < _mapTrapFormationDataTablePointer.Count; i++)
             {
-                MapItem model = MapItem.FromStructure(i, ref _mapItemDataTablePointer.AsRef(i));
+                MapTrapFormation model = MapTrapFormation.FromStructure(i, ref _mapTrapFormationDataTablePointer.AsRef(i));
 
                 _originalTable.Entries.Add(model);
                 _moddedTable.Entries.Add(model.Clone());
@@ -81,7 +81,7 @@ public class FFTOMapItemDataManager : FFTOTableManagerBase<MapItemTable, MapItem
     {
         try
         {
-            MapItemTable? mapItemTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            MapTrapFormationTable? mapItemTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
             if (mapItemTable is null)
                 return;
 
@@ -95,12 +95,12 @@ public class FFTOMapItemDataManager : FFTOTableManagerBase<MapItemTable, MapItem
         }
     }
 
-    public override void ApplyTablePatch(string modId, MapItem mapItem)
+    public override void ApplyTablePatch(string modId, MapTrapFormation mapItem)
     {
         TrackModelChanges(modId, mapItem);
 
-        MapItem previous = _moddedTable.Entries[mapItem.Id];
-        ref MAP_ITEM_DATA mapItemData = ref _mapItemDataTablePointer.AsRef(mapItem.Id);
+        MapTrapFormation previous = _moddedTable.Entries[mapItem.Id];
+        ref MAP_TRAP_FORMATION_DATA mapItemData = ref _mapTrapFormationDataTablePointer.AsRef(mapItem.Id);
 
         mapItemData.XY1 = (byte)(((byte)(mapItem.X1 ?? previous.X1)! & 0x0F) << 4 | ((byte)(mapItem.Y1 ?? previous.Y1)! & 0x0F));
         mapItemData.TrapFlags1 = (MapItemTrapFlags)(mapItem.TrapFlags1 ?? previous.TrapFlags1)!;
@@ -120,18 +120,18 @@ public class FFTOMapItemDataManager : FFTOTableManagerBase<MapItemTable, MapItem
         mapItemData.RareItemId4 = (ushort)(mapItem.RareItemId4 ?? previous.RareItemId4)!;
     }
 
-    public MapItem GetOriginalMapItem(int index)
+    public MapTrapFormation GetOriginalMapTrapFormation(int index)
     {
         if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"MapItem id can not be more than {MaxId}!");
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
-    public MapItem GetMapItem(int index)
+    public MapTrapFormation GetMapTrapFormation(int index)
     {
         if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"MapItem id can not be more than {MaxId}");
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be more than {MaxId}");
 
         return _moddedTable.Entries[index];
     }

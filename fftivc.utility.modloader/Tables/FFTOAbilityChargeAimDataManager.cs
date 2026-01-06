@@ -12,18 +12,19 @@ using Reloaded.Mod.Interfaces;
 
 namespace fftivc.utility.modloader.Tables;
 
-public class FFTOAbilityAimDataManager : FFTOTableManagerBase<AbilityAimTable, AbilityAim>, IFFTOAbilityAimDataManager
+public class FFTOAbilityChargeAimDataManager : FFTOTableManagerBase<AbilityChargeAimTable, AbilityChargeAim>, IFFTOAbilityChargeAimDataManager
 {
-    private readonly IModelSerializer<AbilityAimTable> _modelTableSerializer;
+    private readonly IModelSerializer<AbilityChargeAimTable> _modelTableSerializer;
 
-    public override string TableFileName => "AbilityAimData";
+    public override string TableFileName => "AbilityChargeAimData";
+    public int BaseId => 406;
     public int NumEntries => 8;
-    public int MaxId => NumEntries - 1;
+    public int MaxId => BaseId + NumEntries - 1;
 
-    private FixedArrayPtr<ABILITY_AIM_DATA> _abilityAimDataTablePointer;
+    private FixedArrayPtr<ABILITY_CHARGE_AIM_DATA> _abilityAimDataTablePointer;
 
-    public FFTOAbilityAimDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
-        IModelSerializer<AbilityAimTable> dataTableSerializer)
+    public FFTOAbilityChargeAimDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+        IModelSerializer<AbilityChargeAimTable> dataTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
         _modelTableSerializer = dataTableSerializer;
@@ -44,12 +45,12 @@ public class FFTOAbilityAimDataManager : FFTOTableManagerBase<AbilityAimTable, A
             nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset);
             _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_AIM_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _abilityAimDataTablePointer = new FixedArrayPtr<ABILITY_AIM_DATA>((ABILITY_AIM_DATA*)tableAddress, NumEntries);
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_CHARGE_AIM_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _abilityAimDataTablePointer = new FixedArrayPtr<ABILITY_CHARGE_AIM_DATA>((ABILITY_CHARGE_AIM_DATA*)tableAddress, NumEntries);
 
             for (int i = 0; i < _abilityAimDataTablePointer.Count; i++)
             {
-                AbilityAim model = AbilityAim.FromStructure(i, ref _abilityAimDataTablePointer.AsRef(i));
+                AbilityChargeAim model = AbilityChargeAim.FromStructure(BaseId + i, ref _abilityAimDataTablePointer.AsRef(i));
 
                 _originalTable.Entries.Add(model);
                 _moddedTable.Entries.Add(model.Clone());
@@ -78,7 +79,7 @@ public class FFTOAbilityAimDataManager : FFTOTableManagerBase<AbilityAimTable, A
     {
         try
         {
-            AbilityAimTable? abilityAimTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            AbilityChargeAimTable? abilityAimTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
             if (abilityAimTable is null)
                 return;
 
@@ -92,29 +93,29 @@ public class FFTOAbilityAimDataManager : FFTOTableManagerBase<AbilityAimTable, A
         }
     }
 
-    public override void ApplyTablePatch(string modId, AbilityAim model)
+    public override void ApplyTablePatch(string modId, AbilityChargeAim model)
     {
         TrackModelChanges(modId, model);
 
-        AbilityAim previous = _moddedTable.Entries[model.Id];
-        ref ABILITY_AIM_DATA abilityAimData = ref _abilityAimDataTablePointer.AsRef(model.Id);
+        AbilityChargeAim previous = _moddedTable.Entries[model.Id];
+        ref ABILITY_CHARGE_AIM_DATA abilityAimData = ref _abilityAimDataTablePointer.AsRef(model.Id);
 
         abilityAimData.Ticks = (byte)(model.Ticks ?? previous.Ticks)!;
         abilityAimData.Power = (byte)(model.Power ?? previous.Power)!;
     }
 
-    public AbilityAim GetOriginalAimAbility(int index)
+    public AbilityChargeAim GetOriginalChargeAimAbility(int index)
     {
-        if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityAim id can not be more than {MaxId}!");
+        if (index < BaseId || index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be less than {BaseId} or more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
-    public AbilityAim GetAimAbility(int index)
+    public AbilityChargeAim GetChargeAimAbility(int index)
     {
-        if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityAim id can not be more than {MaxId}");
+        if (index < BaseId || index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be less than {BaseId} or more than {MaxId}");
 
         return _moddedTable.Entries[index];
     }

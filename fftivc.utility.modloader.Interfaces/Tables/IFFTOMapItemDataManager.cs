@@ -12,19 +12,19 @@ public interface IFFTOMapItemDataManager : IFFTOTableManager
     /// </summary>
     /// <param name="modId">Mod id that is changing the item.</param>
     /// <param name="item"></param>
-    public void ApplyTablePatch(string modId, MapItem item);
+    public void ApplyTablePatch(string modId, MapTrapFormation item);
 
     /// <summary>
     /// Gets a map item entry, before any modded changes were applied.
     /// </summary>
     /// <param name="index"></param>
     /// <returns></returns>
-    public MapItem GetOriginalMapItem(int index);
+    public MapTrapFormation GetOriginalMapTrapFormation(int index);
 
     /// <summary>
     /// Gets a map item entry with currently modded changes.
     /// </summary>
     /// <param name="index"></param>
     /// <returns></returns>
-    public MapItem GetMapItem(int index);
+    public MapTrapFormation GetMapTrapFormation(int index);
 }

@@ -1,14 +1,16 @@
 ﻿using System.Diagnostics;
-using fftivc.utility.modloader.Configuration;
-using fftivc.utility.modloader.Interfaces.Serializers;
-using fftivc.utility.modloader.Interfaces.Tables;
-using fftivc.utility.modloader.Interfaces.Tables.Models;
-using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using fftivc.utility.modloader.Configuration;
+using fftivc.utility.modloader.Interfaces.Serializers;
+using fftivc.utility.modloader.Interfaces.Tables;
+using fftivc.utility.modloader.Interfaces.Tables.Models;
+using fftivc.utility.modloader.Interfaces.Tables.Structures;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -17,6 +19,7 @@ public class FFTOAbilityJumpDataManager : FFTOTableManagerBase<AbilityJumpTable,
     private readonly IModelSerializer<AbilityJumpTable> _modelTableSerializer;
 
     public override string TableFileName => "AbilityJumpData";
+    public int BaseId => 394;
     public int NumEntries => 12;
     public int MaxId => NumEntries - 1;
 
@@ -49,7 +52,7 @@ public class FFTOAbilityJumpDataManager : FFTOTableManagerBase<AbilityJumpTable,
 
             for (int i = 0; i < _abilityJumpDataTablePointer.Count; i++)
             {
-                AbilityJump model = AbilityJump.FromStructure(i, ref _abilityJumpDataTablePointer.AsRef(i));
+                AbilityJump model = AbilityJump.FromStructure(BaseId + i, ref _abilityJumpDataTablePointer.AsRef(i));
 
                 _originalTable.Entries.Add(model);
                 _moddedTable.Entries.Add(model.Clone());
@@ -105,16 +108,16 @@ public class FFTOAbilityJumpDataManager : FFTOTableManagerBase<AbilityJumpTable,
 
     public AbilityJump GetOriginalJumpAbility(int index)
     {
-        if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityJump id can not be more than {MaxId}!");
+        if (index < BaseId || index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be less than {BaseId} or more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public AbilityJump GetJumpAbility(int index)
     {
-        if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"AbilityJump id can not be more than {MaxId}");
+        if (index < BaseId || index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"{TableFileName} id can not be more than {BaseId} or more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

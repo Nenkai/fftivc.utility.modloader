@@ -1,0 +1,1842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded ability effect table.
+
+Refer to: https://ffhacktics.com/wiki/Effects and https://ffhacktics.com/smf/index.php?topic=4830.0
+This table is only used to determine which effect is used when an ability is executed.
+
+You can use this file as a base to edit Ability Effects data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/AbilityEffectData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+IMPORTANT 3: Id cannot be more than 453 (hardcoded table size is 454).
+
+-->
+
+<AbilityEffectNumberFilterData>
+  <Version>1</Version>
+  <Entries>
+    <AbilityEffectNumberFilter>
+      <Id>0</Id>
+      <EffectId>0</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>1</Id> <!-- Cure / ケアル / Soin / Vita -->
+      <EffectId>1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>2</Id> <!-- Cura / ケアルラ / Extra-Soin / Vitra -->
+      <EffectId>2</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>3</Id> <!-- Curaga / ケアルガ / Méga-Soin / Vitaga -->
+      <EffectId>3</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>4</Id> <!-- Curaja / ケアルジャ / Giga-Soin / Vitaka -->
+      <EffectId>4</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>5</Id> <!-- Raise / レイズ / Vie / Engel -->
+      <EffectId>5</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>6</Id> <!-- Arise / アレイズ / Maxi-Vie / Erzengel -->
+      <EffectId>6</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>7</Id> <!-- Reraise / リレイズ / Auréole / Schutzengel -->
+      <EffectId>7</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>8</Id> <!-- Regen / リジェネ / Récupération / Regena -->
+      <EffectId>8</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>9</Id> <!-- Protect / プロテス / Bouclier / Protes -->
+      <EffectId>9</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>10</Id> <!-- Protectja / プロテジャ / Giga-Bouclier / Proteska -->
+      <EffectId>10</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>11</Id> <!-- Shell / シェル / Barrière / Vallum -->
+      <EffectId>11</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>12</Id> <!-- Shellja / シェルジャ / Giga-Barrière / Vallka -->
+      <EffectId>12</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>13</Id> <!-- Wall / ウォール / Mur / Wall -->
+      <EffectId>13</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>14</Id> <!-- Esuna / エスナ / Guérison / Medica -->
+      <EffectId>14</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>15</Id> <!-- Holy / ホーリー / Miracle / Sanctus -->
+      <EffectId>15</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>16</Id> <!-- Fire / ファイア / Feu / Feuer -->
+      <EffectId>16</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>17</Id> <!-- Fira / ファイラ / Extra-Feu / Feura -->
+      <EffectId>17</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>18</Id> <!-- Firaga / ファイガ / Méga-Feu / Feuga -->
+      <EffectId>18</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>19</Id> <!-- Firaja / ファイジャ / Giga-Feu / Feuka -->
+      <EffectId>19</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>20</Id> <!-- Thunder / サンダー / Foudre / Blitz -->
+      <EffectId>20</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>21</Id> <!-- Thundara / サンダラ / Extra-Foudre / Blitzra -->
+      <EffectId>21</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>22</Id> <!-- Thundaga / サンダガ / Méga-Foudre / Blitzga -->
+      <EffectId>22</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>23</Id> <!-- Thundaja / サンダジャ / Giga-Foudre / Blitzka -->
+      <EffectId>23</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>24</Id> <!-- Blizzard / ブリザド / Glace / Eis -->
+      <EffectId>24</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>25</Id> <!-- Blizzara / ブリザラ / Extra-Glace / Eisra -->
+      <EffectId>25</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>26</Id> <!-- Blizzaga / ブリザガ / Méga-Glace / Eisga -->
+      <EffectId>26</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>27</Id> <!-- Blizzaja / ブリザジャ / Giga-Glace / Eiska -->
+      <EffectId>27</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>28</Id> <!-- Poison / ポイズン / Poison / Gift -->
+      <EffectId>28</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>29</Id> <!-- Toad / トード / Crapaud / Frosch -->
+      <EffectId>29</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>30</Id> <!-- Death / デス / Mort / Tod -->
+      <EffectId>30</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>31</Id> <!-- Flare / フレア / Fission / Flare -->
+      <EffectId>31</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>32</Id> <!-- Haste / ヘイスト / Hâte / Hast -->
+      <EffectId>32</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>33</Id> <!-- Hasteja / ヘイスジャ / Giga-Hâte / Hastka -->
+      <EffectId>33</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>34</Id> <!-- Slow / スロウ / Lenteur / Gemach -->
+      <EffectId>34</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>35</Id> <!-- Slowja / スロウジャ / Giga-Lenteur / Gemachka -->
+      <EffectId>35</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>36</Id> <!-- Stop / ストップ / Stop / Stopp -->
+      <EffectId>36</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>37</Id> <!-- Immobilize / ドンムブ / Inertie / Defix -->
+      <EffectId>39</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>38</Id> <!-- Float / レビテト / Lévitation / Levitas -->
+      <EffectId>40</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>39</Id> <!-- Reflect / リフレク / Miroir / Reflek -->
+      <EffectId>41</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>40</Id>
+      <EffectId>43</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>41</Id> <!-- Quick / クイック / Célérité / Beschleunigen -->
+      <EffectId>44</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>42</Id> <!-- Gravity / グラビデ / Gravité / Gravitas -->
+      <EffectId>45</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>43</Id> <!-- Graviga / グラビガ / Méga-Gravité / Graviga -->
+      <EffectId>46</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>44</Id> <!-- Meteor / メテオ / Météore / Meteo -->
+      <EffectId>47</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>45</Id> <!-- Chant / 祈り / Prière / Opferschwur -->
+      <EffectId>161</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>46</Id> <!-- Umbra / 闇縛符 / Occultation / Dunkelschleier -->
+      <EffectId>288</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>47</Id> <!-- Empowerment / 魔吸唱 / Absorption mystique / Absorbieren -->
+      <EffectId>289</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>48</Id> <!-- Invigoration / 命吸唱 / Absorption charnelle / Entziehen -->
+      <EffectId>290</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>49</Id> <!-- Belief / 信祈仰祷 / Dévotion / Bekehrung -->
+      <EffectId>291</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>50</Id> <!-- Disbelief / 信疑仰祷 / Apostasie / Glaubensabfall -->
+      <EffectId>292</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>51</Id> <!-- Corruption / 腐生骸屍 / Déliquescence / Verwesung -->
+      <EffectId>293</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>52</Id> <!-- Quiescence / 沈黙唱 / Mutité / Lied der Stille -->
+      <EffectId>294</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>53</Id> <!-- Fervor / 勇猛狂符 / Éréthisme / Weißglut -->
+      <EffectId>295</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>54</Id> <!-- Trepidation / 狐鶏鼠 / Découragement / Beklemmung -->
+      <EffectId>396</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>55</Id> <!-- Delirium / 乱心唱 / Déstabilisation / Delirium -->
+      <EffectId>397</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>56</Id> <!-- Harmony / 絶装魔脱 / Révocation / Entzauberung -->
+      <EffectId>400</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>57</Id> <!-- Hesitation / 不変不動 / Paralysation / Erstarren -->
+      <EffectId>404</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>58</Id> <!-- Repose / 夢邪睡符 / Narcose / Schlaf -->
+      <EffectId>405</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>59</Id> <!-- Induration / 碑封印 / Emmuration / Steinfluch -->
+      <EffectId>406</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>60</Id> <!-- Moogle / モーグリ / Mog / Mogry -->
+      <EffectId>63</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>61</Id> <!-- Shiva / シヴァ / Shiva / Shiva -->
+      <EffectId>65</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>62</Id> <!-- Ramuh / ラムウ / Ramuh / Ramuh -->
+      <EffectId>66</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>63</Id> <!-- Ifrit / イフリート / Ifrit / Ifrit -->
+      <EffectId>67</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>64</Id> <!-- Titan / タイタン / Titan / Titan -->
+      <EffectId>68</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>65</Id> <!-- Golem / ゴーレム / Golem / Golem -->
+      <EffectId>69</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>66</Id> <!-- Carbuncle / カーバンクル / Carbuncle / Karfunkel -->
+      <EffectId>70</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>67</Id> <!-- Bahamut / バハムート / Bahamut / Bahamut -->
+      <EffectId>71</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>68</Id> <!-- Odin / オーディン / Odin / Odin -->
+      <EffectId>72</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>69</Id> <!-- Leviathan / リヴァイアサン / Léviathan / Leviathan -->
+      <EffectId>73</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>70</Id> <!-- Salamander / サラマンダー / Salamandre / Salamander -->
+      <EffectId>74</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>71</Id> <!-- Sylph / シルフ / Sylphe / Sylphe -->
+      <EffectId>76</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>72</Id> <!-- Faerie / フェアリー / Fée / Fee -->
+      <EffectId>77</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>73</Id> <!-- Lich / リッチ / Liche / Lich -->
+      <EffectId>78</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>74</Id> <!-- Cyclops / クリュプス / Cyclope / Zyklop -->
+      <EffectId>79</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>75</Id> <!-- Zodiark / ゾディアーク / Zodiarche / Zodiarche -->
+      <EffectId>80</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>76</Id> <!-- Ashura / 阿修羅 / Ashura / Ashura -->
+      <EffectId>133</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>77</Id> <!-- Kotetsu / 虎徹 / Kotetsu / Kotetsu -->
+      <EffectId>134</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>78</Id> <!-- Bizen Osafune / 備前長船 / Bizen-Osafune / Bizen-Osafune -->
+      <EffectId>135</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>79</Id> <!-- Murasame / 村雨 / Murasame / Murasame -->
+      <EffectId>136</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>80</Id> <!-- Ame-no-Murakumo / 天のむら雲 / Ama-no-Murakumo / Murakumo -->
+      <EffectId>137</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>81</Id> <!-- Kiyomori / 清盛 / Kiyomori / Kiyomori -->
+      <EffectId>138</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>82</Id> <!-- Muramasa / 村正 / Muramasa / Muramasa -->
+      <EffectId>139</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>83</Id> <!-- Kiku-ichimonji / 菊一文字 / Kiku-ichimonji / Kikuichimonji -->
+      <EffectId>140</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>84</Id> <!-- Masamune / 正宗 / Masamune / Masamune -->
+      <EffectId>141</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>85</Id> <!-- Chirijiraden / 塵地螺鈿飾剣 / Chirijiraden-kazari / Chirijiraden -->
+      <EffectId>142</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>86</Id> <!-- Seraph Song / 天使の詩 / Chant angélique / Engelslied -->
+      <EffectId>81</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>87</Id> <!-- Life's Anthem / 命の詩 / Hymne à la vie / Hymne des Lebens -->
+      <EffectId>82</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>88</Id> <!-- Rousing Melody / 応援歌 / Air entraînant / Heroische Melodie -->
+      <EffectId>83</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>89</Id> <!-- Battle Chant / 戦いの詩 / Goualante guerrière / Schlachtlied -->
+      <EffectId>84</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>90</Id> <!-- Magickal Refrain / 魔力の詩 / Ode mystique / Magischer Refrain -->
+      <EffectId>85</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>91</Id> <!-- Nameless Song / 名もなき詩 / Marche sans nom / Okkultes Lied -->
+      <EffectId>86</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>92</Id> <!-- Finale / ラストソング / Dernière rengaine / Letztes Lied -->
+      <EffectId>87</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>93</Id> <!-- Witch Hunt / ウイッチハント / Mambo magique / Hexentanz -->
+      <EffectId>88</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>94</Id> <!-- Mincing Minuet / ウイズナイブス / Danse des dagues / Messertanz -->
+      <EffectId>89</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>95</Id> <!-- Slow Dance / スローダンス / Pavane languissante / Träger Tanz -->
+      <EffectId>90</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>96</Id> <!-- Polka / ポルカポルカ / Polka / Polka -->
+      <EffectId>91</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>97</Id> <!-- Heathen Frolic / アンフェイス / Salsa langoureuse / Schlangentanz -->
+      <EffectId>92</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>98</Id> <!-- Forbidden Dance / ネイムレスダンス / Danse sans nom / Wandeltanz -->
+      <EffectId>93</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>99</Id> <!-- Last Waltz / ラストダンス / Dernière danse / Letzter Tanz -->
+      <EffectId>94</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>100</Id> <!-- Cyclone / 裏回し拳 / Revers circulaire / Wirbelwind -->
+      <EffectId>95</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>101</Id> <!-- Pummel / 連続拳 / Poing furieux / Fausthagel -->
+      <EffectId>96</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>102</Id> <!-- Aurablast / 波動撃 / Frappe ondoyante / Schockpunkt -->
+      <EffectId>97</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>103</Id> <!-- Shockwave / 地烈斬 / Fêlure terrestre / Erdspaltung -->
+      <EffectId>98</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>104</Id> <!-- Doom Fist / 秘孔拳 / Toucher mortel / Hauch des Todes -->
+      <EffectId>99</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>105</Id> <!-- Purification / 気孔術 / Assainissement / Reinigung -->
+      <EffectId>100</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>106</Id> <!-- Chakra / チャクラ / Chakra / Chakra -->
+      <EffectId>101</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>107</Id> <!-- Revive / 蘇生 / Résurrection / Reanimation -->
+      <EffectId>102</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>108</Id> <!-- Steal Gil / ギルを盗む / Vol de gils / Gil stehlen -->
+      <EffectId>103</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>109</Id> <!-- Steal Heart / ハートを盗む / Vol de cœur / Herz stehlen -->
+      <EffectId>104</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>110</Id> <!-- Steal Helm / 兜を盗む / Vol de couvre-chef / Helm stehlen -->
+      <EffectId>105</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>111</Id> <!-- Steal Armor / 鎧を盗む / Vol d'armure / Rüstung stehlen -->
+      <EffectId>106</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>112</Id> <!-- Steal Shield / 盾を盗む / Vol de bouclier / Schild stehlen -->
+      <EffectId>107</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>113</Id> <!-- Steal Weapon / 武器を盗む / Vol d'arme / Waffe stehlen -->
+      <EffectId>108</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>114</Id> <!-- Steal Accessory / アクセサリを盗む / Vol d'accessoire / Accessoire stehlen -->
+      <EffectId>109</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>115</Id> <!-- Steal EXP / ＥＸＰを盗む / Vol d'expérience / ERF stehlen -->
+      <EffectId>110</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>116</Id> <!-- Entice / 勧誘 / Débauchage / Anwerben -->
+      <EffectId>111</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>117</Id> <!-- Stall / 説得 / Dissuasion / Überreden -->
+      <EffectId>112</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>118</Id> <!-- Praise / ほめる / Flatterie / Lob -->
+      <EffectId>113</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>119</Id> <!-- Intimidate / おどす / Menace / Einschüchtern -->
+      <EffectId>114</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>120</Id> <!-- Preach / 説法 / Oraison / Predigt -->
+      <EffectId>115</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>121</Id> <!-- Enlighten / 解法 / Réprobation / Aufklären -->
+      <EffectId>116</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>122</Id> <!-- Condemn / 死の予言 / Condamnation / Todesurteil -->
+      <EffectId>117</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>123</Id> <!-- Defraud / 商談 / Négociation / Feilschen -->
+      <EffectId>118</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>124</Id> <!-- Insult / 悪口 / Provocation / Verhöhnen -->
+      <EffectId>119</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>125</Id> <!-- Mimic Darlavon / ダーラボンのまね / Imitation d'Indolent / Palavons Wiegenlied -->
+      <EffectId>120</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>126</Id> <!-- Sinkhole / 落とし穴 / Trappe / Fallgrube -->
+      <EffectId>121</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>127</Id> <!-- Torrent / 水塊 / Trombe d'eau / Wasserschwall -->
+      <EffectId>122</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>128</Id> <!-- Tanglevine / 蔦地獄 / Enfer de lierre / Schlingpflanze -->
+      <EffectId>123</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>129</Id> <!-- Contortion / 彫塑 / Gravure / Steinmetz -->
+      <EffectId>124</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>130</Id> <!-- Tremor / 局地地震 / Séisme localisé / Erschütterung -->
+      <EffectId>125</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>131</Id> <!-- Wind Slash / かまいたち / Rafale cinglante / Windsichel -->
+      <EffectId>126</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>132</Id> <!-- Will-o'-the-Wisp / 鬼火 / Feu follet / Lauffeuer -->
+      <EffectId>127</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>133</Id> <!-- Quicksand / 底なし沼 / Marais sans fond / Versumpfen -->
+      <EffectId>128</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>134</Id> <!-- Sandstorm / 砂嵐 / Tempête de sable / Sandsturm -->
+      <EffectId>129</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>135</Id> <!-- Snowstorm / 吹雪 / Blizzard hurlant / Schneesturm -->
+      <EffectId>130</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>136</Id> <!-- Wind Blast / 突風 / Bourrasque / Windstoß -->
+      <EffectId>131</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>137</Id> <!-- Magma Surge / 溶岩ボール / Sphère de lave / Lava-Ball -->
+      <EffectId>132</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>138</Id> <!-- Rend Helm / ヘッドブレイク / Brise-chef / Helmbruch -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>139</Id> <!-- Rend Armor / アーマーブレイク / Brise-armure / Panzerbruch -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>140</Id> <!-- Rend Shield / シールドブレイク / Brise-bouclier / Schildbruch -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>141</Id> <!-- Rend Weapon / ウェポンブレイク / Brise-arme / Waffenbruch -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>142</Id> <!-- Rend MP / マジックブレイク / Brise-magie / Magiebruch -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>143</Id> <!-- Rend Speed / スピードブレイク / Brise-vitesse / Tempobruch -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>144</Id> <!-- Rend Power / パワーブレイク / Brise-force / Kraftbruch -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>145</Id> <!-- Rend Magick / マインドブレイク / Brise-esprit / Geistbruch -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>146</Id> <!-- Focus / ためる / Accumulation / Kraftschub -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>147</Id> <!-- Rush / 体当たり / Bourrade / Rammen -->
+      <EffectId>154</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>148</Id> <!-- Throw Stone / 投石 / Jet de pierre / Steinwurf -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>149</Id> <!-- Salve / 手当て / Premiers soins / Verarzten -->
+      <EffectId>156</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>150</Id> <!-- Tailwind / エール / Motivation / Anfeuern -->
+      <EffectId>157</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>151</Id> <!-- Steel / はげます / Encouragement / Ermutigen -->
+      <EffectId>158</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>152</Id> <!-- Chant / おまじない / Abnégation / Opferschwur -->
+      <EffectId>161</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>153</Id> <!-- Shout / さけぶ / Hurlement / Kampfschrei -->
+      <EffectId>159</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>154</Id> <!-- Ultima / アルテマ / Ultima / Ultima -->
+      <EffectId>160</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>155</Id> <!-- Judgment Blade / 不動無明剣 / Ignorance indéfectible / Klinge des Urteils -->
+      <EffectId>163</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>156</Id> <!-- Cleansing Strike / 乱命割殺打 / Frappe purifiante / Reinigender Schlag -->
+      <EffectId>164</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>157</Id> <!-- Northswain's Strike / 北斗骨砕打 / Frappe de l'étoile polaire / Großer Bärenbrecher -->
+      <EffectId>165</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>158</Id> <!-- Hallowed Bolt / 無双稲妻突き / Éclair inimitable / Heiliger Blitz -->
+      <EffectId>166</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>159</Id> <!-- Divine Ruination / 聖光爆裂破 / Ire céleste / Heilige Verheerung -->
+      <EffectId>167</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>160</Id> <!-- Crush Armor / 強甲破点突き / Ravage de plastron / Panzerspalter -->
+      <EffectId>168</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>161</Id> <!-- Crush Helm / 星天爆撃打 / Destruction de crâne / Himmelssturz -->
+      <EffectId>169</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>162</Id> <!-- Crush Weapon / 冥界恐叫打 / Pulvérisation d'arme / Höllenschrei -->
+      <EffectId>170</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>163</Id> <!-- Crush Accessory / 咬撃氷狼破 / Broyage d'accessoire / Wolfsbiss -->
+      <EffectId>171</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>164</Id> <!-- Duskblade / 暗の剣 / Aspiration obscure / Dunkelschwert -->
+      <EffectId>172</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>165</Id> <!-- Shadowblade / 闇の剣 / Saignée obscure / Schattenklinge -->
+      <EffectId>173</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>166</Id> <!-- Unholy Darkness / ダークホーリー / Miracle sombre / Unheiliges Dunkel -->
+      <EffectId>174</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>167</Id> <!-- Dispelna / デスペナ / Purge curative / Medibann -->
+      <EffectId>175</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>168</Id> <!-- Celestial Stasis / 星天停止 / Stase céleste / Kosmischer Einhalt -->
+      <EffectId>176</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>169</Id> <!-- Heaven's Wrath / 天鼓雷音 / Ire fulgurante / Donnertrommeln -->
+      <EffectId>177</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>170</Id> <!-- Ashura / 阿修羅 / Brasier empyréen / Ashura -->
+      <EffectId>178</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>171</Id> <!-- Adamantine Blade / 金剛七剣 / Vortex adamantin / Adamant-Klinge -->
+      <EffectId>179</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>172</Id> <!-- Maelstrom / 水磨龍穴 / Maelström draconique / Wasserdrache -->
+      <EffectId>180</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>173</Id> <!-- Celestial Void / 大虚空蔵 / Vacuité céleste / Kosmische Leere -->
+      <EffectId>181</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>174</Id> <!-- Divinity / 天魔鬼神 / Entités telluriques / Divinität -->
+      <EffectId>182</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>175</Id> <!-- Hell's Wrath / 裏天鼓雷音 / Exo-Ire fulgurante / Blitztrommel -->
+      <EffectId>183</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>176</Id> <!-- Nether Ashura / 裏阿修羅 / Exo-Brasier empyréen / Aruhsa -->
+      <EffectId>184</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>177</Id> <!-- Nether Blade / 裏金剛七剣 / Exo-Vortex adamantin / Danamat-Klinge -->
+      <EffectId>185</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>178</Id> <!-- Nether Maelstrom / 裏水磨龍穴 / Exo-Maelström draconique / Feuerdrache -->
+      <EffectId>186</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>179</Id> <!-- Corporeal Void / 裏大虚空蔵 / Exo-Vacuité céleste / Irdische Leere -->
+      <EffectId>187</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>180</Id> <!-- Impiety / 裏天魔鬼神 / Exo-Entités telluriques / Impietät -->
+      <EffectId>188</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>181</Id> <!-- Petrify / 封印 / Scellement / Steinsiegel -->
+      <EffectId>189</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>182</Id> <!-- Shadowbind / 影縫い / Entrave d'ombre / Schattenbinder -->
+      <EffectId>190</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>183</Id> <!-- Suffocate / 息根止 / Mise à mort / Letzter Atem -->
+      <EffectId>191</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>184</Id>
+      <EffectId>192</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>185</Id> <!-- Revengeance / ショック / Rétorsion / Schock -->
+      <EffectId>193</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>186</Id> <!-- Manaburn / ディファレンス / Analogie / MP-Differenz -->
+      <EffectId>194</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>187</Id> <!-- Petrify / 封印 / Scellement / Steinsiegel -->
+      <EffectId>195</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>188</Id> <!-- Fowlheart / 鶏走 / Constriction / Erschaudern -->
+      <EffectId>196</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>189</Id> <!-- Embrace / A189 / Étreinte / A189 -->
+      <EffectId>197</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>190</Id> <!-- Darkness / 暗黒 / Obscurcissement / Dunkle Künste -->
+      <EffectId>198</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>191</Id> <!-- Aphony / 失声 / Aphonie / Aphonie -->
+      <EffectId>199</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>192</Id> <!-- Befuddle / 喪失 / Déchéance / Verlust -->
+      <EffectId>200</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>193</Id> <!-- Bind / 呪縛 / Joug / Zauberbann -->
+      <EffectId>201</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>194</Id> <!-- Nightmare / 悪夢 / Cauchemar / Albtraum -->
+      <EffectId>202</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>195</Id> <!-- Ague / 悪寒 / Frisson / Schüttelfrost -->
+      <EffectId>203</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>196</Id> <!-- Magicksap / マジックルーイン / Déclin de magie / Magieerschöpfung -->
+      <EffectId>204</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>197</Id> <!-- Speedsap / スピードルーイン / Déclin de vitesse / Tempoerschöpfung -->
+      <EffectId>205</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>198</Id> <!-- Powersap / パワールーイン / Déclin de force / Krafterschöpfung -->
+      <EffectId>206</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>199</Id> <!-- Mindsap / マインドルーイン / Déclin d'esprit / Geistschmelze -->
+      <EffectId>208</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>200</Id> <!-- Blood Drain / 吸血 / Succion de sang / Blutsaugen -->
+      <EffectId>210</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>201</Id> <!-- Charm / 誘惑 / Séduction / Betören -->
+      <EffectId>211</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>202</Id> <!-- Bio / バイオ / Toxine / Bio -->
+      <EffectId>212</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>203</Id> <!-- Bio / バイオ / Toxine / Bio -->
+      <EffectId>213</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>204</Id> <!-- Bio / バイオ / Toxine / Bio -->
+      <EffectId>214</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>205</Id> <!-- Biora / バイオラ / Extra-Toxine / Biora -->
+      <EffectId>215</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>206</Id> <!-- Biora / バイオラ / Extra-Toxine / Biora -->
+      <EffectId>216</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>207</Id> <!-- Biora / バイオラ / Extra-Toxine / Biora -->
+      <EffectId>217</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>208</Id> <!-- Biora / バイオラ / Extra-Toxine / Biora -->
+      <EffectId>218</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>209</Id> <!-- Bioga / バイオガ / Méga-Toxine / Bioga -->
+      <EffectId>219</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>210</Id> <!-- Bioga / バイオガ / Méga-Toxine / Bioga -->
+      <EffectId>220</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>211</Id> <!-- Bioga / バイオガ / Méga-Toxine / Bioga -->
+      <EffectId>221</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>212</Id> <!-- Aegis / マバリア / Barrière magique / Mana-Schild -->
+      <EffectId>222</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>213</Id> <!-- Leg Shot / 足を狙う / Viser les jambes / Beinschuss -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>214</Id> <!-- Arm Shot / 腕を狙う / Viser les bras / Armschuss -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>215</Id> <!-- Seal Evil / 邪心封印 / Claustration impie / Siegel des Bösen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>216</Id> <!-- Meltdown / メルトン / Fusion / Schmelze -->
+      <EffectId>228</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>217</Id> <!-- Tornado / トルネド / Tornade / Tornado -->
+      <EffectId>229</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>218</Id> <!-- Quake / クエイク / Séisme / Beben -->
+      <EffectId>230</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>219</Id>
+      <EffectId>231</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>220</Id>
+      <EffectId>232</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>221</Id> <!-- Toadja / トードジャ / Giga-Crapaud / Froschka -->
+      <EffectId>233</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>222</Id> <!-- Gravija / グラビジャ / Giga-Gravité / Gravika -->
+      <EffectId>234</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>223</Id> <!-- Flareja / フレアジャ / Giga-Fission / Flareka -->
+      <EffectId>235</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>224</Id> <!-- Blindja / ブライジャ / Giga-Cécité / Blindka -->
+      <EffectId>236</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>225</Id> <!-- Bomblet / コボム / Jet de mini bombos / Zwerg-Bomber -->
+      <EffectId>237</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>226</Id> <!-- Bomblet / コボム / Jet de mini bombos / Zwerg-Bomber -->
+      <EffectId>238</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>227</Id> <!-- Confuseja / コンフジャ / Giga-Confusion / Konfuska -->
+      <EffectId>239</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>228</Id> <!-- Sleepja / スリプジャ / Giga-Sommeil / Schlafka -->
+      <EffectId>240</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>229</Id> <!-- Ultima / アルテマ / Ultima / Ultima -->
+      <EffectId>241</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>230</Id> <!-- Divine Ultima / 完全アルテマ / Ultima parfait / Lux-Ultima -->
+      <EffectId>242</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>231</Id> <!-- Disempower / ミュート / Tarissement / Verstummen -->
+      <EffectId>243</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>232</Id> <!-- Dispelja / デスペジャ / Giga-Dissipation / Bannka -->
+      <EffectId>244</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>233</Id> <!-- Return / リタンジャ / Giga-Reprise / Zurück-ka -->
+      <EffectId>245</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>234</Id> <!-- Blind / ブライン / Cécité / Blind -->
+      <EffectId>49</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>235</Id> <!-- Syphon / アスピル / Aspiration / Subspirit -->
+      <EffectId>50</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>236</Id> <!-- Drain / ドレイン / Saignée / Subvita -->
+      <EffectId>51</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>237</Id> <!-- Faith / フェイス / Conversion / Ener -->
+      <EffectId>52</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>238</Id> <!-- Doubt / イノセン / Reniement / Zweifel -->
+      <EffectId>53</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>239</Id> <!-- Zombie / ゾンビー / Zombie / Zombie -->
+      <EffectId>54</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>240</Id> <!-- Silence / サイレス / Silence / Stumm -->
+      <EffectId>55</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>241</Id> <!-- Berserk / バーサク / Furie / Tobsucht -->
+      <EffectId>56</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>242</Id> <!-- Chicken / チキン / Poule mouillée / Feige -->
+      <EffectId>57</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>243</Id> <!-- Confuse / コンフュ / Confusion / Konfus -->
+      <EffectId>58</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>244</Id> <!-- Dispel / デスペル / Dissipation / Bann -->
+      <EffectId>59</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>245</Id> <!-- Disable / ドンアク / Inaction / Inakt -->
+      <EffectId>60</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>246</Id> <!-- Sleep / スリプル / Sommeil / Schlaf -->
+      <EffectId>61</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>247</Id> <!-- Break / ブレイク / Fossile / Steinschlag -->
+      <EffectId>62</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>248</Id> <!-- Ice Breath / アイスブレス / Souffle de glace / Eisatem -->
+      <EffectId>388</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>249</Id> <!-- Fire Breath / ファイアブレス / Souffle de feu / Feueratem -->
+      <EffectId>389</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>250</Id> <!-- Thunder Breath / サンダーブレス / Souffle de foudre / Donneratem -->
+      <EffectId>390</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>251</Id> <!-- Dragon's Charm / 竜ならし / Domptage draconique / Drachenzähmer -->
+      <EffectId>310</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>252</Id> <!-- Dragon's Gift / 竜介抱 / Guérison draconique / Drachenheil -->
+      <EffectId>311</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>253</Id> <!-- Dragon's Might / 竜パワーアップ / Vigueur draconique / Drachenkraft -->
+      <EffectId>312</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>254</Id> <!-- Dragon's Speed / 竜クイック / Vivacité draconique / Drachenzug -->
+      <EffectId>313</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>255</Id> <!-- Holy Breath / ホーリーブレス / Souffle sacré / Heiliger Atem -->
+      <EffectId>314</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>256</Id> <!-- Vengeance / ショック！ / Intimidation / Revanche -->
+      <EffectId>246</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>257</Id> <!-- Braver / ブレイバー / Âme brave / Mutangriff -->
+      <EffectId>247</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>258</Id> <!-- Cross Slash / 凶斬り / Taillade croisée / Kreuzschlag -->
+      <EffectId>249</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>259</Id> <!-- Blade Burst / 破晄撃 / Lame irradiante / Klingenstrahl -->
+      <EffectId>248</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>260</Id> <!-- Ascension / クライムハザード / Péril ascendant / Atomisator -->
+      <EffectId>255</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>261</Id> <!-- Meteorain / メテオレイン / Pluie de météores / Meteoregen -->
+      <EffectId>256</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>262</Id> <!-- Finishing Touch / 画龍点睛 / Finition tournoyante / Letzter Schliff -->
+      <EffectId>257</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>263</Id> <!-- Omnislash / 裏超究武神覇斬 / Omnifrappe / Omnischlag -->
+      <EffectId>259</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>264</Id> <!-- Cherry Blossom / 桜華狂咲 / Efflorescence fatale / Blütensturm -->
+      <EffectId>258</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>265</Id> <!-- Choco Beak / チョコアタック / Choco-attaque / Choco-Attacke -->
+      <EffectId>316</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>266</Id> <!-- Choco Pellets / チョコボール / Choco-feu / Choco-Ball -->
+      <EffectId>317</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>267</Id> <!-- Choco Meteor / チョコメテオ / Choco-météore / Choco-Meteo -->
+      <EffectId>318</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>268</Id> <!-- Choco Esuna / チョコエスナ / Choco-guérison / Choco-Medica -->
+      <EffectId>319</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>269</Id> <!-- Choco Cure / チョコケアル / Choco-soin / Choco-Vita -->
+      <EffectId>320</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>270</Id> <!-- Tackle / タックル / Tacle / Tackle -->
+      <EffectId>321</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>271</Id> <!-- Goblin Punch / ゴブリンパンチ / Coup du gobelin / Goblinschlag -->
+      <EffectId>322</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>272</Id> <!-- Spin Punch / 回転パンチ / Poing tournoyant / Drehschlag -->
+      <EffectId>323</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>273</Id> <!-- Eye Gouge / めつぶし / Aveuglement / Blenden -->
+      <EffectId>324</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>274</Id> <!-- Bloodfeast / ミュウチレイト / Mutilation / Verstümmeln -->
+      <EffectId>325</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>275</Id> <!-- Bite / かみつく / Morsure / Beißen -->
+      <EffectId>326</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>276</Id> <!-- Bomblet / コボム / Salve de mini bombos / Zwerg-Bomber -->
+      <EffectId>327</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>277</Id> <!-- Self-Destruct / 自爆 / Auto-destruction / Selbstzerstörung -->
+      <EffectId>328</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>278</Id> <!-- Flame Attack / フレイムアタック / Jet de flammes / Flammenattacke -->
+      <EffectId>329</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>279</Id> <!-- Spark / スパーク / Étincelle / Funken -->
+      <EffectId>330</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>280</Id> <!-- Claw / ひっかく / Griffade / Kratzen -->
+      <EffectId>331</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>281</Id> <!-- Cat Scratch / ネコキック / Déchiquetage / Gestrampel -->
+      <EffectId>332</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>282</Id> <!-- Blaster / ブラスター / Électrochoc / Druckwelle -->
+      <EffectId>333</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>283</Id> <!-- Venom Fang / 毒牙 / Croc empoisonné / Giftzahn -->
+      <EffectId>334</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>284</Id> <!-- Blood Drain / 吸血 / Succion de sang / Blutsaugen -->
+      <EffectId>335</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>285</Id> <!-- Tentacles / 触手 / Tentacule / Tentakel -->
+      <EffectId>336</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>286</Id> <!-- Ink / すみ / Encre / Tintenstrahl -->
+      <EffectId>337</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>287</Id> <!-- Dischord / 怪音波 / Ondes nocives / Kakophonie -->
+      <EffectId>338</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>288</Id> <!-- Mind Blast / マインドブラスト / Choc mental / Geiststoß -->
+      <EffectId>339</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>289</Id> <!-- Level Drain / レベルブラスト / Perte de niveau / Stufen-Entzug -->
+      <EffectId>340</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>290</Id> <!-- Chop / 手刀 / Tranchant de la main / Knochenhand -->
+      <EffectId>341</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>291</Id> <!-- Thunder Anima / サンダーソウル / Âme de foudre / Blitzseele -->
+      <EffectId>342</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>292</Id> <!-- Water Anima / アクアソウル / Âme d'eau / Wasserseele -->
+      <EffectId>343</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>293</Id> <!-- Ice Anima / アイスソウル / Âme de glace / Eisseele -->
+      <EffectId>344</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>294</Id> <!-- Wind Anima / ウインドソウル / Âme de vent / Windseele -->
+      <EffectId>345</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>295</Id> <!-- Ectoplasm / 霊気を飛ばす / Projection d'aura / Geisterkugel -->
+      <EffectId>346</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>296</Id> <!-- Zombie Touch / ゾンビタッチ / Toucher zombifiant / Verfaulen -->
+      <EffectId>347</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>297</Id> <!-- Sleep Touch / スリープタッチ / Toucher soporifique / Ermüdende Hand -->
+      <EffectId>348</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>298</Id> <!-- Drain Touch / ドレインタッチ / Toucher vampirique / Subvita-Hauch -->
+      <EffectId>349</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>299</Id> <!-- Oily Touch / グリースタッチ / Toucher huileux / Schmierige Hand -->
+      <EffectId>350</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>300</Id> <!-- Wing Buffet / 翼撃 / Battement d'ailes / Flügelschlag -->
+      <EffectId>154</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>301</Id> <!-- Bewitching Gaze / あくまの視線 / Regard démoniaque / Teufelsblick -->
+      <EffectId>352</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>302</Id> <!-- Dread Gaze / 恐怖の視線 / Regard terrifiant / Schauderblick -->
+      <EffectId>353</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>303</Id> <!-- Beam / サークル / Cercle avilissant / Einkreisen -->
+      <EffectId>354</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>304</Id> <!-- Doom / 死の宣告 / Glas / Todesurteil -->
+      <EffectId>355</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>305</Id> <!-- Talon Dive / かきむしる / Égratignement / Krallen -->
+      <EffectId>356</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>306</Id> <!-- Beak / くちばし / Coup de bec / Schnabel -->
+      <EffectId>357</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>307</Id> <!-- Glitterlust / 光ものが好き / Amour du brillant / Glitterlust -->
+      <EffectId>358</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>308</Id> <!-- Featherbomb / フェザーボム / Bombe de plumes / Federbombe -->
+      <EffectId>359</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>309</Id> <!-- Peck / ビーキング / Choc de bec / Hacken -->
+      <EffectId>360</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>310</Id> <!-- Reckless Charge / ちょとつもうしん / Charge furieuse / Stürzen -->
+      <EffectId>361</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>311</Id> <!-- Snort / はないき / Souffle nasal / Schnauben -->
+      <EffectId>362</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>312</Id> <!-- Squeal / ブヒー / Gruik ! / Grunz -->
+      <EffectId>363</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>313</Id> <!-- Toot / ぷ～っ / Prout ! / Pups -->
+      <EffectId>364</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>314</Id> <!-- Bequeath Bacon / 食べてもらう / Sacrifice porcin / Fleischwerdung -->
+      <EffectId>365</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>315</Id> <!-- Leaf Rain / 木の葉乱舞 / Farandole sylvestre / Blätterwirbel -->
+      <EffectId>366</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>316</Id> <!-- Guardian Nymph / まもりの精 / Esprit bouclier / Schutzgeist -->
+      <EffectId>367</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>317</Id> <!-- Shell Nymph / 貝の精 / Esprit barrière / Muschelgeist -->
+      <EffectId>368</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>318</Id> <!-- Life Nymph / 命の精 / Esprit vital / Lebensgeist -->
+      <EffectId>369</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>319</Id> <!-- Magick Nymph / 魔法の精 / Esprit magique / Magischer Geist -->
+      <EffectId>370</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>320</Id> <!-- Pickaxe / ふりおろす / Coup de pioche / Niederreißen -->
+      <EffectId>371</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>321</Id> <!-- Feral Spin / ふりまわす / Pioche fulgurante / Schlinge -->
+      <EffectId>372</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>322</Id> <!-- Earthsplitter / タイタンのまね / Imitation de Titan / Erdstampfer -->
+      <EffectId>373</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>323</Id> <!-- Beef Up / 力をためる / Emmagasinement / Kraft sammeln -->
+      <EffectId>374</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>324</Id> <!-- Breathe Fire / 火を吹く / Crachat de feu / Feuer spucken -->
+      <EffectId>375</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>325</Id> <!-- Tentacles / 触手 / Sarment de morbol / Tentakel -->
+      <EffectId>376</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>326</Id> <!-- Lick / なめる / Coup de langue / Lecken -->
+      <EffectId>377</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>327</Id> <!-- Goo / ねとねと液 / Bave / Schmiere -->
+      <EffectId>378</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>328</Id> <!-- Bad Breath / 臭い息 / Mauvaise haleine / Mundgeruch -->
+      <EffectId>379</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>329</Id> <!-- Malboro Spores / モルボル菌 / Virus morbol / Morbol-Sporen -->
+      <EffectId>380</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>330</Id> <!-- Gore / 突きあげる / Coup de corne / Durchbohren -->
+      <EffectId>381</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>331</Id> <!-- Heave / しゃくりあげる / Encornement / Aufspießen -->
+      <EffectId>382</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>332</Id> <!-- Twister / ハリケーン / Ouragan / Hurrikan -->
+      <EffectId>383</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>333</Id> <!-- Almagest / アルマゲスト / Almageste / Almagest -->
+      <EffectId>384</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>334</Id> <!-- Gigaflare / ギガフレア / Ultra-Fission / Gigaflare -->
+      <EffectId>385</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>335</Id> <!-- Charge / 突進 / Charge brusque / Stürmen -->
+      <EffectId>386</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>336</Id> <!-- Tail Sweep / 尻尾振り回し / Moulinet caudal / Rutenschlag -->
+      <EffectId>387</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>337</Id> <!-- Ice Breath / アイスブレス / Souffle de glace / Eisatem -->
+      <EffectId>388</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>338</Id> <!-- Fire Breath / ファイアブレス / Souffle de feu / Feueratem -->
+      <EffectId>389</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>339</Id> <!-- Thunder Breath / サンダーブレス / Souffle de foudre / Blitzatem -->
+      <EffectId>390</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>340</Id> <!-- Tri-Attack / トリプルアタック / Triple attaque / Dreifach-Angriff -->
+      <EffectId>391</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>341</Id> <!-- Tri-Breath / トリプルブレス / Triple souffle / Dreifach-Atem -->
+      <EffectId>392</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>342</Id> <!-- Tri-Thunder / トリプルサンダー / Triple foudre / Dreifach-Blitz -->
+      <EffectId>393</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>343</Id> <!-- Tri-Flame / トリプルフレイム / Triple flamme / Dreifach-Flamme -->
+      <EffectId>394</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>344</Id> <!-- Dark Whisper / 暗黒の囁き / Murmure sombre / Dunkelflüster -->
+      <EffectId>395</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>345</Id> <!-- Snakecharm / 大蛇 / Charmeur de serpent / Riesenschlange -->
+      <EffectId>401</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>346</Id> <!-- Poisonous Frog / 毒ガエル / Crapaud purulent / Giftfrosch -->
+      <EffectId>402</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>347</Id> <!-- Midgardsormr / ミドガルズオルム / Midgardsormr / Midgardsormr -->
+      <EffectId>403</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>348</Id> <!-- Karma / ライフブレイク / Souffrance / Lebensbruch -->
+      <EffectId>407</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>349</Id> <!-- Nanoflare / ナノフレア / Nano-Brasier / Nano-Flare -->
+      <EffectId>408</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>350</Id> <!-- Grand Cross / グランドクロス / Croix suprême / Supernova -->
+      <EffectId>409</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>351</Id> <!-- Destroy / 破壊する / Détruire / Zerstören -->
+      <EffectId>410</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>352</Id> <!-- Compress / 圧縮する / Comprimer / Zerdrücken -->
+      <EffectId>411</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>353</Id> <!-- Dispose / 処理する / Traiter / Entsorgen -->
+      <EffectId>412</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>354</Id> <!-- Pulverize / 粉砕する / Pulvériser / Zermahlen -->
+      <EffectId>413</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>355</Id> <!-- Energize / エナジール / Transfert / Energisieren -->
+      <EffectId>398</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>356</Id> <!-- Parasite / パラサイト / Parasitage / Parasit -->
+      <EffectId>399</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>357</Id>
+      <EffectId>134</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>358</Id>
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>359</Id>
+      <EffectId>103</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>360</Id>
+      <EffectId>104</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>361</Id>
+      <EffectId>105</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>362</Id>
+      <EffectId>106</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>363</Id>
+      <EffectId>107</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>364</Id>
+      <EffectId>108</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>365</Id>
+      <EffectId>109</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>366</Id>
+      <EffectId>110</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>367</Id> <!-- Attack / たたかう / Attaque / Attacke -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>368</Id> <!-- Potion / ポーション / Potion / Heiltrank -->
+      <EffectId>2308</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>369</Id> <!-- High Potion / ハイポーション / Super-potion / Supertrank -->
+      <EffectId>2311</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>370</Id> <!-- X-Potion / エクスポーション / Maxi-potion / Übertrank -->
+      <EffectId>2314</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>371</Id> <!-- Ether / エーテル / Éther / Äther -->
+      <EffectId>2317</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>372</Id> <!-- High Ether / ハイエーテル / Super-éther / Super-Äther -->
+      <EffectId>2320</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>373</Id> <!-- Elixir / エリクサー / Élixir / Elixier -->
+      <EffectId>2321</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>374</Id> <!-- Antidote / 毒消し / Antidote / Gegengift -->
+      <EffectId>2309</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>375</Id> <!-- Eye Drops / 目薬 / Collyre / Augentropfen -->
+      <EffectId>2310</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>376</Id> <!-- Echo Herbs / やまびこ草 / Herbe d'écho / Echokraut -->
+      <EffectId>2313</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>377</Id> <!-- Maiden's Kiss / 乙女のキッス / Baiser de jouvencelle / Jungfernkuss -->
+      <EffectId>2319</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>378</Id> <!-- Gold Needle / 金の針 / Épingle d'or / Goldnadel -->
+      <EffectId>2315</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>379</Id> <!-- Holy Water / 聖水 / Eau bénite / Weihwasser -->
+      <EffectId>2318</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>380</Id> <!-- Remedy / 万能薬 / Remède / Allheilmittel -->
+      <EffectId>2312</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>381</Id> <!-- Phoenix Down / フェニックスの尾 / Queue de phénix / Phönixfeder -->
+      <EffectId>2316</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>382</Id> <!-- Throw Shuriken / 手裏剣投げ / Lancer de shuriken / Shuriken werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>383</Id> <!-- Throw Daggers / 短剣投げ / Lancer de poignard / Dolch werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>384</Id> <!-- Throw Swords / 剣投げ / Lancer d'épée / Schwert werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>385</Id> <!-- Throw Flails / 連接棍投げ / Lancer de fléau / Flegel werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>386</Id> <!-- Throw Katana / 刀投げ / Lancer de katana de samouraï / Katana werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>387</Id> <!-- Throw Ninja Blades / 忍者刀投げ / Lancer de katana de ninja / Ninja-Schwert werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>388</Id> <!-- Throw Axes / 斧投げ / Lancer de hache / Axt werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>389</Id> <!-- Throw Polearms / 槍投げ / Lancer d'arme d'hast / Speer werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>390</Id> <!-- Throw Poles / 棒投げ / Lancer de bâton de combat / Stab werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>391</Id> <!-- Throw Knight's Swords / 騎士剣投げ / Lancer de grande épée / Ritterschwert werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>392</Id> <!-- Throw Books / 辞書投げ / Lancer d'encyclopédie / Buch werfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>393</Id> <!-- Throw Bombs / 玉投げ / Lancer de projectile / Wurfgeschoss werfen -->
+      <EffectId>2333</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>394</Id> <!-- Horizontal Jump +1 / ジャンプ距離＋１ / Saut horizontal +1 / Sprung-Reichweite +1 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>395</Id> <!-- Horizontal Jump +2 / ジャンプ距離＋２ / Saut horizontal +2 / Sprung-Reichweite +2 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>396</Id> <!-- Horizontal Jump +3 / ジャンプ距離＋３ / Saut horizontal +3 / Sprung-Reichweite +3 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>397</Id> <!-- Horizontal Jump +4 / ジャンプ距離＋４ / Saut horizontal +4 / Sprung-Reichweite +4 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>398</Id> <!-- Horizontal Jump +7 / ジャンプ距離＋７ / Saut horizontal +7 / Sprung-Reichweite +7 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>399</Id> <!-- Vertical Jump ±2 / ジャンプ高低±２ / Saut vertical ±2 / Sprung-Höhe ±2 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>400</Id> <!-- Vertical Jump ±3 / ジャンプ高低±３ / Saut vertical ±3 / Sprung-Höhe ±3 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>401</Id> <!-- Vertical Jump ±4 / ジャンプ高低±４ / Saut vertical ±4 / Sprung-Höhe ±4 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>402</Id> <!-- Vertical Jump ±5 / ジャンプ高低±５ / Saut vertical ±5 / Sprung-Höhe ±5 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>403</Id> <!-- Vertical Jump ±6 / ジャンプ高低±６ / Saut vertical ±6 / Sprung-Höhe ±6 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>404</Id> <!-- Vertical Jump ±7 / ジャンプ高低±７ / Saut vertical ±7 / Sprung-Höhe ±7 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>405</Id> <!-- Vertical Jump ±8 / ジャンプ高低±８ / Saut vertical ±8 / Sprung-Höhe ±8 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>406</Id> <!-- Aim +1 / チャージ＋１ / Charge +1 / Zielen +1 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>407</Id> <!-- Aim +2 / チャージ＋２ / Charge +2 / Zielen +2 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>408</Id> <!-- Aim +3 / チャージ＋３ / Charge +3 / Zielen +3 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>409</Id> <!-- Aim +4 / チャージ＋４ / Charge +4 / Zielen +4 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>410</Id> <!-- Aim +5 / チャージ＋５ / Charge +5 / Zielen +5 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>411</Id> <!-- Aim +7 / チャージ＋７ / Charge +7 / Zielen +7 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>412</Id> <!-- Aim +10 / チャージ＋１０ / Charge +10 / Zielen +10 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>413</Id> <!-- Aim +20 / チャージ＋２０ / Charge +20 / Zielen +20 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>414</Id> <!-- Target CT / ＣＴを標的に / Temps de charge / WZ anvisieren -->
+      <EffectId>1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>415</Id> <!-- Target Level / レベルを標的に / Niveau / Stufe anvisieren -->
+      <EffectId>1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>416</Id> <!-- Target EXP / ＥＸＰを標的に / Expérience / ERF anvisieren -->
+      <EffectId>1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>417</Id> <!-- Target Elevation / 高さを標的に / Hauteur / Höhe anvisieren -->
+      <EffectId>1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>418</Id> <!-- Prime / 素数なら発動 / Nombre premier / Bei Primzahl auslösen -->
+      <EffectId>1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>419</Id> <!-- Multiple of 5 / ５の倍数なら発動 / Multiple de 5 / Bei 5er-Multiplikator auslösen -->
+      <EffectId>1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>420</Id> <!-- Multiple of 4 / ４の倍数なら発動 / Multiple de 4 / Bei 4er-Multiplikator auslösen -->
+      <EffectId>1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>421</Id> <!-- Multiple of 3 / ３の倍数なら発動 / Multiple de 3 / Bei 3er-Multiplikator auslösen -->
+      <EffectId>1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>422</Id> <!-- Strength Surge / 反動物理攻撃アップ / Gain d'attaque / Revanche -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>423</Id> <!-- Magick Surge / 反動魔法攻撃アップ / Gain d'attaque magique / Magie-Vergeltung -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>424</Id> <!-- Speed Surge / 反動スピードアップ / Gain de vitesse / Adrenalinschub -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>425</Id> <!-- Vanish / 潜伏 / Dissimulation / Verbergen -->
+      <EffectId>189</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>426</Id> <!-- Vigilance / 警戒 / Vigilance / Wachsamkeit -->
+      <EffectId>374</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>427</Id> <!-- Dragonheart / 竜の魂 / Cœur de dragon / Drachenherz -->
+      <EffectId>273</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>428</Id> <!-- Regenerate / リジェネーター / Régénération / Auto-Regena -->
+      <EffectId>8</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>429</Id> <!-- Bravery Surge / 反動Braveアップ / Gain de bravoure / Mut-Bonus -->
+      <EffectId>56</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>430</Id> <!-- Faith Surge / 反動Faithアップ / Gain de foi / Glaubens-Bonus -->
+      <EffectId>52</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>431</Id> <!-- Critical: Recover HP / 瀕死ＨＰ回復 / Vitalité du désespoir / Kritische LP-Rettung -->
+      <EffectId>263</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>432</Id> <!-- Critical: Recover MP / 瀕死ＭＰ回復 / Esprit du désespoir / Kritische MP-Rettung -->
+      <EffectId>272</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>433</Id> <!-- Critical: Quick / 瀕死クイック / Célérité du désespoir / Zuginitiative -->
+      <EffectId>44</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>434</Id> <!-- Bonecrusher / 肉斬骨断 / Casse-cou / Knochenbrecher -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>435</Id> <!-- Magick Counter / 魔法返し / Riposte magique / Magiespiegel -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>436</Id> <!-- Counter Tackle / 反撃タックル / Contre-plaquage / Gegenattacke -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>437</Id> <!-- Nature's Wrath / 風水返し / Revanche naturelle / Naturgewalt -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>438</Id> <!-- Absorb MP / 使用ＭＰ吸収 / Absorption de PM / MP absorbieren -->
+      <EffectId>269</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>439</Id> <!-- Gil Snapper / ギルガメの心 / Cœur de gilkhélone / Gilkröten-Finger -->
+      <EffectId>103</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>440</Id> <!-- MARKED FOR DELETION - REPORT IF DISPLAYED Reflect / A440 / Miroir / A440 -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>441</Id> <!-- Auto-Potion / オートポーション / Auto-potion / Auto-Heiltrank -->
+      <EffectId>260</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>442</Id> <!-- Counter / カウンター / Riposte / Konter -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>443</Id>
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>444</Id> <!-- Cup of Life / 回復おすそわけ / Redistribution vitale / Lebensspende -->
+      <EffectId>260</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>445</Id> <!-- Mana Shield / ＭＰすり替え / Égide magique / MP-Kompensation -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>446</Id> <!-- Soulbind / ダメージ返し / Partage de dégâts / Schaden verteilen -->
+      <EffectId>341</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>447</Id> <!-- Parry / 装備武器ガード / Parade à l'arme / Parieren -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>448</Id> <!-- Earplugs / 耳をふさぐ / Sourde oreille / Ohrstopfen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>449</Id> <!-- Reflexes / 見切る / Anticipation / Reflex -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>450</Id> <!-- Sticky Fingers / キャッチ / Interception / Fangen -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>451</Id> <!-- Shirahadori / 白刃取り / Blocage hardi / Shirahadori -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>452</Id> <!-- Archer's Bane / 矢かわし / Pare-flèches / Pfeiltänzer -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+    <AbilityEffectNumberFilter>
+      <Id>453</Id> <!-- First Strike / ハメドる / Contre-offensive / Erstschlag -->
+      <EffectId>-1</EffectId>
+    </AbilityEffectNumberFilter>
+  </Entries>
+</AbilityEffectNumberFilterData>

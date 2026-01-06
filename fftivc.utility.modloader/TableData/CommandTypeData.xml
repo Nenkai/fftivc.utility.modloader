@@ -14,6 +14,8 @@ value from the original table or, from other mods making changes depending on mo
 
 IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
 
+IMPORTANT 3: Id cannot be more than 255 (hardcoded table size is 256).
+
 For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/COMMAND_TYPE_DATA.cs
 -->
 
@@ -22,28 +24,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
   <Entries>
     <CommandType>
       <Id>0</Id>
-		
-      <!-- 
-	  Valid options are:
-	  - Default,
-      - ItemInventory,
-      - WeaponInventory,
-      - Mathematics,
-      - Elements,
-      - Blank0x5,
-      - Monster,
-      - KatanaInventory,
-      - Attack,
-      - Jump,
-      - Aim,
-      - Defend,
-      - ChangeEquipment,
-      - Unknown0xD,
-      - Blank0xE,
-      - Unknown0xF
-	  -->
       <Menu>Unknown0xF</Menu>
-		
     </CommandType>
     <CommandType>
       <Id>1</Id>
