@@ -5,7 +5,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables;
 /// <summary>
 /// Treasure hunting item data manager.
 /// </summary>
-public interface IFFTOMapItemDataManager : IFFTOTableManager
+public interface IFFTOMapTrapFormationDataManager : IFFTOTableManager
 {
     /// <summary>
     /// Applies a map item entry directly to the game.

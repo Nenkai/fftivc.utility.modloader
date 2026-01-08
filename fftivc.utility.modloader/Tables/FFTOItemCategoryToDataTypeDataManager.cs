@@ -18,18 +18,18 @@ using fftivc.utility.modloader.Interfaces.Serializers;
 
 namespace fftivc.utility.modloader.Tables;
 
-public class FFTODataTypeToItemIdRangeManager : FFTOTableManagerBase<ItemDataTypeToItemIdRangeTable, ItemDataTypeToItemIdRange>, IFFTODataTypeToItemIdRangeManager
+public class FFTOItemCategoryToDataTypeDataManager : FFTOTableManagerBase<ItemCategoryToDataTypeTable, ItemCategoryToDataType>, IFFTOItemCategoryToDataTypeDataManager
 {
-    private readonly IModelSerializer<ItemDataTypeToItemIdRangeTable> _modelTableSerializer;
+    private readonly IModelSerializer<ItemCategoryToDataTypeTable> _modelTableSerializer;
 
-    public override string TableFileName => "ItemDataTypeToItemIdRangeData";
-    public int NumEntries => 10;
+    public override string TableFileName => "ItemCategoryToDataTypeData";
+    public int NumEntries => 14;
     public int MaxId => NumEntries - 1;
 
-    private FixedArrayPtr<ITEM_DATA_TYPE_TO_ITEM_ID_RANGE> _itemDataTypeToItemIdRangeTablePtr;
+    private FixedArrayPtr<ITEM_CATEGORY_TO_DATA_TYPE_DATA> _itemCategoryToDataTypeTablePtr;
 
-    public FFTODataTypeToItemIdRangeManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
-        IModelSerializer<ItemDataTypeToItemIdRangeTable> modelTableSerializer)
+    public FFTOItemCategoryToDataTypeDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+        IModelSerializer<ItemCategoryToDataTypeTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
@@ -39,7 +39,7 @@ public class FFTODataTypeToItemIdRangeManager : FFTOTableManagerBase<ItemDataTyp
     {
         var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
 
-        _startupScanner.AddMainModuleScan("00 00 00 00 02 00 00 00 03 00 00 00 05 00 00 00 06 00 00 00 07 00 00 00", e =>
+        _startupScanner.AddMainModuleScan("00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00 05 00 00 00 05 00 00 00", e =>
         {
             if (!e.Found)
             {
@@ -50,12 +50,12 @@ public class FFTODataTypeToItemIdRangeManager : FFTOTableManagerBase<ItemDataTyp
             nuint tableAddress = (nuint)(processAddress + e.Offset);
             _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_DATA_TYPE_TO_ITEM_ID_RANGE) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemDataTypeToItemIdRangeTablePtr = new FixedArrayPtr<ITEM_DATA_TYPE_TO_ITEM_ID_RANGE>((ITEM_DATA_TYPE_TO_ITEM_ID_RANGE*)tableAddress, NumEntries);
+            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_CATEGORY_TO_DATA_TYPE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemCategoryToDataTypeTablePtr = new FixedArrayPtr<ITEM_CATEGORY_TO_DATA_TYPE_DATA>((ITEM_CATEGORY_TO_DATA_TYPE_DATA*)tableAddress, NumEntries);
 
-            for (int i = 0; i < _itemDataTypeToItemIdRangeTablePtr.Count; i++)
+            for (int i = 0; i < _itemCategoryToDataTypeTablePtr.Count; i++)
             {
-                ItemDataTypeToItemIdRange model = ItemDataTypeToItemIdRange.FromStructure(i, ref _itemDataTypeToItemIdRangeTablePtr.AsRef(i));
+                ItemCategoryToDataType model = ItemCategoryToDataType.FromStructure(i, ref _itemCategoryToDataTypeTablePtr.AsRef(i));
 
                 _originalTable.Entries.Add(model);
                 _moddedTable.Entries.Add(model.Clone());
@@ -84,7 +84,7 @@ public class FFTODataTypeToItemIdRangeManager : FFTOTableManagerBase<ItemDataTyp
     {
         try
         {
-            ItemDataTypeToItemIdRangeTable? modelTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
+            ItemCategoryToDataTypeTable? modelTable = _modelTableSerializer.ReadModelFromFile(Path.Combine(folder, $"{TableFileName}.xml"));
             if (modelTable is null)
                 return;
 
@@ -98,28 +98,28 @@ public class FFTODataTypeToItemIdRangeManager : FFTOTableManagerBase<ItemDataTyp
         }
     }
 
-    public override void ApplyTablePatch(string modId, ItemDataTypeToItemIdRange model)
+    public override void ApplyTablePatch(string modId, ItemCategoryToDataType model)
     {
         TrackModelChanges(modId, model);
 
-        ItemDataTypeToItemIdRange previous = _moddedTable.Entries[model.Id];
-        ref ITEM_DATA_TYPE_TO_ITEM_ID_RANGE tableItem = ref _itemDataTypeToItemIdRangeTablePtr.AsRef(model.Id);
+        ItemCategoryToDataType previous = _moddedTable.Entries[model.Id];
+        ref ITEM_CATEGORY_TO_DATA_TYPE_DATA tableItem = ref _itemCategoryToDataTypeTablePtr.AsRef(model.Id);
 
-        tableItem.ItemIdRangeId = (uint)(model.ItemIdRangeId ?? previous.ItemIdRangeId)!;
+        tableItem.DataTypeId = (uint)(model.DataTypeId ?? previous.DataTypeId)!;
     }
 
-    public ItemDataTypeToItemIdRange GetOriginalItemDataTypeToItemIdRange(int index)
+    public ItemCategoryToDataType GetOriginalItemCategoryToDataType(int index)
     {
         if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"ItemDataTypeToItemIdRange id can not be more than {MaxId}!");
+            throw new ArgumentOutOfRangeException(nameof(index), $"Item category to data type id can not be more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
-    public ItemDataTypeToItemIdRange GetItemDataTypeToItemIdRange(int index)
+    public ItemCategoryToDataType GetItemCategoryToDataType(int index)
     {
         if (index > MaxId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"ItemDataTypeToItemIdRange id can not be more than {MaxId}!");
+            throw new ArgumentOutOfRangeException(nameof(index), $"Item category to data type id can not be more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

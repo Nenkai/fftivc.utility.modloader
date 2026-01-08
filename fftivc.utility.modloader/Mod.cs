@@ -1,4 +1,5 @@
 ﻿using fftivc.utility.modloader.Configuration;
+using fftivc.utility.modloader.Extensions;
 using fftivc.utility.modloader.FileLists;
 using fftivc.utility.modloader.Hooks;
 using fftivc.utility.modloader.Interfaces;
@@ -42,9 +43,9 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         typeof(IFFTOAbilityMathDataManager),
         typeof(IFFTOAbilityThrowDataManager),
         typeof(IFFTOItemDataManager),
-        typeof(IFFTOItemIdRangeToCategoryManager),
-        typeof(IFFTOItemCategoryToDataTypeManager),
-        typeof(IFFTODataTypeToItemIdRangeManager),
+        typeof(IFFTOItemIdRangeToCategoryDataManager),
+        typeof(IFFTOItemCategoryToDataTypeDataManager),
+        typeof(IFFTODataTypeToItemIdRangeDataManager),
         typeof(IFFTOItemEquipBonusDataManager),
         typeof(IFFTOItemOptionsDataManager),
         typeof(IFFTOItemWeaponDataManager),
@@ -53,7 +54,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         typeof(IFFTOItemAccessoryDataManager),
         typeof(IFFTOItemConsumableDataManager),
         typeof(IFFTOMonsterJobCommandDataManager),
-        typeof(IFFTOMapItemDataManager),
+        typeof(IFFTOMapTrapFormationDataManager),
         typeof(IFFTOJobCommandDataManager),
         typeof(IFFTOJobDataManager),
         typeof(IFFTOStatusEffectDataManager),
@@ -200,9 +201,9 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityMathDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityThrowDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
-        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemIdRangeToCategoryManager>());
-        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemCategoryToDataTypeManager>());
-        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTODataTypeToItemIdRangeManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemIdRangeToCategoryDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemCategoryToDataTypeDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTODataTypeToItemIdRangeDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemEquipBonusDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemOptionsDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemWeaponDataManager>());
@@ -211,7 +212,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemAccessoryDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemConsumableDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMonsterJobCommandDataManager>());
-        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMapItemDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMapTrapFormationDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobCommandDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOStatusEffectDataManager>());
@@ -245,56 +246,30 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
 
             // Table managers
             .AddTransient(typeof(IModelSerializer<>), typeof(ModelSerializer<>))
-            // ...To grab them as IEnumerable
-            .AddSingleton<IFFTOTableManager, FFTOAbilityDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOAbilityEffectNumberFilterManager>()
-            .AddSingleton<IFFTOTableManager, FFTOAbilityTypeDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOAbilityChargeAimDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOAbilityJumpDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOAbilityMathDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOAbilityThrowDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTODataTypeToItemIdRangeManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemIdRangeToCategoryManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemCategoryToDataTypeManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemEquipBonusDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemOptionsDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemWeaponDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemShieldDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemArmorDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemAccessoryDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOItemConsumableDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOMonsterJobCommandDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOMapTrapFormationDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOJobCommandDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOJobDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOStatusEffectDataManager>()
-            .AddSingleton<IFFTOTableManager, FFTOCommandTypeDataManager>()
-            // Individually.
-            .AddSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
-            .AddSingleton<IFFTOAbilityEffectNumberFilterDataManager, FFTOAbilityEffectNumberFilterManager>()
-            .AddSingleton<IFFTOAbilityTypeDataManager, FFTOAbilityTypeDataManager>()
-            .AddSingleton<IFFTOAbilityChargeAimDataManager, FFTOAbilityChargeAimDataManager>()
-            .AddSingleton<IFFTOAbilityJumpDataManager, FFTOAbilityJumpDataManager>()
-            .AddSingleton<IFFTOAbilityMathDataManager, FFTOAbilityMathDataManager>()
-            .AddSingleton<IFFTOAbilityThrowDataManager, FFTOAbilityThrowDataManager>()
-            .AddSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
-            .AddSingleton<IFFTODataTypeToItemIdRangeManager, FFTODataTypeToItemIdRangeManager>()
-            .AddSingleton<IFFTOItemIdRangeToCategoryManager, FFTOItemIdRangeToCategoryManager>()
-            .AddSingleton<IFFTOItemCategoryToDataTypeManager, FFTOItemCategoryToDataTypeManager>()
-            .AddSingleton<IFFTOItemEquipBonusDataManager, FFTOItemEquipBonusDataManager>()
-            .AddSingleton<IFFTOItemOptionsDataManager, FFTOItemOptionsDataManager>()
-            .AddSingleton<IFFTOItemWeaponDataManager, FFTOItemWeaponDataManager>()
-            .AddSingleton<IFFTOItemShieldDataManager, FFTOItemShieldDataManager>()
-            .AddSingleton<IFFTOItemArmorDataManager, FFTOItemArmorDataManager>()
-            .AddSingleton<IFFTOItemAccessoryDataManager, FFTOItemAccessoryDataManager>()
-            .AddSingleton<IFFTOItemConsumableDataManager, FFTOItemConsumableDataManager>()
-            .AddSingleton<IFFTOMonsterJobCommandDataManager, FFTOMonsterJobCommandDataManager>()
-            .AddSingleton<IFFTOMapItemDataManager, FFTOMapTrapFormationDataManager>()
-            .AddSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
-            .AddSingleton<IFFTOJobDataManager, FFTOJobDataManager>()
-            .AddSingleton<IFFTOStatusEffectDataManager, FFTOStatusEffectDataManager>()
-            .AddSingleton<IFFTOCommandTypeDataManager, FFTOCommandTypeDataManager>()
+            .AddGameTableSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
+            .AddGameTableSingleton<IFFTOAbilityEffectNumberFilterDataManager, FFTOAbilityEffectNumberFilterDataManager>()
+            .AddGameTableSingleton<IFFTOAbilityTypeDataManager, FFTOAbilityTypeDataManager>()
+            .AddGameTableSingleton<IFFTOAbilityChargeAimDataManager, FFTOAbilityChargeAimDataManager>()
+            .AddGameTableSingleton<IFFTOAbilityJumpDataManager, FFTOAbilityJumpDataManager>()
+            .AddGameTableSingleton<IFFTOAbilityMathDataManager, FFTOAbilityMathDataManager>()
+            .AddGameTableSingleton<IFFTOAbilityThrowDataManager, FFTOAbilityThrowDataManager>()
+            .AddGameTableSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
+            .AddGameTableSingleton<IFFTODataTypeToItemIdRangeDataManager, FFTODataTypeToItemIdRangeDataManager>()
+            .AddGameTableSingleton<IFFTOItemIdRangeToCategoryDataManager, FFTOItemIdRangeToCategoryDataManager>()
+            .AddGameTableSingleton<IFFTOItemCategoryToDataTypeDataManager, FFTOItemCategoryToDataTypeDataManager>()
+            .AddGameTableSingleton<IFFTOItemEquipBonusDataManager, FFTOItemEquipBonusDataManager>()
+            .AddGameTableSingleton<IFFTOItemOptionsDataManager, FFTOItemOptionsDataManager>()
+            .AddGameTableSingleton<IFFTOItemWeaponDataManager, FFTOItemWeaponDataManager>()
+            .AddGameTableSingleton<IFFTOItemShieldDataManager, FFTOItemShieldDataManager>()
+            .AddGameTableSingleton<IFFTOItemArmorDataManager, FFTOItemArmorDataManager>()
+            .AddGameTableSingleton<IFFTOItemAccessoryDataManager, FFTOItemAccessoryDataManager>()
+            .AddGameTableSingleton<IFFTOItemConsumableDataManager, FFTOItemConsumableDataManager>()
+            .AddGameTableSingleton<IFFTOMonsterJobCommandDataManager, FFTOMonsterJobCommandDataManager>()
+            .AddGameTableSingleton<IFFTOMapTrapFormationDataManager, FFTOMapTrapFormationDataManager>()
+            .AddGameTableSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
+            .AddGameTableSingleton<IFFTOJobDataManager, FFTOJobDataManager>()
+            .AddGameTableSingleton<IFFTOStatusEffectDataManager, FFTOStatusEffectDataManager>()
+            .AddGameTableSingleton<IFFTOCommandTypeDataManager, FFTOCommandTypeDataManager>()
 
             .AddSingleton<FFTOResourceManagerHooks>()
             .AddSingleton<FFTPackHooks>()

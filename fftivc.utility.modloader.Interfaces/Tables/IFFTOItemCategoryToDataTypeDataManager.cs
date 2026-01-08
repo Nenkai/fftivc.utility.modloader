@@ -11,7 +11,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables;
 /// <summary>
 /// Item category to additional data type manager.
 /// </summary>
-public interface IFFTOItemCategoryToDataTypeManager : IFFTOTableManager
+public interface IFFTOItemCategoryToDataTypeDataManager : IFFTOTableManager
 {
     /// <summary>
     /// Applies an item category to additional data type directly to the game.

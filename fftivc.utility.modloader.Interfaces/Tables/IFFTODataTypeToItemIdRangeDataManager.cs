@@ -11,26 +11,26 @@ namespace fftivc.utility.modloader.Interfaces.Tables;
 /// <summary>
 /// Item id range to category manager.
 /// </summary>
-public interface IFFTOItemIdRangeToCategoryManager : IFFTOTableManager
+public interface IFFTODataTypeToItemIdRangeDataManager : IFFTOTableManager
 {
     /// <summary>
-    /// Applies an item id range to category directly to the game.
+    /// Applies an item data type to item id range directly to the game.
     /// </summary>
     /// <param name="modId">Mod id that is changing the item category range.</param>
     /// <param name="item"></param>
-    public void ApplyTablePatch(string modId, ItemIdRangeToCategory item);
+    public void ApplyTablePatch(string modId, ItemDataTypeToItemIdRange item);
 
     /// <summary>
-    /// Gets an item id range to category, before any modded changes were applied.
+    /// Gets an item data type to item id range, before any modded changes were applied.
     /// </summary>
     /// <param name="index"></param>
     /// <returns></returns>
-    public ItemIdRangeToCategory GetOriginalItemIdRangeToCategory(int index);
+    public ItemDataTypeToItemIdRange GetOriginalItemDataTypeToItemIdRange(int index);
 
     /// <summary>
-    /// Gets an item id range to category with currently modded changes.
+    /// Gets an item data type to item id range with currently modded changes.
     /// </summary>
     /// <param name="index"></param>
     /// <returns></returns>
-    public ItemIdRangeToCategory GetIItemIdRangeToCategory(int index);
+    public ItemDataTypeToItemIdRange GetItemDataTypeToItemIdRange(int index);
 }

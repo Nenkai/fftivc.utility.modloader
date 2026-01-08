@@ -13,7 +13,7 @@ using Reloaded.Mod.Interfaces;
 
 namespace fftivc.utility.modloader.Tables;
 
-public class FFTOMapTrapFormationDataManager : FFTOTableManagerBase<MapTrapFormationTable, MapTrapFormation>, IFFTOMapItemDataManager
+public class FFTOMapTrapFormationDataManager : FFTOTableManagerBase<MapTrapFormationTable, MapTrapFormation>, IFFTOMapTrapFormationDataManager
 {
     private readonly IModelSerializer<MapTrapFormationTable> _modelTableSerializer;
 

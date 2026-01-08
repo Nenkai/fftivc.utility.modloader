@@ -13,7 +13,7 @@ using Reloaded.Mod.Interfaces;
 
 namespace fftivc.utility.modloader.Tables;
 
-public class FFTOAbilityEffectNumberFilterManager : FFTOTableManagerBase<AbilityEffectNumberFilterTable, AbilityEffectNumberFilter>, IFFTOAbilityEffectNumberFilterDataManager
+public class FFTOAbilityEffectNumberFilterDataManager : FFTOTableManagerBase<AbilityEffectNumberFilterTable, AbilityEffectNumberFilter>, IFFTOAbilityEffectNumberFilterDataManager
 {
     private readonly IModelSerializer<AbilityEffectNumberFilterTable> _modelTableSerializer;
 
@@ -23,7 +23,7 @@ public class FFTOAbilityEffectNumberFilterManager : FFTOTableManagerBase<Ability
 
     private FixedArrayPtr<ABILITY_EFFECT_NUMBER_FILTER_DATA> _abilityEffectNumberFilterDataTablePointer;
 
-    public FFTOAbilityEffectNumberFilterManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+    public FFTOAbilityEffectNumberFilterDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
         IModelSerializer<AbilityEffectNumberFilterTable> modelTableSerializer)
         : base(configuration, logger, modConfig, startupScanner, modLoader)
     {
