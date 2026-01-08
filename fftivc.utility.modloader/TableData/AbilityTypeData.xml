@@ -23,2727 +23,2727 @@ IMPORTANT 3: Same ids as AbilityData. Id cannot be more than 453 (hardcoded tabl
   <Entries>
     <AbilityType>
       <Id>0</Id> <!-- Corresponds to Ability Id values. Refer to AbilityData for values. -->
-      <Animation1>0</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>1</Id> <!-- Cure / ケアル / Soin / Vita -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>2</Id> <!-- Cura / ケアルラ / Extra-Soin / Vitra -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>3</Id> <!-- Curaga / ケアルガ / Méga-Soin / Vitaga -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>4</Id> <!-- Curaja / ケアルジャ / Giga-Soin / Vitaka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>5</Id> <!-- Raise / レイズ / Vie / Engel -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>6</Id> <!-- Arise / アレイズ / Maxi-Vie / Erzengel -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>7</Id> <!-- Reraise / リレイズ / Auréole / Schutzengel -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>8</Id> <!-- Regen / リジェネ / Récupération / Regena -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>9</Id> <!-- Protect / プロテス / Bouclier / Protes -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>10</Id> <!-- Protectja / プロテジャ / Giga-Bouclier / Proteska -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>11</Id> <!-- Shell / シェル / Barrière / Vallum -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>12</Id> <!-- Shellja / シェルジャ / Giga-Barrière / Vallka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>13</Id> <!-- Wall / ウォール / Mur / Wall -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>14</Id> <!-- Esuna / エスナ / Guérison / Medica -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>15</Id> <!-- Holy / ホーリー / Miracle / Sanctus -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>16</Id> <!-- Fire / ファイア / Feu / Feuer -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>17</Id> <!-- Fira / ファイラ / Extra-Feu / Feura -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>18</Id> <!-- Firaga / ファイガ / Méga-Feu / Feuga -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>19</Id> <!-- Firaja / ファイジャ / Giga-Feu / Feuka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>20</Id> <!-- Thunder / サンダー / Foudre / Blitz -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>21</Id> <!-- Thundara / サンダラ / Extra-Foudre / Blitzra -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>22</Id> <!-- Thundaga / サンダガ / Méga-Foudre / Blitzga -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>23</Id> <!-- Thundaja / サンダジャ / Giga-Foudre / Blitzka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>24</Id> <!-- Blizzard / ブリザド / Glace / Eis -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>25</Id> <!-- Blizzara / ブリザラ / Extra-Glace / Eisra -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>26</Id> <!-- Blizzaga / ブリザガ / Méga-Glace / Eisga -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>27</Id> <!-- Blizzaja / ブリザジャ / Giga-Glace / Eiska -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>28</Id> <!-- Poison / ポイズン / Poison / Gift -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>29</Id> <!-- Toad / トード / Crapaud / Frosch -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>30</Id> <!-- Death / デス / Mort / Tod -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>31</Id> <!-- Flare / フレア / Fission / Flare -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>32</Id> <!-- Haste / ヘイスト / Hâte / Hast -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>33</Id> <!-- Hasteja / ヘイスジャ / Giga-Hâte / Hastka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>34</Id> <!-- Slow / スロウ / Lenteur / Gemach -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>35</Id> <!-- Slowja / スロウジャ / Giga-Lenteur / Gemachka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>36</Id> <!-- Stop / ストップ / Stop / Stopp -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>37</Id> <!-- Immobilize / ドンムブ / Inertie / Defix -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>38</Id> <!-- Float / レビテト / Lévitation / Levitas -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>39</Id> <!-- Reflect / リフレク / Miroir / Reflek -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>40</Id>
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>41</Id> <!-- Quick / クイック / Célérité / Beschleunigen -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>42</Id> <!-- Gravity / グラビデ / Gravité / Gravitas -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>43</Id> <!-- Graviga / グラビガ / Méga-Gravité / Graviga -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>44</Id> <!-- Meteor / メテオ / Météore / Meteo -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>45</Id> <!-- Chant / 祈り / Prière / Opferschwur -->
-      <Animation1>3</Animation1>
-      <Animation2>102</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>102</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>46</Id> <!-- Umbra / 闇縛符 / Occultation / Dunkelschleier -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>47</Id> <!-- Empowerment / 魔吸唱 / Absorption mystique / Absorbieren -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>48</Id> <!-- Invigoration / 命吸唱 / Absorption charnelle / Entziehen -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>49</Id> <!-- Belief / 信祈仰祷 / Dévotion / Bekehrung -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>50</Id> <!-- Disbelief / 信疑仰祷 / Apostasie / Glaubensabfall -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>51</Id> <!-- Corruption / 腐生骸屍 / Déliquescence / Verwesung -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>52</Id> <!-- Quiescence / 沈黙唱 / Mutité / Lied der Stille -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>53</Id> <!-- Fervor / 勇猛狂符 / Éréthisme / Weißglut -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>54</Id> <!-- Trepidation / 狐鶏鼠 / Découragement / Beklemmung -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>55</Id> <!-- Delirium / 乱心唱 / Déstabilisation / Delirium -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>56</Id> <!-- Harmony / 絶装魔脱 / Révocation / Entzauberung -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>57</Id> <!-- Hesitation / 不変不動 / Paralysation / Erstarren -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>58</Id> <!-- Repose / 夢邪睡符 / Narcose / Schlaf -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>59</Id> <!-- Induration / 碑封印 / Emmuration / Steinfluch -->
-      <Animation1>1</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>60</Id> <!-- Moogle / モーグリ / Mog / Mogry -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>61</Id> <!-- Shiva / シヴァ / Shiva / Shiva -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>62</Id> <!-- Ramuh / ラムウ / Ramuh / Ramuh -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>63</Id> <!-- Ifrit / イフリート / Ifrit / Ifrit -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>64</Id> <!-- Titan / タイタン / Titan / Titan -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>65</Id> <!-- Golem / ゴーレム / Golem / Golem -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>66</Id> <!-- Carbuncle / カーバンクル / Carbuncle / Karfunkel -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>67</Id> <!-- Bahamut / バハムート / Bahamut / Bahamut -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>68</Id> <!-- Odin / オーディン / Odin / Odin -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>69</Id> <!-- Leviathan / リヴァイアサン / Léviathan / Leviathan -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>70</Id> <!-- Salamander / サラマンダー / Salamandre / Salamander -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>71</Id> <!-- Sylph / シルフ / Sylphe / Sylphe -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>72</Id> <!-- Faerie / フェアリー / Fée / Fee -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>73</Id> <!-- Lich / リッチ / Liche / Lich -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>74</Id> <!-- Cyclops / クリュプス / Cyclope / Zyklop -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>75</Id> <!-- Zodiark / ゾディアーク / Zodiarche / Zodiarche -->
-      <Animation1>2</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>2</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>76</Id> <!-- Ashura / 阿修羅 / Ashura / Ashura -->
-      <Animation1>3</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>77</Id> <!-- Kotetsu / 虎徹 / Kotetsu / Kotetsu -->
-      <Animation1>3</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>78</Id> <!-- Bizen Osafune / 備前長船 / Bizen-Osafune / Bizen-Osafune -->
-      <Animation1>3</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>79</Id> <!-- Murasame / 村雨 / Murasame / Murasame -->
-      <Animation1>3</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>80</Id> <!-- Ame-no-Murakumo / 天のむら雲 / Ama-no-Murakumo / Murakumo -->
-      <Animation1>3</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>81</Id> <!-- Kiyomori / 清盛 / Kiyomori / Kiyomori -->
-      <Animation1>3</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>82</Id> <!-- Muramasa / 村正 / Muramasa / Muramasa -->
-      <Animation1>3</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>83</Id> <!-- Kiku-ichimonji / 菊一文字 / Kiku-ichimonji / Kikuichimonji -->
-      <Animation1>3</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>84</Id> <!-- Masamune / 正宗 / Masamune / Masamune -->
-      <Animation1>3</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>85</Id> <!-- Chirijiraden / 塵地螺鈿飾剣 / Chirijiraden-kazari / Chirijiraden -->
-      <Animation1>3</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>86</Id> <!-- Seraph Song / 天使の詩 / Chant angélique / Engelslied -->
-      <Animation1>13</Animation1>
-      <Animation2>40</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>13</ChargeEffectType>
+      <AnimationId>40</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>87</Id> <!-- Life's Anthem / 命の詩 / Hymne à la vie / Hymne des Lebens -->
-      <Animation1>13</Animation1>
-      <Animation2>40</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>13</ChargeEffectType>
+      <AnimationId>40</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>88</Id> <!-- Rousing Melody / 応援歌 / Air entraînant / Heroische Melodie -->
-      <Animation1>13</Animation1>
-      <Animation2>40</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>13</ChargeEffectType>
+      <AnimationId>40</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>89</Id> <!-- Battle Chant / 戦いの詩 / Goualante guerrière / Schlachtlied -->
-      <Animation1>13</Animation1>
-      <Animation2>40</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>13</ChargeEffectType>
+      <AnimationId>40</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>90</Id> <!-- Magickal Refrain / 魔力の詩 / Ode mystique / Magischer Refrain -->
-      <Animation1>13</Animation1>
-      <Animation2>40</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>13</ChargeEffectType>
+      <AnimationId>40</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>91</Id> <!-- Nameless Song / 名もなき詩 / Marche sans nom / Okkultes Lied -->
-      <Animation1>13</Animation1>
-      <Animation2>40</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>13</ChargeEffectType>
+      <AnimationId>40</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>92</Id> <!-- Finale / ラストソング / Dernière rengaine / Letztes Lied -->
-      <Animation1>13</Animation1>
-      <Animation2>40</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>13</ChargeEffectType>
+      <AnimationId>40</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>93</Id> <!-- Witch Hunt / ウイッチハント / Mambo magique / Hexentanz -->
-      <Animation1>14</Animation1>
-      <Animation2>111</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>14</ChargeEffectType>
+      <AnimationId>111</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>94</Id> <!-- Mincing Minuet / ウイズナイブス / Danse des dagues / Messertanz -->
-      <Animation1>14</Animation1>
-      <Animation2>111</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>14</ChargeEffectType>
+      <AnimationId>111</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>95</Id> <!-- Slow Dance / スローダンス / Pavane languissante / Träger Tanz -->
-      <Animation1>14</Animation1>
-      <Animation2>111</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>14</ChargeEffectType>
+      <AnimationId>111</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>96</Id> <!-- Polka / ポルカポルカ / Polka / Polka -->
-      <Animation1>14</Animation1>
-      <Animation2>111</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>14</ChargeEffectType>
+      <AnimationId>111</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>97</Id> <!-- Heathen Frolic / アンフェイス / Salsa langoureuse / Schlangentanz -->
-      <Animation1>14</Animation1>
-      <Animation2>111</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>14</ChargeEffectType>
+      <AnimationId>111</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>98</Id> <!-- Forbidden Dance / ネイムレスダンス / Danse sans nom / Wandeltanz -->
-      <Animation1>14</Animation1>
-      <Animation2>111</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>14</ChargeEffectType>
+      <AnimationId>111</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>99</Id> <!-- Last Waltz / ラストダンス / Dernière danse / Letzter Tanz -->
-      <Animation1>14</Animation1>
-      <Animation2>111</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>14</ChargeEffectType>
+      <AnimationId>111</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>100</Id> <!-- Cyclone / 裏回し拳 / Revers circulaire / Wirbelwind -->
-      <Animation1>4</Animation1>
-      <Animation2>103</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>103</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>101</Id> <!-- Pummel / 連続拳 / Poing furieux / Fausthagel -->
-      <Animation1>4</Animation1>
-      <Animation2>104</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>104</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>102</Id> <!-- Aurablast / 波動撃 / Frappe ondoyante / Schockpunkt -->
-      <Animation1>4</Animation1>
-      <Animation2>62</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>62</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>103</Id> <!-- Shockwave / 地烈斬 / Fêlure terrestre / Erdspaltung -->
-      <Animation1>4</Animation1>
-      <Animation2>62</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>62</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>104</Id> <!-- Doom Fist / 秘孔拳 / Toucher mortel / Hauch des Todes -->
-      <Animation1>4</Animation1>
-      <Animation2>62</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>62</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>105</Id> <!-- Purification / 気孔術 / Assainissement / Reinigung -->
-      <Animation1>4</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>106</Id> <!-- Chakra / チャクラ / Chakra / Chakra -->
-      <Animation1>4</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>107</Id> <!-- Revive / 蘇生 / Résurrection / Reanimation -->
-      <Animation1>4</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>108</Id> <!-- Steal Gil / ギルを盗む / Vol de gils / Gil stehlen -->
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>109</Id> <!-- Steal Heart / ハートを盗む / Vol de cœur / Herz stehlen -->
-      <Animation1>17</Animation1>
-      <Animation2>114</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>114</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>110</Id> <!-- Steal Helm / 兜を盗む / Vol de couvre-chef / Helm stehlen -->
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>111</Id> <!-- Steal Armor / 鎧を盗む / Vol d'armure / Rüstung stehlen -->
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>112</Id> <!-- Steal Shield / 盾を盗む / Vol de bouclier / Schild stehlen -->
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>113</Id> <!-- Steal Weapon / 武器を盗む / Vol d'arme / Waffe stehlen -->
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>114</Id> <!-- Steal Accessory / アクセサリを盗む / Vol d'accessoire / Accessoire stehlen -->
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>115</Id> <!-- Steal EXP / ＥＸＰを盗む / Vol d'expérience / ERF stehlen -->
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>116</Id> <!-- Entice / 勧誘 / Débauchage / Anwerben -->
-      <Animation1>6</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>6</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>6</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>117</Id> <!-- Stall / 説得 / Dissuasion / Überreden -->
-      <Animation1>6</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>118</Id> <!-- Praise / ほめる / Flatterie / Lob -->
-      <Animation1>6</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>119</Id> <!-- Intimidate / おどす / Menace / Einschüchtern -->
-      <Animation1>6</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>120</Id> <!-- Preach / 説法 / Oraison / Predigt -->
-      <Animation1>6</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>121</Id> <!-- Enlighten / 解法 / Réprobation / Aufklären -->
-      <Animation1>6</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>122</Id> <!-- Condemn / 死の予言 / Condamnation / Todesurteil -->
-      <Animation1>6</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>123</Id> <!-- Defraud / 商談 / Négociation / Feilschen -->
-      <Animation1>6</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>124</Id> <!-- Insult / 悪口 / Provocation / Verhöhnen -->
-      <Animation1>6</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>14</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>14</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>125</Id> <!-- Mimic Darlavon / ダーラボンのまね / Imitation d'Indolent / Palavons Wiegenlied -->
-      <Animation1>6</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>15</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>15</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>126</Id> <!-- Sinkhole / 落とし穴 / Trappe / Fallgrube -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>127</Id> <!-- Torrent / 水塊 / Trombe d'eau / Wasserschwall -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>128</Id> <!-- Tanglevine / 蔦地獄 / Enfer de lierre / Schlingpflanze -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>129</Id> <!-- Contortion / 彫塑 / Gravure / Steinmetz -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>130</Id> <!-- Tremor / 局地地震 / Séisme localisé / Erschütterung -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>131</Id> <!-- Wind Slash / かまいたち / Rafale cinglante / Windsichel -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>132</Id> <!-- Will-o'-the-Wisp / 鬼火 / Feu follet / Lauffeuer -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>133</Id> <!-- Quicksand / 底なし沼 / Marais sans fond / Versumpfen -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>134</Id> <!-- Sandstorm / 砂嵐 / Tempête de sable / Sandsturm -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>135</Id> <!-- Snowstorm / 吹雪 / Blizzard hurlant / Schneesturm -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>136</Id> <!-- Wind Blast / 突風 / Bourrasque / Windstoß -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>137</Id> <!-- Magma Surge / 溶岩ボール / Sphère de lave / Lava-Ball -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>138</Id> <!-- Rend Helm / ヘッドブレイク / Brise-chef / Helmbruch -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>139</Id> <!-- Rend Armor / アーマーブレイク / Brise-armure / Panzerbruch -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>140</Id> <!-- Rend Shield / シールドブレイク / Brise-bouclier / Schildbruch -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>141</Id> <!-- Rend Weapon / ウェポンブレイク / Brise-arme / Waffenbruch -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>142</Id> <!-- Rend MP / マジックブレイク / Brise-magie / Magiebruch -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>143</Id> <!-- Rend Speed / スピードブレイク / Brise-vitesse / Tempobruch -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>144</Id> <!-- Rend Power / パワーブレイク / Brise-force / Kraftbruch -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>145</Id> <!-- Rend Magick / マインドブレイク / Brise-esprit / Geistbruch -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>146</Id> <!-- Focus / ためる / Accumulation / Kraftschub -->
-      <Animation1>7</Animation1>
-      <Animation2>22</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>22</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>147</Id> <!-- Rush / 体当たり / Bourrade / Rammen -->
-      <Animation1>4</Animation1>
-      <Animation2>106</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>106</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>148</Id> <!-- Throw Stone / 投石 / Jet de pierre / Steinwurf -->
-      <Animation1>17</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>149</Id> <!-- Salve / 手当て / Premiers soins / Verarzten -->
-      <Animation1>3</Animation1>
-      <Animation2>102</Animation2>
-      <Animation3>22</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>102</AnimationId>
+      <BattleTextId>22</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>150</Id> <!-- Tailwind / エール / Motivation / Anfeuern -->
-      <Animation1>3</Animation1>
-      <Animation2>102</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>102</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>151</Id> <!-- Steel / はげます / Encouragement / Ermutigen -->
-      <Animation1>3</Animation1>
-      <Animation2>102</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>102</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>152</Id> <!-- Chant / おまじない / Abnégation / Opferschwur -->
-      <Animation1>3</Animation1>
-      <Animation2>102</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>102</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>153</Id> <!-- Shout / さけぶ / Hurlement / Kampfschrei -->
-      <Animation1>17</Animation1>
-      <Animation2>34</Animation2>
-      <Animation3>25</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>34</AnimationId>
+      <BattleTextId>25</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>154</Id> <!-- Ultima / アルテマ / Ultima / Ultima -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>155</Id> <!-- Judgment Blade / 不動無明剣 / Ignorance indéfectible / Klinge des Urteils -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>156</Id> <!-- Cleansing Strike / 乱命割殺打 / Frappe purifiante / Reinigender Schlag -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>157</Id> <!-- Northswain's Strike / 北斗骨砕打 / Frappe de l'étoile polaire / Großer Bärenbrecher -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>158</Id> <!-- Hallowed Bolt / 無双稲妻突き / Éclair inimitable / Heiliger Blitz -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>159</Id> <!-- Divine Ruination / 聖光爆裂破 / Ire céleste / Heilige Verheerung -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>160</Id> <!-- Crush Armor / 強甲破点突き / Ravage de plastron / Panzerspalter -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>161</Id> <!-- Crush Helm / 星天爆撃打 / Destruction de crâne / Himmelssturz -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>162</Id> <!-- Crush Weapon / 冥界恐叫打 / Pulvérisation d'arme / Höllenschrei -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>163</Id> <!-- Crush Accessory / 咬撃氷狼破 / Broyage d'accessoire / Wolfsbiss -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>164</Id> <!-- Duskblade / 暗の剣 / Aspiration obscure / Dunkelschwert -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>165</Id> <!-- Shadowblade / 闇の剣 / Saignée obscure / Schattenklinge -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>166</Id> <!-- Unholy Darkness / ダークホーリー / Miracle sombre / Unheiliges Dunkel -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>167</Id> <!-- Dispelna / デスペナ / Purge curative / Medibann -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>168</Id> <!-- Celestial Stasis / 星天停止 / Stase céleste / Kosmischer Einhalt -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>169</Id> <!-- Heaven's Wrath / 天鼓雷音 / Ire fulgurante / Donnertrommeln -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>170</Id> <!-- Ashura / 阿修羅 / Brasier empyréen / Ashura -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>171</Id> <!-- Adamantine Blade / 金剛七剣 / Vortex adamantin / Adamant-Klinge -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>172</Id> <!-- Maelstrom / 水磨龍穴 / Maelström draconique / Wasserdrache -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>173</Id> <!-- Celestial Void / 大虚空蔵 / Vacuité céleste / Kosmische Leere -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>174</Id> <!-- Divinity / 天魔鬼神 / Entités telluriques / Divinität -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>175</Id> <!-- Hell's Wrath / 裏天鼓雷音 / Exo-Ire fulgurante / Blitztrommel -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>176</Id> <!-- Nether Ashura / 裏阿修羅 / Exo-Brasier empyréen / Aruhsa -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>177</Id> <!-- Nether Blade / 裏金剛七剣 / Exo-Vortex adamantin / Danamat-Klinge -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>178</Id> <!-- Nether Maelstrom / 裏水磨龍穴 / Exo-Maelström draconique / Feuerdrache -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>179</Id> <!-- Corporeal Void / 裏大虚空蔵 / Exo-Vacuité céleste / Irdische Leere -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>180</Id> <!-- Impiety / 裏天魔鬼神 / Exo-Entités telluriques / Impietät -->
-      <Animation1>6</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>181</Id> <!-- Petrify / 封印 / Scellement / Steinsiegel -->
-      <Animation1>5</Animation1>
-      <Animation2>109</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>5</ChargeEffectType>
+      <AnimationId>109</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>182</Id> <!-- Shadowbind / 影縫い / Entrave d'ombre / Schattenbinder -->
-      <Animation1>5</Animation1>
-      <Animation2>109</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>5</ChargeEffectType>
+      <AnimationId>109</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>183</Id> <!-- Suffocate / 息根止 / Mise à mort / Letzter Atem -->
-      <Animation1>5</Animation1>
-      <Animation2>62</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>5</ChargeEffectType>
+      <AnimationId>62</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>184</Id>
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>185</Id> <!-- Revengeance / ショック / Rétorsion / Schock -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>186</Id> <!-- Manaburn / ディファレンス / Analogie / MP-Differenz -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>187</Id> <!-- Petrify / 封印 / Scellement / Steinsiegel -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>188</Id> <!-- Fowlheart / 鶏走 / Constriction / Erschaudern -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>189</Id> <!-- Embrace / A189 / Étreinte / A189 -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>190</Id> <!-- Darkness / 暗黒 / Obscurcissement / Dunkle Künste -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>191</Id> <!-- Aphony / 失声 / Aphonie / Aphonie -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>192</Id> <!-- Befuddle / 喪失 / Déchéance / Verlust -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>193</Id> <!-- Bind / 呪縛 / Joug / Zauberbann -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>194</Id> <!-- Nightmare / 悪夢 / Cauchemar / Albtraum -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>195</Id> <!-- Ague / 悪寒 / Frisson / Schüttelfrost -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>196</Id> <!-- Magicksap / マジックルーイン / Déclin de magie / Magieerschöpfung -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>197</Id> <!-- Speedsap / スピードルーイン / Déclin de vitesse / Tempoerschöpfung -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>198</Id> <!-- Powersap / パワールーイン / Déclin de force / Krafterschöpfung -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>199</Id> <!-- Mindsap / マインドルーイン / Déclin d'esprit / Geistschmelze -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>200</Id> <!-- Blood Drain / 吸血 / Succion de sang / Blutsaugen -->
-      <Animation1>17</Animation1>
-      <Animation2>22</Animation2>
-      <Animation3>35</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>22</AnimationId>
+      <BattleTextId>35</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>201</Id> <!-- Charm / 誘惑 / Séduction / Betören -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>3</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>3</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>202</Id> <!-- Bio / バイオ / Toxine / Bio -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>203</Id> <!-- Bio / バイオ / Toxine / Bio -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>204</Id> <!-- Bio / バイオ / Toxine / Bio -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>205</Id> <!-- Biora / バイオラ / Extra-Toxine / Biora -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>206</Id> <!-- Biora / バイオラ / Extra-Toxine / Biora -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>207</Id> <!-- Biora / バイオラ / Extra-Toxine / Biora -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>208</Id> <!-- Biora / バイオラ / Extra-Toxine / Biora -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>209</Id> <!-- Bioga / バイオガ / Méga-Toxine / Bioga -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>210</Id> <!-- Bioga / バイオガ / Méga-Toxine / Bioga -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>211</Id> <!-- Bioga / バイオガ / Méga-Toxine / Bioga -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>212</Id> <!-- Aegis / マバリア / Barrière magique / Mana-Schild -->
-      <Animation1>3</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>3</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>213</Id> <!-- Leg Shot / 足を狙う / Viser les jambes / Beinschuss -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>31</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>31</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>214</Id> <!-- Arm Shot / 腕を狙う / Viser les bras / Armschuss -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>30</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>30</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>215</Id> <!-- Seal Evil / 邪心封印 / Claustration impie / Siegel des Bösen -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>39</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>39</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>216</Id> <!-- Meltdown / メルトン / Fusion / Schmelze -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>217</Id> <!-- Tornado / トルネド / Tornade / Tornado -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>218</Id> <!-- Quake / クエイク / Séisme / Beben -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>219</Id>
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>220</Id>
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>221</Id> <!-- Toadja / トードジャ / Giga-Crapaud / Froschka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>222</Id> <!-- Gravija / グラビジャ / Giga-Gravité / Gravika -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>223</Id> <!-- Flareja / フレアジャ / Giga-Fission / Flareka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>224</Id> <!-- Blindja / ブライジャ / Giga-Cécité / Blindka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>225</Id> <!-- Bomblet / コボム / Jet de mini bombos / Zwerg-Bomber -->
-      <Animation1>10</Animation1>
-      <Animation2>65</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>65</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>226</Id> <!-- Bomblet / コボム / Jet de mini bombos / Zwerg-Bomber -->
-      <Animation1>10</Animation1>
-      <Animation2>65</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>65</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>227</Id> <!-- Confuseja / コンフジャ / Giga-Confusion / Konfuska -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>228</Id> <!-- Sleepja / スリプジャ / Giga-Sommeil / Schlafka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>229</Id> <!-- Ultima / アルテマ / Ultima / Ultima -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>230</Id> <!-- Divine Ultima / 完全アルテマ / Ultima parfait / Lux-Ultima -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>231</Id> <!-- Disempower / ミュート / Tarissement / Verstummen -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>232</Id> <!-- Dispelja / デスペジャ / Giga-Dissipation / Bannka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>233</Id> <!-- Return / リタンジャ / Giga-Reprise / Zurück-ka -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>234</Id> <!-- Blind / ブライン / Cécité / Blind -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>235</Id> <!-- Syphon / アスピル / Aspiration / Subspirit -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>236</Id> <!-- Drain / ドレイン / Saignée / Subvita -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>237</Id> <!-- Faith / フェイス / Conversion / Ener -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>238</Id> <!-- Doubt / イノセン / Reniement / Zweifel -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>239</Id> <!-- Zombie / ゾンビー / Zombie / Zombie -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>240</Id> <!-- Silence / サイレス / Silence / Stumm -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>241</Id> <!-- Berserk / バーサク / Furie / Tobsucht -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>242</Id> <!-- Chicken / チキン / Poule mouillée / Feige -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>243</Id> <!-- Confuse / コンフュ / Confusion / Konfus -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>244</Id> <!-- Dispel / デスペル / Dissipation / Bann -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>245</Id> <!-- Disable / ドンアク / Inaction / Inakt -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>246</Id> <!-- Sleep / スリプル / Sommeil / Schlaf -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>247</Id> <!-- Break / ブレイク / Fossile / Steinschlag -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>248</Id> <!-- Ice Breath / アイスブレス / Souffle de glace / Eisatem -->
-      <Animation1>8</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>8</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>249</Id> <!-- Fire Breath / ファイアブレス / Souffle de feu / Feueratem -->
-      <Animation1>8</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>8</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>250</Id> <!-- Thunder Breath / サンダーブレス / Souffle de foudre / Donneratem -->
-      <Animation1>8</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>8</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>251</Id> <!-- Dragon's Charm / 竜ならし / Domptage draconique / Drachenzähmer -->
-      <Animation1>6</Animation1>
-      <Animation2>102</Animation2>
-      <Animation3>40</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>102</AnimationId>
+      <BattleTextId>40</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>252</Id> <!-- Dragon's Gift / 竜介抱 / Guérison draconique / Drachenheil -->
-      <Animation1>6</Animation1>
-      <Animation2>102</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>102</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>253</Id> <!-- Dragon's Might / 竜パワーアップ / Vigueur draconique / Drachenkraft -->
-      <Animation1>6</Animation1>
-      <Animation2>102</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>102</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>254</Id> <!-- Dragon's Speed / 竜クイック / Vivacité draconique / Drachenzug -->
-      <Animation1>6</Animation1>
-      <Animation2>102</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>6</ChargeEffectType>
+      <AnimationId>102</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>255</Id> <!-- Holy Breath / ホーリーブレス / Souffle sacré / Heiliger Atem -->
-      <Animation1>8</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>8</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>256</Id> <!-- Vengeance / ショック！ / Intimidation / Revanche -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>257</Id> <!-- Braver / ブレイバー / Âme brave / Mutangriff -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>258</Id> <!-- Cross Slash / 凶斬り / Taillade croisée / Kreuzschlag -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>259</Id> <!-- Blade Burst / 破晄撃 / Lame irradiante / Klingenstrahl -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>260</Id> <!-- Ascension / クライムハザード / Péril ascendant / Atomisator -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>261</Id> <!-- Meteorain / メテオレイン / Pluie de météores / Meteoregen -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>262</Id> <!-- Finishing Touch / 画龍点睛 / Finition tournoyante / Letzter Schliff -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>263</Id> <!-- Omnislash / 裏超究武神覇斬 / Omnifrappe / Omnischlag -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>264</Id> <!-- Cherry Blossom / 桜華狂咲 / Efflorescence fatale / Blütensturm -->
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>265</Id> <!-- Choco Beak / チョコアタック / Choco-attaque / Choco-Attacke -->
-      <Animation1>10</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>266</Id> <!-- Choco Pellets / チョコボール / Choco-feu / Choco-Ball -->
-      <Animation1>10</Animation1>
-      <Animation2>65</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>65</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>267</Id> <!-- Choco Meteor / チョコメテオ / Choco-météore / Choco-Meteo -->
-      <Animation1>11</Animation1>
-      <Animation2>66</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>66</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>268</Id> <!-- Choco Esuna / チョコエスナ / Choco-guérison / Choco-Medica -->
-      <Animation1>11</Animation1>
-      <Animation2>68</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>68</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>269</Id> <!-- Choco Cure / チョコケアル / Choco-soin / Choco-Vita -->
-      <Animation1>11</Animation1>
-      <Animation2>68</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>68</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>270</Id> <!-- Tackle / タックル / Tacle / Tackle -->
-      <Animation1>10</Animation1>
-      <Animation2>106</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>106</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>271</Id> <!-- Goblin Punch / ゴブリンパンチ / Coup du gobelin / Goblinschlag -->
-      <Animation1>10</Animation1>
-      <Animation2>125</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>125</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>272</Id> <!-- Spin Punch / 回転パンチ / Poing tournoyant / Drehschlag -->
-      <Animation1>10</Animation1>
-      <Animation2>103</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>103</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>273</Id> <!-- Eye Gouge / めつぶし / Aveuglement / Blenden -->
-      <Animation1>10</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>274</Id> <!-- Bloodfeast / ミュウチレイト / Mutilation / Verstümmeln -->
-      <Animation1>10</Animation1>
-      <Animation2>106</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>106</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>275</Id> <!-- Bite / かみつく / Morsure / Beißen -->
-      <Animation1>10</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>276</Id> <!-- Bomblet / コボム / Salve de mini bombos / Zwerg-Bomber -->
-      <Animation1>10</Animation1>
-      <Animation2>65</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>65</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>277</Id> <!-- Self-Destruct / 自爆 / Auto-destruction / Selbstzerstörung -->
-      <Animation1>10</Animation1>
-      <Animation2>97</Animation2>
-      <Animation3>36</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>97</AnimationId>
+      <BattleTextId>36</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>278</Id> <!-- Flame Attack / フレイムアタック / Jet de flammes / Flammenattacke -->
-      <Animation1>10</Animation1>
-      <Animation2>66</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>66</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>279</Id> <!-- Spark / スパーク / Étincelle / Funken -->
-      <Animation1>11</Animation1>
-      <Animation2>98</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>98</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>280</Id> <!-- Claw / ひっかく / Griffade / Kratzen -->
-      <Animation1>10</Animation1>
-      <Animation2>67</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>67</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>281</Id> <!-- Cat Scratch / ネコキック / Déchiquetage / Gestrampel -->
-      <Animation1>10</Animation1>
-      <Animation2>99</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>99</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>282</Id> <!-- Blaster / ブラスター / Électrochoc / Druckwelle -->
-      <Animation1>4</Animation1>
-      <Animation2>34</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>34</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>283</Id> <!-- Venom Fang / 毒牙 / Croc empoisonné / Giftzahn -->
-      <Animation1>10</Animation1>
-      <Animation2>69</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>69</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>284</Id> <!-- Blood Drain / 吸血 / Succion de sang / Blutsaugen -->
-      <Animation1>4</Animation1>
-      <Animation2>34</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>4</ChargeEffectType>
+      <AnimationId>34</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>285</Id> <!-- Tentacles / 触手 / Tentacule / Tentakel -->
-      <Animation1>10</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>286</Id> <!-- Ink / すみ / Encre / Tintenstrahl -->
-      <Animation1>12</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>12</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>287</Id> <!-- Dischord / 怪音波 / Ondes nocives / Kakophonie -->
-      <Animation1>11</Animation1>
-      <Animation2>41</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>41</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>288</Id> <!-- Mind Blast / マインドブラスト / Choc mental / Geiststoß -->
-      <Animation1>11</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>42</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>42</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>289</Id> <!-- Level Drain / レベルブラスト / Perte de niveau / Stufen-Entzug -->
-      <Animation1>11</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>290</Id> <!-- Chop / 手刀 / Tranchant de la main / Knochenhand -->
-      <Animation1>10</Animation1>
-      <Animation2>61</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>61</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>291</Id> <!-- Thunder Anima / サンダーソウル / Âme de foudre / Blitzseele -->
-      <Animation1>10</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>292</Id> <!-- Water Anima / アクアソウル / Âme d'eau / Wasserseele -->
-      <Animation1>10</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>293</Id> <!-- Ice Anima / アイスソウル / Âme de glace / Eisseele -->
-      <Animation1>10</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>294</Id> <!-- Wind Anima / ウインドソウル / Âme de vent / Windseele -->
-      <Animation1>10</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>295</Id> <!-- Ectoplasm / 霊気を飛ばす / Projection d'aura / Geisterkugel -->
-      <Animation1>10</Animation1>
-      <Animation2>70</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>70</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>296</Id> <!-- Zombie Touch / ゾンビタッチ / Toucher zombifiant / Verfaulen -->
-      <Animation1>10</Animation1>
-      <Animation2>71</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>71</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>297</Id> <!-- Sleep Touch / スリープタッチ / Toucher soporifique / Ermüdende Hand -->
-      <Animation1>10</Animation1>
-      <Animation2>71</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>71</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>298</Id> <!-- Drain Touch / ドレインタッチ / Toucher vampirique / Subvita-Hauch -->
-      <Animation1>10</Animation1>
-      <Animation2>71</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>71</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>299</Id> <!-- Oily Touch / グリースタッチ / Toucher huileux / Schmierige Hand -->
-      <Animation1>10</Animation1>
-      <Animation2>72</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>72</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>300</Id> <!-- Wing Buffet / 翼撃 / Battement d'ailes / Flügelschlag -->
-      <Animation1>10</Animation1>
-      <Animation2>73</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>73</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>301</Id> <!-- Bewitching Gaze / あくまの視線 / Regard démoniaque / Teufelsblick -->
-      <Animation1>11</Animation1>
-      <Animation2>100</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>100</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>302</Id> <!-- Dread Gaze / 恐怖の視線 / Regard terrifiant / Schauderblick -->
-      <Animation1>11</Animation1>
-      <Animation2>100</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>100</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>303</Id> <!-- Beam / サークル / Cercle avilissant / Einkreisen -->
-      <Animation1>11</Animation1>
-      <Animation2>100</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>100</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>304</Id> <!-- Doom / 死の宣告 / Glas / Todesurteil -->
-      <Animation1>11</Animation1>
-      <Animation2>100</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>100</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>305</Id> <!-- Talon Dive / かきむしる / Égratignement / Krallen -->
-      <Animation1>10</Animation1>
-      <Animation2>101</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>101</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>306</Id> <!-- Beak / くちばし / Coup de bec / Schnabel -->
-      <Animation1>10</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>307</Id> <!-- Glitterlust / 光ものが好き / Amour du brillant / Glitterlust -->
-      <Animation1>10</Animation1>
-      <Animation2>102</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>102</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>308</Id> <!-- Featherbomb / フェザーボム / Bombe de plumes / Federbombe -->
-      <Animation1>10</Animation1>
-      <Animation2>103</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>103</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>309</Id> <!-- Peck / ビーキング / Choc de bec / Hacken -->
-      <Animation1>10</Animation1>
-      <Animation2>104</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>104</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>310</Id> <!-- Reckless Charge / ちょとつもうしん / Charge furieuse / Stürzen -->
-      <Animation1>10</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>311</Id> <!-- Snort / はないき / Souffle nasal / Schnauben -->
-      <Animation1>10</Animation1>
-      <Animation2>106</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>106</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>312</Id> <!-- Squeal / ブヒー / Gruik ! / Grunz -->
-      <Animation1>10</Animation1>
-      <Animation2>75</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>75</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>313</Id> <!-- Toot / ぷ～っ / Prout ! / Pups -->
-      <Animation1>10</Animation1>
-      <Animation2>107</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>107</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>314</Id> <!-- Bequeath Bacon / 食べてもらう / Sacrifice porcin / Fleischwerdung -->
-      <Animation1>10</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>315</Id> <!-- Leaf Rain / 木の葉乱舞 / Farandole sylvestre / Blätterwirbel -->
-      <Animation1>11</Animation1>
-      <Animation2>77</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>77</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>316</Id> <!-- Guardian Nymph / まもりの精 / Esprit bouclier / Schutzgeist -->
-      <Animation1>11</Animation1>
-      <Animation2>77</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>77</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>317</Id> <!-- Shell Nymph / 貝の精 / Esprit barrière / Muschelgeist -->
-      <Animation1>11</Animation1>
-      <Animation2>77</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>77</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>318</Id> <!-- Life Nymph / 命の精 / Esprit vital / Lebensgeist -->
-      <Animation1>11</Animation1>
-      <Animation2>77</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>77</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>319</Id> <!-- Magick Nymph / 魔法の精 / Esprit magique / Magischer Geist -->
-      <Animation1>11</Animation1>
-      <Animation2>77</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>77</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>320</Id> <!-- Pickaxe / ふりおろす / Coup de pioche / Niederreißen -->
-      <Animation1>10</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>321</Id> <!-- Feral Spin / ふりまわす / Pioche fulgurante / Schlinge -->
-      <Animation1>10</Animation1>
-      <Animation2>108</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>108</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>322</Id> <!-- Earthsplitter / タイタンのまね / Imitation de Titan / Erdstampfer -->
-      <Animation1>10</Animation1>
-      <Animation2>79</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>79</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>323</Id> <!-- Beef Up / 力をためる / Emmagasinement / Kraft sammeln -->
-      <Animation1>10</Animation1>
-      <Animation2>80</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>80</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>324</Id> <!-- Breathe Fire / 火を吹く / Crachat de feu / Feuer spucken -->
-      <Animation1>12</Animation1>
-      <Animation2>81</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>12</ChargeEffectType>
+      <AnimationId>81</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>325</Id> <!-- Tentacles / 触手 / Sarment de morbol / Tentakel -->
-      <Animation1>10</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>326</Id> <!-- Lick / なめる / Coup de langue / Lecken -->
-      <Animation1>10</Animation1>
-      <Animation2>83</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>83</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>327</Id> <!-- Goo / ねとねと液 / Bave / Schmiere -->
-      <Animation1>10</Animation1>
-      <Animation2>109</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>109</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>328</Id> <!-- Bad Breath / 臭い息 / Mauvaise haleine / Mundgeruch -->
-      <Animation1>10</Animation1>
-      <Animation2>109</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>109</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>329</Id> <!-- Malboro Spores / モルボル菌 / Virus morbol / Morbol-Sporen -->
-      <Animation1>10</Animation1>
-      <Animation2>109</Animation2>
-      <Animation3>43</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>109</AnimationId>
+      <BattleTextId>43</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>330</Id> <!-- Gore / 突きあげる / Coup de corne / Durchbohren -->
-      <Animation1>10</Animation1>
-      <Animation2>110</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>110</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>331</Id> <!-- Heave / しゃくりあげる / Encornement / Aufspießen -->
-      <Animation1>10</Animation1>
-      <Animation2>111</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>111</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>332</Id> <!-- Twister / ハリケーン / Ouragan / Hurrikan -->
-      <Animation1>11</Animation1>
-      <Animation2>84</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>84</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>333</Id> <!-- Almagest / アルマゲスト / Almageste / Almagest -->
-      <Animation1>11</Animation1>
-      <Animation2>84</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>84</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>334</Id> <!-- Gigaflare / ギガフレア / Ultra-Fission / Gigaflare -->
-      <Animation1>11</Animation1>
-      <Animation2>84</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>84</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>335</Id> <!-- Charge / 突進 / Charge brusque / Stürmen -->
-      <Animation1>10</Animation1>
-      <Animation2>85</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>85</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>336</Id> <!-- Tail Sweep / 尻尾振り回し / Moulinet caudal / Rutenschlag -->
-      <Animation1>10</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>337</Id> <!-- Ice Breath / アイスブレス / Souffle de glace / Eisatem -->
-      <Animation1>12</Animation1>
-      <Animation2>87</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>12</ChargeEffectType>
+      <AnimationId>87</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>338</Id> <!-- Fire Breath / ファイアブレス / Souffle de feu / Feueratem -->
-      <Animation1>12</Animation1>
-      <Animation2>87</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>12</ChargeEffectType>
+      <AnimationId>87</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>339</Id> <!-- Thunder Breath / サンダーブレス / Souffle de foudre / Blitzatem -->
-      <Animation1>12</Animation1>
-      <Animation2>87</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>12</ChargeEffectType>
+      <AnimationId>87</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>340</Id> <!-- Tri-Attack / トリプルアタック / Triple attaque / Dreifach-Angriff -->
-      <Animation1>10</Animation1>
-      <Animation2>88</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>88</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>341</Id> <!-- Tri-Breath / トリプルブレス / Triple souffle / Dreifach-Atem -->
-      <Animation1>12</Animation1>
-      <Animation2>89</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>12</ChargeEffectType>
+      <AnimationId>89</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>342</Id> <!-- Tri-Thunder / トリプルサンダー / Triple foudre / Dreifach-Blitz -->
-      <Animation1>11</Animation1>
-      <Animation2>112</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>112</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>343</Id> <!-- Tri-Flame / トリプルフレイム / Triple flamme / Dreifach-Flamme -->
-      <Animation1>11</Animation1>
-      <Animation2>112</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>112</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>344</Id> <!-- Dark Whisper / 暗黒の囁き / Murmure sombre / Dunkelflüster -->
-      <Animation1>11</Animation1>
-      <Animation2>112</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>112</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>345</Id> <!-- Snakecharm / 大蛇 / Charmeur de serpent / Riesenschlange -->
-      <Animation1>1</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>346</Id> <!-- Poisonous Frog / 毒ガエル / Crapaud purulent / Giftfrosch -->
-      <Animation1>1</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>1</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>347</Id> <!-- Midgardsormr / ミドガルズオルム / Midgardsormr / Midgardsormr -->
-      <Animation1>11</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>348</Id> <!-- Karma / ライフブレイク / Souffrance / Lebensbruch -->
-      <Animation1>11</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>349</Id> <!-- Nanoflare / ナノフレア / Nano-Brasier / Nano-Flare -->
-      <Animation1>11</Animation1>
-      <Animation2>114</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>114</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>350</Id> <!-- Grand Cross / グランドクロス / Croix suprême / Supernova -->
-      <Animation1>11</Animation1>
-      <Animation2>114</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>11</ChargeEffectType>
+      <AnimationId>114</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>351</Id> <!-- Destroy / 破壊する / Détruire / Zerstören -->
-      <Animation1>10</Animation1>
-      <Animation2>115</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>115</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>352</Id> <!-- Compress / 圧縮する / Comprimer / Zerdrücken -->
-      <Animation1>10</Animation1>
-      <Animation2>116</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>116</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>353</Id> <!-- Dispose / 処理する / Traiter / Entsorgen -->
-      <Animation1>10</Animation1>
-      <Animation2>117</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>117</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>354</Id> <!-- Pulverize / 粉砕する / Pulvériser / Zermahlen -->
-      <Animation1>10</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>355</Id> <!-- Energize / エナジール / Transfert / Energisieren -->
-      <Animation1>10</Animation1>
-      <Animation2>92</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>92</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>356</Id> <!-- Parasite / パラサイト / Parasitage / Parasit -->
-      <Animation1>10</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>10</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>357</Id>
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>358</Id>
-      <Animation1>7</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>7</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>359</Id>
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>360</Id>
-      <Animation1>17</Animation1>
-      <Animation2>114</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>114</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>361</Id>
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>362</Id>
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>363</Id>
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>364</Id>
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>365</Id>
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>366</Id>
-      <Animation1>17</Animation1>
-      <Animation2>113</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>17</ChargeEffectType>
+      <AnimationId>113</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>367</Id> <!-- Attack / たたかう / Attaque / Attacke -->
-      <Animation1>0</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>368</Id> <!-- Potion / ポーション / Potion / Heiltrank -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>369</Id> <!-- High Potion / ハイポーション / Super-potion / Supertrank -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>370</Id> <!-- X-Potion / エクスポーション / Maxi-potion / Übertrank -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>371</Id> <!-- Ether / エーテル / Éther / Äther -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>372</Id> <!-- High Ether / ハイエーテル / Super-éther / Super-Äther -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>373</Id> <!-- Elixir / エリクサー / Élixir / Elixier -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>374</Id> <!-- Antidote / 毒消し / Antidote / Gegengift -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>375</Id> <!-- Eye Drops / 目薬 / Collyre / Augentropfen -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>376</Id> <!-- Echo Herbs / やまびこ草 / Herbe d'écho / Echokraut -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>377</Id> <!-- Maiden's Kiss / 乙女のキッス / Baiser de jouvencelle / Jungfernkuss -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>378</Id> <!-- Gold Needle / 金の針 / Épingle d'or / Goldnadel -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>379</Id> <!-- Holy Water / 聖水 / Eau bénite / Weihwasser -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>380</Id> <!-- Remedy / 万能薬 / Remède / Allheilmittel -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>381</Id> <!-- Phoenix Down / フェニックスの尾 / Queue de phénix / Phönixfeder -->
-      <Animation1>9</Animation1>
-      <Animation2>1</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>9</ChargeEffectType>
+      <AnimationId>1</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>382</Id> <!-- Throw Shuriken / 手裏剣投げ / Lancer de shuriken / Shuriken werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>383</Id> <!-- Throw Daggers / 短剣投げ / Lancer de poignard / Dolch werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>384</Id> <!-- Throw Swords / 剣投げ / Lancer d'épée / Schwert werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>385</Id> <!-- Throw Flails / 連接棍投げ / Lancer de fléau / Flegel werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>386</Id> <!-- Throw Katana / 刀投げ / Lancer de katana de samouraï / Katana werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>387</Id> <!-- Throw Ninja Blades / 忍者刀投げ / Lancer de katana de ninja / Ninja-Schwert werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>388</Id> <!-- Throw Axes / 斧投げ / Lancer de hache / Axt werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>389</Id> <!-- Throw Polearms / 槍投げ / Lancer d'arme d'hast / Speer werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>390</Id> <!-- Throw Poles / 棒投げ / Lancer de bâton de combat / Stab werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>391</Id> <!-- Throw Knight's Swords / 騎士剣投げ / Lancer de grande épée / Ritterschwert werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>392</Id> <!-- Throw Books / 辞書投げ / Lancer d'encyclopédie / Buch werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>393</Id> <!-- Throw Bombs / 玉投げ / Lancer de projectile / Wurfgeschoss werfen -->
-      <Animation1>18</Animation1>
-      <Animation2>76</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>18</ChargeEffectType>
+      <AnimationId>76</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>394</Id> <!-- Horizontal Jump +1 / ジャンプ距離＋１ / Saut horizontal +1 / Sprung-Reichweite +1 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>395</Id> <!-- Horizontal Jump +2 / ジャンプ距離＋２ / Saut horizontal +2 / Sprung-Reichweite +2 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>396</Id> <!-- Horizontal Jump +3 / ジャンプ距離＋３ / Saut horizontal +3 / Sprung-Reichweite +3 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>397</Id> <!-- Horizontal Jump +4 / ジャンプ距離＋４ / Saut horizontal +4 / Sprung-Reichweite +4 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>398</Id> <!-- Horizontal Jump +7 / ジャンプ距離＋７ / Saut horizontal +7 / Sprung-Reichweite +7 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>399</Id> <!-- Vertical Jump ±2 / ジャンプ高低±２ / Saut vertical ±2 / Sprung-Höhe ±2 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>400</Id> <!-- Vertical Jump ±3 / ジャンプ高低±３ / Saut vertical ±3 / Sprung-Höhe ±3 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>401</Id> <!-- Vertical Jump ±4 / ジャンプ高低±４ / Saut vertical ±4 / Sprung-Höhe ±4 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>402</Id> <!-- Vertical Jump ±5 / ジャンプ高低±５ / Saut vertical ±5 / Sprung-Höhe ±5 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>403</Id> <!-- Vertical Jump ±6 / ジャンプ高低±６ / Saut vertical ±6 / Sprung-Höhe ±6 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>404</Id> <!-- Vertical Jump ±7 / ジャンプ高低±７ / Saut vertical ±7 / Sprung-Höhe ±7 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>405</Id> <!-- Vertical Jump ±8 / ジャンプ高低±８ / Saut vertical ±8 / Sprung-Höhe ±8 -->
-      <Animation1>15</Animation1>
-      <Animation2>118</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>15</ChargeEffectType>
+      <AnimationId>118</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>406</Id> <!-- Aim +1 / チャージ＋１ / Charge +1 / Zielen +1 -->
-      <Animation1>0</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>407</Id> <!-- Aim +2 / チャージ＋２ / Charge +2 / Zielen +2 -->
-      <Animation1>0</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>408</Id> <!-- Aim +3 / チャージ＋３ / Charge +3 / Zielen +3 -->
-      <Animation1>0</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>409</Id> <!-- Aim +4 / チャージ＋４ / Charge +4 / Zielen +4 -->
-      <Animation1>0</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>410</Id> <!-- Aim +5 / チャージ＋５ / Charge +5 / Zielen +5 -->
-      <Animation1>0</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>411</Id> <!-- Aim +7 / チャージ＋７ / Charge +7 / Zielen +7 -->
-      <Animation1>0</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>412</Id> <!-- Aim +10 / チャージ＋１０ / Charge +10 / Zielen +10 -->
-      <Animation1>0</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>413</Id> <!-- Aim +20 / チャージ＋２０ / Charge +20 / Zielen +20 -->
-      <Animation1>0</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>414</Id> <!-- Target CT / ＣＴを標的に / Temps de charge / WZ anvisieren -->
-      <Animation1>0</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>415</Id> <!-- Target Level / レベルを標的に / Niveau / Stufe anvisieren -->
-      <Animation1>0</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>416</Id> <!-- Target EXP / ＥＸＰを標的に / Expérience / ERF anvisieren -->
-      <Animation1>0</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>417</Id> <!-- Target Elevation / 高さを標的に / Hauteur / Höhe anvisieren -->
-      <Animation1>0</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>418</Id> <!-- Prime / 素数なら発動 / Nombre premier / Bei Primzahl auslösen -->
-      <Animation1>0</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>419</Id> <!-- Multiple of 5 / ５の倍数なら発動 / Multiple de 5 / Bei 5er-Multiplikator auslösen -->
-      <Animation1>0</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>420</Id> <!-- Multiple of 4 / ４の倍数なら発動 / Multiple de 4 / Bei 4er-Multiplikator auslösen -->
-      <Animation1>0</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>421</Id> <!-- Multiple of 3 / ３の倍数なら発動 / Multiple de 3 / Bei 3er-Multiplikator auslösen -->
-      <Animation1>0</Animation1>
-      <Animation2>44</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>0</ChargeEffectType>
+      <AnimationId>44</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>422</Id> <!-- Strength Surge / 反動物理攻撃アップ / Gain d'attaque / Revanche -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>423</Id> <!-- Magick Surge / 反動魔法攻撃アップ / Gain d'attaque magique / Magie-Vergeltung -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>424</Id> <!-- Speed Surge / 反動スピードアップ / Gain de vitesse / Adrenalinschub -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>425</Id> <!-- Vanish / 潜伏 / Dissimulation / Verbergen -->
-      <Animation1>16</Animation1>
-      <Animation2>109</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>109</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>426</Id> <!-- Vigilance / 警戒 / Vigilance / Wachsamkeit -->
-      <Animation1>16</Animation1>
-      <Animation2>109</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>109</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>427</Id> <!-- Dragonheart / 竜の魂 / Cœur de dragon / Drachenherz -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>428</Id> <!-- Regenerate / リジェネーター / Régénération / Auto-Regena -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>429</Id> <!-- Bravery Surge / 反動Braveアップ / Gain de bravoure / Mut-Bonus -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>430</Id> <!-- Faith Surge / 反動Faithアップ / Gain de foi / Glaubens-Bonus -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>431</Id> <!-- Critical: Recover HP / 瀕死ＨＰ回復 / Vitalité du désespoir / Kritische LP-Rettung -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>432</Id> <!-- Critical: Recover MP / 瀕死ＭＰ回復 / Esprit du désespoir / Kritische MP-Rettung -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>433</Id> <!-- Critical: Quick / 瀕死クイック / Célérité du désespoir / Zuginitiative -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>434</Id> <!-- Bonecrusher / 肉斬骨断 / Casse-cou / Knochenbrecher -->
-      <Animation1>16</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>435</Id> <!-- Magick Counter / 魔法返し / Riposte magique / Magiespiegel -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>436</Id> <!-- Counter Tackle / 反撃タックル / Contre-plaquage / Gegenattacke -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>437</Id> <!-- Nature's Wrath / 風水返し / Revanche naturelle / Naturgewalt -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>438</Id> <!-- Absorb MP / 使用ＭＰ吸収 / Absorption de PM / MP absorbieren -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>439</Id> <!-- Gil Snapper / ギルガメの心 / Cœur de gilkhélone / Gilkröten-Finger -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>47</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>47</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>440</Id> <!-- MARKED FOR DELETION - REPORT IF DISPLAYED Reflect / A440 / Miroir / A440 -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>441</Id> <!-- Auto-Potion / オートポーション / Auto-potion / Auto-Heiltrank -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>442</Id> <!-- Counter / カウンター / Riposte / Konter -->
-      <Animation1>16</Animation1>
-      <Animation2>0</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>0</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>443</Id>
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>444</Id> <!-- Cup of Life / 回復おすそわけ / Redistribution vitale / Lebensspende -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>445</Id> <!-- Mana Shield / ＭＰすり替え / Égide magique / MP-Kompensation -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>446</Id> <!-- Soulbind / ダメージ返し / Partage de dégâts / Schaden verteilen -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>447</Id> <!-- Parry / 装備武器ガード / Parade à l'arme / Parieren -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>448</Id> <!-- Earplugs / 耳をふさぐ / Sourde oreille / Ohrstopfen -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>449</Id> <!-- Reflexes / 見切る / Anticipation / Reflex -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>450</Id> <!-- Sticky Fingers / キャッチ / Interception / Fangen -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>451</Id> <!-- Shirahadori / 白刃取り / Blocage hardi / Shirahadori -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>452</Id> <!-- Archer's Bane / 矢かわし / Pare-flèches / Pfeiltänzer -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
     <AbilityType>
       <Id>453</Id> <!-- First Strike / ハメドる / Contre-offensive / Erstschlag -->
-      <Animation1>16</Animation1>
-      <Animation2>105</Animation2>
-      <Animation3>0</Animation3>
+      <ChargeEffectType>16</ChargeEffectType>
+      <AnimationId>105</AnimationId>
+      <BattleTextId>0</BattleTextId>
     </AbilityType>
   </Entries>
 </AbilityTypeTable>

@@ -24,15 +24,15 @@ public class AbilityType : DiffableModelBase<AbilityType>, IDiffableModel<Abilit
     /// </summary>
     public int Id { get; set; }
 
-    public byte? Animation1 { get; set; }
-    public byte? Animation2 { get; set; }
-    public byte? Animation3 { get; set; }
+    public byte? ChargeEffectType { get; set; }
+    public byte? AnimationId { get; set; }
+    public byte? BattleTextId { get; set; }
 
     public static Dictionary<string, DiffablePropertyItem<AbilityType>> PropertyMap { get; } = new()
     {
-        [nameof(Animation1)] = new DiffablePropertyItem<AbilityType, byte?>(nameof(Animation1), i => i.Animation1, (i, v) => i.Animation1 = v),
-        [nameof(Animation2)] = new DiffablePropertyItem<AbilityType, byte?>(nameof(Animation2), i => i.Animation2, (i, v) => i.Animation2 = v),
-        [nameof(Animation3)] = new DiffablePropertyItem<AbilityType, byte?>(nameof(Animation3), i => i.Animation3, (i, v) => i.Animation3 = v),
+        [nameof(ChargeEffectType)] = new DiffablePropertyItem<AbilityType, byte?>(nameof(ChargeEffectType), i => i.ChargeEffectType, (i, v) => i.ChargeEffectType = v),
+        [nameof(AnimationId)] = new DiffablePropertyItem<AbilityType, byte?>(nameof(AnimationId), i => i.AnimationId, (i, v) => i.AnimationId = v),
+        [nameof(BattleTextId)] = new DiffablePropertyItem<AbilityType, byte?>(nameof(BattleTextId), i => i.BattleTextId, (i, v) => i.BattleTextId = v),
     };
 
     public static AbilityType FromStructure(int id, ref ABILITY_TYPE_DATA @struct)
@@ -40,9 +40,9 @@ public class AbilityType : DiffableModelBase<AbilityType>, IDiffableModel<Abilit
         var animationSequence = new AbilityType()
         {
             Id = id,
-            Animation1 = @struct.Animation1,
-            Animation2 = @struct.Animation2,
-            Animation3 = @struct.Animation3,
+            ChargeEffectType = @struct.ChargeEffectType,
+            AnimationId = @struct.AnimationId,
+            BattleTextId = @struct.BattleTextId,
         };
 
         return animationSequence;
@@ -57,9 +57,9 @@ public class AbilityType : DiffableModelBase<AbilityType>, IDiffableModel<Abilit
         return new AbilityType()
         {
             Id = Id,
-            Animation1 = Animation1,
-            Animation2 = Animation2,
-            Animation3 = Animation3
+            ChargeEffectType = ChargeEffectType,
+            AnimationId = AnimationId,
+            BattleTextId = BattleTextId
         };
     }
 }

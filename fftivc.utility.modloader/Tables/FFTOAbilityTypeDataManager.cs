@@ -102,9 +102,9 @@ public class FFTOAbilityTypeDataManager : FFTOTableManagerBase<AbilityTypeTable,
         Interfaces.Tables.Models.AbilityType previous = _moddedTable.Entries[model.Id];
         ref ABILITY_TYPE_DATA abilityAnimationData = ref _abilityTypeDataTablePointer.AsRef(model.Id);
 
-        abilityAnimationData.Animation1 = (byte)(model.Animation1 ?? previous.Animation1)!;
-        abilityAnimationData.Animation2 = (byte)(model.Animation2 ?? previous.Animation2)!;
-        abilityAnimationData.Animation3 = (byte)(model.Animation3 ?? previous.Animation3)!;
+        abilityAnimationData.ChargeEffectType = (byte)(model.ChargeEffectType ?? previous.ChargeEffectType)!;
+        abilityAnimationData.AnimationId = (byte)(model.AnimationId ?? previous.AnimationId)!;
+        abilityAnimationData.BattleTextId = (byte)(model.BattleTextId ?? previous.BattleTextId)!;
     }
 
     public Interfaces.Tables.Models.AbilityType GetOriginalAbilityType(int index)
