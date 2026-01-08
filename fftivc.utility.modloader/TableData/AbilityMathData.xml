@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded Math/Arithmeticks abilities secondary data table.
+This table specifically provides extra data for ability 414 through 421 (hardcoded).
+
+!!!!!! In practice you have little reason to be editing this table unless you know what you're doing! It may break other mods! !!!!!
+
+You can use this file as a base to edit Math/Arithmeticks abilities data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/AbilityMathData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+IMPORTANT 3: Id cannot be more than 421 (hardcoded table size is 8, 414 + 8).
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ABILITY_MATH_DATA.cs
+-->
+
+<AbilityMathTable>
+  <Version>1</Version>
+  <Entries>
+    <AbilityMath>
+      <Id>414</Id> <!-- Target CT / ＣＴを標的に / Temps de charge / WZ anvisieren -->
+      <AbilityType>CT</AbilityType>
+    </AbilityMath>
+    <AbilityMath>
+      <Id>415</Id> <!-- Target Level / レベルを標的に / Niveau / Stufe anvisieren -->
+      <AbilityType>Level</AbilityType>
+    </AbilityMath>
+    <AbilityMath>
+      <Id>416</Id> <!-- Target EXP / ＥＸＰを標的に / Expérience / ERF anvisieren -->
+      <AbilityType>Experience</AbilityType>
+    </AbilityMath>
+    <AbilityMath>
+      <Id>417</Id> <!-- Target Elevation / 高さを標的に / Hauteur / Höhe anvisieren -->
+      <AbilityType>Height</AbilityType>
+    </AbilityMath>
+    <AbilityMath>
+      <Id>418</Id> <!-- Prime / 素数なら発動 / Nombre premier / Bei Primzahl auslösen -->
+      <AbilityType>Prime</AbilityType>
+    </AbilityMath>
+    <AbilityMath>
+      <Id>419</Id> <!-- Multiple of 5 / ５の倍数なら発動 / Multiple de 5 / Bei 5er-Multiplikator auslösen -->
+      <AbilityType>MultipleOf5</AbilityType>
+    </AbilityMath>
+    <AbilityMath>
+      <Id>420</Id> <!-- Multiple of 4 / ４の倍数なら発動 / Multiple de 4 / Bei 4er-Multiplikator auslösen -->
+      <AbilityType>MultipleOf4</AbilityType>
+    </AbilityMath>
+    <AbilityMath>
+      <Id>421</Id> <!-- Multiple of 3 / ３の倍数なら発動 / Multiple de 3 / Bei 3er-Multiplikator auslösen -->
+      <AbilityType>MultipleOf3</AbilityType>
+    </AbilityMath>
+  </Entries>
+</AbilityMathTable>

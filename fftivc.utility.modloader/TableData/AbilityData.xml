@@ -1,4 +1,4 @@
-x<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <!--
 This table file is used to overwrite the game's hardcoded ability table.
@@ -14,6 +14,8 @@ Only properties that are actually included in this file will be tracked as edite
 value from the original table or, from other mods making changes depending on mod order.
 
 IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+IMPORTANT 3: Id cannot be more than 511 (hardcoded table size is 512).
 
 For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ABILITY_COMMON_DATA.cs
 -->

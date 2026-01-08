@@ -16,11 +16,14 @@ public class FFTOMonsterJobCommandDataManager : FFTOTableManagerBase<MonsterJobC
 {
     private const short FirstJobCommandId = 0xB0;   // Chocobo
     private const short LastJobCommandId = 0xDF;    // Tiamat
-    private const int DataCount = LastJobCommandId - FirstJobCommandId + 1;
 
     private readonly IModelSerializer<MonsterJobCommandTable> _modelTableSerializer;
-
+    
     public override string TableFileName => "MonsterJobCommandData";
+
+    public int NumEntries = LastJobCommandId - FirstJobCommandId + 1;
+    public int MinId => FirstJobCommandId;
+    public int MaxId => NumEntries - 1;
 
     private FixedArrayPtr<MONSTER_JOB_COMMAND_DATA> _monsterJobCommandDataTablePointer;
 
@@ -39,20 +42,20 @@ public class FFTOMonsterJobCommandDataManager : FFTOTableManagerBase<MonsterJobC
         {
             if (!e.Found)
             {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find MonsterJobCommandData table!", _logger.ColorRed);
+                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
                 return;
             }
 
             nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found MonsterJobCommandData table @ 0x{tableAddress:X}");
+            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
 
             Memory.Instance.ChangeProtection(tableAddress,
-                sizeof(MONSTER_JOB_COMMAND_DATA) * DataCount,
+                sizeof(MONSTER_JOB_COMMAND_DATA) * NumEntries,
                 Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
 
-            _monsterJobCommandDataTablePointer = new FixedArrayPtr<MONSTER_JOB_COMMAND_DATA>((MONSTER_JOB_COMMAND_DATA*)tableAddress, DataCount);
-
+            _monsterJobCommandDataTablePointer = new FixedArrayPtr<MONSTER_JOB_COMMAND_DATA>((MONSTER_JOB_COMMAND_DATA*)tableAddress, NumEntries);
             _originalTable = new MonsterJobCommandTable();
+
             for (int i = 0; i < _monsterJobCommandDataTablePointer.Count; i++)
             {
                 var model = MonsterJobCommand.FromStructure(i + FirstJobCommandId, ref _monsterJobCommandDataTablePointer.AsRef(i));
@@ -127,16 +130,16 @@ public class FFTOMonsterJobCommandDataManager : FFTOTableManagerBase<MonsterJobC
 
     public MonsterJobCommand GetOriginalMonsterJobCommand(int index)
     {
-        if (index < FirstJobCommandId || index > LastJobCommandId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"MonsterJobCommand id can not be less than {FirstJobCommandId} or more than {LastJobCommandId}!");
+        if (index < MinId || index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"MonsterJobCommand id can not be less than {MinId} or more than {MaxId}!");
 
         return _originalTable.Entries[index];
     }
 
     public MonsterJobCommand GetMonsterJobCommand(int index)
     {
-        if (index < FirstJobCommandId || index > LastJobCommandId)
-            throw new ArgumentOutOfRangeException(nameof(index), $"MonsterJobCommand id can not be less than {FirstJobCommandId} or more than {LastJobCommandId}!");
+        if (index < MinId || index > MaxId)
+            throw new ArgumentOutOfRangeException(nameof(index), $"MonsterJobCommand id can not be less than {MinId} or more than {MaxId}!");
 
         return _moddedTable.Entries[index];
     }

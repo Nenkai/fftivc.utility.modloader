@@ -15,6 +15,8 @@ value from the original table or, from other mods making changes depending on mo
 
 IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
 
+IMPORTANT 3: Id cannot be more than 31 (hardcoded table size is 32).
+
 For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ITEM_ACCESSORY_DATA.cs
 
 -->

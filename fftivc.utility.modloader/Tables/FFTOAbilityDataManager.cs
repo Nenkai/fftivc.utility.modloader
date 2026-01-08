@@ -1,9 +1,6 @@
-﻿using fftivc.utility.modloader.Configuration;
-using fftivc.utility.modloader.Interfaces.Serializers;
-using fftivc.utility.modloader.Interfaces.Tables;
-using fftivc.utility.modloader.Interfaces.Tables.Models;
-using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
-using fftivc.utility.modloader.Interfaces.Tables.Structures;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory;
@@ -12,9 +9,12 @@ using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+using fftivc.utility.modloader.Configuration;
+using fftivc.utility.modloader.Interfaces.Serializers;
+using fftivc.utility.modloader.Interfaces.Tables;
+using fftivc.utility.modloader.Interfaces.Tables.Models;
+using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
+using fftivc.utility.modloader.Interfaces.Tables.Structures;
 
 namespace fftivc.utility.modloader.Tables;
 

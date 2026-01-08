@@ -35,6 +35,12 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         typeof(IFFTOModPackManager),
         // Tables
         typeof(IFFTOAbilityDataManager),
+        typeof(IFFTOAbilityEffectNumberFilterDataManager),
+        typeof(IFFTOAbilityTypeDataManager),
+        typeof(IFFTOAbilityChargeAimDataManager),
+        typeof(IFFTOAbilityJumpDataManager),
+        typeof(IFFTOAbilityMathDataManager),
+        typeof(IFFTOAbilityThrowDataManager),
         typeof(IFFTOItemDataManager),
         typeof(IFFTOItemIdRangeToCategoryManager),
         typeof(IFFTOItemCategoryToDataTypeManager),
@@ -47,6 +53,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         typeof(IFFTOItemAccessoryDataManager),
         typeof(IFFTOItemConsumableDataManager),
         typeof(IFFTOMonsterJobCommandDataManager),
+        typeof(IFFTOMapItemDataManager),
         typeof(IFFTOJobCommandDataManager),
         typeof(IFFTOJobDataManager),
         typeof(IFFTOStatusEffectDataManager),
@@ -186,6 +193,12 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
     private void RegisterTableManagersAsR2Controllers()
     {
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityEffectNumberFilterDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityTypeDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityChargeAimDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityJumpDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityMathDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityThrowDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemIdRangeToCategoryManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemCategoryToDataTypeManager>());
@@ -198,6 +211,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemAccessoryDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemConsumableDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMonsterJobCommandDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMapItemDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobCommandDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOStatusEffectDataManager>());
@@ -233,6 +247,12 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddTransient(typeof(IModelSerializer<>), typeof(ModelSerializer<>))
             // ...To grab them as IEnumerable
             .AddSingleton<IFFTOTableManager, FFTOAbilityDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityEffectNumberFilterManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityTypeDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityChargeAimDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityJumpDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityMathDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOAbilityThrowDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemDataManager>()
             .AddSingleton<IFFTOTableManager, FFTODataTypeToItemIdRangeManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemIdRangeToCategoryManager>()
@@ -245,12 +265,19 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOTableManager, FFTOItemAccessoryDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOItemConsumableDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOMonsterJobCommandDataManager>()
+            .AddSingleton<IFFTOTableManager, FFTOMapTrapFormationDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOJobCommandDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOJobDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOStatusEffectDataManager>()
             .AddSingleton<IFFTOTableManager, FFTOCommandTypeDataManager>()
             // Individually.
             .AddSingleton<IFFTOAbilityDataManager, FFTOAbilityDataManager>()
+            .AddSingleton<IFFTOAbilityEffectNumberFilterDataManager, FFTOAbilityEffectNumberFilterManager>()
+            .AddSingleton<IFFTOAbilityTypeDataManager, FFTOAbilityTypeDataManager>()
+            .AddSingleton<IFFTOAbilityChargeAimDataManager, FFTOAbilityChargeAimDataManager>()
+            .AddSingleton<IFFTOAbilityJumpDataManager, FFTOAbilityJumpDataManager>()
+            .AddSingleton<IFFTOAbilityMathDataManager, FFTOAbilityMathDataManager>()
+            .AddSingleton<IFFTOAbilityThrowDataManager, FFTOAbilityThrowDataManager>()
             .AddSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
             .AddSingleton<IFFTODataTypeToItemIdRangeManager, FFTODataTypeToItemIdRangeManager>()
             .AddSingleton<IFFTOItemIdRangeToCategoryManager, FFTOItemIdRangeToCategoryManager>()
@@ -263,6 +290,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton<IFFTOItemAccessoryDataManager, FFTOItemAccessoryDataManager>()
             .AddSingleton<IFFTOItemConsumableDataManager, FFTOItemConsumableDataManager>()
             .AddSingleton<IFFTOMonsterJobCommandDataManager, FFTOMonsterJobCommandDataManager>()
+            .AddSingleton<IFFTOMapItemDataManager, FFTOMapTrapFormationDataManager>()
             .AddSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
             .AddSingleton<IFFTOJobDataManager, FFTOJobDataManager>()
             .AddSingleton<IFFTOStatusEffectDataManager, FFTOStatusEffectDataManager>()

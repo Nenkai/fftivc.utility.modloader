@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded Jump abilities secondary data table.
+This table specifically provides extra data for ability 394 through 405 (hardcoded).
+
+You can use this file as a base to edit Jump abilities data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/AbilityJumpData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+IMPORTANT 3: Id cannot be more than 405 (hardcoded table size is 12, 396 + 12).
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ABILITY_JUMP_DATA.cs
+-->
+
+<AbilityJumpTable>
+  <Version>1</Version>
+  <Entries>
+    <AbilityJump>
+      <Id>394</Id> <!-- Horizontal Jump +1 / ジャンプ距離＋１ / Saut horizontal +1 / Sprung-Reichweite +1 -->
+      <Range>2</Range>
+      <Vertical>0</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>395</Id> <!-- Horizontal Jump +2 / ジャンプ距離＋２ / Saut horizontal +2 / Sprung-Reichweite +2 -->
+      <Range>3</Range>
+      <Vertical>0</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>396</Id> <!-- Horizontal Jump +3 / ジャンプ距離＋３ / Saut horizontal +3 / Sprung-Reichweite +3 -->
+      <Range>4</Range>
+      <Vertical>0</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>397</Id> <!-- Horizontal Jump +4 / ジャンプ距離＋４ / Saut horizontal +4 / Sprung-Reichweite +4 -->
+      <Range>5</Range>
+      <Vertical>0</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>398</Id> <!-- Horizontal Jump +7 / ジャンプ距離＋７ / Saut horizontal +7 / Sprung-Reichweite +7 -->
+      <Range>8</Range>
+      <Vertical>0</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>399</Id> <!-- Vertical Jump ±2 / ジャンプ高低±２ / Saut vertical ±2 / Sprung-Höhe ±2 -->
+      <Range>0</Range>
+      <Vertical>2</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>400</Id> <!-- Vertical Jump ±3 / ジャンプ高低±３ / Saut vertical ±3 / Sprung-Höhe ±3 -->
+      <Range>0</Range>
+      <Vertical>3</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>401</Id> <!-- Vertical Jump ±4 / ジャンプ高低±４ / Saut vertical ±4 / Sprung-Höhe ±4 -->
+      <Range>0</Range>
+      <Vertical>4</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>402</Id> <!-- Vertical Jump ±5 / ジャンプ高低±５ / Saut vertical ±5 / Sprung-Höhe ±5 -->
+      <Range>0</Range>
+      <Vertical>5</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>403</Id> <!-- Vertical Jump ±6 / ジャンプ高低±６ / Saut vertical ±6 / Sprung-Höhe ±6 -->
+      <Range>0</Range>
+      <Vertical>6</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>404</Id> <!-- Vertical Jump ±7 / ジャンプ高低±７ / Saut vertical ±7 / Sprung-Höhe ±7 -->
+      <Range>0</Range>
+      <Vertical>7</Vertical>
+    </AbilityJump>
+    <AbilityJump>
+      <Id>405</Id> <!-- Vertical Jump ±8 / ジャンプ高低±８ / Saut vertical ±8 / Sprung-Höhe ±8 -->
+      <Range>0</Range>
+      <Vertical>8</Vertical>
+    </AbilityJump>
+  </Entries>
+</AbilityJumpTable>
