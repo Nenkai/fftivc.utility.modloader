@@ -59,6 +59,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         typeof(IFFTOJobDataManager),
         typeof(IFFTOStatusEffectDataManager),
         typeof(IFFTOCommandTypeDataManager),
+        typeof(IFFTOSpawnDataManager),
+        typeof(IFFTOSpawnVarianceDataManager),
     ];
 
     /// <summary>
@@ -217,6 +219,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOStatusEffectDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOCommandTypeDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOSpawnDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOSpawnVarianceDataManager>());
     }
 
     private IServiceProvider BuildServiceCollection()
@@ -270,6 +274,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddGameTableSingleton<IFFTOJobDataManager, FFTOJobDataManager>()
             .AddGameTableSingleton<IFFTOStatusEffectDataManager, FFTOStatusEffectDataManager>()
             .AddGameTableSingleton<IFFTOCommandTypeDataManager, FFTOCommandTypeDataManager>()
+            .AddGameTableSingleton<IFFTOSpawnDataManager, FFTOSpawnDataManager>()
+            .AddGameTableSingleton<IFFTOSpawnVarianceDataManager, FFTOSpawnVarianceDataManager>()
 
             .AddSingleton<FFTOResourceManagerHooks>()
             .AddSingleton<FFTPackHooks>()

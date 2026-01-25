@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded spawn table.
+
+You can use this file as a base to edit spawn data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/SpawnData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+IMPORTANT 3: The Warriors' Guild will always display a cost of 1,500 gil. The actual cost will vary if equipment is changed below.
+
+IMPORTANT 4: Equipment must be equippable by the job of the spawned units.
+-->
+
+<SpawnTable>
+  <Version>1</Version>
+  <Entries>
+    <Spawn>
+      <Id>0</Id> <!-- Male Units -->
+      <HP>30</HP>
+      <MP>14</MP> <!-- Will actually have Floor(MP * 0.75) -->
+      <Speed>6</Speed>
+      <PA>5</PA> <!-- Will actually have PA - 1 -->
+      <MA>4</MA> <!-- Will actually have MA - 1 -->
+      <Helmet>157</Helmet> <!-- Leather Cap / かわのほうし / chapeau de cuir / lederhut -->
+      <Armor>186</Armor> <!-- Clothing / ふく / habit / gewand -->
+      <Accessory>255</Accessory> <!-- Empty -->
+      <RightWeapon>19</RightWeapon> <!-- Broadsword / ふろーとそーと / epee large / breitschwert -->
+      <RightShield>255</RightShield> <!-- Empty -->
+      <LeftWeapon>255</LeftWeapon> <!-- Empty -->
+      <LeftShield>255</LeftShield> <!-- Empty -->
+    </Spawn>
+    <Spawn>
+      <Id>1</Id> <!-- Female Units -->
+      <HP>28</HP>
+      <MP>15</MP> <!-- Will actually have Floor(MP * 0.75) -->
+      <Speed>6</Speed>
+      <PA>4</PA> <!-- Will actually have PA - 1 -->
+      <MA>5</MA> <!-- Will actually have MA - 1 -->
+      <Helmet>157</Helmet> <!-- Leather Cap / かわのほうし / chapeau de cuir / lederhut -->
+      <Armor>186</Armor> <!-- Clothing / ふく / habit / gewand -->
+      <Accessory>255</Accessory> <!-- Empty -->
+      <RightWeapon>19</RightWeapon> <!-- Broadsword / ふろーとそーと / epee large / breitschwert -->
+      <RightShield>255</RightShield> <!-- Empty -->
+      <LeftWeapon>255</LeftWeapon> <!-- Empty -->
+      <LeftShield>255</LeftShield> <!-- Empty -->
+    </Spawn>
+    <Spawn>
+      <Id>2</Id> <!-- Ramza -->
+      <HP>30</HP>
+      <MP>15</MP> <!-- Will actually have Floor(MP * 0.75) -->
+      <Speed>6</Speed>
+      <PA>5</PA> <!-- Will actually have PA - 1 -->
+      <MA>5</MA> <!-- Will actually have MA - 1 -->
+      <Helmet>157</Helmet> <!-- Leather Cap / かわのほうし / chapeau de cuir / lederhut -->
+      <Armor>186</Armor> <!-- Clothing / ふく / habit / gewand -->
+      <Accessory>208</Accessory> <!-- Battle Boots / はとるふーつ / bottes de combat / kampfstiefel -->
+      <RightWeapon>19</RightWeapon> <!-- Broadsword / ふろーとそーと / epee large / breitschwert -->
+      <RightShield>255</RightShield> <!-- Empty -->
+      <LeftWeapon>255</LeftWeapon> <!-- Empty -->
+      <LeftShield>255</LeftShield> <!-- Empty -->
+    </Spawn>
+    <Spawn>
+      <Id>3</Id> <!-- Monster Units -->
+      <HP>35</HP>
+      <MP>8</MP> <!-- Will actually have Floor(MP * 0.75) -->
+      <Speed>5</Speed>
+      <PA>5</PA> <!-- Will actually have PA - 1 -->
+      <MA>5</MA> <!-- Will actually have MA - 1 -->
+      <Helmet>255</Helmet> <!-- Empty -->
+      <Armor>255</Armor> <!-- Empty -->
+      <Accessory>255</Accessory> <!-- Empty -->
+      <RightWeapon>255</RightWeapon> <!-- Empty -->
+      <RightShield>255</RightShield> <!-- Empty -->
+      <LeftWeapon>255</LeftWeapon> <!-- Empty -->
+      <LeftShield>255</LeftShield> <!-- Empty -->
+    </Spawn>
+  </Entries>
+</SpawnTable>
