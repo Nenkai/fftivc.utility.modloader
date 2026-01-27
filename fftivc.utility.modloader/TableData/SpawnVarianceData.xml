@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded spawn variance table.
+
+You can use this file as a base to edit spawn variance data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/SpawnVarianceData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+-->
+
+<SpawnVarianceTable>
+  <Version>1</Version>
+  <Entries>
+    <SpawnVariance>
+      <Id>0</Id> <!-- Male Units -->
+      <HP>2</HP> <!-- Behaves as if HP is an exclusive upper bound: Unit HP = Base HP + [0 .. HP - 1] -->
+      <MP>1</MP> <!-- Behaves as if MP is an exclusive upper bound: Unit MP = Base MP + [0 .. (MP - 1) * 0.75] -->
+      <Speed>0</Speed> <!-- Behaves as if Speed is an exclusive upper bound: Unit Speed = Base Speed + [0 .. Speed - 1] -->
+      <PA>0</PA> <!-- Behaves as if PA is an inclusive upper bound: Unit PA = Base PA + [0 .. PA] -->
+      <MA>0</MA> <!-- Behaves as if MA is an exclusive upper bound: Unit MA = Base MA + [0 .. MA - 1] -->
+    </SpawnVariance>
+    <SpawnVariance>
+      <Id>1</Id> <!-- Female Units -->
+      <HP>2</HP> <!-- Behaves as if HP is an exclusive upper bound: Unit HP = Base HP + [0 .. HP - 1] -->
+      <MP>1</MP> <!-- Behaves as if MP is an exclusive upper bound: Unit MP = Base MP + [0 .. (MP - 1) * 0.75] -->
+      <Speed>0</Speed> <!-- Behaves as if Speed is an exclusive upper bound: Unit Speed = Base Speed + [0 .. Speed - 1] -->
+      <PA>0</PA> <!-- Behaves as if PA is an inclusive upper bound: Unit PA = Base PA + [0 .. PA] -->
+      <MA>0</MA> <!-- Behaves as if MA is an exclusive upper bound: Unit MA = Base MA + [0 .. MA - 1] -->
+    </SpawnVariance>
+    <SpawnVariance>
+      <Id>2</Id> <!-- Ramza -->
+      <HP>2</HP> <!-- Behaves as if HP is an exclusive upper bound: Unit HP = Base HP + [0 .. HP - 1] -->
+      <MP>1</MP> <!-- Behaves as if MP is an exclusive upper bound: Unit MP = Base MP + [0 .. (MP - 1) * 0.75] -->
+      <Speed>0</Speed> <!-- Behaves as if Speed is an exclusive upper bound: Unit Speed = Base Speed + [0 .. Speed - 1] -->
+      <PA>0</PA> <!-- Behaves as if PA is an inclusive upper bound: Unit PA = Base PA + [0 .. PA] -->
+      <MA>0</MA> <!-- Behaves as if MA is an exclusive upper bound: Unit MA = Base MA + [0 .. MA - 1] -->
+    </SpawnVariance>
+    <SpawnVariance>
+      <Id>3</Id> <!-- Monster Units -->
+      <HP>3</HP> <!-- Behaves as if HP is an exclusive upper bound: Unit HP = Base HP + [0 .. HP - 1] -->
+      <MP>1</MP> <!-- Behaves as if MP is an exclusive upper bound: Unit MP = Base MP + [0 .. (MP - 1) * 0.75] -->
+      <Speed>0</Speed> <!-- Behaves as if Speed is an exclusive upper bound: Unit Speed = Base Speed + [0 .. Speed - 1] -->
+      <PA>1</PA> <!-- Behaves as if PA is an inclusive upper bound: Unit PA = Base PA + [0 .. PA] -->
+      <MA>1</MA> <!-- Behaves as if MA is an exclusive upper bound: Unit MA = Base MA + [0 .. MA - 1] -->
+    </SpawnVariance>
+  </Entries>
+</SpawnVarianceTable>
