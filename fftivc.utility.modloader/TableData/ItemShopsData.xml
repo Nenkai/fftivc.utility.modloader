@@ -1,0 +1,1068 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded Item -> Shops table.
+
+Refer to: https://ffhacktics.com/wiki/Shop_Selling_Lists
+
+You can use this file as a base to edit Item Shops data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/ItemShopsData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+IMPORTANT 3: Id cannot be more than 255 (hardcoded table size is 256).
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/ITEM_SHOPS_DATA.cs
+-->
+
+<ItemShopsTable>
+  <Version>1</Version>
+  <Entries>
+    <ItemShops>
+      <Id>0</Id>
+      <Shops>None</Shops> <!-- 
+        <Shops> is a combination of the following:
+          - None
+          - Gollund
+          - Dorter
+          - Zaland
+          - Goug
+          - Warjilis
+          - Bervenia
+          - SalGhidos
+          - Lesalia
+          - Riovanes
+          - Eagrose
+          - Lionel
+          - Limberry
+          - Zeltennia
+          - Gariland
+          - Yardrow
+      -->
+    </ItemShops>
+    <ItemShops>
+      <Id>1</Id> <!-- Dagger / たかー / dague / dolch -->
+      <Shops>Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>2</Id> <!-- Mythril Knife / みすりるないふ / poignard de mithril / mithril-messer -->
+      <Shops>Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>3</Id> <!-- Blind Knife / ふらいんないふ / poignard cecite / blindmesser -->
+      <Shops>Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>4</Id> <!-- Mage Masher / めいしまっしゃー / baillonneuse / silenquedea -->
+      <Shops>Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>5</Id> <!-- Platinum Dagger / ふらちなめっさー / dent de platine / platindolch -->
+      <Shops>Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>6</Id> <!-- Main Gauche / まいんこーしゅ / main gauche / main gauche -->
+      <Shops>Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>7</Id> <!-- Orichalcum Dirk / おりはるこん / dent dorichalque / orichalcum -->
+      <Shops>Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>8</Id> <!-- Assassin's Dagger / あさしんたかー / assassine / assassinendolch -->
+      <Shops>Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>9</Id> <!-- Air Knife / えあないふ / dague eolienne / luftmesser -->
+      <Shops>Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>10</Id> <!-- Zwill Straightblade / そーりんしぇいふ / lame de solingen / zorlin-dolch -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>11</Id> <!-- Ninja Blade / しのひかたな / shinobi gatana / ninja-schwert -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>12</Id> <!-- Kunai / くない / kunai / kunai -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>13</Id> <!-- Kodachi / こたち / kodachi / kodachi -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>14</Id> <!-- Ninja Longblade / にんしゃろんく / lamelongue ninja / ninja-langschwert -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>15</Id> <!-- Spellbinder / しゅはくかたな / lame bridante / fesselklinge -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>16</Id> <!-- Sasuke's Blade / さすけのかたな / katana de sasuke / sasukenin -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>17</Id> <!-- Iga Blade / いかにんとう / lame diga / iganin -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>18</Id> <!-- Koga Blade / こうかにんとう / lame de koga / koganin -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>19</Id> <!-- Broadsword / ふろーとそーと / epee large / breitschwert -->
+      <Shops>Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>20</Id> <!-- Longsword / ろんくそーと / epee longue / langschwert -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>21</Id> <!-- Iron Sword / あいあんそーと / epee de fer / eisenschwert -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>22</Id> <!-- Mythril Sword / みすりるそーと / epee de mithril / mithril-schwert -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>23</Id> <!-- Blood Sword / ふらっとそーと / epee sanguine / blutschwert -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>24</Id> <!-- Coral Sword / さんこのつるき / epee de corail / korallschwert -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>25</Id> <!-- Ancient Sword / こたいのつるき / epee antique / antikschwert -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>26</Id> <!-- Sleep Blade / ねむりのつるき / sabre des soupirs / schlummerklinge -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>27</Id> <!-- Platinum Sword / ふらちなそーと / epee de platine / platinschwert -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>28</Id> <!-- Diamond Sword / たいあそーと / epee de diamant / diamantschwert -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>29</Id> <!-- Icebrand / あいすふらんと / epee de glace / eisbrand -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>30</Id> <!-- Runeblade / るーんふれいと / lame runique / runenklinge -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>31</Id> <!-- Nagnarok / なくらろく / nagrarok / nagrarok -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>32</Id> <!-- Materia Blade / まてりあふれいと / lame materia / materia-klinge -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>33</Id> <!-- Defender / てぃふぇんたー / defenderesse / verteidiger -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>34</Id> <!-- Save the Queen / せいふさくぃーん / garde la reine / koniginnenwache -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>35</Id> <!-- Excalibur / えくすかりはー / excalibur / excalibur -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>36</Id> <!-- Ragnarok / らくなろく / ragnarok / ragnarok -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>37</Id> <!-- Chaos Blade / かおすふれいと / lame du chaos / fatalis -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>38</Id> <!-- Ashura / あしゅら / ashura / ashura -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>39</Id> <!-- Kotetsu / こてつ / kotetsu / kotetsu -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>40</Id> <!-- Bizen Osafune / ひせんおさふね / bizen osafune / bizen-osafune -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>41</Id> <!-- Murasame / むらさめ / murasame / murasame -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>42</Id> <!-- Ame-no-Murakumo / あめのむらくも / ama no murakumo / murakumo -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>43</Id> <!-- Kiyomori / きよもり / kiyomori / kiyomori -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>44</Id> <!-- Muramasa / むらまさ / muramasa / muramasa -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>45</Id> <!-- Kiku-ichimonji / きくいちもんし / kiku ichimonji / kikuichimonji -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>46</Id> <!-- Masamune / まさむね / masamune / masamune -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>47</Id> <!-- Chirijiraden / ちりしらてんかさりつるき / chirijiraden kazari / chirijiraden -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>48</Id> <!-- Battle Axe / はとるあっくす / hache de guerre / kampfaxt -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>49</Id> <!-- Giant's Axe / きょしんのおの / hache de geant / riesenaxt -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>50</Id> <!-- Slasher / すらっしゃー / fendeuse / schlitzer -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>51</Id> <!-- Rod / ろっと / sceptre / zepter -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>52</Id> <!-- Thunder Rod / さんたーろっと / sceptre de foudre / blitzrute -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>53</Id> <!-- Flame Rod / ふれいむろっと / sceptre de flamme / flammenzepter -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>54</Id> <!-- Ice Rod / あいすろっと / sceptre de glace / frostrute -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>55</Id> <!-- Poison Rod / ほいすんろっと / sceptre toxique / giftrute -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>56</Id> <!-- Wizard's Rod / うぃさーとろっと / sceptre de sorcier / magierrute -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>57</Id> <!-- Dragon Rod / とらこんろっと / sceptre de dragon / drachenstab -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>58</Id> <!-- Rod of Faith / ふぇいすろっと / sceptre de la foi / ener-rute -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>59</Id> <!-- Oak Staff / おーくすたっふ / crosse de chene / eichenstab -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>60</Id> <!-- White Staff / ほわいとすたっふ / crosse blanche / weisser stab -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>61</Id> <!-- Healing Staff / いやしのつえ / baton guerisseur / heilerstab -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>62</Id> <!-- Serpent Staff / へひのつえ / baton ophidien / schlangenstab -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>63</Id> <!-- Mage's Staff / ましゅつしのつえ / baton de mage / zauberstab -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>64</Id> <!-- Golden Staff / こーるとすたっふ / crosse dor / goldstock -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>65</Id> <!-- Zeus Mace / めいすおふせうす / masse de zeus / zeus kolben -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>66</Id> <!-- Staff of the Magi / けんしゃのつえ / baton de sage / weisenstock -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>67</Id> <!-- Iron Flail / ふれいる / fleau darmes / dreschflegel -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>68</Id> <!-- Flail of Flame / ふれいむういっふ / fleau de flamme / feuerpeitsche -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>69</Id> <!-- Morning Star / もーにんくすたー / etoile du matin / morgenstern -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>70</Id> <!-- Scorpion Tail / さそりのしっほ / queue de scorpion / skorpion -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>71</Id> <!-- Romandan Pistol / ろまんたしゅう / fusil romandien / romanda-flinte -->
+      <Shops>Goug</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>72</Id> <!-- Mythril Gun / みすりるしゅう / fusil de mithril / mithril-flinte -->
+      <Shops>Goug</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>73</Id> <!-- Stoneshooter / せきかしゅう / fusil petrifiant / steinflinte -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>74</Id> <!-- Glacial Gun / くれいしゃるかん / cryopistolet / frostflinte -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>75</Id> <!-- Blaze Gun / ふれいすかん / pyropistolet / feuertrommel -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>76</Id> <!-- Blaster / ふらすとかん / foudropistolet / strahlenkanone -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>77</Id> <!-- Bowgun / ほうかん / arbalete / pistolenarmbrust -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Goug</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>78</Id> <!-- Knightslayer / ないときらー / galanticide / ritterschreck -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Goug</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>79</Id> <!-- Crossbow / くろすほう / manubaliste / armbrust -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Goug</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>80</Id> <!-- Poison Crossbow / ほいすんほう / arbalete poison / giftarmbrust -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Goug</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>81</Id> <!-- Hunting Crossbow / はんてぃんくほう / arbalete de chasse / jagdbogen -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Goug</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>82</Id> <!-- Gastrophetes / かすとらふぇてす / gastraphete / gastraphetes -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Goug</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>83</Id> <!-- Longbow / ろんくほう / arc long / langbogen -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>84</Id> <!-- Silver Bow / きんのゆみ / arc dargent / silberbogen -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>85</Id> <!-- Ice Bow / こおりのゆみ / arc de glace / frostbogen -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>86</Id> <!-- Lightning Bow / らいとにんくほう / arc de foudre / blitzbogen -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>87</Id> <!-- Windslash Bow / かせきりのゆみ / arc rafale / windbogen -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>88</Id> <!-- Mythril Bow / みすりるのゆみ / arc de mithril / mithril-bogen -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>89</Id> <!-- Artemis Bow / あるてみすのゆみ / arc dartemis / artemis bogen -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>90</Id> <!-- Yoichi Bow / よいちのゆみ / arc de yoichi / yoichi-bogen -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>91</Id> <!-- Perseus Bow / へるせうすのゆみ / arc de persee / perseus' bogen -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>92</Id> <!-- Lamia's Harp / らみあのたてこと / lyre de lamia / lamia-harfe -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>93</Id> <!-- Bloodstring Harp / ちのしゅうにけん / harpe de sang / blutstreicher -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>94</Id> <!-- Faerie Harp / ようせいのはーふ / harpe de fee / feenharfe -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>95</Id> <!-- Battle Folio / はとるてぃくと / encyclopedie militaire / kampfschrift -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>96</Id> <!-- Bestiary / かいふつしてん / bestiaire monstrueux / bestiarium -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>97</Id> <!-- Papyrus Codex / はひるすふれいと / parchemin blinde / papyrus-kodex -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>98</Id> <!-- Omnilex / またれむしえん / omnilex / omnilex -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>99</Id> <!-- Javelin / しゃへりん / javelot / jagdspeer -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>100</Id> <!-- Spear / すひあ / hast / speer -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>101</Id> <!-- Mythril Spear / みすりるすひあ / hast de mithril / mithril-speer -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>102</Id> <!-- Partisan / はるちさん / pertuisane / partisane -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>103</Id> <!-- Obelisk / おへりすく / obelisque / obelisk -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>104</Id> <!-- Holy Lance / ほーりーらんす / lance sacree / heilige lanze -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>105</Id> <!-- Dragon Whisker / りゅうのひけ / barbe de dragon / drachenbart -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>106</Id> <!-- Javelin / しゃへりん / javelot / wurfspeer -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>107</Id> <!-- Cypress Pole / さいふれすはいる / pieu de cypres / zypressenstab -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>108</Id> <!-- Battle Bamboo / はとるはんふー / bambou de combat / kampfstab -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>109</Id> <!-- Musk Pole / しゃこうしゃく / baton musque / moschus-stab -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>110</Id> <!-- Iron Fan / てっせん / eventail de fer / stahlfacher -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>111</Id> <!-- Gokuu's Pole / こくうのほう / baton de wukong / gokus stab -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>112</Id> <!-- Ivory Pole / そうけのほう / baton divoire / elfenbeinstab -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>113</Id> <!-- Eight-fluted Pole / はっかくほう / baton octogonal / achtkanter -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>114</Id> <!-- Whale Whisker / くしらのひけ / barbe de cachalot / walbart -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>115</Id> <!-- Catskin Bag / ちゃこるのはっく / sac de marque c. / chagaulle-tasche -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>116</Id> <!-- Fallingstar Bag / ふぁすてのはっく / sac de marque f.s. / fastait-tasche -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>117</Id> <!-- Proudhide Bag / はとらのはっく / sac de marque p. / patora-tasche -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>118</Id> <!-- Hardscale Bag / へりおねのはっく / sac de marque h. / helione-tasche -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>119</Id> <!-- Damask Cloth / へるしあ / etoffe persane / perserteppich -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>120</Id> <!-- Cashmere / かしみーる / etoffe de cachemire / kaschmir -->
+      <Shops>SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>121</Id> <!-- Wyrmweave Silk / りょうさんけん / etoffe de brocart / seidentuch -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>122</Id> <!-- Shuriken / しゅりけん / shuriken / shuriken -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>123</Id> <!-- Fuma Shuriken / ふうまのしゅりけん / shuriken du clan fuma / fuma-shuriken -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>124</Id> <!-- Yagyu Darkrood / やきゅうのしっこく / etoile du clan yagyu / yagyunoshikkoku -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>125</Id> <!-- Flameburst Bomb / かとんのたま / bombe incendiaire / schlupfbombe -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>126</Id> <!-- Snowmelt Bomb / ひょうすいのたま / bombe hydraulique / schneeschmelze -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>127</Id> <!-- Spark Bomb / らいしんのたま / bombe foudroyante / blitzknall -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>128</Id> <!-- Escutcheon / えすかっしょん / ecu / wappenschild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>129</Id> <!-- Buckler / はっくらー / targe / buckler -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>130</Id> <!-- Bronze Shield / ふろんすしーると / bouclier de bronze / bronzeschild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>131</Id> <!-- Round Shield / らうんとしーると / rondache / rundschild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>132</Id> <!-- Mythril Shield / みすりるしーると / bouclier de mithril / mithril-schild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>133</Id> <!-- Golden Shield / こーるとしーると / bouclier dor / goldschild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>134</Id> <!-- Ice Shield / あいすしーると / bouclier de glace / eisschild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>135</Id> <!-- Flame Shield / ふれいむしーると / bouclier de feu / flammenschild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>136</Id> <!-- Aegis Shield / いーしすのたて / aegis / aegis-schild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>137</Id> <!-- Diamond Shield / たいあしーると / bouclier de diamant / diamantschild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>138</Id> <!-- Platinum Shield / ふらちなしーると / bouclier de platine / platinschild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>139</Id> <!-- Crystal Shield / くりすたるのたて / bouclier de cristal / kristallschild -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Warjilis, Dorter</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>140</Id> <!-- Genji Shield / けんしのたて / bouclier genji / genji-schild -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>141</Id> <!-- Kaiser Shield / かえさるふれーと / bouclier de cesar / kaiserschild -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>142</Id> <!-- Venetian Shield / へねちあふれーと / bouclier venitien / venetia-schild -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>143</Id> <!-- Escutcheon / えすかっしょん / ecu / wappenschild -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>144</Id> <!-- Leather Helm / れさーへるむ / casque de cuir / lederhelm -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>145</Id> <!-- Bronze Helm / ふろんすへるむ / casque de bronze / bronzehelm -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>146</Id> <!-- Iron Helm / あいあんへるむ / armet de fer / eisenhelm -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>147</Id> <!-- Barbut / はるひゅーた / barbute / barbuta -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>148</Id> <!-- Mythril Helm / みすりるへるむ / armet de mithril / mithril-helm -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>149</Id> <!-- Golden Helm / こーるとへるむ / casque dor / goldhelm -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>150</Id> <!-- Close Helmet / くろすへるむ / bascinet / kreuzhelm -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>151</Id> <!-- Diamond Helm / たいあへるむ / armet de diamant / diamanthelm -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>152</Id> <!-- Platinum Helm / ふらちなへるむ / casque de platine / platinhelm -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>153</Id> <!-- Circlet / さーくれっと / diademe / stirnreif -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>154</Id> <!-- Crystal Helm / くりすたるへるむ / casque de cristal / kristallhelm -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>155</Id> <!-- Genji Helm / けんしのかふと / casque genji / genji-helm -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>156</Id> <!-- Grand Helm / くらんとへるむ / casque de maitre / stechhelm -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>157</Id> <!-- Leather Cap / かわのほうし / chapeau de cuir / lederhut -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>158</Id> <!-- Plumed Hat / はねつきほうし / chapeau a plume / federhut -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>159</Id> <!-- Red Hood / あかすきん / chaperon rouge / rote kappe -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>160</Id> <!-- Headgear / へっときあ / protege tete / kopfschutz -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>161</Id> <!-- Wizard's Hat / さんかくほうし / chapeau pointu / spitzhut -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>162</Id> <!-- Green Beret / くりーんへれー / beret vert / grunes barett -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>163</Id> <!-- Headband / ねしりはちまき / bandeau torsade / stirnband -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>164</Id> <!-- Celebrant's Miter / しさいのほうし / coiffe de pretre / mitra -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>165</Id> <!-- Black Cowl / くろすきん / capuchon noir / schwarze kappe -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>166</Id> <!-- Gold Hairpin / きんのかみかさり / barrette dor / goldspange -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>167</Id> <!-- Lambent Hat / せんこうまほう / chapeau vif eclair / lichthut -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>168</Id> <!-- Thief's Cap / しーふのほうし / chapeau de voleur / diebesmutze -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>169</Id> <!-- Hairband / かちゅーしゃ / serre tete / haarreif -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>170</Id> <!-- Barrette / はれった / barrette / haarspange -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>171</Id> <!-- Ribbon / りほん / ruban / schleife -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>172</Id> <!-- Leather Armor / かわのよろい / armure de cuir / lederrustung -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>173</Id> <!-- Linen Cuirass / りねんきゅらっさ / cuirasse de lin / leinenkurass -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>174</Id> <!-- Bronze Armor / ふろんすあーまー / armure de bronze / bronzerustung -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>175</Id> <!-- Chainmail / ちぇいんめいる / cotte de mailles / kettenhemd -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>176</Id> <!-- Mythril Armor / みすりるあーまー / armure de mithril / mithril-rustung -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>177</Id> <!-- Plate Mail / ふれいとめいる / cotte de plates / plattenpanzer -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>178</Id> <!-- Golden Armor / こーるとあーまー / armure dor / goldrustung -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>179</Id> <!-- Diamond Armor / たいああーまー / armure de diamant / diamantrustung -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>180</Id> <!-- Platinum Armor / ふらちなあーまー / armure de platine / platinrustung -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>181</Id> <!-- Carabineer Mail / きゃらひにえーる / carabiniere / karabinierrustung -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>182</Id> <!-- Crystal Mail / くりすたるめいる / cotte de cristal / kristallrustung -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>183</Id> <!-- Genji Armor / けんしのよろい / armure genji / genji-rustung -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>184</Id> <!-- Mirror Mail / りふれくとめいる / cotte reflectrice / reflek-rustung -->
+      <Shops>Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>185</Id> <!-- Maximillian / まくしみりあん / maximilien / maximiliansharnisch -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>186</Id> <!-- Clothing / ふく / habit / gewand -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>187</Id> <!-- Leather Clothing / かわのふく / habit de cuir / lederhemd -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>188</Id> <!-- Leather Plate / れさーふれいと / plastron de cuir / lederpanzer -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>189</Id> <!-- Ringmail / ちぇいんふれいと / plastron de mailles / ringpanzer -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>190</Id> <!-- Mythril Vest / みすりるへすと / veston de mithril / mithril-weste -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>191</Id> <!-- Adamant Vest / あたまんへすと / veston dadamantium / adamant-weste -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>192</Id> <!-- Wizard Clothing / ましゅつしのふく / tunique de sorcier / zaubergewand -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>193</Id> <!-- Brigandine / ふりかんたいん / brigandine / brigantine -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>194</Id> <!-- Jujitsu Gi / しゅうしゅつとうき / tenue de jujutsu / judoanzug -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>195</Id> <!-- Power Garb / ちからたすき / sangle de force / energiescharpe -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>196</Id> <!-- Gaia Gear / たいちのころも / tunique de gaia / gaia-anzug -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>197</Id> <!-- Ninja Gear / しのひのころも / tenue de shinobi / ninja-anzug -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>198</Id> <!-- Black Garb / くろしょうそく / tenue noire / dunkelanzug -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>199</Id> <!-- Rubber Suit / らはーこんしゃす / tunique de latex / gummianzug -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>200</Id> <!-- Hempen Robe / あさのろーふ / robe de lin / hanfrobe -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>201</Id> <!-- Silken Robe / しるくのろーふ / robe de soie / seidenrobe -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>202</Id> <!-- Wizard's Robe / ましゅつしのろーふ / robe denchanteur / zauberumhang -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>203</Id> <!-- Chameleon Robe / かめれおんろーふ / robe cameleon / mistelrobe -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>204</Id> <!-- White Robe / しろのろーふ / robe blanche / weisse robe -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>205</Id> <!-- Black Robe / くろのろーふ / robe noire / schwarze robe -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>206</Id> <!-- Luminous Robe / ひかりのろーふ / robe de lumiere / lichtrobe -->
+      <Shops>Yardrow, Gariland, SalGhidos, Bervenia, Warjilis, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>207</Id> <!-- Lordly Robe / ろーふおふろーと / robe de monarque / furstenmantel -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>208</Id> <!-- Battle Boots / はとるふーつ / bottes de combat / kampfstiefel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>209</Id> <!-- Spiked Boots / すはいくしゅーす / souliers cloutes / kletterstiefel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>210</Id> <!-- Germinas Boots / けるみなすふーつ / bottes de germinas / germinas-stiefel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>211</Id> <!-- Rubber Boots / らはーしゅーす / bottes en latex / gummischuhe -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>212</Id> <!-- Winged Boots / ふぇさーふーつ / bottes ailees / federstiefel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>213</Id> <!-- Hermes Shoes / えるめすのくつ / sandales dhermes / hermes-stiefel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>214</Id> <!-- Red Shoes / あかいくつ / souliers rouges / rote stiefel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>215</Id> <!-- Power Gauntlets / はわーりすと / poignets de force / kraftreif -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>216</Id> <!-- Genji Gloves / けんしのこて / gants genji / genji-handschuhe -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>217</Id> <!-- Magepower Gloves / まりょくのこて / gants mystiques / magus-handschuh -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>218</Id> <!-- Bracers / ふれいさー / brassards / lederhandschuhe -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>219</Id> <!-- Reflect Ring / りふれくとりんく / bague reflectrice / spiegelring -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>220</Id> <!-- Protect Ring / まもりのゆひわ / anneau protecteur / schutzring -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>221</Id> <!-- Magick Ring / まほうのりんく / bague de mage / magiering -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>222</Id> <!-- Cursed Ring / のろいのゆひわ / bague maudite / fluchring -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>223</Id> <!-- Angel Ring / てんしのゆひわ / bague dange / engelsring -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>224</Id> <!-- Diamond Bracelet / たいあのうてわ / bracelet de diamant / diamant-armreif -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>225</Id> <!-- Jade Armlet / ひすいのうてわ / bracelet de jade / jadereif -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>226</Id> <!-- Japa Mala / ひゃくはちのしゅす / mala / mala -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>227</Id> <!-- Nu Khai Armband / んかいのうてわ / bracelet de nkai / nkai-armreif -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>228</Id> <!-- Guardian Bracelet / まもりのうてわ / bracelet protecteur / schutzreif -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>229</Id> <!-- Shoulder Cape / すもーるまんと / cape courte / schultermantel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>230</Id> <!-- Leather Cloak / かわのまんと / cape de cuir / ledermantel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>231</Id> <!-- Mage's Cloak / まとうしのまんと / cape de mage / zaubermantel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>232</Id> <!-- Elven Cloak / えるふのまんと / cape elfique / elfenmantel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>233</Id> <!-- Vampire Cape / とらきゅらまんと / cape de dracula / vampirmantel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>234</Id> <!-- Featherweave Cloak / ふぇさーまんと / cape de plumes / federmantel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>235</Id> <!-- Invisibility Cloak / きえるまんと / cape invisible / tarnmantel -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>236</Id> <!-- Chantage / しゃんたーしゅ / chantage / chantage -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>237</Id> <!-- Envoûtement / しぇるしぇ / envoutement / envoutement -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>238</Id> <!-- Septième Sens / せってぃえむそん / septieme sens / septieme sens -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>239</Id> <!-- Sortilège / そるてぃれーしゅ / sortilege / sortilege -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>240</Id> <!-- Potion / ほーしょん / potion / heiltrank -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>241</Id> <!-- High Potion / はいほーしょん / super potion / supertrank -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>242</Id> <!-- X-Potion / えくすほーしょん / maxi potion / ubertrank -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>243</Id> <!-- Ether / えーてる / ether / ather -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>244</Id> <!-- High Ether / はいえーてる / super ether / super-ather -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>245</Id> <!-- Elixir / えりくさー / elixir / elixier -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>246</Id> <!-- Antidote / とくけし / antidote / gegengift -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>247</Id> <!-- Eye Drops / めくすり / collyre / augentropfen -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>248</Id> <!-- Echo Herbs / やまひこそう / herbe decho / echokraut -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>249</Id> <!-- Maiden's Kiss / おとめのきっす / baiser de jouvencelle / jungfernkuss -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>250</Id> <!-- Gold Needle / きんのはり / epingle dor / goldnadel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>251</Id> <!-- Holy Water / せいすい / eau benite / weihwasser -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>252</Id> <!-- Remedy / はんのうやく / remede / allheilmittel -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>253</Id> <!-- Phoenix Down / ふぇにっくすのお / queue de phenix / phonixfeder -->
+      <Shops>Yardrow, Gariland, Zeltennia, Limberry, Lionel, Eagrose, Riovanes, Lesalia, SalGhidos, Bervenia, Warjilis, Goug, Zaland, Dorter, Gollund</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>254</Id> <!-- Nothing -->
+      <Shops>None</Shops>
+    </ItemShops>
+    <ItemShops>
+      <Id>255</Id> <!-- Nothing -->
+      <Shops>None</Shops>
+    </ItemShops>
+  </Entries>
+</ItemShopsTable>
