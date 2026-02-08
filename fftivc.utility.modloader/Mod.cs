@@ -58,7 +58,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         typeof(IFFTOMapTrapFormationDataManager),
         typeof(IFFTOJobCommandDataManager),
         typeof(IFFTOJobDataManager),
-        typeof(IFFTOJobRequirementsDataManager),
+        typeof(IFFTOJobNeedLevelDataManager),
         typeof(IFFTOStatusEffectDataManager),
         typeof(IFFTOCommandTypeDataManager),
         typeof(IFFTOSpawnDataManager),
@@ -220,7 +220,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMapTrapFormationDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobCommandDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobDataManager>());
-        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobRequirementsDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobNeedLevelDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOStatusEffectDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOCommandTypeDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOSpawnDataManager>());
@@ -277,7 +277,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddGameTableSingleton<IFFTOMapTrapFormationDataManager, FFTOMapTrapFormationDataManager>()
             .AddGameTableSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
             .AddGameTableSingleton<IFFTOJobDataManager, FFTOJobDataManager>()
-            .AddGameTableSingleton<IFFTOJobRequirementsDataManager, FFTOJobRequirementsDataManager>()
+            .AddGameTableSingleton<IFFTOJobNeedLevelDataManager, FFTOJobNeedLevelDataManager>()
             .AddGameTableSingleton<IFFTOStatusEffectDataManager, FFTOStatusEffectDataManager>()
             .AddGameTableSingleton<IFFTOCommandTypeDataManager, FFTOCommandTypeDataManager>()
             .AddGameTableSingleton<IFFTOSpawnDataManager, FFTOSpawnDataManager>()

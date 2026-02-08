@@ -142,7 +142,7 @@
     <None Update="TableData\JobData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="TableData\JobRequirementsData.xml">
+    <None Update="TableData\JobNeedLevelData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TableData\MapTrapFormationData.xml">

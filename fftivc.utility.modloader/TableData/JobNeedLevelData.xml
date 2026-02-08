@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <!--
-This table file is used to overwrite the game's hardcoded job requirements table.
+This table file is used to overwrite the game's hardcoded job need level table.
 
 This table works in conjunction with the nex table 'GeneralJob'.
 
-You can use this file as a base to edit Job Requirements data in your mod.
-Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/JobRequirementsData.xml.
+You can use this file as a base to edit Job Need Level data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/JobNeedLevelData.xml.
 
 IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
 Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
@@ -17,10 +17,10 @@ IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving h
 IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
 -->
 
-<JobRequirementsTable>
+<JobNeedLevelTable>
   <Version>1</Version>
   <Entries>
-    <JobRequirements>
+    <JobNeedLevel>
       <Id>0</Id> <!-- Chemist / アイテム士 / Apothicaire / Chemikus -->
       <Squire>0</Squire>
       <Chemist>0</Chemist>
@@ -46,8 +46,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>1</Id> <!-- Knight / ナイト / Chevalier / Ritter -->
       <Squire>2</Squire>
       <Chemist>0</Chemist>
@@ -73,8 +73,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>2</Id> <!-- Archer / 弓使い / Archer / Schütze -->
       <Squire>2</Squire>
       <Chemist>0</Chemist>
@@ -100,8 +100,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>3</Id> <!-- Monk / モンク / Moine / Mönch -->
       <Squire>2</Squire>
       <Chemist>0</Chemist>
@@ -127,8 +127,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>4</Id> <!-- White Mage / 白魔道士 / Mage blanc / Weißmagier -->
       <Squire>0</Squire>
       <Chemist>2</Chemist>
@@ -154,8 +154,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>5</Id> <!-- Black Mage / 黒魔道士 / Mage noir / Schwarzmagier -->
       <Squire>0</Squire>
       <Chemist>2</Chemist>
@@ -181,8 +181,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>6</Id> <!-- Time Mage / 時魔道士 / Chronomancien / Zeitmagier -->
       <Squire>0</Squire>
       <Chemist>2</Chemist>
@@ -208,8 +208,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>7</Id> <!-- Summoner / 召喚士 / Invocateur / Beschwörer -->
       <Squire>0</Squire>
       <Chemist>2</Chemist>
@@ -235,8 +235,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>8</Id> <!-- Thief / シーフ / Voleur / Dieb -->
       <Squire>2</Squire>
       <Chemist>0</Chemist>
@@ -262,8 +262,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>9</Id> <!-- Orator / 話術士 / Médiateur / Orator -->
       <Squire>0</Squire>
       <Chemist>2</Chemist>
@@ -289,8 +289,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>10</Id> <!-- Mystic / 陰陽士 / Maître yin-yang / Mystiker -->
       <Squire>0</Squire>
       <Chemist>2</Chemist>
@@ -316,8 +316,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>11</Id> <!-- Geomancer / 風水士 / Géomancien / Geomant -->
       <Squire>2</Squire>
       <Chemist>0</Chemist>
@@ -343,8 +343,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>12</Id> <!-- Dragoon / 竜騎士 / Chevalier dragon / Dragoon -->
       <Squire>2</Squire>
       <Chemist>0</Chemist>
@@ -370,8 +370,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>13</Id> <!-- Samurai / 侍 / Samouraï / Samurai -->
       <Squire>2</Squire>
       <Chemist>0</Chemist>
@@ -397,8 +397,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>14</Id> <!-- Ninja / 忍者 / Ninja / Ninja -->
       <Squire>2</Squire>
       <Chemist>0</Chemist>
@@ -424,8 +424,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>15</Id> <!-- Arithmetician / 算術士 / Arithméticien / Arithmetiker -->
       <Squire>0</Squire>
       <Chemist>2</Chemist>
@@ -451,8 +451,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>16</Id> <!-- Bard / 吟遊詩人 / Barde / Barde -->
       <Squire>0</Squire>
       <Chemist>2</Chemist>
@@ -478,8 +478,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>17</Id> <!-- Dancer / 踊り子 / Danseuse / Tänzerin -->
       <Squire>2</Squire>
       <Chemist>0</Chemist>
@@ -505,8 +505,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>18</Id> <!-- Mime / ものまね士 / Mime / Pantomime -->
       <Squire>8</Squire>
       <Chemist>8</Chemist>
@@ -532,8 +532,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>19</Id>
       <Squire>0</Squire>
       <Chemist>0</Chemist>
@@ -559,8 +559,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>20</Id>
       <Squire>6</Squire>
       <Chemist>6</Chemist>
@@ -586,8 +586,8 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
-    <JobRequirements>
+    </JobNeedLevel>
+    <JobNeedLevel>
       <Id>21</Id>
       <Squire>0</Squire>
       <Chemist>0</Chemist>
@@ -613,6 +613,6 @@ IMPORTANT 3: Id cannot be more than 21 (hardcoded table size is 22).
       <OnionKnight>0</OnionKnight>
       <Unknown1>0</Unknown1>
       <Unknown2>0</Unknown2>
-    </JobRequirements>
+    </JobNeedLevel>
   </Entries>
-</JobRequirementsTable>
+</JobNeedLevelTable>
