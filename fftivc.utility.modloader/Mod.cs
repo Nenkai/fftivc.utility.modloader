@@ -13,17 +13,11 @@ using fftivc.utility.modloader.Template;
 using Microsoft.Extensions.DependencyInjection;
 
 using Reloaded.Hooks.Definitions;
-using Reloaded.Hooks.Definitions.Structs;
-using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 using Reloaded.Mod.Interfaces.Internal;
-using Reloaded.Mod.Loader.IO;
-using Reloaded.Mod.Loader.IO.Config;
 
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace fftivc.utility.modloader;
 
@@ -41,6 +35,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         typeof(IFFTOAbilityChargeAimDataManager),
         typeof(IFFTOAbilityJumpDataManager),
         typeof(IFFTOAbilityMathDataManager),
+        typeof(IFFTOAbilitySecondaryDataManager),
         typeof(IFFTOAbilityThrowDataManager),
         typeof(IFFTOItemDataManager),
         typeof(IFFTOItemIdRangeToCategoryDataManager),
@@ -203,6 +198,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityChargeAimDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityJumpDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityMathDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilitySecondaryDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOAbilityThrowDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemIdRangeToCategoryDataManager>());
@@ -260,6 +256,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddGameTableSingleton<IFFTOAbilityChargeAimDataManager, FFTOAbilityChargeAimDataManager>()
             .AddGameTableSingleton<IFFTOAbilityJumpDataManager, FFTOAbilityJumpDataManager>()
             .AddGameTableSingleton<IFFTOAbilityMathDataManager, FFTOAbilityMathDataManager>()
+            .AddGameTableSingleton<IFFTOAbilitySecondaryDataManager, FFTOAbilitySecondaryDataManager>()
             .AddGameTableSingleton<IFFTOAbilityThrowDataManager, FFTOAbilityThrowDataManager>()
             .AddGameTableSingleton<IFFTOItemDataManager, FFTOItemDataManager>()
             .AddGameTableSingleton<IFFTODataTypeToItemIdRangeDataManager, FFTODataTypeToItemIdRangeDataManager>()
@@ -272,12 +269,10 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddGameTableSingleton<IFFTOItemArmorDataManager, FFTOItemArmorDataManager>()
             .AddGameTableSingleton<IFFTOItemAccessoryDataManager, FFTOItemAccessoryDataManager>()
             .AddGameTableSingleton<IFFTOItemConsumableDataManager, FFTOItemConsumableDataManager>()
-            .AddGameTableSingleton<IFFTOItemShopsDataManager, FFTOItemShopsDataManager>()
             .AddGameTableSingleton<IFFTOMonsterJobCommandDataManager, FFTOMonsterJobCommandDataManager>()
             .AddGameTableSingleton<IFFTOMapTrapFormationDataManager, FFTOMapTrapFormationDataManager>()
             .AddGameTableSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
             .AddGameTableSingleton<IFFTOJobDataManager, FFTOJobDataManager>()
-            .AddGameTableSingleton<IFFTOJobNeedLevelDataManager, FFTOJobNeedLevelDataManager>()
             .AddGameTableSingleton<IFFTOStatusEffectDataManager, FFTOStatusEffectDataManager>()
             .AddGameTableSingleton<IFFTOCommandTypeDataManager, FFTOCommandTypeDataManager>()
             .AddGameTableSingleton<IFFTOSpawnDataManager, FFTOSpawnDataManager>()
