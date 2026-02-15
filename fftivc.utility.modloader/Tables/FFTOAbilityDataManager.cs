@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-
-using Reloaded.Hooks.Definitions;
+﻿using System.Diagnostics;
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
@@ -13,7 +9,6 @@ using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
-using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
 
 namespace fftivc.utility.modloader.Tables;

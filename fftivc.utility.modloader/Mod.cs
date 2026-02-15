@@ -13,17 +13,11 @@ using fftivc.utility.modloader.Template;
 using Microsoft.Extensions.DependencyInjection;
 
 using Reloaded.Hooks.Definitions;
-using Reloaded.Hooks.Definitions.Structs;
-using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 using Reloaded.Mod.Interfaces.Internal;
-using Reloaded.Mod.Loader.IO;
-using Reloaded.Mod.Loader.IO.Config;
 
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace fftivc.utility.modloader;
 

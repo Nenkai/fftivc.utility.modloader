@@ -44,13 +44,13 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommandTable, J
         {
             if (!e.Found)
             {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find ItemData table!", _logger.ColorRed);
+                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
                 return;
             }
 
             // Go back 5 entries (they're all zeros, which why our AOB starts a bit further.)
             nuint startTableOffset = (nuint)processAddress + (nuint)(e.Offset - (Unsafe.SizeOf<JOB_COMMAND_DATA>() * 5));
-            _logger.WriteLine($"[{_modConfig.ModId}] Found JobCommandData table @ 0x{startTableOffset:X}");
+            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{startTableOffset:X}");
 
             Memory.Instance.ChangeProtection(startTableOffset, sizeof(JOB_COMMAND_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _jobCommandTablePointer = new FixedArrayPtr<JOB_COMMAND_DATA>((JOB_COMMAND_DATA*)startTableOffset, NumEntries);
