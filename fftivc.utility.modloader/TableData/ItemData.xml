@@ -3398,7 +3398,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>162</SpriteID>
       <RequiredLevel>1</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>0</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>0</AdditionalDataId> <!-- ItemConsumableData Id: 0 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3412,7 +3412,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>176</SpriteID>
       <RequiredLevel>2</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>1</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>1</AdditionalDataId> <!-- ItemConsumableData Id: 1 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3426,7 +3426,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>177</SpriteID>
       <RequiredLevel>3</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>2</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>2</AdditionalDataId> <!-- ItemConsumableData Id: 2 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3440,7 +3440,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>165</SpriteID>
       <RequiredLevel>4</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>3</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>3</AdditionalDataId> <!-- ItemConsumableData Id: 3 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3454,7 +3454,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>166</SpriteID>
       <RequiredLevel>5</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>4</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>4</AdditionalDataId> <!-- ItemConsumableData Id: 4 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3468,7 +3468,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>167</SpriteID>
       <RequiredLevel>14</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>13</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>13</AdditionalDataId> <!-- ItemConsumableData Id: 5 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3482,7 +3482,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>168</SpriteID>
       <RequiredLevel>6</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>5</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>5</AdditionalDataId> <!-- ItemConsumableData Id: 6 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3496,7 +3496,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>169</SpriteID>
       <RequiredLevel>7</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>6</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>6</AdditionalDataId> <!-- ItemConsumableData Id: 7 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3510,7 +3510,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>170</SpriteID>
       <RequiredLevel>8</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>7</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>7</AdditionalDataId> <!-- ItemConsumableData Id: 8 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3524,7 +3524,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>171</SpriteID>
       <RequiredLevel>9</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>8</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>8</AdditionalDataId> <!-- ItemConsumableData Id: 9 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3538,7 +3538,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>172</SpriteID>
       <RequiredLevel>10</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>9</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>9</AdditionalDataId> <!-- ItemConsumableData Id: 10 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3552,7 +3552,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>173</SpriteID>
       <RequiredLevel>11</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>10</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>10</AdditionalDataId> <!-- ItemConsumableData Id: 11 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3566,7 +3566,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>174</SpriteID>
       <RequiredLevel>12</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>11</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>11</AdditionalDataId> <!-- ItemConsumableData Id: 12 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>
@@ -3580,7 +3580,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <SpriteID>175</SpriteID>
       <RequiredLevel>13</RequiredLevel>
       <TypeFlags>Rare</TypeFlags>
-      <AdditionalDataId>12</AdditionalDataId> <!-- ItemConsumableData Id -->
+      <AdditionalDataId>12</AdditionalDataId> <!-- ItemConsumableData Id: 13 -->
       <ItemCategory>Item</ItemCategory>
       <Unused_0x06>0</Unused_0x06>
       <EquipBonusId>0</EquipBonusId>

@@ -5,6 +5,8 @@ This table file is used to overwrite the game's hardcoded consumable item table.
 
 Refer to: https://ffhacktics.com/wiki/Item_Secondary_Data
 It is referenced from the ItemData table, with category ranges defined by ItemCategoryRanges.
+However, the AdditionalDataIds in the ItemData do not map directly to ItemConsumable Ids and instead are simply in order,
+with ItemData Ids 240 - 253 mapping to 0 - 13 in ItemConsumable, respectively.
 
 You can use this file as a base to edit Consumable Item data in your mod.
 Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/ItemConsumableData.xml.
@@ -27,85 +29,85 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <Id>0</Id> <!-- Potion / ほーしょん / potion / heiltrank -->
       <Formula>72</Formula> <!-- 0x48, refer to https://ffhacktics.com/wiki/Formulas -->
       <Z>3</Z>
-      <StatusEffectId>0</StatusEffectId>
+      <StatusEffectId>0</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
       <Id>1</Id> <!-- High Potion / はいほーしょん / super potion / supertrank -->
       <Formula>72</Formula> <!-- 0x48 -->
       <Z>7</Z>
-      <StatusEffectId>0</StatusEffectId>
+      <StatusEffectId>0</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
       <Id>2</Id> <!-- X-Potion / えくすほーしょん / maxi potion / ubertrank -->
       <Formula>72</Formula> <!-- 0x48 -->
       <Z>15</Z>
-      <StatusEffectId>0</StatusEffectId>
+      <StatusEffectId>0</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
       <Id>3</Id> <!-- Ether / えーてる / ether / ather -->
       <Formula>73</Formula> <!-- 0x49 -->
       <Z>2</Z>
-      <StatusEffectId>0</StatusEffectId>
+      <StatusEffectId>0</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
       <Id>4</Id> <!-- High Ether / はいえーてる / super ether / super-ather -->
       <Formula>73</Formula> <!-- 0x49 -->
       <Z>5</Z>
-      <StatusEffectId>0</StatusEffectId>
+      <StatusEffectId>0</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
-      <Id>5</Id> <!-- Antidote / とくけし / antidote / gegengift -->
+      <Id>5</Id> <!-- Elixir / えりくさー / elixir / elixier -->
       <Formula>74</Formula> <!-- 0x4A -->
       <Z>0</Z>
-      <StatusEffectId>0</StatusEffectId>
+      <StatusEffectId>0</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
-      <Id>6</Id> <!-- Eye Drops / めくすり / collyre / augentropfen -->
+      <Id>6</Id> <!-- Antidote / とくけし / antidote / gegengift -->
       <Formula>56</Formula> <!-- 0x38 -->
       <Z>0</Z>
-      <StatusEffectId>1</StatusEffectId>
+      <StatusEffectId>1</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
-      <Id>7</Id> <!-- Echo Herbs / やまひこそう / herbe decho / echokraut -->
+      <Id>7</Id> <!-- Eye Drops / めくすり / collyre / augentropfen -->
       <Formula>56</Formula> <!-- 0x38 -->
       <Z>0</Z>
-      <StatusEffectId>2</StatusEffectId>
+      <StatusEffectId>2</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
-      <Id>8</Id> <!-- Maiden's Kiss / おとめのきっす / baiser de jouvencelle / jungfernkuss -->
+      <Id>8</Id> <!-- Echo Herbs / やまひこそう / herbe decho / echokraut -->
       <Formula>56</Formula> <!-- 0x38 -->
       <Z>0</Z>
-      <StatusEffectId>3</StatusEffectId>
+      <StatusEffectId>3</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
-      <Id>9</Id> <!-- Gold Needle / きんのはり / epingle dor / goldnadel -->
+      <Id>9</Id> <!-- Maiden's Kiss / おとめのきっす / baiser de jouvencelle / jungfernkuss -->
       <Formula>56</Formula> <!-- 0x38 -->
       <Z>0</Z>
-      <StatusEffectId>4</StatusEffectId>
+      <StatusEffectId>4</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
-      <Id>10</Id> <!-- Holy Water / せいすい / eau benite / weihwasser -->
+      <Id>10</Id> <!-- Gold Needle / きんのはり / epingle dor / goldnadel -->
       <Formula>56</Formula> <!-- 0x38 -->
       <Z>0</Z>
-      <StatusEffectId>5</StatusEffectId>
+      <StatusEffectId>5</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
-      <Id>11</Id> <!-- Remedy / はんのうやく / remede / allheilmittel -->
+      <Id>11</Id> <!-- Holy Water / せいすい / eau benite / weihwasser -->
       <Formula>56</Formula> <!-- 0x38 -->
       <Z>0</Z>
-      <StatusEffectId>6</StatusEffectId>
+      <StatusEffectId>6</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
-      <Id>12</Id> <!-- Phoenix Down / ふぇにっくすのお / queue de phenix / phonixfeder -->
+      <Id>12</Id> <!-- Remedy / はんのうやく / remede / allheilmittel -->
       <Formula>56</Formula> <!-- 0x38 -->
       <Z>0</Z>
-      <StatusEffectId>7</StatusEffectId>
+      <StatusEffectId>7</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
     <ItemConsumable>
-      <Id>13</Id> <!-- Elixir / えりくさー / elixir / elixier -->
+      <Id>13</Id> <!-- Phoenix Down / ふぇにっくすのお / queue de phenix / phonixfeder -->
       <Formula>75</Formula> <!-- 0x4B  -->
       <Z>20</Z>
-      <StatusEffectId>8</StatusEffectId>
+      <StatusEffectId>8</StatusEffectId> <!-- ItemOptionsId -->
     </ItemConsumable>
   </Entries>
 </ItemConsumableTable>
