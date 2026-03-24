@@ -103,6 +103,7 @@ public class FFTOJobDataManager : FFTOTableManagerBase<JobTable, Job>, IFFTOJobD
         Job previous = _moddedTable.Entries[model.Id];
         ref JOB_DATA data = ref _jobTablePointer.AsRef(model.Id);
 
+        data.JobCommandId = model.JobCommandId ?? (byte)previous.JobCommandId!;
         data.InnateAbilityId1 = model.InnateAbilityId1 ?? (ushort)previous.InnateAbilityId1!;
         data.InnateAbilityId2 = model.InnateAbilityId2 ?? (ushort)previous.InnateAbilityId2!;
         data.InnateAbilityId3 = model.InnateAbilityId3 ?? (ushort)previous.InnateAbilityId3!;

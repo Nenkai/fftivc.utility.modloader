@@ -25,6 +25,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
   <Entries>
     <Job>
       <Id>0</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -56,6 +57,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>1</Id> <!-- Squire / 見習い戦士 / Écuyer / Knappe -->
+      <JobCommandId>25</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -87,6 +89,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>2</Id> <!-- Squire / 見習い戦士 / Écuyer / Knappe -->
+      <JobCommandId>26</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -118,6 +121,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>3</Id> <!-- Gallant Knight / 見習い天騎士 / Preux de l'empyrée / Himmelsknappe -->
+      <JobCommandId>27</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -149,6 +153,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>4</Id> <!-- Squire / 見習い戦士 / Écuyer / Knappe -->
+      <JobCommandId>28</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -180,6 +185,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>5</Id> <!-- Holy Knight / ホーリーナイト / Chevalier sacré / Heiliger Ritter -->
+      <JobCommandId>29</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -211,6 +217,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>6</Id>
+      <JobCommandId>30</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -242,6 +249,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>7</Id> <!-- Squire / 見習い戦士 / Écuyer / Knappe -->
+      <JobCommandId>31</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -273,6 +281,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>8</Id> <!-- Ark Knight / アークナイト / Archichevalier / Erzritter -->
+      <JobCommandId>75</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -304,7 +313,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>9</Id> <!-- Rune Knight / ルーンナイト / Chevalier runique / Runenritter -->
-      <InnateAbilityId1>466</InnateAbilityId1>
+      <JobCommandId>70</JobCommandId>
+		  <InnateAbilityId1>466</InnateAbilityId1>
       <InnateAbilityId2>468</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
       <InnateAbilityId4>0</InnateAbilityId4>
@@ -335,6 +345,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>10</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -366,6 +377,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>11</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -397,6 +409,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>12</Id> <!-- Princess / プリンセス / Princesse / Prinzessin -->
+      <JobCommandId>36</JobCommandId>
       <InnateAbilityId1>466</InnateAbilityId1>
       <InnateAbilityId2>468</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -428,6 +441,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>13</Id> <!-- Sword Saint / 剣聖 / Maître des lames / Schwertheiliger -->
+      <JobCommandId>74</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -459,6 +473,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>14</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -490,6 +505,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>15</Id> <!-- Dragonkin / ドラグナー / Dragonide / Dragonoid -->
+       <JobCommandId>43</JobCommandId>
       <InnateAbilityId1>473</InnateAbilityId1>
       <InnateAbilityId2>477</InnateAbilityId2>
       <InnateAbilityId3>478</InnateAbilityId3>
@@ -521,6 +537,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>16</Id> <!-- Celebrant / ハイプリースト / Grand prêtre / Zelebrant -->
+      <JobCommandId>42</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -552,6 +569,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>17</Id> <!-- Fell Knight / ダークナイト / Chevalier occulte / Gefallener Ritter -->
+      <JobCommandId>39</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -583,6 +601,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>18</Id> <!-- Netherseer / 天冥士 / Mage chthonien / Paradoxon -->
+      <JobCommandId>46</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -614,6 +633,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>19</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -645,6 +665,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>20</Id> <!-- Cleric / クレリック / Clerc / Diakonisse -->
+      <JobCommandId>76</JobCommandId>
       <InnateAbilityId1>466</InnateAbilityId1>
       <InnateAbilityId2>468</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -676,6 +697,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>21</Id> <!-- Astrologer / 占星術士 / Astromancien / Astrologe -->
+      <JobCommandId>47</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -707,6 +729,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>22</Id> <!-- Machinist / 機工士 / Machiniste / Maschinist -->
+      <JobCommandId>38</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -738,6 +761,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>23</Id> <!-- Fell Knight / ダークナイト / Chevalier occulte / Gefallener Ritter -->
+      <JobCommandId>32</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -769,6 +793,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>24</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -800,6 +825,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>25</Id> <!-- Skyseer / 天道士 / Mage céleste / Astronomin -->
+      <JobCommandId>45</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -831,6 +857,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>26</Id> <!-- Netherseer / 天冥士 / Mage chthonien / Paradoxon -->
+      <JobCommandId>46</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -862,6 +889,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>27</Id> <!-- Ark Knight / アークナイト / Archichevalier / Erzritter -->
+      <JobCommandId>59</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -893,6 +921,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>28</Id>
+      <JobCommandId>35</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -924,6 +953,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>29</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -955,7 +985,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>30</Id> <!-- Holy Knight / ホーリーナイト / Chevalier sacré / Heiliger Ritter -->
-      <InnateAbilityId1>0</InnateAbilityId1>
+      <JobCommandId>40</JobCommandId>
+		  <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
       <InnateAbilityId4>0</InnateAbilityId4>
@@ -986,7 +1017,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>31</Id> <!-- Templar / テンプルナイト / Templier / Tempelritter -->
-      <InnateAbilityId1>0</InnateAbilityId1>
+      <JobCommandId>69</JobCommandId>
+		  <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
       <InnateAbilityId4>0</InnateAbilityId4>
@@ -1017,7 +1049,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>32</Id> <!-- White Knight / ホワイトナイト / Chevalier blanc / Weißritter -->
-      <InnateAbilityId1>0</InnateAbilityId1>
+      <JobCommandId>34</JobCommandId>
+		  <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
       <InnateAbilityId4>0</InnateAbilityId4>
@@ -1048,7 +1081,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>33</Id>
-      <InnateAbilityId1>0</InnateAbilityId1>
+      <JobCommandId>0</JobCommandId>
+		  <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
       <InnateAbilityId4>0</InnateAbilityId4>
@@ -1079,6 +1113,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>34</Id> <!-- Machinist / 機工士 / Machiniste / Maschinist -->
+      <JobCommandId>37</JobCommandId>
       <InnateAbilityId1>475</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1110,6 +1145,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>35</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1141,6 +1177,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>36</Id> <!-- Divine Knight / ディバインナイト / Chevalier divin / Gottesritter -->
+      <JobCommandId>64</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1172,6 +1209,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>37</Id> <!-- Divine Knight / ディバインナイト / Chevalier divin / Gottesritter -->
+      <JobCommandId>60</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1203,6 +1241,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>38</Id> <!-- Nightblade / ナイトブレード / Lame occulte / Nachtklinge -->
+      <JobCommandId>51</JobCommandId>
       <InnateAbilityId1>469</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1234,6 +1273,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>39</Id> <!-- Sorcerer / ソーサラー / Ensorceleur / Zauberer -->
+      <JobCommandId>72</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1265,6 +1305,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>40</Id> <!-- White Knight / ホワイトナイト / Chevalier blanc / Weißritter -->
+      <JobCommandId>48</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1296,7 +1337,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>41</Id> <!-- Skyseer / 天道士 / Mage céleste / Astronomin -->
-      <InnateAbilityId1>0</InnateAbilityId1>
+      <JobCommandId>50</JobCommandId>
+		  <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
       <InnateAbilityId4>0</InnateAbilityId4>
@@ -1327,7 +1369,8 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>42</Id> <!-- Divine Knight / ディバインナイト / Chevalier divin / Gottesritter -->
-      <InnateAbilityId1>0</InnateAbilityId1>
+      <JobCommandId>67</JobCommandId>
+		  <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
       <InnateAbilityId4>0</InnateAbilityId4>
@@ -1358,6 +1401,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>43</Id> <!-- Machinist / 機工士 / Machiniste / Maschinist -->
+      <JobCommandId>68</JobCommandId>
       <InnateAbilityId1>466</InnateAbilityId1>
       <InnateAbilityId2>468</InnateAbilityId2>
       <InnateAbilityId3>473</InnateAbilityId3>
@@ -1389,6 +1433,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>44</Id> <!-- Cleric / クレリック / Clerc / Diakonisse -->
+      <JobCommandId>76</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1420,6 +1465,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>45</Id> <!-- Assassin / アサシン / Assassin / Assassine -->
+      <JobCommandId>54</JobCommandId>
       <InnateAbilityId1>477</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1451,6 +1497,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>46</Id> <!-- Assassin / アサシン / Assassin / Assassine -->
+      <JobCommandId>55</JobCommandId>
       <InnateAbilityId1>477</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1482,6 +1529,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>47</Id> <!-- Divine Knight / ディバインナイト / Chevalier divin / Gottesritter -->
+      <JobCommandId>66</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1513,6 +1561,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>48</Id> <!-- Cleric / クレリック / Clerc / Diakonisse -->
+      <JobCommandId>49</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1544,6 +1593,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>49</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1575,6 +1625,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>50</Id> <!-- Soldier / ソルジャー / SOLDAT / SOLDAT -->
+      <JobCommandId>41</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1606,6 +1657,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>51</Id> <!-- Ark Knight / アークナイト / Archichevalier / Erzritter -->
+      <JobCommandId>75</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1637,6 +1689,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>52</Id> <!-- Holy Knight / ホーリーナイト / Chevalier sacré / Heiliger Ritter -->
+      <JobCommandId>33</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1668,6 +1721,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>53</Id>
+      <JobCommandId>6</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1699,6 +1753,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>54</Id>
+      <JobCommandId>10</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1730,6 +1785,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>55</Id>
+      <JobCommandId>11</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1761,6 +1817,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>56</Id>
+      <JobCommandId>16</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1792,6 +1849,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>57</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1823,6 +1881,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>58</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1854,6 +1913,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>59</Id>
+      <JobCommandId>41</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1885,6 +1945,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>60</Id> <!-- Gigas / 魔人 / Titan / Dämon -->
+      <JobCommandId>103</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>472</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -1916,6 +1977,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>61</Id> <!-- Knight / ナイト / Chevalier / Ritter -->
+      <JobCommandId>155</JobCommandId>
       <InnateAbilityId1>478</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -1947,6 +2009,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>62</Id> <!-- Death Seraph / 死の天使 / Ange de la mort / Todesengel -->
+      <JobCommandId>107</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -1978,6 +2041,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>63</Id> <!-- Archer / 弓使い / Archer / Schütze -->
+      <JobCommandId>156</JobCommandId>
       <InnateAbilityId1>478</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2009,6 +2073,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>64</Id> <!-- Bringer of Order / 統制者 / Grand Ordonnateur / Einiger -->
+      <JobCommandId>111</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -2040,6 +2105,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>65</Id> <!-- High Seraph / 聖天使 / Grand Séraphin / Cherub -->
+      <JobCommandId>89</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>472</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -2071,6 +2137,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>66</Id> <!-- Black Mage / 黒魔道士 / Mage noir / Schwarzmagier -->
+      <JobCommandId>157</JobCommandId>
       <InnateAbilityId1>478</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2102,6 +2169,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>67</Id> <!-- The Impure / 不浄王 / Impur / Sünder -->
+      <JobCommandId>115</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>472</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -2133,6 +2201,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>68</Id> <!-- Time Mage / 時魔道士 / Chronomancien / Zeitmagier -->
+      <JobCommandId>158</JobCommandId>
       <InnateAbilityId1>478</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2164,6 +2233,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>69</Id> <!-- The Wroth / 憤怒の霊帝 / Grand Courroux / Häscher -->
+      <JobCommandId>119</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -2195,6 +2265,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>70</Id> <!-- Mystic / 陰陽士 / Maître yin-yang / Mystiker -->
+      <JobCommandId>159</JobCommandId>
       <InnateAbilityId1>478</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2226,6 +2297,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>71</Id> <!-- Summoner / 召喚士 / Invocateur / Beschwörer -->
+      <JobCommandId>160</JobCommandId>
       <InnateAbilityId1>478</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2257,6 +2329,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>72</Id> <!-- Holy Dragon / ホーリードラゴン / Dragon sacré / Heiliger Drache -->
+      <JobCommandId>44</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2288,6 +2361,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>73</Id> <!-- Arch Seraph / 聖大天使 / Archange / Erzengel -->
+      <JobCommandId>125</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>430</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -2319,6 +2393,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>74</Id> <!-- Squire / 見習い戦士 / Écuyer / Knappe -->
+      <JobCommandId>5</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2350,6 +2425,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>75</Id> <!-- Chemist / アイテム士 / Apothicaire / Chemikus -->
+      <JobCommandId>6</JobCommandId>
       <InnateAbilityId1>474</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2381,6 +2457,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>76</Id> <!-- Knight / ナイト / Chevalier / Ritter -->
+      <JobCommandId>7</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2412,6 +2489,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>77</Id> <!-- Archer / 弓使い / Archer / Schütze -->
+      <JobCommandId>8</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2443,6 +2521,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>78</Id> <!-- Monk / モンク / Moine / Mönch -->
+      <JobCommandId>9</JobCommandId>
       <InnateAbilityId1>472</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2474,6 +2553,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>79</Id> <!-- White Mage / 白魔道士 / Mage blanc / Weißmagier -->
+      <JobCommandId>10</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2505,6 +2585,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>80</Id> <!-- Black Mage / 黒魔道士 / Mage noir / Schwarzmagier -->
+      <JobCommandId>11</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2536,6 +2617,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>81</Id> <!-- Time Mage / 時魔道士 / Chronomancien / Zeitmagier -->
+      <JobCommandId>12</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2567,6 +2649,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>82</Id> <!-- Summoner / 召喚士 / Invocateur / Beschwörer -->
+      <JobCommandId>13</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2598,6 +2681,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>83</Id> <!-- Thief / シーフ / Voleur / Dieb -->
+      <JobCommandId>14</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2629,6 +2713,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>84</Id> <!-- Orator / 話術士 / Médiateur / Orator -->
+      <JobCommandId>15</JobCommandId>
       <InnateAbilityId1>473</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2660,6 +2745,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>85</Id> <!-- Mystic / 陰陽士 / Maître yin-yang / Mystiker -->
+      <JobCommandId>16</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2691,6 +2777,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>86</Id> <!-- Geomancer / 風水士 / Géomancien / Geomant -->
+      <JobCommandId>17</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2722,6 +2809,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>87</Id> <!-- Dragoon / 竜騎士 / Chevalier dragon / Dragoon -->
+      <JobCommandId>18</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2753,6 +2841,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>88</Id> <!-- Samurai / 侍 / Samouraï / Samurai -->
+      <JobCommandId>19</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2784,6 +2873,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>89</Id> <!-- Ninja / 忍者 / Ninja / Ninja -->
+      <JobCommandId>20</JobCommandId>
       <InnateAbilityId1>477</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2815,6 +2905,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>90</Id> <!-- Arithmetician / 算術士 / Arithméticien / Arithmetiker -->
+      <JobCommandId>21</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2846,6 +2937,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>91</Id> <!-- Bard / 吟遊詩人 / Barde / Barde -->
+      <JobCommandId>22</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2877,6 +2969,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>92</Id> <!-- Dancer / 踊り子 / Danseuse / Tänzerin -->
+      <JobCommandId>23</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -2908,6 +3001,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>93</Id> <!-- Mime / ものまね士 / Mime / Pantomime -->
+      <JobCommandId>24</JobCommandId>
       <InnateAbilityId1>469</InnateAbilityId1>
       <InnateAbilityId2>472</InnateAbilityId2>
       <InnateAbilityId3>478</InnateAbilityId3>
@@ -2939,6 +3033,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>94</Id> <!-- Chocobo / チョコボ / Chocobo / Chocobo -->
+      <JobCommandId>176</JobCommandId>
       <InnateAbilityId1>503</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -2970,6 +3065,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>95</Id> <!-- Black Chocobo / 黒チョコボ / Chocobo noir / Schwarzer Chocobo -->
+      <JobCommandId>177</JobCommandId>
       <InnateAbilityId1>503</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3001,6 +3097,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>96</Id> <!-- Red Chocobo / 赤チョコボ / Chocobo rouge / Roter Chocobo -->
+      <JobCommandId>178</JobCommandId>
       <InnateAbilityId1>503</InnateAbilityId1>
       <InnateAbilityId2>492</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3032,6 +3129,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>97</Id> <!-- Goblin / ゴブリン / Gobelin / Goblin -->
+      <JobCommandId>179</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3063,6 +3161,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>98</Id> <!-- Black Goblin / ブラックゴブリン / Gobelin noir / Schwarzer Goblin -->
+      <JobCommandId>180</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3094,6 +3193,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>99</Id> <!-- Gobbledygook / ガルブデガック / Gobeldygook / Gubeldubel -->
+      <JobCommandId>181</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3125,6 +3225,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>100</Id> <!-- Bomb / ボム / Bombo / Bomber -->
+      <JobCommandId>182</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>506</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3156,6 +3257,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>101</Id> <!-- Grenade / グレネイド / Grenade / Granate -->
+      <JobCommandId>183</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>506</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3187,6 +3289,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>102</Id> <!-- Exploder / イクスプロジャ / Explosif / Explosio -->
+      <JobCommandId>184</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>506</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3218,6 +3321,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>103</Id> <!-- Red Panther / レッドパンサー / Panthère rouge / Rotpanther -->
+      <JobCommandId>185</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>492</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3249,6 +3353,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>104</Id> <!-- Coeurl / クアール / Coeurl / Coeurl -->
+      <JobCommandId>186</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>492</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3280,6 +3385,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>105</Id> <!-- Vampire Cat / バンパイア / Coeurl vampire / Vampirkatze -->
+      <JobCommandId>187</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>492</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3311,6 +3417,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>106</Id> <!-- Piscodaemon / ピスコディーモン / Piscodémon / Pisco-Dämon -->
+      <JobCommandId>188</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>505</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3342,6 +3449,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>107</Id> <!-- Squidraken / スクイドラーケン / Pieuvraken / Vikalmar -->
+      <JobCommandId>189</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>505</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3373,6 +3481,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>108</Id> <!-- Mindflayer / マインドフレイア / Flagelleur mental / Gedankenschinder -->
+      <JobCommandId>190</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>505</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3404,6 +3513,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>109</Id> <!-- Skeleton / スケルトン / Homme-squelette / Skelett -->
+      <JobCommandId>191</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3435,6 +3545,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>110</Id> <!-- Bonesnatch / ボーンスナッチ / Désosseur / Knochenfang -->
+      <JobCommandId>192</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3466,6 +3577,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>111</Id> <!-- Skeletal Fiend / リビングボーン / Os-vivant / Gerippe -->
+      <JobCommandId>193</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3497,6 +3609,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>112</Id> <!-- Ghoul / グール / Goule / Ghul -->
+      <JobCommandId>194</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>506</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3528,6 +3641,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>113</Id> <!-- Ghast / ガスト / Blafard / Schreck -->
+      <JobCommandId>195</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>506</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3559,6 +3673,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>114</Id> <!-- Revenant / レブナント / Revenant / Wiedergänger -->
+      <JobCommandId>196</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>506</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3590,6 +3705,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>115</Id> <!-- Floating Eye / フロータイボール / Œil flottant / Schwebauge -->
+      <JobCommandId>197</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3621,6 +3737,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>116</Id> <!-- Ahriman / アーリマン / Ahriman / Ahriman -->
+      <JobCommandId>198</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3652,6 +3769,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>117</Id> <!-- Plague Horror / プレイグ / Œil pestilentiel / Teufelsauge -->
+      <JobCommandId>199</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3683,6 +3801,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>118</Id> <!-- Jura Aevis / ジュラエイビス / Juraeibis / Jura-Avis -->
+      <JobCommandId>200</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3714,6 +3833,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>119</Id> <!-- Steelhawk / スチールホーク / Faucon d'acier / Stahlfalke -->
+      <JobCommandId>201</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3745,6 +3865,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>120</Id> <!-- Cockatrice / コカトリス / Cocatrix / Cockatrice -->
+      <JobCommandId>202</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3776,6 +3897,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>121</Id> <!-- Pig / うりぼう / Marcassin / Schwein -->
+      <JobCommandId>203</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3807,6 +3929,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>122</Id> <!-- Swine / ポーキー / Porcelet / Schweinchen -->
+      <JobCommandId>204</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3838,6 +3961,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>123</Id> <!-- Wild Boar / ワイルドボー / Sanglier / Wildschwein -->
+      <JobCommandId>205</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3869,6 +3993,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>124</Id> <!-- Dryad / ウッドマン / Sylvanien / Dryade -->
+      <JobCommandId>206</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3900,6 +4025,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>125</Id> <!-- Treant / トレント / Tréant / Baumschrat -->
+      <JobCommandId>207</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3931,6 +4057,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>126</Id> <!-- Elder Treant / タイジユ / Ent / Baumweise -->
+      <JobCommandId>208</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3962,6 +4089,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>127</Id> <!-- Wisenkin / 牛鬼 / Bonnacon / Stiergötze -->
+      <JobCommandId>209</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -3993,6 +4121,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>128</Id> <!-- Minotaur / ミノタウロス / Minotaure / Minotaurus -->
+      <JobCommandId>210</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4024,6 +4153,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>129</Id> <!-- Sekhret / セクレト / Sekhret / Secreto -->
+      <JobCommandId>211</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4055,6 +4185,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>130</Id> <!-- Malboro / モルボル / Morbol / Morbol -->
+      <JobCommandId>212</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>502</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4086,6 +4217,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>131</Id> <!-- Ochu / オチュー / Otyugh / Ochu -->
+      <JobCommandId>213</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>502</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4117,6 +4249,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>132</Id> <!-- Greater Malboro / モルボルグレイト / Morbol ancien / Groß-Morbol -->
+      <JobCommandId>214</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>502</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4148,6 +4281,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>133</Id> <!-- Behemoth / ベヒーモス / Béhémoth / Behemoth -->
+      <JobCommandId>215</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4179,6 +4313,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>134</Id> <!-- Behemoth King / キングベヒーモス / Béhémoth roi / Behemoth-König -->
+      <JobCommandId>216</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4210,6 +4345,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>135</Id> <!-- Dark Behemoth / ダークベヒーモス / Béhémoth sombre / Schatten-Behemoth -->
+      <JobCommandId>217</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4241,6 +4377,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>136</Id> <!-- Dragon / ドラゴン / Dragon / Drache -->
+      <JobCommandId>218</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4272,6 +4409,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>137</Id> <!-- Blue Dragon / ブルードラゴン / Dragon bleu / Blauer Drache -->
+      <JobCommandId>219</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4303,6 +4441,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>138</Id> <!-- Red Dragon / レッドドラゴン / Dragon rouge / Roter Drache -->
+      <JobCommandId>220</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4334,6 +4473,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>139</Id> <!-- Hydra / ヒュドラ / Hydre / Hydra -->
+      <JobCommandId>221</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4365,6 +4505,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>140</Id> <!-- Greater Hydra / ハイドラ / Guivre / Ghidra -->
+      <JobCommandId>222</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4396,6 +4537,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>141</Id> <!-- Tiamat / ティアマット / Tiamat / Tiamat -->
+      <JobCommandId>223</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>507</InnateAbilityId2>
       <InnateAbilityId3>442</InnateAbilityId3>
@@ -4427,6 +4569,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>142</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4458,6 +4601,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>143</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4489,6 +4633,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>144</Id> <!-- Byblos / ビブロス / Byblos / Byblos -->
+      <JobCommandId>170</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>492</InnateAbilityId2>
       <InnateAbilityId3>471</InnateAbilityId3>
@@ -4520,6 +4665,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>145</Id> <!-- Automaton / 鉄巨人 / Géant de fer / Eisengigant -->
+      <JobCommandId>171</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>500</InnateAbilityId2>
       <InnateAbilityId3>501</InnateAbilityId3>
@@ -4551,6 +4697,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>146</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4582,6 +4729,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>147</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4613,6 +4761,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>148</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4644,6 +4793,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>149</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4675,6 +4825,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>150</Id> <!-- Reaver / アパンダ / Apanda / Avanda -->
+      <JobCommandId>172</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>492</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -4706,6 +4857,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>151</Id> <!-- Keeper of Darkness / 悪魔王 / Roi-démon / Dämonenkönig -->
+      <JobCommandId>173</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -4737,6 +4889,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>152</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4768,6 +4921,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>153</Id> <!-- Archaeodaemon / アルケオデーモン / Archéodémon / Archäodämon -->
+      <JobCommandId>174</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -4799,6 +4953,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>154</Id> <!-- Ultima Demon / アルテマデーモン / Ultimodémon / Ultima-Dämon -->
+      <JobCommandId>175</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>472</InnateAbilityId2>
       <InnateAbilityId3>482</InnateAbilityId3>
@@ -4830,6 +4985,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>155</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4861,6 +5017,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>156</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4892,6 +5049,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>157</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4923,6 +5081,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>158</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4954,6 +5113,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>159</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -4985,6 +5145,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>160</Id>
+      <JobCommandId>224</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5016,6 +5177,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>161</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5047,6 +5209,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>162</Id>
+      <JobCommandId>225</JobCommandId>
       <InnateAbilityId1>475</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5078,6 +5241,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>163</Id>
+      <JobCommandId>226</JobCommandId>
       <InnateAbilityId1>471</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5109,6 +5273,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>164</Id>
+      <JobCommandId>0</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5140,6 +5305,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>165</Id>
+      <JobCommandId>39</JobCommandId>
       <InnateAbilityId1>466</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5171,6 +5337,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>166</Id>
+      <JobCommandId>69</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5202,6 +5369,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>167</Id>
+      <JobCommandId>42</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5233,6 +5401,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>168</Id>
+      <JobCommandId>44</JobCommandId>
       <InnateAbilityId1>442</InnateAbilityId1>
       <InnateAbilityId2>465</InnateAbilityId2>
       <InnateAbilityId3>467</InnateAbilityId3>
@@ -5264,6 +5433,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>169</Id> <!-- Red Panther / レッドパンサー / Panthère rouge / Rotpanther -->
+      <JobCommandId>185</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>492</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5295,6 +5465,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>170</Id> <!-- Goblin / ゴブリン / Gobelin / Goblin -->
+      <JobCommandId>179</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5326,6 +5497,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>171</Id> <!-- Black Goblin / ブラックゴブリン / Gobelin noir / Schwarzer Goblin -->
+      <JobCommandId>180</JobCommandId>
       <InnateAbilityId1>0</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5357,6 +5529,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>172</Id> <!-- Bomb / ボム / Bombo / Bomber -->
+      <JobCommandId>182</JobCommandId>
       <InnateAbilityId1>497</InnateAbilityId1>
       <InnateAbilityId2>506</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>
@@ -5388,6 +5561,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
     </Job>
     <Job>
       <Id>173</Id> <!-- Chocobo / チョコボ / Chocobo / Chocobo -->
+      <JobCommandId>176</JobCommandId>
       <InnateAbilityId1>503</InnateAbilityId1>
       <InnateAbilityId2>0</InnateAbilityId2>
       <InnateAbilityId3>0</InnateAbilityId3>

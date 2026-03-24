@@ -14,7 +14,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Structures;
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public struct JOB_DATA
 {
-    public byte SkillsetId { get; set; }
+    public byte JobCommandId { get; set; }
     public ushort InnateAbilityId1 { get; set; }
     public ushort InnateAbilityId2 { get; set; }
     public ushort InnateAbilityId3 { get; set; }
