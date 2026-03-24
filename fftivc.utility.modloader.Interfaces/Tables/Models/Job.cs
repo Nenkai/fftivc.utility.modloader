@@ -10,7 +10,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 public class JobTable : TableBase<Job>, IVersionableModel
 {
     /// <inheritdoc/>
-    public uint Version { get; set; } = 1;
+    public uint Version { get; set; } = 2;
 }
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
