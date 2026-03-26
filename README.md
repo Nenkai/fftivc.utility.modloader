@@ -21,3 +21,9 @@ Refer to [**this page**](https://nenkai.github.io/ffxvi-modding/modding/creating
 ## Building
 
 You may need to remove the `dstorage.dll` files in `runtimes` folders after compiling, otherwise could cause conflicts with the game's dstorage.dll
+
+## Contributions
+
+Contributions are appreciated. The code base should be relatively modular in terms of adding support for new hardcoded tables.
+
+Any edits made to the game's code that may enable further moddability for mods in general are well appreciated. If this code targets the engine rather than the logic, consider contributing it to [FaithFramework](https://github.com/Nenkai/FaithFramework) instead.
