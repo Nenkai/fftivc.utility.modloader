@@ -10,7 +10,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 public class JobTable : TableBase<Job>, IVersionableModel
 {
     /// <inheritdoc/>
-    public uint Version { get; set; } = 1;
+    public uint Version { get; set; } = 2;
 }
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
@@ -25,6 +25,7 @@ public class Job : DiffableModelBase<Job>, IDiffableModel<Job>, IIdentifiableMod
     /// </summary>
     public int Id { get; set; }
 
+    public byte? JobCommandId { get; set; }
     public ushort? InnateAbilityId1 { get; set; }
     public ushort? InnateAbilityId2 { get; set; }
     public ushort? InnateAbilityId3 { get; set; }
@@ -56,6 +57,7 @@ public class Job : DiffableModelBase<Job>, IDiffableModel<Job>, IIdentifiableMod
 
     public static Dictionary<string, DiffablePropertyItem<Job>> PropertyMap { get; } = new()
     {
+        [nameof(JobCommandId)] = new DiffablePropertyItem<Job, byte?>(nameof(JobCommandId), x => x.JobCommandId, (x, v) => x.JobCommandId = v),
         [nameof(InnateAbilityId1)] = new DiffablePropertyItem<Job, ushort?>(nameof(InnateAbilityId1), x => x.InnateAbilityId1, (x, v) => x.InnateAbilityId1 = v),
         [nameof(InnateAbilityId2)] = new DiffablePropertyItem<Job, ushort?>(nameof(InnateAbilityId2), x => x.InnateAbilityId2, (x, v) => x.InnateAbilityId2 = v),
         [nameof(InnateAbilityId3)] = new DiffablePropertyItem<Job, ushort?>(nameof(InnateAbilityId3), x => x.InnateAbilityId3, (x, v) => x.InnateAbilityId3 = v),
@@ -91,6 +93,7 @@ public class Job : DiffableModelBase<Job>, IDiffableModel<Job>, IIdentifiableMod
         var job = new Job()
         {
             Id = id,
+            JobCommandId = @struct.JobCommandId,
             InnateAbilityId1 = @struct.InnateAbilityId1,
             InnateAbilityId2 = @struct.InnateAbilityId2,
             InnateAbilityId3 = @struct.InnateAbilityId3,
@@ -137,6 +140,7 @@ public class Job : DiffableModelBase<Job>, IDiffableModel<Job>, IIdentifiableMod
         return new Job()
         {
             Id = Id,
+            JobCommandId = JobCommandId,
             InnateAbilityId1 = InnateAbilityId1,
             InnateAbilityId2 = InnateAbilityId2,
             InnateAbilityId3 = InnateAbilityId3,
