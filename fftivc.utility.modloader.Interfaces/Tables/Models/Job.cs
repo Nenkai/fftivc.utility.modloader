@@ -9,6 +9,7 @@ namespace fftivc.utility.modloader.Interfaces.Tables.Models;
 /// </summary>
 public class JobTable : TableBase<Job>, IVersionableModel
 {
+    // Version 2 added JobCommandId.
     /// <inheritdoc/>
     public uint Version { get; set; } = 2;
 }
