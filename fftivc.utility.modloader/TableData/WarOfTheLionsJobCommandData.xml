@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This table file is used to overwrite the game's hardcoded job command table.
+
+Refer to: https://ffhacktics.com/wiki/Skillsets
+This table links to nex table 'JobCommand'. Some properties edited here may be overriden by the nex table.
+
+You can use this file as a base to edit Item data in your mod.
+Simply copy this file to your mod's folder under FFTIVC/tables/<enhanced/classic/combined>/WarOfTheLionsJobCommandData.xml.
+
+IMPORTANT: You are free to remove everything and **SHOULD ONLY LEAVE ELEMENTS THAT YOU HAVE EDITED** to avoid conflicts between mods.
+Only properties that are actually included in this file will be tracked as edited. Properties not edited will inherit their
+value from the original table or, from other mods making changes depending on mod order.
+
+IMPORTANT 2: The Id property must NOT be removed for nodes that you're leaving here!
+
+IMPORTANT 3: Id must be 224, 225, or 226 (0xE0-0xE2). This is a 3-entry extension of
+JobCommandData, not a standalone table - see FFTOWarOfTheLionsJobCommandDataManager for why.
+
+IMPORTANT 4: You do not need to worry about setting ExtendAbilityIdFlagBits or ExtendReactionSupportMovementIdFlagBits.
+The loader will fill these according to ids. You're free to use ids 0-512 directly.
+
+For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader/blob/master/fftivc.utility.modloader.Interfaces/Tables/Structures/JOB_COMMAND_DATA.cs
+-->
+<WarOfTheLionsJobCommandTable>
+  <Version>1</Version>
+  <Entries>
+    <JobCommand>
+      <Id>224</Id>
+	  <!--  Darkness  -->
+      <ExtendAbilityIdFlagBits>ExtendedAbility5</ExtendAbilityIdFlagBits>
+      <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
+      <AbilityId1>45</AbilityId1>  <!-- classic: Sanguine Sword -->
+      <AbilityId2>184</AbilityId2>  <!-- classic: Infernal Strike -->
+      <AbilityId3>219</AbilityId3>  <!-- classic: Crushing Blow -->
+      <AbilityId4>220</AbilityId4>  <!-- classic: Abyssal Blade -->
+      <AbilityId5>357</AbilityId5>  <!-- classic: Unholy Sacrifice -->
+      <AbilityId6>0</AbilityId6>
+      <AbilityId7>0</AbilityId7>
+      <AbilityId8>0</AbilityId8>
+      <AbilityId9>0</AbilityId9>
+      <AbilityId10>0</AbilityId10>
+      <AbilityId11>0</AbilityId11>
+      <AbilityId12>0</AbilityId12>
+      <AbilityId13>0</AbilityId13>
+      <AbilityId14>0</AbilityId14>
+      <AbilityId15>0</AbilityId15>
+      <AbilityId16>0</AbilityId16>
+      <ReactionSupportMovementId1>484</ReactionSupportMovementId1>  <!-- classic: HP Boost -->
+      <ReactionSupportMovementId2>485</ReactionSupportMovementId2>  <!-- classic: Vehemence -->
+      <ReactionSupportMovementId3>488</ReactionSupportMovementId3>  <!-- classic: Move +3 -->
+      <ReactionSupportMovementId4>491</ReactionSupportMovementId4>  <!-- classic: Jump +3 -->
+      <ReactionSupportMovementId5>0</ReactionSupportMovementId5>
+      <ReactionSupportMovementId6>0</ReactionSupportMovementId6>
+    </JobCommand>
+    <JobCommand>
+      <Id>225</Id>
+	  <!--  Piracy  -->
+      <ExtendAbilityIdFlagBits>ExtendedAbility4, ExtendedAbility9, ExtendedAbility10, ExtendedAbility11, ExtendedAbility12, ExtendedAbility13, ExtendedAbility14, ExtendedAbility15, ExtendedAbility16</ExtendAbilityIdFlagBits>
+      <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
+      <AbilityId1>213</AbilityId1>   <!-- classic: Leg Shot -->
+      <AbilityId2>214</AbilityId2>   <!-- classic: Arm Shot -->
+      <AbilityId3>215</AbilityId3>   <!-- classic: Seal Evil -->
+      <AbilityId4>358</AbilityId4>   <!-- classic: Barrage -->
+      <AbilityId5>0</AbilityId5>   <!-- classic: Nothing -->
+      <AbilityId6>0</AbilityId6>   <!-- classic: Nothing -->
+      <AbilityId7>0</AbilityId7>   <!-- classic: Nothing -->
+      <AbilityId8>0</AbilityId8>   <!-- classic: Nothing -->
+      <AbilityId9>359</AbilityId9>   <!-- classic: Plunder Gil -->
+      <AbilityId10>360</AbilityId10> <!-- classic: Plunder Heart -->
+      <AbilityId11>361</AbilityId11> <!-- classic: Plunder Helm -->
+      <AbilityId12>362</AbilityId12> <!-- classic: Plunder Armor -->
+      <AbilityId13>363</AbilityId13> <!-- classic: Plunder Shield -->
+      <AbilityId14>364</AbilityId14> <!-- classic: Plunder Weapon -->
+      <AbilityId15>365</AbilityId15> <!-- classic: Plunder Accessory -->
+      <AbilityId16>366</AbilityId16> <!-- classic: Plunder EXP -->
+      <ReactionSupportMovementId1>436</ReactionSupportMovementId1>  <!-- classic: Counter Tackle -->
+      <ReactionSupportMovementId2>460</ReactionSupportMovementId2>  <!-- classic: Equip Axes -->
+      <ReactionSupportMovementId3>478</ReactionSupportMovementId3>  <!-- classic: Beastmaster -->
+      <ReactionSupportMovementId4>479</ReactionSupportMovementId4>  <!-- classic: Defend -->
+      <ReactionSupportMovementId5>463</ReactionSupportMovementId5>  <!-- classic: JP Boost -->
+      <ReactionSupportMovementId6>486</ReactionSupportMovementId6>  <!-- classic: Move +1 -->
+    </JobCommand>
+    <JobCommand>
+      <Id>226</Id>
+	  <!--  Huntcraft  -->
+      <ExtendAbilityIdFlagBits>0</ExtendAbilityIdFlagBits>
+      <ExtendReactionSupportMovementIdFlagBits>ExtendRSMId6, ExtendRSMId5, ExtendRSMId4, ExtendRSMId3, ExtendRSMId2, ExtendRSMId1</ExtendReactionSupportMovementIdFlagBits>
+      <AbilityId1>146</AbilityId1>  <!-- classic: Focus -->
+      <AbilityId2>147</AbilityId2>  <!-- classic: Rush -->
+      <AbilityId3>148</AbilityId3>  <!-- classic: Stone -->
+      <AbilityId4>149</AbilityId4>  <!-- classic: Salve -->
+      <AbilityId5>150</AbilityId5>  <!-- classic: Tailwind -->
+      <AbilityId6>152</AbilityId6>  <!-- classic: Chant -->
+      <AbilityId7>151</AbilityId7>  <!-- classic: Steel -->
+      <AbilityId8>153</AbilityId8>  <!-- classic: Shout -->
+      <AbilityId9>154</AbilityId9>  <!-- classic: Ultima -->
+      <AbilityId10>0</AbilityId10>
+      <AbilityId11>0</AbilityId11>
+      <AbilityId12>0</AbilityId12>
+      <AbilityId13>0</AbilityId13>
+      <AbilityId14>0</AbilityId14>
+      <AbilityId15>0</AbilityId15>
+      <AbilityId16>0</AbilityId16>
+      <ReactionSupportMovementId1>436</ReactionSupportMovementId1>  <!-- classic: Counter Tackle -->
+      <ReactionSupportMovementId2>460</ReactionSupportMovementId2>  <!-- classic: Equip Axes -->
+      <ReactionSupportMovementId3>478</ReactionSupportMovementId3>  <!-- classic: Beastmaster -->
+      <ReactionSupportMovementId4>479</ReactionSupportMovementId4>  <!-- classic: Defend -->
+      <ReactionSupportMovementId5>463</ReactionSupportMovementId5>  <!-- classic: JP Boost -->
+      <ReactionSupportMovementId6>486</ReactionSupportMovementId6>  <!-- classic: Move +1 -->
+    </JobCommand>
+  </Entries>
+</WarOfTheLionsJobCommandTable>

@@ -49,6 +49,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         typeof(IFFTOItemConsumableDataManager),
         typeof(IFFTOItemShopsDataManager),
         typeof(IFFTOMonsterJobCommandDataManager),
+        typeof(IFFTOWarOfTheLionsJobCommandDataManager),
         typeof(IFFTOMapTrapFormationDataManager),
         typeof(IFFTOJobCommandDataManager),
         typeof(IFFTOJobDataManager),
@@ -211,6 +212,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemConsumableDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOItemShopsDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMonsterJobCommandDataManager>());
+        _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOWarOfTheLionsJobCommandDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOMapTrapFormationDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobCommandDataManager>());
         _modLoader.AddOrReplaceController(_owner, _services.GetRequiredService<IFFTOJobDataManager>());
@@ -268,6 +270,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddGameTableSingleton<IFFTOItemConsumableDataManager, FFTOItemConsumableDataManager>()
             .AddGameTableSingleton<IFFTOItemShopsDataManager, FFTOItemShopsDataManager>()
             .AddGameTableSingleton<IFFTOMonsterJobCommandDataManager, FFTOMonsterJobCommandDataManager>()
+            .AddGameTableSingleton<IFFTOWarOfTheLionsJobCommandDataManager, FFTOWarOfTheLionsJobCommandDataManager>()
             .AddGameTableSingleton<IFFTOMapTrapFormationDataManager, FFTOMapTrapFormationDataManager>()
             .AddGameTableSingleton<IFFTOJobCommandDataManager, FFTOJobCommandDataManager>()
             .AddGameTableSingleton<IFFTOJobDataManager, FFTOJobDataManager>()
