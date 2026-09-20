@@ -80,6 +80,8 @@ public class FFTOResourceManagerHooks : IFFTOCoreHook
         * 
         * Switching to japanese means modded.ja.pac should be loaded, but it won't be, because ui.en.nxd was loaded as part of 0004.en.pac
         * so the game will try to load 0004.ja.pac...
+        * 
+        * It will however work after a restart, since the language would have been saved into the save.
         * */
         if (File.Exists(Path.Combine(_dataDir, "enhanced", $"{FFTOModPackManager.MODDED_PACK_NAME}.pac")) ||
             File.Exists(Path.Combine(_dataDir, "classic", $"{FFTOModPackManager.MODDED_PACK_NAME}.pac")))
