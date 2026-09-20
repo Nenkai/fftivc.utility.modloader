@@ -1,14 +1,18 @@
-﻿using System.Diagnostics;
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -22,31 +26,20 @@ public class FFTOItemConsumableDataManager : FFTOTableManagerBase<ItemConsumable
 
     private FixedArrayPtr<ITEM_CONSUMABLE_DATA> _itemConsumableDataTablePointer;
 
-    public FFTOItemConsumableDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+    public FFTOItemConsumableDataManager(Config configuration, IScanManager scanManager, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<ItemConsumableTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
         // ItemConsumable secondary data table - 0-13
-        _startupScanner.AddMainModuleScan("48 03 00 48 07 00 48 0F 00 49 02 00 49 05 00 4A 00 00 38 00 01 38 00 02", e =>
+        _scanManager.AddScan("ItemCategoryToDataTypeDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_CONSUMABLE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemConsumableDataTablePointer = new FixedArrayPtr<ITEM_CONSUMABLE_DATA>((ITEM_CONSUMABLE_DATA*)tableAddress, NumEntries);
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(ITEM_CONSUMABLE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemConsumableDataTablePointer = new FixedArrayPtr<ITEM_CONSUMABLE_DATA>((ITEM_CONSUMABLE_DATA*)addr, NumEntries);
 
             for (int i = 0; i < _itemConsumableDataTablePointer.Count; i++)
             {

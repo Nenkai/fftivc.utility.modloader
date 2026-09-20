@@ -12,6 +12,9 @@ using fftivc.utility.modloader.Template;
 
 using Microsoft.Extensions.DependencyInjection;
 
+using NenTools.Reloaded.ScanManager;
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
@@ -27,6 +30,7 @@ namespace fftivc.utility.modloader;
 public partial class Mod : ModBase, IExports // <= Do not Remove.
 {
     public Type[] GetTypes() => [
+        typeof(IScanManager),
         typeof(IFFTOModPackManager),
         // Tables
         typeof(IFFTOAbilityDataManager),
@@ -104,6 +108,8 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
 
     private IServiceProvider _services;
 
+    private IScanManager _scanManager;
+
     private string _appLocation;
     private string _appDir;
     private string _tempDir;
@@ -139,6 +145,9 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
 
         _services = BuildServiceCollection();
 
+        _scanManager = _services.GetRequiredService<IScanManager>();
+        _scanManager.InitializeScans(Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "Signatures"), _modConfig.ModId);
+
         _appLocation = _modLoader.GetAppConfig().AppLocation;
         _appDir = Path.GetDirectoryName(_appLocation)!;
         _tempDir = Path.Combine(_modLoader.GetDirectoryForModId(_modConfig.ModId), "staging");
@@ -146,13 +155,7 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         CheckSteamAPIDll();
         GetGameVersion();
 
-        IEnumerable<IFFTOCoreHook> coreHooks = _services.GetServices<IFFTOCoreHook>();
-        foreach (var hook in coreHooks)
-            hook.Install();
-
-        _tableManagers = _services.GetServices<IFFTOTableManager>();
-        foreach (var tableManager in _tableManagers)
-            tableManager.Init();
+        SetupHooks();
 
         if (IsRunningUnpacked())
         {
@@ -184,9 +187,33 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
         }
 
         RegisterTableManagersAsR2Controllers();
+
+        _modLoader.AddOrReplaceController<IScanManager>(_owner, _scanManager);
         _modLoader.AddOrReplaceController<IFFTOModPackManager>(_owner, _modPackManager);
+
         _modLoader.ModLoading += ModLoading;
         _modLoader.OnModLoaderInitialized += OnAllModsLoaded;
+    }
+
+    private void SetupHooks()
+    {
+        // Denuvo was removed on 17/09/2026, but they did not change the version number (v1.5.2)
+        // They did not bump the version, merely just uploaded the unprotected executable
+        // So the timestamp is the same as v1.5.2, 20/07/2026
+        // We check for the exe file size for whether denuvo is applied
+
+        string signatureGroup = "ffto";
+        var exeSize = new FileInfo(_modLoader.GetAppConfig().AppLocation).Length;
+        if (exeSize >= 0x6400000) // >= 100 MB
+            signatureGroup = "ffto_denuvo";
+
+        IEnumerable<IFFTOCoreHook> coreHooks = _services.GetServices<IFFTOCoreHook>();
+        foreach (var hook in coreHooks)
+            hook.Install(signatureGroup);
+
+        _tableManagers = _services.GetServices<IFFTOTableManager>();
+        foreach (var tableManager in _tableManagers)
+            tableManager.Init(signatureGroup);
     }
 
     private void RegisterTableManagersAsR2Controllers()
@@ -234,17 +261,21 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddSingleton(_logger)
 
             // Stuff relevant to us
+            .AddSingleton<IScanManager, ScanManager>()
             .AddSingleton<FFTOModPackManager>()
             .AddSingleton<FFTPackFileList>()
 
             // Hooks
-            .AddSingleton<LanguageManagerHooks>()
+            .AddSingleton<LanguageManagerHooks>().AddSingleton<IFFTOCoreHook>(sp => sp.GetRequiredService<LanguageManagerHooks>())
             .AddSingleton<IFFTOCoreHook, GameModeTransitionHooks>()
             .AddSingleton<IFFTOCoreHook, AntiAntiDebugHooks>()
             .AddSingleton<IFFTOCoreHook, ExceptionHandlerHooks>()
             .AddSingleton<IFFTOCoreHook, ResourceManagerHooks>()
             .AddSingleton<IFFTOCoreHook, WindowHooks>()
-            .AddSingleton<IFFTOCoreHook>(sp => sp.GetRequiredService<LanguageManagerHooks>())
+            .AddSingleton<FFTOResourceManagerHooks>().AddSingleton<IFFTOCoreHook>(sp => sp.GetRequiredService<FFTOResourceManagerHooks>())
+            .AddSingleton<FFTPackHooks>().AddSingleton<IFFTOCoreHook>(sp => sp.GetRequiredService<FFTPackHooks>())
+            .AddSingleton<G2DHooks>().AddSingleton<IFFTOCoreHook>(sp => sp.GetRequiredService<G2DHooks>())
+
 
             // Table managers
             .AddTransient(typeof(IModelSerializer<>), typeof(ModelSerializer<>))
@@ -276,10 +307,6 @@ public partial class Mod : ModBase, IExports // <= Do not Remove.
             .AddGameTableSingleton<IFFTOCommandTypeDataManager, FFTOCommandTypeDataManager>()
             .AddGameTableSingleton<IFFTOSpawnDataManager, FFTOSpawnDataManager>()
             .AddGameTableSingleton<IFFTOSpawnVarianceDataManager, FFTOSpawnVarianceDataManager>()
-
-            .AddSingleton<FFTOResourceManagerHooks>()
-            .AddSingleton<FFTPackHooks>()
-            .AddSingleton<G2DHooks>()
 
             // File overrides
             .AddSingleton<IModdedFileOverrideStrategy, FFTPackFileOverrideStrategy>()

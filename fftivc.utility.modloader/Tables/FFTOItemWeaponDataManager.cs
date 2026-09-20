@@ -1,14 +1,18 @@
-﻿using System.Diagnostics;
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -22,31 +26,20 @@ public class FFTOItemWeaponDataManager : FFTOTableManagerBase<ItemWeaponTable, I
 
     private FixedArrayPtr<ITEM_WEAPON_DATA> _itemWeaponDataTablePointer;
 
-    public FFTOItemWeaponDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+    public FFTOItemWeaponDataManager(Config configuration, IScanManager scanManager, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<ItemWeaponTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
         // Weapon secondary data table - 0-127
-        _startupScanner.AddMainModuleScan("01 88 01 FF 00 00 00 00 01 8A 01 FF 03 05 00 00 01 8A 01 FF 04 05 00 00 01 8A 01 FF 04 05 00 09", e =>
-        {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_WEAPON_DATA) * 128, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemWeaponDataTablePointer = new FixedArrayPtr<ITEM_WEAPON_DATA>((ITEM_WEAPON_DATA*)tableAddress, 128);
+        _scanManager.AddScan("ItemWeaponDataTable", signatureGroup, addr =>
+         {
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(ITEM_WEAPON_DATA) * 128, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemWeaponDataTablePointer = new FixedArrayPtr<ITEM_WEAPON_DATA>((ITEM_WEAPON_DATA*)addr, 128);
 
             for (int i = 0; i < _itemWeaponDataTablePointer.Count; i++)
             {

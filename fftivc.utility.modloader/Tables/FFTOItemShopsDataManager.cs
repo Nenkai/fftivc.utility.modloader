@@ -1,14 +1,18 @@
-﻿using System.Diagnostics;
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -22,30 +26,19 @@ public class FFTOItemShopsDataManager : FFTOTableManagerBase<ItemShopsTable, Ite
 
     private FixedArrayPtr<ITEM_SHOPS_DATA> _itemShopsDataTablePointer;
 
-    public FFTOItemShopsDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+    public FFTOItemShopsDataManager(Config configuration, IScanManager scanManager, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<ItemShopsTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("00 00 FE 01 FE 01 FE 01 FE 01 FE 01 FE 01 FE 01 FE 01 FE 01 00 01 00 4B 00 4B 00 4B 00 4B 00 4B 00 01", e =>
+        _scanManager.AddScan("ItemShopsDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find ItemShopsData table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found ItemShopsData table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_SHOPS_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemShopsDataTablePointer = new FixedArrayPtr<ITEM_SHOPS_DATA>((ITEM_SHOPS_DATA*)tableAddress, NumEntries);
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(ITEM_SHOPS_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemShopsDataTablePointer = new FixedArrayPtr<ITEM_SHOPS_DATA>((ITEM_SHOPS_DATA*)addr, NumEntries);
             
             for (int i = 0; i < _itemShopsDataTablePointer.Count; i++)
             {

@@ -20,7 +20,7 @@ public interface IModdedFileOverrideStrategy
     public void Initialize(FFTOGameMode gameMode);
 
     /// <summary>
-    /// Returns whether the specified filename should is subject to this overriding strategy.
+    /// Returns whether the specified filename is subject to this overriding strategy.
     /// </summary>
     /// <param name="gamePath"></param>
     /// <returns></returns>

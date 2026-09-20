@@ -62,6 +62,7 @@
 	<PackageReference Include="Reloaded.Mod.Loader.IO" Version="2.5.0" />
     <PackageReference Include="Reloaded.SharedLib.Hooks" Version="1.9.0" />
     <PackageReference Include="YAXLib" Version="4.3.0" />
+    <PackageReference Include="NenTools.Reloaded.ScanManager" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,6 +75,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Preview.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Signatures\ffto.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Signatures\ffto_denuvo.ini">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TableData\AbilityActionData.xml">

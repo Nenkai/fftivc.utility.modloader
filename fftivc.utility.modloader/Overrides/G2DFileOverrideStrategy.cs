@@ -44,7 +44,7 @@ internal class G2DFileOverrideStrategy : IModdedFileOverrideStrategy
     public void Initialize(FFTOGameMode gameMode)
     {
         _currentGameMode = gameMode;
-        _g2dHooks.Install(OnFetchG2DFile);
+        _g2dHooks.SetCallback(OnFetchG2DFile);
     }
 
     public bool Matches(string fileName)

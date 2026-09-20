@@ -1,5 +1,7 @@
 ﻿using fftivc.utility.modloader.Configuration;
 
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
@@ -19,11 +21,11 @@ using static fftivc.utility.modloader.Hooks.G2DHooks;
 
 namespace fftivc.utility.modloader.Hooks;
 
-public class G2DHooks
+public class G2DHooks : IFFTOCoreHook
 {
     private readonly ILogger _logger;
     private readonly IModConfig _modConfig;
-    private readonly IStartupScanner? _startupScanner;
+    private readonly IScanManager? _scanManager;
     private readonly IReloadedHooks? _hooks;
     private readonly Config _config;
 
@@ -50,46 +52,28 @@ public class G2DHooks
 
     private unsafe Dictionary<int, nint> _cachedEntryPointers = [];
 
-    public G2DHooks(Config config, IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
+    public G2DHooks(Config config, IReloadedHooks hooks, IScanManager scanManager, IModConfig modConfig, ILogger logger)
     {
         _config = config;
         _logger = logger;
         _modConfig = modConfig;
 
-        _startupScanner = startupScanner;
+        _scanManager = scanManager;
         _hooks = hooks;
     }
 
     /// <summary>
     /// Hooks the functions that specify which packs to load, to also load our own.
     /// </summary>
-    public unsafe void Install(OnRequestDecodeG2DDelegate onRequestDecodeCallback)
+    public unsafe void Install(string signatureGroup)
     {
-        ArgumentNullException.ThrowIfNull(onRequestDecodeCallback, nameof(onRequestDecodeCallback));
-
-        _onRequestDecodeCb = onRequestDecodeCallback;
-
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
         // Enhanced, denuvo wrecked it a bit there
-        _startupScanner!.AddMainModuleScan("40 53 56 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 31 E0 48 89 84 24 ?? ?? ?? ?? 89 D7", (e) =>
-        {
-            if (e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Hooked CFILE_DAT::Decode for g2d.dat @ 0x{processAddress + e.Offset:X}");
-                DecodeHook = _hooks!.CreateHook<DecodeDelegate>(DecodeImpl, processAddress + e.Offset).Activate();
-            }
-        });
+        _scanManager!.AddScan("CFILE_DAT__Decode", signatureGroup, (addr) =>
+            DecodeHook = _hooks!.CreateHook<DecodeDelegate>(DecodeImpl, addr).Activate());
 
         // Classic, less messed up
-        _startupScanner.AddMainModuleScan("40 53 56 57 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 84 24 ?? ?? ?? ?? 8B FA 49 8B F0", (e) =>
-        {
-            if (e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Hooked CFILE_DAT::Decode for g2d.dat @ 0x{processAddress + e.Offset:X}");
-                DecodeHook = _hooks!.CreateHook<DecodeDelegate>(DecodeImpl, processAddress + e.Offset).Activate();
-            }
-        });
+        _scanManager.AddScan("CFILE_DAT__DecodeAlt", signatureGroup, (addr) =>
+            DecodeHook = _hooks!.CreateHook<DecodeDelegate>(DecodeImpl, addr).Activate());
 
         /*
         _startupScanner.AddMainModuleScan("E9 ?? ?? ?? ?? 21 B3", (e) =>
@@ -103,23 +87,19 @@ public class G2DHooks
         */
 
         // Hook CFILE_DAT::Load. It's responsible for initializing/malloc'ing the buffer which may be used for decoding.
-        _startupScanner.AddMainModuleScan("48 89 5C 24 ?? 48 89 6C 24 ?? 48 89 74 24 ?? 57 41 56 41 57 48 83 EC ?? 44 89 C0", (e) =>
-        {
-            if (e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Hooked CFILE_DAT::Load for g2d.dat @ 0x{processAddress + e.Offset:X}");
-                LoadHook = _hooks!.CreateHook<LoadDelegate>(LoadImpl, processAddress + e.Offset).Activate();
-            }
-        });
+        _scanManager.AddScan("CFILE_DAT__Load", signatureGroup, (addr) =>
+            LoadHook = _hooks!.CreateHook<LoadDelegate>(LoadImpl, addr).Activate());
 
         // Hook CFILE_DAT::Unload, so that the game doesn't free a buffer that belongs to us.
-        _startupScanner.AddMainModuleScan("40 53 48 83 EC ?? 48 89 CB 48 8B 49 ?? 48 85 C9 74 ?? 45 31 C0 31 D2 E8 ?? ?? ?? ?? 48 83 63 ?? ?? 48 83 63", (e) =>
-        {
-            if (e.Found)
-            {
-                UnloadHook = _hooks!.CreateHook<UnloadDelegate>(UnloadImpl, processAddress + e.Offset).Activate();
-            }
-        });
+        _scanManager.AddScan("CFILE_DAT__Unload", signatureGroup, (addr) =>
+            UnloadHook = _hooks!.CreateHook<UnloadDelegate>(UnloadImpl, addr).Activate());
+    }
+
+    public void SetCallback(OnRequestDecodeG2DDelegate onRequestDecodeCallback)
+    {
+        ArgumentNullException.ThrowIfNull(onRequestDecodeCallback, nameof(onRequestDecodeCallback));
+
+        _onRequestDecodeCb = onRequestDecodeCallback;
     }
 
     private unsafe int DecodeImpl(CFILE_DAT* @this, int fileIndex, nint outputPointer)

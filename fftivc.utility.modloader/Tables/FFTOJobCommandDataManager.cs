@@ -5,6 +5,8 @@ using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
 
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
@@ -36,19 +38,16 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommandTable, J
     private FixedArrayPtr<JOB_COMMAND_DATA> _jobCommandTablePointer;
     private FixedArrayPtr<JOB_COMMAND_DATA> _warOfTheLionsTablePointer;
 
-    public FFTOJobCommandDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+    public FFTOJobCommandDataManager(Config configuration, IModConfig modConfig, ILogger logger, IScanManager scanManager, IModLoader modLoader,
         IModelSerializer<JobCommandTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-
         // Two tables - one that represents id 0-176, the other represents 224-226
-
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
         _originalTable = new JobCommandTable();
         for (int i = 0; i < NumEntries + WotlNumEntries; i++)
         {
@@ -57,16 +56,9 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommandTable, J
             _moddedTable.Entries.Add(new JobCommand { Id = id });
         }
 
-        _startupScanner.AddMainModuleScan("00 00 FC 92 93 94 95 00 00 00 00 00 00 00 00 00 00 00 00", e =>
+        _scanManager.AddScan("JobCommandDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint startTableOffset = (nuint)processAddress + (nuint)(e.Offset - (Unsafe.SizeOf<JOB_COMMAND_DATA>() * 5));
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{startTableOffset:X}");
+            nuint startTableOffset = (nuint)(addr - (Unsafe.SizeOf<JOB_COMMAND_DATA>() * 5));
 
             Memory.Instance.ChangeProtection(startTableOffset, sizeof(JOB_COMMAND_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _jobCommandTablePointer = new FixedArrayPtr<JOB_COMMAND_DATA>((JOB_COMMAND_DATA*)startTableOffset, NumEntries);
@@ -77,26 +69,17 @@ public class FFTOJobCommandDataManager : FFTOTableManagerBase<JobCommandTable, J
                 _originalTable.Entries[i] = jobCommand;
                 _moddedTable.Entries[i] = jobCommand.Clone();
             }
+        });
 
 #if DEBUG
             SaveToFolder();
 #endif
-        });
 
         // Darkness/Piracy/Huntcraft (224-226)
-        _startupScanner.AddMainModuleScan("08 00 F0 2D B8 DB DC 65 00 00 00 00", e =>
+        _scanManager.AddScan("JobCommandDataTableWOTL", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find War of the Lions job commands (224-226)! Dark Knight/Sky Pirate/Game Hunter skillsets won't be moddable, but the rest of {TableFileName} is unaffected.", _logger.ColorRed);
-                return;
-            }
-
-            nuint startTableOffset = (nuint)processAddress + (nuint)e.Offset;
-            _logger.WriteLine($"[{_modConfig.ModId}] Found War of the Lions job commands @ 0x{startTableOffset:X}");
-
-            Memory.Instance.ChangeProtection(startTableOffset, sizeof(JOB_COMMAND_DATA) * WotlNumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _warOfTheLionsTablePointer = new FixedArrayPtr<JOB_COMMAND_DATA>((JOB_COMMAND_DATA*)startTableOffset, WotlNumEntries);
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(JOB_COMMAND_DATA) * WotlNumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _warOfTheLionsTablePointer = new FixedArrayPtr<JOB_COMMAND_DATA>((JOB_COMMAND_DATA*)addr, WotlNumEntries);
 
             for (int i = 0; i < _warOfTheLionsTablePointer.Count; i++)
             {

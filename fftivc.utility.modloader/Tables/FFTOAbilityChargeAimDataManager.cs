@@ -4,6 +4,9 @@ using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
@@ -23,30 +26,19 @@ public class FFTOAbilityChargeAimDataManager : FFTOTableManagerBase<AbilityCharg
 
     private FixedArrayPtr<ABILITY_CHARGE_AIM_DATA> _abilityAimDataTablePointer;
 
-    public FFTOAbilityChargeAimDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+    public FFTOAbilityChargeAimDataManager(Config configuration, IScanManager scanManager, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<AbilityChargeAimTable> dataTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = dataTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("03 01 04 02 05 03 06 04 07 05 08 07 0A 0A 0D 14", e =>
+        _scanManager.AddScan("AbilityChargeAimDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_CHARGE_AIM_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _abilityAimDataTablePointer = new FixedArrayPtr<ABILITY_CHARGE_AIM_DATA>((ABILITY_CHARGE_AIM_DATA*)tableAddress, NumEntries);
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(ABILITY_CHARGE_AIM_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _abilityAimDataTablePointer = new FixedArrayPtr<ABILITY_CHARGE_AIM_DATA>((ABILITY_CHARGE_AIM_DATA*)addr, NumEntries);
 
             for (int i = 0; i < _abilityAimDataTablePointer.Count; i++)
             {

@@ -1,14 +1,18 @@
-﻿using System.Diagnostics;
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -22,30 +26,19 @@ public class FFTOSpawnVarianceDataManager : FFTOTableManagerBase<SpawnVarianceTa
 
     private FixedArrayPtr<SPAWN_VARIANCE_DATA> _spawnVarianceDataTablePointer;
 
-    public FFTOSpawnVarianceDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+    public FFTOSpawnVarianceDataManager(Config configuration, IModConfig modConfig, ILogger logger, IScanManager scanManager, IModLoader modLoader,
         IModelSerializer<SpawnVarianceTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("02 01 00 00 00 02 01 00 00 00 02 01 00 00 00 03 01 00 01 01", e =>
+        _scanManager.AddScan("SpawnVarianceDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(SPAWN_VARIANCE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _spawnVarianceDataTablePointer = new FixedArrayPtr<SPAWN_VARIANCE_DATA>((SPAWN_VARIANCE_DATA*)tableAddress, NumEntries);
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(SPAWN_VARIANCE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _spawnVarianceDataTablePointer = new FixedArrayPtr<SPAWN_VARIANCE_DATA>((SPAWN_VARIANCE_DATA*)addr, NumEntries);
 
             _originalTable = new SpawnVarianceTable();
             for (int i = 0; i < _spawnVarianceDataTablePointer.Count; i++)

@@ -1,15 +1,19 @@
-﻿using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -23,29 +27,19 @@ public class FFTOItemEquipBonusDataManager : FFTOTableManagerBase<ItemEquipBonus
 
     private FixedArrayPtr<ITEM_EQUIP_BONUS_DATA> _itemEquipBonusTablePointer;
 
-    public FFTOItemEquipBonusDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+    public FFTOItemEquipBonusDataManager(Config configuration, IModConfig modConfig, ILogger logger, IScanManager scanManager, IModLoader modLoader,
         IModelSerializer<ItemEquipBonusTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 20", e =>
-        {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find ItemEquipBonusData table!", _logger.ColorRed);
-                return;
-            }
-
+        _scanManager.AddScan("ItemEquipBonusDataTable", signatureGroup, addr =>
+        { 
             // Go back 1 entry
-            nuint startTableOffset = (nuint)processAddress + (nuint)(e.Offset - 1 * Unsafe.SizeOf<ITEM_EQUIP_BONUS_DATA>());
-
-            _logger.WriteLine($"[{_modConfig.ModId}] Found ItemEquipBonusData table @ 0x{startTableOffset:X}");
+            nuint startTableOffset = (nuint)(addr - 1 * Unsafe.SizeOf<ITEM_EQUIP_BONUS_DATA>());
 
             Memory.Instance.ChangeProtection(startTableOffset, sizeof(ITEM_EQUIP_BONUS_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _itemEquipBonusTablePointer = new FixedArrayPtr<ITEM_EQUIP_BONUS_DATA>((ITEM_EQUIP_BONUS_DATA*)startTableOffset, NumEntries);

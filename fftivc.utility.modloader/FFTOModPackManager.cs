@@ -163,10 +163,10 @@ public class FFTOModPackManager : IFFTOModPackManager
             return false;
         }
 
-        _resourcePackHooks.Install(dataDir);
-
         foreach (IModdedFileOverrideStrategy overrideStrategy in _overrideStrategies)
             overrideStrategy.Initialize(GameMode);
+
+        _resourcePackHooks.SetBaseDirectory(dataDir);
 
         DataDirectory = dataDir;
         TempFolder = tempFolder;
@@ -395,6 +395,7 @@ public class FFTOModPackManager : IFFTOModPackManager
         if (_configuration.MergeNexFileChanges)
             MergeAndApplyNexChanges();
 
+        // Release all pack handles
         Dispose();
 
         // Finally build the packs

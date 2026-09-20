@@ -1,15 +1,19 @@
-﻿using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -23,28 +27,19 @@ public class FFTOAbilityTypeDataManager : FFTOTableManagerBase<AbilityTypeTable,
 
     private FixedArrayPtr<ABILITY_TYPE_DATA> _abilityTypeDataTablePointer;
 
-    public FFTOAbilityTypeDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+    public FFTOAbilityTypeDataManager(Config configuration, IModConfig modConfig, ILogger logger, IScanManager scanManager, IModLoader modLoader,
         IModelSerializer<AbilityTypeTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("01 74 00 01 74 00 01 74 00 02 2C 00 02 2C 00 02 2C 00", e =>
+        _scanManager.AddScan("AbilityTypeDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
             // Go back 57 entries
-            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - (57 * Unsafe.SizeOf<ABILITY_TYPE_DATA>()));
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
+            nuint tableAddress = (nuint)(addr - (57 * Unsafe.SizeOf<ABILITY_TYPE_DATA>()));
 
             Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_TYPE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _abilityTypeDataTablePointer = new FixedArrayPtr<ABILITY_TYPE_DATA>((ABILITY_TYPE_DATA*)tableAddress, NumEntries);

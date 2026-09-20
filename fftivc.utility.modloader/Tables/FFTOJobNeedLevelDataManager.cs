@@ -1,14 +1,18 @@
-﻿using System.Diagnostics;
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -22,29 +26,19 @@ public class FFTOJobNeedLevelDataManager : FFTOTableManagerBase<JobNeedLevelTabl
 
     private FixedArrayPtr<JOB_NEED_LEVEL_DATA> _jobNeedLevelDataTablePointer;
 
-    public FFTOJobNeedLevelDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+    public FFTOJobNeedLevelDataManager(Config configuration, IModConfig modConfig, ILogger logger, IScanManager scanManager, IModLoader modLoader,
         IModelSerializer<JobNeedLevelTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("02 00 03 33 50 53 00 00 00 00 00 00 20 33 40 00 04 00 55 00 00 00 00 00 88 33 43 33 54 53 55 00 00 00 00 00", e =>
-        {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
+        _scanManager.AddScan("JobNeedLevelDataTable", signatureGroup, addr =>
+        { 
             // Go back 16 entries
-            nuint tableAddress = (nuint)(processAddress + e.Offset - sizeof(JOB_NEED_LEVEL_DATA) * 16);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
-
+            nuint tableAddress = (nuint)(addr - sizeof(JOB_NEED_LEVEL_DATA) * 16);
             Memory.Instance.ChangeProtection(tableAddress, sizeof(JOB_NEED_LEVEL_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _jobNeedLevelDataTablePointer = new FixedArrayPtr<JOB_NEED_LEVEL_DATA>((JOB_NEED_LEVEL_DATA*)tableAddress, NumEntries);
 

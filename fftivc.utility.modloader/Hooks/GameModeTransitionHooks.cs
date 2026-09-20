@@ -25,7 +25,6 @@ public class GameModeTransitionHooks : IFFTOCoreHook
 {
     private ILogger _logger;
     private IModConfig _modConfig;
-    private IStartupScanner? _startupScanner;
     private IReloadedHooks? _hooks;
 
     private unsafe delegate nint CreateProcessADelegate(char* lpApplicationName, char* lpCommandLine, SECURITY_ATTRIBUTES* lpProcessAttributes, SECURITY_ATTRIBUTES* lpThreadAttributes,
@@ -34,16 +33,15 @@ public class GameModeTransitionHooks : IFFTOCoreHook
 
     private static IHook<CreateProcessADelegate>? CreateProcessHook;
 
-    public GameModeTransitionHooks(IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
+    public GameModeTransitionHooks(IReloadedHooks hooks, IModConfig modConfig, ILogger logger)
     {
         _logger = logger;
         _modConfig = modConfig;
 
-        _startupScanner = startupScanner;
         _hooks = hooks;
     }
 
-    public unsafe void Install()
+    public unsafe void Install(string signatureGroup)
     {
         _logger.WriteLine($"[{_modConfig.ModId}] Installing game transition hooks..");
 
@@ -107,8 +105,7 @@ public class GameModeTransitionHooks : IFFTOCoreHook
                     WorkingDirectory = Path.GetDirectoryName(config.LauncherPath),
                 });
 
-                if (process is not null)
-                    process.OutputDataReceived += (s, e) => _logger.WriteLine($"[{_modConfig.ModId}] [Launcher] {e.Data}");
+                process?.OutputDataReceived += (s, e) => _logger.WriteLine($"[{_modConfig.ModId}] [Launcher] {e.Data}");
                 return 1;
             }
         }

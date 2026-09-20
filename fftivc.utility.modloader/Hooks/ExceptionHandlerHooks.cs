@@ -25,23 +25,21 @@ public class ExceptionHandlerHooks : IFFTOCoreHook
     private Config _configuation;
     private ILogger _logger;
     private IModConfig _modConfig;
-    private IStartupScanner? _startupScanner;
     private IReloadedHooks? _hooks;
 
     private delegate void ExceptionDelegate(nint value);
     private static IHook<ExceptionDelegate>? ExceptionHook;
 
-    public ExceptionHandlerHooks(Config configuration, IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
+    public ExceptionHandlerHooks(Config configuration, IReloadedHooks hooks, IModConfig modConfig, ILogger logger)
     {
         _configuation = configuration;
         _logger = logger;
         _modConfig = modConfig;
 
-        _startupScanner = startupScanner;
         _hooks = hooks;
     }
 
-    public void Install()
+    public void Install(string signatureGroup)
     {
         if (!_configuation.RemoveExceptionHandler)
         {

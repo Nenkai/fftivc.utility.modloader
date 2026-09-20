@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using fftivc.utility.modloader.Configuration;
+using fftivc.utility.modloader.Interfaces.Serializers;
+using fftivc.utility.modloader.Interfaces.Tables;
+using fftivc.utility.modloader.Interfaces.Tables.Models;
+using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
+using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
 
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory;
+using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 
-using fftivc.utility.modloader.Configuration;
-using fftivc.utility.modloader.Interfaces.Tables;
-using fftivc.utility.modloader.Interfaces.Tables.Models;
-using fftivc.utility.modloader.Interfaces.Tables.Structures;
-using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
-using Reloaded.Memory.Interfaces;
-using fftivc.utility.modloader.Interfaces.Serializers;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -28,30 +30,19 @@ public class FFTOItemCategoryToDataTypeDataManager : FFTOTableManagerBase<ItemCa
 
     private FixedArrayPtr<ITEM_CATEGORY_TO_DATA_TYPE_DATA> _itemCategoryToDataTypeTablePtr;
 
-    public FFTOItemCategoryToDataTypeDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+    public FFTOItemCategoryToDataTypeDataManager(Config configuration, IScanManager scanManager, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<ItemCategoryToDataTypeTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("00 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00 05 00 00 00 05 00 00 00", e =>
+        _scanManager.AddScan("ItemCategoryToDataTypeDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_CATEGORY_TO_DATA_TYPE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemCategoryToDataTypeTablePtr = new FixedArrayPtr<ITEM_CATEGORY_TO_DATA_TYPE_DATA>((ITEM_CATEGORY_TO_DATA_TYPE_DATA*)tableAddress, NumEntries);
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(ITEM_CATEGORY_TO_DATA_TYPE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemCategoryToDataTypeTablePtr = new FixedArrayPtr<ITEM_CATEGORY_TO_DATA_TYPE_DATA>((ITEM_CATEGORY_TO_DATA_TYPE_DATA*)addr, NumEntries);
 
             for (int i = 0; i < _itemCategoryToDataTypeTablePtr.Count; i++)
             {

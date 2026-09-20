@@ -1,5 +1,7 @@
 ﻿using fftivc.utility.modloader.Interfaces;
 
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
@@ -21,7 +23,7 @@ public class LanguageManagerHooks : IFFTOCoreHook
 {
     private ILogger _logger;
     private IModConfig _modConfig;
-    private IStartupScanner? _startupScanner;
+    private IScanManager? _scanManager;
     private IReloadedHooks? _hooks;
 
     private delegate void SetLanguageDelegate(nint @this, FFTOLanguageType locale);
@@ -29,31 +31,27 @@ public class LanguageManagerHooks : IFFTOCoreHook
 
     public FFTOLanguageType CurrentLanguage { get; private set; } = FFTOLanguageType.English;
 
-    public LanguageManagerHooks(IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
+    public LanguageManagerHooks(IReloadedHooks hooks, IScanManager scanManager, IModConfig modConfig, ILogger logger)
     {
         _logger = logger;
         _modConfig = modConfig;
 
-        _startupScanner = startupScanner;
+        _scanManager = scanManager;
         _hooks = hooks;
     }
 
-    public unsafe void Install()
+    public void Install(string signatureGroup)
     {
         _logger.WriteLine($"[{_modConfig.ModId}] Installing language manager hooks..");
 
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
         // Hook faith::Locale::LanguageManager::SetLanguage
-        _startupScanner!.AddMainModuleScan("48 89 5C 24 ?? 57 48 83 EC ?? 48 8B 05 ?? ?? ?? ?? 48 31 E0 48 89 44 24 ?? 48 89 CF", (e) =>
+        _scanManager!.AddScan("SetLanguage", signatureGroup, (addr) =>
         {
-            if (e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Hooked faith::Localize::LanguageManager::SetLanguage @ 0x{processAddress + e.Offset:X}");
-                SetLanguageHook = _hooks!.CreateHook<SetLanguageDelegate>(SetLanguageImpl, processAddress + e.Offset).Activate();
-            }
-            else
-                _logger.WriteLine($"[{_modConfig.ModId}] Unable to hook faith::Localize::LanguageManager::SetLanguage - signature not found. Will default to english..", _logger.ColorRed);
+            SetLanguageHook = _hooks!.CreateHook<SetLanguageDelegate>(SetLanguageImpl, addr).Activate();
+        }, 
+        onFail: () =>
+        {
+            _logger.WriteLine($"[{_modConfig.ModId}] Unable to hook faith::Localize::LanguageManager::SetLanguage - signature not found. Will default to english..", _logger.ColorRed);
         });
     }
 

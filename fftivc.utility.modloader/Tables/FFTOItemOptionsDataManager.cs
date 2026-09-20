@@ -1,15 +1,19 @@
-﻿using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -23,29 +27,19 @@ public class FFTOItemOptionsDataManager : FFTOTableManagerBase<ItemOptionsTable,
 
     private FixedArrayPtr<ITEM_OPTIONS_DATA> _itemOptionsTablePointer;
 
-    public FFTOItemOptionsDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+    public FFTOItemOptionsDataManager(Config configuration, IModConfig modConfig, ILogger logger, IScanManager scanManager, IModLoader modLoader,
         IModelSerializer<ItemOptionsTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("10 00 00 00 80 00 10 00 20 00 00 00 10 00 08 00 00 00 10 00 00 02 00 00 10 00 80 00 00 00", e =>
+        _scanManager.AddScan("ItemOptionsDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
             // Go back 1 entry
-            nuint startTableOffset = (nuint)processAddress + (nuint)(e.Offset - 1 * Unsafe.SizeOf<ITEM_OPTIONS_DATA>());
-
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{startTableOffset:X}");
+            nuint startTableOffset = (nuint)(addr - 1 * Unsafe.SizeOf<ITEM_OPTIONS_DATA>());
 
             Memory.Instance.ChangeProtection(startTableOffset, sizeof(ITEM_OPTIONS_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _itemOptionsTablePointer = new FixedArrayPtr<ITEM_OPTIONS_DATA>((ITEM_OPTIONS_DATA*)startTableOffset, NumEntries);

@@ -1,14 +1,18 @@
-﻿using System.Diagnostics;
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -27,33 +31,22 @@ public class FFTOMonsterJobCommandDataManager : FFTOTableManagerBase<MonsterJobC
 
     private FixedArrayPtr<MONSTER_JOB_COMMAND_DATA> _monsterJobCommandDataTablePointer;
 
-    public FFTOMonsterJobCommandDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+    public FFTOMonsterJobCommandDataManager(Config configuration, IModConfig modConfig, ILogger logger, IScanManager scanManager, IModLoader modLoader,
         IModelSerializer<MonsterJobCommandTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("D0 09 0D 00 0C F0 09 0A 0C 0B F0 09 0A 0B 0D D0 0E 11 00 0F", e =>
+        _scanManager.AddScan("MonsterJobCommandDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress,
+            Memory.Instance.ChangeProtection((nuint)addr,
                 sizeof(MONSTER_JOB_COMMAND_DATA) * NumEntries,
                 Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
 
-            _monsterJobCommandDataTablePointer = new FixedArrayPtr<MONSTER_JOB_COMMAND_DATA>((MONSTER_JOB_COMMAND_DATA*)tableAddress, NumEntries);
+            _monsterJobCommandDataTablePointer = new FixedArrayPtr<MONSTER_JOB_COMMAND_DATA>((MONSTER_JOB_COMMAND_DATA*)addr, NumEntries);
             _originalTable = new MonsterJobCommandTable();
 
             for (int i = 0; i < _monsterJobCommandDataTablePointer.Count; i++)

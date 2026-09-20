@@ -5,6 +5,9 @@ using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
@@ -23,28 +26,19 @@ public class FFTOMapTrapFormationDataManager : FFTOTableManagerBase<MapTrapForma
 
     private FixedArrayPtr<MAP_TRAP_FORMATION_DATA> _mapTrapFormationDataTablePointer;
 
-    public FFTOMapTrapFormationDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+    public FFTOMapTrapFormationDataManager(Config configuration, IScanManager scanManager, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<MapTrapFormationTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("1C 10 B8 00 F2 00 70 10 C6 00 F4 00 86 10 CE 00 FC 00 9C 10 D6 00 FD 00", e =>
+        _scanManager.AddScan("MapTrapFormationDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
             // Go back 1 entry - we skipped zeroes
-            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - (Unsafe.SizeOf<MAP_TRAP_FORMATION_DATA>() * 1));
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
+            nuint tableAddress = (nuint)(addr - (Unsafe.SizeOf<MAP_TRAP_FORMATION_DATA>() * 1));
 
             Memory.Instance.ChangeProtection(tableAddress, sizeof(MAP_TRAP_FORMATION_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _mapTrapFormationDataTablePointer = new FixedArrayPtr<MAP_TRAP_FORMATION_DATA>((MAP_TRAP_FORMATION_DATA*)tableAddress, NumEntries);

@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using fftivc.utility.modloader.Configuration;
+using fftivc.utility.modloader.Interfaces.Serializers;
+using fftivc.utility.modloader.Interfaces.Tables;
+using fftivc.utility.modloader.Interfaces.Tables.Models;
+using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
+using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
 
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory;
+using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 
-using fftivc.utility.modloader.Configuration;
-using fftivc.utility.modloader.Interfaces.Tables;
-using fftivc.utility.modloader.Interfaces.Tables.Models;
-using fftivc.utility.modloader.Interfaces.Tables.Structures;
-using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
-using Reloaded.Memory.Interfaces;
-using fftivc.utility.modloader.Interfaces.Serializers;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -29,31 +31,20 @@ public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOI
     private FixedArrayPtr<ITEM_COMMON_DATA> _itemCommonDataTablePointer;
     private FixedArrayPtr<ITEM_COMMON_DATA> _itemCommonDataTable2Pointer;
 
-    public FFTOItemDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+    public FFTOItemDataManager(Config configuration, IScanManager scanManager, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<ItemTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
         // Normal item table - 0-255
-        _startupScanner.AddMainModuleScan("00 00 00 80 00 00 00 00 00 00 00 00 00 01 01 80 01 01 00 00 64 00 01 00 00 02 03 80 02 01 00 00", e =>
+        _scanManager.AddScan("ItemDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find ItemData table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found ItemData table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_COMMON_DATA) * 256, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemCommonDataTablePointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)tableAddress, 256);
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(ITEM_COMMON_DATA) * 256, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemCommonDataTablePointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)addr, 256);
 
             for (int i = 0; i < _itemCommonDataTablePointer.Count; i++)
             {
@@ -65,19 +56,10 @@ public class FFTOItemDataManager : FFTOTableManagerBase<ItemTable, Item>, IFFTOI
         });
 
         // Extended table, 256->260
-        _startupScanner.AddMainModuleScan("0D 15 61 82 20 03 00 54 0A 00 01 00 0D 0C 08 82", e =>
+        _scanManager.AddScan("ItemDataExtendedTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find ItemData extended table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found ItemData extended table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_COMMON_DATA) * 5, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemCommonDataTable2Pointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)tableAddress, 5); // there's only 5 entries.
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(ITEM_COMMON_DATA) * 5, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemCommonDataTable2Pointer = new FixedArrayPtr<ITEM_COMMON_DATA>((ITEM_COMMON_DATA*)addr, 5); // there's only 5 entries.
             
             for (int i = 0; i < _itemCommonDataTable2Pointer.Count; i++)
             {

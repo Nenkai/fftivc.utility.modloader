@@ -1,6 +1,8 @@
 ﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces;
 
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
@@ -22,7 +24,7 @@ public class WindowHooks : IFFTOCoreHook
 {
     private readonly ILogger _logger;
     private readonly IModConfig _modConfig;
-    private readonly IStartupScanner _startupScanner;
+    private readonly IScanManager _scanManager;
     private readonly IReloadedHooks _hooks;
     private readonly Config _configuration;
 
@@ -31,32 +33,24 @@ public class WindowHooks : IFFTOCoreHook
 
     public FFTOLanguageType CurrentLanguage { get; private set; } = FFTOLanguageType.English;
 
-    public WindowHooks(Config configuration, IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
+    public WindowHooks(Config configuration, IReloadedHooks hooks, IScanManager scanManager, IModConfig modConfig, ILogger logger)
     {
         _configuration = configuration;
         _logger = logger;
         _modConfig = modConfig;
 
-        _startupScanner = startupScanner;
+        _scanManager = scanManager;
         _hooks = hooks;
     }
 
-    public unsafe void Install()
+    public unsafe void Install(string signatureGroup)
     {
         _logger.WriteLine($"[{_modConfig.ModId}] Installing window hooks..");
 
         var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
 
-        _startupScanner!.AddMainModuleScan("48 83 EC ?? F6 81 ?? ?? ?? ?? ?? 75 ?? 33 C9", (e) =>
-        {
-            if (e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Hooked SetCursor @ 0x{processAddress + e.Offset:X}");
-                SetCursorHook = _hooks!.CreateHook<SetCursorDelegate>(SetCursorImpl, processAddress + e.Offset).Activate();
-            }
-            else
-                _logger.WriteLine($"[{_modConfig.ModId}] Unable to hook SetCursor - signature not found.", _logger.ColorRed);
-        });
+        _scanManager!.AddScan("SetCursor", signatureGroup, (addr) =>
+            SetCursorHook = _hooks!.CreateHook<SetCursorDelegate>(SetCursorImpl, addr).Activate());
     }
 
     private unsafe void SetCursorImpl(nint @this)

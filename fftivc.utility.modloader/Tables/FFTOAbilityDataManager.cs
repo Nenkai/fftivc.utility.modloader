@@ -11,6 +11,9 @@ using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
 
+using NenTools.Reloaded.ScanManager;
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 namespace fftivc.utility.modloader.Tables;
 
 public class FFTOAbilityDataManager : FFTOTableManagerBase<AbilityTable, Ability>, IFFTOAbilityDataManager
@@ -23,30 +26,19 @@ public class FFTOAbilityDataManager : FFTOTableManagerBase<AbilityTable, Ability
 
     private FixedArrayPtr<ABILITY_COMMON_DATA> _abilityCommonDataTablePointer;
 
-    public FFTOAbilityDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+    public FFTOAbilityDataManager(Config configuration, IModConfig modConfig, ILogger logger, IScanManager scanManager, IModLoader modLoader,
         IModelSerializer<AbilityTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
-    {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("00 00 00 00 82 02 01 81 32 00 5A 41 81 75 00 80", e =>
+    public unsafe void Init(string signatureGroup)
+    { 
+        _scanManager.AddScan("AbilityDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_COMMON_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _abilityCommonDataTablePointer = new FixedArrayPtr<ABILITY_COMMON_DATA>((ABILITY_COMMON_DATA*)tableAddress, NumEntries);
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(ABILITY_COMMON_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _abilityCommonDataTablePointer = new FixedArrayPtr<ABILITY_COMMON_DATA>((ABILITY_COMMON_DATA*)addr, NumEntries);
 
             _originalTable = new AbilityTable();
             for (int i = 0; i < _abilityCommonDataTablePointer.Count; i++)

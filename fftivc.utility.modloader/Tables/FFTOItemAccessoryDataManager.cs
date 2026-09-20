@@ -1,15 +1,19 @@
-﻿using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using fftivc.utility.modloader.Configuration;
+﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
+
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -23,32 +27,22 @@ public class FFTOItemAccessoryDataManager : FFTOTableManagerBase<ItemAccessoryTa
 
     private FixedArrayPtr<ITEM_ACCESSORY_DATA> _itemAccessoryDataTablePointer;
 
-    public FFTOItemAccessoryDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+    public FFTOItemAccessoryDataManager(Config configuration, IScanManager scanManager, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<ItemAccessoryTable> dataTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = dataTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
         // TODO: There's an extended table, but we only have the data for a single entry ("00 00"), so I'm not finding that right now...
 
         // Accessory secondary data table - 0-31
-        _startupScanner.AddMainModuleScan("00 00 00 00 00 00 00 00 00 00 0A 0A 0F 0F 12 12 19 19 1C 1C 28 1E 23 00 00 00 00 00 00 00 00 00", e =>
+        _scanManager.AddScan("ItemAccessoryDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
             // Back up 16 entries... we skip a lot of zeroes
-            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - (Unsafe.SizeOf<ITEM_ACCESSORY_DATA>() * 16));
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
-
+            nuint tableAddress = (nuint)(addr - (Unsafe.SizeOf<ITEM_ACCESSORY_DATA>() * 16));
             Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_ACCESSORY_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _itemAccessoryDataTablePointer = new FixedArrayPtr<ITEM_ACCESSORY_DATA>((ITEM_ACCESSORY_DATA*)tableAddress, NumEntries);
 

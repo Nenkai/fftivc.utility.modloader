@@ -15,6 +15,8 @@ using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 namespace fftivc.utility.modloader.Tables;
 
 public abstract class FFTOTableManagerBase<TTable, TModel>
@@ -24,7 +26,7 @@ public abstract class FFTOTableManagerBase<TTable, TModel>
     protected readonly Config _config;
     protected readonly ILogger _logger;
     protected readonly IModConfig _modConfig;
-    protected readonly IStartupScanner _startupScanner;
+    protected readonly IScanManager _scanManager;
     protected readonly IModLoader _modLoader;
 
     /// <summary>
@@ -44,12 +46,12 @@ public abstract class FFTOTableManagerBase<TTable, TModel>
     public Dictionary<(int Id, string PropertyName), AuditEntry> _changedProperties = [];
     public IReadOnlyDictionary<(int Id, string PropertyName), AuditEntry> ChangedProperties => _changedProperties;
 
-    public FFTOTableManagerBase(Config config, ILogger logger, IModConfig modConfig, IStartupScanner startupScanner, IModLoader modLoader)
+    public FFTOTableManagerBase(Config config, ILogger logger, IModConfig modConfig, IScanManager scanManager, IModLoader modLoader)
     {
         _config = config;
         _logger = logger;
         _modConfig = modConfig;
-        _startupScanner = startupScanner;
+        _scanManager = scanManager;
         _modLoader = modLoader;
     }
 

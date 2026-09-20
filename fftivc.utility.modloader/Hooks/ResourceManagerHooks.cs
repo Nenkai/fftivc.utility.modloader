@@ -1,6 +1,8 @@
 ﻿using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces;
 
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
@@ -25,23 +27,23 @@ public class ResourceManagerHooks : IFFTOCoreHook
     private readonly Config _configuration;
     private readonly ILogger _logger;
     private readonly IModConfig _modConfig;
-    private readonly IStartupScanner? _startupScanner;
+    private readonly IScanManager? _scanManager;
     private readonly IReloadedHooks? _hooks;
 
     public unsafe delegate void OpenFileAndCacheDelegate(void* a1, FileResult* a2);
     private static IHook<OpenFileAndCacheDelegate> _openFileAndCacheHook;
 
-    public ResourceManagerHooks(Config configuration, IReloadedHooks hooks, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger)
+    public ResourceManagerHooks(Config configuration, IReloadedHooks hooks, IScanManager scanManager, IModConfig modConfig, ILogger logger)
     {
         _configuration = configuration;
         _logger = logger;
         _modConfig = modConfig;
 
-        _startupScanner = startupScanner;
+        _scanManager = scanManager;
         _hooks = hooks;
     }
 
-    public unsafe void Install()
+    public unsafe void Install(string signatureGroup)
     {
         if (!_configuration.LogGeneralFileAccesses)
         {
@@ -53,17 +55,11 @@ public class ResourceManagerHooks : IFFTOCoreHook
         var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
 
         // Hook faith::Resource::ResourceManager::OpenFileAndCache
-        _startupScanner!.AddMainModuleScan("48 8B C4 48 89 58 ?? 48 89 68 ?? 48 89 70 ?? 48 89 78 ?? 41 56 48 83 EC ?? 33 ED 48 8B F2", (e) =>
+        _scanManager!.AddScan("OpenFileAndCache", signatureGroup, (addr) =>
         {
-            if (e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Hooked faith::Resource::ResourceManager::OpenFileAndCache @ 0x{processAddress + e.Offset:X}");
-                _openFileAndCacheHook = _hooks!.CreateHook<OpenFileAndCacheDelegate>(OpenFileAndCacheHookImpl, processAddress + e.Offset).Activate();
-            }
-            else
-                _logger.WriteLine($"[{_modConfig.ModId}] Unable to hook faith::Resource::ResourceManager::OpenFileAndCache - signature not found.", _logger.ColorRed);
+            _logger.WriteLine($"[{_modConfig.ModId}] Hooked faith::Resource::ResourceManager::OpenFileAndCache @ 0x{addr:X}");
+            _openFileAndCacheHook = _hooks!.CreateHook<OpenFileAndCacheDelegate>(OpenFileAndCacheHookImpl, addr).Activate();
         });
-        
     }
 
     private unsafe void OpenFileAndCacheHookImpl(void* a1, FileResult* a2)

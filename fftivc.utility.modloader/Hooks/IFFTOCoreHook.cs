@@ -8,5 +8,5 @@ namespace fftivc.utility.modloader.Hooks;
 
 public interface IFFTOCoreHook
 {
-    public void Install();
+    public void Install(string signatureGroup);
 }

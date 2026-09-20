@@ -19,10 +19,9 @@ public static class ServiceCollectionExtensions
     /// <typeparam name="TImpl"></typeparam>
     /// <param name="services"></param>
     /// <returns></returns>
-    public static IServiceCollection AddGameTableSingleton<TInterface, TImpl>(
-        this IServiceCollection services)
-        where TImpl : class, TInterface, IFFTOTableManager
+    public static IServiceCollection AddGameTableSingleton<TInterface, TImpl>(this IServiceCollection services)
         where TInterface : class
+        where TImpl : class, TInterface, IFFTOTableManager
     {
         services.AddSingleton<TImpl>();
         services.AddSingleton<IFFTOTableManager>(sp => sp.GetRequiredService<TImpl>());

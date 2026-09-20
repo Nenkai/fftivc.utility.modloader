@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using fftivc.utility.modloader.Configuration;
+using fftivc.utility.modloader.Interfaces.Serializers;
+using fftivc.utility.modloader.Interfaces.Tables;
+using fftivc.utility.modloader.Interfaces.Tables.Models;
+using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
+using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
 
 using Reloaded.Hooks.Definitions;
 using Reloaded.Memory;
+using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 
-using fftivc.utility.modloader.Configuration;
-using fftivc.utility.modloader.Interfaces.Tables;
-using fftivc.utility.modloader.Interfaces.Tables.Models;
-using fftivc.utility.modloader.Interfaces.Tables.Structures;
-using fftivc.utility.modloader.Interfaces.Tables.Models.Bases;
-using Reloaded.Memory.Interfaces;
-using fftivc.utility.modloader.Interfaces.Serializers;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace fftivc.utility.modloader.Tables;
 
@@ -28,31 +30,19 @@ public class FFTOItemIdRangeToCategoryDataManager : FFTOTableManagerBase<ItemIdR
 
     private FixedArrayPtr<ITEM_ID_RANGE_TO_CATEGORY_DATA> _itemCategoryRangeTablePtr;
 
-    public FFTOItemIdRangeToCategoryDataManager(Config configuration, IStartupScanner startupScanner, IModConfig modConfig, ILogger logger, IModLoader modLoader,
+    public FFTOItemIdRangeToCategoryDataManager(Config configuration, IScanManager scanManager, IModConfig modConfig, ILogger logger, IModLoader modLoader,
         IModelSerializer<ItemIdRangeToCategoryTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        // Normal item table - 0-255
-        _startupScanner.AddMainModuleScan("00 00 7A 00 80 00 90 00 AC 00 D0 00 F0 00", e =>
-        {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
-            nuint tableAddress = (nuint)(processAddress + e.Offset);
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
-
-            Memory.Instance.ChangeProtection(tableAddress, sizeof(ITEM_ID_RANGE_TO_CATEGORY_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
-            _itemCategoryRangeTablePtr = new FixedArrayPtr<ITEM_ID_RANGE_TO_CATEGORY_DATA>((ITEM_ID_RANGE_TO_CATEGORY_DATA*)tableAddress, NumEntries);
+        _scanManager.AddScan("ItemIdRangeToCategoryDataTable", signatureGroup, addr =>
+        { 
+            Memory.Instance.ChangeProtection((nuint)addr, sizeof(ITEM_ID_RANGE_TO_CATEGORY_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
+            _itemCategoryRangeTablePtr = new FixedArrayPtr<ITEM_ID_RANGE_TO_CATEGORY_DATA>((ITEM_ID_RANGE_TO_CATEGORY_DATA*)addr, NumEntries);
 
             for (int i = 0; i < _itemCategoryRangeTablePtr.Count; i++)
             {

@@ -21,7 +21,7 @@ public interface IFFTOTableManager
     /// <summary>
     /// Initializes the table manager.
     /// </summary>
-    public void Init();
+    public void Init(string signatureGroup);
 
     /// <summary>
     /// Registers any potential files to be applied by the table manager, from the specified folder.

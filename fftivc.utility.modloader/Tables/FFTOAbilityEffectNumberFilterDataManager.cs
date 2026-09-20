@@ -5,6 +5,9 @@ using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
 using fftivc.utility.modloader.Interfaces.Tables.Structures;
+
+using NenTools.Reloaded.ScanManager.Interfaces;
+
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
@@ -23,28 +26,19 @@ public class FFTOAbilityEffectNumberFilterDataManager : FFTOTableManagerBase<Abi
 
     private FixedArrayPtr<ABILITY_EFFECT_NUMBER_FILTER_DATA> _abilityEffectNumberFilterDataTablePointer;
 
-    public FFTOAbilityEffectNumberFilterDataManager(Config configuration, IModConfig modConfig, ILogger logger, IStartupScanner startupScanner, IModLoader modLoader,
+    public FFTOAbilityEffectNumberFilterDataManager(Config configuration, IModConfig modConfig, ILogger logger, IScanManager scanManager, IModLoader modLoader,
         IModelSerializer<AbilityEffectNumberFilterTable> modelTableSerializer)
-        : base(configuration, logger, modConfig, startupScanner, modLoader)
+        : base(configuration, logger, modConfig, scanManager, modLoader)
     {
         _modelTableSerializer = modelTableSerializer;
     }
 
-    public unsafe void Init()
+    public unsafe void Init(string signatureGroup)
     {
-        var processAddress = Process.GetCurrentProcess().MainModule!.BaseAddress;
-
-        _startupScanner.AddMainModuleScan("25 01 26 01 27 01 8C 01 8D 01 90 01 94 01 95 01", e =>
+        _scanManager.AddScan("AbilityEffectNumberFilterDataTable", signatureGroup, addr =>
         {
-            if (!e.Found)
-            {
-                _logger.WriteLine($"[{_modConfig.ModId}] Could not find {TableFileName} table!", _logger.ColorRed);
-                return;
-            }
-
             // Go back 51 entries
-            nuint tableAddress = (nuint)processAddress + (nuint)(e.Offset - 51 * Unsafe.SizeOf<ABILITY_EFFECT_NUMBER_FILTER_DATA>());
-            _logger.WriteLine($"[{_modConfig.ModId}] Found {TableFileName} table @ 0x{tableAddress:X}");
+            nuint tableAddress = (nuint)(addr - (51 * Unsafe.SizeOf<ABILITY_EFFECT_NUMBER_FILTER_DATA>()));
 
             Memory.Instance.ChangeProtection(tableAddress, sizeof(ABILITY_EFFECT_NUMBER_FILTER_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _abilityEffectNumberFilterDataTablePointer = new FixedArrayPtr<ABILITY_EFFECT_NUMBER_FILTER_DATA>((ABILITY_EFFECT_NUMBER_FILTER_DATA*)tableAddress, NumEntries);

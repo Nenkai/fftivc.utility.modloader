@@ -55,7 +55,7 @@ public class FFTPackFileOverrideStrategy : IModdedFileOverrideStrategy
     public void Initialize(FFTOGameMode gameMode)
     {
         _currentGameMode = gameMode;
-        _fftHooks.Install(OnRequestRead);
+        _fftHooks.SetCallback(OnRequestRead);
     }
 
     public bool Matches(string fileName)
