@@ -36,7 +36,7 @@ public class FFTOItemConsumableDataManager : FFTOTableManagerBase<ItemConsumable
     public unsafe void Init(string signatureGroup)
     {
         // ItemConsumable secondary data table - 0-13
-        _scanManager.AddScan("ItemCategoryToDataTypeDataTable", signatureGroup, addr =>
+        _scanManager.AddScan("ItemConsumableDataTable", signatureGroup, addr =>
         {
             Memory.Instance.ChangeProtection((nuint)addr, sizeof(ITEM_CONSUMABLE_DATA) * NumEntries, Reloaded.Memory.Enums.MemoryProtection.ReadWriteExecute);
             _itemConsumableDataTablePointer = new FixedArrayPtr<ITEM_CONSUMABLE_DATA>((ITEM_CONSUMABLE_DATA*)addr, NumEntries);
