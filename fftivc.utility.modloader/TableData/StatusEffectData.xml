@@ -33,12 +33,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <NoStackFlags />
     </StatusEffect>
     <StatusEffect>
-      <Id>1</Id>
+      <Id>1</Id> <!-- MARKED FOR DELETION - REPORT IF DISPLAYED Crystal / USE2 / Cristal -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>39</Order>
       <Counter>0</Counter>
-      <CheckFlags>KO, Check1, Check2, CrystalTreasure, FreezeCT, Check8, Check9, Check11, IgnoreAttacks, CantReact</CheckFlags>
+      <CheckFlags>KO, Check1, Check2, CrystalTreasure, FreezeCT, Check8, ImmortalCancels, Check11, IgnoreAttacks, CantReact</CheckFlags>
       <CancelFlags>
         <StatusEffectType>None</StatusEffectType>
         <StatusEffectType>KO</StatusEffectType>
@@ -86,12 +86,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>2</Id>
+      <Id>2</Id> <!-- KO / 戦闘不能 / Invalidité / K. o. -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>37</Order>
       <Counter>0</Counter>
-      <CheckFlags>KO, Check8, Check9, Check11, IgnoreAttacks, CantReact</CheckFlags>
+      <CheckFlags>KO, Check8, ImmortalCancels, Check11, IgnoreAttacks, CantReact</CheckFlags>
       <CancelFlags>
         <StatusEffectType>Readying</StatusEffectType>
         <StatusEffectType>Jumping</StatusEffectType>
@@ -127,12 +127,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>3</Id> <!-- KO / 戦闘不能 / Invalidité / K. o. -->
+      <Id>3</Id> <!-- Undead / アンデッド / Mort-vivant / Untot -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>22</Order>
       <Counter>0</Counter>
-      <CheckFlags>Check8, Check9, Check11</CheckFlags>
+      <CheckFlags>Check8, ImmortalCancels, Check11</CheckFlags>
       <CancelFlags>
         <StatusEffectType>Reraise</StatusEffectType>
       </CancelFlags>
@@ -144,7 +144,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>4</Id> <!-- Undead / アンデッド / Mort-vivant / Untot -->
+      <Id>4</Id> <!-- Readying / チャージ中 / Charge / Vorbereiten -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>8</Order>
@@ -158,7 +158,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>5</Id> <!-- Readying / チャージ中 / Charge / Vorbereiten -->
+      <Id>5</Id> <!-- Jumping / ジャンプ中 / En cours de saut / Im Sprung -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>7</Order>
@@ -173,7 +173,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>6</Id> <!-- Jumping / ジャンプ中 / En cours de saut / Im Sprung -->
+      <Id>6</Id> <!-- Evading / 回避構え中 / Qui-vive / Bereitschaft -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>6</Order>
@@ -187,7 +187,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>7</Id> <!-- Evading / 回避構え中 / Qui-vive / Bereitschaft -->
+      <Id>7</Id> <!-- Performing / 詩い踊り中 / Récital / Performance -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>5</Order>
@@ -201,12 +201,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>8</Id> <!-- Performing / 詩い踊り中 / Récital / Performance -->
+      <Id>8</Id> <!-- Stone / 石化 / Pétrification / Stein -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>36</Order>
       <Counter>0</Counter>
-      <CheckFlags>KO, FreezeCT, Check8, Check9, Check11, IgnoreAttacks, CantReact</CheckFlags>
+      <CheckFlags>KO, FreezeCT, Check8, ImmortalCancels, Check11, IgnoreAttacks, CantReact</CheckFlags>
       <CancelFlags>
         <StatusEffectType>Readying</StatusEffectType>
         <StatusEffectType>Jumping</StatusEffectType>
@@ -227,12 +227,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>9</Id> <!-- Stone / 石化 / Pétrification / Stein -->
+      <Id>9</Id> <!-- Traitor / 勧誘 / Débauchage / Angeworben -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>21</Order>
       <Counter>0</Counter>
-      <CheckFlags>KO, Check1, Check8, Check9, Check11</CheckFlags>
+      <CheckFlags>KO, Check1, Check8, ImmortalCancels, Check11</CheckFlags>
       <CancelFlags />
       <NoStackFlags>
         <StatusEffectType>Crystal</StatusEffectType>
@@ -241,7 +241,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>10</Id> <!-- Traitor / 勧誘 / Débauchage / Angeworben -->
+      <Id>10</Id> <!-- Blindness / 暗闇 / Cécité / Blind -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>25</Order>
@@ -255,7 +255,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>11</Id> <!-- Blindness / 暗闇 / Cécité / Blind -->
+      <Id>11</Id> <!-- Confusion / 混乱 / Confusion / Konfus -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>31</Order>
@@ -274,7 +274,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>12</Id> <!-- Confusion / 混乱 / Confusion / Konfus -->
+      <Id>12</Id> <!-- Silence / 沈黙 / Silence / Stumm -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>33</Order>
@@ -288,12 +288,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>13</Id> <!-- Silence / 沈黙 / Silence / Stumm -->
+      <Id>13</Id> <!-- Vampire / 吸血 / Vampire / Vampir -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>30</Order>
       <Counter>0</Counter>
-      <CheckFlags>KO, Check8, Check9, CantReact</CheckFlags>
+      <CheckFlags>KO, Check8, ImmortalCancels, CantReact</CheckFlags>
       <CancelFlags>
         <StatusEffectType>Readying</StatusEffectType>
         <StatusEffectType>Jumping</StatusEffectType>
@@ -307,7 +307,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>14</Id> <!-- Vampire / 吸血 / Vampire / Vampir -->
+      <Id>14</Id> <!-- Dark/Evil Looking (no TIC official name) -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>0</Order>
@@ -317,12 +317,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       <NoStackFlags />
     </StatusEffect>
     <StatusEffect>
-      <Id>15</Id>
+      <Id>15</Id> <!-- [MARKED FOR DELETION - REPORT IF DISPLAYED] Chest / USE16 / Trésor /  -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>38</Order>
       <Counter>0</Counter>
-      <CheckFlags>KO, Check1, Check2, CrystalTreasure, FreezeCT, Check8, Check9, Check11, IgnoreAttacks, CantReact</CheckFlags>
+      <CheckFlags>KO, Check1, Check2, CrystalTreasure, FreezeCT, Check8, ImmortalCancels, Check11, IgnoreAttacks, CantReact</CheckFlags>
       <CancelFlags>
         <StatusEffectType>None</StatusEffectType>
         <StatusEffectType>Crystal</StatusEffectType>
@@ -370,7 +370,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>16</Id> <!-- [MARKED FOR DELETION - REPORT IF DISPLAYED] Chest / USE16 / Trésor /  -->
+      <Id>16</Id> <!-- Oil / オイル / Huile / Öl -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>23</Order>
@@ -384,7 +384,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>17</Id> <!-- Oil / オイル / Huile / Öl -->
+      <Id>17</Id> <!-- Float / レビテト / Lévitation / Levitas -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>15</Order>
@@ -398,7 +398,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>18</Id> <!-- Float / レビテト / Lévitation / Levitas -->
+      <Id>18</Id> <!-- Reraise / リレイズ / Auréole / Schutzengel -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>14</Order>
@@ -413,7 +413,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>19</Id> <!-- Reraise / リレイズ / Auréole / Schutzengel -->
+      <Id>19</Id> <!-- Invisibility / 透明 / Invisibilité / Unsichtbar -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>13</Order>
@@ -427,7 +427,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>20</Id> <!-- Invisibility / 透明 / Invisibilité / Unsichtbar -->
+      <Id>20</Id> <!-- Berserk / バーサク / Furie / Tobsucht -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>24</Order>
@@ -446,12 +446,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>21</Id> <!-- Berserk / バーサク / Furie / Tobsucht -->
+      <Id>21</Id> <!-- Chicken / チキン / Poule mouillée / Feige -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>4</Order>
       <Counter>0</Counter>
-      <CheckFlags>Check8, Check9, Check10, CantReact</CheckFlags>
+      <CheckFlags>Check8, ImmortalCancels, Check10, CantReact</CheckFlags>
       <CancelFlags>
         <StatusEffectType>Readying</StatusEffectType>
         <StatusEffectType>Jumping</StatusEffectType>
@@ -466,12 +466,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>22</Id> <!-- Chicken / チキン / Poule mouillée / Feige -->
+      <Id>22</Id> <!-- Toad / カエル / Crapaud / Frosch -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>32</Order>
       <Counter>0</Counter>
-      <CheckFlags>Check8, Check9, Check10, CantReact</CheckFlags>
+      <CheckFlags>Check8, ImmortalCancels, Check10, CantReact</CheckFlags>
       <CancelFlags>
         <StatusEffectType>Jumping</StatusEffectType>
         <StatusEffectType>Evading</StatusEffectType>
@@ -485,7 +485,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>23</Id> <!-- Toad / カエル / Crapaud / Frosch -->
+      <Id>23</Id> <!-- [MARKED FOR DELETION - REPORT IF DISPLAYED] Critical / USE24 / Agonie / (Wird gelöscht) Kritisch -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>3</Order>
@@ -498,7 +498,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>24</Id> <!-- [MARKED FOR DELETION - REPORT IF DISPLAYED] Critical / USE24 / Agonie / (Wird gelöscht) Kritisch -->
+      <Id>24</Id> <!-- Poison / 毒 / Poison / Gift -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>26</Order>
@@ -514,7 +514,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>25</Id> <!-- Poison / 毒 / Poison / Gift -->
+      <Id>25</Id> <!-- Regen / リジェネ / Récupération / Regena -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>12</Order>
@@ -530,7 +530,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>26</Id> <!-- Regen / リジェネ / Récupération / Regena -->
+      <Id>26</Id> <!-- Protect / プロテス / Bouclier / Protes -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>19</Order>
@@ -544,7 +544,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>27</Id> <!-- Protect / プロテス / Bouclier / Protes -->
+      <Id>27</Id> <!-- Shell / シェル / Barrière / Vallum -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>18</Order>
@@ -558,7 +558,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>28</Id> <!-- Shell / シェル / Barrière / Vallum -->
+      <Id>28</Id> <!-- Haste / ヘイスト / Hâte / Hast -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>17</Order>
@@ -574,7 +574,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>29</Id> <!-- Haste / ヘイスト / Hâte / Hast -->
+      <Id>29</Id> <!-- Slow / スロウ / Lenteur / Gemach -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>27</Order>
@@ -590,7 +590,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>30</Id> <!-- Slow / スロウ / Lenteur / Gemach -->
+      <Id>30</Id> <!-- Stop / ストップ / Stop / Stopp -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>34</Order>
@@ -604,7 +604,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>31</Id> <!-- Stop / ストップ / Stop / Stopp -->
+      <Id>31</Id> <!-- Wall (no TIC official name) -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>2</Order>
@@ -618,7 +618,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>32</Id>
+      <Id>32</Id> <!-- Faith / フェイス / Conversion / Ener -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>11</Order>
@@ -634,7 +634,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>33</Id> <!-- Faith / フェイス / Conversion / Ener -->
+      <Id>33</Id> <!-- Atheist / イノセン / Reniement / Zweifel -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>10</Order>
@@ -650,12 +650,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>34</Id> <!-- Atheist / イノセン / Reniement / Zweifel -->
+      <Id>34</Id> <!-- Charmed / チャーム / Charme / Betört -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>20</Order>
       <Counter>32</Counter>
-      <CheckFlags>ConfusionTransparentCharmSleep, Check8, Check9, Check10</CheckFlags>
+      <CheckFlags>ConfusionTransparentCharmSleep, Check8, ImmortalCancels, Check10</CheckFlags>
       <CancelFlags>
         <StatusEffectType>Readying</StatusEffectType>
         <StatusEffectType>Jumping</StatusEffectType>
@@ -669,7 +669,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>35</Id> <!-- Charmed / チャーム / Charme / Betört -->
+      <Id>35</Id> <!-- Sleep / 睡眠 / Sommeil / Schlaf -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>35</Order>
@@ -688,7 +688,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>36</Id> <!-- Sleep / 睡眠 / Sommeil / Schlaf -->
+      <Id>36</Id> <!-- Immobilize / ドンムブ / Inertie / Defix -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>28</Order>
@@ -702,7 +702,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>37</Id> <!-- Immobilize / ドンムブ / Inertie / Defix -->
+      <Id>37</Id> <!-- Disable / ドンアク / Inaction / Inakt -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>29</Order>
@@ -716,7 +716,7 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>38</Id> <!-- Disable / ドンアク / Inaction / Inakt -->
+      <Id>38</Id> <!-- Reflect / リフレク / Miroir / Reflek -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>16</Order>
@@ -730,12 +730,12 @@ For available flags, refer to https://github.com/Nenkai/fftivc.utility.modloader
       </NoStackFlags>
     </StatusEffect>
     <StatusEffect>
-      <Id>39</Id> <!-- Reflect / リフレク / Miroir / Reflek -->
+      <Id>39</Id> <!-- Doom / 死の宣告 / Glas / Todesurteil -->
       <Unused_0x00>0</Unused_0x00>
       <Unused_0x01>0</Unused_0x01>
       <Order>9</Order>
       <Counter>3</Counter>
-      <CheckFlags>Check8, Check9, Check12</CheckFlags>
+      <CheckFlags>Check8, ImmortalCancels, Check12</CheckFlags>
       <CancelFlags />
       <NoStackFlags>
         <StatusEffectType>Crystal</StatusEffectType>
