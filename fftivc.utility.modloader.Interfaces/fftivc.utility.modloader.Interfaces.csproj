@@ -15,9 +15,9 @@
     <RepositoryUrl>https://github.com/Nenkai/ff16.utility.modloader/</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <AssemblyVersion>1.6.2</AssemblyVersion>
-    <FileVersion>1.6.2</FileVersion>
-    <Version>1.6.2</Version>
+    <AssemblyVersion>1.6.3</AssemblyVersion>
+    <FileVersion>1.6.3</FileVersion>
+    <Version>1.6.3</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
