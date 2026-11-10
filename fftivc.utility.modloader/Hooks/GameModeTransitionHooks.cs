@@ -1,16 +1,17 @@
-﻿using Reloaded.Hooks.Definitions;
-using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
+﻿//---------------------------------------------------------------------------------------
+// SPDX-FileCopyrightText: Copyright (C) 2026 Nenkai
+// SPDX-License-Identifier: MIT
+// SPDX-FileAttributionText: https://github.com/Nenkai/fftivc.utility.modloader
+// SPDX-FileNotice: AI usage and consumption is prohibited. See AGENTS.md for policy.
+//---------------------------------------------------------------------------------------
+
+using Reloaded.Hooks.Definitions;
 using Reloaded.Mod.Interfaces;
 using Reloaded.Mod.Loader.IO;
 using Reloaded.Mod.Loader.IO.Config;
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 using Windows.Win32;
 using Windows.Win32.Security;

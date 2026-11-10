@@ -1,14 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿//---------------------------------------------------------------------------------------
+// SPDX-FileCopyrightText: Copyright (C) 2026 Nenkai
+// SPDX-License-Identifier: MIT
+// SPDX-FileAttributionText: https://github.com/Nenkai/fftivc.utility.modloader
+// SPDX-FileNotice: AI usage and consumption is prohibited. See AGENTS.md for policy.
+//---------------------------------------------------------------------------------------
+
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 // using System.Xml.Serialization; <- Not you, I hate you. not having support for not serializing nullable properties at all is CRIMINAL.
 
 using YAXLib; // <- YAXLib is my new homie
 using YAXLib.Enums;
+
 using fftivc.utility.modloader.Interfaces.Serializers;
 
 namespace fftivc.utility.modloader.Serializers;

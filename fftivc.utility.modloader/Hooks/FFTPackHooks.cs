@@ -1,21 +1,17 @@
-﻿using fftivc.utility.modloader.Configuration;
+﻿//---------------------------------------------------------------------------------------
+// SPDX-FileCopyrightText: Copyright (C) 2026 Nenkai
+// SPDX-License-Identifier: MIT
+// SPDX-FileAttributionText: https://github.com/Nenkai/fftivc.utility.modloader
+// SPDX-FileNotice: AI usage and consumption is prohibited. See AGENTS.md for policy.
+//---------------------------------------------------------------------------------------
+
+using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.FileLists;
 
 using NenTools.Reloaded.ScanManager.Interfaces;
 
 using Reloaded.Hooks.Definitions;
-using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
-
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace fftivc.utility.modloader.Hooks;
 

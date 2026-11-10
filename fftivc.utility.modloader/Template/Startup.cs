@@ -1,4 +1,11 @@
-﻿/*
+﻿//---------------------------------------------------------------------------------------
+// SPDX-FileCopyrightText: Copyright (C) 2026 Nenkai
+// SPDX-License-Identifier: MIT
+// SPDX-FileAttributionText: https://github.com/Nenkai/fftivc.utility.modloader
+// SPDX-FileNotice: AI usage and consumption is prohibited. See AGENTS.md for policy.
+//---------------------------------------------------------------------------------------
+
+/*
  * This file and other files in the `Template` folder are intended to be left unedited (if possible),
  * to make it easier to upgrade to newer versions of the template.
 */

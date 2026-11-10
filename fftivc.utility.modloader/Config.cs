@@ -1,10 +1,14 @@
-﻿using fftivc.utility.modloader.Template.Configuration;
+﻿//---------------------------------------------------------------------------------------
+// SPDX-FileCopyrightText: Copyright (C) 2026 Nenkai
+// SPDX-License-Identifier: MIT
+// SPDX-FileAttributionText: https://github.com/Nenkai/fftivc.utility.modloader
+// SPDX-FileNotice: AI usage and consumption is prohibited. See AGENTS.md for policy.
+//---------------------------------------------------------------------------------------
 
-using Reloaded.Mod.Interfaces.Structs;
+using fftivc.utility.modloader.Template.Configuration;
 
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Threading.Channels;
 
 namespace fftivc.utility.modloader.Configuration
 {

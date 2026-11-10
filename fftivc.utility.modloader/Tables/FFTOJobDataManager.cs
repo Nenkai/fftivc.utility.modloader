@@ -1,4 +1,11 @@
-﻿using fftivc.utility.modloader.Configuration;
+﻿//---------------------------------------------------------------------------------------
+// SPDX-FileCopyrightText: Copyright (C) 2026 Nenkai
+// SPDX-License-Identifier: MIT
+// SPDX-FileAttributionText: https://github.com/Nenkai/fftivc.utility.modloader
+// SPDX-FileNotice: AI usage and consumption is prohibited. See AGENTS.md for policy.
+//---------------------------------------------------------------------------------------
+
+using fftivc.utility.modloader.Configuration;
 using fftivc.utility.modloader.Interfaces.Serializers;
 using fftivc.utility.modloader.Interfaces.Tables;
 using fftivc.utility.modloader.Interfaces.Tables.Models;
@@ -9,10 +16,8 @@ using NenTools.Reloaded.ScanManager.Interfaces;
 using Reloaded.Memory;
 using Reloaded.Memory.Interfaces;
 using Reloaded.Memory.Pointers;
-using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace fftivc.utility.modloader.Tables;

@@ -1,14 +1,13 @@
-﻿using FF16Tools.Files.Nex.Entities;
+﻿//---------------------------------------------------------------------------------------
+// SPDX-FileCopyrightText: Copyright (C) 2026 Nenkai
+// SPDX-License-Identifier: MIT
+// SPDX-FileAttributionText: https://github.com/Nenkai/fftivc.utility.modloader
+// SPDX-FileNotice: AI usage and consumption is prohibited. See AGENTS.md for policy.
+//---------------------------------------------------------------------------------------
+
+using FF16Tools.Files.Nex.Entities;
 using FF16Tools.Files.Nex;
-using FF16Tools.Files;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Vortice.Win32;
 using fftivc.utility.modloader.Interfaces;
 
 namespace fftivc.utility.modloader;
